@@ -1,0 +1,258 @@
+[
+  {
+    "world": "w41",
+    "directory": "/home/cs/.cache/robots-probes/worlds/w41/oracle-followup-20261009",
+    "exit": 0,
+    "rows": 3080,
+    "chance": [
+      {
+        "budget": "k = 3",
+        "valued": 200,
+        "exact": {
+          "method": "uniform count sets",
+          "sets": 22369536,
+          "mean_points": 0.348,
+          "p5_points": 0.0,
+          "p95_points": 3.274,
+          "missing": null
+        }
+      },
+      {
+        "budget": "k = 6",
+        "valued": 200,
+        "exact": {
+          "method": "uniform count sets",
+          "sets": 24582576566016,
+          "mean_points": 0.695,
+          "p5_points": 0.0,
+          "p95_points": 5.655,
+          "missing": null
+        }
+      },
+      {
+        "budget": "4 h",
+        "valued": 200,
+        "exact": {
+          "method": "greedy permutations",
+          "sets": null,
+          "mean_points": null,
+          "p5_points": null,
+          "p95_points": null,
+          "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+        }
+      },
+      {
+        "budget": "8 h",
+        "valued": 200,
+        "exact": {
+          "method": "greedy permutations",
+          "sets": null,
+          "mean_points": null,
+          "p5_points": null,
+          "p95_points": null,
+          "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+        }
+      }
+    ],
+    "pairs": [],
+    "pairs_if_additive": [],
+    "validated_source_commit": "89a98e6"
+  },
+  {
+    "world": "w42",
+    "directory": "/home/cs/.cache/robots-probes/worlds/w42/oracle-followup-20261009",
+    "exit": 1,
+    "rows": 2800,
+    "chance": [
+      {
+        "budget": "k = 3",
+        "valued": 200,
+        "exact": {
+          "method": "uniform count sets",
+          "sets": 22369536,
+          "mean_points": 0.358,
+          "p5_points": 0.0,
+          "p95_points": 2.381,
+          "missing": null
+        }
+      },
+      {
+        "budget": "k = 6",
+        "valued": 199,
+        "exact": {
+          "method": "uniform count sets",
+          "sets": 24582576566016,
+          "mean_points": 0.715,
+          "p5_points": 0.0,
+          "p95_points": 4.464,
+          "missing": null
+        }
+      },
+      {
+        "budget": "4 h",
+        "valued": 196,
+        "exact": {
+          "method": "greedy permutations",
+          "sets": null,
+          "mean_points": null,
+          "p5_points": null,
+          "p95_points": null,
+          "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+        }
+      },
+      {
+        "budget": "8 h",
+        "valued": 193,
+        "exact": {
+          "method": "greedy permutations",
+          "sets": null,
+          "mean_points": null,
+          "p5_points": null,
+          "p95_points": null,
+          "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+        }
+      }
+    ],
+    "pairs": [
+      {
+        "pattern": "interaction",
+        "items": [
+          "f02",
+          "f01"
+        ],
+        "verdict": "not confirmed",
+        "text": "joint removal 1 net against 2 and 2 alone over 28 episodes: interaction -3 (-0.89 points, interval -2.08 to +0.00)"
+      },
+      {
+        "pattern": "interaction",
+        "items": [
+          "f03",
+          "f01"
+        ],
+        "verdict": "not confirmed",
+        "text": "joint removal 2 net against 2 and 1 alone over 28 episodes: interaction -1 (-0.30 points, interval -0.90 to +0.00)"
+      }
+    ],
+    "pairs_if_additive": [
+      {
+        "items": [
+          "f01",
+          "f02"
+        ],
+        "net": -3,
+        "interval": [
+          -2.083,
+          0.0
+        ],
+        "summed_harm_net": -2,
+        "summed_harm_interval": [
+          -1.786,
+          0.0
+        ]
+      },
+      {
+        "items": [
+          "f01",
+          "f03"
+        ],
+        "net": -1,
+        "interval": [
+          -0.9,
+          0.0
+        ],
+        "summed_harm_net": 1,
+        "summed_harm_interval": [
+          0.0,
+          0.893
+        ]
+      }
+    ],
+    "validated_source_commit": "89a98e6"
+  },
+  {
+    "world": "w43",
+    "directory": "/home/cs/.cache/robots-probes/worlds/w43/oracle-followup-20261009",
+    "exit": 1,
+    "rows": 1820,
+    "chance": [
+      {
+        "budget": "k = 3",
+        "valued": 199,
+        "exact": {
+          "method": "uniform count sets",
+          "sets": 22369536,
+          "mean_points": 0.309,
+          "p5_points": 0.0,
+          "p95_points": 3.274,
+          "missing": null
+        }
+      },
+      {
+        "budget": "k = 6",
+        "valued": 198,
+        "exact": {
+          "method": "uniform count sets",
+          "sets": 24582576566016,
+          "mean_points": 0.619,
+          "p5_points": 0.0,
+          "p95_points": 4.464,
+          "missing": null
+        }
+      },
+      {
+        "budget": "4 h",
+        "valued": 190,
+        "exact": {
+          "method": "greedy permutations",
+          "sets": null,
+          "mean_points": null,
+          "p5_points": null,
+          "p95_points": null,
+          "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+        }
+      },
+      {
+        "budget": "8 h",
+        "valued": 176,
+        "exact": {
+          "method": "greedy permutations",
+          "sets": null,
+          "mean_points": null,
+          "p5_points": null,
+          "p95_points": null,
+          "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+        }
+      }
+    ],
+    "pairs": [
+      {
+        "pattern": "interaction",
+        "items": [
+          "f02",
+          "f01"
+        ],
+        "verdict": "not confirmed",
+        "text": "joint removal 2 net against 2 and 1 alone over 28 episodes: interaction -1 (-0.30 points, interval -1.79 to +1.19)"
+      }
+    ],
+    "pairs_if_additive": [
+      {
+        "items": [
+          "f01",
+          "f02"
+        ],
+        "net": -1,
+        "interval": [
+          -1.786,
+          1.19
+        ],
+        "summed_harm_net": 1,
+        "summed_harm_interval": [
+          -1.488,
+          1.793
+        ]
+      }
+    ],
+    "validated_source_commit": "89a98e6"
+  }
+]

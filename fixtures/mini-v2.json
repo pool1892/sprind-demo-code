@@ -1,0 +1,140 @@
+{
+ "version": "mini-v2",
+ "root": "~/.cache/robots-fixtures/mini-v2",
+ "world_id": "w10",
+ "world_hash": "4729eb7880fbeb339e808df56d057283ecd808a94c8054a96eeee05caa9c4dae",
+ "analyses": {
+  "logs": "w10-20261008T022844-b93170"
+ },
+ "made_from": "/home/cs/.cache/robots-probes/mini/w10-v2",
+ "layout": "src/fleetlab/integration/chain.py (ChainPaths)",
+ "digest": "a7ef908d3100f2c2486d2ad420a4c390a4a97cef0fb3c0b5699aec954a10cdc7",
+ "parts": {
+  "agent-runs": {
+   "files": 6,
+   "bytes": 4497282
+  },
+  "analyses": {
+   "files": 6,
+   "bytes": 23110
+  },
+  "export": {
+   "files": 633,
+   "bytes": 87030815
+  },
+  "fresh": {
+   "files": 1,
+   "bytes": 0
+  },
+  "oracle": {
+   "files": 1,
+   "bytes": 1514
+  },
+  "runs": {
+   "files": 2462,
+   "bytes": 195910071
+  },
+  "score": {
+   "files": 2,
+   "bytes": 59331
+  },
+  "steps": {
+   "files": 7,
+   "bytes": 3341
+  },
+  "world": {
+   "files": 10,
+   "bytes": 503931
+  }
+ },
+ "files": {
+  "agent-runs/20261008T022844-e2d47886/argv.json": {"bytes": 4899, "sha256": "d503c4161e206f7d"},
+  "agent-runs/20261008T022844-e2d47886/box/toolbox/tool_calls.jsonl": {"bytes": 206741, "sha256": "827acff2c7ce4076"},
+  "agent-runs/20261008T022844-e2d47886/prompt.json": {"bytes": 2375, "sha256": "c916dbafb48e9c5c"},
+  "agent-runs/20261008T022844-e2d47886/result.json": {"bytes": 276736, "sha256": "65a4d966e3ca81cc"},
+  "agent-runs/20261008T022844-e2d47886/stderr.txt": {"bytes": 0, "sha256": "e3b0c44298fc1c14"},
+  "agent-runs/20261008T022844-e2d47886/stdout.jsonl": {"bytes": 4006531, "sha256": "ecdacdcf7b8e6fe5"},
+  "analyses/w10-20261008T022844-b93170/analysis.json": {"bytes": 131, "sha256": "2a28b0aaad6c706a"},
+  "analyses/w10-20261008T022844-b93170/memory/notes.md": {"bytes": 1658, "sha256": "f31a5051f09a7208"},
+  "analyses/w10-20261008T022844-b93170/outbox/diagnosis.json": {"bytes": 4665, "sha256": "9bd1cbefecfdf513"},
+  "analyses/w10-20261008T022844-b93170/outbox/fix_set.json": {"bytes": 4735, "sha256": "9f9aba6dd789e115"},
+  "analyses/w10-20261008T022844-b93170/outbox/submissions.jsonl": {"bytes": 8284, "sha256": "e05a5b0400b4db32"},
+  "analyses/w10-20261008T022844-b93170/sessions/session-01.json": {"bytes": 3637, "sha256": "0d3ab7e56634ba60"},
+  "export/data_dictionary.md": {"bytes": 5633, "sha256": "ddc7f8f793b07696"},
+  "export/log/catalogue.parquet": {"bytes": 2719, "sha256": "11058fbef782807f"},
+  "export/log/change_log.parquet": {"bytes": 1625, "sha256": "c325c2830baad1ca"},
+  "export/log/costs.parquet": {"bytes": 953, "sha256": "ec32ed91d67df39a"},
+  "export/log/description.json": {"bytes": 20061, "sha256": "542b09a937e422b0"},
+  "export/log/episodes.parquet": {"bytes": 5970, "sha256": "8f6f15e9efeb18ed"},
+  "export/log/events.parquet": {"bytes": 3108, "sha256": "730e38679e1f95d8"},
+  "export/log/health.parquet": {"bytes": 2012, "sha256": "1ed9cbf43698387b"},
+  "export/log/maintenance.parquet": {"bytes": 1200, "sha256": "7539857be2e4bbaa"},
+  "export/log/steps/*": {"files": 208, "bytes": 9724322, "sha256": "974952fef2f4b132"},
+  "export/log/video/*": {"files": 416, "bytes": 77263212, "sha256": "4ba09f832ba552f1"},
+  "fresh/jobs.jsonl": {"bytes": 0, "sha256": "e3b0c44298fc1c14"},
+  "oracle/oracle.json": {"bytes": 1514, "sha256": "69762c55173e9cf5"},
+  "runs/w10-later/log/catalogue.parquet": {"bytes": 2719, "sha256": "11058fbef782807f"},
+  "runs/w10-later/log/change_log.parquet": {"bytes": 1625, "sha256": "c325c2830baad1ca"},
+  "runs/w10-later/log/costs.parquet": {"bytes": 953, "sha256": "ec32ed91d67df39a"},
+  "runs/w10-later/log/description.json": {"bytes": 20058, "sha256": "326d5cc6017df87f"},
+  "runs/w10-later/log/episodes.parquet": {"bytes": 6261, "sha256": "92c4e345a12051a8"},
+  "runs/w10-later/log/events.parquet": {"bytes": 3434, "sha256": "d24b952cf9f6036f"},
+  "runs/w10-later/log/health.parquet": {"bytes": 2034, "sha256": "3ce0fdfbd8b971d8"},
+  "runs/w10-later/log/maintenance.parquet": {"bytes": 1200, "sha256": "7539857be2e4bbaa"},
+  "runs/w10-later/log/steps/*": {"files": 208, "bytes": 11494317, "sha256": "d74c4f075ae13b3f"},
+  "runs/w10-later/log/video/*": {"files": 416, "bytes": 87713546, "sha256": "fbdd255f9204e4a4"},
+  "runs/w10-later/run.json": {"bytes": 295581, "sha256": "6e028ae3d690ee61"},
+  "runs/w10-later/truth/canary.txt": {"bytes": 32, "sha256": "267b53a773b0acb8"},
+  "runs/w10-later/truth/chain/*": {"files": 359, "bytes": 4748171, "sha256": "97c4b490c804ab1e"},
+  "runs/w10-later/truth/decisions.parquet": {"bytes": 1343, "sha256": "92e985dcf2f5c7f3"},
+  "runs/w10-later/truth/effective_policy.parquet": {"bytes": 3363, "sha256": "457d2a65cc94422a"},
+  "runs/w10-later/truth/faults_active.parquet": {"bytes": 5417, "sha256": "c0f26c01dec68b18"},
+  "runs/w10-later/truth/identities.parquet": {"bytes": 21396, "sha256": "ced3e3c2b34ac66a"},
+  "runs/w10-later/truth/job_outcomes.parquet": {"bytes": 6809, "sha256": "67ae977d8e843a1c"},
+  "runs/w10-later/truth/oracle.parquet": {"bytes": 1845, "sha256": "5ddd24e0a28d7356"},
+  "runs/w10-later/truth/parts/*": {"files": 360, "bytes": 788514, "sha256": "66bca45b6be2d0fe"},
+  "runs/w10-later/truth/replays.parquet": {"bytes": 1628, "sha256": "2628c23c8d45a8cf"},
+  "runs/w10-later/truth/verdicts.parquet": {"bytes": 3064, "sha256": "d3e5b808b379cfc1"},
+  "runs/w10-observed/log/catalogue.parquet": {"bytes": 2719, "sha256": "11058fbef782807f"},
+  "runs/w10-observed/log/change_log.parquet": {"bytes": 1625, "sha256": "c325c2830baad1ca"},
+  "runs/w10-observed/log/costs.parquet": {"bytes": 953, "sha256": "ec32ed91d67df39a"},
+  "runs/w10-observed/log/description.json": {"bytes": 20061, "sha256": "542b09a937e422b0"},
+  "runs/w10-observed/log/episodes.parquet": {"bytes": 5970, "sha256": "8f6f15e9efeb18ed"},
+  "runs/w10-observed/log/events.parquet": {"bytes": 3108, "sha256": "730e38679e1f95d8"},
+  "runs/w10-observed/log/health.parquet": {"bytes": 2012, "sha256": "1ed9cbf43698387b"},
+  "runs/w10-observed/log/maintenance.parquet": {"bytes": 1200, "sha256": "7539857be2e4bbaa"},
+  "runs/w10-observed/log/steps/*": {"files": 208, "bytes": 9724322, "sha256": "974952fef2f4b132"},
+  "runs/w10-observed/log/video/*": {"files": 416, "bytes": 77263212, "sha256": "4ba09f832ba552f1"},
+  "runs/w10-observed/run.json": {"bytes": 188265, "sha256": "2e25749d11061d60"},
+  "runs/w10-observed/truth/canary.txt": {"bytes": 32, "sha256": "9fbe25dbba47b934"},
+  "runs/w10-observed/truth/chain/*": {"files": 229, "bytes": 2888530, "sha256": "99159bb46d4450d7"},
+  "runs/w10-observed/truth/decisions.parquet": {"bytes": 1343, "sha256": "6e7ddb3176768055"},
+  "runs/w10-observed/truth/effective_policy.parquet": {"bytes": 3279, "sha256": "00937d4cfe085e5f"},
+  "runs/w10-observed/truth/faults_active.parquet": {"bytes": 4865, "sha256": "cb4ec51bd90a53f7"},
+  "runs/w10-observed/truth/identities.parquet": {"bytes": 21097, "sha256": "504c4f6bda945213"},
+  "runs/w10-observed/truth/job_outcomes.parquet": {"bytes": 5329, "sha256": "6ba5c61b81136ad4"},
+  "runs/w10-observed/truth/oracle.parquet": {"bytes": 1134, "sha256": "9d9fc0de1e0bcd78"},
+  "runs/w10-observed/truth/parts/*": {"files": 230, "bytes": 643318, "sha256": "f0466ddc3ce29154"},
+  "runs/w10-observed/truth/replays.parquet": {"bytes": 1338, "sha256": "d2f53888e617cfd4"},
+  "runs/w10-observed/truth/verdicts.parquet": {"bytes": 3049, "sha256": "94aa4398fb2ac4cb"},
+  "score/logs/report.json": {"bytes": 53311, "sha256": "fe04b2b98882320c"},
+  "score/logs/report.md": {"bytes": 6020, "sha256": "4498a50138385dc4"},
+  "steps/analysis-logs.json": {"bytes": 2729, "sha256": "b69007e5f71dedad"},
+  "steps/export.json": {"bytes": 126, "sha256": "1d42feec5bd67f77"},
+  "steps/fresh.json": {"bytes": 57, "sha256": "26be0b1cb3bc2a3a"},
+  "steps/oracle.json": {"bytes": 64, "sha256": "518e33704a8a1d39"},
+  "steps/run.json": {"bytes": 82, "sha256": "071fd8bad137a3e2"},
+  "steps/score.json": {"bytes": 172, "sha256": "d71ce69c2886750c"},
+  "steps/world.json": {"bytes": 111, "sha256": "84d763db8f887b68"},
+  "world/description.json": {"bytes": 20061, "sha256": "542b09a937e422b0"},
+  "world/fault_table.json": {"bytes": 3287, "sha256": "77566585905e3928"},
+  "world/generator.json": {"bytes": 233, "sha256": "c0189ca536b14aea"},
+  "world/hash": {"bytes": 65, "sha256": "af68f162a3287cc4"},
+  "world/health.jsonl": {"bytes": 19188, "sha256": "d9a8fc35ec95a683"},
+  "world/manifest.jsonl": {"bytes": 428188, "sha256": "84321b924a34930b"},
+  "world/model.json": {"bytes": 12165, "sha256": "345a9fc5b3e5a2b8"},
+  "world/spec.json": {"bytes": 2354, "sha256": "6e47d49bc82e780b"},
+  "world/task_texts.json": {"bytes": 2550, "sha256": "b4f10a3172380c63"},
+  "world/world_truth.json": {"bytes": 15840, "sha256": "d3dfd09e1f5093f0"}
+ }
+}

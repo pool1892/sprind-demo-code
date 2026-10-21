@@ -1,0 +1,277 @@
+{
+  "topic": "recorded-action replay rule",
+  "actor": "oracle builder",
+  "round": 7,
+  "recorded_utc": "2026-10-10T15:58:10.655077+00:00",
+  "authority": {
+    "main": "f3e7ec156c8cae18de84681a9c22bc121c025d71",
+    "merge": "62db9762d700c49ff5138fae45723bc6cced8889",
+    "conflicts": [],
+    "design": "experiment section 10 entries 14/15; contracts sections 4/9"
+  },
+  "tested_final_code": "8cbe0f76994f1bf156827a560f23c39d4b303fac",
+  "make_check": {
+    "tested_commit": "a56684201b079ffedde625e68b8543d0aaf2d4d6",
+    "invocations_this_round": 1,
+    "exit_status": 2,
+    "passed": 2434,
+    "failed": 3,
+    "skipped": 2,
+    "deselected": 65,
+    "seconds": 3543.04,
+    "lint_format_types": "passed, 384 files",
+    "failed_cases": [
+      "tests/test_oracle.py::test_mini_the_command_line",
+      "tests/test_oracle_review.py::test_run_here_fails_when_new_proof_fails",
+      "tests/test_oracle_review.py::test_an_interrupted_run_keeps_its_independent_origin"
+    ],
+    "repairs": "Legacy report must return incomplete (2); finalized fixture needs provenance and proof stubs accept new keyword arguments.",
+    "repair_commits": [
+      "8d2072506ed66cf67f149b1a00be5198757d540b",
+      "c74f8cd8b6ea1da48fa73a8ddea4b40df5640d19",
+      "8cbe0f76994f1bf156827a560f23c39d4b303fac"
+    ],
+    "rerun": "Not repeated: assignment limits make check to one invocation. All three repaired cases pass in the final 233-case focused run.",
+    "execution": "OPENBLAS_NUM_THREADS=4 OMP_NUM_THREADS=4 tools/heavy-run --light make check; frozen detached checkout",
+    "log": {
+      "path": "/tmp/codex-oracle-r7-make-check.log",
+      "sha256": "5170277b10e567d4542d530858d8a57879f0439d9d63e8f27cc8d53210c5952a"
+    }
+  },
+  "make_check_sim": {
+    "tested_commit": "a56684201b079ffedde625e68b8543d0aaf2d4d6",
+    "exit_status": 0,
+    "passed": 61,
+    "deselected": 2443,
+    "seconds": 509.81,
+    "execution": "OPENBLAS_NUM_THREADS=4 OMP_NUM_THREADS=4 make check-sim; frozen detached checkout, light queue",
+    "later_runtime_edits": "Oracle ledger upgrade, cached outcome refresh, durable refusal evidence; no engine changes.",
+    "log": {
+      "path": "/tmp/codex-oracle-r7-check-sim.log",
+      "sha256": "2466234879104841f00a3b47c98e876de5c891cdffafe0de68600726a248dd1f"
+    }
+  },
+  "final_focused": {
+    "tested_commit": "8cbe0f76994f1bf156827a560f23c39d4b303fac",
+    "exit_status": 0,
+    "passed": 233,
+    "seconds": 254.04,
+    "execution": "OPENBLAS_NUM_THREADS=4 OMP_NUM_THREADS=4 tools/heavy-run --light uv run --locked pytest tests/test_oracle*.py tests/test_scoring_stage4.py; frozen detached checkout",
+    "log": {
+      "path": "/tmp/codex-oracle-r7-final-focused.log",
+      "sha256": "193b5a59f248f86c1127332d09f6692a109b7c3b9dcd2c651825e18d44568195"
+    },
+    "static_checks": "ruff check, ruff format --check and mypy separately exited 0, 384 files. Host retry after detached-checkout sandbox cache restrictions."
+  },
+  "recorded_chain_rule": {
+    "name": "recorded-action-four-executions-v2",
+    "accept": "Action-first divergence with identical recorded prefix; two run-kind and two replay-kind executions; exactly three full chains and physical outcomes equal.",
+    "refuse": "Two run executions versus two replay executions, every other grouping, non-action first divergence, unavailable further execution, or ceiling exceeded.",
+    "run_path": "Actual engine JobMode.run in independent oracle scratch run, not a replay substitute.",
+    "MEASURED_EVENTS_UPPER_95": 8.767273069742323,
+    "MEASURED_CALLS": 26928,
+    "POLICY_CALL_RATE_BOUND": 0.00032558203616095974,
+    "ceiling": "Smallest k with Poisson(n * upper_rate).sf(k) < .001; n counts deduplicated second-execution calls only.",
+    "boundary_examples": {
+      "3300": 5,
+      "3400": 5,
+      "3500": 6
+    },
+    "coverage": "All scoring baselines plus observed baselines whose removal outcomes are used. Experiment off by default; optional whole observed/experiment verification.",
+    "partial_coverage": "Ceiling pending until named window complete; partial coverage cannot make measured truth complete.",
+    "legacy_resume": "Completed replay files and saved replay-kind third reused, missing run-kind fourth added; finalized unproven first pass reproved from files before scheduling.",
+    "canonical": "Settled majority supplies oracle/scorer baseline, original world records unchanged.",
+    "rate_interval": "Exact 95% Clopper-Pearson interval per comparison opportunity, as before.",
+    "residual": "Once-executed changed replays remain exposed; fixed upper rate times maximum steps bounds expected affected rows, full-window point bounds and Markov 95% bounds per scoring/observed table."
+  },
+  "guarantee_tests": {
+    "four_executions_and_both_job_kinds": [
+      "test_one_systematic_run_replay_path_difference_is_a_defect",
+      "test_scratch_executions_use_both_real_engine_job_kinds",
+      "test_fourth_execution_unavailable_refuses"
+    ],
+    "action_first_and_canonical_outcome": [
+      "test_one_policy_answer_is_settled_and_the_majority_outcome_is_used[run]",
+      "test_one_policy_answer_is_settled_and_the_majority_outcome_is_used[replay]",
+      "test_preceding_recorded_difference_refuses_before_any_third"
+    ],
+    "poisson_and_scope": [
+      "test_ceiling_is_the_strict_poisson_tail_at_the_unrounded_upper_rate",
+      "test_ceiling_is_checked_after_the_named_window_is_compared",
+      "test_more_one_off_events_than_ceiling_refuse"
+    ],
+    "selected_windows_and_resumption": [
+      "test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution",
+      "test_coverage_includes_removals_already_found_in_other_runs",
+      "test_verify_resumes_a_legacy_event_before_saving_coverage",
+      "test_a_growing_replay_run_refreshes_its_cached_outcomes"
+    ],
+    "measured_faults_and_eligibility": [
+      "test_measurements_replace_curves_and_use_the_whole_window",
+      "test_eligibility_comes_from_the_fault_table"
+    ],
+    "adaptive_pairs_and_additive_exclusion": [
+      "test_interaction_only_after_both_members_and_each_adaptive_stage",
+      "test_additive_pairs_and_standalone_causes_do_not_get_joint_treatment"
+    ],
+    "data_and_decoys": [
+      "test_data_fault_counts_misreports_in_both_directions_without_replays",
+      "test_decoys_and_inert_entries_keep_their_class_below_threshold",
+      "test_data_fault_with_two_active_data_hooks_is_explicitly_unattributed"
+    ],
+    "planning_and_complete_truth": [
+      "test_missing_scoring_outcomes_prevent_observed_planning",
+      "test_measured_truth_is_incomplete_until_baselines_are_verified",
+      "test_complete_truth_is_preserved_and_wrong_world_manifest_is_refused",
+      "test_stage_with_reused_rows_finishes_baseline_checks_and_publishes_truth"
+    ]
+  },
+  "late_regressions_before_repair": {
+    "tested_commit": "a56684201b079ffedde625e68b8543d0aaf2d4d6",
+    "legacy_ledger": {
+      "path": "/tmp/codex-oracle-r7-legacy-before.log",
+      "sha256": "892a78e74de82ce24ee95abaac1823ed5071463b1d4d5e7c7deb01f26a596fc5"
+    },
+    "growing_run_and_refusal_evidence": {
+      "path": "/tmp/codex-oracle-r7-resume-before.log",
+      "sha256": "c77669072af210f1c2c9e1019d120f32217bd189a87da7f4bf318d35c3eac9ba"
+    },
+    "repair": "dd68ec93c8dee77b2b08731185765590eeabd0ae",
+    "after": "All cases pass in final focused run."
+  },
+  "truth_file": {
+    "path": "ORACLE_DIR/measured_causes.json",
+    "schema_version": 1,
+    "root": [
+      "world_id",
+      "world_hash",
+      "rule",
+      "threshold_points",
+      "min_observed_carriers",
+      "episodes_per_window",
+      "complete",
+      "problems",
+      "no_decoy_left"
+    ],
+    "items": "faults[] and pairs[] retain curve_class beside measured_class, eligibility, qualified_by and windows.{scoring,observed} counts/net/points/status.",
+    "lists": "causes[] {unit,fault_ids,qualified_by}, cause_count, curve_causes[].",
+    "consumer_guard": "complete must be true; report embeds measured_causes and shows both lists.",
+    "class_rule": "Standalone >=2 fleet points in either window; eligible interaction only if neither member qualifies alone; additive pairs excluded. Decoy/inert promotions use scoring only; data faults count logged/true mismatches without replay.",
+    "incomplete_exit": 2
+  },
+  "resumption_commands": {
+    "verify": "uv run --locked python -m fleetlab.oracle verify ROOT --oracle-dir DIR --workers 0",
+    "observed": "uv run --locked python -m fleetlab.oracle causes ROOT --oracle-dir DIR --workers 0",
+    "ROOT": "/home/cs/.cache/robots-probes/worlds/w47-opaque-v1",
+    "DIR": "/home/cs/.cache/robots-probes/worlds/w47-opaque-v1/oracle",
+    "checkout": "Frozen integration checkout combining the native opaque-id contract (8e3771b) and this oracle.",
+    "prequeue": "verify --plan-only prints seconds; causes --plan-only requires complete scoring baseline verification and prints the next standalone/joint stage; --run-only executes only the stored stage.",
+    "queue": "Both normal commands submit through tools/heavy-run; no --here from the caller."
+  },
+  "curve_only_estimates": {
+    "w47": {
+      "removals": 364,
+      "distinct_observed_attempts": 364
+    },
+    "w46": {
+      "removals": 658,
+      "distinct_observed_attempts": 616
+    },
+    "meaning": "Spec/fault-table curve estimates before scoring results, never measured membership."
+  },
+  "w47_completed_first_pass_read_only": {
+    "world_root": "/home/cs/.cache/robots-probes/worlds/w47-opaque-v1",
+    "world_hash": "f03a31c6868d3efcef0813cc2cc3b7d56a7163c2518e0fa9e1c136aa984d6849",
+    "basis": "exact counts from the completed first-pass scoring table; provisional until baseline verification",
+    "scoring_seconds_remaining": 268,
+    "observed_removals": 644,
+    "observed_distinct": 574,
+    "observed_seconds_reused": 57,
+    "observed_seconds_remaining": 517,
+    "scoring_gpu_minutes": 10.72,
+    "observed_gpu_minutes": 46.44,
+    "faults_needing_observed": [
+      {
+        "fault_id": "fx37332e2dbcdc844a1de9e336262035ef",
+        "kind": "object_batch_variant",
+        "scoring_points": 0.8928571428571429,
+        "carriers": 280
+      },
+      {
+        "fault_id": "fx2ad45433e1ee023ff134894d48d1a600",
+        "kind": "gripper_wear",
+        "scoring_points": -0.2976190476190476,
+        "carriers": 84
+      },
+      {
+        "fault_id": "fxd800f062ccf0e888ef40133b8aed5c81",
+        "kind": "camera_pose_offset",
+        "scoring_points": 0.8928571428571429,
+        "carriers": 84
+      },
+      {
+        "fault_id": "fx8d99a95e8c9b76458979700a98fcb06c",
+        "kind": "action_latency",
+        "scoring_points": 1.1904761904761905,
+        "carriers": 84
+      },
+      {
+        "fault_id": "fx695d2983ce4828cc831b509515609be0",
+        "kind": "software_release",
+        "scoring_points": -1.1904761904761905,
+        "carriers": 56
+      },
+      {
+        "fault_id": "fx383974aa4f817c2a37f74d7049747bf6",
+        "kind": "camera_pose_offset",
+        "scoring_points": 1.4880952380952381,
+        "carriers": 56
+      }
+    ]
+  },
+  "w47_combined": {
+    "new_removals": 644,
+    "missing_seconds": 785,
+    "jobs": 1429,
+    "estimated_gpu_minutes": 57.16,
+    "caveat": "Observed counts provisional until scoring baselines verified; excludes queue, further executions for discrepancies, and optional joint stage. Not a GPU timing."
+  },
+  "file_scope": {
+    "edited": "oracle package and oracle tests only",
+    "engine_edits": [],
+    "scorer_edits_this_round": [],
+    "docs_edits": [],
+    "field_renames": []
+  },
+  "fields_added_this_round": [
+    "oracle.json.measured_causes",
+    "replay_verification.verified_episodes",
+    "replay_verification.windows[].ceiling_pending",
+    "replay_verification.windows[].events[].fourth_run",
+    "replay_verification.residual_by_window"
+  ],
+  "not_executed": [
+    "GPU policy job",
+    "stored-world replay",
+    "make smoke-world",
+    "model session"
+  ],
+  "not_proved": [
+    "Final full make check exit 0 (one invocation failed, repaired focused cases pass)",
+    "Real GPU disturbance attribution",
+    "Pretrained-policy timing",
+    "Final measured w47 cause membership before additions execute",
+    "Attribution of overlapping data hooks from only final true/logged outcomes"
+  ],
+  "engine_record_would_add": [
+    "hooked observations",
+    "full returned chunks",
+    "call times",
+    "batch row order",
+    "per-hook logged outcome evidence for overlapping data faults"
+  ],
+  "post_final_focused_edits": [
+    "README",
+    "this receipt only"
+  ]
+}

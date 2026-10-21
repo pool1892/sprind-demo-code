@@ -1,0 +1,167 @@
+[project]
+name = "fleetlab"
+version = "0.1.0"
+description = "Simulated robot fleets with injected faults, and agents that diagnose them"
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = [
+    # PyTorch on the integrated Radeon, from AMD's ROCm index (see [tool.uv]).
+    # The extra pulls the kernels for this chip; keep it on both packages.
+    "torch[device-gfx1151]==2.11.0+rocm10.0.0",
+    "torchvision[device-gfx1151]==0.26.0+rocm10.0.0",
+    # What those two pull in from the same index. uv applies an index pin only
+    # to packages a project names itself, so each one is listed.
+    "amd-torch-device-gfx1151==2.11.0+rocm10.0.0",
+    "amd-torch-device-gfx115x==2.11.0+rocm10.0.0",
+    "amd-torchvision-device-gfx1151==0.26.0+rocm10.0.0",
+    "rocm==10.0.0",
+    "rocm-bootstrap==0.3.0",
+    "rocm-sdk-core==10.0.0",
+    "rocm-sdk-device-gfx1151==10.0.0",
+    "rocm-sdk-libraries==10.0.0",
+    "triton==3.8.0+git4cff872c.rocm10.0.0",
+    # Policies and the reference evaluation. LeRobot 0.6.1 needs torch below
+    # 2.12. `xvla` is the baseline policy, `smolvla` the weaker second one, and
+    # `libero` is what LeRobot declares for its own LIBERO evaluation
+    # (`lerobot-eval` does not import without it).
+    "lerobot[libero,smolvla,xvla]==0.6.1",
+    # Simulation. hf-libero is the patched copy in third_party/libero.
+    "hf-libero==0.1.4",
+    "robosuite==1.5.2",
+    # MuJoCo 3.8.1 settles four LIBERO tasks into a different start than the
+    # training data shows; 3.3.7 does not. Those two were measured
+    # here. LeRobot issue 4390 places the change at 3.4.
+    "mujoco==3.3.7",
+    "numpy==1.26.4",
+    # Video files.
+    "imageio>=2.38",
+    "imageio-ffmpeg>=0.6",
+    # The dashboard's figures (fleetlab.dashboard). Already installed through LIBERO;
+    # named because the package imports it.
+    "matplotlib>=3.10",
+    # Episode logs and schemas.
+    "pyarrow>=25",
+    "duckdb>=1.4",
+    "pydantic>=2.13",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19",
+    "packaging>=24.2",
+    "pytest>=9",
+    "pytest-xdist>=3.8.0",
+    "ruff>=0.14",
+    # Rotation vectors in the simulator tests. Installed anyway, for robosuite and LeRobot.
+    "scipy>=1.17",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fleetlab"]
+
+[tool.ruff]
+line-length = 100
+# Ruff also formats Python code blocks in Markdown. The documents are not its to rewrite.
+# `spikes` holds one-off measurement scripts kept as a record, not package code.
+extend-exclude = ["third_party", "spikes", "*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+# The scripted teleoperator, moved from spikes/teleop-absolute as it was measured,
+# reformatted only: long comments, and an untyped body (see the mypy override below).
+"src/fleetlab/policies/teleop/*" = ["E501", "SIM102", "RUF059"]
+
+[tool.mypy]
+files = ["src", "tests", "skills"]
+strict = true
+
+[[tool.mypy.overrides]]
+# The scripted teleoperator as measured in its spike, untyped; its adapter
+# (fleetlab.policies.teleoperator) is typed.
+module = ["fleetlab.policies.teleop.*"]
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+# Installed without type information.
+module = ["lerobot.*", "libero.*", "mujoco.*", "pyarrow.*", "robosuite.*", "scipy.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "src/fleetlab/film/tests"]
+# `make check` stays clear of simulator and GPU; `make check-sim` runs the simulator
+# tests and `make check-model` the ones that load a policy.
+addopts = "-m 'not sim and not model'"
+markers = [
+    "sim: builds LIBERO scenes and renders them; no model is loaded",
+    "model: loads a policy onto the GPU; run by make check-model under tools/heavy-run",
+]
+
+# All uv settings live here. Do not add a uv.toml to this directory: uv then
+# ignores this table, including the interpreter restriction below.
+[tool.uv]
+required-version = ">=0.12.23"
+# Only build on interpreters uv manages itself (`uv python install <version>`).
+# Without this, uv resolves to whichever `python3.x` comes first on PATH, and on
+# this machine that is another project's private runtime, not a system Python.
+python-preference = "only-managed"
+# The ROCm wheels exist for Linux on x86-64 only.
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+# robosuite 1.5.2 pins mink 0.0.5, which needs numpy below 2, while LeRobot
+# 0.6.1 declares numpy 2 or later. The combination verified on this machine
+# runs LeRobot on numpy 1.26.4, so numpy is forced.
+override-dependencies = ["numpy==1.26.4"]
+# An override hides every package's numpy bounds from the resolver, so the
+# packages whose newer releases need numpy 2 are held back by hand.
+# tests/test_environment.py fails when another one appears.
+constraint-dependencies = [
+    "contourpy<1.4",
+    "opencv-python-headless<4.12",
+    "scipy<1.18",
+]
+# Two pairs of packages install the same module, and which copy survives
+# depends on install order. One of each pair is left out:
+# - `cv2`: opencv-python (robosuite, LIBERO) and opencv-python-headless
+#   (LeRobot). This machine renders headless.
+# - `egl_probe`: egl-probe (robomimic) and its fork hf-egl-probe (LIBERO). The
+#   fork builds with current CMake as it is.
+exclude-dependencies = ["egl-probe", "opencv-python"]
+
+[[tool.uv.index]]
+name = "rocm"
+url = "https://stable.repo.amd.com/rocm/whl-next/"
+# Explicit: only the packages named in [tool.uv.sources] come from here. The
+# index also mirrors numpy, pillow and others, which must stay on PyPI.
+explicit = true
+# Two things uv.lock does not pin:
+# - This index publishes no checksums. The eleven files that come from it are
+#   locked by URL and version only, so a file replaced there under the same
+#   name would be installed unnoticed. Every file from PyPI has
+#   its checksum in the lock.
+# - What the source builds need at build time (setuptools, hatchling). uv
+#   resolves that when it builds. Only the CMake for hf-egl-probe is tied to
+#   the lock, at the end of this file.
+
+[tool.uv.sources]
+hf-libero = { path = "third_party/libero", editable = true }
+torch = { index = "rocm" }
+torchvision = { index = "rocm" }
+amd-torch-device-gfx1151 = { index = "rocm" }
+amd-torch-device-gfx115x = { index = "rocm" }
+amd-torchvision-device-gfx1151 = { index = "rocm" }
+rocm = { index = "rocm" }
+rocm-bootstrap = { index = "rocm" }
+rocm-sdk-core = { index = "rocm" }
+rocm-sdk-device-gfx1151 = { index = "rocm" }
+rocm-sdk-libraries = { index = "rocm" }
+triton = { index = "rocm" }
+
+# hf-egl-probe ships as source and builds with CMake, which is not installed on
+# this machine. `match-runtime` takes the CMake version from the lock file.
+[tool.uv.extra-build-dependencies]
+hf-egl-probe = [{ requirement = "cmake", match-runtime = true }]

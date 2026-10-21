@@ -1,0 +1,1149 @@
+{
+  "format": "fleetlab.film-manifest/1",
+  "title": "The installation takes on a new job",
+  "subtitle": "Final cut, 20 October 2026",
+  "notes": "Final cut 6 (final-9). Story A: the single-skill runs; job one's three investigations (run-3, run-5 with run-3's library, run-6 with run-5's library), the third saving a job; its release on the twenty reserved starts beside the naive chain, judged against the shift lead's bar of three in five (receipt re-issued 2026-10-20: released). a8 adds job two's three shifts (run-1 with job one's run-5 library, run-2 with its released library, run-3 with run-2's library; run-3 saved a program, which the release check held back). A releasing later shift of job two goes into a new beat a9-second-job between a8-close and b0-title, with records second_job_* in the records file. Story B: the engagement on the first fleet (public id w08) and the recipe's second use (w09). Hero clips are verified re-renders chosen by rule; story B's experiment clips are original recordings. Every number on screen is computed from a table or bound from a record; private world ids are replaced by the public ones and forbidden in anything shown.",
+  "script": "~/.cache/robots-probes/demo/2026-10-20/film/narration/brian-final-9/script.md",
+  "fps": 20,
+  "poster": "a7-release",
+  "stories": {
+    "A": "Make this one job",
+    "B": "Make that a check the next shift can run"
+  },
+  "beats": [
+    {
+      "id": "open",
+      "title": "Opening",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 4,
+          "title": "The installation takes on a new job",
+          "subtitle": "One robot policy that never changes, and agents that improve the installation around it."
+        }
+      ]
+    },
+    {
+      "id": "a0-title",
+      "story": "A",
+      "title": "Story A",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 3,
+          "title": "Make this one job",
+          "subtitle": "A shift lead asks the installation for a job it has never done."
+        }
+      ]
+    },
+    {
+      "id": "a1-skills",
+      "story": "A",
+      "title": "The skills",
+      "subtitle": "the robot is capable; the policy never changes",
+      "shots": [
+        {
+          "kind": "clip",
+          "panel": {
+            "requirement": [
+              "cream cheese in the bowl"
+            ],
+            "program": "single skill",
+            "current": "auto",
+            "count": {
+              "text": "{k} of {n} delivered",
+              "detail": "the skill alone, development starts 0 to 2 (base task 6)",
+              "from": {
+                "table": "~/.cache/robots-probes/demo/2026-10-21/skills/cheese/log/job_episodes.parquet",
+                "success": "delivered",
+                "key": [
+                  "episode_id"
+                ]
+              }
+            }
+          },
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-21/skills/cheese",
+            "episode": "e000101",
+            "label": "skill: put the cream cheese in the bowl, development start 0",
+            "speed": 1.5,
+            "hold": 0.5,
+            "rerender": {
+              "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-2/rerenders/cheese/e000101.rerender.scene.720px.mp4",
+              "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-2/rerenders/cheese/e000101.rerender.scene.720px.json"
+            }
+          }
+        },
+        {
+          "kind": "clip",
+          "panel": {
+            "requirement": [
+              "bowl on the cabinet top"
+            ],
+            "program": "single skill",
+            "current": "auto",
+            "count": {
+              "text": "{k} of {n} delivered",
+              "detail": "the skill alone, development starts 0 to 2 (base task 3)",
+              "from": {
+                "table": "~/.cache/robots-probes/demo/2026-10-21/skills/cabinet/log/job_episodes.parquet",
+                "success": "delivered",
+                "key": [
+                  "episode_id"
+                ]
+              }
+            }
+          },
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-21/skills/cabinet",
+            "episode": "e000101",
+            "label": "skill: put the bowl on top of the cabinet, development start 0",
+            "speed": 1.5,
+            "hold": 0.5,
+            "rerender": {
+              "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-2/rerenders/cabinet/e000101.rerender.scene.720px.mp4",
+              "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-2/rerenders/cabinet/e000101.rerender.scene.720px.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "a2-request",
+      "story": "A",
+      "title": "The request",
+      "subtitle": "intent enters; the bar is set outside the agent",
+      "panel": {
+        "requirement": [
+          "cream cheese in the black bowl",
+          "bowl on the cabinet top"
+        ],
+        "rule": "the cheese goes in before the bowl moves",
+        "bar": "set by the shift lead; the agent proposes its own"
+      },
+      "shots": [
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/job_run.json",
+          "field": "request.goals",
+          "title": "The request as the installation records it: two goals",
+          "seconds": 5
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/job_run.json",
+          "field": "request.order_rules",
+          "title": "and the order rule",
+          "seconds": 4
+        },
+        {
+          "kind": "card",
+          "seconds": 6,
+          "title": "The shift lead's bar: {release_k} of {release_n} fresh starts",
+          "subtitle": "{lead_deliveries} deliveries in every {lead_starts}. The agent offers to be judged on {acceptance_k} of {acceptance_n}.",
+          "note": "The bar from the release receipt; the agent's proposal from the third shift's record."
+        }
+      ]
+    },
+    {
+      "id": "a3-naive",
+      "story": "A",
+      "title": "The naive attempt",
+      "subtitle": "a success signal is not a delivery",
+      "panel": {
+        "requirement": [
+          "cream cheese in the black bowl",
+          "bowl on the cabinet top"
+        ],
+        "rule": "the cheese goes in before the bowl moves",
+        "program": "cheese-bowl-chain (j0001)",
+        "current": "auto",
+        "count": {
+          "text": "{k} of {n} delivered",
+          "detail": "the naive chain, development starts 0 to 9",
+          "from": {
+            "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-01/run/log/job_episodes.parquet",
+            "where": {
+              "job_id": "j0001"
+            },
+            "success": "delivered",
+            "key": [
+              "episode_id"
+            ]
+          }
+        }
+      },
+      "shots": [
+        {
+          "kind": "clip",
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-01/run",
+            "episode": "e000102",
+            "label": "naive chain, development start 1",
+            "speed": 2,
+            "hold": 0.5,
+            "rerender": {
+              "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s01/e000102.rerender.scene.720px.mp4",
+              "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s01/e000102.rerender.scene.720px.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "a4-investigation",
+      "story": "A",
+      "title": "The investigation",
+      "subtitle": "agent-built measurement; experiments on the installation",
+      "shots": [
+        {
+          "kind": "calls",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/agent-runs/20261019T230801-9eb82e42/stdout.jsonl",
+          "tools": [
+            "write_check",
+            "run_check"
+          ],
+          "lines": [
+            1,
+            2
+          ],
+          "seconds": 9
+        },
+        {
+          "kind": "pair",
+          "panel": {
+            "requirement": [
+              "cream cheese in the black bowl",
+              "bowl on the cabinet top"
+            ],
+            "rule": "the cheese goes in before the bowl moves",
+            "program": "before: j0001 · after: j0004",
+            "current": "auto",
+            "follow": 1,
+            "count": [
+              {
+                "text": "naive: {k} of {n}",
+                "detail": "development starts 0 to 9",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-01/run/log/job_episodes.parquet",
+                  "where": {
+                    "job_id": "j0001"
+                  },
+                  "success": "delivered",
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "tuned: {k} of {n}",
+                "detail": "the same starts",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-02/run/log/job_episodes.parquet",
+                  "where": {
+                    "job_id": "j0004"
+                  },
+                  "success": "delivered",
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              }
+            ]
+          },
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-01/run",
+              "episode": "e000102",
+              "label": "naive chain (j0001), start 1",
+              "speed": 2,
+              "hold": 0.5,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s01/e000102.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s01/e000102.rerender.scene.720px.json"
+              }
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-02/run",
+              "episode": "e000402",
+              "label": "the cheese instruction runs on (j0004), start 1",
+              "speed": 2,
+              "hold": 0.5,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s02/e000402.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s02/e000402.rerender.scene.720px.json"
+              }
+            }
+          ],
+          "note": "The same start: initial state 1, the first start the tuned program delivered on."
+        },
+        {
+          "kind": "pair",
+          "panel": {
+            "requirement": [
+              "cream cheese in the black bowl",
+              "bowl on the cabinet top"
+            ],
+            "rule": "the cheese goes in before the bowl moves",
+            "program": "before: j0006 · after: j0007",
+            "current": "auto",
+            "follow": 1,
+            "count": [
+              {
+                "text": "tuned, fresh starts: {k} of {n}",
+                "detail": "development starts 10 to 29",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-03/run/log/job_episodes.parquet",
+                  "where": {
+                    "job_id": "j0006"
+                  },
+                  "success": "delivered",
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "with return home: {k} of {n}",
+                "detail": "the same starts",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-04/run/log/job_episodes.parquet",
+                  "where": {
+                    "job_id": "j0007"
+                  },
+                  "success": "delivered",
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              }
+            ]
+          },
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-03/run",
+              "episode": "e000602",
+              "label": "tuned program (j0006), start 11",
+              "speed": 2,
+              "hold": 0.5,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s03/e000602.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s03/e000602.rerender.scene.720px.json"
+              }
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-04/run",
+              "episode": "e000702",
+              "label": "plus a return home (j0007), start 11",
+              "speed": 2,
+              "hold": 0.5,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s04/e000702.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s04/e000702.rerender.scene.720px.json"
+              }
+            }
+          ],
+          "note": "The same start: initial state 11, the first start the return home broke."
+        }
+      ]
+    },
+    {
+      "id": "a5-account",
+      "story": "A",
+      "title": "The account",
+      "subtitle": "the first shift hands on its check and its skill",
+      "shots": [
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/analyses/w90-20261019T225523-5d81af/outbox/job_account.json",
+          "field": "account",
+          "lines": [
+            29,
+            34
+          ],
+          "title": "The agent's account: what it hands to the next shift",
+          "seconds": 12
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/job_run.json",
+          "field": "library.skills",
+          "title": "The skill the first shift saved",
+          "seconds": 4
+        }
+      ]
+    },
+    {
+      "id": "a6-second-shift",
+      "story": "A",
+      "title": "The second shift",
+      "subtitle": "each shift starts from the one before",
+      "shots": [
+        {
+          "kind": "calls",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/agent-runs/20261020T003226-147b8792/stdout.jsonl",
+          "tools": [
+            "run_check"
+          ],
+          "lines": [
+            1,
+            1
+          ],
+          "seconds": 7
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/analyses/w90-20261020T002932-70409e/outbox/job_account.json",
+          "field": "account",
+          "lines": [
+            18,
+            18
+          ],
+          "title": "The second shift's account: the earlier library",
+          "seconds": 7
+        },
+        {
+          "kind": "pair",
+          "panel": {
+            "requirement": [
+              "cream cheese in the black bowl",
+              "bowl on the cabinet top"
+            ],
+            "rule": "the cheese goes in before the bowl moves",
+            "program": "before: j0006 · after: j0008",
+            "current": "auto",
+            "follow": 1,
+            "count": [
+              {
+                "text": "shorter continuation: {k} of {n}",
+                "detail": "development starts 10 to 29",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-03/run/log/job_episodes.parquet",
+                  "where": {
+                    "job_id": "j0006"
+                  },
+                  "success": "delivered",
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "longer continuation: {k} of {n}",
+                "detail": "the same, already examined starts",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-04/run/log/job_episodes.parquet",
+                  "where": {
+                    "job_id": "j0008"
+                  },
+                  "success": "delivered",
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              }
+            ]
+          },
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-03/run",
+              "episode": "e000602",
+              "label": "shorter continuation (j0006), start 11",
+              "speed": 2,
+              "hold": 0.5,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-5-s03/e000602.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-5-s03/e000602.rerender.scene.720px.json"
+              }
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-04/run",
+              "episode": "e000802",
+              "label": "longer continuation (j0008), start 11",
+              "speed": 2,
+              "hold": 0.5,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-5-s04/e000802.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-5-s04/e000802.rerender.scene.720px.json"
+              }
+            }
+          ],
+          "note": "The same start: initial state 11, the first start the longer continuation rescued."
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/job_run.json",
+          "field": "library_mounted.entries.checks",
+          "title": "The third shift's mounted library: the checks of both shifts",
+          "seconds": 5
+        },
+        {
+          "kind": "clip",
+          "panel": {
+            "requirement": [
+              "cream cheese in the black bowl",
+              "bowl on the cabinet top"
+            ],
+            "rule": "the cheese goes in before the bowl moves",
+            "program": "cheese-bowl-complete30 (j0004), saved as the job",
+            "current": "auto",
+            "count": {
+              "text": "{k} of {n} delivered",
+              "detail": "the third shift's saved program, development starts 0 to 9",
+              "from": {
+                "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-03/run/log/job_episodes.parquet",
+                "where": {
+                  "job_id": "j0004"
+                },
+                "success": "delivered",
+                "key": [
+                  "episode_id"
+                ]
+              }
+            }
+          },
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-03/run",
+            "episode": "e000401",
+            "label": "the saved program (j0004), development start 0, the first it delivered on",
+            "speed": 2,
+            "hold": 0.5,
+            "rerender": {
+              "video": "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-s03/e000401.rerender.scene.720px.mp4",
+              "verification": "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-s03/e000401.rerender.scene.720px.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "a7-release",
+      "story": "A",
+      "title": "The release",
+      "subtitle": "reserved starts no shift had touched, beside the naive chain: released",
+      "shots": [
+        {
+          "kind": "pair",
+          "panel": {
+            "requirement": [
+              "cream cheese in the black bowl",
+              "bowl on the cabinet top"
+            ],
+            "rule": "the cheese goes in before the bowl moves",
+            "program": "before: naive chain · after: the saved job",
+            "current": "auto",
+            "follow": 1,
+            "count": [
+              {
+                "text": "naive chain: {k} of {n}",
+                "detail": "the reserved release starts",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/run/run/log/job_episodes.parquet",
+                  "where": {
+                    "job_id": "j0002"
+                  },
+                  "success": "delivered",
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "saved job: {k} of {n}",
+                "detail": "the same reserved starts",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/run/run/log/job_episodes.parquet",
+                  "where": {
+                    "job_id": "j0001"
+                  },
+                  "success": "delivered",
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              }
+            ]
+          },
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/run/run",
+              "episode": "e000202",
+              "label": "naive chain, reserved start 31",
+              "speed": 2,
+              "hold": 0.5,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-release/e000202.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-release/e000202.rerender.scene.720px.json"
+              }
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/run/run",
+              "episode": "e000102",
+              "label": "the saved job, reserved start 31",
+              "speed": 2,
+              "hold": 0.5,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-release/e000102.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-release/e000102.rerender.scene.720px.json"
+              }
+            }
+          ],
+          "note": "The same reserved start: initial state 31, the first start the job rescued."
+        },
+        {
+          "kind": "card",
+          "seconds": 6,
+          "title": "Delivered {release_delivered} of {release_n}; the lead's bar is {release_k}",
+          "subtitle": "Naive chain on the same starts: {release_naive_delivered}. Rescued {release_rescued}, broken {release_broken}, order violations {release_order_violations}. Released.",
+          "note": "From the release run's receipt, judged against the shift lead's bar."
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/job_run.json",
+          "field": "release_reissued.reason",
+          "title": "The shift lead's judgment of the recorded release",
+          "seconds": 6
+        }
+      ]
+    },
+    {
+      "id": "a8-close",
+      "story": "A",
+      "title": "What changed",
+      "subtitle": "a released job, with the checks and skills of every shift behind it",
+      "shots": [
+        {
+          "kind": "messages",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/library/index.json",
+          "field": "entries",
+          "lines": [
+            1,
+            1
+          ],
+          "seconds": 3
+        },
+        {
+          "kind": "messages",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/library/index.json",
+          "field": "entries",
+          "lines": [
+            5,
+            5
+          ],
+          "seconds": 3
+        },
+        {
+          "kind": "messages",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/library/index.json",
+          "field": "entries",
+          "lines": [
+            2,
+            4
+          ],
+          "seconds": 4,
+          "text_key": "name"
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/job_run.json",
+          "field": "library.skills",
+          "title": "Skills saved by the first shift",
+          "seconds": 2
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/job_run.json",
+          "field": "library.skills",
+          "title": "Skills saved by the second shift",
+          "seconds": 2
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/job_run.json",
+          "field": "library.skills",
+          "title": "Skills saved by the third shift",
+          "seconds": 2
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-1/job_run.json",
+          "field": "library.checks",
+          "title": "The second job's first shift: its own check",
+          "seconds": 8
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-2/job_run.json",
+          "field": "library.checks",
+          "title": "The second shift: its own check",
+          "seconds": 8
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/job_run.json",
+          "field": "library.jobs",
+          "title": "The third shift: its saved program, a guarded placement retry",
+          "seconds": 10
+        },
+        {
+          "kind": "card",
+          "seconds": 6,
+          "title": "The robot policy stayed the same. The cabinet job is released.",
+          "subtitle": "The cheese in the bowl, the loaded bowl on the cabinet: {release_delivered} of {release_n} on the reserved starts against the shift lead's bar of {release_k}. The naive chain delivered {release_naive_delivered} of {release_n} on the same starts."
+        }
+      ]
+    },
+    {
+      "id": "b0-title",
+      "story": "B",
+      "title": "Story B",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 3,
+          "title": "Make that a check the next shift can run",
+          "subtitle": "A fleet with a delay nobody on site can remove, and a second lag that looks the same."
+        }
+      ]
+    },
+    {
+      "id": "b1-constraint",
+      "story": "B",
+      "title": "The fleet and the lag that misleads",
+      "subtitle": "a real operating constraint",
+      "shots": [
+        {
+          "kind": "image",
+          "image": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/exhibit/figures/r1-fleet-sites.png",
+          "seconds": 5,
+          "label": "Round 1: success by site and day (the fleet's regular work)"
+        },
+        {
+          "kind": "clip",
+          "panel": {
+            "count": [
+              {
+                "text": "site s1: {k} of {n} succeed",
+                "detail": "the fleet's regular work before any change",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB/export/log/episodes.parquet",
+                  "where": {
+                    "site_id": "s1",
+                    "experiment_id": null
+                  },
+                  "success": {
+                    "outcome": "success"
+                  },
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "robot r06: {k} of {n} succeed",
+                "detail": "the fleet's regular work before any change",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB/export/log/episodes.parquet",
+                  "where": {
+                    "robot_id": "r06",
+                    "experiment_id": null
+                  },
+                  "success": {
+                    "outcome": "success"
+                  },
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              }
+            ]
+          },
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB/export",
+            "episode": "e000010",
+            "label": "site s1, robot r04, day 4: a failed attempt (first failure at s1)",
+            "speed": 2,
+            "hold": 0.5,
+            "note": "Original recording (360 px, a frame every fourth step): the fleet's runs record no replay that the jobs replay can verify."
+          }
+        },
+        {
+          "kind": "clip",
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB/export",
+            "episode": "e000041",
+            "label": "robot r06, day 1: a failed attempt (its first failure)",
+            "speed": 2,
+            "hold": 0.5,
+            "note": "Original recording (360 px, a frame every fourth step): the fleet's runs record no replay that the jobs replay can verify."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2-instrument",
+      "story": "B",
+      "title": "The instrument",
+      "subtitle": "the harness lets an agent build a measurement",
+      "shots": [
+        {
+          "kind": "calls",
+          "file": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/engagement/agent-runs/20261019T225055-cc5371d4/stdout.jsonl",
+          "tools": [
+            "request_probe"
+          ],
+          "seconds": 7
+        },
+        {
+          "kind": "image",
+          "image": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-3/figures/probe-first-fleet.png",
+          "seconds": 8,
+          "label": "The agent's probe p0001, drawn from its recorded tables: commanded against measured"
+        }
+      ]
+    },
+    {
+      "id": "b3-change",
+      "story": "B",
+      "title": "The change",
+      "subtitle": "the probe selects candidates; recorded task experiments decide",
+      "shots": [
+        {
+          "kind": "image",
+          "image": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/exhibit/figures/r1-experiments.png",
+          "seconds": 4,
+          "label": "Round 1's experiments: success by arm"
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/ledgers/ledger-r1.json",
+          "field": "entries.0.rationale",
+          "title": "L1 · set control.latency_compensation_steps at s1 to 17",
+          "seconds": 6
+        },
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r1/experiments/w80-20261019T224617-a1f33d/session-02",
+              "episode": "e001939",
+              "label": "x0002 control, robot r01",
+              "speed": 2,
+              "hold": 0.5,
+              "note": "Experiment x0002, first paired position where the control failed and the adopted arm succeeded; same robot, task and initial state. Original recording (360 px, a frame every fourth step): the fleet's runs record no replay that the jobs replay can verify."
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r1/experiments/w80-20261019T224617-a1f33d/session-02",
+              "episode": "e001941",
+              "label": "x0002 arm 2: compensation 17, robot r01",
+              "speed": 2,
+              "hold": 0.5
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/ledgers/ledger-r1.json",
+          "field": "entries.1.rationale",
+          "title": "L2 · revert software.version at s3",
+          "seconds": 6
+        },
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r1/experiments/w80-20261019T224617-a1f33d/session-02",
+              "episode": "e001744",
+              "label": "x0001 control, robot r10",
+              "speed": 2,
+              "hold": 0.5,
+              "note": "Experiment x0001, first such paired position. Original recording (360 px, a frame every fourth step): the fleet's runs record no replay that the jobs replay can verify."
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r1/experiments/w80-20261019T224617-a1f33d/session-02",
+              "episode": "e001745",
+              "label": "x0001 arm 1: software reverted, robot r10",
+              "speed": 2,
+              "hold": 0.5
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/ledgers/ledger-r1.json",
+          "field": "entries.2.rationale",
+          "title": "L3 · service the controller of r06",
+          "seconds": 6
+        },
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r1/experiments/w80-20261019T224617-a1f33d/session-02",
+              "episode": "e002117",
+              "label": "x0003 control, robot r06",
+              "speed": 2,
+              "hold": 0.5,
+              "note": "Experiment x0003, first such paired position. Original recording (360 px, a frame every fourth step): the fleet's runs record no replay that the jobs replay can verify."
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r1/experiments/w80-20261019T224617-a1f33d/session-02",
+              "episode": "e002118",
+              "label": "x0003 arm 1: controller serviced, robot r06",
+              "speed": 2,
+              "hold": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b4-evaluation",
+      "story": "B",
+      "title": "The evaluation",
+      "subtitle": "reserved attempts the agent never saw, before and after",
+      "shots": [
+        {
+          "kind": "image",
+          "image": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/exhibit/figures/panel-states.png",
+          "seconds": 5,
+          "label": "The reserved panel: success by state",
+          "panel": {
+            "count": [
+              {
+                "text": "before: {k} of {n}",
+                "detail": "original state, the reserved attempts",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+                  "where": {
+                    "state": "original"
+                  },
+                  "success": "success",
+                  "key": [
+                    "state",
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "after: {k} of {n}",
+                "detail": "after the adopted changes, the same attempts",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+                  "where": {
+                    "state": "round-2"
+                  },
+                  "success": "success",
+                  "key": [
+                    "state",
+                    "episode_id"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "image",
+          "image": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/exhibit/figures/panel-pairs.png",
+          "seconds": 4,
+          "label": "Attempts rescued and broken on the same reserved attempts"
+        },
+        {
+          "kind": "image",
+          "image": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/exhibit/figures/panel-robots.png",
+          "seconds": 6,
+          "label": "By robot and state",
+          "panel": {
+            "count": [
+              {
+                "text": "s1 after: {k} of {n}",
+                "detail": null,
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+                  "where": {
+                    "state": "round-2",
+                    "site_id": "s1"
+                  },
+                  "success": "success",
+                  "key": [
+                    "state",
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "s2 after: {k} of {n}",
+                "detail": null,
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+                  "where": {
+                    "state": "round-2",
+                    "site_id": "s2"
+                  },
+                  "success": "success",
+                  "key": [
+                    "state",
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "s3 after: {k} of {n}",
+                "detail": null,
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+                  "where": {
+                    "state": "round-2",
+                    "site_id": "s3"
+                  },
+                  "success": "success",
+                  "key": [
+                    "state",
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "r06 before: {k} of {n}",
+                "detail": null,
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+                  "where": {
+                    "state": "original",
+                    "robot_id": "r06"
+                  },
+                  "success": "success",
+                  "key": [
+                    "state",
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "r06 after: {k} of {n}",
+                "detail": null,
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+                  "where": {
+                    "state": "round-2",
+                    "robot_id": "r06"
+                  },
+                  "success": "success",
+                  "key": [
+                    "state",
+                    "episode_id"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "b5-second-use",
+      "story": "B",
+      "title": "The second use",
+      "subtitle": "the saved recipe tells the two lags apart on a new fleet",
+      "shots": [
+        {
+          "kind": "clip",
+          "panel": {
+            "count": [
+              {
+                "text": "robot r06: {k} of {n} succeed",
+                "detail": "the later fleet's regular work",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB-LATER/export/log/episodes.parquet",
+                  "where": {
+                    "robot_id": "r06",
+                    "experiment_id": null
+                  },
+                  "success": {
+                    "outcome": "success"
+                  },
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              },
+              {
+                "text": "robot r11: {k} of {n} succeed",
+                "detail": "the later fleet's regular work",
+                "from": {
+                  "table": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB-LATER/export/log/episodes.parquet",
+                  "where": {
+                    "robot_id": "r11",
+                    "experiment_id": null
+                  },
+                  "success": {
+                    "outcome": "success"
+                  },
+                  "key": [
+                    "episode_id"
+                  ]
+                }
+              }
+            ]
+          },
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB-LATER/export",
+            "episode": "e000175",
+            "label": "later fleet, robot r06, day 2: a failed attempt (its first failure)",
+            "speed": 2,
+            "hold": 0.5,
+            "note": "Original recording (360 px, a frame every fourth step): the fleet's runs record no replay that the jobs replay can verify."
+          }
+        },
+        {
+          "kind": "image",
+          "image": "~/.cache/robots-probes/demo/2026-10-20/instrument/second-use/check-2/probe.png",
+          "seconds": 8,
+          "label": "The saved recipe on the later fleet: commanded against measured"
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/engagement/learned/learned-81c70b2a7a9e3b60/skills/separate-fixed-transport-delay-from-controller-backlog/SKILL.md",
+          "lines": [
+            63,
+            64
+          ],
+          "title": "The skill's rule (separate-fixed-transport-delay-from-controller-backlog)",
+          "seconds": 6
+        },
+        {
+          "kind": "text",
+          "file": "~/.cache/robots-probes/demo/2026-10-20/instrument/second-use/check-2/decision.md",
+          "lines": [
+            18,
+            30
+          ],
+          "title": "The operator's decision on the later fleet (the host acting as operator)",
+          "seconds": 8
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "title": "The record",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 4,
+          "title": "Every clip in this film is a recorded run.",
+          "subtitle": "The record lists each run and episode, with the SHA-256 of every file."
+        }
+      ]
+    }
+  ],
+  "public": {
+    "aliases": {
+      "w80": "w08",
+      "w81": "w09"
+    },
+    "forbid": [
+      "(?<![A-Za-z0-9])w8[0-9](?![0-9])"
+    ]
+  }
+}

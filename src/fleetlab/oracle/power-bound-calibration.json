@@ -1,0 +1,115 @@
+{
+ "seed": 20261010,
+ "worlds_per_cell": 1000,
+ "boot": 1000,
+ "scoring_attempts": 336,
+ "guaranteed_power": 0.8,
+ "method": "Cantelli sample bound; Bernstein bootstrap bound; binomial Chernoff bound",
+ "assumptions": "Independent binary counterfactual vectors across carriers (not necessarily iid); independent episode-bootstrap draws; noncarriers contribute zero. Probability is over carrier samples and bootstrap draws, not a fixed replay table.",
+ "cells": [
+  {
+   "pair": "w42 f01+f02",
+   "carriers": 28,
+   "model": "maximal +/-2 spread",
+   "sufficient_excess_power_bound_points": 14.099,
+   "expected_excess_net": 47.372640000000004,
+   "counts": {
+    "contradicted": 1000,
+    "below the sum": 0,
+    "not contradicted": 0
+   },
+   "contradiction_rate": 1.0
+  },
+  {
+   "pair": "w42 f01+f02",
+   "carriers": 28,
+   "model": "independent counterfactuals",
+   "sufficient_excess_power_bound_points": 14.099,
+   "expected_excess_net": 47.372640000000004,
+   "counts": {
+    "contradicted": 1000,
+    "below the sum": 0,
+    "not contradicted": 0
+   },
+   "contradiction_rate": 1.0
+  },
+  {
+   "pair": "w42 f01+f03",
+   "carriers": 28,
+   "model": "maximal +/-2 spread",
+   "sufficient_excess_power_bound_points": 14.099,
+   "expected_excess_net": 47.372640000000004,
+   "counts": {
+    "contradicted": 1000,
+    "below the sum": 0,
+    "not contradicted": 0
+   },
+   "contradiction_rate": 1.0
+  },
+  {
+   "pair": "w42 f01+f03",
+   "carriers": 28,
+   "model": "independent counterfactuals",
+   "sufficient_excess_power_bound_points": 14.099,
+   "expected_excess_net": 47.372640000000004,
+   "counts": {
+    "contradicted": 1000,
+    "below the sum": 0,
+    "not contradicted": 0
+   },
+   "contradiction_rate": 1.0
+  },
+  {
+   "pair": "w43 f01+f02",
+   "carriers": 28,
+   "model": "maximal +/-2 spread",
+   "sufficient_excess_power_bound_points": 14.099,
+   "expected_excess_net": 47.372640000000004,
+   "counts": {
+    "contradicted": 1000,
+    "below the sum": 0,
+    "not contradicted": 0
+   },
+   "contradiction_rate": 1.0
+  },
+  {
+   "pair": "w43 f01+f02",
+   "carriers": 28,
+   "model": "independent counterfactuals",
+   "sufficient_excess_power_bound_points": 14.099,
+   "expected_excess_net": 47.372640000000004,
+   "counts": {
+    "contradicted": 1000,
+    "below the sum": 0,
+    "not contradicted": 0
+   },
+   "contradiction_rate": 1.0
+  },
+  {
+   "pair": "112 carriers",
+   "carriers": 112,
+   "model": "maximal +/-2 spread",
+   "sufficient_excess_power_bound_points": 33.652,
+   "expected_excess_net": 113.07072,
+   "counts": {
+    "contradicted": 1000,
+    "below the sum": 0,
+    "not contradicted": 0
+   },
+   "contradiction_rate": 1.0
+  },
+  {
+   "pair": "112 carriers",
+   "carriers": 112,
+   "model": "independent counterfactuals",
+   "sufficient_excess_power_bound_points": 33.652,
+   "expected_excess_net": 113.07072,
+   "counts": {
+    "contradicted": 1000,
+    "below the sum": 0,
+    "not contradicted": 0
+   },
+   "contradiction_rate": 1.0
+  }
+ ]
+}

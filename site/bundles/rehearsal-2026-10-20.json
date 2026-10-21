@@ -1,0 +1,15 @@
+{
+  "format": "fleetlab.film-site/1",
+  "title": "The installation takes on a new job",
+  "lede": "Rehearsal of 20 October 2026. A simulated robot installation with one robot policy that never changes, and agents that improve the installation around it. Story A: two investigations of one job, neither released, each with its account; story B: an engagement on a robot fleet and the reuse of its probe recipe. The record page is written from the demo's runs and is not part of this build yet.",
+  "film": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/film",
+  "public": {
+    "aliases": {
+      "w80": "w08",
+      "w81": "w09"
+    },
+    "forbid": [
+      "(?<![A-Za-z0-9])w8[0-9](?![0-9])"
+    ]
+  }
+}

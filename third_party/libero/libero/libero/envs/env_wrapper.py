@@ -1,0 +1,323 @@
+import os
+import numpy as np
+import matplotlib.cm as cm
+
+from robosuite.utils.errors import RandomizationError
+
+import libero.libero.envs.bddl_utils as BDDLUtils
+from libero.libero.envs import *
+
+
+def load_arm_controller_config(controller="OSC_POSE", robots=("Panda",)):
+    """Load a controller config that works on both robosuite 1.4 and >= 1.5.
+
+    robosuite 1.5 removed the flat ``load_controller_config`` loader in favour of
+    the composite-controller framework. This helper returns a config accepted by
+    the env constructor's ``controller_configs=`` kwarg on either version:
+
+    * robosuite >= 1.5: load the part-level config (e.g. ``OSC_POSE``) and wrap it
+      into a ``BASIC`` composite controller via ``refactor_composite_controller_config``.
+      The part config carries the same numeric defaults (kp, output limits, ...) as
+      the 1.4 controller, so the arm behaves identically.
+    * robosuite <= 1.4: fall back to the original ``load_controller_config``.
+
+    LIBERO is single-arm (Panda), so the arm part is wrapped under the ``"right"`` key.
+    """
+    robot_type = robots[0] if isinstance(robots, (list, tuple)) else robots
+    try:
+        from robosuite.controllers import load_part_controller_config
+        from robosuite.controllers.composite.composite_controller_factory import (
+            refactor_composite_controller_config,
+        )
+    except ImportError:
+        # robosuite <= 1.4
+        from robosuite import load_controller_config
+
+        return load_controller_config(default_controller=controller)
+
+    part_config = load_part_controller_config(default_controller=controller)
+    return refactor_composite_controller_config(part_config, robot_type, ["right"])
+
+
+class ControlEnv:
+    def __init__(
+        self,
+        bddl_file_name,
+        robots=["Panda"],
+        controller="OSC_POSE",
+        gripper_types="default",
+        initialization_noise=None,
+        use_camera_obs=True,
+        has_renderer=False,
+        has_offscreen_renderer=True,
+        render_camera="frontview",
+        render_collision_mesh=False,
+        render_visual_mesh=True,
+        render_gpu_device_id=-1,
+        control_freq=20,
+        horizon=1000,
+        ignore_done=False,
+        hard_reset=True,
+        camera_names=[
+            "agentview",
+            "robot0_eye_in_hand",
+        ],
+        camera_heights=128,
+        camera_widths=128,
+        camera_depths=False,
+        camera_segmentations=None,
+        renderer="mujoco",
+        renderer_config=None,
+        **kwargs,
+    ):
+        assert os.path.exists(
+            bddl_file_name
+        ), f"[error] {bddl_file_name} does not exist!"
+
+        controller_configs = load_arm_controller_config(controller, robots)
+
+        problem_info = BDDLUtils.get_problem_info(bddl_file_name)
+        # Check if we're using a multi-armed environment and use env_configuration argument if so
+
+        # Create environment
+        self.problem_name = problem_info["problem_name"]
+        self.domain_name = problem_info["domain_name"]
+        self.language_instruction = problem_info["language_instruction"]
+        self.env = TASK_MAPPING[self.problem_name](
+            bddl_file_name,
+            robots=robots,
+            controller_configs=controller_configs,
+            gripper_types=gripper_types,
+            initialization_noise=initialization_noise,
+            use_camera_obs=use_camera_obs,
+            has_renderer=has_renderer,
+            has_offscreen_renderer=has_offscreen_renderer,
+            render_camera=render_camera,
+            render_collision_mesh=render_collision_mesh,
+            render_visual_mesh=render_visual_mesh,
+            render_gpu_device_id=render_gpu_device_id,
+            control_freq=control_freq,
+            horizon=horizon,
+            ignore_done=ignore_done,
+            hard_reset=hard_reset,
+            camera_names=camera_names,
+            camera_heights=camera_heights,
+            camera_widths=camera_widths,
+            camera_depths=camera_depths,
+            camera_segmentations=camera_segmentations,
+            renderer=renderer,
+            renderer_config=renderer_config,
+            **kwargs,
+        )
+
+    @property
+    def obj_of_interest(self):
+        return self.env.obj_of_interest
+
+    def step(self, action):
+        return self.env.step(action)
+
+    def reset(self):
+        success = False
+        while not success:
+            try:
+                ret = self.env.reset()
+                success = True
+            except RandomizationError:
+                pass
+            finally:
+                continue
+
+        return ret
+
+    def check_success(self):
+        return self.env._check_success()
+
+    @property
+    def _visualizations(self):
+        return self.env._visualizations
+
+    @property
+    def robots(self):
+        return self.env.robots
+
+    @property
+    def sim(self):
+        return self.env.sim
+
+    def get_sim_state(self):
+        return self.env.sim.get_state().flatten()
+
+    def _post_process(self):
+        return self.env._post_process()
+
+    def _update_observables(self, force=False):
+        self.env._update_observables(force=force)
+
+    def set_state(self, mujoco_state):
+        self.env.sim.set_state_from_flattened(mujoco_state)
+
+    def reset_from_xml_string(self, xml_string):
+        self.env.reset_from_xml_string(xml_string)
+
+    def seed(self, seed):
+        # robosuite <= 1.4 exposes env.seed(); >= 1.5 dropped it and drives placement /
+        # resets off env.rng (a numpy Generator). Re-seed that Generator in place so the
+        # placement samplers, which hold a reference to it, become deterministic.
+        seed_fn = getattr(self.env, "seed", None)
+        if callable(seed_fn):
+            seed_fn(seed)
+        elif getattr(self.env, "rng", None) is not None:
+            self.env.rng.bit_generator.state = np.random.default_rng(seed).bit_generator.state
+            # fleetlab: on robosuite >= 1.5 the attribute `seed` hides BDDLBaseDomain.seed(),
+            # which seeded numpy's global generator. LIBERO's own samplers (fixture placement,
+            # open/close and on/off ranges) draw from that generator, not from env.rng.
+            # Without a seed the generator is left to run on, not restarted from the clock:
+            # Gymnasium resets a finished environment that way in mid-evaluation, and a
+            # whole run started from one seed should still repeat.
+            if seed is not None:
+                np.random.seed(seed)
+
+    def set_init_state(self, init_state):
+        return self.regenerate_obs_from_state(init_state)
+
+    def regenerate_obs_from_state(self, mujoco_state):
+        self.set_state(mujoco_state)
+        self.env.sim.forward()
+        self.check_success()
+        self._post_process()
+        self._update_observables(force=True)
+        return self.env._get_observations()
+
+    def close(self):
+        self.env.close()
+        del self.env
+
+
+class OffScreenRenderEnv(ControlEnv):
+    """
+    For visualization and evaluation.
+    """
+
+    def __init__(self, **kwargs):
+        # This shouldn't be customized
+        kwargs["has_renderer"] = False
+        kwargs["has_offscreen_renderer"] = True
+        super().__init__(**kwargs)
+
+
+class SegmentationRenderEnv(OffScreenRenderEnv):
+    """
+    This wrapper will additionally generate the segmentation mask of objects,
+    which is useful for comparing attention.
+    """
+
+    def __init__(
+        self,
+        camera_segmentations="instance",
+        camera_heights=128,
+        camera_widths=128,
+        **kwargs,
+    ):
+        assert camera_segmentations is not None
+        kwargs["camera_segmentations"] = camera_segmentations
+        kwargs["camera_heights"] = camera_heights
+        kwargs["camera_widths"] = camera_widths
+        self.segmentation_id_mapping = {}
+        self.instance_to_id = {}
+        self.segmentation_robot_id = None
+        super().__init__(**kwargs)
+
+    def step(self, action):
+        return self.env.step(action)
+
+    def reset(self):
+        obs = self.env.reset()
+        self.segmentation_id_mapping = {}
+
+        for i, instance_name in enumerate(list(self.env.model.instances_to_ids.keys())):
+            if instance_name == "Panda0":
+                self.segmentation_robot_id = i
+
+        for i, instance_name in enumerate(list(self.env.model.instances_to_ids.keys())):
+            if instance_name not in ["Panda0", "RethinkMount0", "PandaGripper0"]:
+                self.segmentation_id_mapping[i] = instance_name
+
+        self.instance_to_id = {
+            v: k + 1 for k, v in self.segmentation_id_mapping.items()
+        }
+        return obs
+
+    def get_segmentation_instances(self, segmentation_image):
+        # get all instances' segmentation separately
+        seg_img_dict = {}
+        segmentation_image[segmentation_image > self.segmentation_robot_id] = (
+            self.segmentation_robot_id + 1
+        )
+        seg_img_dict["robot"] = segmentation_image * (
+            segmentation_image == self.segmentation_robot_id + 1
+        )
+
+        for seg_id, instance_name in self.segmentation_id_mapping.items():
+            seg_img_dict[instance_name] = segmentation_image * (
+                segmentation_image == seg_id + 1
+            )
+        return seg_img_dict
+
+    def get_segmentation_of_interest(self, segmentation_image):
+        # get the combined segmentation of obj of interest
+        # 1 for obj_of_interest
+        # -1.0 for robot
+        # 0 for other things
+        ret_seg = np.zeros_like(segmentation_image)
+        for obj in self.obj_of_interest:
+            ret_seg[segmentation_image == self.instance_to_id[obj]] = 1.0
+        # ret_seg[segmentation_image == self.segmentation_robot_id+1] = -1.0
+        ret_seg[segmentation_image == 0] = -1.0
+        return ret_seg
+
+    def segmentation_to_rgb(self, seg_im, random_colors=False):
+        """
+        Helper function to visualize segmentations as RGB frames.
+        NOTE: assumes that geom IDs go up to 255 at most - if not,
+        multiple geoms might be assigned to the same color.
+        """
+        # ensure all values lie within [0, 255]
+        seg_im = np.mod(seg_im, 256)
+
+        if random_colors:
+            colors = randomize_colors(N=256, bright=True)
+            return (255.0 * colors[seg_im]).astype(np.uint8)
+        else:
+            # deterministic shuffling of values to map each geom ID to a random int in [0, 255]
+            rstate = np.random.RandomState(seed=2)
+            inds = np.arange(256)
+            rstate.shuffle(inds)
+            seg_img = (
+                np.array(255.0 * cm.rainbow(inds[seg_im], 10))
+                .astype(np.uint8)[..., :3]
+                .astype(np.uint8)
+                .squeeze(-2)
+            )
+            print(seg_img.shape)
+            cv2.imshow("Seg Image", seg_img[::-1])
+            cv2.waitKey(1)
+            # use @inds to map each geom ID to a color
+            return seg_img
+
+
+class DemoRenderEnv(ControlEnv):
+    """
+    For visualization and evaluation.
+    """
+
+    def __init__(self, **kwargs):
+        # This shouldn't be customized
+        kwargs["has_renderer"] = False
+        kwargs["has_offscreen_renderer"] = True
+        kwargs["render_camera"] = "frontview"
+
+        super().__init__(**kwargs)
+
+    def _get_observations(self):
+        return self.env._get_observations()

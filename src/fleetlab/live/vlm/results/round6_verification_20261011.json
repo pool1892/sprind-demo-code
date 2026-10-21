@@ -1,0 +1,117 @@
+{
+  "code_commit": "0ba4874c99cdf9bf3d30020164bc45739a505296",
+  "main_merged": "6cbfe98",
+  "checks": {
+    "lint": {
+      "command": "TMPDIR=/var/tmp/robots-supervisor uv run --locked ruff check src/fleetlab/live/vlm tests/test_supervisor*.py tests/test_vlm*.py tests/test_skills_supervisor.py",
+      "exit": 0
+    },
+    "format": {
+      "command": "TMPDIR=/var/tmp/robots-supervisor uv run --locked ruff format --check src/fleetlab/live/vlm tests/test_supervisor*.py tests/test_vlm*.py tests/test_skills_supervisor.py",
+      "exit": 0
+    },
+    "mypy": {
+      "command": "TMPDIR=/var/tmp/robots-supervisor uv run --locked mypy",
+      "exit": 0,
+      "source_files": 393
+    },
+    "own_tests": {
+      "command": "TMPDIR=/var/tmp/robots-supervisor uv run --locked pytest tests/test_supervisor*.py tests/test_vlm*.py tests/test_skills_supervisor.py -q",
+      "exit": 0,
+      "passed": 145,
+      "skipped": 1,
+      "seconds": 15.92,
+      "note": "revision file rerun after typed callback cleanup: 8 passed, exit 0"
+    },
+    "harness": {
+      "code": "adf82f5 with owned test files from 0ba4874",
+      "exit": 0,
+      "passed": 3,
+      "seconds": 14.72,
+      "light_job": true,
+      "dirty_checkout": true,
+      "fixture_revision": "supervisor-harness-fixture-v1",
+      "note": "two cases still assert known StopIteration; harness repair outstanding"
+    },
+    "mutations": {
+      "receipt": "/home/cs/.cache/robots-supervisor/round6-mutations/receipt.json",
+      "caught": 7,
+      "tested": 7,
+      "cases": [
+        {
+          "break": "revision: the profile's effort is not passed to the call",
+          "test": "tests/test_supervisor_revision.py::test_profile_model_and_effort_reach_the_subscription_call",
+          "exit": 1
+        },
+        {
+          "break": "revision: the profile's model is not passed to the call",
+          "test": "tests/test_supervisor_revision.py::test_profile_model_and_effort_reach_the_subscription_call",
+          "exit": 1
+        },
+        {
+          "break": "ceiling: an arm with a failed replay proof is counted",
+          "test": "tests/test_supervisor_ceiling.py::test_ceiling_refuses_an_arm_with_a_failed_replay_proof",
+          "exit": 1
+        },
+        {
+          "break": "ceiling: the 20 successes are run and counted too",
+          "test": "tests/test_supervisor_ceiling.py::test_ceiling_runs_only_the_60_original_failures",
+          "exit": 1
+        },
+        {
+          "break": "offline: every call at effort xhigh whatever the variant",
+          "test": "tests/test_supervisor_offline.py::test_offline_call_preserves_prompt_images_and_each_variant",
+          "exit": 1
+        },
+        {
+          "break": "offline: the prompt is changed before it is sent",
+          "test": "tests/test_supervisor_offline.py::test_offline_call_preserves_prompt_images_and_each_variant",
+          "exit": 1
+        },
+        {
+          "break": "offline: the images are sent in reverse order",
+          "test": "tests/test_supervisor_offline.py::test_offline_call_preserves_prompt_images_and_each_variant",
+          "exit": 1
+        }
+      ]
+    },
+    "dry_start": {
+      "exit": 0,
+      "checkout": "/home/cs/.cache/robots-supervisor/round6-dry-checkout",
+      "output": "/home/cs/.cache/robots-supervisor/dry-start-round6-v1",
+      "source_identities_per_arm": 80,
+      "miopen_hash": "7751323820effb28",
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "first_step": 120,
+      "max_calls": 1,
+      "model_calls": 0,
+      "gpu_jobs": 0,
+      "boundaries": [
+        "timeout before engine.fleet.run",
+        "vlm before engine.fleet.run"
+      ]
+    }
+  },
+  "artifacts": {
+    "/home/cs/.cache/robots-supervisor/round6-mutations/receipt.json": "f0a00d3f4f73e179477386a7a6aae281f6273b3cf2618b9ab8dc1136011c8cb9",
+    "/home/cs/.cache/robots-supervisor/dry-start-round6-v1/timeout/dry-start.json": "30d2e03115efb6875c17cf776cd613892089cae9144c3527bd749ad50e4a4d4c",
+    "/home/cs/.cache/robots-supervisor/dry-start-round6-v1/vlm/dry-start.json": "ec1314d571a65a1917bc11c017d288aab44d6c911415b152a1a617a531e83fd1",
+    "/home/cs/.cache/robots-supervisor/dry-start-round6-v1/timeout/manifest.jsonl": "b318bf2f74fdfc3d85d48f2c2deb7e83dccd1c367155343152633ad510281dc7",
+    "/home/cs/.cache/robots-supervisor/dry-start-round6-v1/vlm/manifest.jsonl": "7ce5119f70e5ef5de28c4e54276acae77b5398523eba7d354de055753087be23"
+  },
+  "open": [
+    "terminal and failed-call harness repair; replace defect assertions then",
+    "dynamic queue scheduler, supervisor callback input verified",
+    "actual paired measurement: estimated 74 model calls and two GPU jobs",
+    "orchestrator integration and independent review"
+  ],
+  "not_run": [
+    "model sessions",
+    "GPU jobs",
+    "full make check",
+    "make check-sim",
+    "make smoke-world",
+    "actual D2 measurement"
+  ]
+}

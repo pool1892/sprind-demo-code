@@ -1,0 +1,11 @@
+# The nightly worlds; tools/nightly-run says what runs. Installed on this machine with
+#   systemctl --user link "$PWD/tools/systemd/robots-nightly.service" "$PWD/tools/systemd/robots-nightly.timer"
+#   systemctl --user enable --now robots-nightly.timer
+# Results: ~/.cache/robots-probes/nightly/<date>/ (scores.json, comparison.md).
+# A night that fails shows in `systemctl --user status robots-nightly.service`.
+[Unit]
+Description=robots: the two nightly worlds (tools/nightly-run)
+
+[Service]
+Type=oneshot
+ExecStart=/home/cs/code/robots/tools/nightly-run

@@ -1,0 +1,44 @@
+[
+ {
+  "mutation": "planner seed",
+  "test": "tests/test_oracle_exact.py::test_chance_plan_collects_the_same_seeded_joint_needs",
+  "baseline_exit": 0,
+  "mutation_exit": 1,
+  "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n____________ test_chance_plan_collects_the_same_seeded_joint_needs _____________\ntests/test_oracle_exact.py:117: in test_chance_plan_collects_the_same_seeded_joint_needs\n    assert record[\"fix_sets\"] == [\nE   AssertionError: assert [{'label': 'c...': 6.0}}, ...] == [{'label': 'c...': 6.0}}, ...]\nE     \nE     At index 0 diff: {'label': 'chance: k = 3 draw 1', 'actions': [{'verb': 'revert', 'target': {'scope': 'r03', 'component': None, 'config_key': 'control.action_delay_steps', 'condition_key': None}, 'value': None}, {'verb': 'recalibrate', 'target': {'scope': 'r02', 'component': 'scene_camera', 'config_key': None, 'condition_key': None}, 'value': None}, {'verb': 'replace', 'target': {'scope': 'r02', 'component': 'scene_camera', 'config_key': None, 'condition_key': None}, 'value': None}], 'budget': {'kind': 'count', 'amount': 3.0}} != {'label': 'chance: k = 3 draw 1', 'actio...\nE     \nE     ...Full output truncated (2 lines hidden), use '-vv' to show\n=========================== short test summary info ============================\nFAILED tests/test_oracle_exact.py::test_chance_plan_collects_the_same_seeded_joint_needs\n1 failed in 1.34s\n"
+ },
+ {
+  "mutation": "planner seed shift",
+  "test": "tests/test_oracle_exact.py::test_chance_plan_collects_the_same_seeded_joint_needs",
+  "baseline_exit": 0,
+  "mutation_exit": 1,
+  "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n____________ test_chance_plan_collects_the_same_seeded_joint_needs _____________\ntests/test_oracle_exact.py:142: in test_chance_plan_collects_the_same_seeded_joint_needs\n    assert [fs for _, fs in planned] == [fs for sets in draws for fs in sets]\nE   AssertionError: assert [FixSet(actio...nt=6.0)), ...] == [FixSet(actio...nt=6.0)), ...]\nE     \nE     At index 0 diff: FixSet(actions=[Action(verb=<Verb.request_training_data: 'request_training_data'>, target=Target(scope='fleet', component=None, config_key=None, condition_key=None), value='unspecified'), Action(verb=<Verb.replace_: 'replace'>, target=Target(scope='r02', component=<Component.scene_camera: 'scene_camera'>, config_key=None, condition_key=None), value=None), Action(verb=<Verb.revert: 'revert'>, target=Target(scope='r03', component=None, config_key=<ConfigKey.control_action_delay_steps: 'control.action_delay_steps'>, condition_key=None), value=None)], budge...\nE     \nE     ...Full output truncated (2 lines hidden), use '-vv' to show\n=========================== short test summary info ============================\nFAILED tests/test_oracle_exact.py::test_chance_plan_collects_the_same_seeded_joint_needs\n1 failed in 1.18s\n"
+ },
+ {
+  "mutation": "window denominator",
+  "test": "tests/test_oracle_unified.py::test_additive_report_scales_the_band_by_the_actual_window",
+  "baseline_exit": 0,
+  "mutation_exit": 1,
+  "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n__________ test_additive_report_scales_the_band_by_the_actual_window ___________\ntests/test_oracle_unified.py:245: in test_additive_report_scales_the_band_by_the_actual_window\n    assert \"band -20.000 to +20.000 points\" in check.text\nE   AssertionError: assert 'band -20.000 to +20.000 points' in 'joint removal 28 net against 0 and 0 alone over 28 episodes: interaction +28 (+100.00 points, interval +100.00 to +10...-100.0 to -100.0 points; largest excess not excluded -100.0 points; approximate 80% power threshold unavailable points'\nE    +  where 'joint removal 28 net against 0 and 0 alone over 28 episodes: interaction +28 (+100.00 points, interval +100.00 to +10...-100.0 to -100.0 points; largest excess not excluded -100.0 points; approximate 80% power threshold unavailable points' = PatternCheck(pattern='additive_pair', items=['f01', 'f02'], verdict='below the sum', text='joint removal 28 net agains...100.0 to -100.0 points; largest excess not excluded -100.0 points; approximate 80% power threshold unavailable points').text\n=========================== short test summary info ============================\nFAILED tests/test_oracle_unified.py::test_additive_report_scales_the_band_by_the_actual_window\n1 failed in 0.87s\n"
+ },
+ {
+  "mutation": "net_high successes",
+  "test": "tests/test_oracle_unified.py::test_exact_net_high_counts_failures_and_unknowns_not_successes",
+  "baseline_exit": 0,
+  "mutation_exit": 1,
+  "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n________ test_exact_net_high_counts_failures_and_unknowns_not_successes ________\ntests/test_oracle_unified.py:157: in test_exact_net_high_counts_failures_and_unknowns_not_successes\n    assert result.net_low == -2 and result.net_high == 3\nE   AssertionError: assert (-2 == -2 and 2 == 3)\nE    +  where -2 = ExactChance(method='test', sets=1, mean_points=None, p5_points=None, p95_points=None, histogram=[], unvalued_sets=1, n...0.0), 'p5_points': (-50.0, 50.0), 'p95_points': (-50.0, 50.0)}, missing=None, counting_limited=None, uncomputed_sets=0).net_low\nE    +  and   2 = ExactChance(method='test', sets=1, mean_points=None, p5_points=None, p95_points=None, histogram=[], unvalued_sets=1, n...0.0), 'p5_points': (-50.0, 50.0), 'p95_points': (-50.0, 50.0)}, missing=None, counting_limited=None, uncomputed_sets=0).net_high\n=========================== short test summary info ============================\nFAILED tests/test_oracle_unified.py::test_exact_net_high_counts_failures_and_unknowns_not_successes\n1 failed in 0.73s\n"
+ },
+ {
+  "mutation": "upper rank lookup",
+  "test": "tests/test_oracle_unified.py::test_upper_order_statistic_uses_exact_one_based_rank",
+  "baseline_exit": 0,
+  "mutation_exit": 1,
+  "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_____________ test_upper_order_statistic_uses_exact_one_based_rank _____________\ntests/test_oracle_unified.py:177: in test_upper_order_statistic_uses_exact_one_based_rank\n    assert row.p95_points_interval == (0, 8.334)\nE   assert (0.0, 0.0) == (0, 8.334)\nE     \nE     At index 1 diff: 0.0 != 8.334\nE     Use -v to get more diff\n=========================== short test summary info ============================\nFAILED tests/test_oracle_unified.py::test_upper_order_statistic_uses_exact_one_based_rank\n1 failed in 0.88s\n"
+ },
+ {
+  "mutation": "known request replanned",
+  "test": "tests/test_oracle_unified.py::test_known_requested_outcome_plans_no_replay",
+  "baseline_exit": 0,
+  "mutation_exit": 1,
+  "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_________________ test_known_requested_outcome_plans_no_replay _________________\ntests/test_oracle_unified.py:187: in test_known_requested_outcome_plans_no_replay\n    assert (record[\"jobs\"], record[\"proof\"], record[\"needs\"]) == (0, 0, {})\nE   AssertionError: assert (1, 1, {'requ...episodes': 1}) == (0, 0, {})\nE     \nE     At index 0 diff: 1 != 0\nE     Use -v to get more diff\n=========================== short test summary info ============================\nFAILED tests/test_oracle_unified.py::test_known_requested_outcome_plans_no_replay\n1 failed in 1.16s\n"
+ }
+]

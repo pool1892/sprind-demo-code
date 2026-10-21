@@ -1,0 +1,86 @@
+{
+  "request_text": "Make this one job: the cheese goes into the black bowl and the bowl goes up onto the cabinet top. The cheese goes in before the bowl moves. The next shift needs it to deliver on at least three of every five starts it is released on. When a program reaches that share on the development starts you tried it on, save it: the reserved starts decide, and a release that misses there is acceptable to me.",
+  "requested_goals": [
+    {
+      "predicate": "On",
+      "objects": [
+        "cream_cheese_1",
+        "akita_black_bowl_1"
+      ]
+    },
+    {
+      "predicate": "On",
+      "objects": [
+        "akita_black_bowl_1",
+        "wooden_cabinet_1_top_side"
+      ]
+    }
+  ],
+  "base_task": 6,
+  "order_rules": [
+    {
+      "earlier_goal": 0,
+      "later_goal": 1
+    }
+  ],
+  "budget": {
+    "starts_per_request": 20,
+    "requests_per_session": 4,
+    "sessions": 6,
+    "starts_per_investigation": 400
+  },
+  "acceptance": null,
+  "message_log": [],
+  "policy_skills": [
+    {
+      "task": 0,
+      "instruction": "put the wine bottle on top of the cabinet",
+      "goal": "On wine_bottle_1 wooden_cabinet_1_top_side"
+    },
+    {
+      "task": 1,
+      "instruction": "open the top drawer and put the bowl inside",
+      "goal": "In akita_black_bowl_1 wooden_cabinet_1_top_region"
+    },
+    {
+      "task": 2,
+      "instruction": "turn on the stove",
+      "goal": "Turnon flat_stove_1"
+    },
+    {
+      "task": 3,
+      "instruction": "put the bowl on top of the cabinet",
+      "goal": "On akita_black_bowl_1 wooden_cabinet_1_top_side"
+    },
+    {
+      "task": 4,
+      "instruction": "put the bowl on the plate",
+      "goal": "On akita_black_bowl_1 plate_1"
+    },
+    {
+      "task": 5,
+      "instruction": "put the wine bottle on the rack",
+      "goal": "On wine_bottle_1 wine_rack_1_top_region"
+    },
+    {
+      "task": 6,
+      "instruction": "put the cream cheese in the bowl",
+      "goal": "On cream_cheese_1 akita_black_bowl_1"
+    },
+    {
+      "task": 7,
+      "instruction": "open the middle drawer of the cabinet",
+      "goal": "Open wooden_cabinet_1_middle_region"
+    },
+    {
+      "task": 8,
+      "instruction": "push the plate to the front of the stove",
+      "goal": "On plate_1 main_table_stove_front_region"
+    },
+    {
+      "task": 9,
+      "instruction": "put the bowl on the stove",
+      "goal": "On akita_black_bowl_1 flat_stove_1_cook_region"
+    }
+  ]
+}

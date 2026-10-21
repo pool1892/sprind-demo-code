@@ -1,0 +1,3553 @@
+{
+  "about": "Dose-response of the fault types on X-VLA (fp16_res32), libero_spatial, measured 2026-10-08 (docs/design/faults.md, section 6). successes: the fleet's check (placed), before the data hook; libero_successes: LIBERO's own check fired; logged_successes: the visible outcome after the data hook; healthy_successes: the same episodes without the fault; difference: faulted minus healthy as a share, with Newcombe's 95% interval. role: effect (fewer successes beyond noise), decoy (no change beyond noise and a two-point loss excluded), small_cause (neither). Decoy levels were extended to 1,000 pairs on 2026-10-08. Stage 3 (robots-75s.1, docs/design/faults.md section 8) added eleven types and points appended to camera_pose_offset and software_release, against a stage-3 healthy run whose 300 chains equal stage 2's bit for bit (so stage 2's healthy-1000 stays the twin of episodes 300 to 999); role inert: a type without a mechanism whose episodes kept their outcome; verdict inert likewise. 'supplement' holds the joint points (interactions) in the format of fleetlab.worlds' curves_supplement.json; 'stage3' the stage-3 healthy run and the bit-for-bit checks. Type verdicts are stated per task family in verdicts; illumination, backdrop and warmer light are spatial decoys but small causes at the measured object levels (robots-twpc). Object intervals after precision-driven extensions are descriptive. Every point names source run_dirs and healthy_run_dirs; joints also name single_run_dirs. The runs field is the legacy spatial root only.",
+  "runs": "~/.cache/robots-probes/faults/runs",
+  "software": {
+    "lock_hash": "12dd1f1237b40724",
+    "libero_patch_set": "cd1acebf8d9c749c",
+    "mujoco_version": "3.3.7",
+    "miopen_db_hash": "7751323820effb28",
+    "contracts_version": "1.0"
+  },
+  "healthy": {
+    "run_id": "healthy + healthy-1000",
+    "n": 1000,
+    "successes": 968,
+    "libero_successes": 970,
+    "run_dirs": [
+      "/home/cs/.cache/robots-probes/faults/runs/healthy",
+      "/home/cs/.cache/robots-probes/faults/runs/healthy-1000"
+    ]
+  },
+  "types": {
+    "camera_pose_offset": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "scene pan from 3 degrees; the wrist pan is flat at 5 and 10 degrees; the scene camera tilted down (stage 3): 2 degrees flat, 4 degrees -10.7 on 300 pairs, 6 degrees -24",
+      "points": [
+        {
+          "label": "3 deg scene pan",
+          "level": 3.0,
+          "n": 100,
+          "successes": 86,
+          "libero_successes": 86,
+          "logged_successes": 86,
+          "healthy_successes": 98,
+          "broken": 14,
+          "rescued": 2,
+          "p_value": 0.00418,
+          "difference": [
+            -0.12,
+            -0.2035,
+            -0.0438
+          ],
+          "run_id": "camera_pose_offset",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_pose_offset"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "6 deg scene pan",
+          "level": 6.0,
+          "n": 100,
+          "successes": 57,
+          "libero_successes": 62,
+          "logged_successes": 57,
+          "healthy_successes": 98,
+          "broken": 42,
+          "rescued": 1,
+          "p_value": 1e-11,
+          "difference": [
+            -0.41,
+            -0.5089,
+            -0.3047
+          ],
+          "run_id": "camera_pose_offset",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_pose_offset"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "9 deg scene pan",
+          "level": 9.0,
+          "n": 100,
+          "successes": 35,
+          "libero_successes": 36,
+          "logged_successes": 35,
+          "healthy_successes": 98,
+          "broken": 65,
+          "rescued": 2,
+          "p_value": 3.09e-17,
+          "difference": [
+            -0.63,
+            -0.7203,
+            -0.5121
+          ],
+          "run_id": "camera_pose_offset",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_pose_offset"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "5 deg wrist pan",
+          "level": 5.0,
+          "n": 100,
+          "successes": 97,
+          "libero_successes": 97,
+          "logged_successes": 97,
+          "healthy_successes": 98,
+          "broken": 3,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            -0.01,
+            -0.0668,
+            0.0442
+          ],
+          "run_id": "camera_pose_offset",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_pose_offset"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "10 deg wrist pan",
+          "level": 10.0,
+          "n": 100,
+          "successes": 92,
+          "libero_successes": 93,
+          "logged_successes": 92,
+          "healthy_successes": 98,
+          "broken": 8,
+          "rescued": 2,
+          "p_value": 0.109,
+          "difference": [
+            -0.06,
+            -0.1321,
+            0.0046
+          ],
+          "run_id": "camera_pose_offset",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_pose_offset"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "2 deg scene tilt down",
+          "level": 2.0,
+          "n": 100,
+          "successes": 97,
+          "libero_successes": 98,
+          "logged_successes": 97,
+          "healthy_successes": 98,
+          "broken": 3,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            -0.01,
+            -0.0668,
+            0.0442
+          ],
+          "run_id": "s3-camera_pose_offset-tilt",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_pose_offset-tilt"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "4 deg scene tilt down",
+          "level": 4.0,
+          "n": 300,
+          "successes": 264,
+          "libero_successes": 275,
+          "logged_successes": 264,
+          "healthy_successes": 296,
+          "broken": 36,
+          "rescued": 4,
+          "p_value": 1.86e-07,
+          "difference": [
+            -0.1067,
+            -0.1495,
+            -0.0679
+          ],
+          "run_id": "s3-camera_pose_offset-300 + s3-camera_pose_offset-tilt",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_pose_offset-300",
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_pose_offset-tilt"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "6 deg scene tilt down",
+          "level": 6.0,
+          "n": 100,
+          "successes": 74,
+          "libero_successes": 77,
+          "logged_successes": 74,
+          "healthy_successes": 98,
+          "broken": 26,
+          "rescued": 2,
+          "p_value": 3.03e-06,
+          "difference": [
+            -0.24,
+            -0.336,
+            -0.1456
+          ],
+          "run_id": "s3-camera_pose_offset-tilt",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_pose_offset-tilt"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "action_latency": {
+      "verdicts": {
+        "libero_spatial": "kept",
+        "libero_object": "kept"
+      },
+      "note": "17 and 20 steps; 8 and 14 steps are flat",
+      "points": [
+        {
+          "label": "8 steps",
+          "level": 8.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 96,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 4,
+          "rescued": 2,
+          "p_value": 0.688,
+          "difference": [
+            -0.02,
+            -0.0806,
+            0.0363
+          ],
+          "run_id": "action_latency",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/action_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "14 steps",
+          "level": 14.0,
+          "n": 100,
+          "successes": 92,
+          "libero_successes": 95,
+          "logged_successes": 92,
+          "healthy_successes": 98,
+          "broken": 8,
+          "rescued": 2,
+          "p_value": 0.109,
+          "difference": [
+            -0.06,
+            -0.1321,
+            0.0046
+          ],
+          "run_id": "action_latency",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/action_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "17 steps",
+          "level": 17.0,
+          "n": 100,
+          "successes": 53,
+          "libero_successes": 69,
+          "logged_successes": 53,
+          "healthy_successes": 98,
+          "broken": 46,
+          "rescued": 1,
+          "p_value": 6.82e-13,
+          "difference": [
+            -0.45,
+            -0.5482,
+            -0.3427
+          ],
+          "run_id": "action_latency",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/action_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "20 steps",
+          "level": 20.0,
+          "n": 100,
+          "successes": 23,
+          "libero_successes": 51,
+          "logged_successes": 23,
+          "healthy_successes": 98,
+          "broken": 75,
+          "rescued": 0,
+          "p_value": 5.29e-23,
+          "difference": [
+            -0.75,
+            -0.823,
+            -0.6457
+          ],
+          "run_id": "action_latency",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/action_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ]
+    },
+    "software_release": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "what it carries: a 17-step delay -45; a 14-step delay with 10 of 30 actions per chunk -90, where each part alone costs 6 to 8 points (the interaction delay+short-chunks in supplement.joints)",
+      "points": [
+        {
+          "label": "release with a 17-step delay",
+          "level": 1.0,
+          "n": 100,
+          "successes": 53,
+          "libero_successes": 69,
+          "logged_successes": 53,
+          "healthy_successes": 98,
+          "broken": 46,
+          "rescued": 1,
+          "p_value": 6.82e-13,
+          "difference": [
+            -0.45,
+            -0.5482,
+            -0.3427
+          ],
+          "run_id": "software_release",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/software_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "release with a 14-step delay and 10 actions per chunk",
+          "level": 1.0,
+          "n": 100,
+          "successes": 8,
+          "libero_successes": 19,
+          "logged_successes": 8,
+          "healthy_successes": 98,
+          "broken": 90,
+          "rescued": 0,
+          "p_value": 1.62e-27,
+          "difference": [
+            -0.9,
+            -0.9415,
+            -0.814
+          ],
+          "run_id": "s3-software_release-two",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-software_release-two"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "camera_degradation": {
+      "verdicts": {
+        "libero_spatial": "kept",
+        "libero_object": "kept"
+      },
+      "note": "blur of 4 px; noise to 25 levels and exposure by 1 to 2 stops are flat",
+      "points": [
+        {
+          "label": "1 px blur",
+          "level": 1.0,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 98,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0524,
+            0.0524
+          ],
+          "run_id": "camera_degradation",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_degradation"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "2 px blur",
+          "level": 2.0,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 98,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0524,
+            0.0524
+          ],
+          "run_id": "camera_degradation",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_degradation"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "4 px blur",
+          "level": 4.0,
+          "n": 100,
+          "successes": 73,
+          "libero_successes": 74,
+          "logged_successes": 73,
+          "healthy_successes": 98,
+          "broken": 26,
+          "rescued": 1,
+          "p_value": 4.17e-07,
+          "difference": [
+            -0.25,
+            -0.3454,
+            -0.1579
+          ],
+          "run_id": "camera_degradation",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_degradation"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "10 noise",
+          "level": 10.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 96,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 4,
+          "rescued": 2,
+          "p_value": 0.688,
+          "difference": [
+            -0.02,
+            -0.0806,
+            0.0363
+          ],
+          "run_id": "camera_degradation",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_degradation"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "25 noise",
+          "level": 25.0,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 98,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0524,
+            0.0524
+          ],
+          "run_id": "camera_degradation",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_degradation"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "1 stops darker",
+          "level": 1.0,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 98,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 1,
+          "rescued": 1,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0487,
+            0.0487
+          ],
+          "run_id": "camera_degradation",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_degradation"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "2 stops darker",
+          "level": 2.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 98,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 4,
+          "rescued": 2,
+          "p_value": 0.688,
+          "difference": [
+            -0.02,
+            -0.0806,
+            0.0363
+          ],
+          "run_id": "camera_degradation",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_degradation"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "1 stop brighter",
+          "level": 1.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 96,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 4,
+          "rescued": 2,
+          "p_value": 0.688,
+          "difference": [
+            -0.02,
+            -0.0806,
+            0.0363
+          ],
+          "run_id": "camera_degradation",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/camera_degradation"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ]
+    },
+    "policy_knob": {
+      "verdicts": {
+        "libero_spatial": "kept",
+        "libero_object": "kept"
+      },
+      "note": "1 image view; 5, 2 and 1 sampling steps, 10 actions per chunk, 3 and 2 image views are flat",
+      "points": [
+        {
+          "label": "5 sampling steps",
+          "level": 1.0,
+          "n": 100,
+          "successes": 100,
+          "libero_successes": 100,
+          "logged_successes": 100,
+          "healthy_successes": 98,
+          "broken": 0,
+          "rescued": 2,
+          "p_value": 0.5,
+          "difference": [
+            0.02,
+            -0.0197,
+            0.07
+          ],
+          "run_id": "policy_knob",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/policy_knob"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "2 sampling steps",
+          "level": 1.0,
+          "n": 100,
+          "successes": 100,
+          "libero_successes": 100,
+          "logged_successes": 100,
+          "healthy_successes": 98,
+          "broken": 0,
+          "rescued": 2,
+          "p_value": 0.5,
+          "difference": [
+            0.02,
+            -0.0197,
+            0.07
+          ],
+          "run_id": "policy_knob",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/policy_knob"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "1 sampling step",
+          "level": 1.0,
+          "n": 100,
+          "successes": 100,
+          "libero_successes": 100,
+          "logged_successes": 100,
+          "healthy_successes": 98,
+          "broken": 0,
+          "rescued": 2,
+          "p_value": 0.5,
+          "difference": [
+            0.02,
+            -0.0197,
+            0.07
+          ],
+          "run_id": "policy_knob",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/policy_knob"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "10 actions per chunk",
+          "level": 1.0,
+          "n": 100,
+          "successes": 94,
+          "libero_successes": 99,
+          "logged_successes": 94,
+          "healthy_successes": 98,
+          "broken": 5,
+          "rescued": 1,
+          "p_value": 0.219,
+          "difference": [
+            -0.04,
+            -0.1047,
+            0.0163
+          ],
+          "run_id": "policy_knob",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/policy_knob"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "3 image views",
+          "level": 1.0,
+          "n": 100,
+          "successes": 95,
+          "libero_successes": 96,
+          "logged_successes": 95,
+          "healthy_successes": 98,
+          "broken": 5,
+          "rescued": 2,
+          "p_value": 0.453,
+          "difference": [
+            -0.03,
+            -0.0939,
+            0.0283
+          ],
+          "run_id": "policy_knob",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/policy_knob"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "2 image views",
+          "level": 1.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 96,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 4,
+          "rescued": 2,
+          "p_value": 0.688,
+          "difference": [
+            -0.02,
+            -0.0806,
+            0.0363
+          ],
+          "run_id": "policy_knob",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/policy_knob"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "1 image view",
+          "level": 1.0,
+          "n": 100,
+          "successes": 13,
+          "libero_successes": 13,
+          "logged_successes": 13,
+          "healthy_successes": 98,
+          "broken": 86,
+          "rescued": 1,
+          "p_value": 1.14e-24,
+          "difference": [
+            -0.85,
+            -0.9065,
+            -0.7494
+          ],
+          "run_id": "policy_knob",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/policy_knob"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ]
+    },
+    "control_mode_change": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "relative control: every episode fails",
+      "points": [
+        {
+          "label": "relative",
+          "level": 1.0,
+          "n": 100,
+          "successes": 0,
+          "libero_successes": 0,
+          "logged_successes": 0,
+          "healthy_successes": 98,
+          "broken": 98,
+          "rescued": 0,
+          "p_value": 6.31e-30,
+          "difference": [
+            -0.98,
+            -0.9945,
+            -0.9178
+          ],
+          "run_id": "control_mode_change",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/control_mode_change"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ]
+    },
+    "gripper_wear": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "wear 0.75 and 1; 0.25 and 0.5 are flat",
+      "points": [
+        {
+          "label": "0.25 wear",
+          "level": 0.25,
+          "n": 100,
+          "successes": 97,
+          "libero_successes": 98,
+          "logged_successes": 97,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 1,
+          "p_value": 1.0,
+          "difference": [
+            -0.01,
+            -0.0638,
+            0.0403
+          ],
+          "run_id": "gripper_wear",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/gripper_wear"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "0.5 wear",
+          "level": 0.5,
+          "n": 100,
+          "successes": 95,
+          "libero_successes": 95,
+          "logged_successes": 95,
+          "healthy_successes": 98,
+          "broken": 4,
+          "rescued": 1,
+          "p_value": 0.375,
+          "difference": [
+            -0.03,
+            -0.0916,
+            0.0242
+          ],
+          "run_id": "gripper_wear",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/gripper_wear"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "0.75 wear",
+          "level": 0.75,
+          "n": 100,
+          "successes": 87,
+          "libero_successes": 87,
+          "logged_successes": 87,
+          "healthy_successes": 98,
+          "broken": 11,
+          "rescued": 0,
+          "p_value": 0.000977,
+          "difference": [
+            -0.11,
+            -0.1873,
+            -0.0478
+          ],
+          "run_id": "gripper_wear",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/gripper_wear"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "1 wear",
+          "level": 1.0,
+          "n": 100,
+          "successes": 77,
+          "libero_successes": 77,
+          "logged_successes": 77,
+          "healthy_successes": 98,
+          "broken": 21,
+          "rescued": 0,
+          "p_value": 9.54e-07,
+          "difference": [
+            -0.21,
+            -0.3001,
+            -0.1303
+          ],
+          "run_id": "gripper_wear",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/gripper_wear"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ]
+    },
+    "object_batch_variant": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "4 and 6 mass doublings; 2 doublings, 2 friction halvings and the priority control are flat",
+      "points": [
+        {
+          "label": "2 mass doublings",
+          "level": 2.0,
+          "n": 100,
+          "successes": 95,
+          "libero_successes": 97,
+          "logged_successes": 95,
+          "healthy_successes": 98,
+          "broken": 5,
+          "rescued": 2,
+          "p_value": 0.453,
+          "difference": [
+            -0.03,
+            -0.0939,
+            0.0283
+          ],
+          "run_id": "object_batch_variant",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/object_batch_variant"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "4 mass doublings",
+          "level": 4.0,
+          "n": 100,
+          "successes": 86,
+          "libero_successes": 87,
+          "logged_successes": 86,
+          "healthy_successes": 98,
+          "broken": 14,
+          "rescued": 2,
+          "p_value": 0.00418,
+          "difference": [
+            -0.12,
+            -0.2035,
+            -0.0438
+          ],
+          "run_id": "object_batch_variant",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/object_batch_variant"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "6 mass doublings",
+          "level": 6.0,
+          "n": 100,
+          "successes": 80,
+          "libero_successes": 81,
+          "logged_successes": 80,
+          "healthy_successes": 98,
+          "broken": 20,
+          "rescued": 2,
+          "p_value": 0.000121,
+          "difference": [
+            -0.18,
+            -0.271,
+            -0.0939
+          ],
+          "run_id": "object_batch_variant",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/object_batch_variant"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "2 friction halvings",
+          "level": 2.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 96,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 3,
+          "rescued": 1,
+          "p_value": 0.625,
+          "difference": [
+            -0.02,
+            -0.078,
+            0.0322
+          ],
+          "run_id": "object_batch_variant",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/object_batch_variant"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "contact priority only (control)",
+          "level": 1.0,
+          "n": 100,
+          "successes": 97,
+          "libero_successes": 97,
+          "logged_successes": 97,
+          "healthy_successes": 98,
+          "broken": 3,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            -0.01,
+            -0.0668,
+            0.0442
+          ],
+          "run_id": "object_batch_variant",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/object_batch_variant"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ]
+    },
+    "furniture_shift": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "4 cm; 1 and 2 cm are flat",
+      "points": [
+        {
+          "label": "1 cm sideways",
+          "level": 1.0,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 98,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0524,
+            0.0524
+          ],
+          "run_id": "furniture_shift",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/furniture_shift"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "2 cm sideways",
+          "level": 2.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 97,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 4,
+          "rescued": 2,
+          "p_value": 0.688,
+          "difference": [
+            -0.02,
+            -0.0806,
+            0.0363
+          ],
+          "run_id": "furniture_shift",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/furniture_shift"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "4 cm sideways",
+          "level": 4.0,
+          "n": 100,
+          "successes": 59,
+          "libero_successes": 62,
+          "logged_successes": 59,
+          "healthy_successes": 98,
+          "broken": 39,
+          "rescued": 0,
+          "p_value": 3.64e-12,
+          "difference": [
+            -0.39,
+            -0.4876,
+            -0.2903
+          ],
+          "run_id": "furniture_shift",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/furniture_shift"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ]
+    },
+    "illumination_change": {
+      "verdicts": {
+        "libero_spatial": "decoy",
+        "libero_object": "kept"
+      },
+      "note": "a decoy at 2 stops dimmer (1,000 pairs: +1.2 points, interval +0.0 to +2.5); 1 stop dimmer and 1 stop brighter are flat at 300 pairs but not confirmed: small causes",
+      "points": [
+        {
+          "label": "1 stops dimmer",
+          "level": 1.0,
+          "n": 300,
+          "successes": 291,
+          "libero_successes": 293,
+          "logged_successes": 291,
+          "healthy_successes": 296,
+          "broken": 7,
+          "rescued": 2,
+          "p_value": 0.18,
+          "difference": [
+            -0.0167,
+            -0.042,
+            0.0053
+          ],
+          "run_id": "illumination_change",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/illumination_change"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "2 stops dimmer",
+          "level": 2.0,
+          "n": 1000,
+          "successes": 980,
+          "libero_successes": 981,
+          "logged_successes": 980,
+          "healthy_successes": 968,
+          "broken": 11,
+          "rescued": 23,
+          "p_value": 0.0576,
+          "difference": [
+            0.012,
+            0.0003,
+            0.0245
+          ],
+          "run_id": "illumination_change + illumination_change-1000",
+          "role": "decoy",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/illumination_change",
+            "/home/cs/.cache/robots-probes/faults/runs/illumination_change-1000"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy",
+            "/home/cs/.cache/robots-probes/faults/runs/healthy-1000"
+          ]
+        },
+        {
+          "label": "1 stop brighter",
+          "level": 1.0,
+          "n": 300,
+          "successes": 293,
+          "libero_successes": 294,
+          "logged_successes": 293,
+          "healthy_successes": 296,
+          "broken": 6,
+          "rescued": 3,
+          "p_value": 0.508,
+          "difference": [
+            -0.01,
+            -0.0348,
+            0.0129
+          ],
+          "run_id": "illumination_change",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/illumination_change"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ],
+      "notes": {
+        "libero_object": "Small cause at the measured world level, not a decoy (robots-twpc). The precision-driven intervals are descriptive; the point retains its measured effect role."
+      }
+    },
+    "backdrop_change": {
+      "verdicts": {
+        "libero_spatial": "decoy",
+        "libero_object": "kept"
+      },
+      "note": "a decoy at walls and floor, blend 1 (1,000 pairs: +1.1 points, interval +0.0 to +2.3); blend 0.5 (300 pairs) and the table top (100) are flat but not confirmed: small causes",
+      "points": [
+        {
+          "label": "0.5 walls and floor",
+          "level": 0.5,
+          "n": 300,
+          "successes": 293,
+          "libero_successes": 294,
+          "logged_successes": 293,
+          "healthy_successes": 296,
+          "broken": 6,
+          "rescued": 3,
+          "p_value": 0.508,
+          "difference": [
+            -0.01,
+            -0.0348,
+            0.0129
+          ],
+          "run_id": "backdrop_change-walls",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/backdrop_change-walls"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "1 walls and floor",
+          "level": 1.0,
+          "n": 1000,
+          "successes": 979,
+          "libero_successes": 979,
+          "logged_successes": 979,
+          "healthy_successes": 968,
+          "broken": 9,
+          "rescued": 20,
+          "p_value": 0.0614,
+          "difference": [
+            0.011,
+            0.0002,
+            0.0227
+          ],
+          "run_id": "backdrop_change-walls + backdrop_change-walls-1000",
+          "role": "decoy",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/backdrop_change-walls",
+            "/home/cs/.cache/robots-probes/faults/runs/backdrop_change-walls-1000"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy",
+            "/home/cs/.cache/robots-probes/faults/runs/healthy-1000"
+          ]
+        },
+        {
+          "label": "1 table top",
+          "level": 1.0,
+          "n": 100,
+          "successes": 97,
+          "libero_successes": 97,
+          "logged_successes": 97,
+          "healthy_successes": 98,
+          "broken": 3,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            -0.01,
+            -0.0668,
+            0.0442
+          ],
+          "run_id": "backdrop_change-table",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/backdrop_change-table"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ],
+      "notes": {
+        "libero_object": "Small cause at the measured world level, not a decoy (robots-twpc). The precision-driven intervals are descriptive; the point retains its measured effect role."
+      }
+    },
+    "success_detector_error": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "on the logged outcome: 0.2 and 0.4 missed; the robots' true outcomes are those of the healthy twins in every episode",
+      "points": [
+        {
+          "label": "0.2 missed",
+          "level": 0.2,
+          "n": 100,
+          "successes": 77,
+          "libero_successes": 98,
+          "logged_successes": 77,
+          "healthy_successes": 98,
+          "broken": 21,
+          "rescued": 0,
+          "p_value": 9.54e-07,
+          "difference": [
+            -0.21,
+            -0.3001,
+            -0.1303
+          ],
+          "run_id": "success_detector_error",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/success_detector_error"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "0.4 missed",
+          "level": 0.4,
+          "n": 100,
+          "successes": 62,
+          "libero_successes": 98,
+          "logged_successes": 62,
+          "healthy_successes": 98,
+          "broken": 36,
+          "rescued": 0,
+          "p_value": 2.91e-11,
+          "difference": [
+            -0.36,
+            -0.4574,
+            -0.2628
+          ],
+          "run_id": "success_detector_error",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/success_detector_error"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        },
+        {
+          "label": "0.5 false successes",
+          "level": 0.5,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 98,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 0,
+          "rescued": 1,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.0318,
+            0.0578
+          ],
+          "run_id": "success_detector_error",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/success_detector_error"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/healthy"
+          ]
+        }
+      ]
+    },
+    "lens_contamination": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "a full film (1) on the scene camera: -10.7 on 300 pairs (-14.9 to -6.8); the scene film flat up to 0.75 and the wrist film flat at 1: a convex drift, harmless until the lens is very dirty",
+      "points": [
+        {
+          "label": "0.25 scene film",
+          "level": 0.25,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 99,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 1,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.037,
+            0.0608
+          ],
+          "run_id": "s3-lens_contamination",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.5 scene film",
+          "level": 0.5,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 99,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 1,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.037,
+            0.0608
+          ],
+          "run_id": "s3-lens_contamination",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.75 scene film",
+          "level": 0.75,
+          "n": 100,
+          "successes": 95,
+          "libero_successes": 96,
+          "logged_successes": 95,
+          "healthy_successes": 98,
+          "broken": 5,
+          "rescued": 2,
+          "p_value": 0.453,
+          "difference": [
+            -0.03,
+            -0.0939,
+            0.0283
+          ],
+          "run_id": "s3-lens_contamination",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "1 scene film",
+          "level": 1.0,
+          "n": 300,
+          "successes": 264,
+          "libero_successes": 265,
+          "logged_successes": 264,
+          "healthy_successes": 296,
+          "broken": 36,
+          "rescued": 4,
+          "p_value": 1.86e-07,
+          "difference": [
+            -0.1067,
+            -0.1495,
+            -0.0679
+          ],
+          "run_id": "s3-lens_contamination + s3-lens_contamination-300",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination",
+            "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination-300"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.5 wrist film",
+          "level": 0.5,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 99,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 1,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.037,
+            0.0608
+          ],
+          "run_id": "s3-lens_contamination",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "1 wrist film",
+          "level": 1.0,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 98,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0524,
+            0.0524
+          ],
+          "run_id": "s3-lens_contamination",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "camera_latency": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "a sharp step between 12 steps (flat) and 24 (-44; 36: -39): X-VLA reads the cameras once per 30-step chunk; the wrist camera 12 steps late is flat",
+      "points": [
+        {
+          "label": "6 steps scene lag",
+          "level": 6.0,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 99,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 1,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.037,
+            0.0608
+          ],
+          "run_id": "s3-camera_latency",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "12 steps scene lag",
+          "level": 12.0,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 99,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 1,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.037,
+            0.0608
+          ],
+          "run_id": "s3-camera_latency",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "24 steps scene lag",
+          "level": 24.0,
+          "n": 100,
+          "successes": 54,
+          "libero_successes": 56,
+          "logged_successes": 54,
+          "healthy_successes": 98,
+          "broken": 46,
+          "rescued": 2,
+          "p_value": 8.36e-12,
+          "difference": [
+            -0.44,
+            -0.5403,
+            -0.3275
+          ],
+          "run_id": "s3-camera_latency",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "36 steps scene lag",
+          "level": 36.0,
+          "n": 100,
+          "successes": 59,
+          "libero_successes": 61,
+          "logged_successes": 59,
+          "healthy_successes": 98,
+          "broken": 40,
+          "rescued": 1,
+          "p_value": 3.82e-11,
+          "difference": [
+            -0.39,
+            -0.4891,
+            -0.2859
+          ],
+          "run_id": "s3-camera_latency",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "12 steps wrist lag",
+          "level": 12.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 96,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 4,
+          "rescued": 2,
+          "p_value": 0.688,
+          "difference": [
+            -0.02,
+            -0.0806,
+            0.0363
+          ],
+          "run_id": "s3-camera_latency",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-camera_latency"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "gripper_force_loss": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "0.25 lost: -6 (p 0.07, a small cause); 0.5: -56; 0.75: -98, the fingers stall wider than a bowl's rim",
+      "points": [
+        {
+          "label": "0.25 force lost",
+          "level": 0.25,
+          "n": 100,
+          "successes": 92,
+          "libero_successes": 92,
+          "logged_successes": 92,
+          "healthy_successes": 98,
+          "broken": 7,
+          "rescued": 1,
+          "p_value": 0.0703,
+          "difference": [
+            -0.06,
+            -0.1302,
+            0.0006
+          ],
+          "run_id": "s3-gripper_force_loss",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_force_loss"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.5 force lost",
+          "level": 0.5,
+          "n": 100,
+          "successes": 42,
+          "libero_successes": 42,
+          "logged_successes": 42,
+          "healthy_successes": 98,
+          "broken": 56,
+          "rescued": 0,
+          "p_value": 2.78e-17,
+          "difference": [
+            -0.56,
+            -0.6524,
+            -0.4522
+          ],
+          "run_id": "s3-gripper_force_loss",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_force_loss"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.75 force lost",
+          "level": 0.75,
+          "n": 100,
+          "successes": 0,
+          "libero_successes": 0,
+          "logged_successes": 0,
+          "healthy_successes": 98,
+          "broken": 98,
+          "rescued": 0,
+          "p_value": 6.31e-30,
+          "difference": [
+            -0.98,
+            -0.9945,
+            -0.9178
+          ],
+          "run_id": "s3-gripper_force_loss",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_force_loss"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "gripper_sticky_release": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "5 and 10 steps flat; 20 steps -61, 40 steps -98 under the placed check, while LIBERO's check still fires in 96 of 100",
+      "points": [
+        {
+          "label": "5 steps late open",
+          "level": 5.0,
+          "n": 100,
+          "successes": 96,
+          "libero_successes": 97,
+          "logged_successes": 96,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 0,
+          "p_value": 0.5,
+          "difference": [
+            -0.02,
+            -0.0724,
+            0.0228
+          ],
+          "run_id": "s3-gripper_sticky_release",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_sticky_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "10 steps late open",
+          "level": 10.0,
+          "n": 100,
+          "successes": 95,
+          "libero_successes": 97,
+          "logged_successes": 95,
+          "healthy_successes": 98,
+          "broken": 3,
+          "rescued": 0,
+          "p_value": 0.25,
+          "difference": [
+            -0.03,
+            -0.0866,
+            0.0148
+          ],
+          "run_id": "s3-gripper_sticky_release",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_sticky_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "20 steps late open",
+          "level": 20.0,
+          "n": 100,
+          "successes": 37,
+          "libero_successes": 96,
+          "logged_successes": 37,
+          "healthy_successes": 98,
+          "broken": 61,
+          "rescued": 0,
+          "p_value": 8.67e-19,
+          "difference": [
+            -0.61,
+            -0.6989,
+            -0.5018
+          ],
+          "run_id": "s3-gripper_sticky_release",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_sticky_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "40 steps late open",
+          "level": 40.0,
+          "n": 100,
+          "successes": 0,
+          "libero_successes": 96,
+          "logged_successes": 0,
+          "healthy_successes": 98,
+          "broken": 98,
+          "rescued": 0,
+          "p_value": 6.31e-30,
+          "difference": [
+            -0.98,
+            -0.9945,
+            -0.9178
+          ],
+          "run_id": "s3-gripper_sticky_release",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_sticky_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "arm_torque_loss": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "0.1 and 0.2 flat; 0.3: -13; 0.4: -42",
+      "points": [
+        {
+          "label": "0.1 torque lost",
+          "level": 0.1,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 98,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0524,
+            0.0524
+          ],
+          "run_id": "s3-arm_torque_loss",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-arm_torque_loss"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.2 torque lost",
+          "level": 0.2,
+          "n": 100,
+          "successes": 94,
+          "libero_successes": 96,
+          "logged_successes": 94,
+          "healthy_successes": 98,
+          "broken": 6,
+          "rescued": 2,
+          "p_value": 0.289,
+          "difference": [
+            -0.04,
+            -0.1069,
+            0.0205
+          ],
+          "run_id": "s3-arm_torque_loss",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-arm_torque_loss"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.3 torque lost",
+          "level": 0.3,
+          "n": 100,
+          "successes": 85,
+          "libero_successes": 91,
+          "logged_successes": 85,
+          "healthy_successes": 98,
+          "broken": 15,
+          "rescued": 2,
+          "p_value": 0.00235,
+          "difference": [
+            -0.13,
+            -0.2149,
+            -0.052
+          ],
+          "run_id": "s3-arm_torque_loss",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-arm_torque_loss"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.4 torque lost",
+          "level": 0.4,
+          "n": 100,
+          "successes": 56,
+          "libero_successes": 79,
+          "logged_successes": 56,
+          "healthy_successes": 98,
+          "broken": 43,
+          "rescued": 1,
+          "p_value": 5.12e-12,
+          "difference": [
+            -0.42,
+            -0.5188,
+            -0.3142
+          ],
+          "run_id": "s3-arm_torque_loss",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-arm_torque_loss"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "controller_overload": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "0.02 and 0.05 flat; 0.1: -8.3 on 300 pairs (-12.2 to -5.0); 0.2: -42",
+      "points": [
+        {
+          "label": "0.02 cycles missed",
+          "level": 0.02,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 99,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 0,
+          "rescued": 1,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.0318,
+            0.0578
+          ],
+          "run_id": "s3-controller_overload",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-controller_overload"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.05 cycles missed",
+          "level": 0.05,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 100,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 1,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.037,
+            0.0608
+          ],
+          "run_id": "s3-controller_overload",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-controller_overload"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.1 cycles missed",
+          "level": 0.1,
+          "n": 300,
+          "successes": 271,
+          "libero_successes": 293,
+          "logged_successes": 271,
+          "healthy_successes": 296,
+          "broken": 27,
+          "rescued": 2,
+          "p_value": 1.62e-06,
+          "difference": [
+            -0.0833,
+            -0.122,
+            -0.0501
+          ],
+          "run_id": "s3-controller_overload + s3-controller_overload-300",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-controller_overload",
+            "/home/cs/.cache/robots-probes/faults/runs/s3-controller_overload-300"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "0.2 cycles missed",
+          "level": 0.2,
+          "n": 100,
+          "successes": 56,
+          "libero_successes": 73,
+          "logged_successes": 56,
+          "healthy_successes": 98,
+          "broken": 42,
+          "rescued": 0,
+          "p_value": 4.55e-13,
+          "difference": [
+            -0.42,
+            -0.5175,
+            -0.3182
+          ],
+          "run_id": "s3-controller_overload",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-controller_overload"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "calibration_update": {
+      "verdicts": {
+        "libero_spatial": "inert",
+        "libero_object": "inert"
+      },
+      "note": "inert: no mechanism; its 100 episodes are their healthy twins' chain for chain (stage3.checks)",
+      "points": [
+        {
+          "label": "scene calibration rewritten",
+          "level": 1.0,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 98,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 0,
+          "rescued": 0,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0404,
+            0.0404
+          ],
+          "run_id": "s3-calibration_update",
+          "role": "inert",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-calibration_update"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "image_pipeline_release": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "a crop of 10%: -7.0 on 300 pairs (-10.8 to -3.6), 20%: -27; red and blue swapped and JPEG at quality 30 or 10 flat",
+      "points": [
+        {
+          "label": "red and blue swapped",
+          "level": 1.0,
+          "n": 100,
+          "successes": 97,
+          "libero_successes": 97,
+          "logged_successes": 97,
+          "healthy_successes": 98,
+          "broken": 3,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            -0.01,
+            -0.0668,
+            0.0442
+          ],
+          "run_id": "s3-image_pipeline_release",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "10% cropped",
+          "level": 10.0,
+          "n": 300,
+          "successes": 275,
+          "libero_successes": 278,
+          "logged_successes": 275,
+          "healthy_successes": 296,
+          "broken": 25,
+          "rescued": 4,
+          "p_value": 0.000104,
+          "difference": [
+            -0.07,
+            -0.108,
+            -0.0362
+          ],
+          "run_id": "s3-image_pipeline_release + s3-image_pipeline_release-300",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release",
+            "/home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release-300"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "20% cropped",
+          "level": 20.0,
+          "n": 100,
+          "successes": 71,
+          "libero_successes": 72,
+          "logged_successes": 71,
+          "healthy_successes": 98,
+          "broken": 28,
+          "rescued": 1,
+          "p_value": 1.12e-07,
+          "difference": [
+            -0.27,
+            -0.3665,
+            -0.1758
+          ],
+          "run_id": "s3-image_pipeline_release",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "jpeg quality 30",
+          "level": 70.0,
+          "n": 100,
+          "successes": 99,
+          "libero_successes": 99,
+          "logged_successes": 99,
+          "healthy_successes": 98,
+          "broken": 1,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.01,
+            -0.037,
+            0.0608
+          ],
+          "run_id": "s3-image_pipeline_release",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "jpeg quality 10",
+          "level": 90.0,
+          "n": 100,
+          "successes": 98,
+          "libero_successes": 99,
+          "logged_successes": 98,
+          "healthy_successes": 98,
+          "broken": 2,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            0.0,
+            -0.0524,
+            0.0524
+          ],
+          "run_id": "s3-image_pipeline_release",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "table_height_change": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "2 cm lower: -12, 4 cm lower: -59, 2 cm higher: -9.7 on 300 pairs (-13.8 to -6.0); 1 cm lower flat",
+      "points": [
+        {
+          "label": "1 cm lower",
+          "level": 1.0,
+          "n": 100,
+          "successes": 97,
+          "libero_successes": 97,
+          "logged_successes": 97,
+          "healthy_successes": 98,
+          "broken": 3,
+          "rescued": 2,
+          "p_value": 1.0,
+          "difference": [
+            -0.01,
+            -0.0668,
+            0.0442
+          ],
+          "run_id": "s3-table_height_change",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-table_height_change"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "2 cm lower",
+          "level": 2.0,
+          "n": 100,
+          "successes": 86,
+          "libero_successes": 87,
+          "logged_successes": 86,
+          "healthy_successes": 98,
+          "broken": 13,
+          "rescued": 1,
+          "p_value": 0.00183,
+          "difference": [
+            -0.12,
+            -0.202,
+            -0.0475
+          ],
+          "run_id": "s3-table_height_change",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-table_height_change"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "4 cm lower",
+          "level": 4.0,
+          "n": 100,
+          "successes": 39,
+          "libero_successes": 41,
+          "logged_successes": 39,
+          "healthy_successes": 98,
+          "broken": 59,
+          "rescued": 0,
+          "p_value": 3.47e-18,
+          "difference": [
+            -0.59,
+            -0.6804,
+            -0.4818
+          ],
+          "run_id": "s3-table_height_change",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-table_height_change"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "2 cm higher",
+          "level": 2.0,
+          "n": 300,
+          "successes": 267,
+          "libero_successes": 285,
+          "logged_successes": 267,
+          "healthy_successes": 296,
+          "broken": 32,
+          "rescued": 3,
+          "p_value": 4.18e-07,
+          "difference": [
+            -0.0967,
+            -0.1379,
+            -0.06
+          ],
+          "run_id": "s3-table_height_change + s3-table_height_change-300",
+          "role": "effect",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-table_height_change",
+            "/home/cs/.cache/robots-probes/faults/runs/s3-table_height_change-300"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ]
+    },
+    "light_color_shift": {
+      "verdicts": {
+        "libero_spatial": "decoy",
+        "libero_object": "kept"
+      },
+      "note": "a decoy at warm lamps (1; 1,000 pairs: -0.4 points, interval -1.7 to +0.9); half warm and cool lamps flat at 300 pairs but not confirmed: small causes",
+      "points": [
+        {
+          "label": "0.5 warmer",
+          "level": 0.5,
+          "n": 300,
+          "successes": 291,
+          "libero_successes": 293,
+          "logged_successes": 291,
+          "healthy_successes": 296,
+          "broken": 7,
+          "rescued": 2,
+          "p_value": 0.18,
+          "difference": [
+            -0.0167,
+            -0.042,
+            0.0053
+          ],
+          "run_id": "s3-light_color_shift",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-light_color_shift"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        },
+        {
+          "label": "1 warmer",
+          "level": 1.0,
+          "n": 1000,
+          "successes": 964,
+          "libero_successes": 968,
+          "logged_successes": 964,
+          "healthy_successes": 968,
+          "broken": 23,
+          "rescued": 19,
+          "p_value": 0.644,
+          "difference": [
+            -0.004,
+            -0.0174,
+            0.0092
+          ],
+          "run_id": "s3-light_color_shift + s3-light_color_shift-1000",
+          "role": "decoy",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-light_color_shift",
+            "/home/cs/.cache/robots-probes/faults/runs/s3-light_color_shift-1000"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy",
+            "/home/cs/.cache/robots-probes/faults/runs/healthy-1000"
+          ]
+        },
+        {
+          "label": "1 cooler",
+          "level": 1.0,
+          "n": 300,
+          "successes": 294,
+          "libero_successes": 295,
+          "logged_successes": 294,
+          "healthy_successes": 296,
+          "broken": 4,
+          "rescued": 2,
+          "p_value": 0.688,
+          "difference": [
+            -0.0067,
+            -0.0286,
+            0.0134
+          ],
+          "run_id": "s3-light_color_shift",
+          "role": "small_cause",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-light_color_shift"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+          ]
+        }
+      ],
+      "notes": {
+        "libero_object": "Small cause at the measured world level, not a decoy (robots-twpc). The precision-driven intervals are descriptive; the point retains its measured effect role."
+      }
+    },
+    "success_false_positive": {
+      "verdicts": {
+        "libero_spatial": "kept"
+      },
+      "note": "on top of a 6 degree scene camera (57 placed of 100), compared with the same episodes' true outcome: 12, 23 and 43 of the 43 failures logged as successes at 0.25, 0.5 and 1 (every failure there went through a close and reopen of the gripper)",
+      "points": [
+        {
+          "label": "0.25 on a 6 deg camera",
+          "level": 0.25,
+          "n": 100,
+          "successes": 69,
+          "libero_successes": 62,
+          "logged_successes": 69,
+          "healthy_successes": 57,
+          "broken": 0,
+          "rescued": 12,
+          "p_value": 0.000488,
+          "difference": [
+            0.12,
+            0.0531,
+            0.1853
+          ],
+          "run_id": "s3-success_false_positive",
+          "role": "effect",
+          "companions": [
+            [
+              "camera_pose_offset",
+              "6 deg scene pan"
+            ]
+          ],
+          "compared_with": "the same episodes' true outcome",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-success_false_positive"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-success_false_positive"
+          ]
+        },
+        {
+          "label": "0.5 on a 6 deg camera",
+          "level": 0.5,
+          "n": 100,
+          "successes": 80,
+          "libero_successes": 62,
+          "logged_successes": 80,
+          "healthy_successes": 57,
+          "broken": 0,
+          "rescued": 23,
+          "p_value": 2.38e-07,
+          "difference": [
+            0.23,
+            0.1439,
+            0.3127
+          ],
+          "run_id": "s3-success_false_positive",
+          "role": "effect",
+          "companions": [
+            [
+              "camera_pose_offset",
+              "6 deg scene pan"
+            ]
+          ],
+          "compared_with": "the same episodes' true outcome",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-success_false_positive"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-success_false_positive"
+          ]
+        },
+        {
+          "label": "1 on a 6 deg camera",
+          "level": 1.0,
+          "n": 100,
+          "successes": 100,
+          "libero_successes": 62,
+          "logged_successes": 100,
+          "healthy_successes": 57,
+          "broken": 0,
+          "rescued": 43,
+          "p_value": 2.27e-13,
+          "difference": [
+            0.43,
+            0.3302,
+            0.5278
+          ],
+          "run_id": "s3-success_false_positive",
+          "role": "effect",
+          "companions": [
+            [
+              "camera_pose_offset",
+              "6 deg scene pan"
+            ]
+          ],
+          "compared_with": "the same episodes' true outcome",
+          "run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-success_false_positive"
+          ],
+          "healthy_run_dirs": [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-success_false_positive"
+          ]
+        }
+      ]
+    }
+  },
+  "supplement": {
+    "healthy": {
+      "libero_object": {
+        "run_id": "object-healthy + object-healthy-600 + object-healthy-1000",
+        "n": 1000,
+        "successes": 985,
+        "libero_successes": 993,
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy-600",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy-1000"
+        ]
+      }
+    },
+    "points": [
+      {
+        "kind": "action_latency",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "label": "14 steps",
+        "level": 14.0,
+        "n": 300,
+        "successes": 188,
+        "libero_successes": 258,
+        "logged_successes": 188,
+        "healthy_successes": 294,
+        "broken": 108,
+        "rescued": 2,
+        "p_value": 9.41e-30,
+        "difference": [
+          -0.3533,
+          -0.4097,
+          -0.2971
+        ],
+        "run_id": "object-delay",
+        "role": "effect",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-delay"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-healthy"
+        ]
+      },
+      {
+        "kind": "policy_knob",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "label": "10 actions per chunk",
+        "level": 1.0,
+        "n": 300,
+        "successes": 282,
+        "libero_successes": 297,
+        "logged_successes": 282,
+        "healthy_successes": 294,
+        "broken": 17,
+        "rescued": 5,
+        "p_value": 0.0169,
+        "difference": [
+          -0.04,
+          -0.0744,
+          -0.0086
+        ],
+        "run_id": "object-chunks",
+        "role": "effect",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-chunks"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-healthy"
+        ]
+      },
+      {
+        "kind": "illumination_change",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "label": "2 stops dimmer",
+        "level": 2.0,
+        "n": 1000,
+        "successes": 969,
+        "libero_successes": 983,
+        "logged_successes": 969,
+        "healthy_successes": 985,
+        "broken": 24,
+        "rescued": 8,
+        "p_value": 0.007,
+        "difference": [
+          -0.016,
+          -0.0283,
+          -0.0048
+        ],
+        "run_id": "object-illumination_change-1000 + object-illumination_change-300 + object-illumination_change-600",
+        "role": "effect",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-illumination_change-1000",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-illumination_change-300",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-illumination_change-600"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy-600",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy-1000"
+        ],
+        "interval_interpretation": "descriptive under precision-driven sampling"
+      },
+      {
+        "kind": "backdrop_change",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "label": "1 walls and floor",
+        "level": 1.0,
+        "n": 1000,
+        "successes": 970,
+        "libero_successes": 980,
+        "logged_successes": 970,
+        "healthy_successes": 985,
+        "broken": 24,
+        "rescued": 9,
+        "p_value": 0.0135,
+        "difference": [
+          -0.015,
+          -0.0275,
+          -0.0036
+        ],
+        "run_id": "object-backdrop_change-1000 + object-backdrop_change-300 + object-backdrop_change-600",
+        "role": "effect",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-backdrop_change-1000",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-backdrop_change-300",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-backdrop_change-600"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy-600",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy-1000"
+        ],
+        "interval_interpretation": "descriptive under precision-driven sampling"
+      },
+      {
+        "kind": "light_color_shift",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "label": "1 warmer",
+        "level": 1.0,
+        "n": 600,
+        "successes": 584,
+        "libero_successes": 593,
+        "logged_successes": 584,
+        "healthy_successes": 593,
+        "broken": 13,
+        "rescued": 4,
+        "p_value": 0.049,
+        "difference": [
+          -0.015,
+          -0.031,
+          -0.0009
+        ],
+        "run_id": "object-light_color_shift-300 + object-light_color_shift-600",
+        "role": "effect",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-light_color_shift-300",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-light_color_shift-600"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy",
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-healthy-600"
+        ],
+        "interval_interpretation": "descriptive under precision-driven sampling"
+      },
+      {
+        "kind": "calibration_update",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "label": "scene calibration rewritten",
+        "level": 1.0,
+        "n": 100,
+        "successes": 98,
+        "libero_successes": 100,
+        "logged_successes": 98,
+        "healthy_successes": 98,
+        "broken": 0,
+        "rescued": 0,
+        "p_value": 1.0,
+        "difference": [
+          0.0,
+          -0.0404,
+          0.0404
+        ],
+        "run_id": "tail-object-calibration_update-100",
+        "role": "inert",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/object-tail/runs/tail-object-calibration_update-100"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/object-tail/runs/object-healthy"
+        ]
+      },
+      {
+        "kind": "action_latency",
+        "label": "8 steps",
+        "level": 8.0,
+        "n": 100,
+        "successes": 97,
+        "libero_successes": 97,
+        "logged_successes": 97,
+        "healthy_successes": 98,
+        "broken": 1,
+        "rescued": 0,
+        "p_value": 1.0,
+        "difference": [
+          -0.01,
+          -0.0572,
+          0.0312
+        ],
+        "run_id": "run",
+        "role": "small_cause",
+        "suite": "libero_spatial",
+        "chain_ok": true,
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ]
+      },
+      {
+        "kind": "policy_knob",
+        "label": "15 actions per chunk",
+        "level": 1.0,
+        "n": 100,
+        "successes": 99,
+        "libero_successes": 99,
+        "logged_successes": 99,
+        "healthy_successes": 98,
+        "broken": 0,
+        "rescued": 1,
+        "p_value": 1.0,
+        "difference": [
+          0.01,
+          -0.0318,
+          0.0578
+        ],
+        "run_id": "run",
+        "role": "small_cause",
+        "suite": "libero_spatial",
+        "chain_ok": true,
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ]
+      },
+      {
+        "kind": "action_latency",
+        "label": "8 steps",
+        "level": 8.0,
+        "n": 100,
+        "successes": 95,
+        "libero_successes": 98,
+        "logged_successes": 95,
+        "healthy_successes": 98,
+        "broken": 4,
+        "rescued": 1,
+        "p_value": 0.375,
+        "difference": [
+          -0.03,
+          -0.0916,
+          0.0242
+        ],
+        "run_id": "run",
+        "role": "small_cause",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ]
+      },
+      {
+        "kind": "policy_knob",
+        "label": "15 actions per chunk",
+        "level": 1.0,
+        "n": 100,
+        "successes": 97,
+        "libero_successes": 99,
+        "logged_successes": 97,
+        "healthy_successes": 98,
+        "broken": 2,
+        "rescued": 1,
+        "p_value": 1.0,
+        "difference": [
+          -0.01,
+          -0.0638,
+          0.0403
+        ],
+        "run_id": "run",
+        "role": "small_cause",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ]
+      },
+      {
+        "kind": "camera_degradation",
+        "suite": "libero_spatial",
+        "chain_ok": true,
+        "label": "3 px blur",
+        "level": 3.0,
+        "n": 100,
+        "successes": 95,
+        "libero_successes": 95,
+        "logged_successes": 95,
+        "healthy_successes": 98,
+        "broken": 3,
+        "rescued": 0,
+        "p_value": 0.25,
+        "difference": [
+          -0.03,
+          -0.0866,
+          0.0148
+        ],
+        "run_id": "run",
+        "role": "small_cause",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/fleet-blur/run"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ]
+      },
+      {
+        "kind": "camera_degradation",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "label": "3 px blur",
+        "level": 3.0,
+        "n": 100,
+        "successes": 80,
+        "libero_successes": 82,
+        "logged_successes": 80,
+        "healthy_successes": 98,
+        "broken": 20,
+        "rescued": 2,
+        "p_value": 0.000121,
+        "difference": [
+          -0.18,
+          -0.271,
+          -0.0939
+        ],
+        "run_id": "run",
+        "role": "effect",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/fleet-blur/run"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ]
+      }
+    ],
+    "joints": [
+      {
+        "name": "wear+heavier",
+        "members": [
+          {
+            "kind": "gripper_wear",
+            "label": "0.5 wear"
+          },
+          {
+            "kind": "object_batch_variant",
+            "label": "4 mass doublings"
+          }
+        ],
+        "suite": "libero_spatial",
+        "n": 300,
+        "successes": 234,
+        "healthy_successes": 296,
+        "single_successes": [
+          281,
+          258
+        ],
+        "singles": [
+          0.9493,
+          0.8716
+        ],
+        "difference": [
+          -0.2067,
+          -0.2572,
+          -0.1597
+        ],
+        "p_value": 6e-17,
+        "effects": {
+          "effect_a": [
+            -0.05,
+            -0.08,
+            -0.0267
+          ],
+          "effect_b": [
+            -0.1267,
+            -0.17,
+            -0.0867
+          ],
+          "effect_joint": [
+            -0.2067,
+            -0.2533,
+            -0.16
+          ]
+        },
+        "interaction": [
+          -0.03,
+          -0.07,
+          0.01
+        ],
+        "role": "effect",
+        "interaction_role": "additive",
+        "run_id": "s3-joint-wear-heavier",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/runs/s3-joint-wear-heavier"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+        ],
+        "single_run_dirs": [
+          [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_wear-300"
+          ],
+          [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-object_batch_variant-300"
+          ]
+        ]
+      },
+      {
+        "name": "weaker+heavier",
+        "members": [
+          {
+            "kind": "gripper_force_loss",
+            "label": "0.25 force lost"
+          },
+          {
+            "kind": "object_batch_variant",
+            "label": "4 mass doublings"
+          }
+        ],
+        "suite": "libero_spatial",
+        "n": 100,
+        "successes": 77,
+        "healthy_successes": 98,
+        "single_successes": [
+          92,
+          86
+        ],
+        "singles": [
+          0.9388,
+          0.8776
+        ],
+        "difference": [
+          -0.21,
+          -0.3026,
+          -0.123
+        ],
+        "p_value": 5.72e-06,
+        "effects": {
+          "effect_a": [
+            -0.06,
+            -0.12,
+            -0.01
+          ],
+          "effect_b": [
+            -0.12,
+            -0.2,
+            -0.05
+          ],
+          "effect_joint": [
+            -0.21,
+            -0.3,
+            -0.13
+          ]
+        },
+        "interaction": [
+          -0.03,
+          -0.09,
+          0.03
+        ],
+        "role": "effect",
+        "interaction_role": "additive",
+        "run_id": "s3-joint-weaker-heavier",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/runs/s3-joint-weaker-heavier"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+        ],
+        "single_run_dirs": [
+          [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_force_loss"
+          ],
+          [
+            "/home/cs/.cache/robots-probes/faults/runs/s3-object_batch_variant-300"
+          ]
+        ]
+      },
+      {
+        "name": "delay+short-chunks",
+        "members": [
+          {
+            "kind": "action_latency",
+            "label": "14 steps"
+          },
+          {
+            "kind": "policy_knob",
+            "label": "10 actions per chunk"
+          }
+        ],
+        "suite": "libero_spatial",
+        "n": 300,
+        "successes": 27,
+        "healthy_successes": 296,
+        "single_successes": [
+          277,
+          273
+        ],
+        "singles": [
+          0.9358,
+          0.9223
+        ],
+        "difference": [
+          -0.8967,
+          -0.9258,
+          -0.8526
+        ],
+        "p_value": 1.43e-79,
+        "effects": {
+          "effect_a": [
+            -0.0633,
+            -0.0967,
+            -0.0333
+          ],
+          "effect_b": [
+            -0.0767,
+            -0.1133,
+            -0.0433
+          ],
+          "effect_joint": [
+            -0.8967,
+            -0.93,
+            -0.86
+          ]
+        },
+        "interaction": [
+          -0.7567,
+          -0.8067,
+          -0.7033
+        ],
+        "role": "effect",
+        "interaction_role": "interaction",
+        "run_id": "s3-joint-delay-chunks",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/runs/s3-joint-delay-chunks"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/runs/s3-healthy"
+        ],
+        "single_run_dirs": [
+          [
+            "/home/cs/.cache/robots-probes/faults/runs/action_latency",
+            "/home/cs/.cache/robots-probes/faults/runs/s3-action_latency-300"
+          ],
+          [
+            "/home/cs/.cache/robots-probes/faults/runs/policy_knob",
+            "/home/cs/.cache/robots-probes/faults/runs/s3-policy_knob-300"
+          ]
+        ]
+      },
+      {
+        "name": "delay+short-chunks",
+        "chain_ok": true,
+        "members": [
+          {
+            "kind": "action_latency",
+            "label": "14 steps"
+          },
+          {
+            "kind": "policy_knob",
+            "label": "10 actions per chunk"
+          }
+        ],
+        "suite": "libero_object",
+        "n": 300,
+        "successes": 0,
+        "healthy_successes": 294,
+        "single_successes": [
+          188,
+          282
+        ],
+        "singles": [
+          0.6395,
+          0.9592
+        ],
+        "difference": [
+          -0.98,
+          -0.9908,
+          -0.9538
+        ],
+        "p_value": 6.28e-89,
+        "effects": {
+          "effect_a": [
+            -0.3533,
+            -0.41,
+            -0.2967
+          ],
+          "effect_b": [
+            -0.04,
+            -0.07,
+            -0.01
+          ],
+          "effect_joint": [
+            -0.98,
+            -0.9933,
+            -0.9633
+          ]
+        },
+        "interaction": [
+          -0.5867,
+          -0.6467,
+          -0.5233
+        ],
+        "role": "effect",
+        "interaction_role": "interaction",
+        "run_id": "object-pair",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-pair"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-healthy"
+        ],
+        "single_run_dirs": [
+          [
+            "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-delay"
+          ],
+          [
+            "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-chunks"
+          ]
+        ]
+      },
+      {
+        "label": "8 steps",
+        "level": 8.0,
+        "n": 100,
+        "successes": 55,
+        "libero_successes": 87,
+        "logged_successes": 55,
+        "healthy_successes": 98,
+        "broken": 43,
+        "rescued": 0,
+        "p_value": 2.27e-13,
+        "difference": [
+          -0.43,
+          -0.5274,
+          -0.3275
+        ],
+        "run_id": "run",
+        "role": "effect",
+        "suite": "libero_spatial",
+        "chain_ok": true,
+        "dose": [
+          8,
+          15
+        ],
+        "members": [
+          {
+            "kind": "action_latency",
+            "label": "8 steps"
+          },
+          {
+            "kind": "policy_knob",
+            "label": "15 actions per chunk"
+          }
+        ],
+        "single_successes": [
+          97,
+          99
+        ],
+        "singles": [
+          0.9897959183673469,
+          1.010204081632653
+        ],
+        "interaction": [
+          -0.43,
+          -0.53,
+          -0.33
+        ],
+        "interaction_role": "interaction",
+        "effects": {
+          "effect_a": [
+            -0.01,
+            -0.03,
+            0.0
+          ],
+          "effect_b": [
+            0.01,
+            0.0,
+            0.03
+          ],
+          "effect_joint": [
+            -0.43,
+            -0.53,
+            -0.33
+          ]
+        },
+        "corrected_joint_success": 0.5432653061224489,
+        "name": "delay-8+chunk-15",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ],
+        "single_run_dirs": [
+          [
+            "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+          ],
+          [
+            "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+          ]
+        ]
+      },
+      {
+        "label": "8 steps",
+        "level": 8.0,
+        "n": 100,
+        "successes": 31,
+        "libero_successes": 49,
+        "logged_successes": 31,
+        "healthy_successes": 98,
+        "broken": 67,
+        "rescued": 0,
+        "p_value": 1.36e-20,
+        "difference": [
+          -0.67,
+          -0.7532,
+          -0.5623
+        ],
+        "run_id": "run",
+        "role": "effect",
+        "suite": "libero_object",
+        "chain_ok": true,
+        "dose": [
+          8,
+          15
+        ],
+        "members": [
+          {
+            "kind": "action_latency",
+            "label": "8 steps"
+          },
+          {
+            "kind": "policy_knob",
+            "label": "15 actions per chunk"
+          }
+        ],
+        "single_successes": [
+          95,
+          97
+        ],
+        "singles": [
+          0.9693877551020408,
+          0.9897959183673469
+        ],
+        "interaction": [
+          -0.63,
+          -0.74,
+          -0.52
+        ],
+        "interaction_role": "interaction",
+        "effects": {
+          "effect_a": [
+            -0.03,
+            -0.08,
+            0.01
+          ],
+          "effect_b": [
+            -0.01,
+            -0.05,
+            0.02
+          ],
+          "effect_joint": [
+            -0.67,
+            -0.76,
+            -0.58
+          ]
+        },
+        "corrected_joint_success": 0.3115816326530612,
+        "name": "delay-8+chunk-15",
+        "run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ],
+        "healthy_run_dirs": [
+          "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+        ],
+        "single_run_dirs": [
+          [
+            "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+          ],
+          [
+            "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run"
+          ]
+        ]
+      }
+    ]
+  },
+  "stage3": {
+    "software": {
+      "lock_hash": "a302a3256e62bf73",
+      "libero_patch_set": "cd1acebf8d9c749c",
+      "mujoco_version": "3.3.7",
+      "miopen_db_hash": "7751323820effb28",
+      "contracts_version": "1.0"
+    },
+    "healthy": {
+      "run_id": "s3-healthy + healthy-1000",
+      "chain_ok": true,
+      "n": 1000,
+      "successes": 968,
+      "interval": [
+        0.9551752617991018,
+        0.9772428922021283
+      ],
+      "libero_successes": 970,
+      "note": "stage 3's first 300, stage 2's 300 to 999 (identical chains)",
+      "run_dirs": [
+        "/home/cs/.cache/robots-probes/faults/runs/s3-healthy",
+        "/home/cs/.cache/robots-probes/faults/runs/healthy-1000"
+      ]
+    },
+    "checks": {
+      "healthy_identity": {
+        "runs": [
+          "s3-healthy",
+          "healthy"
+        ],
+        "compared": 300,
+        "identical": 300,
+        "differ": [],
+        "missing": []
+      },
+      "release with two faults against the joint": {
+        "runs": [
+          "s3-software_release-two",
+          "s3-joint-delay-chunks"
+        ],
+        "compared": 100,
+        "identical": 100,
+        "differ": [],
+        "missing": []
+      },
+      "calibration_update against healthy": {
+        "runs": [
+          "s3-calibration_update",
+          "s3-healthy"
+        ],
+        "compared": 100,
+        "identical": 100,
+        "differ": [],
+        "missing": []
+      },
+      "gripper_wear 0.5 wear": {
+        "runs": [
+          "s3-gripper_wear-300",
+          "gripper_wear"
+        ],
+        "compared": 100,
+        "identical": 100,
+        "differ": [],
+        "missing": []
+      },
+      "object_batch_variant 4 mass doublings": {
+        "runs": [
+          "s3-object_batch_variant-300",
+          "object_batch_variant"
+        ],
+        "compared": 100,
+        "identical": 100,
+        "differ": [],
+        "missing": []
+      }
+    }
+  },
+  "worlds_mild_pair_round3": {
+    "predeclared_plan_commit": "e98f814",
+    "resource_contingency_commit": "d077a13",
+    "selected_dose": [
+      8,
+      15
+    ],
+    "screen_used_only_for_selection": true,
+    "n_confirmation_per_arm": 100,
+    "screen": {
+      "run": "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/screen/run",
+      "manifest_sha256": "965d30befaefd22ce3891f1190fd735a43f1670e02507404b62ed1937ccb25a9",
+      "analysis_sha256": "5964bf6ec6eaa70382c0fe23ca5204656a9f99e25ccb5b1d1e350bcda9b6fce3",
+      "code": {
+        "commit": "c37d5c188bb030657afc8171afaf6dac48e0937e",
+        "dirty": false
+      },
+      "jobs": 2000,
+      "comparisons": 200,
+      "identical": 200,
+      "incidents": []
+    },
+    "confirmation": {
+      "run": "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/confirmation-100/run",
+      "manifest_sha256": "fb1ce285ddfb778dfa4963035aa3de6e266cac616843306a72eb9d9caf208ee2",
+      "analysis_sha256": "59e91ba03f64304d9c6cc9abc26cf7ae4e9b0416edee1de4162dc02385e74ec0",
+      "code": {
+        "commit": "d077a133c3d5784eb17815fa373984edebc469c3",
+        "dirty": false
+      },
+      "jobs": 800,
+      "comparisons": 81,
+      "identical": 81,
+      "incidents": [
+        {
+          "worker": 5,
+          "session": 1,
+          "why": "exit code -6",
+          "jobs": [
+            "e004187"
+          ],
+          "attempts": {
+            "e004187": 1
+          },
+          "recovered": true,
+          "replay_checks": {
+            "e004187": {
+              "checked": true,
+              "verdict": "identical"
+            }
+          }
+        }
+      ]
+    },
+    "eligible_suites": [
+      "libero_spatial"
+    ],
+    "fleet_blur": {
+      "run": "/home/cs/.cache/robots-probes/worlds-v3/20261010-mild-pair/fleet-blur/run",
+      "manifest_sha256": "08b55d7ad5324bb598133f53523fa20552ad980ce706e3b842ca74516e7b7d60",
+      "analysis_sha256": "a226a812ab7fdca4f6ba45fdc0ae2c05c39dfac6a91385d9d7c1b9649e07882a",
+      "code": {
+        "commit": "d077a133c3d5784eb17815fa373984edebc469c3",
+        "dirty": false
+      },
+      "jobs": 200,
+      "comparisons": 20,
+      "identical": 20,
+      "incidents": []
+    },
+    "fleet_blur_effective_on_both_suites": false,
+    "fleet_blur_accepted": false,
+    "heavy_budget": {
+      "prior_charged_seconds": 8633,
+      "fleet_blur_elapsed_seconds": 323.306,
+      "fleet_blur_charged_seconds": 334,
+      "total_charged_seconds": 8967,
+      "limit_seconds": 10800,
+      "exit_status": 0
+    }
+  }
+}

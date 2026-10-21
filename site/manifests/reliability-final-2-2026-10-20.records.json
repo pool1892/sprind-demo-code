@@ -1,0 +1,30 @@
+{
+  "format": "fleetlab.film-records/1",
+  "notes": "Final cut 2 binds the same records as final cut 1: case 1 to replacement-01, case 2 to plate-cabinet-01 (plate at the stove front and bowl on the cabinet, no order rule, base task 3 pool, pool-v1), each with its investigation record, release receipt, the coordinator's reconciliation of its 40 raw release episodes, its development tables and its saved job; story B to the instrument engagement's evaluation summary, the same file the earlier final cuts bind.",
+  "records": {
+    "r1_run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/job_run.json",
+    "r1_receipt": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+    "r1_verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/coordinator-verification.json",
+    "r1_development": [
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet"
+    ],
+    "r1_release_episodes": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_episodes.parquet",
+    "r1_job": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/jobs/station-bowl-and-open-drawer.json",
+    "r2_run": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/job_run.json",
+    "r2_receipt": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/release/run/run/receipt.json",
+    "r2_verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/coordinator-verification.json",
+    "r2_development": [
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-01/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-02/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-03/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-04/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-05/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-06/run/log/job_episodes.parquet"
+    ],
+    "r2_job": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/library/jobs/station-plate-and-bowl-prepared.json",
+    "story_b_evaluation": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/summary.json"
+  }
+}

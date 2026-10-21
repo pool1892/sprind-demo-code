@@ -1,0 +1,286 @@
+{
+  "measured_source": "9a39de888526737af2ed9348edbd97ddd4ba733d",
+  "make_check": {
+    "exit_code": 0,
+    "passed": 1235,
+    "skipped": 2,
+    "deselected": 62,
+    "seconds": 287.67
+  },
+  "check_sim": {
+    "exit_code": 0,
+    "passed": 58,
+    "deselected": 1237,
+    "seconds": 354.5,
+    "source": "2e2293c",
+    "runtime_identical_to_measured_source": true
+  },
+  "interrupted_check": {
+    "exit_code": 2,
+    "reason": "Known multiprocessing worker-loss hang, unchanged engine; terminated own pytest after more than 15 minutes, reran full check."
+  },
+  "isolation": {
+    "analysis_seconds": 3.957489810010884,
+    "language_model_tokens": 0,
+    "api_cost": 0,
+    "source_commit": "9a39de8",
+    "world": "w42",
+    "isolated_input_files": [
+      "data_dictionary.md",
+      "log/catalogue.parquet",
+      "log/change_log.parquet",
+      "log/costs.parquet",
+      "log/description.json",
+      "log/episodes.parquet",
+      "log/events.parquet",
+      "log/health.parquet",
+      "log/maintenance.parquet"
+    ],
+    "byte_identical_files": [
+      "evidence.json",
+      "fix_sets/cost-4.json",
+      "fix_sets/cost-8.json",
+      "fix_sets/count-3.json",
+      "fix_sets/count-6.json",
+      "outbox/diagnosis.json",
+      "outbox/fix_set.json"
+    ],
+    "forbidden_imports": []
+  },
+  "independent_review": {
+    "model": "independent reviewer",
+    "effort": "xhigh",
+    "world_files_read": false,
+    "executed_tests": false,
+    "scope": "Static review, followed by local synthetic checks and repairs; no new-world or fresh old-world oracle access."
+  },
+  "files": {
+    "make_check": {
+      "path": "/tmp/classical-stat-v3-check-9a39de8.log",
+      "sha256": "37cbbd0c26b3706025a6a3bde507e0a05c8250f69772216b0ea290e89c32383d"
+    },
+    "check_sim": {
+      "path": "/tmp/classical-stat-v3-check-sim-2e2293c.log",
+      "sha256": "f48f231c070ce70b9e65651993ff893a28ee4d892164ff5b0e4a6119f48738a1"
+    },
+    "known_worker_loss_hang": {
+      "path": "/tmp/classical-stat-v3-check-cb64a23.log",
+      "sha256": "1b0469167c1f92cd85daa2933fce64206d75eb3a3044eff55df533f5730d7983"
+    },
+    "independent_review": {
+      "path": "/tmp/classical-stat-v3/review.json",
+      "sha256": "ba6e4224eb76333c5c889515c5ca42273106a837bc13dd5216e85041e2747d87"
+    },
+    "independent_followup_review": {
+      "path": "/tmp/classical-stat-v3/followup-review.json",
+      "sha256": "3b6b16ee2f6ab9e859e601fb3ce5daa69676f0a58f9dcc151d8364e5eedb49b1"
+    },
+    "selection_math_review": {
+      "path": "/tmp/classical-stat-v3/selection-review.json",
+      "sha256": "b36eb880c4cd29b69f4cd3e566094e2dead2deac63c7671bd4595a384aba8a26"
+    }
+  },
+  "final_fleet_removals": {
+    "initial_runner_exit": 1,
+    "initial_runner_note": "Trace-format parser expected the word AssertionError but pytest used E assert (False); both completed subprocess exit statuses had already been verified. Resumed the remaining mutant without rerunning completed tests.",
+    "final_runner_exit": 0,
+    "commit": "9a39de888526737af2ed9348edbd97ddd4ba733d",
+    "world_data_read": false,
+    "simulation_run": false,
+    "cases": [
+      {
+        "case": "control",
+        "exit_status": 0,
+        "command": [
+          "/home/cs/code/robots-stat/.venv/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_classical_freeze2.py::test_real_fleet_fault_with_logged_local_faults_is_not_vetoed",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider",
+          "-p",
+          "fleet_audit_capture",
+          "--basetemp",
+          "/tmp/classical-stat-v3/final-fleet-guarantees/control/pytest-tmp"
+        ],
+        "cwd": "/tmp/classical-stat-v3/final-fleet-guarantees/control",
+        "import_probe_exit": 0,
+        "imported_analysis": "/tmp/classical-stat-v3/final-fleet-guarantees/control/src/fleetlab/baselines/classical/analysis.py",
+        "assertions": [],
+        "summary": "2 passed in 1.69s",
+        "failures": [],
+        "mutations": []
+      },
+      {
+        "case": "fleet_zero_pooling_precision",
+        "exit_status": 1,
+        "command": [
+          "/home/cs/code/robots-stat/.venv/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_classical_freeze2.py::test_real_fleet_fault_with_logged_local_faults_is_not_vetoed",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider",
+          "-p",
+          "fleet_audit_capture",
+          "--basetemp",
+          "/tmp/classical-stat-v3/final-fleet-guarantees/fleet_zero_pooling_precision/pytest-tmp"
+        ],
+        "cwd": "/tmp/classical-stat-v3/final-fleet-guarantees/fleet_zero_pooling_precision",
+        "import_probe_exit": 0,
+        "imported_analysis": "/tmp/classical-stat-v3/final-fleet-guarantees/fleet_zero_pooling_precision/src/fleetlab/baselines/classical/analysis.py",
+        "assertions": [
+          "assert rec[\"observational_pooling\"] and rec[\"diagnosis_confidence\"] > 0.9",
+          "E   assert (False)",
+          "assert rec[\"observational_pooling\"] and rec[\"diagnosis_confidence\"] > 0.9",
+          "E   assert (False)"
+        ],
+        "summary": "2 failed in 1.75s",
+        "failures": [
+          {
+            "test": "tests/test_classical_freeze2.py::test_real_fleet_fault_with_logged_local_faults_is_not_vetoed[logistic]",
+            "link": "logistic",
+            "observational_pooling": false,
+            "informative_interval": true,
+            "diagnosis_confidence": 1.0,
+            "gain_points": 18.712559383560478,
+            "interval": [
+              5.20153669028165,
+              32.80682515931569
+            ],
+            "raw_heterogeneity_p": 3.5491952165731324e-06,
+            "fleet_cause_named": true
+          },
+          {
+            "test": "tests/test_classical_freeze2.py::test_real_fleet_fault_with_logged_local_faults_is_not_vetoed[multiplicative]",
+            "link": "multiplicative",
+            "observational_pooling": false,
+            "informative_interval": true,
+            "diagnosis_confidence": 0.975,
+            "gain_points": 11.090206580677915,
+            "interval": [
+              -4.782422856346805,
+              23.602907350751494
+            ],
+            "raw_heterogeneity_p": 3.5491952165731324e-06,
+            "fleet_cause_named": true
+          }
+        ],
+        "mutations": [
+          [
+            "                observational_pooling=informative,",
+            "                observational_pooling=informative and fleet_contrast is None,"
+          ]
+        ]
+      },
+      {
+        "case": "raw_heterogeneity_veto",
+        "exit_status": 1,
+        "command": [
+          "/home/cs/code/robots-stat/.venv/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_classical_freeze2.py::test_real_fleet_fault_with_logged_local_faults_is_not_vetoed",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider",
+          "-p",
+          "fleet_audit_capture",
+          "--basetemp",
+          "/tmp/classical-stat-v3/final-fleet-guarantees/raw_heterogeneity_veto/pytest-tmp"
+        ],
+        "cwd": "/tmp/classical-stat-v3/final-fleet-guarantees/raw_heterogeneity_veto",
+        "import_probe_exit": 0,
+        "imported_analysis": "/tmp/classical-stat-v3/final-fleet-guarantees/raw_heterogeneity_veto/src/fleetlab/baselines/classical/analysis.py",
+        "assertions": [
+          "assert rec[\"observational_pooling\"] and rec[\"diagnosis_confidence\"] > 0.9",
+          "E   assert (False)",
+          "assert rec[\"observational_pooling\"] and rec[\"diagnosis_confidence\"] > 0.9",
+          "E   assert (False)"
+        ],
+        "summary": "2 failed in 1.65s",
+        "failures": [
+          {
+            "test": "tests/test_classical_freeze2.py::test_real_fleet_fault_with_logged_local_faults_is_not_vetoed[logistic]",
+            "link": "logistic",
+            "observational_pooling": false,
+            "informative_interval": false,
+            "diagnosis_confidence": 0.5,
+            "gain_points": 18.712559383560478,
+            "interval": [
+              0,
+              99.99999999999997
+            ],
+            "raw_heterogeneity_p": 3.5491952165731324e-06,
+            "fleet_cause_named": false
+          },
+          {
+            "test": "tests/test_classical_freeze2.py::test_real_fleet_fault_with_logged_local_faults_is_not_vetoed[multiplicative]",
+            "link": "multiplicative",
+            "observational_pooling": false,
+            "informative_interval": false,
+            "diagnosis_confidence": 0.5,
+            "gain_points": 11.090206580677915,
+            "interval": [
+              -4.782422856346805,
+              99.99999999999997
+            ],
+            "raw_heterogeneity_p": 3.5491952165731324e-06,
+            "fleet_cause_named": false
+          }
+        ],
+        "mutations": [
+          [
+            "        if not changed or unseen:",
+            "        if fleet_contrast and fleet_contrast[\"heterogeneity_p\"] < 0.05:\n            low, high, confidence = min(low, 0), max(high, population), min(confidence, 0.5)\n            informative = False\n        if not changed or unseen:"
+          ]
+        ]
+      }
+    ],
+    "scope": "Two repaired fleet guarantees only. Earlier raw-Q veto is intentionally obsolete, not a claimed safeguard."
+  },
+  "warning_emission_removal": {
+    "base_commit": "3b2777d5e35e697d2dc1eb2c542169bdb3bf0b40",
+    "control_exit": 0,
+    "control_result": "1 passed in 2.13s",
+    "mutant_exit": 1,
+    "assertion": "assert [warning.scope for warning in answer.diagnosis.warnings] == ['r05']",
+    "actual": "[]",
+    "mutation": "Diagnosis(warnings=warnings) -> Diagnosis(warnings=[])",
+    "import_probe_exit": 0,
+    "imported_analysis": "/tmp/classical-stat-v3/warning-fixture/emission-mutant/src/fleetlab/baselines/classical/analysis.py",
+    "world_data_read": false,
+    "simulation_run": false,
+    "uncached_mutant_exit": 1,
+    "uncached_output": "/tmp/classical-stat-v3/warning-fixture/emission-mutant/pytest-output-final.txt"
+  },
+  "smoke": {
+    "exit_code": 0,
+    "identical": 16,
+    "compared": 16,
+    "chain_ok": true,
+    "differ": [],
+    "missing": [],
+    "software_changed": [],
+    "seconds": 61.2,
+    "source": "4e832ba",
+    "engine_policy_runtime_identical_to_measured_source": true,
+    "log": "/tmp/classical-stat-v3-smoke.log",
+    "log_sha256": "9b9934e47d9c714f57297f5bb9aa575597c45da8099f7e89668eb1b7fa0a049f"
+  },
+  "scope": "Completed pre-freeze verification. The full real w42 A/B receipt and prespecified final old-world scores are in freeze2_results.json.",
+  "final_make_check_with_result_records": {
+    "exit_code": 0,
+    "passed": 1235,
+    "skipped": 2,
+    "deselected": 62,
+    "seconds": 344.89,
+    "log": "/tmp/classical-stat-v3-check-final-records.log",
+    "sha256": "ba8f1fbe93c0e425cb816c6a38d70177f681cf49f702d10dc53b967365ff69da"
+  }
+}

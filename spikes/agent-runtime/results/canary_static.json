@@ -1,0 +1,302 @@
+[
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "canary file",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "repository",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "anything of the user's home besides the tool server's Python",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "truth directory",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "other projects (~/code)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "workspace",
+  "visible": true
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "claude login file (in sandbox home)",
+  "visible": true
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "codex login file (in sandbox home)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "network (name lookup)",
+  "visible": true
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (claude)",
+  "target": "any file with repository text (searched /opt /work /run /home /tmp)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "canary file",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "repository",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "anything of the user's home besides the tool server's Python",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "truth directory",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "other projects (~/code)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "workspace",
+  "visible": true
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "claude login file (in sandbox home)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "codex login file (in sandbox home)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "network (name lookup)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (claude)",
+  "target": "any file with repository text (searched /opt /work /run /home /tmp)",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "canary file",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "repository",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "anything of the user's home besides the tool server's Python",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "truth directory",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "other projects (~/code)",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "workspace",
+  "visible": true
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "claude login file (in sandbox home)",
+  "visible": true
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "codex login file (in sandbox home)",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "network (name lookup)",
+  "visible": true
+ },
+ {
+  "sandbox": "docker container (claude)",
+  "target": "any file with repository text (searched /opt /work /run /home /tmp)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "canary file",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "repository",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "anything of the user's home besides the tool server's Python",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "truth directory",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "other projects (~/code)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "workspace",
+  "visible": true
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "claude login file (in sandbox home)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "codex login file (in sandbox home)",
+  "visible": true
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "network (name lookup)",
+  "visible": true
+ },
+ {
+  "sandbox": "bwrap CLI sandbox (codex)",
+  "target": "any file with repository text (searched /opt /work /run /home /tmp)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "canary file",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "repository",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "anything of the user's home besides the tool server's Python",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "truth directory",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "other projects (~/code)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "workspace",
+  "visible": true
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "claude login file (in sandbox home)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "codex login file (in sandbox home)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "network (name lookup)",
+  "visible": false
+ },
+ {
+  "sandbox": "bwrap tool sandbox (codex)",
+  "target": "any file with repository text (searched /opt /work /run /home /tmp)",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "canary file",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "repository",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "anything of the user's home besides the tool server's Python",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "truth directory",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "other projects (~/code)",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "workspace",
+  "visible": true
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "claude login file (in sandbox home)",
+  "visible": false
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "codex login file (in sandbox home)",
+  "visible": true
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "network (name lookup)",
+  "visible": true
+ },
+ {
+  "sandbox": "docker container (codex)",
+  "target": "any file with repository text (searched /opt /work /run /home /tmp)",
+  "visible": false
+ }
+]

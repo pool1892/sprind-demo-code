@@ -1,0 +1,76 @@
+{
+  "stages": {
+    "pair-batch-1": {
+      "jobs": 100,
+      "sha256": "ffb342867ed998a834d43f6ad1a7c8ee4b8e6c3ff2e72c347b0ab43ee5872564"
+    },
+    "pair-batch-1-refine": {
+      "jobs": 400,
+      "sha256": "db0ca765ac7d58dd3170997f311f695650560a049094f7fe75c576b24883df40",
+      "parent": "pair-batch-1"
+    },
+    "pair-batch-2": {
+      "jobs": 100,
+      "sha256": "c61b19842851de89ee57d87a62bde0c51cf2e72930aa2b7a5dbd165b6668b14a"
+    },
+    "pair-batch-2-refine": {
+      "jobs": 400,
+      "sha256": "f4bd9c820d56448102504284c5ce44107c09dfcb55ff40e7eb94b92f16008eef",
+      "parent": "pair-batch-2"
+    },
+    "pair-batch-3": {
+      "jobs": 100,
+      "sha256": "90d77a656b8bae7ff648f90e1ec83d7788dd2802a28fdd08ff972f4495550765"
+    },
+    "pair-batch-3-refine": {
+      "jobs": 400,
+      "sha256": "418b473d7e5a8d2b13a987343c1dcbe725325e4b6efe4d9104cb1e999d4f9567",
+      "parent": "pair-batch-3"
+    },
+    "pair-batch-4": {
+      "jobs": 100,
+      "sha256": "84f11f172fe58a8843307fec6a5e82c669881c2e6c9a816d6fe0a294152d4dc6"
+    },
+    "pair-batch-4-refine": {
+      "jobs": 400,
+      "sha256": "62a4cf4112d81720b3651f681d18f9f5bf5389281ee26f862b044258c9d9a281",
+      "parent": "pair-batch-4"
+    },
+    "pair-batch-5": {
+      "jobs": 100,
+      "sha256": "9a97f3db31b57d63953e9f1b83b26eafe80c300c8880047c183f5cff1e8f2c93"
+    },
+    "pair-batch-5-refine": {
+      "jobs": 400,
+      "sha256": "22ba8fd9f9fae1a1f805746560464f739b69b1d149645ee87f313beefa88d7f2",
+      "parent": "pair-batch-5"
+    },
+    "pair-batch-6": {
+      "jobs": 100,
+      "sha256": "3fa3153a3fd8baed54ce3c2040e32473c3a79c60bf6f448a951cc956d41a9501"
+    },
+    "pair-batch-6-refine": {
+      "jobs": 400,
+      "sha256": "adb874910b395efd527afdc4ede1b72d2fe33bcb947ea87f60357766f5cbf1d2",
+      "parent": "pair-batch-6"
+    }
+  },
+  "budget_seconds": 10800,
+  "method": "fixed doses and fixed order; no selection after outcomes; full completed stages only; fifty attempts for mid-range cells; identities unused for their context",
+  "order": [
+    "pair-batch-1",
+    "pair-batch-1-refine",
+    "pair-batch-2",
+    "pair-batch-2-refine",
+    "pair-batch-3",
+    "pair-batch-3-refine",
+    "pair-batch-4",
+    "pair-batch-4-refine",
+    "pair-batch-5",
+    "pair-batch-5-refine",
+    "pair-batch-6",
+    "pair-batch-6-refine"
+  ],
+  "continuation_rule": "Use the sealed next identities to reach 50 when the existing-plus-parent rate is in [0.15,0.85]; for a task of a decoy stage, continue every paired arm to 50 if any arm needs it. The hard total execution cap takes priority.",
+  "assays": []
+}

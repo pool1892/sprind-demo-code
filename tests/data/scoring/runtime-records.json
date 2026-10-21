@@ -1,0 +1,127 @@
+{
+  "source_commit": "0353c6d",
+  "evidence": "Real runtime writers with stand-in calls; no model or simulator.",
+  "session": {
+    "number": 1,
+    "state": "failed",
+    "export": "/var/tmp/robots-scoring/tmpt08agdk0/export",
+    "run_dir": "start-2",
+    "ok": false,
+    "error": "timeout",
+    "seconds": 20.0,
+    "usage": {},
+    "queued": [],
+    "submitted": [],
+    "report": null,
+    "tool_calls": 0,
+    "attempts": [
+      {
+        "ok": false,
+        "error": "timeout",
+        "detail": "killed after 10.0s",
+        "run_dir": "start-1",
+        "seconds": 10.0,
+        "usage": {},
+        "runtime_meta": {},
+        "answer_present": false
+      },
+      {
+        "ok": false,
+        "error": "timeout",
+        "detail": "killed after 10.0s",
+        "run_dir": "start-2",
+        "seconds": 10.0,
+        "usage": {},
+        "runtime_meta": {},
+        "answer_present": false
+      }
+    ],
+    "rerun": true,
+    "lost_twice": true,
+    "window": null,
+    "queue_file": null
+  },
+  "analysis_run": {
+    "lost_twice": true
+  },
+  "lost": {
+    "error": "timeout",
+    "detail": "killed after 10.0s",
+    "run_dir": "start-2",
+    "attempts": [
+      {
+        "ok": false,
+        "error": "timeout",
+        "detail": "killed after 10.0s",
+        "run_dir": "start-1",
+        "seconds": 10.0,
+        "usage": {},
+        "runtime_meta": {},
+        "answer_present": false
+      },
+      {
+        "ok": false,
+        "error": "timeout",
+        "detail": "killed after 10.0s",
+        "run_dir": "start-2",
+        "seconds": 10.0,
+        "usage": {},
+        "runtime_meta": {},
+        "answer_present": false
+      }
+    ]
+  },
+  "single": {
+    "error": "rate_limit",
+    "detail": "",
+    "run_dir": "single",
+    "attempts": [
+      {
+        "ok": false,
+        "error": "rate_limit",
+        "detail": "",
+        "run_dir": "single",
+        "seconds": 1,
+        "usage": {},
+        "runtime_meta": {},
+        "answer_present": false
+      }
+    ]
+  },
+  "recovered": {
+    "backend": "codex",
+    "requested_model": "gpt-6-astra",
+    "auth": "subscription",
+    "effort": "xhigh",
+    "service_tier": "fast",
+    "skills": false,
+    "tools": false,
+    "seconds": 11.0,
+    "attempts": [
+      {
+        "ok": false,
+        "error": "timeout",
+        "detail": "killed after 10.0s",
+        "run_dir": "start-1",
+        "seconds": 10.0,
+        "usage": {},
+        "runtime_meta": {},
+        "answer_present": false
+      },
+      {
+        "ok": true,
+        "error": null,
+        "detail": "",
+        "run_dir": "recovered",
+        "seconds": 1,
+        "usage": {},
+        "runtime_meta": {},
+        "answer_present": true
+      }
+    ],
+    "rerun": true,
+    "usage": {},
+    "run_dir": "recovered",
+    "runtime_meta": {}
+  }
+}

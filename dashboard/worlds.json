@@ -1,0 +1,46 @@
+{
+  "w01": {
+    "kind": "probe",
+    "note": "not a generated world: the engine's probe runs and the toy runs of the tests use this id (stage 2)"
+  },
+  "w90": {
+    "kind": "calibration",
+    "note": "the dose-response calibration, fleetlab.dose_response"
+  },
+  "w10": {
+    "kind": "miniature",
+    "note": "the miniature fleet mini-v1: 8 robots at 2 sites, 4 days, 3 faults; fleetlab.worlds.mini, seed 10; development material"
+  },
+  "w20": {
+    "kind": "nightly",
+    "note": "the deterministic nightly world, fixed seed 20 (fleetlab.engine.ladder)"
+  },
+  "w21": {
+    "kind": "nightly",
+    "note": "the randomized nightly world, a fresh seed each night (the date) (fleetlab.engine.ladder)"
+  },
+  "w30": {
+    "kind": "smoke",
+    "note": "the smoke world, one robot, 8 episodes, run on every merge (make smoke-world)"
+  },
+  "w41": {
+    "kind": "development",
+    "note": "a development world of stage 3; development material"
+  },
+  "w42": {
+    "kind": "development",
+    "note": "a development world of stage 3; development material"
+  },
+  "w43": {
+    "kind": "development",
+    "note": "a development world of stage 3; development material"
+  },
+  "w91": {
+    "kind": "calibration",
+    "note": "calibration runs of the world generator"
+  },
+  "w70": {
+    "kind": "development",
+    "note": "the lead development fleet of the feasibility demonstration's loop (lane fleet; M2 ran on it); development material"
+  }
+}

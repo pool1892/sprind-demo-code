@@ -1,0 +1,530 @@
+[
+  {
+    "id": "S01",
+    "what": "manifest baselines: export digest not compared with the certified export",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "        if export_digest(producer_export) != digest:\n",
+    "new": "        if False:\n",
+    "adaptation": "Same single break against round-6 code; obsolete field replaced by runtime attempts.",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_opaque_name_binds_genuine_sources_but_not_another_world"
+    ]
+  },
+  {
+    "id": "S02",
+    "what": "classical: episodes hash no longer required in input_sha256",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "            or not hashes.get(\"log/episodes.parquet\")\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_classical_description_only_cannot_bind_a_shared_public_name"
+    ]
+  },
+  {
+    "id": "S03",
+    "what": "classical: recorded input hashes not compared with the export's bytes",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "            _inside(export, key).is_file() and file_hash(_inside(export, key)) == value",
+    "new": "            _inside(export, key).is_file() or file_hash(_inside(export, key)) == value",
+    "tests": [
+      "tests/test_scoring_stage4.py::test_classical_producer_record_checks_world_and_recorded_input_hashes"
+    ]
+  },
+  {
+    "id": "S04",
+    "what": "certified_export: world id of the root not compared",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "    if WorldPaths.from_root(world_root).world_id != world_id:",
+    "new": "    if False and WorldPaths.from_root(world_root).world_id != world_id:",
+    "tests": [
+      "tests/test_scoring_stage4.py::test_producer_manifest_binds_world_repeat_and_output_directory"
+    ]
+  },
+  {
+    "id": "S05",
+    "what": "certified_export: readiness receipt not required",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "    if problem := export_check_problem(export, receipt_dir=world_root / \"export-checks\"):",
+    "new": "    if (problem := export_check_problem(export, receipt_dir=world_root / \"export-checks\")) and False:",
+    "tests": [
+      "tests/test_scoring_round6.py::test_seed_and_scorer_require_correct_clean_receipt"
+    ]
+  },
+  {
+    "id": "S06",
+    "what": "experimental classical: condition 'experiments' not required",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "            raw.get(\"condition\") != \"experiments\"\n            or type",
+    "new": "            False\n            or type",
+    "tests": [
+      "tests/test_scoring_round6.py::test_experimental_producer_contract_fields"
+    ]
+  },
+  {
+    "id": "S07",
+    "what": "logs classical: an experiments record may stand in",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "        if not experimental and raw.get(\"condition\") == \"experiments\":",
+    "new": "        if False and not experimental and raw.get(\"condition\") == \"experiments\":",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_experimental_label_cannot_accept_logs_evidence_and_reverse"
+    ]
+  },
+  {
+    "id": "S08",
+    "what": "experimental classical: completed_requests need not equal requests",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "            or raw.get(\"completed_requests\") != raw[\"requests\"]\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_round6.py::test_experimental_producer_contract_fields"
+    ]
+  },
+  {
+    "id": "S09",
+    "what": "experimental classical: more than eight requests accepted",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "            or not 0 <= raw[\"requests\"] <= 8\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_round6.py::test_experimental_producer_contract_fields"
+    ]
+  },
+  {
+    "id": "S10",
+    "what": "experimental classical: request/result hashes not required",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "            or not raw.get(\"request_sha256\")\n            or not raw.get(\"result_sha256\")\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_round6.py::test_experimental_producer_contract_fields"
+    ]
+  },
+  {
+    "id": "S11",
+    "what": "experimental classical: experiment description need not equal the logs description",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "        if experimental and (\n            not isinstance(raw.get(\"experiment_input_sha256\"), dict)",
+    "new": "        if False and experimental and (\n            not isinstance(raw.get(\"experiment_input_sha256\"), dict)",
+    "tests": [
+      "tests/test_scoring_round6.py::test_experimental_producer_contract_fields"
+    ]
+  },
+  {
+    "id": "S12",
+    "what": "classical: public name in evidence not compared with the export's",
+    "file": "src/fleetlab/scoring/provenance.py",
+    "old": "        if raw.get(\"world_id\") != _export_world(export):",
+    "new": "        if False and raw.get(\"world_id\") != _export_world(export):",
+    "tests": [
+      "tests/test_scoring_review6.py::test_classical_public_name_must_match_selected_export"
+    ]
+  },
+  {
+    "id": "S13",
+    "what": "seed: world hash of the chance record not compared",
+    "file": "src/fleetlab/baselines/_seed.py",
+    "old": "        if record.get(\"world_id\") != world_id or record.get(\"world_hash\") != world_hash:",
+    "new": "        if record.get(\"world_id\") != world_id:",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_seed_binds_metadata_and_bytes_without_chance_values"
+    ]
+  },
+  {
+    "id": "S14",
+    "what": "seed: world id of the chance record not compared",
+    "file": "src/fleetlab/baselines/_seed.py",
+    "old": "        if record.get(\"world_id\") != world_id or record.get(\"world_hash\") != world_hash:",
+    "new": "        if record.get(\"world_hash\") != world_hash:",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_seed_binds_metadata_and_bytes_without_chance_values"
+    ]
+  },
+  {
+    "id": "S15",
+    "what": "seed: receipt digest not compared with the export's bytes",
+    "file": "src/fleetlab/baselines/_seed.py",
+    "old": "            and r.get(\"export_digest\") == digest\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_seed_binds_metadata_and_bytes_without_chance_values"
+    ]
+  },
+  {
+    "id": "S16",
+    "what": "seed: an unclean receipt accepted",
+    "file": "src/fleetlab/baselines/_seed.py",
+    "old": "            r.get(\"clean\") is True\n            and r.get(\"export\") == str(export)",
+    "new": "            r.get(\"export\") == str(export)",
+    "tests": [
+      "tests/test_scoring_round6.py::test_seed_and_scorer_require_correct_clean_receipt"
+    ]
+  },
+  {
+    "id": "S17",
+    "what": "seed: receipt for another export path accepted",
+    "file": "src/fleetlab/baselines/_seed.py",
+    "old": "            and r.get(\"export\") == str(export)\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_round6.py::test_seed_and_scorer_require_correct_clean_receipt"
+    ]
+  },
+  {
+    "id": "S18",
+    "what": "claim 1: an incomplete measured list is scored",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "    if record is None or not record.complete or record.problems:",
+    "new": "    if record is None or record.problems:",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_measured_membership_unavailable_never_falls_back_to_curves"
+    ]
+  },
+  {
+    "id": "S19",
+    "what": "claim 1: a measured list with problems is scored",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "    if record is None or not record.complete or record.problems:",
+    "new": "    if record is None or not record.complete:",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_measured_membership_unavailable_never_falls_back_to_curves"
+    ]
+  },
+  {
+    "id": "S20",
+    "what": "read_measured: world hash not compared",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "    if record.world_id != world_id or record.world_hash != world_hash:",
+    "new": "    if record.world_id != world_id:",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_measured_record_identity_rule_and_singleton_accounting"
+    ]
+  },
+  {
+    "id": "S21",
+    "what": "read_measured: world id not compared",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "    if record.world_id != world_id or record.world_hash != world_hash:",
+    "new": "    if record.world_hash != world_hash:",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_measured_record_identity_rule_and_singleton_accounting"
+    ]
+  },
+  {
+    "id": "S22",
+    "what": "read_measured: rule name not compared",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "        record.rule != CLASS_RULE\n        or record",
+    "new": "        False\n        or record",
+    "tests": [
+      "tests/test_scoring_round6.py::test_measured_rule_and_minimum_are_frozen"
+    ]
+  },
+  {
+    "id": "S23",
+    "what": "read_measured: carrier minimum not compared",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "        or record.min_observed_carriers != DETECT_EPISODES\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_round6.py::test_measured_rule_and_minimum_are_frozen"
+    ]
+  },
+  {
+    "id": "S24",
+    "what": "measured table: the curve list's detectable flag decides singles",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "                    \"detectable\": fault.fault_id in singles,",
+    "new": "                    \"detectable\": fault.detectable,",
+    "tests": [
+      "tests/test_scoring_stage4.py::test_curve_truth_disagreements_are_descriptive_beside_measured_membership"
+    ]
+  },
+  {
+    "id": "S25",
+    "what": "measured table: planted role kept (a promoted decoy stays a decoy)",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "        role = \"effective\" if item.measured_class in (\"cause\", \"small\") else item.measured_class",
+    "new": "        role = fault.role",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_measured_decoy_promotion_is_a_hit_and_curves_do_not_decide"
+    ]
+  },
+  {
+    "id": "S26",
+    "what": "measured table: curve loss points kept (decides 'vague' against 'no fault')",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "                    \"expected_loss_points\": {\n                        name: window.points or 0 for name, window in item.windows.items()\n                    },\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_review6.py::test_measured_zero_effect_does_not_borrow_curve_vagueness"
+    ]
+  },
+  {
+    "id": "S27",
+    "what": "score: the curve result is reported as claim 1",
+    "file": "src/fleetlab/scoring/score.py",
+    "old": "    claim1, curve = score_claim1(inputs)",
+    "new": "    curve, claim1 = score_claim1(inputs)",
+    "tests": [
+      "tests/test_scoring_stage4.py::test_curve_truth_disagreements_are_descriptive_beside_measured_membership"
+    ]
+  },
+  {
+    "id": "S28",
+    "what": "splits: the curve result feeds known/unseen",
+    "file": "src/fleetlab/scoring/splits.py",
+    "old": "    diagnosis, _ = score_claim1(inputs)",
+    "new": "    _, diagnosis = score_claim1(inputs)",
+    "tests": [
+      "tests/test_scoring_round6.py::test_measured_units_and_splits_ignore_curve_membership"
+    ]
+  },
+  {
+    "id": "S29",
+    "what": "measured units: the generator's units are scored instead of the measured ones",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "    return score_diagnosis(inputs.diagnosis, table, inputs.confounders, units), curve",
+    "new": "    return score_diagnosis(inputs.diagnosis, table, inputs.confounders, inputs.cause_units), curve",
+    "tests": [
+      "tests/test_scoring_round6.py::test_measured_units_and_splits_ignore_curve_membership"
+    ]
+  },
+  {
+    "id": "S30",
+    "what": "with experiments: the experimental baseline is not required",
+    "file": "src/fleetlab/scoring/comparisons.py",
+    "old": "        if condition == \"with experiments\"\n",
+    "new": "        if condition == \"with experiments!\"\n",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_experiments_requires_its_own_baseline_in_world_and_pool"
+    ]
+  },
+  {
+    "id": "S31",
+    "what": "required_values: a baseline marked lost twice is read like any other",
+    "file": "src/fleetlab/scoring/comparisons.py",
+    "old": "        if provenance.get(\"lost_call\"):\n            absent.append(name + \" (both model call starts lost)\")\n        elif value is None",
+    "new": "        if value is None",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_two_lost_baseline_starts_override_stale_answer_and_cannot_decide_comparisons"
+    ]
+  },
+  {
+    "id": "S32",
+    "what": "headline: ratio against the best logs-only baseline in every condition",
+    "file": "src/fleetlab/scoring/decisions.py",
+    "old": "    best_name, best_value = max(required.items(), key=lambda t: float(t[1].share.value or 0))",
+    "new": "    best_name, best_value = max(logs.items(), key=lambda t: float(t[1].share.value or 0))",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_experiments_compares_the_stronger_opponent_and_shows_both"
+    ]
+  },
+  {
+    "id": "S33",
+    "what": "margin: best baseline taken over the logs-only four in every condition",
+    "file": "src/fleetlab/scoring/thresholds.py",
+    "old": "best = max((v.gain.net for v in baseline_values.values() if v.gain is not None), default=None)",
+    "new": "best = max((v.gain.net for name, v in baseline_values.items() if v.gain is not None and \"experiments\" not in name), default=None)",
+    "adaptation": "Same single break against round-6 code; obsolete field replaced by runtime attempts.",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_experiments_compares_the_stronger_opponent_and_shows_both"
+    ]
+  },
+  {
+    "id": "S34",
+    "what": "lost: one lost start of two counts as exhausted",
+    "file": "src/fleetlab/scoring/lost.py",
+    "old": "    return len(starts) == 2 and all(lost)",
+    "new": "    return len(starts) == 2 and any(lost)",
+    "adaptation": "Same single break against round-6 code; obsolete field replaced by runtime attempts.",
+    "tests": [
+      "tests/test_scoring_round6.py::test_runtime_attempt_records"
+    ]
+  },
+  {
+    "id": "S35",
+    "what": "lost: a single lost start counts as exhausted",
+    "file": "src/fleetlab/scoring/lost.py",
+    "old": "    return len(starts) == 2 and all(lost)",
+    "new": "    return all(lost)",
+    "adaptation": "Same single break against round-6 code; obsolete field replaced by runtime attempts.",
+    "tests": [
+      "tests/test_scoring_round6.py::test_runtime_attempt_records"
+    ]
+  },
+  {
+    "id": "S36",
+    "what": "lost: never exhausted",
+    "file": "src/fleetlab/scoring/lost.py",
+    "old": "    return len(starts) == 2 and all(lost)",
+    "new": "    return False",
+    "adaptation": "Same single break against round-6 code; obsolete field replaced by runtime attempts.",
+    "tests": [
+      "tests/test_scoring_round6.py::test_runtime_attempt_records"
+    ]
+  },
+  {
+    "id": "S37",
+    "what": "command line: a twice-lost analysis is read like any other",
+    "file": "src/fleetlab/scoring/__main__.py",
+    "old": "        if analysis_lost(analysis_root):\n            raise ValueError(\"both model call starts lost\")\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_round6.py::test_cli_lost_analysis_is_no_answer"
+    ]
+  },
+  {
+    "id": "S38",
+    "what": "command line: the condition is not handed to the scorer (always logs alone)",
+    "file": "src/fleetlab/scoring/__main__.py",
+    "old": "        condition=condition,\n        replay_missing=replay_missing,",
+    "new": "        replay_missing=replay_missing,",
+    "adaptation": "Same single break against round-6 code; obsolete field replaced by runtime attempts.",
+    "tests": [
+      "tests/test_scoring_round6.py::test_cli_passes_experiment_condition_and_measured_world_hash"
+    ]
+  },
+  {
+    "id": "S39",
+    "what": "command line: the measured file is never read",
+    "file": "src/fleetlab/scoring/__main__.py",
+    "old": "        measured_causes=read_measured(\n            layout.root / \"measured_causes.json\", world.world_id, world.world_hash\n        ),",
+    "new": "        measured_causes=None,",
+    "tests": [
+      "tests/test_scoring_round6.py::test_cli_passes_experiment_condition_and_measured_world_hash"
+    ]
+  },
+  {
+    "id": "S40",
+    "what": "command line: the measured file is read without the world hash",
+    "file": "src/fleetlab/scoring/__main__.py",
+    "old": "            layout.root / \"measured_causes.json\", world.world_id, world.world_hash\n        ),\n        measured_missing",
+    "new": "            layout.root / \"measured_causes.json\", world.world_id, None\n        ),\n        measured_missing",
+    "tests": [
+      "tests/test_scoring_round6.py::test_cli_passes_experiment_condition_and_measured_world_hash"
+    ]
+  },
+  {
+    "id": "S41",
+    "what": "baseline answers: a twice-lost baseline's stale answer is read",
+    "file": "src/fleetlab/scoring/loading.py",
+    "old": "        if records[name][\"lost_call\"]:\n            continue\n",
+    "new": "",
+    "tests": [
+      "tests/test_scoring_round6.py::test_lost_metadata_and_decision_layer_discard_stale_value"
+    ]
+  },
+  {
+    "id": "S42",
+    "what": "decisions: a twice-lost baseline keeps its valued stale answer",
+    "file": "src/fleetlab/scoring/decisions.py",
+    "old": "            if source.get(\"lost_call\"):\n                baselines[name] = FixSetValue(",
+    "new": "            if False and source.get(\"lost_call\"):\n                baselines[name] = FixSetValue(",
+    "tests": [
+      "tests/test_scoring_round6.py::test_lost_metadata_and_decision_layer_discard_stale_value"
+    ]
+  },
+  {
+    "id": "S43",
+    "what": "pool: a report whose comparison condition differs from its run condition is accepted",
+    "file": "src/fleetlab/scoring/pooling.py",
+    "old": "        if any(at.condition != condition for at in report.claim3.budgets):",
+    "new": "        if False and any(at.condition != condition for at in report.claim3.budgets):",
+    "tests": [
+      "tests/test_scoring_round6.py::test_pool_refuses_comparison_condition_relabelling"
+    ]
+  },
+  {
+    "id": "S44",
+    "what": "pass mark: above chance read as at least (>=)",
+    "file": "src/fleetlab/scoring/thresholds.py",
+    "old": "            status = \"met\" if above_net > 0 else \"missed\"",
+    "new": "            status = \"met\" if above_net >= 0 else \"missed\"",
+    "adaptation": "Same single break against round-6 code; obsolete field replaced by runtime attempts.",
+    "tests": [
+      "tests/test_scoring_round6.py::test_nets_decide_exact_chance_tie_and_three_point_margin"
+    ]
+  },
+  {
+    "id": "S45",
+    "what": "pass mark: margin and share read as strictly greater",
+    "file": "src/fleetlab/scoring/thresholds.py",
+    "old": "            else (\"met\" if (value > threshold if strict else value >= threshold) else \"missed\")",
+    "new": "            else (\"met\" if value > threshold else \"missed\")",
+    "tests": [
+      "tests/test_scoring_stage4.py::test_marks_use_exact_upper_chance_strictly_and_k3_inclusively"
+    ]
+  },
+  {
+    "id": "S46",
+    "what": "constructed ceiling: an incomplete measured list is accepted",
+    "file": "src/fleetlab/scoring/validation.py",
+    "old": "    if measured is None or not measured.complete or measured.problems:",
+    "new": "    if measured is None:",
+    "tests": [
+      "tests/test_scoring_review6.py::test_constructed_ceiling_requires_complete_measured_record"
+    ]
+  },
+  {
+    "id": "S47",
+    "what": "headline: best logs-only opponent shown by the lowest points",
+    "file": "src/fleetlab/scoring/decisions.py",
+    "old": "        name, value = max(logs.items(), key=lambda item: float(item[1].points or 0))",
+    "new": "        name, value = min(logs.items(), key=lambda item: float(item[1].points or 0))",
+    "tests": [
+      "tests/test_scoring_review6.py::test_headline_shows_strongest_logs_opponent"
+    ]
+  },
+  {
+    "id": "S48",
+    "what": "loading: runtime attempts of two record files may conflict",
+    "file": "src/fleetlab/scoring/loading.py",
+    "old": "                \"attempts\",\n",
+    "new": "",
+    "adaptation": "Same single break against round-6 code; obsolete field replaced by runtime attempts.",
+    "tests": [
+      "tests/test_scoring_review6.py::test_runtime_attempt_receipts_cannot_conflict"
+    ]
+  },
+  {
+    "id": "S49",
+    "what": "decoy rejection in splits: no diagnosis no longer scores zero",
+    "file": "src/fleetlab/scoring/splits.py",
+    "old": "                0 if inputs.diagnosis is None else sum(not f.named_by for f in decoys) / len(decoys)",
+    "new": "                sum(not f.named_by for f in decoys) / len(decoys)",
+    "tests": [
+      "tests/test_scoring_round6.py::test_measured_units_and_splits_ignore_curve_membership"
+    ]
+  },
+  {
+    "id": "S50",
+    "what": "measured table: cause_count not compared with the list",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "    if record.cause_count != len(record.causes):",
+    "new": "    if False and record.cause_count != len(record.causes):",
+    "tests": [
+      "tests/test_scoring_round6.py::test_measured_counts_and_fault_roster_are_checked"
+    ]
+  },
+  {
+    "id": "S51",
+    "what": "measured table: fault set not compared with the world's table",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "    if set(items) != {fault.fault_id for fault in table.faults}:",
+    "new": "    if False and set(items) != {fault.fault_id for fault in table.faults}:",
+    "tests": [
+      "tests/test_scoring_round6.py::test_measured_counts_and_fault_roster_are_checked"
+    ]
+  },
+  {
+    "id": "S52",
+    "what": "measured table: singleton list not compared with the classes",
+    "file": "src/fleetlab/scoring/measured.py",
+    "old": "    if singles != {item.item for item in record.faults if item.measured_class == \"cause\"}:",
+    "new": "    if False and singles != {item.item for item in record.faults if item.measured_class == \"cause\"}:",
+    "tests": [
+      "tests/test_scoring_gen3.py::test_measured_record_identity_rule_and_singleton_accounting"
+    ]
+  }
+]

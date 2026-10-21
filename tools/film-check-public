@@ -1,0 +1,129 @@
+#!/usr/bin/env bash
+# Is the demo site public? The gate-3 check: without credentials, the page and the film
+# are what the site build made, served to anyone.
+#
+#   tools/film-check-public URL [--mp4 URL] [--marker TEXT]
+#
+# URL is the site's page, e.g. https://pool1892.github.io/<repo>/. Both requests are GETs
+# without credentials: no curl configuration file (-q), no .netrc, no cookies, no
+# authorization header; redirects are followed and reported.
+#
+# The page must end in HTTP 200 as HTML at an address that is not a login or sign-in page,
+# and carry the site build's mark (<meta name="generator" content="fleetlab.film-site/1">,
+# or --marker TEXT) and a <video> element. The film is the page's <video> source, resolved
+# against the page, unless --mp4 names it; the page is checked either way. The film must
+# end in HTTP 200 as video/mp4, outside a login page, download completely within 100 MB
+# (FILM_CHECK_MAX_BYTES), match the length the server declared, and be an MP4 file: an
+# ftyp box at the start and a moov box in it.
+#
+# Prints one line per request and a verdict; exits 0 when public, 1 when not, 2 on usage.
+set -uo pipefail
+
+usage() { sed -n '2,19p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+[ $# -ge 1 ] || usage
+page=$1; shift
+mp4= marker='<meta name="generator" content="fleetlab.film-site/1">'
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --mp4) mp4=$2; shift 2 ;;
+        --marker) marker=$2; shift 2 ;;
+        -h|--help) usage ;;
+        *) echo "film-check-public: unknown argument $1" >&2; usage ;;
+    esac
+done
+case "$page" in http://*|https://*) ;; *) echo "film-check-public: $page is not an http(s) URL" >&2; exit 2 ;; esac
+limit=${FILM_CHECK_MAX_BYTES:-100000000}
+
+scratch=$(mktemp -d)
+trap 'rm -rf "$scratch"' EXIT
+
+# fetch URL NAME: GET without credentials into $scratch/NAME; headers of every hop in
+# $scratch/NAME.headers; prints "status|effective-url|content-type|bytes|curl-exit"
+fetch() {
+    local out code
+    out=$(curl -q -sS -L --max-redirs 5 --connect-timeout 20 --max-time 600 \
+        --max-filesize "$limit" -A "film-check-public (curl)" \
+        -o "$scratch/$2" -D "$scratch/$2.headers" \
+        -w '%{http_code}|%{url_effective}|%{content_type}|%{size_download}' "$1" \
+        2>"$scratch/$2.err")
+    code=$?
+    printf '%s|%s\n' "${out:-000|-||0}" "$code"
+}
+
+chain() { awk 'toupper($1) ~ /^HTTP\// {printf "%s%s", sep, $2; sep=" -> "}' "$1" 2>/dev/null; }
+last_header() {
+    awk -v h="$2" 'toupper($1) ~ /^HTTP\// {v=""} tolower($1) == tolower(h)":" {sub(/^[^:]*:[ \t]*/, ""); sub(/\r$/, ""); v=$0} END {print v}' "$1" 2>/dev/null
+}
+login_like() { printf '%s' "$1" | grep -qiE '/(login|log-in|signin|sign-in|sign_in|auth|oauth|sso|session|saml)([/?#._-]|$)|[?&](return_to|redirect_uri|next)=|accounts\.'; }
+
+verdict=0
+fail() { echo "$1"; verdict=1; }
+
+# the page
+IFS="|" read -r status final kind got curl_exit < <(fetch "$page" page)
+detail="statuses: $(chain "$scratch/page.headers"); ${kind:-no content type}; at $final"
+if [ "$curl_exit" != 0 ]; then
+    fail "page   no answer  $page  ($(head -c 200 "$scratch/page.err"))"
+elif [ "$status" != 200 ]; then
+    fail "page   $status  $page  ($detail)"
+elif login_like "$final"; then
+    fail "page   200  $page  ($detail): a login page, not the site"
+elif ! printf '%s' "$kind" | grep -qi 'text/html'; then
+    fail "page   200  $page  ($detail): not HTML"
+elif ! grep -qF "$marker" "$scratch/page"; then
+    fail "page   200  $page  ($detail): not the film's site (its mark is missing): an error or other page"
+elif ! tr '\n' ' ' <"$scratch/page" | grep -qiE '<video[^>]*>'; then
+    fail "page   200  $page  ($detail): no <video> element"
+else
+    echo "page   200  $page  ($detail)"
+fi
+
+# the film's address
+if [ -z "$mp4" ] && [ -s "$scratch/page" ]; then
+    src=$(tr '\n' ' ' <"$scratch/page" | grep -oiE '<video[^>]*>.*</video>' | grep -oiE '(<source[^>]*src|<video[^>]*src)="[^"]+"' | head -1 | sed -E 's/.*src="([^"]+)"/\1/')
+    base=$page
+    [ "$final" = - ] || base=$final
+    case "$src" in
+        '') ;;
+        http://*|https://*) mp4=$src ;;
+        //*) mp4="${base%%//*}$src" ;;
+        /*) mp4=$(printf '%s' "$base" | sed -E 's#^(https?://[^/]+).*#\1#')$src ;;
+        *) dir=$(printf '%s' "$base" | sed -E 's#[?#].*$##'); case "$dir" in */) ;; *) dir="${dir%/*}/" ;; esac; mp4="$dir$src" ;;
+    esac
+fi
+
+# the film
+if [ -z "$mp4" ]; then
+    fail "film   none  no <video> source on the page"
+else
+    IFS="|" read -r status final kind got curl_exit < <(fetch "$mp4" film)
+    declared=$(last_header "$scratch/film.headers" content-length)
+    detail="statuses: $(chain "$scratch/film.headers"); ${kind:-no content type}; ${got:-0} bytes; at $final"
+    box=$(head -c 8 "$scratch/film" 2>/dev/null | tail -c 4)
+    if [ "$curl_exit" = 63 ]; then
+        fail "film   $status  $mp4  ($detail): over the limit of $limit bytes"
+    elif [ "$curl_exit" != 0 ]; then
+        fail "film   no answer  $mp4  ($(head -c 200 "$scratch/film.err"))"
+    elif [ "$status" != 200 ]; then
+        fail "film   $status  $mp4  ($detail)"
+    elif login_like "$final"; then
+        fail "film   200  $mp4  ($detail): a login page, not the film"
+    elif ! printf '%s' "$kind" | grep -qi '^video/mp4'; then
+        fail "film   200  $mp4  ($detail): served as ${kind:-nothing}, not video/mp4"
+    elif [ "${got:-0}" -gt "$limit" ] 2>/dev/null; then
+        fail "film   200  $mp4  ($detail): over the limit of $limit bytes"
+    elif [ -n "$declared" ] && [ "$declared" != "$got" ]; then
+        fail "film   200  $mp4  ($detail): $got bytes arrived of the $declared declared"
+    elif [ "$box" != ftyp ] || ! LC_ALL=C grep -aq 'moov' "$scratch/film"; then
+        fail "film   200  $mp4  ($detail): not an MP4 file (no ftyp box at the start, or no moov box)"
+    else
+        echo "film   200  $mp4  ($detail)"
+    fi
+fi
+
+if [ "$verdict" = 0 ]; then
+    echo "verdict: PUBLIC: the page and the film answer 200 without credentials and are the site's"
+else
+    echo "verdict: NOT PUBLIC: see the lines above"
+fi
+exit "$verdict"

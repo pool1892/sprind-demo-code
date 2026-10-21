@@ -1,0 +1,434 @@
+{
+  "kind": "read-only telemetry eligibility, not simulation or rescue measurement",
+  "sample_sha256": "79eb69b78f122f0850dadc050e8cc6280f3a72801e0eec6f7ea3d6668d9544dc",
+  "attempts": 60,
+  "previously_available": 13,
+  "available": 10,
+  "removed": [
+    "e000661",
+    "e001295",
+    "e001669"
+  ],
+  "rows": [
+    {
+      "episode_id": "e000071",
+      "mode": "relative",
+      "first_close": 109,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000114",
+      "mode": "absolute",
+      "first_close": 49,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000138",
+      "mode": "absolute",
+      "first_close": null,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000148",
+      "mode": "absolute",
+      "first_close": 52,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e000175",
+      "mode": "absolute",
+      "first_close": 63,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000226",
+      "mode": "absolute",
+      "first_close": 52,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000273",
+      "mode": "relative",
+      "first_close": 57,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000277",
+      "mode": "relative",
+      "first_close": 58,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000279",
+      "mode": "absolute",
+      "first_close": 53,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000310",
+      "mode": "absolute",
+      "first_close": 114,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000321",
+      "mode": "relative",
+      "first_close": null,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000323",
+      "mode": "absolute",
+      "first_close": 46,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000363",
+      "mode": "absolute",
+      "first_close": 50,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000384",
+      "mode": "absolute",
+      "first_close": 57,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000409",
+      "mode": "absolute",
+      "first_close": 47,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000463",
+      "mode": "absolute",
+      "first_close": 48,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000480",
+      "mode": "absolute",
+      "first_close": 113,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000496",
+      "mode": "absolute",
+      "first_close": 43,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000592",
+      "mode": "relative",
+      "first_close": 91,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000623",
+      "mode": "absolute",
+      "first_close": 67,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000634",
+      "mode": "absolute",
+      "first_close": 114,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000636",
+      "mode": "relative",
+      "first_close": 95,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000638",
+      "mode": "relative",
+      "first_close": 58,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000645",
+      "mode": "absolute",
+      "first_close": 53,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000651",
+      "mode": "absolute",
+      "first_close": 46,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000661",
+      "mode": "absolute",
+      "first_close": 87,
+      "previously_available": true,
+      "available": false
+    },
+    {
+      "episode_id": "e000694",
+      "mode": "absolute",
+      "first_close": 46,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000724",
+      "mode": "relative",
+      "first_close": 132,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000823",
+      "mode": "absolute",
+      "first_close": 110,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000826",
+      "mode": "absolute",
+      "first_close": 109,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000860",
+      "mode": "absolute",
+      "first_close": 111,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000941",
+      "mode": "absolute",
+      "first_close": null,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e000956",
+      "mode": "absolute",
+      "first_close": 113,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001018",
+      "mode": "absolute",
+      "first_close": 53,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001069",
+      "mode": "absolute",
+      "first_close": 110,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001079",
+      "mode": "absolute",
+      "first_close": 116,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001083",
+      "mode": "absolute",
+      "first_close": 47,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001111",
+      "mode": "absolute",
+      "first_close": 63,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001143",
+      "mode": "absolute",
+      "first_close": 59,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001205",
+      "mode": "relative",
+      "first_close": 139,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001218",
+      "mode": "absolute",
+      "first_close": 80,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001277",
+      "mode": "absolute",
+      "first_close": 49,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001281",
+      "mode": "absolute",
+      "first_close": 28,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001291",
+      "mode": "relative",
+      "first_close": 57,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001295",
+      "mode": "absolute",
+      "first_close": 77,
+      "previously_available": true,
+      "available": false
+    },
+    {
+      "episode_id": "e001378",
+      "mode": "absolute",
+      "first_close": 113,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001381",
+      "mode": "absolute",
+      "first_close": 49,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001385",
+      "mode": "absolute",
+      "first_close": 86,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001391",
+      "mode": "relative",
+      "first_close": 93,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001404",
+      "mode": "absolute",
+      "first_close": 46,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001406",
+      "mode": "absolute",
+      "first_close": 38,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001443",
+      "mode": "absolute",
+      "first_close": 52,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001580",
+      "mode": "absolute",
+      "first_close": 54,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001611",
+      "mode": "absolute",
+      "first_close": 48,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001612",
+      "mode": "absolute",
+      "first_close": 67,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001624",
+      "mode": "absolute",
+      "first_close": 56,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001633",
+      "mode": "absolute",
+      "first_close": 54,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001652",
+      "mode": "relative",
+      "first_close": 109,
+      "previously_available": false,
+      "available": false
+    },
+    {
+      "episode_id": "e001662",
+      "mode": "absolute",
+      "first_close": 48,
+      "previously_available": true,
+      "available": true
+    },
+    {
+      "episode_id": "e001669",
+      "mode": "absolute",
+      "first_close": 32,
+      "previously_available": true,
+      "available": false
+    }
+  ]
+}

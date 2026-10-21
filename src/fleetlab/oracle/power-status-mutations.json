@@ -1,0 +1,37 @@
+{
+ "mutations": [
+  {
+   "mutation": "contradictory stored row accepted",
+   "test": "test_stored_outcome_contradicting_mechanism_equivalence_is_refused",
+   "baseline_exit": 0,
+   "mutation_exit": 1,
+   "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n______ test_stored_outcome_contradicting_mechanism_equivalence_is_refused ______\ntests/test_oracle_power.py:93: in test_stored_outcome_contradicting_mechanism_equivalence_is_refused\n    with pytest.raises(ValueError, match=\"no-mechanism addition changed the outcome\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE ValueError\n=========================== short test summary info ============================\nFAILED tests/test_oracle_power.py::test_stored_outcome_contradicting_mechanism_equivalence_is_refused\n1 failed in 1.06s\n"
+  },
+  {
+   "mutation": "original configuration fault dropped",
+   "test": "test_original_config_change_is_kept_even_with_a_known_empty_outcome",
+   "baseline_exit": 0,
+   "mutation_exit": 1,
+   "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_____ test_original_config_change_is_kept_even_with_a_known_empty_outcome ______\ntests/test_oracle_power.py:113: in test_original_config_change_is_kept_even_with_a_known_empty_outcome\n    assert table.success(identity.episode_id, [fault]) is False\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/tmp/codex-oracle/round5/mutants/src/fleetlab/oracle/mechanism.py:54: in success\n    raise ValueError(f\"{episode_id}: a no-mechanism addition changed the outcome\")\nE   ValueError: e000001: a no-mechanism addition changed the outcome\n=========================== short test summary info ============================\nFAILED tests/test_oracle_power.py::test_original_config_change_is_kept_even_with_a_known_empty_outcome\n1 failed in 1.09s\n"
+  },
+  {
+   "mutation": "unsampled fault-free request dropped",
+   "test": "test_fault_free_requests_outside_proof_sample_are_all_in_manifest",
+   "baseline_exit": 0,
+   "mutation_exit": 1,
+   "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n______ test_fault_free_requests_outside_proof_sample_are_all_in_manifest _______\ntests/test_oracle_power.py:131: in test_fault_free_requests_outside_proof_sample_are_all_in_manifest\n    assert (record[\"jobs\"], record[\"proof\"], record[\"refused\"]) == (0, 41, [])\nE   assert (0, 21, []) == (0, 41, [])\nE     \nE     At index 1 diff: 21 != 41\nE     Use -v to get more diff\n=========================== short test summary info ============================\nFAILED tests/test_oracle_power.py::test_fault_free_requests_outside_proof_sample_are_all_in_manifest\n1 failed in 1.23s\n"
+  },
+  {
+   "mutation": "unavailable exact floor returns incomplete",
+   "test": "test_unavailable_required_exact_floor_is_refused_not_incomplete",
+   "baseline_exit": 0,
+   "mutation_exit": 1,
+   "failure": "FF                                                                       [100%]\n=================================== FAILURES ===================================\n____ test_unavailable_required_exact_floor_is_refused_not_incomplete[None] _____\ntests/test_oracle_power.py:156: in test_unavailable_required_exact_floor_is_refused_not_incomplete\n    assert report_status(report) == 1\nE   AssertionError: assert 2 == 1\nE    +  where 2 = report_status(OracleReport(world_id='w98', world_hash=None, scoring_episodes=12, rows=0, plan=None, runs=[], over_cap=[], excluded=[...en), interval unavailable')], problems=[], notes=['no fleet to build the catalogue from: the chance level is missing']))\n_ test_unavailable_required_exact_floor_is_refused_not_incomplete[cannot resolve catalogue action] _\ntests/test_oracle_power.py:156: in test_unavailable_required_exact_floor_is_refused_not_incomplete\n    assert report_status(report) == 1\nE   AssertionError: assert 2 == 1\nE    +  where 2 = report_status(OracleReport(world_id='w98', world_hash=None, scoring_episodes=12, rows=0, plan=None, runs=[], over_cap=[], excluded=[...en), interval unavailable')], problems=[], notes=['no fleet to build the catalogue from: the chance level is missing']))\n=========================== short test summary info ============================\nFAILED tests/test_oracle_power.py::test_unavailable_required_exact_floor_is_refused_not_incomplete[None]\nFAILED tests/test_oracle_power.py::test_unavailable_required_exact_floor_is_refused_not_incomplete[cannot resolve catalogue action]\n2 failed in 0.76s\n"
+  }
+ ],
+ "ordinary_incomplete_before": {
+  "commit": "726c85b",
+  "exit": 1,
+  "failure": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_____ test_detectability_missing_only_for_replays_makes_report_incomplete ______\ntests/test_oracle_power.py:180: in test_detectability_missing_only_for_replays_makes_report_incomplete\n    assert report_status(report) == 2\nE   AssertionError: assert 1 == 2\nE    +  where 1 = report_status(OracleReport(world_id='w98', world_hash=None, scoring_episodes=12, rows=0, plan=None, runs=[], over_cap=[], excluded=[...scoring episodes have no all-faults-removed row', 'no fleet to build the catalogue from: the chance level is missing']))\n=========================== short test summary info ============================\nFAILED tests/test_oracle_power.py::test_detectability_missing_only_for_replays_makes_report_incomplete\n1 failed in 0.98s\n"
+ }
+}

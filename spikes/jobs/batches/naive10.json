@@ -1,0 +1,221 @@
+{
+ "video": true,
+ "runs": [
+  {
+   "job": "S6",
+   "variant": "naive",
+   "starts": [
+    0
+   ]
+  },
+  {
+   "job": "S4",
+   "variant": "naive",
+   "starts": [
+    0
+   ]
+  },
+  {
+   "job": "S9",
+   "variant": "naive",
+   "starts": [
+    0
+   ]
+  },
+  {
+   "job": "S8",
+   "variant": "naive",
+   "starts": [
+    0
+   ]
+  },
+  {
+   "job": "S1",
+   "variant": "naive",
+   "starts": [
+    0
+   ]
+  },
+  {
+   "job": "S2",
+   "variant": "naive",
+   "starts": [
+    0
+   ]
+  },
+  {
+   "job": "S7",
+   "variant": "naive",
+   "starts": [
+    0
+   ]
+  },
+  {
+   "job": "S3",
+   "variant": "naive",
+   "starts": [
+    0
+   ]
+  },
+  {
+   "job": "J1",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J2",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J3",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J4",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J5",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J6",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J7",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J8",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J9",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "job": "J10",
+   "variant": "naive",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  }
+ ]
+}

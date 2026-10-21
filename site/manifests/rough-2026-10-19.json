@@ -1,0 +1,432 @@
+{
+  "format": "fleetlab.film-manifest/1",
+  "title": "The installation takes on a new job",
+  "subtitle": "Rough timeline, 19 October 2026: placeholders from earlier runs",
+  "notes": "Placeholders only. Story A's beats use lane S's spike runs (goal suite, X-VLA, development evidence) where they exist; story B's use the feasibility campaign's m2 run (world w70) and lane P's spike figure. Every placeholder beat says so on screen. Slates mark beats with no footage yet.",
+  "script": "../narration/script.md",
+  "fps": 20,
+  "poster": "a5-release",
+  "stories": {
+    "A": "Make this one job",
+    "B": "Make that a check the next shift can run"
+  },
+  "beats": [
+    {
+      "id": "open",
+      "title": "Opening",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 4,
+          "title": "The installation takes on a new job",
+          "subtitle": "One robot policy that never changes, and agents that improve the installation around it.",
+          "note": "Rough cut of 19 October 2026: footage from earlier runs stands in where the demo's runs do not exist yet, and says so."
+        }
+      ]
+    },
+    {
+      "id": "a0-title",
+      "story": "A",
+      "title": "Story A",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 3,
+          "title": "Make this one job",
+          "subtitle": "A shift lead asks the installation for a job it has never done."
+        }
+      ]
+    },
+    {
+      "id": "a1-skills",
+      "story": "A",
+      "title": "The skills",
+      "subtitle": "the robot is capable; the policy never changes",
+      "placeholder": "lane S spike, single skills on start 0, development runs",
+      "needs": "two single-skill runs from story A's record, each delivered",
+      "panel": {
+        "program": "single skill",
+        "current": "auto"
+      },
+      "shots": [
+        {
+          "kind": "clip",
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-20/spike/naive10",
+            "episode": "S6/naive/s00",
+            "label": "skill: cream cheese into the bowl",
+            "speed": 1.5,
+            "hold": 0.5
+          }
+        },
+        {
+          "kind": "clip",
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-20/spike/naive10",
+            "episode": "S4/naive/s00",
+            "label": "skill: bowl onto the plate",
+            "speed": 1.5,
+            "hold": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "a2-request",
+      "story": "A",
+      "title": "The request",
+      "subtitle": "intent enters; the bar is set outside the agent",
+      "placeholder": "the panel shows the spike's chain J1 as an example; gate 1 chooses job one",
+      "needs": "the shift lead's request, the order rule, the agent's acceptance proposal (N starts, K deliveries) and the lead's approval, from story A's session record",
+      "panel": {
+        "requirement": [
+          "cream cheese in the bowl",
+          "bowl on the plate"
+        ],
+        "rule": "the cream cheese goes in before the bowl moves",
+        "bar": "proposed by the agent, approved by the lead"
+      },
+      "shots": [
+        {
+          "kind": "slate",
+          "seconds": 4
+        }
+      ]
+    },
+    {
+      "id": "a3-naive",
+      "story": "A",
+      "title": "The naive attempt",
+      "subtitle": "a success signal is not a delivery",
+      "placeholder": "lane S spike, naive chain J3 on development starts",
+      "needs": "the naive chain on story A's release starts, with its count",
+      "panel": {
+        "requirement": [
+          "bowl on the plate",
+          "cream cheese in the bowl"
+        ],
+        "program": "naive chain",
+        "current": "auto",
+        "count": {
+          "text": "{k} of {n} delivered",
+          "detail": "naive chain J3, development starts 0 to 9 (spike)",
+          "from": {
+            "table": "~/.cache/robots-probes/demo/2026-10-20/spike/naive10/results.jsonl",
+            "where": {
+              "job": "J3",
+              "variant": "naive"
+            },
+            "success": "delivered"
+          }
+        }
+      },
+      "shots": [
+        {
+          "kind": "clip",
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-20/spike/naive10",
+            "episode": "J3/naive/s06",
+            "label": "naive chain, start 6",
+            "speed": 2,
+            "hold": 0.5,
+            "note": "The bowl is still in the hand when the instruction switches."
+          }
+        }
+      ]
+    },
+    {
+      "id": "a4-investigation",
+      "story": "A",
+      "title": "The investigation",
+      "subtitle": "agent-built measurement; experiments on the installation",
+      "needs": "the agent's session: the object traces it reads, its saved check (the SQL on screen), the failing moment it finds, and the transitions it tests",
+      "shots": [
+        {
+          "kind": "slate",
+          "seconds": 5
+        }
+      ]
+    },
+    {
+      "id": "a5-release",
+      "story": "A",
+      "title": "The release",
+      "subtitle": "a qualified job",
+      "placeholder": "lane S spike: the host's release transition on development starts, not the agent's program on reserved starts",
+      "needs": "the agent's frozen program against the naive chain on the same reserved start, side by side; the release receipt's counts, rescued and broken; the agent's account to the shift lead",
+      "panel": {
+        "requirement": [
+          "cream cheese in the bowl",
+          "bowl on the plate"
+        ],
+        "program": "release transition",
+        "current": "auto",
+        "follow": 1,
+        "count": [
+          {
+            "text": "naive: {k} of {n} delivered",
+            "detail": "chain J1, development starts 0 to 19 (spike)",
+            "from": {
+              "table": [
+                "~/.cache/robots-probes/demo/2026-10-20/spike/naive10/results.jsonl",
+                "~/.cache/robots-probes/demo/2026-10-20/spike/confirm20/results.jsonl"
+              ],
+              "where": {
+                "job": "J1",
+                "variant": "naive"
+              },
+              "success": "delivered",
+              "key": [
+                "start"
+              ]
+            }
+          },
+          {
+            "text": "release: {k} of {n} delivered",
+            "detail": "the same chain and starts with a release transition (spike)",
+            "from": {
+              "table": "~/.cache/robots-probes/demo/2026-10-20/spike/confirm20/results.jsonl",
+              "where": {
+                "job": "J1",
+                "variant": "release"
+              },
+              "success": "delivered",
+              "key": [
+                "start"
+              ]
+            }
+          }
+        ]
+      },
+      "shots": [
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/spike/naive10",
+              "episode": "J1/naive/s01",
+              "label": "naive chain, start 1",
+              "speed": 2,
+              "hold": 0.5
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/spike/confirm20",
+              "episode": "J1/release/s01",
+              "label": "release transition, start 1",
+              "speed": 2,
+              "hold": 0.5
+            }
+          ],
+          "note": "The same start: initial state 1, the same scene and noise seeds."
+        }
+      ]
+    },
+    {
+      "id": "a6-next-shift",
+      "story": "A",
+      "title": "The next shift",
+      "subtitle": "the next request starts from a more capable system",
+      "needs": "the job list with job one and its check; an operator's command running job one from a fresh start; the second request; job two's session invoking the saved check; the two cost accounts side by side",
+      "shots": [
+        {
+          "kind": "slate",
+          "seconds": 5
+        }
+      ]
+    },
+    {
+      "id": "a7-close",
+      "story": "A",
+      "title": "What changed",
+      "placeholder": "the claim waits for both jobs' release receipts",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 4,
+          "title": "The robot policy stayed the same.",
+          "subtitle": "The installation gained two jobs and a check it did not have before.",
+          "note": "Rough cut: this holds only once both jobs are released."
+        }
+      ]
+    },
+    {
+      "id": "b0-title",
+      "story": "B",
+      "title": "Story B",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 3,
+          "title": "Make that a check the next shift can run",
+          "subtitle": "A site with a lasting constraint, and an agent that builds a measurement."
+        }
+      ]
+    },
+    {
+      "id": "b1-constraint",
+      "story": "B",
+      "title": "The constraint and the failure",
+      "subtitle": "a real operating constraint",
+      "placeholder": "feasibility campaign m2 (world w70), its delayed site s1",
+      "needs": "story B's fleet: the site's note and success by site and day",
+      "shots": [
+        {
+          "kind": "image",
+          "image": "/var/tmp/robots-loop/exhibit/bundles/m2/figures/r1-fleet-sites.png",
+          "seconds": 5,
+          "label": "Success by site and day (campaign m2, round 1)"
+        },
+        {
+          "kind": "clip",
+          "clip": {
+            "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+            "episode": "e001853",
+            "label": "site s1, robot r02, day 6",
+            "speed": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2-instrument",
+      "story": "B",
+      "title": "The instrument",
+      "subtitle": "the harness lets an agent build a measurement",
+      "placeholder": "lane P's spike figure, run by the host, not the agent's probe",
+      "needs": "the agent's composed step-response probe on a suspect and a healthy robot, and its overlay figure",
+      "shots": [
+        {
+          "kind": "image",
+          "image": "/home/cs/code/robots-wt-instrument/spikes/instrument/figures/probe-shapes.png",
+          "seconds": 7,
+          "label": "Step probe: commanded against measured, by condition"
+        }
+      ]
+    },
+    {
+      "id": "b3-change",
+      "story": "B",
+      "title": "The change",
+      "subtitle": "the probe selects candidates; experiments decide",
+      "placeholder": "feasibility campaign m2 (world w70), experiments x0002 and x0001; the counts are lane P's spike, not the engagement",
+      "needs": "story B's recorded task experiments: the compensation at the delayed site, the decision between service and the half compensation for the robot with the backlog, and the rollback against the camera change at the third site",
+      "shots": [
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001853",
+              "label": "before (control)",
+              "speed": 2
+            },
+            {
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001854",
+              "label": "after (latency compensation 18)",
+              "speed": 2
+            }
+          ],
+          "note": "Experiment x0002 at site s1."
+        },
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001738",
+              "label": "before (control)",
+              "speed": 2
+            },
+            {
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001739",
+              "label": "after (software rolled back)",
+              "speed": 2
+            }
+          ],
+          "note": "Experiment x0001 at site s2."
+        }
+      ],
+      "panel": {
+        "count": [
+          {
+            "text": "lag-number compensation: 30 of 60",
+            "detail": "33 of 60 without it (a controller falling behind, spike)",
+            "source": "lane P spike, spikes/instrument/README.md at 58f28e4"
+          },
+          {
+            "text": "half compensation: 53 of 60",
+            "detail": "0.1 operator hours",
+            "source": "lane P spike README at 58f28e4; action costs, set a config key"
+          },
+          {
+            "text": "service: 3 operator hours",
+            "detail": "removes the fault",
+            "source": "action costs, service (fleetlab.contracts.actions)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b4-handover",
+      "story": "B",
+      "title": "The handover",
+      "subtitle": "a callable artifact, not a memo",
+      "placeholder": "the campaign's learned skill (m2), not a probe recipe",
+      "needs": "the validated probe recipe in the library and the command that runs it on named robots",
+      "shots": [
+        {
+          "kind": "text",
+          "seconds": 7,
+          "title": "A procedure the campaign's agent wrote and kept (m2)",
+          "file": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/engagement/learned/learned-103c67736decc417/skills/separate-fixed-command-lag-from-component-health/SKILL.md",
+          "lines": [
+            20,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b5-second-use",
+      "story": "B",
+      "title": "The second use",
+      "subtitle": "useful even when the previous answer is wrong",
+      "placeholder": "feasibility campaign m2, round 2, experiment x0005",
+      "needs": "the recipe run on the later fleet where a robot lags for the other reason, and the recorded decision against a blind repair",
+      "shots": [
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e002217",
+              "label": "before (control)",
+              "speed": 2
+            },
+            {
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e002218",
+              "label": "after (action delay reverted at r06)",
+              "speed": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "title": "The record",
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 4,
+          "title": "Every clip in this film is a recorded run.",
+          "subtitle": "The record lists each run and episode, with the SHA-256 of every file.",
+          "note": "Rough cut: placeholders are marked on screen; timeline.md lists what each beat still needs."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+ "by": "the lead, 14 October 2026",
+ "names": {
+  "world": "the lead development fleet",
+  "agent": "the analysis agent"
+ },
+ "run_caption": "Draft. Development evidence on the lead development fleet, not the demonstration, and no claim of transfer. The analysis agent ran two rounds with its changes retained between them; the reserved-attempt outcomes, the plain search and the two fixed reference methods are independently audited. The reuse comparison on a related fleet is running without a result.",
+ "opening": {
+  "title": "In short",
+  "by": "the exhibit builder, from this run's records, 14 October 2026",
+  "paragraphs": [
+   "An AI agent was asked to improve a simulated fleet of twelve robot arms at three sites, working only from the fleet's records and from experiments it could request on the robots. In its first round it found three separate problems and confirmed each with an experiment. A software update at the second site had degraded its robots' camera images: rolling it back raised success in the test from 26 to 38 of 40 attempts, while undoing a camera adjustment logged there the same day changed nothing. The first site's robots are controlled over a remote link that delays their commands, a lasting condition nobody can remove, so the agent adapted to it with a latency compensation of 18 steps (34 against 25 of 40). And robot 3's gripper was worn: replacing it, with the compensation in place, gave 26 of 30, against 16 with the compensation alone and 11 with neither. In the second round the fleet worked with those three changes in force; the agent tested an extra command buffer recorded on robot 6, which it had named as its next candidate in round 1 (removing it gave 47 against 39 of 48), adopted that, found nothing further worth changing and stopped.",
+   "The fleet was then measured on 288 reserved attempts the agent never saw: the same tasks, robots and starting positions, simulated once under each state of the fleet. Success went from 171 at the start to 255 after round 1 and 263 after round 2. Against the start, 94 attempts were rescued (failed before, succeeded after) and 2 broken (the reverse); round 2 added 8 rescued and none broken, all on robot 6. Out of 96 attempts per site: the first site went from 51 to 90 to 90, the second from 42 to 87 to 95, and the third stayed at 78 in every state, because none of the adopted changes acted there. These outcomes have been audited independently. A plan fixed after round 1 applies the same four changes (only the day the fourth took effect differs) and scored exactly the same 263, so this run shows no advantage of looking a second time.",
+   "Beside it we ran a plain search that was told which site had the delay and which one setting to tune. It tried six values on 144 experimental attempts, chose 15, changed only that setting and reached 205 of 288, without a language model. The agent spent 816 completed experimental attempts plus 1 failed execution = 817 executions, excluding replay checks; 908 including the 91 replay checks. It also ran 576 attempts of new regular work and made four changes. The difference is not better tuning: on the first site's other three robots the agent's fleet scored 67 of 72 and the search's 69 of 72. The gap at that site is robot 3's gripper (23 against 16 of 24), and 53 more successes came from the second site, outside the one setting the search was given. What the agent added was finding and coordinating four different interventions across the system: a software regression, a lasting delay, a worn gripper and a command buffer. For the one setting it was told about, the search reached a good value with far less effort. Two fixed reference methods, which read only the fleet's first records and ran no experiments, each reached 218 of 288; the comparison section gives the details.",
+   "This is development evidence on the lead development fleet, which we also used while building the system. It is not the demonstration, and it claims no transfer to other fleets. Not shown yet: the reuse comparison on a related fleet, which is running and has no result. The agent worked in 5 sessions with 55.33 minutes of model time and 260 tool calls (its requests to the tools that query the records and run experiments); at the model provider's published API prices that usage would cost between USD 58.73 and USD 118.40, an estimate, not a bill, and excluding the cost of coordinating and reviewing the work. The simulator ran 2,810 robot attempts for this run: 2,544 new ones, 265 replays that reproduced earlier attempts exactly, and 1 that failed and was run again; the 864 attempts of the fleet's stored first days are not counted."
+  ]
+ },
+ "notes": [
+  {
+   "page": "index",
+   "section": "panel",
+   "text": "The plan fixed after one look applies the same four changes as the final state. The only difference is the day the fourth change (removing robot 6's extra command buffer) took effect: day 8 in the plan, day 14 in the run; both have it in force on the reserved days 14 to 17. The audit found the two states identical in outcomes, steps and fixture records, so no advantage of a second look is shown."
+  },
+  {
+   "page": "index",
+   "section": "sites",
+   "text": "The third site stays at 78 of 96 in every state: none of the adopted changes acted there. The agent twice tested rolling back that site's software and found no difference. What the site held is in the planted truth below, which is development material."
+  },
+  {
+   "page": "index",
+   "section": "comparators",
+   "text": "Read this as different scopes, not better tuning. The plain search was told the site and the one setting, spent 144 experimental attempts and made 1 change; the agent was told neither, spent 816 completed experimental attempts plus 1 failed execution = 817 executions, excluding replay checks; 908 including the 91 replay checks, and 576 attempts of new regular work, and made 4 changes. At the first site the agent's fleet scored 67 of 72 on robots 1, 2 and 4 against the search's 69 of 72; the difference there is robot 3's gripper (23 against 16 of 24). The second site's 53 additional successes lie outside the search's scope."
+  },
+  {
+   "page": "index",
+   "section": "comparators",
+   "text": "Fixed reference methods (audited). Two fixed methods were measured on the same 288 reserved attempts; neither ran an experiment or started a language model. The fixed statistical procedure reads the fleet's first records once and listed 10 actions; it applied the first 4, as many as the agent's final state holds: undo the second site's scene-camera calibration change, roll back the second site's software, roll back the third site's software, and set the first site's object-placement condition to 0, 0, 0. It reached 218 of 288 (75.69%, 95% interval 70.42 to 80.29), with 54 attempts rescued and 7 broken against the start (net +47, +16.32 points); computing its decision took 6.758 seconds of elapsed time, simulation not included. The build rule listed only the first three of those actions and applied 3, one short of 4; this is disclosed, and its plan was not padded. It reached the same 218 of 288 with the same 54 rescued and 7 broken; computing its decision took 0.092 seconds of elapsed time, simulation not included. The two states have identical outcomes attempt by attempt, so the placement change adds nothing on this panel. By site, out of 96, both stayed at 51 at the first site, went from 42 to 87 at the second and from 78 to 80 at the third (8 rescued, 6 broken there). Each evaluation ran the robot policy on 288 attempts plus 29 identical replays (317 each, 634 for both) with no incidents; simulating both took 26 minutes 10 seconds of wall time in the heavy queue, and the starting state is shared with this run, not repeated. Against either reference, the agent's final state rescued 55 attempts and broke 10 (net +45): +39 at the first site, +8 at the second and -2 at the third. The agent ran 816 experimental attempts and made 4 changes; the references ran no experiments and made 4 and 3 changes. These outcomes were independently audited; the panel is byte-identical to this run's, and the audit record and the source files are kept with the project's records."
+  },
+  {
+   "page": "index",
+   "section": "costs",
+   "text": "One simulation in round 2's queue (job e002386) was lost when its worker stopped; the machine logged a GPU ring reset at that time. The engine ran the job again, and its replay was identical. No cause is attributed. Model costs here exclude the cost of coordinating and reviewing the work; the audited totals are 5 model starts, 55.33 model minutes, 260 tool calls and USD 58.73 to 118.40 (an estimate, not a bill)."
+  },
+  {
+   "page": "index",
+   "section": "procedures",
+   "text": "The reuse comparison of these procedures on a related fleet is running and has no result yet; nothing here claims reuse or transfer."
+  },
+  {
+   "page": "round-1",
+   "section": "next",
+   "text": "The agent's round-1 forecast, +19.68 points, combines parts that each use their own regular-work reference rate, from its decision in session 3: 0.593 for robots 1, 2 and 4, 0.542 for robot 3, 0.479 for the second site and 0.750 for the third site. The last day is shown beside it for context only."
+  },
+  {
+   "page": "round-2",
+   "section": "decision",
+   "text": "Round 2's forecast, +0.59 points with the range -1.95 to +2.61, is a conditional transport envelope the agent built, not a confidence interval."
+  },
+  {
+   "page": "index",
+   "section": "truth",
+   "text": "Development material, shown after the run. The four remote-link delays on robots 1 to 4 are the first site's lasting condition: no action removes them. The table lists the setting the agent changed at that site; the evidence about that setting is the round-1 experiment there (34 against 25 of 40 with it). The third site held a software update with a milder image effect and a shift in its object placement; the agent tested rolling back the software twice without finding a difference and changed nothing there. Robot 10's camera offset and the second site's logged camera adjustment were not acted on."
+  },
+  {
+   "page": "round-1",
+   "section": "experiments",
+   "text": "The experiment arms are matched trials, not exact replays: each pair runs the same task from the same starting-position index, but with a different noise seed. So the rescued and broken pairs counted here, and the paired film further down this page, compare matched attempts, not the same attempt with and without the change. The reserved attempts on the summary page are the separate common evaluation."
+  },
+  {
+   "page": "round-2",
+   "section": "experiments",
+   "text": "The experiment arms are matched trials, not exact replays: each pair runs the same task from the same starting-position index, but with a different noise seed. So the rescued and broken pairs counted here, and the paired film further down this page, compare matched attempts, not the same attempt with and without the change. The reserved attempts on the summary page are the separate common evaluation."
+  }
+ ]
+}

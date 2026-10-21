@@ -1,0 +1,312 @@
+{
+ "label": "HOST-AUTHORED task-selection evidence, expanded feasibility screen (robots-qzfk.44.7): host development evidence withheld from engineering agents, never an input of an engineering agent",
+ "stage": "expanded-screen-01",
+ "base_task": 6,
+ "init_states": [
+  0,
+  9
+ ],
+ "tasks": [
+  {
+   "task": 0,
+   "stem": "put_the_wine_bottle_on_top_of_the_cabinet",
+   "bench_index": 2,
+   "goal": {
+    "predicate": "On",
+    "objects": [
+     "wine_bottle_1",
+     "wooden_cabinet_1_top_side"
+    ]
+   },
+   "goal_text": "On wine_bottle_1 wooden_cabinet_1_top_side",
+   "instruction": "put the wine bottle on top of the cabinet",
+   "bddl_sha256": "2ef6f403a8451e216af44158c1a6c975cf8e5058ad02d78367ac0be443d096fe"
+  },
+  {
+   "task": 1,
+   "stem": "open_the_top_drawer_and_put_the_bowl_inside",
+   "bench_index": 3,
+   "goal": {
+    "predicate": "In",
+    "objects": [
+     "akita_black_bowl_1",
+     "wooden_cabinet_1_top_region"
+    ]
+   },
+   "goal_text": "In akita_black_bowl_1 wooden_cabinet_1_top_region",
+   "instruction": "open the top drawer and put the bowl inside",
+   "bddl_sha256": "3056e4dc72ee590432cfb18c610fd077a572c8b8f256e45328031005dd0b6757"
+  },
+  {
+   "task": 2,
+   "stem": "turn_on_the_stove",
+   "bench_index": 7,
+   "goal": {
+    "predicate": "Turnon",
+    "objects": [
+     "flat_stove_1"
+    ]
+   },
+   "goal_text": "Turnon flat_stove_1",
+   "instruction": "turn on the stove",
+   "bddl_sha256": "cbd2a0514d53226c5d09e17af40b22935d4cb6ff8fdaff0d55f555de1adecc13"
+  },
+  {
+   "task": 3,
+   "stem": "put_the_bowl_on_top_of_the_cabinet",
+   "bench_index": 4,
+   "goal": {
+    "predicate": "On",
+    "objects": [
+     "akita_black_bowl_1",
+     "wooden_cabinet_1_top_side"
+    ]
+   },
+   "goal_text": "On akita_black_bowl_1 wooden_cabinet_1_top_side",
+   "instruction": "put the bowl on top of the cabinet",
+   "bddl_sha256": "2ffba859a154f50c3c99ffb3420743fa5aa65c70bf7d4cd26f5bc81d07be5713"
+  },
+  {
+   "task": 4,
+   "stem": "put_the_bowl_on_the_plate",
+   "bench_index": 8,
+   "goal": {
+    "predicate": "On",
+    "objects": [
+     "akita_black_bowl_1",
+     "plate_1"
+    ]
+   },
+   "goal_text": "On akita_black_bowl_1 plate_1",
+   "instruction": "put the bowl on the plate",
+   "bddl_sha256": "358b7781437e412c67d6a7648c1c28796b6b1bf117a25e61316cb8dfeb940e5b"
+  },
+  {
+   "task": 5,
+   "stem": "put_the_wine_bottle_on_the_rack",
+   "bench_index": 9,
+   "goal": {
+    "predicate": "On",
+    "objects": [
+     "wine_bottle_1",
+     "wine_rack_1_top_region"
+    ]
+   },
+   "goal_text": "On wine_bottle_1 wine_rack_1_top_region",
+   "instruction": "put the wine bottle on the rack",
+   "bddl_sha256": "3d3ee18139056aa3780572cde17b1c50dc20ae0d299403f65e514e8471ba0e8e"
+  },
+  {
+   "task": 6,
+   "stem": "put_the_cream_cheese_in_the_bowl",
+   "bench_index": 6,
+   "goal": {
+    "predicate": "On",
+    "objects": [
+     "cream_cheese_1",
+     "akita_black_bowl_1"
+    ]
+   },
+   "goal_text": "On cream_cheese_1 akita_black_bowl_1",
+   "instruction": "put the cream cheese in the bowl",
+   "bddl_sha256": "81c54eace32b92466598103b3b6e8435ce90f10996ef18cec4a35fe6c4d31a98"
+  },
+  {
+   "task": 7,
+   "stem": "open_the_middle_drawer_of_the_cabinet",
+   "bench_index": 0,
+   "goal": {
+    "predicate": "Open",
+    "objects": [
+     "wooden_cabinet_1_middle_region"
+    ]
+   },
+   "goal_text": "Open wooden_cabinet_1_middle_region",
+   "instruction": "open the middle drawer of the cabinet",
+   "bddl_sha256": "832ab48ec476807c767e8985666e295700f92d1f8daeae1c34eee1e75293769b"
+  },
+  {
+   "task": 8,
+   "stem": "push_the_plate_to_the_front_of_the_stove",
+   "bench_index": 5,
+   "goal": {
+    "predicate": "On",
+    "objects": [
+     "plate_1",
+     "main_table_stove_front_region"
+    ]
+   },
+   "goal_text": "On plate_1 main_table_stove_front_region",
+   "instruction": "push the plate to the front of the stove",
+   "bddl_sha256": "26f22f8ad39a4b2b344b049115c45661a877fa0b4821fb78246725e7e87d8c0b"
+  },
+  {
+   "task": 9,
+   "stem": "put_the_bowl_on_the_stove",
+   "bench_index": 1,
+   "goal": {
+    "predicate": "On",
+    "objects": [
+     "akita_black_bowl_1",
+     "flat_stove_1_cook_region"
+    ]
+   },
+   "goal_text": "On akita_black_bowl_1 flat_stove_1_cook_region",
+   "instruction": "put the bowl on the stove",
+   "bddl_sha256": "c6812d6c988be830412aa6fc4801af04d60f8c4565d2625763b6a0f2b843a87f"
+  }
+ ],
+ "candidates": {
+  "c6": [
+   0,
+   7
+  ],
+  "c7": [
+   5,
+   7
+  ],
+  "c8": [
+   0,
+   4
+  ],
+  "c9": [
+   5,
+   3
+  ],
+  "c10": [
+   2,
+   3
+  ]
+ },
+ "singles": {},
+ "order": [
+  "c6",
+  "c7",
+  "c8",
+  "c9",
+  "c10"
+ ],
+ "jobs": [
+  {
+   "batch": "c6",
+   "job_id": "j0001",
+   "variant": "naive",
+   "program": "naive-chain",
+   "digest": "a93cd98ea4b2f0931fb1c97039484ad5f0377923d8d5c83da5bd20adf45c41ed",
+   "starts": 10
+  },
+  {
+   "batch": "c6",
+   "job_id": "j0002",
+   "variant": "home",
+   "program": "host-c6-home",
+   "digest": "893d5f126525fad6093e53c9fb6361cc2d831c5f223c6e6e51b0f8ce1d8c7d46",
+   "starts": 10
+  },
+  {
+   "batch": "c6",
+   "job_id": "j0003",
+   "variant": "finish-home",
+   "program": "host-c6-finish-home",
+   "digest": "0d1c31ab4a09a46f1ed3ae6bb5cd56f1aa9e67660d4b1895ad6133a51819bb4d",
+   "starts": 10
+  },
+  {
+   "batch": "c7",
+   "job_id": "j0001",
+   "variant": "naive",
+   "program": "naive-chain",
+   "digest": "ebb4cbef22672666dec5509865f1d124bcd7c3f8d1836a155b15201505995b79",
+   "starts": 10
+  },
+  {
+   "batch": "c7",
+   "job_id": "j0002",
+   "variant": "home",
+   "program": "host-c7-home",
+   "digest": "91585a49d502ca30cbdb808e3db8225b0640525f5ce4aa3a64bda33fdf76c3fe",
+   "starts": 10
+  },
+  {
+   "batch": "c7",
+   "job_id": "j0003",
+   "variant": "finish-home",
+   "program": "host-c7-finish-home",
+   "digest": "d1f6fc955ed70792e622b9bd75c1c6a638693b587c28fdda18be0293aee90020",
+   "starts": 10
+  },
+  {
+   "batch": "c8",
+   "job_id": "j0001",
+   "variant": "naive",
+   "program": "naive-chain",
+   "digest": "0d43e04a80064a40760d776f226c170b3012c8e948c1fe28cac8f35951cc5c8b",
+   "starts": 10
+  },
+  {
+   "batch": "c8",
+   "job_id": "j0002",
+   "variant": "home",
+   "program": "host-c8-home",
+   "digest": "0b27dd385aef673f9ede7771a06a98c667c21430482f22dd7d31f67f8bc0e099",
+   "starts": 10
+  },
+  {
+   "batch": "c8",
+   "job_id": "j0003",
+   "variant": "finish-home",
+   "program": "host-c8-finish-home",
+   "digest": "52511a177eef277c234e9057454dcc23f33a92d59772069c3790049ac88f0e92",
+   "starts": 10
+  },
+  {
+   "batch": "c9",
+   "job_id": "j0001",
+   "variant": "naive",
+   "program": "naive-chain",
+   "digest": "ba2a3c6401d1c19c5b1864e37a6f19203d9bb866519f302bfebbd83365f728cd",
+   "starts": 10
+  },
+  {
+   "batch": "c9",
+   "job_id": "j0002",
+   "variant": "home",
+   "program": "host-c9-home",
+   "digest": "172198f7018da13279a2eefdd4a8f49ec23bf6ec1df562b93a4607b1d5430cca",
+   "starts": 10
+  },
+  {
+   "batch": "c9",
+   "job_id": "j0003",
+   "variant": "finish-home",
+   "program": "host-c9-finish-home",
+   "digest": "7fbd81989317635d45fda4cb1339edeae0539b5786b5263165b3e53f8108aca6",
+   "starts": 10
+  },
+  {
+   "batch": "c10",
+   "job_id": "j0001",
+   "variant": "naive",
+   "program": "naive-chain",
+   "digest": "ebb90e4b205473a76efa2f0d349d684f672ac7c4f1aa07468a5dd85428ba3e6e",
+   "starts": 10
+  },
+  {
+   "batch": "c10",
+   "job_id": "j0002",
+   "variant": "home",
+   "program": "host-c10-home",
+   "digest": "23f499d05284d61f286e81c36e28dc9240d9419fa21a6cfcb6b9e82b13f8ba5c",
+   "starts": 10
+  },
+  {
+   "batch": "c10",
+   "job_id": "j0003",
+   "variant": "finish-home",
+   "program": "host-c10-finish-home",
+   "digest": "3b430770fd8c64b4bd004f85296bb042ed574b85e4ec2f4923bb301ec3751ed8",
+   "starts": 10
+  }
+ ],
+ "executions": 150
+}

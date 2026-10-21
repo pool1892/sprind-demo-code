@@ -1,0 +1,76 @@
+{
+ "tested_commit": "47f95ee9707a8826c6559db925d216b3a5476b90",
+ "recorded_utc": "2026-10-10T01:36:00.100663+00:00",
+ "make_check": {
+  "runs_this_round": 1,
+  "exit_status": 0,
+  "passed": 1189,
+  "skipped": 2,
+  "deselected": 62,
+  "seconds": 315.5,
+  "log_sha256": "746e2b2772f132a6cd63b88ada8a31419b39ad0fbf9a55b2a8bdf3fb5cf8f1ce"
+ },
+ "calibration": {
+  "source_commit": "73d3843",
+  "execution": "tools/heavy-run --light, frozen detached run checkout",
+  "exit_status": 0,
+  "worlds_per_cell": 1000,
+  "models": 2,
+  "cells": 8,
+  "receipt": "power-bound-calibration.json",
+  "physical_replays": 0,
+  "gpu_jobs": 0
+ },
+ "power_guarantee": {
+  "lower_power": 0.8,
+  "sample_failure_budget": 0.15,
+  "bootstrap_failure_budget": 0.05,
+  "scope": "Full counterfactual measurement; independent carrier vectors and bootstrap draws. Design-only sufficient bound, not a minimum.",
+  "points_at_28_of_336_carriers": 14.099,
+  "points_at_112_of_336_carriers": 33.652
+ },
+ "ordinary_incomplete_cli": {
+  "world": "w41",
+  "oracle_dir": "/tmp/codex-oracle/round5-incomplete-w41",
+  "exit_status": 2,
+  "boot": 0,
+  "draws": 200,
+  "missing_fault_gains": 7,
+  "missing_healthy_outcomes": 196,
+  "all_problems_incomplete": true,
+  "before_commit": "726c85b",
+  "before_status": 1
+ },
+ "mutations": {
+  "cases": 4,
+  "baseline_exits": 0,
+  "mutant_exits": 1,
+  "receipt": "power-status-mutations.json"
+ },
+ "added_fields": [
+  "sufficient_excess_power_bound_points",
+  "excess_power_guarantee",
+  "excess_power_method",
+  "excess_power_assumptions",
+  "excess_power_unavailable"
+ ],
+ "retired_numeric_advisories": [
+  "min_reliable_excess_points",
+  "reliable_excess_power"
+ ],
+ "field_renames": [],
+ "record_integrity": {
+  "original_files": 38408,
+  "size_or_mtime_changes": 0
+ },
+ "not_run": [
+  "physical replays",
+  "GPU jobs",
+  "make check-sim (simulator paths unchanged)",
+  "make smoke-world (explicitly excluded)"
+ ],
+ "unopened_worlds": [
+  "w44",
+  "w45"
+ ]
+}

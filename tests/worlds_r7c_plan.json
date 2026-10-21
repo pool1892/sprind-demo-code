@@ -1,0 +1,108 @@
+{
+  "stages": {
+    "decoys-blur-shift": {
+      "jobs": 400,
+      "sha256": "0e477a5fe223c7f7cac89840079eabc37a9625baf8316c36c9b42701429983a2"
+    },
+    "decoys-blur-shift-refine": {
+      "jobs": 600,
+      "sha256": "5b7507422c63ae098d18ce273d47a31c09a5d81ae3335eb0d8eb3aa9e3ffe230",
+      "parent": "decoys-blur-shift"
+    },
+    "decoys-shift": {
+      "jobs": 400,
+      "sha256": "3cd2cea3130f9a60a2192c3e91ed2537226f34471fb697bb161d94dc5c9da4d2"
+    },
+    "decoys-shift-refine": {
+      "jobs": 600,
+      "sha256": "e400e6ae6f5931b81202b57944612970d207ad37cfe0c8e2138d6e3f86d1b27b",
+      "parent": "decoys-shift"
+    },
+    "shift-batch": {
+      "jobs": 100,
+      "sha256": "0b9a41880e7a62bea29e6e2e388a1aa0b32c0cc1808336b1b2c4315cf88302d8"
+    },
+    "shift-batch-refine": {
+      "jobs": 400,
+      "sha256": "35ceb0837ff2b28983eadcc11ce513dd940557ae03bf4f57bcd0676e8ae4bfaa",
+      "parent": "shift-batch"
+    },
+    "blur-shift-batch": {
+      "jobs": 100,
+      "sha256": "1c85864f62ddf89537b5e63cf8d67066df362ecce6605efb3a1dfc3d292ac7a2"
+    },
+    "blur-shift-batch-refine": {
+      "jobs": 400,
+      "sha256": "252cea54a9b0a2a5794482c6faa02567c721384bf2f369537d1208d93c0d2ac1",
+      "parent": "blur-shift-batch"
+    },
+    "object-blur-shift": {
+      "jobs": 100,
+      "sha256": "a9d8a410c1e29d1e36936eef698b4e1e38871d39fa65c4846ea011643cf725c7"
+    },
+    "object-blur-shift-refine": {
+      "jobs": 400,
+      "sha256": "68c3ca3a10cbd01c675aff8c0a1010d47c2f29264fe5e3c567feb6a9ee462110",
+      "parent": "object-blur-shift"
+    }
+  },
+  "budget_seconds": 10800,
+  "method": "fixed doses and fixed order; no selection after outcomes; full completed stages only; fifty attempts for mid-range cells; identities unused for their context",
+  "order": [
+    "decoys-blur-shift",
+    "decoys-blur-shift-refine",
+    "decoys-shift",
+    "decoys-shift-refine",
+    "shift-batch",
+    "shift-batch-refine",
+    "blur-shift-batch",
+    "blur-shift-batch-refine",
+    "object-blur-shift",
+    "object-blur-shift-refine"
+  ],
+  "continuation_rule": "Use the sealed next identities to reach 50 when the existing-plus-parent rate is in [0.15,0.85]; for a task of a decoy stage, continue every paired arm to 50 if any arm needs it. The hard total execution cap takes priority.",
+  "assays": [
+    {
+      "suite": "libero_spatial",
+      "control": [
+        [
+          "camera_degradation",
+          "3 px blur"
+        ],
+        [
+          "furniture_shift",
+          "4 cm sideways"
+        ]
+      ],
+      "decoys": [
+        [
+          "backdrop_change",
+          "1 walls and floor"
+        ]
+      ],
+      "stages": [
+        "decoys-blur-shift",
+        "decoys-blur-shift-refine"
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "control": [
+        [
+          "furniture_shift",
+          "4 cm sideways"
+        ]
+      ],
+      "decoys": [
+        [
+          "backdrop_change",
+          "1 walls and floor"
+        ]
+      ],
+      "stages": [
+        "decoys-shift",
+        "decoys-shift-refine"
+      ]
+    }
+  ]
+}

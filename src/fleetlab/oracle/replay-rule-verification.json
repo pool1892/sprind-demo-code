@@ -1,0 +1,177 @@
+{
+  "topic": "recorded-action replay rule",
+  "actor": "oracle builder",
+  "recorded_utc": "2026-10-10T13:59:18.957508+00:00",
+  "merge": {
+    "commit": "31511a4",
+    "source": "merge/batch-4",
+    "source_commit": "6730030",
+    "conflicts": []
+  },
+  "make_check": {
+    "tested_commit": "be1e637d57233843bc1b883bf192f8b3ffb4a108",
+    "invocations_this_round": 1,
+    "exit_status": 0,
+    "lint_and_format": "passed, 382 files",
+    "types": "passed, 382 source files",
+    "passed": 2415,
+    "skipped": 2,
+    "deselected": 65,
+    "seconds": 4316.31,
+    "execution": "tools/heavy-run --light -- make check, frozen detached run checkout",
+    "log_sha256": "f05ba271f09e7454325ee4307fe5f74d8ea77423496c07b853837485e8822d8a"
+  },
+  "make_check_sim": {
+    "tested_commit": "13fec80a737f72536449e8779223cb0f53039f95",
+    "exit_status": 0,
+    "passed": 61,
+    "deselected": 2421,
+    "seconds": 239.27,
+    "runtime_source_difference_to_unit_check": "none; only the marginal CPU toy test changed",
+    "execution": "make check-sim, native simulator tests through the light queue, frozen detached run checkout",
+    "log_sha256": "b276b86dbd5d5e8c2e7ef57eade847ac77efb6f82b92e44054adaa7ddd697d7c"
+  },
+  "focused": {
+    "tested_commit": "ec72478097c91dc5ccd3c1d26e52010041e1a128",
+    "exit_status": 0,
+    "passed": 117,
+    "seconds": 185.09,
+    "execution": "tools/heavy-run --light, frozen detached run checkout",
+    "files": [
+      "tests/test_oracle_verification.py",
+      "tests/test_oracle.py",
+      "tests/test_oracle_distributions.py",
+      "tests/test_scoring_stage4.py"
+    ],
+    "log_sha256": "b25597b58b37fc18b70b1104faf3181e9955b3b1e3969d6f66bbcb37dc0ee1e5"
+  },
+  "discarded_evidence": "One earlier broad command overlapped a checkout advance; discarded and replaced by the fixed ec72478 focused run.",
+  "rule": {
+    "name": "recorded-action-majority-v1",
+    "POLICY_CALL_RATE_BOUND": 0.00076,
+    "EVENT_CEILING_COVERAGE": 0.9999,
+    "ceiling": "Binomial(n, 7.6e-4) 99.99th percentile; 0 at zero exposure; no minimum adjustment",
+    "scope": "actual source engine run and window",
+    "exposure": "deduplicated policy request executions; executed steps when per-job call totals are absent; adaptive third executions excluded",
+    "rate_interval": "Clopper-Pearson exact 95%, conditional on independent Bernoulli opportunities",
+    "residual": "fixed upper rate and identity maximum steps; every affected replay may change its outcome; Markov 95% wrong-outcome bound"
+  },
+  "cpu_evidence": {
+    "file": "tests/test_oracle_verification.py",
+    "passed_in_final_check": 19,
+    "cases": {
+      "one_answer_value_plus_7e-5_replay_odd": "accepted, unchanged baseline",
+      "one_answer_value_plus_7e-5_as_run_odd": "accepted, marginal outcome flips, canonical gain correct, all original file SHA-256 values unchanged",
+      "row_dependent_policy": "refused by ceiling",
+      "first_difference_in_state": "refused before a third execution",
+      "too_many_settled_events": "refused by ceiling",
+      "three_pairwise_different_executions": "refused"
+    },
+    "resume": {
+      "scoring_proofs_reused": 12,
+      "other_window_jobs_added": 24,
+      "next_resume_jobs_added": 0,
+      "existing_replay_files_unchanged": true
+    },
+    "other_cases": [
+      "unavailable third",
+      "changed-row majority",
+      "actual third-engine job resumes",
+      "camera/state/fixture prefix differences",
+      "saved evidence tampering",
+      "pre-rule proof reclassification",
+      "legacy report readability"
+    ],
+    "source_fixture": "CPU deterministic world marked proven without its own sample, to test oracle coverage independently of the lower engine proof gate"
+  },
+  "added_report_fields": [
+    "replay_verification"
+  ],
+  "added_run_metadata_keys": [
+    "extra.replay_refusal"
+  ],
+  "field_renames": [],
+  "changed_meanings": [
+    "episodes.parquet.as_run_success and baseline comparisons use the settled reproducible physical outcome",
+    "chain_ok permits an action-first majority settlement below the ceiling; identical still means bit-identical"
+  ],
+  "outside_oracle_edit": "src/fleetlab/scoring/__main__.py: validate settlement evidence and read the canonical table for agents and baselines",
+  "engine_edits": [],
+  "precondition": "existing world readiness and source-engine proof gate",
+  "not_executed": [
+    "GPU policy jobs",
+    "stored-world replays",
+    "make smoke-world",
+    "own model sessions"
+  ],
+  "not_measured": [
+    "real hardware disturbance attribution",
+    "GPU time of verification",
+    "absence of every rare unrecorded policy dependency"
+  ],
+  "engine_call_record_would_add": [
+    "hooked observation tensors",
+    "full returned chunks",
+    "call times",
+    "batch row order",
+    "direct input/output and row-independence audit"
+  ],
+  "post_check_edits": [
+    "README",
+    "this receipt",
+    "module docstrings only"
+  ],
+  "planning_estimates_not_new_measurements": {
+    "basis_replays_per_hour": [
+      2000,
+      3000
+    ],
+    "standard_world_total_attempts": 1680,
+    "standard_window_attempts": {
+      "scoring": 336,
+      "experiment": 336,
+      "observed": 1008
+    },
+    "completed_standard_oracle_scoring_proofs": 34,
+    "additional_executions_before_further_world_sample_reuse": {
+      "scoring": 302,
+      "experiment": 336,
+      "observed": 1008,
+      "all": 1646
+    },
+    "estimated_minutes": {
+      "scoring": [
+        6,
+        9
+      ],
+      "experiment_addition": [
+        7,
+        10
+      ],
+      "observed_addition": [
+        20,
+        30
+      ],
+      "all": [
+        33,
+        49
+      ]
+    },
+    "if_window_itself_has_1680_attempts": {
+      "maximum_additional": 1680,
+      "estimated_minutes": [
+        34,
+        50
+      ],
+      "with_168_proofs_additional": 1512,
+      "with_168_proofs_estimated_minutes": [
+        30,
+        45
+      ]
+    },
+    "excludes": [
+      "queue wait",
+      "third executions"
+    ]
+  }
+}

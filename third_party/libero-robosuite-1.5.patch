@@ -1,0 +1,272 @@
+diff --git a/libero/libero/envs/_compat.py b/libero/libero/envs/_compat.py
+new file mode 100644
+index 0000000..4d12a82
+--- /dev/null
++++ b/libero/libero/envs/_compat.py
+@@ -0,0 +1,14 @@
++"""robosuite version-compatibility flag.
++
++robosuite 1.5 reworked the env, robot, controller and mount/base APIs that
++LIBERO builds on. This flag lets the env code support both 1.4 and >= 1.5 from a
++single source. Feature-detected (no version-string parsing): the
++``robosuite.robots.single_arm`` module exists only on robosuite <= 1.4.
++"""
++
++try:
++    import robosuite.robots.single_arm  # noqa: F401  (removed in robosuite >= 1.5)
++
++    ROBOSUITE_GE_15 = False
++except ImportError:
++    ROBOSUITE_GE_15 = True
+diff --git a/libero/libero/envs/bddl_base_domain.py b/libero/libero/envs/bddl_base_domain.py
+index 918df8e..2eb16ce 100644
+--- a/libero/libero/envs/bddl_base_domain.py
++++ b/libero/libero/envs/bddl_base_domain.py
+@@ -3,7 +3,17 @@ import os
+ import robosuite.utils.transform_utils as T
+ 
+ from copy import deepcopy
+-from robosuite.environments.manipulation.single_arm_env import SingleArmEnv
++from libero.libero.envs._compat import ROBOSUITE_GE_15
++
++if ROBOSUITE_GE_15:
++    # robosuite >= 1.5 removed SingleArmEnv; ManipulationEnv is the single-arm base.
++    from robosuite.environments.manipulation.manipulation_env import (
++        ManipulationEnv as _ManipulationBase,
++    )
++else:
++    from robosuite.environments.manipulation.single_arm_env import (
++        SingleArmEnv as _ManipulationBase,
++    )
+ from robosuite.models.tasks import ManipulationTask
+ from robosuite.utils.placement_samplers import SequentialCompositeSampler
+ from robosuite.utils.observables import Observable, sensor
+@@ -35,7 +45,7 @@ def register_problem(target_class):
+ import time
+ 
+ 
+-class BDDLBaseDomain(SingleArmEnv):
++class BDDLBaseDomain(_ManipulationBase):
+     """
+     A base domain for parsing bddl files.
+     """
+@@ -134,11 +144,13 @@ class BDDLBaseDomain(SingleArmEnv):
+         self._arena_xml = os.path.join(self.custom_asset_dir, scene_xml)
+         self._arena_properties = scene_properties
+ 
++        # robosuite >= 1.5 renamed the fixed mount kwarg `mount_types` -> `base_types`.
++        base_kwarg = {"base_types": "default"} if ROBOSUITE_GE_15 else {"mount_types": "default"}
+         super().__init__(
+             robots=robots,
+             env_configuration=env_configuration,
+             controller_configs=controller_configs,
+-            mount_types="default",
++            **base_kwarg,
+             gripper_types=gripper_types,
+             initialization_noise=initialization_noise,
+             use_camera_obs=use_camera_obs,
+diff --git a/libero/libero/envs/env_wrapper.py b/libero/libero/envs/env_wrapper.py
+index b5a732b..52bfcc3 100644
+--- a/libero/libero/envs/env_wrapper.py
++++ b/libero/libero/envs/env_wrapper.py
+@@ -1,6 +1,5 @@
+ import os
+ import numpy as np
+-import robosuite as suite
+ import matplotlib.cm as cm
+ 
+ from robosuite.utils.errors import RandomizationError
+@@ -9,6 +8,37 @@ import libero.libero.envs.bddl_utils as BDDLUtils
+ from libero.libero.envs import *
+ 
+ 
++def load_arm_controller_config(controller="OSC_POSE", robots=("Panda",)):
++    """Load a controller config that works on both robosuite 1.4 and >= 1.5.
++
++    robosuite 1.5 removed the flat ``load_controller_config`` loader in favour of
++    the composite-controller framework. This helper returns a config accepted by
++    the env constructor's ``controller_configs=`` kwarg on either version:
++
++    * robosuite >= 1.5: load the part-level config (e.g. ``OSC_POSE``) and wrap it
++      into a ``BASIC`` composite controller via ``refactor_composite_controller_config``.
++      The part config carries the same numeric defaults (kp, output limits, ...) as
++      the 1.4 controller, so the arm behaves identically.
++    * robosuite <= 1.4: fall back to the original ``load_controller_config``.
++
++    LIBERO is single-arm (Panda), so the arm part is wrapped under the ``"right"`` key.
++    """
++    robot_type = robots[0] if isinstance(robots, (list, tuple)) else robots
++    try:
++        from robosuite.controllers import load_part_controller_config
++        from robosuite.controllers.composite.composite_controller_factory import (
++            refactor_composite_controller_config,
++        )
++    except ImportError:
++        # robosuite <= 1.4
++        from robosuite import load_controller_config
++
++        return load_controller_config(default_controller=controller)
++
++    part_config = load_part_controller_config(default_controller=controller)
++    return refactor_composite_controller_config(part_config, robot_type, ["right"])
++
++
+ class ControlEnv:
+     def __init__(
+         self,
+@@ -44,7 +74,7 @@ class ControlEnv:
+             bddl_file_name
+         ), f"[error] {bddl_file_name} does not exist!"
+ 
+-        controller_configs = suite.load_controller_config(default_controller=controller)
++        controller_configs = load_arm_controller_config(controller, robots)
+ 
+         problem_info = BDDLUtils.get_problem_info(bddl_file_name)
+         # Check if we're using a multi-armed environment and use env_configuration argument if so
+@@ -131,7 +161,14 @@ class ControlEnv:
+         self.env.reset_from_xml_string(xml_string)
+ 
+     def seed(self, seed):
+-        self.env.seed(seed)
++        # robosuite <= 1.4 exposes env.seed(); >= 1.5 dropped it and drives placement /
++        # resets off env.rng (a numpy Generator). Re-seed that Generator in place so the
++        # placement samplers, which hold a reference to it, become deterministic.
++        seed_fn = getattr(self.env, "seed", None)
++        if callable(seed_fn):
++            seed_fn(seed)
++        elif getattr(self.env, "rng", None) is not None:
++            self.env.rng.bit_generator.state = np.random.default_rng(seed).bit_generator.state
+ 
+     def set_init_state(self, init_state):
+         return self.regenerate_obs_from_state(init_state)
+diff --git a/libero/libero/envs/robots/__init__.py b/libero/libero/envs/robots/__init__.py
+index 41071c7..49ab622 100644
+--- a/libero/libero/envs/robots/__init__.py
++++ b/libero/libero/envs/robots/__init__.py
+@@ -1,12 +1,18 @@
+ from .mounted_panda import MountedPanda
+ from .on_the_ground_panda import OnTheGroundPanda
+ 
+-from robosuite.robots.single_arm import SingleArm
++from libero.libero.envs._compat import ROBOSUITE_GE_15
++
++if ROBOSUITE_GE_15:
++    # robosuite >= 1.5 removed robots.single_arm.SingleArm; fixed-base arms use FixedBaseRobot.
++    from robosuite.robots.fixed_base_robot import FixedBaseRobot as _FixedArmRobot
++else:
++    from robosuite.robots.single_arm import SingleArm as _FixedArmRobot
+ from robosuite.robots import ROBOT_CLASS_MAPPING
+ 
+ ROBOT_CLASS_MAPPING.update(
+     {
+-        "MountedPanda": SingleArm,
+-        "OnTheGroundPanda": SingleArm,
++        "MountedPanda": _FixedArmRobot,
++        "OnTheGroundPanda": _FixedArmRobot,
+     }
+ )
+diff --git a/libero/libero/envs/robots/mounted_panda.py b/libero/libero/envs/robots/mounted_panda.py
+index 6c21f87..3ab19f7 100644
+--- a/libero/libero/envs/robots/mounted_panda.py
++++ b/libero/libero/envs/robots/mounted_panda.py
+@@ -3,6 +3,8 @@ import numpy as np
+ from robosuite.models.robots.manipulators.manipulator_model import ManipulatorModel
+ from robosuite.utils.mjcf_utils import xml_path_completion
+ 
++from libero.libero.envs._compat import ROBOSUITE_GE_15
++
+ 
+ class MountedPanda(ManipulatorModel):
+     """
+@@ -11,6 +13,8 @@ class MountedPanda(ManipulatorModel):
+         idn (int or str): Number or some other unique identification string for this robot instance
+     """
+ 
++    arms = ["right"]  # robosuite >= 1.5 reads this class attr on the robot model
++
+     def __init__(self, idn=0):
+         super().__init__(xml_path_completion("robots/panda/robot.xml"), idn=idn)
+ 
+@@ -20,16 +24,20 @@ class MountedPanda(ManipulatorModel):
+         )
+ 
+     @property
+-    def default_mount(self):
++    def default_mount(self):  # robosuite <= 1.4
++        return "RethinkMount"
++
++    @property
++    def default_base(self):  # robosuite >= 1.5 (mounts were renamed to bases)
+         return "RethinkMount"
+ 
+     @property
+     def default_gripper(self):
+-        return "PandaGripper"
++        return {"right": "PandaGripper"} if ROBOSUITE_GE_15 else "PandaGripper"
+ 
+     @property
+     def default_controller_config(self):
+-        return "default_panda"
++        return {"right": "default_panda"} if ROBOSUITE_GE_15 else "default_panda"
+ 
+     @property
+     def init_qpos(self):
+diff --git a/libero/libero/envs/robots/on_the_ground_panda.py b/libero/libero/envs/robots/on_the_ground_panda.py
+index f7a8c55..34125e2 100644
+--- a/libero/libero/envs/robots/on_the_ground_panda.py
++++ b/libero/libero/envs/robots/on_the_ground_panda.py
+@@ -3,6 +3,8 @@ import numpy as np
+ from robosuite.models.robots.manipulators.manipulator_model import ManipulatorModel
+ from robosuite.utils.mjcf_utils import xml_path_completion
+ 
++from libero.libero.envs._compat import ROBOSUITE_GE_15
++
+ 
+ class OnTheGroundPanda(ManipulatorModel):
+     """
+@@ -11,6 +13,8 @@ class OnTheGroundPanda(ManipulatorModel):
+         idn (int or str): Number or some other unique identification string for this robot instance
+     """
+ 
++    arms = ["right"]  # robosuite >= 1.5 reads this class attr on the robot model
++
+     def __init__(self, idn=0):
+         super().__init__(xml_path_completion("robots/panda/robot.xml"), idn=idn)
+ 
+@@ -20,16 +24,20 @@ class OnTheGroundPanda(ManipulatorModel):
+         )
+ 
+     @property
+-    def default_mount(self):
++    def default_mount(self):  # robosuite <= 1.4
+         return None
+ 
++    @property
++    def default_base(self):  # robosuite >= 1.5 (no mount -> NullMount)
++        return "NullMount"
++
+     @property
+     def default_gripper(self):
+-        return "PandaGripper"
++        return {"right": "PandaGripper"} if ROBOSUITE_GE_15 else "PandaGripper"
+ 
+     @property
+     def default_controller_config(self):
+-        return "default_panda"
++        return {"right": "default_panda"} if ROBOSUITE_GE_15 else "default_panda"
+ 
+     @property
+     def init_qpos(self):
+diff --git a/pyproject.toml b/pyproject.toml
+index e459cb9..19a1841 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -19,7 +19,7 @@ dependencies = [
+     # core runtime / reproducible pins
+     "hydra-core>=1.2,<1.4",
+     "robomimic==0.2.0",
+-    "robosuite==1.4.0",
++    "robosuite==1.5.2",
+     "bddl==1.0.1",
+ 
+     # common libs

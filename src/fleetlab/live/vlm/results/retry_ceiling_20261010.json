@@ -1,0 +1,305 @@
+{
+  "source_commit": "56776f7",
+  "exit_code": 0,
+  "steps": [
+    120,
+    160,
+    200
+  ],
+  "execution_cap_seconds": 1490,
+  "kill_grace_seconds": 5,
+  "execution_cap_starts_after_lock": true,
+  "sum_arm_wall_seconds": 1180.4239878540102,
+  "summary": {
+    "arms": {
+      "120": {
+        "attempts": 60,
+        "eligible_retries": 9,
+        "rescued": 4,
+        "rescued_ids": [
+          "e001083",
+          "e001406",
+          "e001624",
+          "e001662"
+        ],
+        "success_without_retry_ids": [
+          "e001018"
+        ],
+        "ineligible_ids": [
+          "e000071",
+          "e000114",
+          "e000138",
+          "e000175",
+          "e000226",
+          "e000273",
+          "e000277",
+          "e000279",
+          "e000310",
+          "e000321",
+          "e000323",
+          "e000363",
+          "e000384",
+          "e000409",
+          "e000463",
+          "e000480",
+          "e000496",
+          "e000592",
+          "e000623",
+          "e000634",
+          "e000636",
+          "e000638",
+          "e000645",
+          "e000651",
+          "e000661",
+          "e000694",
+          "e000724",
+          "e000823",
+          "e000826",
+          "e000860",
+          "e000941",
+          "e000956",
+          "e001018",
+          "e001069",
+          "e001079",
+          "e001111",
+          "e001205",
+          "e001218",
+          "e001277",
+          "e001281",
+          "e001291",
+          "e001295",
+          "e001378",
+          "e001381",
+          "e001385",
+          "e001391",
+          "e001404",
+          "e001611",
+          "e001612",
+          "e001652",
+          "e001669"
+        ],
+        "chain_ok": true,
+        "robot_time_s": 876.1,
+        "wall_s": 389.1252895600046
+      },
+      "160": {
+        "attempts": 60,
+        "eligible_retries": 10,
+        "rescued": 2,
+        "rescued_ids": [
+          "e001406",
+          "e001624"
+        ],
+        "success_without_retry_ids": [],
+        "ineligible_ids": [
+          "e000071",
+          "e000114",
+          "e000138",
+          "e000175",
+          "e000226",
+          "e000273",
+          "e000277",
+          "e000279",
+          "e000310",
+          "e000321",
+          "e000323",
+          "e000363",
+          "e000384",
+          "e000409",
+          "e000463",
+          "e000480",
+          "e000496",
+          "e000592",
+          "e000623",
+          "e000634",
+          "e000636",
+          "e000638",
+          "e000645",
+          "e000651",
+          "e000661",
+          "e000694",
+          "e000724",
+          "e000823",
+          "e000826",
+          "e000860",
+          "e000941",
+          "e000956",
+          "e001018",
+          "e001069",
+          "e001079",
+          "e001111",
+          "e001143",
+          "e001205",
+          "e001218",
+          "e001277",
+          "e001281",
+          "e001291",
+          "e001295",
+          "e001378",
+          "e001385",
+          "e001391",
+          "e001404",
+          "e001612",
+          "e001652",
+          "e001669"
+        ],
+        "chain_ok": true,
+        "robot_time_s": 907.45,
+        "wall_s": 394.20616483001504
+      },
+      "200": {
+        "attempts": 60,
+        "eligible_retries": 10,
+        "rescued": 3,
+        "rescued_ids": [
+          "e001406",
+          "e001624",
+          "e001662"
+        ],
+        "success_without_retry_ids": [],
+        "ineligible_ids": [
+          "e000071",
+          "e000114",
+          "e000138",
+          "e000175",
+          "e000226",
+          "e000273",
+          "e000277",
+          "e000279",
+          "e000310",
+          "e000321",
+          "e000323",
+          "e000363",
+          "e000384",
+          "e000409",
+          "e000463",
+          "e000480",
+          "e000496",
+          "e000592",
+          "e000623",
+          "e000634",
+          "e000636",
+          "e000638",
+          "e000645",
+          "e000651",
+          "e000661",
+          "e000694",
+          "e000724",
+          "e000826",
+          "e000860",
+          "e000941",
+          "e000956",
+          "e001018",
+          "e001069",
+          "e001079",
+          "e001111",
+          "e001205",
+          "e001218",
+          "e001277",
+          "e001281",
+          "e001291",
+          "e001295",
+          "e001378",
+          "e001381",
+          "e001385",
+          "e001391",
+          "e001404",
+          "e001611",
+          "e001612",
+          "e001652",
+          "e001669"
+        ],
+        "chain_ok": true,
+        "robot_time_s": 922.7,
+        "wall_s": 397.09253346399055
+      }
+    },
+    "best_of_three_rescued": 4,
+    "rescued_ids": [
+      "e001083",
+      "e001406",
+      "e001624",
+      "e001662"
+    ]
+  },
+  "records": {
+    "120": {
+      "record": {
+        "path": "/home/cs/.cache/robots-supervisor/retry-ceiling-v1/120/run.json",
+        "sha256": "a886c3096c1158b0221b9e1c9335a49956ea6805ab2a4d1bc721cb977b608fc9"
+      },
+      "chain_ok": true,
+      "scripted_replays": 20,
+      "chain_checks": {
+        "identical": 20,
+        "render_transient": 0,
+        "broken": 0,
+        "compared_frames": 11840,
+        "transients": [],
+        "broken_by": ""
+      },
+      "successful_retry_active_steps": {
+        "e001662": 236,
+        "e001083": 207,
+        "e001406": 175,
+        "e001624": 151
+      }
+    },
+    "160": {
+      "record": {
+        "path": "/home/cs/.cache/robots-supervisor/retry-ceiling-v1/160/run.json",
+        "sha256": "ba2fd044a550c314c05d39d32eff04d86897aa2d635340b5995b712b012d23a0"
+      },
+      "chain_ok": true,
+      "scripted_replays": 20,
+      "chain_checks": {
+        "identical": 20,
+        "render_transient": 0,
+        "broken": 0,
+        "compared_frames": 12240,
+        "transients": [],
+        "broken_by": ""
+      },
+      "successful_retry_active_steps": {
+        "e001406": 161,
+        "e001624": 148
+      }
+    },
+    "200": {
+      "record": {
+        "path": "/home/cs/.cache/robots-supervisor/retry-ceiling-v1/200/run.json",
+        "sha256": "7cae03f3bd34b0fa490554a810ddda5b5fbbcbbd49ad881965d7a9fd66ff3c4d"
+      },
+      "chain_ok": true,
+      "scripted_replays": 20,
+      "chain_checks": {
+        "identical": 20,
+        "render_transient": 0,
+        "broken": 0,
+        "compared_frames": 12480,
+        "transients": [],
+        "broken_by": ""
+      },
+      "successful_retry_active_steps": {
+        "e001662": 203,
+        "e001406": 150,
+        "e001624": 141
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "/home/cs/.cache/robots-supervisor/retry-ceiling-v1/ceiling.json",
+      "sha256": "8413bb01827563ea1b6abc6834b1c6679847b009ba86f542a853256a2cb8873e"
+    },
+    {
+      "path": "/home/cs/.cache/robots-supervisor/retry-ceiling-v1/protocol.json",
+      "sha256": "3b4e76003c34667d8446b51e0c873d5182bf6d4d6f1adc8c1a84098c92a2fe1f"
+    },
+    {
+      "path": "/home/cs/.cache/robots-supervisor/retry-ceiling-v1.log",
+      "sha256": "de746dec48a1ff01db116d600d1586cbaeb13dc6c53cafea09356fc99460d47b"
+    }
+  ],
+  "interpretation": "Best of three fixed times under the existing eligibility guards; no model call or operator. Zero declared decision latency still has one physical hold tick. Not an upper bound over all times or model hold durations."
+}

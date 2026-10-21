@@ -1,0 +1,838 @@
+{
+  "format": "fleetlab.film-provenance/1",
+  "built": "2026-10-21T00:14:57+00:00",
+  "command": "python -m fleetlab.film build",
+  "code": {
+    "checkout": "/home/cs/.t3/worktrees/robots/t3-ff5862b5",
+    "commit": "7cb39476c7598747bd61e4e2fda578eb4b5c1166",
+    "film_code_modified": false
+  },
+  "ffmpeg": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+  "manifest": {
+    "path": "/home/cs/.t3/worktrees/robots/t3-ff5862b5/site/manifests/reliability-first-case-2-2026-10-20.json",
+    "sha256": "9e1c9408cad4895eaec5e512ea9020710baece353eb82913907a29bfb226350b"
+  },
+  "script": {
+    "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/film/first-case-draft-2/narration/script.md",
+    "sha256": "3aa90faa5828938c24b6a69e35e6fe7a10fb1eb41a22d55d5729e977fc00b6d6"
+  },
+  "bindings": {
+    "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/film/first-case-draft-2/narration/bindings.json",
+    "sha256": "ecffaa9dfe7382e55759647724581fbdb3a41f433ac6e46a4ac3df15d382e26c",
+    "matches_script": true,
+    "values": {
+      "r1_release_k": {
+        "value": 18,
+        "record": "r1_receipt",
+        "meaning": "deliveries the release had to reach on those starts: the agent's proposal, approved by the shift lead before any test",
+        "field": "K",
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+            "sha256": "a46d5cea5292847c9e9b5bbe90de2173e7be23ef99c74e85a0920bbd1898f306"
+          }
+        ]
+      },
+      "r1_release_n": {
+        "value": 20,
+        "record": "r1_receipt",
+        "meaning": "reserved starts in the first job's release (fresh starts no development batch used)",
+        "field": "N",
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+            "sha256": "a46d5cea5292847c9e9b5bbe90de2173e7be23ef99c74e85a0920bbd1898f306"
+          }
+        ]
+      },
+      "r1_plain_dev_delivered": {
+        "value": 5,
+        "record": "r1_development",
+        "meaning": "the plain chain's deliveries on those practice starts (session 1, j0001 bowl-drawer-direct)",
+        "count_true": "delivered",
+        "where": {
+          "job_id": "j0001"
+        },
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+            "sha256": "6ee1949e4758efc3d9e802b0127e71eef925c1a50660d84210d6e41d213e0011"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+            "sha256": "f8c32eaa8d88c5a9cda6d399c8effbc54d9bf976bea975cf8eca6592238c9eae"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+            "sha256": "686f7c58d535005341c03030db5fb7a577fc404cb2d716a8482056a0c4fd423f"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet",
+            "sha256": "e044338f2d66f94e5ef6aa20e1a1b1c37912f4fd6f3dc8877dc025a43c1e29e7"
+          }
+        ]
+      },
+      "r1_dev_starts": {
+        "value": 10,
+        "record": "r1_development",
+        "meaning": "practice (development) starts of the first batch; every variant of sessions 1 to 3 ran on these same ten starts",
+        "count_rows": true,
+        "where": {
+          "job_id": "j0001"
+        },
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+            "sha256": "6ee1949e4758efc3d9e802b0127e71eef925c1a50660d84210d6e41d213e0011"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+            "sha256": "f8c32eaa8d88c5a9cda6d399c8effbc54d9bf976bea975cf8eca6592238c9eae"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+            "sha256": "686f7c58d535005341c03030db5fb7a577fc404cb2d716a8482056a0c4fd423f"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet",
+            "sha256": "e044338f2d66f94e5ef6aa20e1a1b1c37912f4fd6f3dc8877dc025a43c1e29e7"
+          }
+        ]
+      },
+      "r1_open_home": {
+        "value": 5,
+        "record": "r1_development",
+        "meaning": "deliveries with the gripper opened, then the hand home, then the drawer (session 3, j0005), on the same practice starts",
+        "count_true": "delivered",
+        "where": {
+          "job_id": "j0005"
+        },
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+            "sha256": "6ee1949e4758efc3d9e802b0127e71eef925c1a50660d84210d6e41d213e0011"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+            "sha256": "f8c32eaa8d88c5a9cda6d399c8effbc54d9bf976bea975cf8eca6592238c9eae"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+            "sha256": "686f7c58d535005341c03030db5fb7a577fc404cb2d716a8482056a0c4fd423f"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet",
+            "sha256": "e044338f2d66f94e5ef6aa20e1a1b1c37912f4fd6f3dc8877dc025a43c1e29e7"
+          }
+        ]
+      },
+      "r1_finish_steps": {
+        "value": 30,
+        "record": "r1_job",
+        "meaning": "control steps the saved job runs the bowl skill on after the bowl is on the cabinet (program step 2)",
+        "field": "program.steps.1.until.steps",
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/jobs/station-bowl-and-open-drawer.json",
+            "sha256": "23cb3f785fbb2c0f13068afdb3414eb619d3df74302c7dea2b705181417afe6d"
+          }
+        ]
+      },
+      "r1_finish_home": {
+        "value": 10,
+        "record": "r1_development",
+        "meaning": "deliveries with the bowl skill run on, then the hand home, then the drawer (session 3, j0006), on the same practice starts",
+        "count_true": "delivered",
+        "where": {
+          "job_id": "j0006"
+        },
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+            "sha256": "6ee1949e4758efc3d9e802b0127e71eef925c1a50660d84210d6e41d213e0011"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+            "sha256": "f8c32eaa8d88c5a9cda6d399c8effbc54d9bf976bea975cf8eca6592238c9eae"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+            "sha256": "686f7c58d535005341c03030db5fb7a577fc404cb2d716a8482056a0c4fd423f"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet",
+            "sha256": "e044338f2d66f94e5ef6aa20e1a1b1c37912f4fd6f3dc8877dc025a43c1e29e7"
+          }
+        ]
+      },
+      "r1_confirm_delivered": {
+        "value": 20,
+        "record": "r1_development",
+        "meaning": "deliveries of the confirmation batch on those unused practice starts",
+        "count_true": "delivered",
+        "where": {
+          "job_id": "j0008"
+        },
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+            "sha256": "6ee1949e4758efc3d9e802b0127e71eef925c1a50660d84210d6e41d213e0011"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+            "sha256": "f8c32eaa8d88c5a9cda6d399c8effbc54d9bf976bea975cf8eca6592238c9eae"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+            "sha256": "686f7c58d535005341c03030db5fb7a577fc404cb2d716a8482056a0c4fd423f"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet",
+            "sha256": "e044338f2d66f94e5ef6aa20e1a1b1c37912f4fd6f3dc8877dc025a43c1e29e7"
+          }
+        ]
+      },
+      "r1_confirm_starts": {
+        "value": 20,
+        "record": "r1_development",
+        "meaning": "practice starts the agent had never used, on which it confirmed the procedure before saving (session 4, j0008)",
+        "count_rows": true,
+        "where": {
+          "job_id": "j0008"
+        },
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+            "sha256": "6ee1949e4758efc3d9e802b0127e71eef925c1a50660d84210d6e41d213e0011"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+            "sha256": "f8c32eaa8d88c5a9cda6d399c8effbc54d9bf976bea975cf8eca6592238c9eae"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+            "sha256": "686f7c58d535005341c03030db5fb7a577fc404cb2d716a8482056a0c4fd423f"
+          },
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet",
+            "sha256": "e044338f2d66f94e5ef6aa20e1a1b1c37912f4fd6f3dc8877dc025a43c1e29e7"
+          }
+        ]
+      },
+      "r1_delivered": {
+        "value": 20,
+        "record": "r1_receipt",
+        "meaning": "reserved starts the saved job delivered on",
+        "field": "delivered",
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+            "sha256": "a46d5cea5292847c9e9b5bbe90de2173e7be23ef99c74e85a0920bbd1898f306"
+          }
+        ]
+      },
+      "r1_naive_delivered": {
+        "value": 1,
+        "record": "r1_receipt",
+        "meaning": "the same reserved starts the plain chain of the two skills delivered on",
+        "field": "naive_delivered",
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+            "sha256": "a46d5cea5292847c9e9b5bbe90de2173e7be23ef99c74e85a0920bbd1898f306"
+          }
+        ]
+      },
+      "r1_rescued": {
+        "value": 19,
+        "record": "r1_receipt",
+        "meaning": "reserved starts the plain chain failed and the saved job delivered",
+        "field": "rescued",
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+            "sha256": "a46d5cea5292847c9e9b5bbe90de2173e7be23ef99c74e85a0920bbd1898f306"
+          }
+        ]
+      },
+      "r1_broken": {
+        "value": 0,
+        "record": "r1_receipt",
+        "meaning": "reserved starts the plain chain delivered and the saved job failed",
+        "field": "broken",
+        "files": [
+          {
+            "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+            "sha256": "a46d5cea5292847c9e9b5bbe90de2173e7be23ef99c74e85a0920bbd1898f306"
+          }
+        ]
+      }
+    },
+    "unbound": []
+  },
+  "narration": "none: captions timed at a reading pace of 150 words a minute, silent sound track",
+  "final": false,
+  "options": {
+    "draft": false,
+    "repeatable": false,
+    "beats": null,
+    "story": null,
+    "sources_on_screen": "viewer"
+  },
+  "outputs": [
+    {
+      "role": "master",
+      "file": "film-master.mp4",
+      "sha256": "571fea904b916371af1154f74b53f867cf7ef9e7f42df82de380d298ba8a80dd",
+      "bytes": 7405893,
+      "width": 1920,
+      "height": 1080,
+      "fps": 20,
+      "seconds": 82.2,
+      "video": "H.264 high, crf 16, preset slow",
+      "audio": "AAC 192 kb/s, 48000 Hz mono",
+      "streams": {
+        "line0": "Duration: 00:01:22.20, start: 0.000000, bitrate: 720 kb/s",
+        "line1": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 713 kb/s, 20 fps, 20 tbr, 10240 tbn (default)",
+        "line2": "Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 1 kb/s (default)"
+      }
+    },
+    {
+      "role": "web",
+      "file": "film.mp4",
+      "sha256": "b9386bb2ae2fb35af00166576037a233e03263c3e07d222964f32358b128f710",
+      "bytes": 2964162,
+      "width": 1280,
+      "height": 720,
+      "fps": 20,
+      "seconds": 82.2,
+      "video": "H.264 high, crf 20, preset slow, at most 3000 kb/s",
+      "audio": "AAC 128 kb/s, 48000 Hz mono",
+      "streams": {
+        "line0": "Duration: 00:01:22.20, start: 0.000000, bitrate: 288 kb/s",
+        "line1": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x720, 280 kb/s, 20 fps, 20 tbr, 10240 tbn (default)",
+        "line2": "Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 1 kb/s (default)"
+      }
+    }
+  ],
+  "seconds": 82.2,
+  "beats": [
+    {
+      "id": "r1-open",
+      "story": "A",
+      "title": "A new job, made reliable",
+      "start_s": 0.0,
+      "end_s": 4.0,
+      "status": "card",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": null,
+      "narration": null,
+      "shots": [
+        {
+          "kind": "card",
+          "start_s": 0.0,
+          "end_s": 4.0,
+          "title": "A new job, made reliable"
+        }
+      ]
+    },
+    {
+      "id": "r1-request",
+      "story": "A",
+      "title": "The request",
+      "start_s": 4.0,
+      "end_s": 19.4,
+      "status": "record",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": "one job, two conditions, no single skill for it",
+      "narration": {
+        "words": 33,
+        "seconds": 14.1,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "A shift lead asks for one job: the bowl on the cabinet and the middle drawer open, together. The robot has a skill for each. Needed: at least 18 of 20 fresh starts."
+      },
+      "shots": [
+        {
+          "kind": "text",
+          "start_s": 4.0,
+          "end_s": 11.0
+        },
+        {
+          "kind": "clip",
+          "start_s": 11.0,
+          "end_s": 19.4,
+          "clips": [
+            {
+              "label": "plain chain, a reserved start",
+              "layout": "jobs-run",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+              "episode": "e000202",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+              "video_sha256": "465270059da5fa8b3cb7c923433f97ecdedf9e378525a2016087cae3d6b104da",
+              "video_frames": 383,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                0,
+                82
+              ],
+              "speed": 1.0,
+              "crop": [
+                0,
+                0,
+                720,
+                720
+              ],
+              "outcome": "not delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_episodes.parquet": "f5f634f16751cfe3960f087728468286b65eed6cd43775e9d14cf096efcb4ca4",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/robot_steps/e000202.parquet": "37bd673e1102fb73348980ef09a6e2626efb6ddfb16fa116dd92d53ca09ecfba",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_step_events.parquet": "af6a0b0f9fdbfeef03f1e72f54cc7f912da84d902f84a9990c48828e5fe5eed6"
+              },
+              "record": {
+                "job_id": "j0002",
+                "episode_id": "e000202",
+                "program_digest": "81f682a5034cbd77d8a2e4cc69bdd09bfc01ae5a67c9ec5c79e3611701e35737",
+                "base_task": 2,
+                "init_state": 31,
+                "control_steps": 382,
+                "tail_steps": 0,
+                "delivered": false,
+                "delivery_detail": "goal 0 (On akita_black_bowl_1 wooden_cabinet_1_top_side) does not hold; goal 1 (Open wooden_cabinet_1_middle_region) does not hold",
+                "order_kept": true,
+                "order_detail": "no order rules"
+              },
+              "rerender": {
+                "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+                "verification": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.json",
+                "verification_sha256": "710147e4047d3a2efeafed54b34a75d6c06aaeb93ca1610ee9bb4fe54f33cee0",
+                "video_sha256": "465270059da5fa8b3cb7c923433f97ecdedf9e378525a2016087cae3d6b104da",
+                "used": true,
+                "comparison": {
+                  "label": "re-render",
+                  "hashes_compared": 383,
+                  "recorded_hashes": 383,
+                  "hash_mismatches": 0,
+                  "verdict_matches": true,
+                  "recorded_end_state_hash": "304580cdc1dae038",
+                  "end_state_hash": "304580cdc1dae038",
+                  "image_size": 720,
+                  "recorded_image_size": 360,
+                  "original_video_sha256": "f341aa22262ff2385b30b0581085c59063100c222863abe11746225052a43077"
+                },
+                "reason": "accepted by the replay's report: the same run, episode, original video and camera, every state hash and the delivery verdict matched"
+              },
+              "original_video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/video/e000202.scene.mp4",
+              "original_sha256": "f341aa22262ff2385b30b0581085c59063100c222863abe11746225052a43077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r1-failure",
+      "story": "A",
+      "title": "What fails",
+      "start_s": 19.4,
+      "end_s": 34.5,
+      "status": "record",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": "the hand turns to the drawer while it still touches the bowl",
+      "narration": {
+        "words": 33,
+        "seconds": 13.8,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The hand turns to the drawer still touching the bowl, and knocks it off. The agent's traces show the same on its practice starts: chained plainly, the skills deliver on 5 of 10."
+      },
+      "shots": [
+        {
+          "kind": "clip",
+          "start_s": 19.4,
+          "end_s": 34.5,
+          "clips": [
+            {
+              "label": "plain chain, a reserved start",
+              "layout": "jobs-run",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+              "episode": "e000202",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+              "video_sha256": "465270059da5fa8b3cb7c923433f97ecdedf9e378525a2016087cae3d6b104da",
+              "video_frames": 383,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                82,
+                230
+              ],
+              "speed": 0.8,
+              "crop": [
+                0,
+                0,
+                720,
+                720
+              ],
+              "outcome": "not delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_episodes.parquet": "f5f634f16751cfe3960f087728468286b65eed6cd43775e9d14cf096efcb4ca4",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/robot_steps/e000202.parquet": "37bd673e1102fb73348980ef09a6e2626efb6ddfb16fa116dd92d53ca09ecfba",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_step_events.parquet": "af6a0b0f9fdbfeef03f1e72f54cc7f912da84d902f84a9990c48828e5fe5eed6"
+              },
+              "record": {
+                "job_id": "j0002",
+                "episode_id": "e000202",
+                "program_digest": "81f682a5034cbd77d8a2e4cc69bdd09bfc01ae5a67c9ec5c79e3611701e35737",
+                "base_task": 2,
+                "init_state": 31,
+                "control_steps": 382,
+                "tail_steps": 0,
+                "delivered": false,
+                "delivery_detail": "goal 0 (On akita_black_bowl_1 wooden_cabinet_1_top_side) does not hold; goal 1 (Open wooden_cabinet_1_middle_region) does not hold",
+                "order_kept": true,
+                "order_detail": "no order rules"
+              },
+              "rerender": {
+                "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+                "verification": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.json",
+                "verification_sha256": "710147e4047d3a2efeafed54b34a75d6c06aaeb93ca1610ee9bb4fe54f33cee0",
+                "video_sha256": "465270059da5fa8b3cb7c923433f97ecdedf9e378525a2016087cae3d6b104da",
+                "used": true,
+                "comparison": {
+                  "label": "re-render",
+                  "hashes_compared": 383,
+                  "recorded_hashes": 383,
+                  "hash_mismatches": 0,
+                  "verdict_matches": true,
+                  "recorded_end_state_hash": "304580cdc1dae038",
+                  "end_state_hash": "304580cdc1dae038",
+                  "image_size": 720,
+                  "recorded_image_size": 360,
+                  "original_video_sha256": "f341aa22262ff2385b30b0581085c59063100c222863abe11746225052a43077"
+                },
+                "reason": "accepted by the replay's report: the same run, episode, original video and camera, every state hash and the delivery verdict matched"
+              },
+              "original_video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/video/e000202.scene.mp4",
+              "original_sha256": "f341aa22262ff2385b30b0581085c59063100c222863abe11746225052a43077"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r1-experiment",
+      "story": "A",
+      "title": "The experiment",
+      "start_s": 34.5,
+      "end_s": 54.6,
+      "status": "record",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": "one change at a time, on the same practice starts",
+      "narration": {
+        "words": 44,
+        "seconds": 18.8,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The agent writes a check: does the bowl stay in place while the next skill runs? Then it tests one change at a time. Open, then go home: 5 of 10. Let the placement run 30 steps longer, then go home: 10 of 10."
+      },
+      "shots": [
+        {
+          "kind": "card",
+          "start_s": 34.5,
+          "end_s": 40.5,
+          "title": "The agent's check: does the bowl stay in place?"
+        },
+        {
+          "kind": "pair",
+          "start_s": 40.5,
+          "end_s": 54.6,
+          "clips": [
+            {
+              "label": "open, then home",
+              "layout": "jobs-run",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run",
+              "episode": "e000503",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/video/e000503.scene.mp4",
+              "video_sha256": "a58637f2d78fec22f6549348ef4dcb16e34d31c2d3bcce77bb863541dbde7192",
+              "video_frames": 80,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                30,
+                200
+              ],
+              "speed": 1.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "not delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet": "686f7c58d535005341c03030db5fb7a577fc404cb2d716a8482056a0c4fd423f",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/robot_steps/e000503.parquet": "8f59a71ed6379748f96ddc875e72048846219b9db987c7a90d6dad4781d6c695",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_step_events.parquet": "88fe4f66058cbd6691030354eb18503d8c5afb2aec5a0221fa73c5aa4a4c6859"
+              },
+              "record": {
+                "job_id": "j0005",
+                "episode_id": "e000503",
+                "program_digest": "94737a60118c1d05db6c146556f52dc4a9303bafd1d24d69d108d997ae2ad1a0",
+                "base_task": 2,
+                "init_state": 2,
+                "control_steps": 315,
+                "tail_steps": 60,
+                "delivered": false,
+                "delivery_detail": "goal 0 (On akita_black_bowl_1 wooden_cabinet_1_top_side) does not hold",
+                "order_kept": true,
+                "order_detail": "no order rules"
+              }
+            },
+            {
+              "label": "placement runs on, then home",
+              "layout": "jobs-run",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run",
+              "episode": "e000603",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/video/e000603.scene.mp4",
+              "video_sha256": "86292e011ab5c39ca233f050d2a24c1aa24ed4238199d827325ce31b312552f9",
+              "video_frames": 72,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                30,
+                200
+              ],
+              "speed": 1.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet": "686f7c58d535005341c03030db5fb7a577fc404cb2d716a8482056a0c4fd423f",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/robot_steps/e000603.parquet": "eebef95118f39d0ed9a509b68cd873b7fcf1e7acde6bc90cf286a5885ab0cf2d",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_step_events.parquet": "88fe4f66058cbd6691030354eb18503d8c5afb2aec5a0221fa73c5aa4a4c6859"
+              },
+              "record": {
+                "job_id": "j0006",
+                "episode_id": "e000603",
+                "program_digest": "16fdaa962d555d1c2050b01d4c181a6d7718fcd2dd76a68b32e495308dc2a3c3",
+                "base_task": 2,
+                "init_state": 2,
+                "control_steps": 282,
+                "tail_steps": 20,
+                "delivered": true,
+                "delivery_detail": "delivered",
+                "order_kept": true,
+                "order_detail": "no order rules"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r1-release",
+      "story": "A",
+      "title": "Confirmed, then released",
+      "start_s": 54.6,
+      "end_s": 70.2,
+      "status": "record",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": "reserved starts no practice batch had touched, beside the plain chain",
+      "narration": {
+        "words": 26,
+        "seconds": 11.0,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "Confirmed 20 of 20 on unused practice starts, the job runs on 20 reserved starts beside the plain chain: 20 against 1. 19 rescued, 0 broken."
+      },
+      "shots": [
+        {
+          "kind": "pair",
+          "start_s": 54.6,
+          "end_s": 65.2,
+          "clips": [
+            {
+              "label": "plain chain",
+              "layout": "jobs-run",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+              "episode": "e000202",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+              "video_sha256": "465270059da5fa8b3cb7c923433f97ecdedf9e378525a2016087cae3d6b104da",
+              "video_frames": 383,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                0,
+                382
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                720,
+                720
+              ],
+              "outcome": "not delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_episodes.parquet": "f5f634f16751cfe3960f087728468286b65eed6cd43775e9d14cf096efcb4ca4",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/robot_steps/e000202.parquet": "37bd673e1102fb73348980ef09a6e2626efb6ddfb16fa116dd92d53ca09ecfba",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_step_events.parquet": "af6a0b0f9fdbfeef03f1e72f54cc7f912da84d902f84a9990c48828e5fe5eed6"
+              },
+              "record": {
+                "job_id": "j0002",
+                "episode_id": "e000202",
+                "program_digest": "81f682a5034cbd77d8a2e4cc69bdd09bfc01ae5a67c9ec5c79e3611701e35737",
+                "base_task": 2,
+                "init_state": 31,
+                "control_steps": 382,
+                "tail_steps": 0,
+                "delivered": false,
+                "delivery_detail": "goal 0 (On akita_black_bowl_1 wooden_cabinet_1_top_side) does not hold; goal 1 (Open wooden_cabinet_1_middle_region) does not hold",
+                "order_kept": true,
+                "order_detail": "no order rules"
+              },
+              "rerender": {
+                "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+                "verification": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.json",
+                "verification_sha256": "710147e4047d3a2efeafed54b34a75d6c06aaeb93ca1610ee9bb4fe54f33cee0",
+                "video_sha256": "465270059da5fa8b3cb7c923433f97ecdedf9e378525a2016087cae3d6b104da",
+                "used": true,
+                "comparison": {
+                  "label": "re-render",
+                  "hashes_compared": 383,
+                  "recorded_hashes": 383,
+                  "hash_mismatches": 0,
+                  "verdict_matches": true,
+                  "recorded_end_state_hash": "304580cdc1dae038",
+                  "end_state_hash": "304580cdc1dae038",
+                  "image_size": 720,
+                  "recorded_image_size": 360,
+                  "original_video_sha256": "f341aa22262ff2385b30b0581085c59063100c222863abe11746225052a43077"
+                },
+                "reason": "accepted by the replay's report: the same run, episode, original video and camera, every state hash and the delivery verdict matched"
+              },
+              "original_video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/video/e000202.scene.mp4",
+              "original_sha256": "f341aa22262ff2385b30b0581085c59063100c222863abe11746225052a43077"
+            },
+            {
+              "label": "the saved job",
+              "layout": "jobs-run",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+              "episode": "e000102",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000102.rerender.scene.720px.mp4",
+              "video_sha256": "59c5952800751e402a729c7aa8d554ba6e52113c7167a91efb1f2aea6bdecaff",
+              "video_frames": 266,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                0,
+                265
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                720,
+                720
+              ],
+              "outcome": "delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_episodes.parquet": "f5f634f16751cfe3960f087728468286b65eed6cd43775e9d14cf096efcb4ca4",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/robot_steps/e000102.parquet": "a0c3f5c168e8a403cc7276ca199631dcecd767ab04c91c0e4041fe61771e2ef9",
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_step_events.parquet": "af6a0b0f9fdbfeef03f1e72f54cc7f912da84d902f84a9990c48828e5fe5eed6"
+              },
+              "record": {
+                "job_id": "j0001",
+                "episode_id": "e000102",
+                "program_digest": "005a8ba8d2e85bfa6c206576d2f19a2beaee26cc9ebd3d58975e2f7bc6751196",
+                "base_task": 2,
+                "init_state": 31,
+                "control_steps": 265,
+                "tail_steps": 4,
+                "delivered": true,
+                "delivery_detail": "delivered",
+                "order_kept": true,
+                "order_detail": "no order rules"
+              },
+              "rerender": {
+                "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000102.rerender.scene.720px.mp4",
+                "verification": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000102.rerender.scene.720px.json",
+                "verification_sha256": "341e0b211628d8049f5b1098388316dcf7108619cf92adb36325a57474c2a8dc",
+                "video_sha256": "59c5952800751e402a729c7aa8d554ba6e52113c7167a91efb1f2aea6bdecaff",
+                "used": true,
+                "comparison": {
+                  "label": "re-render",
+                  "hashes_compared": 266,
+                  "recorded_hashes": 266,
+                  "hash_mismatches": 0,
+                  "verdict_matches": true,
+                  "recorded_end_state_hash": "d75041de7c022890",
+                  "end_state_hash": "d75041de7c022890",
+                  "image_size": 720,
+                  "recorded_image_size": 360,
+                  "original_video_sha256": "45f808cc11539031a1565600307e2920dc03731665c3f0b3c328f4ff97d4074c"
+                },
+                "reason": "accepted by the replay's report: the same run, episode, original video and camera, every state hash and the delivery verdict matched"
+              },
+              "original_video": "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/video/e000102.scene.mp4",
+              "original_sha256": "45f808cc11539031a1565600307e2920dc03731665c3f0b3c328f4ff97d4074c"
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "start_s": 65.2,
+          "end_s": 70.2,
+          "title": "20 of 20 reserved starts delivered"
+        }
+      ]
+    },
+    {
+      "id": "r1-kept",
+      "story": "A",
+      "title": "What the installation keeps",
+      "start_s": 70.2,
+      "end_s": 82.2,
+      "status": "record",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": "the job, its check, and what the agent learned",
+      "narration": {
+        "words": 26,
+        "seconds": 10.7,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The installation keeps the job, the check, and a learned skill: an open, still hand at one instant has not yet cleared the path that follows."
+      },
+      "shots": [
+        {
+          "kind": "text",
+          "start_s": 70.2,
+          "end_s": 77.2,
+          "files": {
+            "/home/cs/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/skills/quiet-handoff-versus-path-clearance/SKILL.md": "dc76923d174998c55e2d3656502ad5d26f56628c1169780470caaa679f72db76"
+          },
+          "lines": [
+            3,
+            3
+          ]
+        },
+        {
+          "kind": "card",
+          "start_s": 77.2,
+          "end_s": 82.2,
+          "title": "Kept: the job, its check, a learned skill"
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,2373 @@
+{
+  "format": "fleetlab.film-fields/1",
+  "notes": "Every number and quoted record text of the record page (record.md), with the record field that holds it, in lane F's format (fleetlab.film.fields). Fields of the record 'derived' read derived.json, which python -m fleetlab.film.record computes from the 'derived' section below (proportions with Wilson intervals, rescued and broken recounted from a receipt's pairs, counts and selections); lane F's loader reads only 'fields', so that section is additive. Story B's linked site is read from each fleet's public description (the site whose note names the customer's data centre). 'forbidden' lists what the bound page must never show (hidden world ids, design and truth files); binding refuses a page that shows one. 'action_words' puts adopted and tested actions in plain words.",
+  "records": {
+    "job_one": "the first shift's investigation of job one: job-one/run-3/job_run.json (fleetlab.jobs.driver: request, agent, sessions, batches, acceptance, message_log, account, costs, library)",
+    "shift_one_episodes": "the first shift's program runs, one row per episode: run-3/runs/session-0N/run/episodes.jsonl",
+    "shift_one_account": "the first shift's account to the shift lead: run-3/analyses/<analysis>/outbox/job_account.json",
+    "job_one_library": "the library frozen after the first shift: run-3/library/index.json (a LibraryIndex)",
+    "shift_two": "the second shift's investigation, with the first shift's library mounted: run-5/job_run.json",
+    "shift_two_episodes": "the second shift's program runs: run-5/runs/session-0N/run/episodes.jsonl",
+    "shift_two_account": "the second shift's account: run-5/analyses/<analysis>/outbox/job_account.json",
+    "library": "the installation's library after both jobs: job-two/run-3/release/library/index.json (both saved jobs and every check in the chain)",
+    "run_one": "the attempt the host stopped when the request changed: run-1/job_run.json",
+    "run_two": "the attempt that failed on the launch audit's false alarm: run-2/job_run.json",
+    "job_one_release": "the third shift's release receipt, judged against the shift lead's bar: run-6/release/run/run/receipt.json (a ReleaseReceipt: N, K, delivered, naive_delivered, rescued, broken, order_violations, starts_fresh, passed, released, lead_fraction, pairs)",
+    "film": "the cut's film provenance: <film dir>/provenance.json (python -m fleetlab.film build)",
+    "rerenders": "the verified re-render reports the cut uses: <dir>/*.rerender.*.json (fleetlab.job-rerender/1, python -m fleetlab.jobs replay)",
+    "story_b_description": "the first fleet's public description: worlds/STORYB/files/description.json (public id w08; its sites' notes)",
+    "story_b_operation": "the first fleet's regular work before round one, as the agent saw it: <engagement>/loop/rounds/r1/exports/start-01/log/episodes.parquet",
+    "story_b_engagement": "story B's engagement record: <engagement>/engagement/engagement.json (fleetlab.loop.driver: rounds, decisions, learned, evaluation.summary, host_completion)",
+    "story_b_ledger": "round one's ledger: <engagement>/loop/ledgers/ledger-r1.json (entries L1 to L3: action, rationale)",
+    "story_b_probe_episodes": "the probe's episodes as the round-two export holds them: <engagement>/loop/rounds/r2/exports/start-02/log/probe_episodes.parquet",
+    "story_b_probe_steps": "the probe's recorded steps: <engagement>/loop/rounds/r2/exports/start-02/log/probe_steps/<episode>.parquet, one per episode",
+    "story_b_attempts": "the reserved panel's attempts per state: <engagement>/loop/evaluation/attempts.parquet",
+    "story_b_learned_library": "the frozen learned library: <engagement>/engagement/learned/learned-<digest>/library.json",
+    "story_b_recipe_skill": "the learned skill that carries the recipe: <library>/skills/separate-fixed-transport-delay-from-controller-backlog/SKILL.md",
+    "story_b_second_description": "the later fleet's public description: worlds/STORYB-LATER/files/description.json (public id w09)",
+    "story_b_second_operation": "the later fleet's regular work, days 0 to 5, from the recipe run's export: <check>/export/log/episodes.parquet",
+    "story_b_recipe_check": "the probe recipe run on the later fleet: second-use/check-2/recipe-check.json (python -m fleetlab.loop check)",
+    "story_b_decision": "the operator's decision on the later fleet: second-use/check-2/decision.md (dated; written by the demo's coordinator acting as that fleet's operator)",
+    "story_b_requests": "the agent's experiment requests with their arms: <engagement>/engagement/<analysis>/outbox/experiments.jsonl",
+    "story_b_results": "the experiments' results, episodes per arm: <engagement>/engagement/<analysis>/results/experiments.jsonl",
+    "story_b_round2_episodes": "every episode of round one, regular work and experiments, as round two's export holds them: <engagement>/loop/rounds/r2/exports/start-02/log/episodes.parquet",
+    "story_b_costs": "the fleet's recorded cost table: <engagement>/loop/rounds/r2/exports/start-02/log/costs.parquet",
+    "shift_three": "the third shift's investigation, with the first two shifts' library mounted: run-6/job_run.json",
+    "shift_three_episodes": "the third shift's program runs: run-6/runs/session-0N/run/episodes.jsonl",
+    "shift_three_account": "the third shift's account: run-6/analyses/<analysis>/outbox/job_account.json",
+    "s3_saved_job": "the job the third shift saved, as the release library holds it: run-6/release/library/jobs/<name>.json",
+    "job_one_reissue": "the shift lead's bar applied to the recorded release run, with the receipt's judgement before and after: run-6/host/reissue.json",
+    "job_one_exposure": "the installation's log of release attempts on the reserved starts: run-6/release/library/release_exposure.jsonl",
+    "job_two_s2": "job two's second shift, with job one's released library mounted, at the shift lead's bar: job-two/run-2/job_run.json",
+    "job_two_s2_episodes": "job two's second shift's program runs: job-two/run-2/runs/session-0N/run/episodes.jsonl",
+    "job_two_s2_account": "job two's second shift's account: job-two/run-2/analyses/<analysis>/outbox/job_account.json",
+    "job_two_s1": "job two's first shift, with job one's library as its second shift left it: job-two/run-1/job_run.json",
+    "job_two_s1_episodes": "job two's first shift's program runs: job-two/run-1/runs/session-0N/run/episodes.jsonl",
+    "job_two_s1_account": "job two's first shift's account: job-two/run-1/analyses/<analysis>/outbox/job_account.json",
+    "job_two_s3": "job two's third shift, with the second shift's library and the installation skill: job-two/run-3/job_run.json",
+    "job_two_s3_episodes": "job two's third shift's program runs: job-two/run-3/runs/session-0N/run/episodes.jsonl",
+    "job_two_s3_account": "job two's third shift's account: job-two/run-3/analyses/<analysis>/outbox/job_account.json",
+    "job_two_release": "job two's release receipt: job-two/run-3/release/run/run/receipt.json (a ReleaseReceipt)",
+    "job_two_saved_job": "the job job two's third shift saved, as its release library holds it: job-two/run-3/release/library/jobs/<name>.json",
+    "job_two_exposure": "the installation's log of job two's release attempts: job-two/run-3/release/library/release_exposure.jsonl"
+  },
+  "titles": {
+    "job_one": "Job one, first shift: the request, every session, every batch of runs, the costs and the account",
+    "job_one_release": "Job one's release receipt: the frozen program and the naive chain on the reserved starts",
+    "job_one_library": "The job library as the first shift left it",
+    "library": "The job library after both jobs",
+    "film": "The film's provenance: every beat, clip and count",
+    "rerenders": "A verified re-render's report: the state hashes and check results compared",
+    "story_b_description": "Story B: the first fleet's public description",
+    "story_b_operation": "Story B: the first fleet's regular work before round one, one row per attempt",
+    "story_b_engagement": "Story B: the engagement, its rounds, decisions, learned skills and evaluation",
+    "story_b_ledger": "Story B: round one's ledger of adopted changes and their reasons",
+    "story_b_probe_episodes": "Story B: the probe's episodes",
+    "story_b_probe_steps": "Story B: the probe's recorded steps, one file per episode",
+    "story_b_attempts": "Story B: the reserved panel's attempts per state",
+    "story_b_learned_library": "Story B: the frozen library of learned skills",
+    "story_b_recipe_skill": "Story B: the learned skill that carries the probe recipe",
+    "story_b_second_description": "Story B: the later fleet's public description",
+    "story_b_second_operation": "Story B: the later fleet's regular work, one row per attempt",
+    "story_b_recipe_check": "Story B: the probe recipe's run on the later fleet",
+    "story_b_decision": "Story B: the operator's decision on the later fleet, from the recipe check",
+    "shift_one_episodes": "Job one, first shift: one row per program run's episode",
+    "shift_one_account": "Job one, first shift: the account to the shift lead",
+    "shift_two": "Job one, second shift, with the first shift's library mounted",
+    "shift_two_episodes": "Job one, second shift: one row per program run's episode",
+    "shift_two_account": "Job one, second shift: the account to the shift lead",
+    "run_one": "Job one: the attempt the host stopped when the request changed",
+    "run_two": "Job one: the attempt that failed on the launch audit's false alarm",
+    "story_b_requests": "Story B: the agent's experiment requests",
+    "story_b_results": "Story B: the experiments' results per arm",
+    "story_b_round2_episodes": "Story B: every attempt of round one, as the round-two export holds it",
+    "story_b_costs": "Story B: the fleet's recorded cost table",
+    "shift_three": "Job one, third shift, with the library mounted",
+    "shift_three_episodes": "Job one, third shift: one row per program run's episode",
+    "shift_three_account": "Job one, third shift: the account to the shift lead",
+    "s3_saved_job": "Job one: the job the third shift saved",
+    "job_one_reissue": "Job one: the shift lead's bar applied to the recorded release run",
+    "job_one_exposure": "Job one: the installation's log of release attempts on the reserved starts",
+    "job_two_s2": "Job two, second shift: the investigation, with job one's released library mounted",
+    "job_two_s2_episodes": "Job two, second shift: one row per program run's episode",
+    "job_two_s2_account": "Job two, second shift: the account to the shift lead",
+    "job_two_s1": "Job two, first shift: the investigation, with job one's library mounted",
+    "job_two_s1_episodes": "Job two, first shift: one row per program run's episode",
+    "job_two_s1_account": "Job two, first shift: the account to the shift lead",
+    "job_two_s3": "Job two, third shift: the investigation, with the second shift's library mounted",
+    "job_two_s3_episodes": "Job two, third shift: one row per program run's episode",
+    "job_two_s3_account": "Job two, third shift: the account to the shift lead",
+    "job_two_release": "Job two's release receipt: the frozen program and the naive chain on the reserved starts",
+    "job_two_saved_job": "Job two: the job its third shift saved",
+    "job_two_exposure": "Job two: the installation's log of release attempts on the reserved starts"
+  },
+  "forbidden": [
+    "\\bw8[0-9]\\b",
+    "design\\.json",
+    "world_truth",
+    "/truth/",
+    "remote_link_latency|controller_overload|arm_torque_loss|camera_latency|camera_pose_offset|image_pipeline_release|calibration_update"
+  ],
+  "fields": {
+    "release_n": {
+      "record": "job_one_release",
+      "field": "N",
+      "meaning": "reserved release starts the frozen program and the naive chain ran on"
+    },
+    "release_delivered": {
+      "record": "job_one_release",
+      "field": "delivered",
+      "meaning": "release starts the frozen program delivered on"
+    },
+    "release_interval": {
+      "record": "derived",
+      "field": "release_program.interval",
+      "meaning": "the program's share and its 95% Wilson interval"
+    },
+    "release_naive_delivered": {
+      "record": "job_one_release",
+      "field": "naive_delivered",
+      "meaning": "the same release starts the naive chain delivered on"
+    },
+    "release_naive_interval": {
+      "record": "derived",
+      "field": "release_naive.interval",
+      "meaning": "the naive chain's share and its 95% Wilson interval"
+    },
+    "release_rescued": {
+      "record": "derived",
+      "field": "release_pairs.rescued",
+      "meaning": "release starts delivered by the program and not by the naive chain"
+    },
+    "release_broken": {
+      "record": "derived",
+      "field": "release_pairs.broken",
+      "meaning": "release starts delivered by the naive chain and not by the program"
+    },
+    "release_order_violations": {
+      "record": "job_one_release",
+      "field": "order_violations",
+      "meaning": "the program's release runs that broke the order rule"
+    },
+    "j2_saved_k": {
+      "record": "derived",
+      "field": "j2_saved.k",
+      "meaning": "development starts the saved program delivered on before it was saved"
+    },
+    "j2_saved_n": {
+      "record": "derived",
+      "field": "j2_saved.n",
+      "meaning": "development starts it ran on"
+    },
+    "j2_release_n": {
+      "record": "job_two_release",
+      "field": "N",
+      "meaning": "reserved release starts job two's frozen program and the naive chain ran on"
+    },
+    "j2_release_delivered": {
+      "record": "job_two_release",
+      "field": "delivered",
+      "meaning": "release starts job two's frozen program delivered on"
+    },
+    "j2_release_interval": {
+      "record": "derived",
+      "field": "j2_release_program.interval",
+      "meaning": "its share and its 95% Wilson interval"
+    },
+    "j2_release_naive_delivered": {
+      "record": "job_two_release",
+      "field": "naive_delivered",
+      "meaning": "the same release starts the naive chain delivered on"
+    },
+    "j2_release_rescued": {
+      "record": "derived",
+      "field": "j2_release_pairs.rescued",
+      "meaning": "release starts delivered by the program and not by the naive chain"
+    },
+    "j2_release_broken": {
+      "record": "derived",
+      "field": "j2_release_pairs.broken",
+      "meaning": "release starts delivered by the naive chain and not by the program"
+    },
+    "b_robots": {
+      "record": "derived",
+      "field": "b_robots.value",
+      "meaning": "robots in story B's first fleet"
+    },
+    "b_sites": {
+      "record": "derived",
+      "field": "b_sites.value",
+      "meaning": "sites of story B's first fleet"
+    },
+    "b_round1_count": {
+      "record": "derived",
+      "field": "b_round1.count",
+      "meaning": "how many changes it adopted in round one"
+    },
+    "b_eval_final_k": {
+      "record": "derived",
+      "field": "b_eval_final.k",
+      "meaning": "panel attempts the fleet with the agent's changes succeeded on"
+    },
+    "b_eval_final_n": {
+      "record": "derived",
+      "field": "b_eval_final.n",
+      "meaning": "panel attempts of the fleet with the agent's changes"
+    },
+    "b_eval_final_interval": {
+      "record": "derived",
+      "field": "b_eval_final.interval",
+      "meaning": "their share and its 95% Wilson interval"
+    },
+    "b_eval_original_k": {
+      "record": "derived",
+      "field": "b_eval_original.k",
+      "meaning": "panel attempts the fleet as it was succeeded on"
+    },
+    "b_eval_original_n": {
+      "record": "derived",
+      "field": "b_eval_original.n",
+      "meaning": "panel attempts of the fleet as it was"
+    },
+    "b_eval_original_interval": {
+      "record": "derived",
+      "field": "b_eval_original.interval",
+      "meaning": "their share and its 95% Wilson interval"
+    },
+    "b_eval_rescued": {
+      "record": "derived",
+      "field": "b_eval_pair.rescued",
+      "meaning": "panel attempts the final state succeeded on and the original did not"
+    },
+    "b_eval_broken": {
+      "record": "derived",
+      "field": "b_eval_pair.broken",
+      "meaning": "panel attempts the original succeeded on and the final state did not"
+    },
+    "policy_skills": {
+      "record": "derived",
+      "field": "policy_skills.value",
+      "meaning": "skills the fixed policy has, each one goal-suite task"
+    },
+    "a1_clips": {
+      "record": "derived",
+      "field": "a1_skills.clips",
+      "meaning": "single-skill runs the film shows"
+    },
+    "a1_delivered": {
+      "record": "derived",
+      "field": "a1_skills.outcome",
+      "meaning": "of those, runs the delivery check passed"
+    },
+    "job_one_request_text": {
+      "record": "derived",
+      "field": "job_one_request_text.value",
+      "meaning": "the shift lead's request, verbatim: the job and its order"
+    },
+    "job_one_goals": {
+      "record": "derived",
+      "field": "job_one_goals.value",
+      "meaning": "the requested goals in LIBERO's spelling"
+    },
+    "job_one_order_rules": {
+      "record": "derived",
+      "field": "job_one_order_rules.value",
+      "meaning": "the order rule in the record's words"
+    },
+    "acceptance_n": {
+      "record": "shift_three",
+      "field": "acceptance.N",
+      "meaning": "release starts in the acceptance condition the agent proposed and the lead approved"
+    },
+    "s3_offered_k": {
+      "record": "shift_three",
+      "field": "acceptance.K",
+      "meaning": "K in the acceptance condition the agent proposed and the lead approved for the request"
+    },
+    "release_bar_num": {
+      "record": "derived",
+      "field": "release_bar.k",
+      "meaning": "deliveries the shift lead's bar asks for in every release_bar_den reserved starts"
+    },
+    "release_bar_den": {
+      "record": "derived",
+      "field": "release_bar.n",
+      "meaning": "reserved starts the bar's share is counted over"
+    },
+    "release_bar_pct": {
+      "record": "derived",
+      "field": "release_bar.pct",
+      "meaning": "the bar's share as a percentage"
+    },
+    "release_k": {
+      "record": "job_one_release",
+      "field": "K",
+      "meaning": "the shift lead's bar: deliveries a release needs on the reserved starts (K)"
+    },
+    "s1_chain_starts": {
+      "record": "derived",
+      "field": "s1_chain_starts.value",
+      "meaning": "the development starts the first shift's chain ran on"
+    },
+    "s1_chain_k": {
+      "record": "derived",
+      "field": "s1_chain.k",
+      "meaning": "starts the first shift's obvious chain delivered on"
+    },
+    "s1_chain_n": {
+      "record": "derived",
+      "field": "s1_chain.n",
+      "meaning": "starts it ran on"
+    },
+    "s1_chain_quote": {
+      "record": "derived",
+      "field": "s1_chain_quote.value",
+      "meaning": "the first shift's account of its chain"
+    },
+    "job_one_agent_model": {
+      "record": "job_one",
+      "field": "agent.model",
+      "meaning": "the model that investigated"
+    },
+    "job_one_agent_effort": {
+      "record": "job_one",
+      "field": "agent.effort",
+      "meaning": "its reasoning effort"
+    },
+    "s1_cont_steps": {
+      "record": "derived",
+      "field": "s1_cont_steps.value",
+      "meaning": "steps the first shift's best program continues the cheese instruction, in its account"
+    },
+    "s1_cont_k": {
+      "record": "derived",
+      "field": "s1_cont.k",
+      "meaning": "starts the continuation delivered on, same starts as the chain"
+    },
+    "s1_cont_n": {
+      "record": "derived",
+      "field": "s1_cont.n",
+      "meaning": "starts it ran on"
+    },
+    "s1_fresh_k": {
+      "record": "derived",
+      "field": "s1_fresh.k",
+      "meaning": "fresh development starts the continuation delivered on"
+    },
+    "s1_fresh_n": {
+      "record": "derived",
+      "field": "s1_fresh.n",
+      "meaning": "fresh starts it ran on"
+    },
+    "s1_fresh_starts": {
+      "record": "derived",
+      "field": "s1_fresh_starts.value",
+      "meaning": "the fresh development starts"
+    },
+    "s1_fresh_interval": {
+      "record": "derived",
+      "field": "s1_fresh.interval",
+      "meaning": "its share and 95% Wilson interval"
+    },
+    "job_one_learned_skills": {
+      "record": "derived",
+      "field": "job_one_learned_skills.value",
+      "meaning": "learned skills kept after the first shift"
+    },
+    "job_one_check_name": {
+      "record": "derived",
+      "field": "job_one_check_name.value",
+      "meaning": "the checks the first shift saved"
+    },
+    "s2_short_k": {
+      "record": "derived",
+      "field": "s2_short.k",
+      "meaning": "development starts the shorter continuation delivered on (run j0005)"
+    },
+    "s2_short_n": {
+      "record": "derived",
+      "field": "s2_short.n",
+      "meaning": "development starts it ran on"
+    },
+    "s2_short_steps": {
+      "record": "derived",
+      "field": "s2_short_steps.value",
+      "meaning": "control steps of the second shift's shorter continuation, in its account"
+    },
+    "s2_long_k": {
+      "record": "derived",
+      "field": "s2_long.k",
+      "meaning": "starts the 60-step continuation delivered on, starts 10 to 29"
+    },
+    "s2_long_n": {
+      "record": "derived",
+      "field": "s2_long.n",
+      "meaning": "starts it ran on"
+    },
+    "s2_long_starts": {
+      "record": "derived",
+      "field": "s2_long_starts.value",
+      "meaning": "the development starts of the longer continuation's run j0008"
+    },
+    "s2_long_interval": {
+      "record": "derived",
+      "field": "s2_long.interval",
+      "meaning": "its share and 95% Wilson interval"
+    },
+    "s2_long_steps": {
+      "record": "derived",
+      "field": "s2_long_steps.value",
+      "meaning": "control steps of the second shift's longer continuation, in its account"
+    },
+    "s2_check_name": {
+      "record": "derived",
+      "field": "s2_check_name.value",
+      "meaning": "the check the second shift saved"
+    },
+    "s2_learned_skills": {
+      "record": "derived",
+      "field": "s2_learned_skills.value",
+      "meaning": "learned skills the second shift added"
+    },
+    "s3_mounted_checks": {
+      "record": "derived",
+      "field": "s3_mounted_checks.value",
+      "meaning": "checks in the library the third shift started with"
+    },
+    "s3_job_name": {
+      "record": "job_one_release",
+      "field": "job_name",
+      "meaning": "the job the third shift saved and released"
+    },
+    "s3_job_continuation": {
+      "record": "derived",
+      "field": "s3_job_continuation.value",
+      "meaning": "control steps the saved program continues the first skill after its goal holds"
+    },
+    "s3_saved_starts": {
+      "record": "derived",
+      "field": "s3_saved_starts.value",
+      "meaning": "those development starts"
+    },
+    "s3_saved_k": {
+      "record": "derived",
+      "field": "s3_saved.k",
+      "meaning": "development starts the saved program delivered on before it was saved"
+    },
+    "s3_saved_n": {
+      "record": "derived",
+      "field": "s3_saved.n",
+      "meaning": "development starts it ran on"
+    },
+    "s3_finding": {
+      "record": "derived",
+      "field": "s3_finding.value",
+      "meaning": "the third shift's account of its program's design, verbatim"
+    },
+    "s3_check_name": {
+      "record": "derived",
+      "field": "s3_check_name.value",
+      "meaning": "the check the third shift saved"
+    },
+    "s3_check_quote": {
+      "record": "derived",
+      "field": "s3_check_quote.value",
+      "meaning": "the third shift's account of that check, verbatim"
+    },
+    "s3_learned_skills": {
+      "record": "derived",
+      "field": "s3_learned_skills.value",
+      "meaning": "learned skills the third shift kept"
+    },
+    "release_digest": {
+      "record": "derived",
+      "field": "release_digest.value",
+      "meaning": "the frozen program's SHA-256 digest, first 12 characters"
+    },
+    "release_starts": {
+      "record": "derived",
+      "field": "release_starts.value",
+      "meaning": "the reserved release starts, by stored arrangement"
+    },
+    "release_both": {
+      "record": "derived",
+      "field": "release_pairs.both",
+      "meaning": "release starts both delivered on"
+    },
+    "release_neither": {
+      "record": "derived",
+      "field": "release_pairs.neither",
+      "meaning": "release starts neither delivered on"
+    },
+    "release_receipt_sha": {
+      "record": "derived",
+      "field": "release_receipt_sha.value",
+      "meaning": "the release receipt file's SHA-256, first 12 characters"
+    },
+    "release_outcome": {
+      "record": "derived",
+      "field": "release_outcome.value",
+      "meaning": "the receipt's judgement against the shift lead's bar, in words"
+    },
+    "job_one_sessions": {
+      "record": "job_one",
+      "field": "costs.sessions",
+      "meaning": "agent sessions of the first shift"
+    },
+    "s2_sessions": {
+      "record": "shift_two",
+      "field": "costs.sessions",
+      "meaning": "agent sessions of the second shift"
+    },
+    "s3_sessions": {
+      "record": "shift_three",
+      "field": "costs.sessions",
+      "meaning": "agent sessions of the third shift"
+    },
+    "job_one_tool_calls": {
+      "record": "job_one",
+      "field": "costs.tool_calls",
+      "meaning": "tool calls of the first shift"
+    },
+    "s2_tool_calls": {
+      "record": "shift_two",
+      "field": "costs.tool_calls",
+      "meaning": "tool calls of the second shift"
+    },
+    "s3_tool_calls": {
+      "record": "shift_three",
+      "field": "costs.tool_calls",
+      "meaning": "tool calls of the third shift"
+    },
+    "job_one_starts": {
+      "record": "job_one",
+      "field": "costs.starts_charged",
+      "meaning": "development starts the first shift's programs ran on, in all"
+    },
+    "s1_distinct_starts": {
+      "record": "derived",
+      "field": "s1_distinct_starts.value",
+      "meaning": "distinct development starts the shift's program executions used"
+    },
+    "s2_starts": {
+      "record": "shift_two",
+      "field": "costs.starts_charged",
+      "meaning": "development starts the second shift's programs ran on"
+    },
+    "s2_distinct_starts": {
+      "record": "derived",
+      "field": "s2_distinct_starts.value",
+      "meaning": "distinct development starts the shift's program executions used"
+    },
+    "s3_starts": {
+      "record": "shift_three",
+      "field": "costs.starts_charged",
+      "meaning": "program executions of the third shift on development starts"
+    },
+    "s3_distinct_starts": {
+      "record": "derived",
+      "field": "s3_distinct_starts.value",
+      "meaning": "distinct development starts the third shift's executions used"
+    },
+    "job_one_model_minutes": {
+      "record": "job_one",
+      "field": "costs.model_seconds",
+      "meaning": "minutes of the agent's model time in the first shift",
+      "scale": 0.016666666666666666,
+      "format": "{:.1f}"
+    },
+    "s2_model_minutes": {
+      "record": "shift_two",
+      "field": "costs.model_seconds",
+      "meaning": "minutes of model time in the second shift",
+      "scale": 0.016666666666666666,
+      "format": "{:.1f}"
+    },
+    "s3_model_minutes": {
+      "record": "shift_three",
+      "field": "costs.model_seconds",
+      "meaning": "minutes of model time in the third shift",
+      "scale": 0.016666666666666666,
+      "format": "{:.1f}"
+    },
+    "j2_request_text": {
+      "record": "derived",
+      "field": "j2_request_text.value",
+      "meaning": "the shift lead's second request, verbatim: the job and its order"
+    },
+    "j2_goals": {
+      "record": "derived",
+      "field": "j2_goals.value",
+      "meaning": "job two's requested goals in LIBERO's spelling"
+    },
+    "j2_order_rules": {
+      "record": "derived",
+      "field": "j2_order_rules.value",
+      "meaning": "job two's order rule in the record's words"
+    },
+    "j2s1_library_quote": {
+      "record": "derived",
+      "field": "j2s1_library_quote.value",
+      "meaning": "job two's first shift's account of using the inherited checks, verbatim"
+    },
+    "j2s1_best_k": {
+      "record": "derived",
+      "field": "j2s1_best.k",
+      "meaning": "development starts job two's first shift's best program run delivered on"
+    },
+    "j2s1_best_n": {
+      "record": "derived",
+      "field": "j2s1_best.n",
+      "meaning": "development starts it ran on"
+    },
+    "j2s1_check_quote": {
+      "record": "derived",
+      "field": "j2s1_check_quote.value",
+      "meaning": "job two's first shift's account of the check it saved, verbatim"
+    },
+    "j2s2_library_quote": {
+      "record": "derived",
+      "field": "j2s2_library_quote.value",
+      "meaning": "job two's account of using job one's saved check, verbatim"
+    },
+    "j2s2_finding": {
+      "record": "derived",
+      "field": "j2s2_finding.value",
+      "meaning": "job two's finding, verbatim from its account"
+    },
+    "j2s2_check_name": {
+      "record": "derived",
+      "field": "j2s2_check_name.value",
+      "meaning": "the check job two's shift saved"
+    },
+    "j2s2_check_quote": {
+      "record": "derived",
+      "field": "j2s2_check_quote.value",
+      "meaning": "job two's account of that check, verbatim"
+    },
+    "j2s3_mounted_jobs": {
+      "record": "derived",
+      "field": "j2s3_mounted_jobs.value",
+      "meaning": "released jobs in the library job two's third shift started with"
+    },
+    "j2s3_mounted_checks": {
+      "record": "derived",
+      "field": "j2s3_mounted_checks.value",
+      "meaning": "checks in the library job two's third shift started with"
+    },
+    "j2s3_installation_quote": {
+      "record": "derived",
+      "field": "j2s3_installation_quote.value",
+      "meaning": "the third shift's task text on its installation skill, verbatim"
+    },
+    "j2_job_name": {
+      "record": "job_two_release",
+      "field": "job_name",
+      "meaning": "the job job two's third shift saved and the installation ran on the reserved starts"
+    },
+    "j2_saved_starts": {
+      "record": "derived",
+      "field": "j2_saved_starts.value",
+      "meaning": "those development starts"
+    },
+    "j2s3_finding": {
+      "record": "derived",
+      "field": "j2s3_finding.value",
+      "meaning": "job two's third shift's account of its saved program, verbatim"
+    },
+    "j2s3_check_name": {
+      "record": "derived",
+      "field": "j2s3_check_name.value",
+      "meaning": "the check job two's third shift saved"
+    },
+    "j2s3_check_quote": {
+      "record": "derived",
+      "field": "j2s3_check_quote.value",
+      "meaning": "job two's third shift's account of that check, verbatim"
+    },
+    "j2_release_digest": {
+      "record": "derived",
+      "field": "j2_release_digest.value",
+      "meaning": "job two's frozen program's SHA-256 digest, first 12 characters"
+    },
+    "j2_release_starts": {
+      "record": "derived",
+      "field": "j2_release_starts.value",
+      "meaning": "job two's reserved release starts, by stored arrangement"
+    },
+    "j2_release_naive_interval": {
+      "record": "derived",
+      "field": "j2_release_naive.interval",
+      "meaning": "the naive chain's share and its 95% Wilson interval"
+    },
+    "j2_release_both": {
+      "record": "derived",
+      "field": "j2_release_pairs.both",
+      "meaning": "release starts both delivered on"
+    },
+    "j2_release_neither": {
+      "record": "derived",
+      "field": "j2_release_pairs.neither",
+      "meaning": "release starts neither delivered on"
+    },
+    "j2_release_order_violations": {
+      "record": "job_two_release",
+      "field": "order_violations",
+      "meaning": "job two's release runs that broke the order rule"
+    },
+    "j2_release_k": {
+      "record": "job_two_release",
+      "field": "K",
+      "meaning": "the shift lead's bar for job two: deliveries a release needs on the reserved starts (K)"
+    },
+    "j2_release_sha": {
+      "record": "derived",
+      "field": "j2_release_sha.value",
+      "meaning": "job two's release receipt file's SHA-256, first 12 characters"
+    },
+    "j2_release_outcome": {
+      "record": "derived",
+      "field": "j2_release_outcome.value",
+      "meaning": "job two's receipt's judgement against the shift lead's bar, in words"
+    },
+    "j2s1_mounted_checks": {
+      "record": "derived",
+      "field": "j2s1_mounted_checks.value",
+      "meaning": "checks in the library job two's first shift started with"
+    },
+    "j2s2_mounted_jobs": {
+      "record": "derived",
+      "field": "j2s2_mounted_jobs.value",
+      "meaning": "released jobs in the library job two's shift started with"
+    },
+    "j2s2_mounted_checks": {
+      "record": "derived",
+      "field": "j2s2_mounted_checks.value",
+      "meaning": "checks in the library job two's shift started with"
+    },
+    "j2s1_programs": {
+      "record": "derived",
+      "field": "j2s1_programs.value",
+      "meaning": "distinct programs job two's first shift ran"
+    },
+    "j2s1_executions": {
+      "record": "job_two_s1",
+      "field": "costs.starts_charged",
+      "meaning": "program executions of job two's first shift on development starts"
+    },
+    "j2s2_programs": {
+      "record": "derived",
+      "field": "j2s2_programs.value",
+      "meaning": "distinct programs job two's shift ran"
+    },
+    "j2s2_executions": {
+      "record": "job_two_s2",
+      "field": "costs.starts_charged",
+      "meaning": "program executions of job two's shift on development starts"
+    },
+    "j2s3_programs": {
+      "record": "derived",
+      "field": "j2s3_programs.value",
+      "meaning": "distinct programs job two's third shift ran"
+    },
+    "j2s3_executions": {
+      "record": "job_two_s3",
+      "field": "costs.starts_charged",
+      "meaning": "program executions of job two's third shift on development starts"
+    },
+    "j2s1_distinct_starts": {
+      "record": "derived",
+      "field": "j2s1_distinct_starts.value",
+      "meaning": "distinct development starts job two's first shift's programs ran on"
+    },
+    "j2s2_distinct_starts": {
+      "record": "derived",
+      "field": "j2s2_distinct_starts.value",
+      "meaning": "distinct development starts job two's programs ran on"
+    },
+    "j2s3_distinct_starts": {
+      "record": "derived",
+      "field": "j2s3_distinct_starts.value",
+      "meaning": "distinct development starts job two's third shift's programs ran on"
+    },
+    "j2s2_best_k": {
+      "record": "derived",
+      "field": "j2s2_best.k",
+      "meaning": "starts job two's best program run delivered on (the first by name among equal counts)"
+    },
+    "j2s2_best_n": {
+      "record": "derived",
+      "field": "j2s2_best.n",
+      "meaning": "starts it ran on"
+    },
+    "j2s3_best_k": {
+      "record": "derived",
+      "field": "j2s3_best.k",
+      "meaning": "development starts job two's third shift's best program run delivered on"
+    },
+    "j2s3_best_n": {
+      "record": "derived",
+      "field": "j2s3_best.n",
+      "meaning": "development starts it ran on"
+    },
+    "j2s1_new_checks": {
+      "record": "derived",
+      "field": "j2s1_new_checks.value",
+      "meaning": "checks job two's first shift saved"
+    },
+    "j2s1_learned": {
+      "record": "derived",
+      "field": "j2s1_learned.value",
+      "meaning": "learned skills job two's first shift kept"
+    },
+    "j2s2_new_checks": {
+      "record": "derived",
+      "field": "j2s2_new_checks.value",
+      "meaning": "checks job two's second shift saved"
+    },
+    "j2s2_learned": {
+      "record": "derived",
+      "field": "j2s2_learned.value",
+      "meaning": "learned skills job two's shift kept"
+    },
+    "j2s3_new_checks": {
+      "record": "derived",
+      "field": "j2s3_new_checks.value",
+      "meaning": "checks job two's third shift saved"
+    },
+    "j2s3_learned": {
+      "record": "derived",
+      "field": "j2s3_learned.value",
+      "meaning": "learned skills job two's third shift kept"
+    },
+    "j2s1_sessions": {
+      "record": "job_two_s1",
+      "field": "costs.sessions",
+      "meaning": "agent sessions of job two's first shift"
+    },
+    "j2s2_sessions": {
+      "record": "job_two_s2",
+      "field": "costs.sessions",
+      "meaning": "agent sessions of job two's shift"
+    },
+    "j2s3_sessions": {
+      "record": "job_two_s3",
+      "field": "costs.sessions",
+      "meaning": "agent sessions of job two's third shift"
+    },
+    "j2s1_tool_calls": {
+      "record": "job_two_s1",
+      "field": "costs.tool_calls",
+      "meaning": "tool calls of job two's first shift"
+    },
+    "j2s2_tool_calls": {
+      "record": "job_two_s2",
+      "field": "costs.tool_calls",
+      "meaning": "tool calls of job two's shift"
+    },
+    "j2s3_tool_calls": {
+      "record": "job_two_s3",
+      "field": "costs.tool_calls",
+      "meaning": "tool calls of job two's third shift"
+    },
+    "j2s1_model_minutes": {
+      "record": "job_two_s1",
+      "field": "costs.model_seconds",
+      "meaning": "minutes of model time in job two's first shift",
+      "scale": 0.016666666666666666,
+      "format": "{:.1f}"
+    },
+    "j2s2_model_minutes": {
+      "record": "job_two_s2",
+      "field": "costs.model_seconds",
+      "meaning": "minutes of model time in job two's shift",
+      "scale": 0.016666666666666666,
+      "format": "{:.1f}"
+    },
+    "j2s3_model_minutes": {
+      "record": "job_two_s3",
+      "field": "costs.model_seconds",
+      "meaning": "minutes of model time in job two's third shift",
+      "scale": 0.016666666666666666,
+      "format": "{:.1f}"
+    },
+    "library_jobs": {
+      "record": "library",
+      "field": "entries",
+      "count_rows": true,
+      "where": {
+        "kind": "job"
+      },
+      "meaning": "jobs in the installation's library after both jobs"
+    },
+    "library_checks": {
+      "record": "library",
+      "field": "entries",
+      "count_rows": true,
+      "where": {
+        "kind": "check"
+      },
+      "meaning": "checks in the installation's library after both jobs"
+    },
+    "b_linked_site": {
+      "record": "derived",
+      "field": "b_linked_site.value",
+      "meaning": "the site of the first fleet whose public note says its policy servers are remote"
+    },
+    "b_linked_site_note": {
+      "record": "derived",
+      "field": "b_linked_site.note",
+      "meaning": "that note, verbatim"
+    },
+    "b_ops_days": {
+      "record": "derived",
+      "field": "b_ops_days.value",
+      "meaning": "the days of regular work before the agent's first decision"
+    },
+    "b_delayed_site_success": {
+      "record": "derived",
+      "field": "b_delayed_site.k",
+      "meaning": "successful attempts at the noted site in that regular work"
+    },
+    "b_delayed_site_episodes": {
+      "record": "derived",
+      "field": "b_delayed_site.n",
+      "meaning": "attempts at the noted site in that regular work"
+    },
+    "b_delayed_site_interval": {
+      "record": "derived",
+      "field": "b_delayed_site.interval",
+      "meaning": "their share and its 95% Wilson interval"
+    },
+    "b_other_sites_success": {
+      "record": "derived",
+      "field": "b_other_sites.k",
+      "meaning": "successful attempts at the other sites"
+    },
+    "b_other_sites_episodes": {
+      "record": "derived",
+      "field": "b_other_sites.n",
+      "meaning": "attempts at the other sites"
+    },
+    "b_other_sites_interval": {
+      "record": "derived",
+      "field": "b_other_sites.interval",
+      "meaning": "their share and its 95% Wilson interval"
+    },
+    "b_lag_lesson": {
+      "record": "derived",
+      "field": "b_lag_lesson.value",
+      "meaning": "the agent's lesson on the single lag number, from the skill it kept"
+    },
+    "b_probe_id": {
+      "record": "derived",
+      "field": "b_probe_id.value",
+      "meaning": "the probe the agent requested in round one"
+    },
+    "b_probe_robots": {
+      "record": "derived",
+      "field": "b_probe_robots.value",
+      "meaning": "robots the probe ran on"
+    },
+    "b_probe_repeats": {
+      "record": "derived",
+      "field": "b_probe_repeats.value",
+      "meaning": "repetitions of the probe on each robot"
+    },
+    "b_probe_summary": {
+      "record": "derived",
+      "field": "b_probe.summary",
+      "meaning": "control steps until each robot's hand first moved and covered half the step, after the step out and the step back, over the repetitions"
+    },
+    "b_probe_reading": {
+      "record": "derived",
+      "field": "b_probe_reading.value",
+      "meaning": "the agent's reading of the probe, from the skill it kept"
+    },
+    "b_experiments_table": {
+      "record": "derived",
+      "field": "b_experiments_table.value",
+      "meaning": "round one's experiments: successes without and with each change, rescued and broken"
+    },
+    "b_round1_actions": {
+      "record": "derived",
+      "field": "b_round1.value",
+      "meaning": "the changes the agent adopted in round one"
+    },
+    "b_hours_each": {
+      "record": "derived",
+      "field": "b_hours.value",
+      "meaning": "recorded operator-cost estimate of each adopted change, in order"
+    },
+    "b_hours_total": {
+      "record": "derived",
+      "field": "b_hours.total",
+      "meaning": "their sum"
+    },
+    "b_round2_actions": {
+      "record": "derived",
+      "field": "b_round2.value",
+      "meaning": "the changes the agent adopted in round two"
+    },
+    "b_eval_breakdown": {
+      "record": "derived",
+      "field": "b_eval_breakdown.value",
+      "meaning": "the panel by site and for the serviced robot, both states"
+    },
+    "b_kept_skills": {
+      "record": "derived",
+      "field": "b_kept_skills.value",
+      "meaning": "learned skills the installation kept from the engagement"
+    },
+    "b_library_digest": {
+      "record": "derived",
+      "field": "b_library_digest.value",
+      "meaning": "the frozen learned library's SHA-256 digest, first 16 characters"
+    },
+    "b2_recipe_skill": {
+      "record": "story_b_recipe_check",
+      "field": "skill",
+      "meaning": "the learned skill whose recipe ran on the later fleet"
+    },
+    "b2_linked_site": {
+      "record": "derived",
+      "field": "b2_linked_site.value",
+      "meaning": "the later fleet's noted site"
+    },
+    "b2_decider": {
+      "record": "derived",
+      "field": "b2_decider.value",
+      "meaning": "who decided on the later fleet"
+    },
+    "b2_decision_at": {
+      "record": "derived",
+      "field": "b2_decision_at.value",
+      "meaning": "when the decision was recorded"
+    },
+    "b2_fixed": {
+      "record": "derived",
+      "field": "b2_recipe.fixed_robot.robot",
+      "meaning": "the robot in the recipe's role fixed_robot"
+    },
+    "b2_fixed_k": {
+      "record": "derived",
+      "field": "b2_fixed_work.k",
+      "meaning": "successful regular-work attempts of fixed_robot on the later fleet"
+    },
+    "b2_fixed_n": {
+      "record": "derived",
+      "field": "b2_fixed_work.n",
+      "meaning": "regular-work attempts of fixed_robot on the later fleet"
+    },
+    "b2_fixed_interval": {
+      "record": "derived",
+      "field": "b2_fixed_work.interval",
+      "meaning": "its share and 95% Wilson interval"
+    },
+    "b2_upstream": {
+      "record": "derived",
+      "field": "b2_recipe.upstream_robot.robot",
+      "meaning": "the robot in the recipe's role upstream_robot"
+    },
+    "b2_upstream_k": {
+      "record": "derived",
+      "field": "b2_upstream_work.k",
+      "meaning": "successful regular-work attempts of upstream_robot on the later fleet"
+    },
+    "b2_upstream_n": {
+      "record": "derived",
+      "field": "b2_upstream_work.n",
+      "meaning": "regular-work attempts of upstream_robot on the later fleet"
+    },
+    "b2_upstream_interval": {
+      "record": "derived",
+      "field": "b2_upstream_work.interval",
+      "meaning": "its share and 95% Wilson interval"
+    },
+    "b2_lowest_robot": {
+      "record": "derived",
+      "field": "b2_lowest.value",
+      "meaning": "the later fleet's robot with the fewest successes outside the linked site"
+    },
+    "b2_lowest_k": {
+      "record": "derived",
+      "field": "b2_lowest.k",
+      "meaning": "its successful regular-work attempts"
+    },
+    "b2_lowest_n": {
+      "record": "derived",
+      "field": "b2_lowest.n",
+      "meaning": "its regular-work attempts"
+    },
+    "b2_lowest_interval": {
+      "record": "derived",
+      "field": "b2_lowest.interval",
+      "meaning": "its share and 95% Wilson interval"
+    },
+    "b2_reference": {
+      "record": "derived",
+      "field": "b2_recipe.reference_robot.robot",
+      "meaning": "the robot in the recipe's role reference_robot"
+    },
+    "b2_reference_k": {
+      "record": "derived",
+      "field": "b2_reference_work.k",
+      "meaning": "successful regular-work attempts of reference_robot on the later fleet"
+    },
+    "b2_reference_n": {
+      "record": "derived",
+      "field": "b2_reference_work.n",
+      "meaning": "regular-work attempts of reference_robot on the later fleet"
+    },
+    "b2_reference_interval": {
+      "record": "derived",
+      "field": "b2_reference_work.interval",
+      "meaning": "its share and 95% Wilson interval"
+    },
+    "b2_outcome": {
+      "record": "story_b_recipe_check",
+      "field": "outcome.status",
+      "meaning": "the recipe run's outcome"
+    },
+    "b2_fixed_first_move": {
+      "record": "derived",
+      "field": "b2_recipe.fixed_robot.first_move",
+      "meaning": "control steps until fixed_robot's hand first moved, after the step out and the step back"
+    },
+    "b2_upstream_first_move": {
+      "record": "derived",
+      "field": "b2_recipe.upstream_robot.first_move",
+      "meaning": "control steps until upstream_robot's hand first moved, after the step out and the step back"
+    },
+    "b2_backlog": {
+      "record": "derived",
+      "field": "b2_recipe.backlog_robot.robot",
+      "meaning": "the robot in the recipe's role backlog_robot"
+    },
+    "b2_backlog_first_move": {
+      "record": "derived",
+      "field": "b2_recipe.backlog_robot.first_move",
+      "meaning": "control steps until backlog_robot's hand first moved, after the step out and the step back"
+    },
+    "b2_reference_first_move": {
+      "record": "derived",
+      "field": "b2_recipe.reference_robot.first_move",
+      "meaning": "control steps until reference_robot's hand first moved, after the step out and the step back"
+    },
+    "b2_rule": {
+      "record": "derived",
+      "field": "b2_rule.value",
+      "meaning": "the recipe skill's rule for a normal probe, verbatim"
+    },
+    "b2_next_r06": {
+      "record": "derived",
+      "field": "b2_next_r06.value",
+      "meaning": "the operator's next action for the failing robot outside the linked site"
+    },
+    "b2_next_s3": {
+      "record": "derived",
+      "field": "b2_next_s3.value",
+      "meaning": "the operator's next action for the linked site"
+    },
+    "rerenders": {
+      "record": "derived",
+      "field": "rerenders.reports",
+      "meaning": "verified re-renders the cut uses"
+    },
+    "rerenders_accepted": {
+      "record": "derived",
+      "field": "rerenders.accepted",
+      "meaning": "of those, re-renders whose every compared state hash and final delivery result matched"
+    },
+    "rerender_steps": {
+      "record": "derived",
+      "field": "rerenders.hashes_compared",
+      "meaning": "control steps whose physics state hashes were compared, over all re-renders"
+    },
+    "run1_sessions": {
+      "record": "derived",
+      "field": "run1_sessions.value",
+      "meaning": "sessions recorded by the attempt the host stopped"
+    },
+    "run2_sessions": {
+      "record": "derived",
+      "field": "run2_sessions.value",
+      "meaning": "sessions before the launch audit's false alarm"
+    },
+    "s1_programs_table": {
+      "record": "derived",
+      "field": "s1_programs_table.value",
+      "meaning": "every program run of the first shift with its deliveries"
+    },
+    "s2_programs_table": {
+      "record": "derived",
+      "field": "s2_programs_table.value",
+      "meaning": "every program run of the second shift with its deliveries"
+    },
+    "s3_programs_table": {
+      "record": "derived",
+      "field": "s3_programs_table.value",
+      "meaning": "every program run of the third shift with its deliveries"
+    },
+    "j2s1_programs_table": {
+      "record": "derived",
+      "field": "j2s1_programs_table.value",
+      "meaning": "every program run of job two's first shift with its deliveries"
+    },
+    "j2s2_programs_table": {
+      "record": "derived",
+      "field": "j2s2_programs_table.value",
+      "meaning": "every program run of job two's shift with its deliveries"
+    },
+    "j2s3_programs_table": {
+      "record": "derived",
+      "field": "j2s3_programs_table.value",
+      "meaning": "every program run of job two's third shift with its deliveries"
+    }
+  },
+  "derived": {
+    "policy_skills": {
+      "kind": "count",
+      "record": "job_one",
+      "path": "policy_skills",
+      "how": "the policy's skills listed in the record, counted"
+    },
+    "a1_skills": {
+      "kind": "film_clips",
+      "record": "film",
+      "beat": "a1-skills",
+      "outcome": "delivered",
+      "how": "the film's single-skill clips and their recorded outcomes, counted"
+    },
+    "job_one_goals": {
+      "kind": "join",
+      "record": "job_one",
+      "path": "request.goals",
+      "code": true,
+      "how": "the requested goals, listed"
+    },
+    "job_one_order_rules": {
+      "kind": "join",
+      "record": "job_one",
+      "path": "request.order_rules",
+      "how": "the order rules, listed"
+    },
+    "s1_chain_starts": {
+      "kind": "start_range",
+      "record": "shift_one_episodes",
+      "table": true,
+      "where": {
+        "job_id": "j0001"
+      },
+      "how": "the development starts of the first shift's first program run"
+    },
+    "s1_chain": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "shift_one_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0001",
+          "delivered": true
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "shift_one_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0001"
+        }
+      },
+      "how": "the first shift's run j0001, delivered episodes over episodes"
+    },
+    "s1_chain_quote": {
+      "kind": "quote",
+      "record": "shift_one_account",
+      "path": "account",
+      "regex": "(This simply switched[^.]*\\.[^.]*\\.)",
+      "how": "the first shift's account, verbatim"
+    },
+    "s1_programs_table": {
+      "kind": "jobs_table",
+      "record": "job_one",
+      "episodes": "shift_one_episodes",
+      "how": "every program run of the first shift from its episode records"
+    },
+    "s1_cont": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "shift_one_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0004",
+          "delivered": true
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "shift_one_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0004"
+        }
+      },
+      "how": "the first shift's run j0004, delivered over episodes"
+    },
+    "s1_fresh": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "shift_one_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0006",
+          "delivered": true
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "shift_one_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0006"
+        }
+      },
+      "how": "the first shift's run j0006 (the same program on fresh starts), with a Wilson interval"
+    },
+    "s1_fresh_starts": {
+      "kind": "start_range",
+      "record": "shift_one_episodes",
+      "table": true,
+      "where": {
+        "job_id": "j0006"
+      },
+      "how": "the starts of run j0006"
+    },
+    "s2_long": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "shift_two_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0008",
+          "delivered": true
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "shift_two_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0008"
+        }
+      },
+      "how": "the second shift's run j0008 (60-step continuation, starts 10 to 29), with a Wilson interval"
+    },
+    "job_one_check_name": {
+      "kind": "join",
+      "record": "job_one_library",
+      "path": "entries",
+      "where": {
+        "kind": "check"
+      },
+      "column": "name",
+      "how": "the checks in the first shift's library, by name",
+      "sep": " and "
+    },
+    "s2_programs_table": {
+      "kind": "jobs_table",
+      "record": "shift_two",
+      "episodes": "shift_two_episodes",
+      "how": "every program run of the second shift from its episode records"
+    },
+    "release_digest": {
+      "kind": "digest",
+      "record": "job_one_release",
+      "path": "program_digest",
+      "chars": 12,
+      "how": "the released program's digest, first 12 characters"
+    },
+    "release_program": {
+      "kind": "proportion",
+      "k": {
+        "record": "job_one_release",
+        "path": "delivered"
+      },
+      "n": {
+        "record": "job_one_release",
+        "path": "N"
+      },
+      "how": "Wilson 95% interval of delivered over N"
+    },
+    "release_naive": {
+      "kind": "proportion",
+      "k": {
+        "record": "job_one_release",
+        "path": "naive_delivered"
+      },
+      "n": {
+        "record": "job_one_release",
+        "path": "N"
+      },
+      "how": "Wilson 95% interval of naive_delivered over N"
+    },
+    "release_pairs": {
+      "kind": "pairs",
+      "record": "job_one_release",
+      "how": "the receipt's pairs recounted start by start"
+    },
+    "job_one_learned_skills": {
+      "kind": "count",
+      "record": "job_one",
+      "path": "library.skills",
+      "how": "learned skills the frozen library kept, counted"
+    },
+    "s2_learned_skills": {
+      "kind": "count",
+      "record": "shift_two",
+      "path": "library.skills",
+      "how": "learned skills the second shift's frozen library lists as its own, counted"
+    },
+    "run1_sessions": {
+      "kind": "count",
+      "record": "run_one",
+      "path": "sessions",
+      "how": "the sessions the stopped attempt's record holds"
+    },
+    "run2_sessions": {
+      "kind": "count",
+      "record": "run_two",
+      "path": "sessions",
+      "how": "the sessions the failed attempt's record holds"
+    },
+    "b_linked_site": {
+      "kind": "noted_site",
+      "record": "story_b_description",
+      "note": "data centre",
+      "how": "the site whose public note names a remote policy server"
+    },
+    "b_robots": {
+      "kind": "distinct",
+      "record": "story_b_operation",
+      "table": true,
+      "column": "robot_id",
+      "how": "distinct robots in the regular work's episodes"
+    },
+    "b_sites": {
+      "kind": "distinct",
+      "record": "story_b_operation",
+      "table": true,
+      "column": "site_id",
+      "how": "distinct sites in the regular work's episodes"
+    },
+    "b_ops_days": {
+      "kind": "join",
+      "record": "story_b_engagement",
+      "path": "rounds.0.operation.days",
+      "sep": " to ",
+      "how": "round one's operation days"
+    },
+    "b_delayed_site": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "story_b_operation",
+        "table": true,
+        "where": {
+          "site_id": {
+            "derived": "b_linked_site"
+          },
+          "outcome": "success"
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "story_b_operation",
+        "table": true,
+        "where": {
+          "site_id": {
+            "derived": "b_linked_site"
+          }
+        }
+      },
+      "how": "successes at the noted site over its attempts, with a Wilson 95% interval"
+    },
+    "b_other_sites": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "story_b_operation",
+        "table": true,
+        "where": {
+          "outcome": "success"
+        },
+        "where_not": {
+          "site_id": {
+            "derived": "b_linked_site"
+          }
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "story_b_operation",
+        "table": true,
+        "where_not": {
+          "site_id": {
+            "derived": "b_linked_site"
+          }
+        }
+      },
+      "how": "successes at the other sites over their attempts, with a Wilson 95% interval"
+    },
+    "b_lag_lesson": {
+      "kind": "quote",
+      "record": "story_b_recipe_skill",
+      "regex": "Task alignment lag alone[^.]*\\.",
+      "how": "a sentence of the learned skill, verbatim"
+    },
+    "b_probe_id": {
+      "kind": "quote",
+      "record": "story_b_ledger",
+      "path": "entries.*.rationale",
+      "regex": "Probe (p[0-9]+)",
+      "how": "the probe the agent's decision cites"
+    },
+    "b_probe_robots": {
+      "kind": "distinct",
+      "record": "story_b_probe_episodes",
+      "table": true,
+      "where": {
+        "probe_id": {
+          "derived": "b_probe_id"
+        }
+      },
+      "column": "robot_id",
+      "how": "distinct robots of the probe's episodes"
+    },
+    "b_probe_repeats": {
+      "kind": "distinct",
+      "record": "story_b_probe_episodes",
+      "table": true,
+      "where": {
+        "probe_id": {
+          "derived": "b_probe_id"
+        }
+      },
+      "column": "repeat",
+      "how": "distinct repetitions of the probe's episodes"
+    },
+    "b_probe": {
+      "kind": "probe",
+      "episodes": "story_b_probe_episodes",
+      "steps": "story_b_probe_steps",
+      "probe": "p0001",
+      "how": "the probe's recorded steps read by the probe route's step_lags (first movement of 1 mm, half-way)"
+    },
+    "b_probe_reading": {
+      "kind": "quote",
+      "record": "story_b_recipe_skill",
+      "regex": "Thus the isolated robot[^.]*\\.",
+      "how": "a sentence of the learned skill, verbatim"
+    },
+    "b_round1": {
+      "kind": "actions",
+      "record": "story_b_engagement",
+      "path": "rounds.0.decision.adopt",
+      "how": "round one's adopted actions, in words"
+    },
+    "b_round2": {
+      "kind": "actions",
+      "record": "story_b_engagement",
+      "path": "rounds.1.decision.adopt",
+      "how": "round two's adopted actions, in words"
+    },
+    "b_eval_original": {
+      "kind": "evaluation",
+      "record": "story_b_engagement",
+      "state": "original",
+      "how": "the reserved panel's successes of state original, its Wilson 95% interval checked against the record's"
+    },
+    "b_eval_final": {
+      "kind": "evaluation",
+      "record": "story_b_engagement",
+      "state": "round-2",
+      "how": "the reserved panel's successes of state round-2, its Wilson 95% interval checked against the record's"
+    },
+    "b_eval_pair": {
+      "kind": "evaluation_pair",
+      "record": "story_b_engagement",
+      "first": "original",
+      "second": "round-2",
+      "how": "the panel's attempts compared between the original and the final state"
+    },
+    "b_serviced_robot": {
+      "kind": "text",
+      "record": "story_b_ledger",
+      "path": "entries.*.action.verb=service.target.scope",
+      "how": "the robot of the adopted service"
+    },
+    "b_eval_breakdown": {
+      "kind": "breakdown",
+      "record": "story_b_attempts",
+      "states": [
+        "original",
+        "round-2"
+      ],
+      "labels": [
+        "The fleet as it was",
+        "With the agent's changes"
+      ],
+      "title": "Panel attempts",
+      "column": "success",
+      "success": true,
+      "groups": [
+        {
+          "label": "site {site_id} (the remote link)",
+          "where": {
+            "site_id": {
+              "derived": "b_linked_site"
+            }
+          }
+        },
+        {
+          "label": "site s2",
+          "where": {
+            "site_id": "s2"
+          }
+        },
+        {
+          "label": "site s3",
+          "where": {
+            "site_id": "s3"
+          }
+        },
+        {
+          "label": "robot {robot_id} (controller serviced)",
+          "where": {
+            "robot_id": {
+              "derived": "b_serviced_robot"
+            }
+          }
+        }
+      ],
+      "how": "the panel's attempts by site and for the serviced robot, successes with Wilson 95% intervals"
+    },
+    "b_kept_skills": {
+      "kind": "count",
+      "record": "story_b_engagement",
+      "path": "learned.kept",
+      "how": "the learned skills the engagement kept, counted"
+    },
+    "b_library_digest": {
+      "kind": "digest",
+      "record": "story_b_learned_library",
+      "path": "digest",
+      "chars": 16,
+      "how": "the frozen library's digest, first 16 characters"
+    },
+    "b2_linked_site": {
+      "kind": "noted_site",
+      "record": "story_b_second_description",
+      "note": "data centre",
+      "how": "the later fleet's site whose public note names a remote policy server"
+    },
+    "b2_recipe": {
+      "kind": "recipe",
+      "record": "story_b_recipe_check",
+      "how": "the recipe run's probe episodes, first movement per commanded step"
+    },
+    "b2_fixed_work": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "story_b_second_operation",
+        "table": true,
+        "where": {
+          "robot_id": {
+            "derived": "b2_recipe",
+            "key": "fixed_robot.robot"
+          },
+          "outcome": "success"
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "story_b_second_operation",
+        "table": true,
+        "where": {
+          "robot_id": {
+            "derived": "b2_recipe",
+            "key": "fixed_robot.robot"
+          }
+        }
+      },
+      "how": "the later fleet's regular work of fixed_robot, successes over attempts"
+    },
+    "b2_upstream_work": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "story_b_second_operation",
+        "table": true,
+        "where": {
+          "robot_id": {
+            "derived": "b2_recipe",
+            "key": "upstream_robot.robot"
+          },
+          "outcome": "success"
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "story_b_second_operation",
+        "table": true,
+        "where": {
+          "robot_id": {
+            "derived": "b2_recipe",
+            "key": "upstream_robot.robot"
+          }
+        }
+      },
+      "how": "the later fleet's regular work of upstream_robot, successes over attempts"
+    },
+    "b2_reference_work": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "story_b_second_operation",
+        "table": true,
+        "where": {
+          "robot_id": {
+            "derived": "b2_recipe",
+            "key": "reference_robot.robot"
+          },
+          "outcome": "success"
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "story_b_second_operation",
+        "table": true,
+        "where": {
+          "robot_id": {
+            "derived": "b2_recipe",
+            "key": "reference_robot.robot"
+          }
+        }
+      },
+      "how": "the later fleet's regular work of reference_robot, successes over attempts"
+    },
+    "b2_lowest": {
+      "kind": "lowest",
+      "record": "story_b_second_operation",
+      "where_not": {
+        "site_id": {
+          "derived": "b2_linked_site"
+        }
+      },
+      "group": "robot_id",
+      "column": "outcome",
+      "success": "success",
+      "how": "the robot with the lowest success outside the noted site, in the later fleet's regular work"
+    },
+    "b2_rule": {
+      "kind": "quote",
+      "record": "story_b_recipe_skill",
+      "regex": "A normal probe with failing tasks[^.]*\\.",
+      "how": "a sentence of the learned skill, verbatim"
+    },
+    "rerenders": {
+      "kind": "rerenders",
+      "record": "rerenders",
+      "how": "the cut's re-render reports, counted"
+    },
+    "b2_decider": {
+      "kind": "quote",
+      "record": "story_b_decision",
+      "regex": "Decided by (the coordinator of the demo acting as the later fleet's operator)",
+      "how": "the decision's author, verbatim"
+    },
+    "b2_decision_at": {
+      "kind": "quote",
+      "record": "story_b_decision",
+      "regex": "(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2} Pacific)",
+      "how": "the decision's date and time, verbatim"
+    },
+    "b2_next_r06": {
+      "kind": "quote",
+      "record": "story_b_decision",
+      "regex": "(Next\\s+action\\s+for\\s+r06:[^(]*?)\\s*\\(",
+      "how": "the decision's first next action, verbatim"
+    },
+    "b2_next_s3": {
+      "kind": "quote",
+      "record": "story_b_decision",
+      "regex": "(Next\\s+action\\s+for\\s+s3:[^.]*\\.)",
+      "how": "the decision's second next action, verbatim"
+    },
+    "s1_distinct_starts": {
+      "kind": "distinct",
+      "record": "shift_one_episodes",
+      "table": true,
+      "column": "start.init_state",
+      "how": "distinct development starts among the shift's episodes"
+    },
+    "s2_distinct_starts": {
+      "kind": "distinct",
+      "record": "shift_two_episodes",
+      "table": true,
+      "column": "start.init_state",
+      "how": "distinct development starts among the shift's episodes"
+    },
+    "b_experiments_table": {
+      "kind": "experiments_table",
+      "requests": "story_b_requests",
+      "results": "story_b_results",
+      "episodes": "story_b_round2_episodes",
+      "experiments": [
+        "x0001",
+        "x0002",
+        "x0003"
+      ],
+      "how": "each arm of round one's experiments against its paired control arm, from the agent's requests, the results and the episodes"
+    },
+    "b_hours": {
+      "kind": "action_costs",
+      "record": "story_b_engagement",
+      "path": "rounds.0.decision.adopt",
+      "costs": "story_b_costs",
+      "how": "the fleet's recorded cost table for each adopted action"
+    },
+    "s3_job_continuation": {
+      "kind": "text",
+      "record": "s3_saved_job",
+      "path": "program.steps.*.until.steps",
+      "how": "the saved program's fixed-length policy step"
+    },
+    "release_digest_full": {
+      "kind": "text",
+      "record": "job_one_release",
+      "path": "program_digest",
+      "how": "the released program's digest"
+    },
+    "s3_saved": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "shift_three_episodes",
+        "table": true,
+        "where": {
+          "program_digest": {
+            "derived": "release_digest_full"
+          },
+          "delivered": true
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "shift_three_episodes",
+        "table": true,
+        "where": {
+          "program_digest": {
+            "derived": "release_digest_full"
+          }
+        }
+      },
+      "how": "the released program's development runs in the third shift, delivered over episodes"
+    },
+    "s3_saved_starts": {
+      "kind": "start_range",
+      "record": "shift_three_episodes",
+      "table": true,
+      "where": {
+        "program_digest": {
+          "derived": "release_digest_full"
+        }
+      },
+      "how": "the development starts of the saved program's runs"
+    },
+    "release_starts": {
+      "kind": "start_range",
+      "record": "job_one_release",
+      "rows_path": "release_starts",
+      "path": "init_state",
+      "how": "the receipt's release starts"
+    },
+    "s3_distinct_starts": {
+      "kind": "distinct",
+      "record": "shift_three_episodes",
+      "table": true,
+      "column": "start.init_state",
+      "how": "distinct development starts among the shift's episodes"
+    },
+    "release_outcome": {
+      "kind": "verdict",
+      "record": "job_one_release",
+      "how": "the receipt's starts_fresh, passed and released fields, in words"
+    },
+    "j2_goals": {
+      "kind": "join",
+      "record": "job_two_s3",
+      "path": "request.goals",
+      "code": true,
+      "how": "job two's requested goals, listed"
+    },
+    "j2s2_mounted_checks": {
+      "kind": "count",
+      "record": "job_two_s2",
+      "path": "library_mounted.entries.checks",
+      "how": "the checks of the mounted library, counted"
+    },
+    "j2s2_distinct_starts": {
+      "kind": "distinct",
+      "record": "job_two_s2_episodes",
+      "table": true,
+      "column": "start.init_state",
+      "how": "distinct development starts among job two's episodes"
+    },
+    "j2s2_programs": {
+      "kind": "distinct",
+      "record": "job_two_s2",
+      "path": "batches.*.jobs.*.program_digest",
+      "how": "distinct program digests in job two's batches"
+    },
+    "j2s2_best": {
+      "kind": "highest",
+      "record": "job_two_s2_episodes",
+      "table": true,
+      "group": "job_id",
+      "column": "delivered",
+      "success": true,
+      "how": "the program run of job two with the most deliveries"
+    },
+    "j2s2_learned": {
+      "kind": "count",
+      "record": "job_two_s2",
+      "path": "library.skills",
+      "how": "the learned skills job two's shift kept, counted"
+    },
+    "job_one_request_text": {
+      "kind": "quote",
+      "record": "shift_three",
+      "path": "request.request_text",
+      "regex": "(Make this one job:.*?The cheese goes in before the bowl moves\\.)",
+      "how": "the third shift's request, verbatim, its first three sentences"
+    },
+    "release_bar": {
+      "kind": "proportion",
+      "k": {
+        "record": "job_one_release",
+        "path": "lead_fraction.0"
+      },
+      "n": {
+        "record": "job_one_release",
+        "path": "lead_fraction.1"
+      },
+      "how": "the receipt's lead_fraction, the shift lead's share"
+    },
+    "release_receipt_sha": {
+      "kind": "sha256",
+      "record": "job_one_release",
+      "chars": 12,
+      "how": "the receipt file's SHA-256"
+    },
+    "s1_cont_steps": {
+      "kind": "quote",
+      "record": "shift_one_account",
+      "path": "account",
+      "regex": "Continuing the cheese instruction for ([0-9]+) steps after its first goal",
+      "how": "the first shift's account, verbatim"
+    },
+    "s2_short_steps": {
+      "kind": "quote",
+      "record": "shift_two_account",
+      "path": "account",
+      "regex": "Continuing the cheese instruction for ([0-9]+) control steps after its goal first held",
+      "how": "the second shift's account, verbatim"
+    },
+    "s2_short": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "shift_two_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0005",
+          "delivered": true
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "shift_two_episodes",
+        "table": true,
+        "where": {
+          "job_id": "j0005"
+        }
+      },
+      "how": "the second shift's run j0005 (the shorter continuation), delivered over episodes"
+    },
+    "s2_long_steps": {
+      "kind": "quote",
+      "record": "shift_two_account",
+      "path": "account",
+      "regex": "Extending that continuation to ([0-9]+) control steps",
+      "how": "the second shift's account, verbatim"
+    },
+    "s2_long_starts": {
+      "kind": "start_range",
+      "record": "shift_two_episodes",
+      "table": true,
+      "where": {
+        "job_id": "j0008"
+      },
+      "how": "the starts of the second shift's run j0008"
+    },
+    "s2_check_name": {
+      "kind": "join",
+      "record": "shift_two",
+      "path": "library.checks",
+      "how": "the checks the second shift's frozen library lists as its own"
+    },
+    "s3_mounted_checks": {
+      "kind": "count",
+      "record": "shift_three",
+      "path": "library_mounted.entries.checks",
+      "how": "the checks of the library the third shift mounted, counted"
+    },
+    "s3_finding": {
+      "kind": "quote",
+      "record": "shift_three_account",
+      "path": "account",
+      "regex": "(Shorter loading continuation switches during the observed withdrawal phase[^.]*\\.)",
+      "how": "the third shift's account, verbatim"
+    },
+    "s3_check_name": {
+      "kind": "join",
+      "record": "shift_three",
+      "path": "library.checks",
+      "how": "the checks the third shift's frozen library lists as its own"
+    },
+    "s3_check_quote": {
+      "kind": "quote",
+      "record": "shift_three_account",
+      "path": "account",
+      "regex": "(It distinguishes order failures[^.]*\\.)",
+      "how": "the third shift's account, verbatim"
+    },
+    "s3_learned_skills": {
+      "kind": "count",
+      "record": "shift_three",
+      "path": "library.skills",
+      "how": "learned skills the third shift's frozen library lists as its own, counted"
+    },
+    "s3_programs_table": {
+      "kind": "jobs_table",
+      "record": "shift_three",
+      "episodes": "shift_three_episodes",
+      "how": "every program run of the third shift from its episode records"
+    },
+    "j2_request_text": {
+      "kind": "quote",
+      "record": "job_two_s3",
+      "path": "request.request_text",
+      "regex": "(One more job for the line:.*?The cheese goes in before the bowl moves\\.)",
+      "how": "job two's request, verbatim, its first two sentences"
+    },
+    "j2_order_rules": {
+      "kind": "join",
+      "record": "job_two_s3",
+      "path": "request.order_rules",
+      "how": "job two's order rules, listed"
+    },
+    "j2s2_mounted_jobs": {
+      "kind": "count",
+      "record": "job_two_s2",
+      "path": "library_mounted.entries.jobs",
+      "how": "the jobs of the mounted library, counted"
+    },
+    "j2s2_programs_table": {
+      "kind": "jobs_table",
+      "record": "job_two_s2",
+      "episodes": "job_two_s2_episodes",
+      "how": "every program run of job two's shift from its episode records"
+    },
+    "j2s2_library_quote": {
+      "kind": "quote",
+      "record": "job_two_s2_account",
+      "path": "account",
+      "regex": "(I also tested the earlier transfer-and-finish-audit on this baseline[^.]*\\.)",
+      "how": "job two's account, verbatim"
+    },
+    "j2s2_finding": {
+      "kind": "quote",
+      "record": "job_two_s2_account",
+      "path": "account",
+      "regex": "(A loading goal could hold before the fingers physically released the cheese\\.)",
+      "how": "job two's account, verbatim"
+    },
+    "j2s2_check_name": {
+      "kind": "join",
+      "record": "job_two_s2",
+      "path": "library.checks",
+      "how": "the checks job two's frozen library lists as its own"
+    },
+    "j2s2_check_quote": {
+      "kind": "quote",
+      "record": "job_two_s2_account",
+      "path": "account",
+      "regex": "(It distinguishes the state at an instruction switch[^.]*\\.)",
+      "how": "job two's account, verbatim"
+    },
+    "j2s2_new_checks": {
+      "kind": "count",
+      "record": "job_two_s2",
+      "path": "library.checks",
+      "how": "the checks job two's second shift saved, counted"
+    },
+    "j2s1_library_quote": {
+      "kind": "quote",
+      "record": "job_two_s1_account",
+      "path": "account",
+      "regex": "(I used the inherited handoff-versus-transport distinction[^.]*\\.)",
+      "how": "job two's first shift's account, verbatim"
+    },
+    "j2s1_best": {
+      "kind": "highest",
+      "record": "job_two_s1_episodes",
+      "table": true,
+      "group": "job_id",
+      "column": "delivered",
+      "success": true,
+      "how": "the program run of job two's first shift with the most deliveries"
+    },
+    "j2s1_check_quote": {
+      "kind": "quote",
+      "record": "job_two_s1_account",
+      "path": "account",
+      "regex": "(The saved check handoff-versus-transfer-failure distinguishes[^.]*\\.)",
+      "how": "job two's first shift's account, verbatim"
+    },
+    "j2s1_mounted_checks": {
+      "kind": "count",
+      "record": "job_two_s1",
+      "path": "library_mounted.entries.checks",
+      "how": "the checks of the library job two's first shift mounted, counted"
+    },
+    "j2s1_programs": {
+      "kind": "distinct",
+      "record": "job_two_s1",
+      "path": "batches.*.jobs.*.program_digest",
+      "how": "distinct program digests in the first shift's batches"
+    },
+    "j2s1_distinct_starts": {
+      "kind": "distinct",
+      "record": "job_two_s1_episodes",
+      "table": true,
+      "column": "start.init_state",
+      "how": "distinct development starts among the first shift's episodes"
+    },
+    "j2s1_new_checks": {
+      "kind": "count",
+      "record": "job_two_s1",
+      "path": "library.checks",
+      "how": "the checks job two's first shift saved, counted"
+    },
+    "j2s1_learned": {
+      "kind": "count",
+      "record": "job_two_s1",
+      "path": "library.skills",
+      "how": "the learned skills job two's first shift kept, counted"
+    },
+    "j2s1_programs_table": {
+      "kind": "jobs_table",
+      "record": "job_two_s1",
+      "episodes": "job_two_s1_episodes",
+      "how": "every program run of job two's first shift from its episode records"
+    },
+    "j2s3_mounted_jobs": {
+      "kind": "count",
+      "record": "job_two_s3",
+      "path": "library_mounted.entries.jobs",
+      "how": "the jobs of the library the third shift mounted, counted"
+    },
+    "j2s3_mounted_checks": {
+      "kind": "count",
+      "record": "job_two_s3",
+      "path": "library_mounted.entries.checks",
+      "how": "the checks of the library the third shift mounted, counted"
+    },
+    "j2s3_installation_quote": {
+      "kind": "quote",
+      "record": "job_two_s3",
+      "path": "sessions.0.task",
+      "regex": "(jobs-installation for the arm, its\\s+control loop, its gripper and the numbers the checks use)",
+      "how": "the third shift's first session task, verbatim"
+    },
+    "j2_release_digest_full": {
+      "kind": "text",
+      "record": "job_two_release",
+      "path": "program_digest",
+      "how": "job two's frozen program's digest"
+    },
+    "j2_saved": {
+      "kind": "proportion",
+      "k": {
+        "kind": "count",
+        "record": "job_two_s3_episodes",
+        "table": true,
+        "where": {
+          "program_digest": {
+            "derived": "j2_release_digest_full"
+          },
+          "delivered": true
+        }
+      },
+      "n": {
+        "kind": "count",
+        "record": "job_two_s3_episodes",
+        "table": true,
+        "where": {
+          "program_digest": {
+            "derived": "j2_release_digest_full"
+          }
+        }
+      },
+      "how": "the frozen program's development runs in job two's third shift, delivered over episodes"
+    },
+    "j2_saved_starts": {
+      "kind": "start_range",
+      "record": "job_two_s3_episodes",
+      "table": true,
+      "where": {
+        "program_digest": {
+          "derived": "j2_release_digest_full"
+        }
+      },
+      "how": "the development starts of the saved program's runs"
+    },
+    "j2s3_finding": {
+      "kind": "quote",
+      "record": "job_two_s3_account",
+      "path": "account",
+      "regex": "(Compared with j0005 on matched starts, j0009 rescued[^.]*\\.)",
+      "how": "job two's third shift's account, verbatim"
+    },
+    "j2s3_check_name": {
+      "kind": "join",
+      "record": "job_two_s3",
+      "path": "library.checks",
+      "how": "the checks job two's third shift's frozen library lists as its own"
+    },
+    "j2s3_check_quote": {
+      "kind": "quote",
+      "record": "job_two_s3_account",
+      "path": "account",
+      "regex": "(It distinguishes handoff, destination acquisition[^.]*\\.)",
+      "how": "job two's third shift's account, verbatim"
+    },
+    "j2_release_digest": {
+      "kind": "digest",
+      "record": "job_two_release",
+      "path": "program_digest",
+      "chars": 12,
+      "how": "the frozen program's digest, first 12 characters"
+    },
+    "j2_release_starts": {
+      "kind": "start_range",
+      "record": "job_two_release",
+      "rows_path": "release_starts",
+      "path": "init_state",
+      "how": "the receipt's release starts"
+    },
+    "j2_release_program": {
+      "kind": "proportion",
+      "k": {
+        "record": "job_two_release",
+        "path": "delivered"
+      },
+      "n": {
+        "record": "job_two_release",
+        "path": "N"
+      },
+      "how": "Wilson 95% interval of delivered over N"
+    },
+    "j2_release_naive": {
+      "kind": "proportion",
+      "k": {
+        "record": "job_two_release",
+        "path": "naive_delivered"
+      },
+      "n": {
+        "record": "job_two_release",
+        "path": "N"
+      },
+      "how": "Wilson 95% interval of naive_delivered over N"
+    },
+    "j2_release_pairs": {
+      "kind": "pairs",
+      "record": "job_two_release",
+      "how": "the receipt's pairs recounted start by start"
+    },
+    "j2_release_sha": {
+      "kind": "sha256",
+      "record": "job_two_release",
+      "chars": 12,
+      "how": "the receipt file's SHA-256"
+    },
+    "j2_release_outcome": {
+      "kind": "verdict",
+      "record": "job_two_release",
+      "how": "the receipt's starts_fresh, passed and released fields, in words"
+    },
+    "j2s3_programs": {
+      "kind": "distinct",
+      "record": "job_two_s3",
+      "path": "batches.*.jobs.*.program_digest",
+      "how": "distinct program digests in the third shift's batches"
+    },
+    "j2s3_distinct_starts": {
+      "kind": "distinct",
+      "record": "job_two_s3_episodes",
+      "table": true,
+      "column": "start.init_state",
+      "how": "distinct development starts among the third shift's episodes"
+    },
+    "j2s3_best": {
+      "kind": "highest",
+      "record": "job_two_s3_episodes",
+      "table": true,
+      "group": "job_id",
+      "column": "delivered",
+      "success": true,
+      "how": "the program run of job two's third shift with the most deliveries"
+    },
+    "j2s3_new_checks": {
+      "kind": "count",
+      "record": "job_two_s3",
+      "path": "library.checks",
+      "how": "the checks job two's third shift saved, counted"
+    },
+    "j2s3_learned": {
+      "kind": "count",
+      "record": "job_two_s3",
+      "path": "library.skills",
+      "how": "the learned skills job two's third shift kept, counted"
+    },
+    "j2s3_programs_table": {
+      "kind": "jobs_table",
+      "record": "job_two_s3",
+      "episodes": "job_two_s3_episodes",
+      "how": "every program run of job two's third shift from its episode records"
+    }
+  },
+  "action_words": {
+    "set:control.latency_compensation_steps": "a latency compensation of {value} control steps at site {scope}",
+    "revert:software.version": "a rollback of the software update at site {scope}",
+    "revert:camera.scene.calibration": "a rollback of the scene camera's calibration change at site {scope}",
+    "service:controller": "a service of robot {scope}'s controller"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "test_commit": "c8f10bc",
+  "scratch_commit": "b78f67e",
+  "scratch_merge_only": "943f434; stage5/live-rest was not merged into stage5/supervisor",
+  "exit_code": 0,
+  "tests": 3,
+  "pytest_seconds": 16.72,
+  "fixtures": [
+    "schema-valid model response (no subscription call)",
+    "toy expert for human continuation",
+    "generated toy world readiness"
+  ],
+  "real_components": [
+    "VLM prompt and scheduler",
+    "engine and chain proofs",
+    "pass_run.execute supervisor rule",
+    "FIFO queue and physical waits",
+    "counterfactual continuations",
+    "scoring.score_files"
+  ],
+  "table": [
+    {
+      "rule": "supervisor",
+      "cost_ratio": 1,
+      "operators": 2,
+      "cohort_episodes": 7,
+      "would_fail_as_run": 6,
+      "rescued_with_person": 0,
+      "rescued_without_person": 0,
+      "successes_lost": 0,
+      "handovers": 0,
+      "operator_used_s": 0,
+      "queue_idle_s": 0.0,
+      "subscription_decision_s": 0.02901176398154348,
+      "model_response_s": 0.0
+    },
+    {
+      "rule": "supervisor",
+      "cost_ratio": 2,
+      "operators": 2,
+      "cohort_episodes": 7,
+      "would_fail_as_run": 6,
+      "rescued_with_person": 6,
+      "rescued_without_person": 0,
+      "successes_lost": 0,
+      "handovers": 6,
+      "operator_used_s": 6.699999999999999,
+      "queue_idle_s": 30.0,
+      "subscription_decision_s": 0.015663304046029225,
+      "model_response_s": 0.0
+    },
+    {
+      "rule": "supervisor",
+      "cost_ratio": 4,
+      "operators": 2,
+      "cohort_episodes": 7,
+      "would_fail_as_run": 6,
+      "rescued_with_person": 6,
+      "rescued_without_person": 0,
+      "successes_lost": 0,
+      "handovers": 6,
+      "operator_used_s": 6.699999999999999,
+      "queue_idle_s": 30.0,
+      "subscription_decision_s": 0.01821503692190163,
+      "model_response_s": 0.0
+    },
+    {
+      "rule": "timeout",
+      "cost_ratio": 2.0,
+      "operators": 2,
+      "cohort_episodes": 7,
+      "would_fail_as_run": 6,
+      "rescued_with_person": 6,
+      "rescued_without_person": 0,
+      "successes_lost": 0,
+      "handovers": 6,
+      "operator_used_s": 6.699999999999999,
+      "queue_idle_s": 30.0,
+      "subscription_decision_s": 0.0,
+      "model_response_s": 0.0
+    }
+  ],
+  "known_failure_probes": {
+    "terminal_rule_handover": "StopIteration in pass_run risk lookup",
+    "failed_model_call_handover": "StopIteration in pass_run risk lookup"
+  },
+  "required_followups": [
+    "terminal and failed-call harness repair: canonical decision trace, failed context, terminal risk, nullable model time, skipped-route refusal, call denominators and robot time",
+    "live queue feedback to the proposal model",
+    "Match model cost parameters with each harness cost ratio"
+  ],
+  "artifacts": [
+    {
+      "path": "/home/cs/.cache/robots-supervisor/harness-toy-v4/receipt.json",
+      "sha256": "04b32d93f2092253386c5f2625b35ac4573b84bb920ce3e59d201b477032262a"
+    },
+    {
+      "path": "/home/cs/.cache/robots-supervisor/harness-toy-v4.log",
+      "sha256": "187dbb3287b4b74202643fac426736bdf6b797300306bd044c6a4ecca0d38daf"
+    }
+  ]
+}

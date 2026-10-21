@@ -1,0 +1,280 @@
+#!/usr/bin/env bash
+# Narration for the demo film through ElevenLabs' text-to-speech API, with curl.
+#
+#   tools/film-narrate voices [--candidates ID,ID] [--out DIR]
+#       Lists the account's voices and models, picks two premade voices labelled male and
+#       American that suit narration (or takes the --candidates given), and the best
+#       text-to-speech model the account offers, and reads the same passage
+#       (site/narration/voice-test.md, about thirty seconds) with both, so the voice can be
+#       chosen by ear. DIR defaults to ~/.cache/robots-probes/demo/2026-10-20/film/voices.
+#
+#   tools/film-narrate render [--voice VOICE_ID] [--records FILE] [--model MODEL]
+#                             [--script FILE] [--out DIR]
+#       Reads every beat of the script (default site/narration/script.md) with the voice
+#       (default Brian, nPczCjzI2devNBz1zQrb, a premade male standard American narration
+#       voice): DIR/<beat>.mp3, captions timed to the audio (DIR/<beat>.vtt,
+#       DIR/captions.vtt) and DIR/voice.json. With --records (a cut's
+#       fleetlab.film-records/1 file) the script's numbers are bound first
+#       (DIR/script.md, DIR/bindings.json) and the bound script is read. A script with a
+#       number left unbound is never sent to the voice; without the key it still gives
+#       captions. The film takes DIR with `python -m fleetlab.film build --narration`.
+#       MODEL defaults to the one `voices` chose (DIR/../voices/choice.tsv), else
+#       eleven_multilingual_v2. DIR defaults to
+#       ~/.cache/robots-probes/demo/2026-10-20/film/narration/VOICE_ID.
+#
+# The key is read from the environment variable ELEVENLABS_API_KEY and nowhere else. It
+# reaches curl on its standard input as a header, so it never appears in a command line
+# (which other processes can read); it is never printed and never written to a file.
+# Without the key the tool runs dry: it writes the requests it would send (method, URL,
+# body; no key) and the caption files, says so, and exits 0.
+#
+# ELEVENLABS_API_BASE replaces https://api.elevenlabs.io (a local test server);
+# FILM_PYTHON replaces `uv run --locked python` for the script's Python steps;
+# FILM_NARRATE_RETRIES sets curl's retries of a transient failure (default 2).
+set -euo pipefail
+
+root=$(cd "$(dirname "$0")/.." && pwd)
+results="$HOME/.cache/robots-probes/demo/2026-10-20/film"
+base=${ELEVENLABS_API_BASE:-https://api.elevenlabs.io}
+retries=${FILM_NARRATE_RETRIES:-2}  # curl's retries of a transient failure (5xx, 429, timeouts)
+format=mp3_44100_128
+
+usage() { sed -n '2,33p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+
+[ $# -ge 1 ] || usage
+mode=$1; shift
+case "$mode" in voices|render) ;; -h|--help) usage ;; *) usage ;; esac
+
+# The default voice: Brian, a premade ElevenLabs voice labelled male, American, deep,
+# narration (ElevenLabs' voice library documentation). Its ID is to be confirmed against the
+# account's listing with the key (`voices`); --voice replaces it.
+default_voice=nPczCjzI2devNBz1zQrb
+out= voice= model= records= candidates= script="$root/site/narration/script.md"
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --out) out=$(realpath -m "$2"); shift 2 ;;
+        --voice) voice=$2; shift 2 ;;
+        --records) records=$(realpath -m "$2"); shift 2 ;;
+        --candidates) candidates=$2; shift 2 ;;
+        --model) model=$2; shift 2 ;;
+        --script) script=$(realpath -m "$2"); shift 2 ;;
+        -h|--help) usage ;;
+        *) echo "film-narrate: unknown argument $1" >&2; usage ;;
+    esac
+done
+
+python() {
+    if [ -n "${FILM_PYTHON:-}" ]; then
+        (cd "$root" && $FILM_PYTHON "$@")
+    else
+        (cd "$root" && uv run --locked python "$@")
+    fi
+}
+
+dry=0
+[ -n "${ELEVENLABS_API_KEY:-}" ] || dry=1
+
+# Every answer is held in memory and the key is removed from it before anything is
+# written to a file or printed: an error body that echoes the request's headers must not
+# carry the key further. Only audio (HTTP 200 from text-to-speech) is written as received.
+scratch=$(mktemp -d)
+trap 'rm -rf "$scratch"' EXIT
+answer=
+
+redact() {
+    local text=$1
+    if [ -n "${ELEVENLABS_API_KEY:-}" ]; then
+        text=${text//"$ELEVENLABS_API_KEY"/[key removed]}
+    fi
+    printf '%s' "$text"
+}
+
+# get_json PATH OUTFILE: sets $status (the HTTP status, "000" if curl failed); OUTFILE
+# gets the answer with the key removed
+get_json() {
+    local path=$1 target=$2 resp
+    resp=$(printf 'xi-api-key: %s\n' "$ELEVENLABS_API_KEY" | curl -q -sS -H @- \
+        --retry "$retries" --retry-delay 3 --connect-timeout 20 --max-time 120 \
+        -w '\n%{http_code}' "$base$path" 2>/dev/null) || true
+    status=${resp##*$'\n'}
+    resp=${resp%$'\n'*}
+    case "$status" in [0-9][0-9][0-9]) ;; *) status=000 ;; esac
+    redact "$resp" >"$target"
+}
+
+# post_audio VOICE_ID TARGET BODYFILE: sets $status; TARGET gets the audio only on 200;
+# any other answer stays in memory, key removed, in $answer
+post_audio() {
+    local id=$1 target=$2 body=$3 resp
+    resp=$(printf 'xi-api-key: %s\n' "$ELEVENLABS_API_KEY" | curl -q -sS -H @- \
+        -H 'Content-Type: application/json' -H 'Accept: audio/mpeg' --data-binary "@$body" \
+        --retry "$retries" --retry-delay 3 --connect-timeout 20 --max-time 300 \
+        -w '%{stderr}%{http_code}' -o - "$base/v1/text-to-speech/$id?output_format=$format" \
+        2>"$scratch/status" | base64 -w0) || true
+    status=$(tail -c 3 "$scratch/status" 2>/dev/null)
+    case "$status" in [0-9][0-9][0-9]) ;; *) status=000 ;; esac
+    answer=
+    if [ "$status" = 200 ]; then
+        printf '%s' "$resp" | base64 -d >"$target.part" && mv "$target.part" "$target"
+    else
+        answer=$(redact "$(printf '%s' "$resp" | base64 -d 2>/dev/null | head -c 2000)")
+    fi
+}
+
+# speak VOICE_ID TARGET.mp3 BODY1 [BODY2 ...]: the first body the API accepts; a body
+# refused as invalid (422) is followed by the next, plainer one. On failure the target is
+# removed, so that an older recording cannot stand in for this text. Returns 1 on failure.
+speak() {
+    local id=$1 target=$2; shift 2
+    local body
+    for body in "$@"; do
+        post_audio "$id" "$target" "$body"
+        if [ "$status" = 200 ]; then
+            return 0
+        fi
+        if [ "$status" = 422 ]; then
+            echo "  $(basename "$body") refused as invalid: ${answer:0:400}" >&2
+            continue
+        fi
+        echo "  HTTP $status for $(basename "$target"): ${answer:0:400}" >&2
+        break
+    done
+    rm -f "$target" "$target.part"
+    return 1
+}
+
+
+if [ "$mode" = voices ]; then
+    out=${out:-"$results/voices"}
+    mkdir -p "$out/listing" "$out/passage"
+    model=${model:-eleven_multilingual_v2}
+    if [ -n "$candidates" ]; then
+        # the voices named on the command line, read as they are
+        : >"$out/choice.tsv"
+        IFS=, read -r -a ids <<<"$candidates"
+        for id in "${ids[@]}"; do
+            [[ "$id" =~ ^[A-Za-z0-9_-]+$ ]] || { echo "film-narrate: not a voice id: $id" >&2; exit 2; }
+            printf 'voice\t%s\t%s\t{"named": "on the command line"}\n' "$id" "$id" >>"$out/choice.tsv"
+        done
+        printf 'model\t%s\n' "$model" >>"$out/choice.tsv"
+    elif [ "$dry" = 1 ]; then
+        # The usual premade candidates from ElevenLabs' documentation, unconfirmed until
+        # the account's listing is read with the key.
+        printf 'voice\tnPczCjzI2devNBz1zQrb\tBrian\t{"assumed": "unconfirmed until the listing is read"}\n' >"$out/choice.tsv"
+        printf 'voice\tpNInz6obpgDQGcFmaJgB\tAdam\t{"assumed": "unconfirmed until the listing is read"}\n' >>"$out/choice.tsv"
+        printf 'model\t%s\n' "$model" >>"$out/choice.tsv"
+    else
+        for what in voices models; do
+            get_json "/v1/$what" "$out/listing/$what.json"
+            if [ "$status" != 200 ]; then
+                echo "film-narrate: GET /v1/$what answered HTTP $status: $(head -c 400 "$out/listing/$what.json")" >&2
+                rm -f "$out/listing/$what.json"
+                exit 1
+            fi
+        done
+        if ! python -m fleetlab.film voices "$out/listing/voices.json" --models "$out/listing/models.json" >"$out/choice.tsv"; then
+            echo "film-narrate: fewer than two premade voices are labelled male and American; see $out/listing/voices.json" >&2
+            [ -s "$out/choice.tsv" ] || exit 1
+        fi
+        model=$(awk -F'\t' '$1 == "model" {print $2}' "$out/choice.tsv")
+    fi
+    python -m fleetlab.film narration "$root/site/narration/voice-test.md" --out "$out/passage" --model "$model" >/dev/null
+    bodies=("$out"/passage/voice-test.request-*.json)
+    {
+        echo "# Voice choice for the demo film"
+        echo
+        echo "Model: \`$model\`. Passage: \`site/narration/voice-test.md\` (about thirty seconds)."
+        echo
+    } >"$out/choices.md"
+    : >"$out/dry-run.txt"
+    failed=0
+    while IFS=$'\t' read -r kind id name labels; do
+        [ "$kind" = voice ] || continue
+        slug=$(printf '%s' "$name" | tr -c 'A-Za-z0-9' '-' | tr 'A-Z' 'a-z' | sed 's/-*$//')
+        target="$out/$slug-$id.mp3"
+        echo "- **$name** (\`$id\`), labels $labels: \`$(basename "$target")\`" >>"$out/choices.md"
+        if [ "$dry" = 1 ]; then
+            printf 'POST %s/v1/text-to-speech/%s?output_format=%s\n  headers: xi-api-key (from ELEVENLABS_API_KEY), Content-Type: application/json, Accept: audio/mpeg\n  body: %s\n' \
+                "$base" "$id" "$format" "${bodies[0]}" >>"$out/dry-run.txt"
+            continue
+        fi
+        echo "reading the passage with $name ($id)"
+        speak "$id" "$target" "${bodies[@]}" || failed=1
+    done <"$out/choice.tsv"
+    {
+        echo
+        echo "Choose by ear, then: \`tools/film-narrate render --voice <id> --model $model\`."
+    } >>"$out/choices.md"
+    if [ "$dry" = 1 ]; then
+        {
+            echo "GET $base/v1/voices   (headers: xi-api-key from ELEVENLABS_API_KEY)"
+            echo "GET $base/v1/models   (headers: xi-api-key from ELEVENLABS_API_KEY)"
+        } | cat - "$out/dry-run.txt" >"$out/dry-run.tmp" && mv "$out/dry-run.tmp" "$out/dry-run.txt"
+        echo "film-narrate: ELEVENLABS_API_KEY is not set, so nothing was sent and no voice was recorded." >&2
+        echo "film-narrate: wrote the requests it would send ($out/dry-run.txt, $out/passage/*.request-*.json)," >&2
+        echo "film-narrate: the captions ($out/passage/voice-test.vtt) and the assumed candidates ($out/choice.tsv)." >&2
+        exit 0
+    fi
+    echo "wrote $out/choices.md and the passage read by each voice"
+    exit "$failed"
+fi
+
+# render
+if [ -z "$model" ] && [ -f "$results/voices/choice.tsv" ]; then
+    model=$(awk -F'\t' '$1 == "model" {print $2}' "$results/voices/choice.tsv")
+fi
+model=${model:-eleven_multilingual_v2}
+voice=${voice:-$default_voice}
+[[ "$voice" =~ ^[A-Za-z0-9_-]+$ ]] || { echo "film-narrate: not a voice id: $voice" >&2; exit 2; }
+out=${out:-"$results/narration/$voice"}
+mkdir -p "$out"
+if [ -n "$records" ]; then
+    # the numbers read from the cut's records: DIR/script.md and DIR/bindings.json
+    python -m fleetlab.film bind "$script" --records "$records" --out "$out"
+    script="$out/script.md"
+fi
+if [ "$dry" = 1 ]; then
+    python -m fleetlab.film narration "$script" --out "$out" --model "$model"
+else
+    # a number left unbound is never sent to the voice
+    if ! python -m fleetlab.film narration "$script" --out "$out" --model "$model" --require-bound; then
+        echo "film-narrate: the script has numbers bound to no record; nothing was sent" >&2
+        exit 4
+    fi
+fi
+if [ "$dry" = 1 ]; then
+    : >"$out/dry-run.txt"
+    while IFS=$'\t' read -r id n; do
+        printf 'POST %s/v1/text-to-speech/%s?output_format=%s\n  body: %s (%s plainer fallbacks)\n' \
+            "$base" "$voice" "$format" "$out/$id.request-1.json" "$((n - 1))" >>"$out/dry-run.txt"
+    done <"$out/beats.tsv"
+    echo "film-narrate: ELEVENLABS_API_KEY is not set, so nothing was sent and no voice was recorded." >&2
+    echo "film-narrate: wrote caption files instead ($out/captions.vtt and $out/<beat>.vtt, timed at a reading pace)" >&2
+    echo "film-narrate: and the requests it would send ($out/dry-run.txt)." >&2
+    exit 0
+fi
+# Metadata only for what this run recorded: a beat that fails loses its old recording too
+# (speak removes it), and voice.json names each recorded beat with the digests of its text
+# and its audio, which the film build checks before it uses the file.
+rm -f "$out/voice.json"
+failed=0
+ok=
+while IFS=$'\t' read -r id n; do
+    bodies=()
+    for j in $(seq 1 "$n"); do bodies+=("$out/$id.request-$j.json"); done
+    echo "reading $id"
+    if speak "$voice" "$out/$id.mp3" "${bodies[@]}"; then
+        ok="${ok:+$ok,}$id"
+    else
+        failed=1
+        echo "  $id failed; no recording of it is kept" >&2
+    fi
+done <"$out/beats.tsv"
+if [ -n "$ok" ]; then
+    python -m fleetlab.film voice-record "$out" --script "$script" --voice "$voice" \
+        --model "$model" --format "$format" --beats "$ok"
+fi
+# captions timed to the recorded audio
+python -m fleetlab.film narration "$script" --out "$out" --model "$model"
+echo "wrote $out (voice.json for the beats recorded, <beat>.mp3, captions)"
+exit "$failed"

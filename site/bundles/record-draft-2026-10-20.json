@@ -1,0 +1,8 @@
+{
+  "format": "fleetlab.film-site/1",
+  "title": "The installation takes on a new job",
+  "lede": "Draft of the record page, 20 October 2026, with lane F's rehearsal 4 film. A simulated robot installation with one robot policy that never changes, and agents that improve the installation around it. The record page is bound to the runs recorded so far; numbers and passages the runs still in progress decide are marked as such.",
+  "film": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/film",
+  "record_source": "../record/record.md",
+  "record": "~/.cache/robots-probes/demo/2026-10-20/record/draft/record/page"
+}

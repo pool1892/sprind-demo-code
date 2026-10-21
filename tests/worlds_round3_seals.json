@@ -1,0 +1,268 @@
+{
+ "software": {
+  "lock_hash": "a302a3256e62bf73",
+  "libero_patch_set": "cd1acebf8d9c749c",
+  "mujoco_version": "3.3.7",
+  "miopen_db_hash": "7751323820effb28",
+  "contracts_version": "1.0"
+ },
+ "worlds": {
+  "D2": {
+   "hash": "beaac37883079862454e86fde1e3420b113f420636e81473a81b61fffb62790b",
+   "predictions_sha256": "0258accd9e6f5923e9c161694142d73b10c4925bef76ac941641ac4b2d9b1cb5",
+   "observed_causes": [
+    "fx6d3e2e809b706d92715cf6aa9fbd5888",
+    "fx87a6addb50fcfcd246fab899a4774cf0",
+    "fxab9800a075afb695d5cf9e8f69409817",
+    "fxbe2c7308d7bbc2cedf8a91b4a7e47ade",
+    "fx7924f8fbaefb438dfa2fd84a5f836fa4",
+    "fxeda9c904df87f35f08a166dd65a88e64",
+    "fxb76bdf5c087ecdecb066a6eb80548fc2"
+   ],
+   "lowest_robot_day": {
+    "robot_id": "r02",
+    "day": 4,
+    "true": 0.6327680133277801,
+    "logged": 0.40032262067675883
+   },
+   "round3_hash": "11097c8af424ac60cf238dffcddfb8510c8a0e142a813ac75e3fea377209fae2",
+   "round3_file_sha256": {
+    "description.json": "594929ee0ffc0c0c3e824819452f47eb47d0e8d5c6a979a159a321eefead9309",
+    "detectability.json": "17d76191b678a7da8d8b8cf8042dfe96de33abf530adb71659427619f764e7e7",
+    "fault_table.json": "5ca69717b8d5391c10f0fbeeffc8d1a3040679f213d120037d788ef4bf5eab19",
+    "generator.json": "e91ead190690b54362c0d113c97f6a31c44d7855d39adeb004f48210e2b4a58f",
+    "hash": "28cdf6c5ef4628bd6d661af5e6bb9bdbb37e6020bb9a2fe2956d85db10c8532d",
+    "health.jsonl": "b5caecdcd4fe084c4f61cc677a128d811326ad37229e5ba6a94f4638eba7c4d9",
+    "manifest.jsonl": "0908b412038574a75ec8f547fcfb3de6de7173886b26ba1da749ed5763decf62",
+    "model.json": "387311930768622d6a27c79c13fcedcbda56c2f7b3329fc42fed3d7c43f39e7d",
+    "spec.json": "20eb60e3f0407f8f22192a232c83e43baa1bb9f85de237c80043258e8cbd0ca0",
+    "task_texts.json": "b4f10a3172380c63f5a3ce8d94466de53e93d02e5e50f829117cd778b8bcc036",
+    "world_truth.json": "6d381868103c7add255c9dd0dc51b820c9f350200400f9036ebe518c41bd75f1"
+   },
+   "fault_id_map": {
+    "f01": "fx6d3e2e809b706d92715cf6aa9fbd5888",
+    "f02": "fx87a6addb50fcfcd246fab899a4774cf0",
+    "f03": "fxab9800a075afb695d5cf9e8f69409817",
+    "f04": "fx7f24b87918b2a3932b84b953851cc2bc",
+    "f05": "fxbe2c7308d7bbc2cedf8a91b4a7e47ade",
+    "f06": "fxeed316ce87193e0760afc8084efe9970",
+    "f07": "fx7924f8fbaefb438dfa2fd84a5f836fa4",
+    "f08": "fx05ccc6c4c25ecaffdd8844b109cc791f",
+    "f09": "fx36aa15e04e5dadf0869c35ba24f2b29a",
+    "f10": "fxa86506ddbbe0f50f57bb20e0e234513b",
+    "f11": "fxc4cc7d3cf199420306b5e7e69900089b",
+    "f12": "fxd14704a694f88e4b0411a4f6e6d1aaa5",
+    "f13": "fxeda9c904df87f35f08a166dd65a88e64",
+    "f14": "fxb76bdf5c087ecdecb066a6eb80548fc2",
+    "f15": "fx40a968c3873d3aec4bc9b6e5ceb73a3a"
+   },
+   "round3_base_runs": [
+    "/home/cs/.cache/robots-probes/worlds/w46/runs/w46-observed"
+   ]
+  },
+  "D3": {
+   "hash": "f03a31c6868d3efcef0813cc2cc3b7d56a7163c2518e0fa9e1c136aa984d6849",
+   "predictions_sha256": "dcd5319ca1cb4dcac12f2d3c93ad04d1863485140ea2221a311ba702945f9ead",
+   "observed_causes": [
+    "fx8c884b4c528b07570a838122d2f00c20",
+    "fx3c9a6644e3ca5cde58c07f4c0eab488c",
+    "fx37332e2dbcdc844a1de9e336262035ef",
+    "fxe5ff98a6d7e4221b74169196ec051225",
+    "fx361403487a72d718b9a8957a50655d24",
+    "fx147d32c37bbb78855024652195734690"
+   ],
+   "lowest_robot_day": {
+    "robot_id": "r03",
+    "day": 2,
+    "true": 0.4046772178259059,
+    "logged": 0.4046772178259059
+   },
+   "round3_hash": "88754d6f8811fe1019cc03cc7902436906b8b391ea60aac57c29e57a5fe9f30e",
+   "round3_file_sha256": {
+    "description.json": "2fa9692a9c77ede1d76d57574482e5a6793f4112423e0f3f0054af7d2b3c8669",
+    "detectability.json": "1034386dc9a2a1d82921237873d7f398410b7435081708936bcc5a6f8043311a",
+    "fault_table.json": "d39af05c271ba9bcdf217d652521810572885841ab5a0cb292c9593250d6bca7",
+    "generator.json": "4c7c3250a789465ef6a42242d64b33c3e4c6d63a6c576e27194ab49898c25a29",
+    "hash": "624670dc41ba7e892c39e651944f9aaed9fdbe0117dcbefc3259a863071d4e00",
+    "health.jsonl": "5947cce6b202834bf6d9682c3ebd4ac24c0a7dd628bf7ab07bc1cf8910ae98e2",
+    "manifest.jsonl": "178c91e582b9e9e4edd4a6ae1e7ef3d2700f17b9752453c19bc99874a6493fea",
+    "model.json": "3b1f20d30c7e4ee29e67c2f76d2672f2af4532fbc9aa6cb8297611c73f757228",
+    "spec.json": "7cfd37f550d13fd9454c69bda49b0f5ad4541b587d3d5d6238f6ff38b33d2569",
+    "task_texts.json": "b4f10a3172380c63f5a3ce8d94466de53e93d02e5e50f829117cd778b8bcc036",
+    "world_truth.json": "ad4917a0c1ab974beaefd464fdc7c1091d37522b178919ae6750813b0aa0cfcc"
+   },
+   "fault_id_map": {
+    "f01": "fx8c884b4c528b07570a838122d2f00c20",
+    "f02": "fx3c9a6644e3ca5cde58c07f4c0eab488c",
+    "f03": "fx37332e2dbcdc844a1de9e336262035ef",
+    "f04": "fx2ad45433e1ee023ff134894d48d1a600",
+    "f05": "fxd800f062ccf0e888ef40133b8aed5c81",
+    "f07": "fxe5ff98a6d7e4221b74169196ec051225",
+    "f08": "fx38b0675c46d2f96f3727dccbddd560b2",
+    "f09": "fx24e5b0e6b89ef5b9492cf7b5070f0850",
+    "f10": "fx361403487a72d718b9a8957a50655d24",
+    "f11": "fx8d99a95e8c9b76458979700a98fcb06c",
+    "f12": "fx147d32c37bbb78855024652195734690",
+    "f13": "fx695d2983ce4828cc831b509515609be0",
+    "f14": "fx383974aa4f817c2a37f74d7049747bf6"
+   },
+   "round3_base_runs": [
+    "/home/cs/.cache/robots-probes/worlds/w47/runs/w47-observed"
+   ]
+  }
+ },
+ "task_texts": [
+  {
+   "suite": "libero_spatial",
+   "task_index": 0,
+   "text": "pick up the black bowl between the plate and the ramekin and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 1,
+   "text": "pick up the black bowl next to the ramekin and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 2,
+   "text": "pick up the black bowl from table center and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 3,
+   "text": "pick up the black bowl on the cookie box and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 4,
+   "text": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 5,
+   "text": "pick up the black bowl on the ramekin and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 6,
+   "text": "pick up the black bowl next to the cookie box and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 7,
+   "text": "pick up the black bowl on the stove and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 8,
+   "text": "pick up the black bowl next to the plate and place it on the plate"
+  },
+  {
+   "suite": "libero_spatial",
+   "task_index": 9,
+   "text": "pick up the black bowl on the wooden cabinet and place it on the plate"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 0,
+   "text": "pick up the alphabet soup and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 1,
+   "text": "pick up the cream cheese and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 2,
+   "text": "pick up the salad dressing and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 3,
+   "text": "pick up the bbq sauce and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 4,
+   "text": "pick up the ketchup and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 5,
+   "text": "pick up the tomato sauce and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 6,
+   "text": "pick up the butter and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 7,
+   "text": "pick up the milk and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 8,
+   "text": "pick up the chocolate pudding and place it in the basket"
+  },
+  {
+   "suite": "libero_object",
+   "task_index": 9,
+   "text": "pick up the orange juice and place it in the basket"
+  }
+ ],
+ "provenance_only_merge": {
+  "old_library_digest": "dc85078bd3458d23",
+  "library_digest": "6c0402890bbe635c",
+  "source_replacements": {
+   "/home/cs/.cache/robots-probes/faults/runs/camera_pose_offset": "camera_pose_offset",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-camera_pose_offset-tilt": "s3-camera_pose_offset-tilt",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-camera_pose_offset-300 + /home/cs/.cache/robots-probes/faults/runs/s3-camera_pose_offset-tilt": "s3-camera_pose_offset-300 + s3-camera_pose_offset-tilt",
+   "/home/cs/.cache/robots-probes/faults/runs/action_latency": "action_latency",
+   "/home/cs/.cache/robots-probes/faults/runs/software_release": "software_release",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-software_release-two": "s3-software_release-two",
+   "/home/cs/.cache/robots-probes/faults/runs/camera_degradation": "camera_degradation",
+   "/home/cs/.cache/robots-probes/faults/runs/policy_knob": "policy_knob",
+   "/home/cs/.cache/robots-probes/faults/runs/control_mode_change": "control_mode_change",
+   "/home/cs/.cache/robots-probes/faults/runs/gripper_wear": "gripper_wear",
+   "/home/cs/.cache/robots-probes/faults/runs/object_batch_variant": "object_batch_variant",
+   "/home/cs/.cache/robots-probes/faults/runs/furniture_shift": "furniture_shift",
+   "/home/cs/.cache/robots-probes/faults/runs/illumination_change": "illumination_change",
+   "/home/cs/.cache/robots-probes/faults/runs/illumination_change + /home/cs/.cache/robots-probes/faults/runs/illumination_change-1000": "illumination_change + illumination_change-1000",
+   "/home/cs/.cache/robots-probes/faults/runs/backdrop_change-walls": "backdrop_change-walls",
+   "/home/cs/.cache/robots-probes/faults/runs/backdrop_change-walls + /home/cs/.cache/robots-probes/faults/runs/backdrop_change-walls-1000": "backdrop_change-walls + backdrop_change-walls-1000",
+   "/home/cs/.cache/robots-probes/faults/runs/backdrop_change-table": "backdrop_change-table",
+   "/home/cs/.cache/robots-probes/faults/runs/success_detector_error": "success_detector_error",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination": "s3-lens_contamination",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination + /home/cs/.cache/robots-probes/faults/runs/s3-lens_contamination-300": "s3-lens_contamination + s3-lens_contamination-300",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-camera_latency": "s3-camera_latency",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_force_loss": "s3-gripper_force_loss",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-gripper_sticky_release": "s3-gripper_sticky_release",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-arm_torque_loss": "s3-arm_torque_loss",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-controller_overload": "s3-controller_overload",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-controller_overload + /home/cs/.cache/robots-probes/faults/runs/s3-controller_overload-300": "s3-controller_overload + s3-controller_overload-300",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-calibration_update": "s3-calibration_update",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release": "s3-image_pipeline_release",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release + /home/cs/.cache/robots-probes/faults/runs/s3-image_pipeline_release-300": "s3-image_pipeline_release + s3-image_pipeline_release-300",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-table_height_change": "s3-table_height_change",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-table_height_change + /home/cs/.cache/robots-probes/faults/runs/s3-table_height_change-300": "s3-table_height_change + s3-table_height_change-300",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-light_color_shift": "s3-light_color_shift",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-light_color_shift + /home/cs/.cache/robots-probes/faults/runs/s3-light_color_shift-1000": "s3-light_color_shift + s3-light_color_shift-1000",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-success_false_positive": "s3-success_false_positive",
+   "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-delay": "object-delay",
+   "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-chunks": "object-chunks",
+   "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-illumination_change-1000 + /home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-illumination_change-300 + /home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-illumination_change-600": "object-illumination_change-1000 + object-illumination_change-300 + object-illumination_change-600",
+   "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-backdrop_change-1000 + /home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-backdrop_change-300 + /home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-backdrop_change-600": "object-backdrop_change-1000 + object-backdrop_change-300 + object-backdrop_change-600",
+   "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-light_color_shift-300 + /home/cs/.cache/robots-probes/faults/codex-faults-20261009/objects/runs/object-light_color_shift-600": "object-light_color_shift-300 + object-light_color_shift-600",
+   "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/object-tail/runs/tail-object-calibration_update-100": "tail-object-calibration_update-100",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-joint-wear-heavier": "s3-joint-wear-heavier",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-joint-weaker-heavier": "s3-joint-weaker-heavier",
+   "/home/cs/.cache/robots-probes/faults/runs/s3-joint-delay-chunks": "s3-joint-delay-chunks",
+   "/home/cs/.cache/robots-probes/faults/codex-faults-20261009/pair/runs/object-pair": "object-pair"
+  },
+  "task_digest": "0fec9a3e17435b69",
+  "old_task_digest": "a676af0b51eb985c"
+ }
+}

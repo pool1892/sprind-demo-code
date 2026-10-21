@@ -1,0 +1,241 @@
+{
+  "format": "fleetlab.film-manifest/1",
+  "title": "A new job, made reliable",
+  "subtitle": "Private draft 2: first case only, silent with captions, 20 October 2026",
+  "notes": "Draft 2 of the reliability cut's first case, from draft 1 (reliability-first-case-2026-10-20.json at 82222f9, rendered as first-case-draft-1, kept unchanged) with the review's two presentation repairs: the failure beat's narration now opens with the hand knocking the bowl off, so that caption is on screen while the bowl falls; the check is shown as a card with a plain summary, labelled as a summary, instead of the check's technical purpose text. The frames leave run ids and digests out (sources_on_screen viewer); provenance.json keeps them. Same footage, records and bindings as draft 1. Reliability cut, first case (robots-qzfk.44.5), a private silent draft. The first reliable agent job, replacement-01: bowl on the cabinet top and middle drawer open, no order rule; released 20 of 20 on reserved starts 30 to 49 against 1 of 20 for the plain chain, 19 rescued, 0 broken (receipt, reconciled in coordinator-verification.json). Arc: request, visible failure, the agent's discriminating experiment, working procedure, what the library keeps. Clips: the plain chain's failure and the release pair are the first rescued reserved start (initial state 31), chosen by `python -m fleetlab.film pairs` (plain chain e000202, saved job e000102), shown as verified 720px re-renders (all 1,298 state hashes and both final verdicts matched); the experiment pair is practice start 2 of session 3 (open-then-home j0005 e000503 against placement-runs-on-then-home j0006 e000603), original 360px recordings at a frame every fourth control step. Numbers on cards come from the bound script (site/reliability/script.md, fields site/reliability/fields.json, records reliability-first-case-2026-10-20.records.json); the request excerpt on screen is the first two sentences of job_run.json request.request_text, verbatim. The second job is pending: its slot is a comment in the script and r2_* fields in fields.json, and nothing of it is shown. No new run; nothing re-shot; no host-screen footage or result. The wrist re-render of e000202 is not used: its replay report names the scene original as original_video, so the film's verification refuses it for the wrist camera; the failure is shown in the scene view only.",
+  "script": "~/.cache/robots-probes/demo/2026-10-20/reliability/film/first-case-draft-2/narration/script.md",
+  "fps": 20,
+  "poster": "r1-release",
+  "stories": {
+    "A": "A new job, made reliable"
+  },
+  "beats": [
+    {
+      "id": "r1-open",
+      "story": "A",
+      "title": "A new job, made reliable",
+      "narrated": false,
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 4,
+          "title": "A new job, made reliable",
+          "subtitle": "An engineering agent turns two robot skills into one job that holds up on fresh starts.",
+          "note": "PRIVATE DRAFT, SILENT: captions stand in for the narration. First case only; the second job is pending and not shown."
+        }
+      ]
+    },
+    {
+      "id": "r1-request",
+      "story": "A",
+      "title": "The request",
+      "subtitle": "one job, two conditions, no single skill for it",
+      "panel": {
+        "requirement": [
+          "bowl on top of the cabinet",
+          "middle drawer open, at the same time"
+        ],
+        "rule": "no required order",
+        "bar": "proposed by the agent, approved by the shift lead before any test"
+      },
+      "shots": [
+        {
+          "kind": "text",
+          "title": "The shift lead's request, as recorded (first two sentences)",
+          "text": "Prepare the station as one complete job: leave the bowl on top of the cabinet and the middle drawer open. Both conditions must hold together at the end, with the robot clear, the objects at rest and the gripper open.",
+          "seconds": 7
+        },
+        {
+          "kind": "clip",
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+            "episode": "e000202",
+            "label": "plain chain, a reserved start",
+            "start": 0,
+            "end": 82,
+            "speed": 1,
+            "rerender": {
+              "video": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+              "verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "r1-failure",
+      "story": "A",
+      "title": "What fails",
+      "subtitle": "the hand turns to the drawer while it still touches the bowl",
+      "panel": {
+        "requirement": [
+          "bowl on top of the cabinet",
+          "middle drawer open, at the same time"
+        ],
+        "rule": "no required order",
+        "program": "plain chain",
+        "current": "auto",
+        "steps": [
+          "bowl skill until the bowl is on the cabinet",
+          "drawer skill until the drawer is open"
+        ]
+      },
+      "shots": [
+        {
+          "kind": "clip",
+          "clip": {
+            "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+            "episode": "e000202",
+            "label": "plain chain, a reserved start",
+            "start": 82,
+            "end": 230,
+            "speed": 0.8,
+            "rerender": {
+              "video": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+              "verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.json"
+            },
+            "hold": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "r1-experiment",
+      "story": "A",
+      "title": "The experiment",
+      "subtitle": "one change at a time, on the same practice starts",
+      "panel": {
+        "requirement": [
+          "bowl on top of the cabinet",
+          "middle drawer open, at the same time"
+        ],
+        "rule": "no required order",
+        "program": "placement runs on, then home",
+        "current": "auto",
+        "follow": 1,
+        "steps": [
+          "bowl skill until the bowl is on the cabinet",
+          "bowl skill runs on for a fixed number of steps",
+          "hand home",
+          "drawer skill until the drawer is open"
+        ]
+      },
+      "shots": [
+        {
+          "kind": "card",
+          "seconds": 6,
+          "title": "The agent's check: does the bowl stay in place?",
+          "subtitle": "When the next skill starts, is the bowl on the cabinet, untouched and at rest, with the hand open? And does it stay there to the end, even in runs that deliver?",
+          "note": "A plain summary of the check the agent wrote and saved; its own wording is in its library entry."
+        },
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run",
+              "episode": "e000503",
+              "label": "open, then home",
+              "start": 30,
+              "end": 200,
+              "speed": 1,
+              "hold": 1.5
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run",
+              "episode": "e000603",
+              "label": "placement runs on, then home",
+              "start": 30,
+              "end": 200,
+              "speed": 1,
+              "hold": 1.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r1-release",
+      "story": "A",
+      "title": "Confirmed, then released",
+      "subtitle": "reserved starts no practice batch had touched, beside the plain chain",
+      "panel": {
+        "requirement": [
+          "bowl on top of the cabinet",
+          "middle drawer open, at the same time"
+        ],
+        "rule": "no required order",
+        "bar": "proposed by the agent, approved by the shift lead before any test",
+        "program": "the saved job",
+        "current": "auto",
+        "follow": 1,
+        "steps": [
+          "bowl skill until the bowl is on the cabinet",
+          "bowl skill runs on for a fixed number of steps",
+          "hand home",
+          "drawer skill until the drawer is open"
+        ]
+      },
+      "shots": [
+        {
+          "kind": "pair",
+          "clips": [
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+              "episode": "e000202",
+              "label": "plain chain",
+              "speed": 2,
+              "hold": 1,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.json"
+              }
+            },
+            {
+              "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+              "episode": "e000102",
+              "label": "the saved job",
+              "speed": 2,
+              "hold": 1,
+              "rerender": {
+                "video": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000102.rerender.scene.720px.mp4",
+                "verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000102.rerender.scene.720px.json"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "seconds": 5,
+          "title": "{r1_delivered} of {r1_release_n} reserved starts delivered",
+          "subtitle": "The plain chain on the same starts: {r1_naive_delivered}. {r1_rescued} rescued, {r1_broken} broken.",
+          "note": "From the release receipt; every release episode reconciled by the coordinator."
+        }
+      ]
+    },
+    {
+      "id": "r1-kept",
+      "story": "A",
+      "title": "What the installation keeps",
+      "subtitle": "the job, its check, and what the agent learned",
+      "shots": [
+        {
+          "kind": "text",
+          "title": "The learned skill, as the agent wrote it",
+          "file": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/skills/quiet-handoff-versus-path-clearance/SKILL.md",
+          "lines": [
+            3,
+            3
+          ],
+          "seconds": 7
+        },
+        {
+          "kind": "card",
+          "seconds": 4,
+          "title": "Kept: the job, its check, a learned skill",
+          "subtitle": "In the installation's library, for the jobs that follow."
+        }
+      ]
+    }
+  ],
+  "sources_on_screen": "viewer"
+}

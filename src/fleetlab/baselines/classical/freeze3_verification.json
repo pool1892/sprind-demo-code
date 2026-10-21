@@ -1,0 +1,36 @@
+{
+  "make_check": {
+    "exit_code": 0,
+    "invocations": 1,
+    "passed": 1264,
+    "skipped": 2,
+    "deselected": 62,
+    "seconds": 291.85,
+    "log_sha256": "1a90bf3886f8aded182154c61d43773b2296d5523b7c094d58fbc483727e6e34",
+    "log_path": "/tmp/classical-stat-v4/make-check.log"
+  },
+  "method_commit": "2acc093",
+  "limits": {
+    "max_concurrent_fit_workers": 2,
+    "initial_fit_memory_max_MiB": 3500,
+    "overlapping_fit_and_score_memory_max_MiB": [
+      2500,
+      1400
+    ],
+    "overlapping_check_and_score_memory_max_MiB": [
+      2500,
+      1400
+    ]
+  },
+  "not_run": [
+    "GPU jobs",
+    "make check-sim",
+    "make smoke-world",
+    "new A/B simulations",
+    "model sessions",
+    "replacement-world runs"
+  ],
+  "stored_real_arms": "w42: 960 attempts from 9a39de8; all eight actions reused, request order differs",
+  "oracle_scoring": "One completed batch, exit 0, after runtime commit 2acc093; no runtime changes made after its scores.",
+  "score_log_sha256": "a4cdc5dc02d55e526dd248082105bda63fe5a769f3f23b1e992f4494db0775dc"
+}

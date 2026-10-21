@@ -1,0 +1,396 @@
+{
+ "format": "fleetlab.job-batch/1",
+ "host_screen": {
+  "label": "HOST-AUTHORED feasibility screen (robots-qzfk.44.3): host development evidence, never an input of an engineering agent",
+  "batch": "c4",
+  "bead": "robots-qzfk.44.3"
+ },
+ "state": {
+  "request_text": "Host screen: leave On akita_black_bowl_1 wooden_cabinet_1_top_side and Open wooden_cabinet_1_middle_region true at the end.",
+  "requested_goals": [
+   {
+    "predicate": "On",
+    "objects": [
+     "akita_black_bowl_1",
+     "wooden_cabinet_1_top_side"
+    ]
+   },
+   {
+    "predicate": "Open",
+    "objects": [
+     "wooden_cabinet_1_middle_region"
+    ]
+   }
+  ],
+  "base_task": 6,
+  "order_rules": [],
+  "budget": {
+   "starts_per_request": 20,
+   "requests_per_session": 4,
+   "sessions": 6,
+   "starts_per_investigation": 400
+  },
+  "acceptance": null,
+  "message_log": []
+ },
+ "jobs": [
+  {
+   "job_id": "j0001",
+   "variant": "naive",
+   "request": {
+    "program": {
+     "name": "naive-chain",
+     "purpose": "the skills chained, each switching on its own task's native success",
+     "steps": [
+      {
+       "kind": "policy",
+       "instruction": "put the bowl on top of the cabinet",
+       "until": {
+        "goal": 0,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      },
+      {
+       "kind": "policy",
+       "instruction": "open the middle drawer of the cabinet",
+       "until": {
+        "goal": 1,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      }
+     ],
+     "notes": "host-built naive chain (demo plan, section 3)"
+    },
+    "starts": [
+     {
+      "base_task": 6,
+      "init_state": 10,
+      "scene_seed": 1956392512,
+      "noise_seed": 6439108820139854101
+     },
+     {
+      "base_task": 6,
+      "init_state": 11,
+      "scene_seed": 1210487560,
+      "noise_seed": 2865941103092539188
+     },
+     {
+      "base_task": 6,
+      "init_state": 12,
+      "scene_seed": 3584439600,
+      "noise_seed": 2301912754030762181
+     },
+     {
+      "base_task": 6,
+      "init_state": 13,
+      "scene_seed": 2013593396,
+      "noise_seed": 7140113249384392397
+     },
+     {
+      "base_task": 6,
+      "init_state": 14,
+      "scene_seed": 4018896789,
+      "noise_seed": 4156552854627860143
+     },
+     {
+      "base_task": 6,
+      "init_state": 15,
+      "scene_seed": 3373700179,
+      "noise_seed": 6492787582884457720
+     },
+     {
+      "base_task": 6,
+      "init_state": 16,
+      "scene_seed": 2559536428,
+      "noise_seed": 1785697263854319269
+     },
+     {
+      "base_task": 6,
+      "init_state": 17,
+      "scene_seed": 567797483,
+      "noise_seed": 3573370180100196831
+     },
+     {
+      "base_task": 6,
+      "init_state": 18,
+      "scene_seed": 41491432,
+      "noise_seed": 9175642501942316920
+     },
+     {
+      "base_task": 6,
+      "init_state": 19,
+      "scene_seed": 759898861,
+      "noise_seed": 1756702898399471716
+     },
+     {
+      "base_task": 6,
+      "init_state": 20,
+      "scene_seed": 3720496065,
+      "noise_seed": 466878337085525354
+     },
+     {
+      "base_task": 6,
+      "init_state": 21,
+      "scene_seed": 2310548280,
+      "noise_seed": 4563242095401415191
+     },
+     {
+      "base_task": 6,
+      "init_state": 22,
+      "scene_seed": 1122230444,
+      "noise_seed": 2972170979831090614
+     },
+     {
+      "base_task": 6,
+      "init_state": 23,
+      "scene_seed": 2993033338,
+      "noise_seed": 5899295620343171223
+     },
+     {
+      "base_task": 6,
+      "init_state": 24,
+      "scene_seed": 1530014273,
+      "noise_seed": 223681310997662606
+     },
+     {
+      "base_task": 6,
+      "init_state": 25,
+      "scene_seed": 2722446145,
+      "noise_seed": 3161789017149037852
+     },
+     {
+      "base_task": 6,
+      "init_state": 26,
+      "scene_seed": 1078638904,
+      "noise_seed": 3428248886047968569
+     },
+     {
+      "base_task": 6,
+      "init_state": 27,
+      "scene_seed": 653561046,
+      "noise_seed": 5945206485645402459
+     },
+     {
+      "base_task": 6,
+      "init_state": 28,
+      "scene_seed": 3391523162,
+      "noise_seed": 5689506335670149914
+     },
+     {
+      "base_task": 6,
+      "init_state": 29,
+      "scene_seed": 2026939375,
+      "noise_seed": 3664546283169803453
+     }
+    ],
+    "record_video": false
+   }
+  },
+  {
+   "job_id": "j0002",
+   "variant": "lift-home",
+   "request": {
+    "program": {
+     "name": "host-c4-lift-home",
+     "purpose": "Host screen: the two skills with the generic 'lift-home' transition.",
+     "steps": [
+      {
+       "kind": "policy",
+       "instruction": "put the bowl on top of the cabinet",
+       "until": {
+        "goal": 0,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      },
+      {
+       "kind": "motion",
+       "instruction": null,
+       "until": null,
+       "max_steps": null,
+       "segment": {
+        "primitive": "open_gripper",
+        "axis": null,
+        "amplitude_m": null,
+        "duration_steps": 10,
+        "period_steps": null
+       },
+       "steps": null
+      },
+      {
+       "kind": "motion",
+       "instruction": null,
+       "until": null,
+       "max_steps": null,
+       "segment": {
+        "primitive": "ramp",
+        "axis": "z",
+        "amplitude_m": 0.05,
+        "duration_steps": 20,
+        "period_steps": null
+       },
+       "steps": null
+      },
+      {
+       "kind": "home",
+       "instruction": null,
+       "until": null,
+       "max_steps": null,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "continue",
+       "duration_steps": 200
+      },
+      {
+       "kind": "policy",
+       "instruction": "open the middle drawer of the cabinet",
+       "until": {
+        "goal": 1,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      }
+     ],
+     "notes": "HOST-AUTHORED feasibility screen (robots-qzfk.44.3): host development evidence, never an input of an engineering agent"
+    },
+    "starts": [
+     {
+      "base_task": 6,
+      "init_state": 10,
+      "scene_seed": 1956392512,
+      "noise_seed": 6439108820139854101
+     },
+     {
+      "base_task": 6,
+      "init_state": 11,
+      "scene_seed": 1210487560,
+      "noise_seed": 2865941103092539188
+     },
+     {
+      "base_task": 6,
+      "init_state": 12,
+      "scene_seed": 3584439600,
+      "noise_seed": 2301912754030762181
+     },
+     {
+      "base_task": 6,
+      "init_state": 13,
+      "scene_seed": 2013593396,
+      "noise_seed": 7140113249384392397
+     },
+     {
+      "base_task": 6,
+      "init_state": 14,
+      "scene_seed": 4018896789,
+      "noise_seed": 4156552854627860143
+     },
+     {
+      "base_task": 6,
+      "init_state": 15,
+      "scene_seed": 3373700179,
+      "noise_seed": 6492787582884457720
+     },
+     {
+      "base_task": 6,
+      "init_state": 16,
+      "scene_seed": 2559536428,
+      "noise_seed": 1785697263854319269
+     },
+     {
+      "base_task": 6,
+      "init_state": 17,
+      "scene_seed": 567797483,
+      "noise_seed": 3573370180100196831
+     },
+     {
+      "base_task": 6,
+      "init_state": 18,
+      "scene_seed": 41491432,
+      "noise_seed": 9175642501942316920
+     },
+     {
+      "base_task": 6,
+      "init_state": 19,
+      "scene_seed": 759898861,
+      "noise_seed": 1756702898399471716
+     },
+     {
+      "base_task": 6,
+      "init_state": 20,
+      "scene_seed": 3720496065,
+      "noise_seed": 466878337085525354
+     },
+     {
+      "base_task": 6,
+      "init_state": 21,
+      "scene_seed": 2310548280,
+      "noise_seed": 4563242095401415191
+     },
+     {
+      "base_task": 6,
+      "init_state": 22,
+      "scene_seed": 1122230444,
+      "noise_seed": 2972170979831090614
+     },
+     {
+      "base_task": 6,
+      "init_state": 23,
+      "scene_seed": 2993033338,
+      "noise_seed": 5899295620343171223
+     },
+     {
+      "base_task": 6,
+      "init_state": 24,
+      "scene_seed": 1530014273,
+      "noise_seed": 223681310997662606
+     },
+     {
+      "base_task": 6,
+      "init_state": 25,
+      "scene_seed": 2722446145,
+      "noise_seed": 3161789017149037852
+     },
+     {
+      "base_task": 6,
+      "init_state": 26,
+      "scene_seed": 1078638904,
+      "noise_seed": 3428248886047968569
+     },
+     {
+      "base_task": 6,
+      "init_state": 27,
+      "scene_seed": 653561046,
+      "noise_seed": 5945206485645402459
+     },
+     {
+      "base_task": 6,
+      "init_state": 28,
+      "scene_seed": 3391523162,
+      "noise_seed": 5689506335670149914
+     },
+     {
+      "base_task": 6,
+      "init_state": 29,
+      "scene_seed": 2026939375,
+      "noise_seed": 3664546283169803453
+     }
+    ],
+    "record_video": false
+   }
+  }
+ ]
+}

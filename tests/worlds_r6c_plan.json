@@ -1,0 +1,330 @@
+{
+ "about": "The follow-up calibration plan of round 6c as sealed before admission (2026-10-10): stage order, sizes and manifest digests. fleetlab.worlds.calibration.followup_plan wrote it.",
+ "root": "~/.cache/robots-probes/worlds-v4/20261010-task-cells-r6c",
+ "budget_seconds": 5400,
+ "order": [
+  "topups-1",
+  "decoys-d17",
+  "decoys-d17-refine",
+  "contexts-1",
+  "contexts-1-refine",
+  "topups-2",
+  "decoys-blur-d17",
+  "decoys-blur-d17-refine"
+ ],
+ "stages": {
+  "topups-1": {
+   "jobs": 275,
+   "sha256": "d64b286549a68ef6b59c8453664c8c088c75619d3de52305874eb65816c58645"
+  },
+  "decoys-d17": {
+   "jobs": 600,
+   "sha256": "5d8a21e5c9f48086e44b54de32689c5807c89e0d3e2a24d8edf4259422e8877b"
+  },
+  "decoys-d17-refine": {
+   "jobs": 900,
+   "sha256": "28f75e8da1d562d4e3e4591f7341aa38d53f67f7898c859e1e23b053a4584c7c",
+   "parent": "decoys-d17"
+  },
+  "contexts-1": {
+   "jobs": 100,
+   "sha256": "31b2cf259bdf3837a426e0677263c3f453ad4d95d972def78b6fab67f58a0b7d"
+  },
+  "contexts-1-refine": {
+   "jobs": 400,
+   "sha256": "6fd89d5e76bfbfdb70464df805203dc59d8c4ad35c1549f02c5b09daabd1d875",
+   "parent": "contexts-1"
+  },
+  "topups-2": {
+   "jobs": 380,
+   "sha256": "0bff23d27151ef8393529cc7d7e0fb6cd1f4ef6bc8a0a999cf12ab7b3bd271fd"
+  },
+  "decoys-blur-d17": {
+   "jobs": 400,
+   "sha256": "0ecdbed8b8a448038856dbf1d4cdfd559c82e5bade78e2fe4c914408833fbcf9"
+  },
+  "decoys-blur-d17-refine": {
+   "jobs": 600,
+   "sha256": "242d03e81b44527eb13b6779be9d677a57cb54e7f513f44cdea3a1ca4483a851",
+   "parent": "decoys-blur-d17"
+  }
+ },
+ "assays": [
+  {
+   "suite": "libero_spatial",
+   "control": [
+    [
+     "action_latency",
+     "17 steps"
+    ]
+   ],
+   "decoys": [
+    [
+     "illumination_change",
+     "2 stops dimmer"
+    ],
+    [
+     "backdrop_change",
+     "1 walls and floor"
+    ]
+   ],
+   "stages": [
+    "decoys-d17",
+    "decoys-d17-refine"
+   ]
+  },
+  {
+   "suite": "libero_spatial",
+   "control": [
+    [
+     "camera_degradation",
+     "3 px blur"
+    ],
+    [
+     "action_latency",
+     "17 steps"
+    ]
+   ],
+   "decoys": [
+    [
+     "backdrop_change",
+     "1 walls and floor"
+    ]
+   ],
+   "stages": [
+    "decoys-blur-d17",
+    "decoys-blur-d17-refine"
+   ]
+  }
+ ],
+ "selected_cells": [
+  {
+   "suite": "libero_spatial",
+   "members": [
+    [
+     "action_latency",
+     "8 steps"
+    ]
+   ],
+   "task": 7,
+   "before": 15,
+   "added": 35
+  },
+  {
+   "suite": "libero_spatial",
+   "members": [
+    [
+     "gripper_wear",
+     "0.25 wear"
+    ]
+   ],
+   "task": 9,
+   "before": 10,
+   "added": 40
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "action_latency",
+     "8 steps"
+    ]
+   ],
+   "task": 7,
+   "before": 10,
+   "added": 40
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "action_latency",
+     "8 steps"
+    ]
+   ],
+   "task": 9,
+   "before": 10,
+   "added": 40
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "policy_knob",
+     "15 actions per chunk"
+    ]
+   ],
+   "task": 7,
+   "before": 10,
+   "added": 40
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "object_batch_variant",
+     "4 mass doublings"
+    ]
+   ],
+   "task": 5,
+   "before": 10,
+   "added": 40
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "camera_pose_offset",
+     "6 deg scene pan"
+    ]
+   ],
+   "task": 5,
+   "before": 10,
+   "added": 40
+  },
+  {
+   "suite": "libero_spatial",
+   "members": [
+    [
+     "action_latency",
+     "14 steps"
+    ]
+   ],
+   "task": 4,
+   "before": 25,
+   "added": 25
+  },
+  {
+   "suite": "libero_spatial",
+   "members": [
+    [
+     "action_latency",
+     "14 steps"
+    ]
+   ],
+   "task": 7,
+   "before": 19,
+   "added": 31
+  },
+  {
+   "suite": "libero_spatial",
+   "members": [
+    [
+     "camera_degradation",
+     "4 px blur"
+    ]
+   ],
+   "task": 4,
+   "before": 35,
+   "added": 15
+  },
+  {
+   "suite": "libero_spatial",
+   "members": [
+    [
+     "camera_degradation",
+     "4 px blur"
+    ]
+   ],
+   "task": 5,
+   "before": 29,
+   "added": 21
+  },
+  {
+   "suite": "libero_spatial",
+   "members": [
+    [
+     "camera_degradation",
+     "4 px blur"
+    ]
+   ],
+   "task": 9,
+   "before": 22,
+   "added": 28
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "action_latency",
+     "17 steps"
+    ]
+   ],
+   "task": 1,
+   "before": 10,
+   "added": 40
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "action_latency",
+     "17 steps"
+    ]
+   ],
+   "task": 2,
+   "before": 10,
+   "added": 40
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "camera_degradation",
+     "4 px blur"
+    ]
+   ],
+   "task": 1,
+   "before": 13,
+   "added": 37
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "camera_degradation",
+     "4 px blur"
+    ]
+   ],
+   "task": 4,
+   "before": 13,
+   "added": 37
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "camera_degradation",
+     "4 px blur"
+    ]
+   ],
+   "task": 7,
+   "before": 12,
+   "added": 38
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "camera_degradation",
+     "4 px blur"
+    ]
+   ],
+   "task": 8,
+   "before": 21,
+   "added": 29
+  },
+  {
+   "suite": "libero_object",
+   "members": [
+    [
+     "camera_degradation",
+     "4 px blur"
+    ]
+   ],
+   "task": 9,
+   "before": 11,
+   "added": 39
+  }
+ ]
+}

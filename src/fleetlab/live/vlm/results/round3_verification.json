@@ -1,0 +1,79 @@
+{
+  "tested_commit": "92b8b6637453e638c55d50ce35959d097a7bd47e",
+  "checks": [
+    {
+      "command": "make check",
+      "exit_code": 0,
+      "passed": 1160,
+      "skipped": 2,
+      "deselected": 65,
+      "pytest_seconds": 483.81,
+      "log": "/home/cs/.cache/robots-supervisor/round3/make-check.log",
+      "log_sha256": "cbb4f7e5785c29974e66fc89fdf17a6ba2fd902e4968f13f8326cee77febcef8"
+    },
+    {
+      "command": "make check-sim",
+      "exit_code": 0,
+      "passed": 61,
+      "deselected": 1166,
+      "pytest_seconds": 540.91,
+      "log": "/home/cs/.cache/robots-supervisor/round3/make-check-sim.log",
+      "log_sha256": "4af59890fec64a2d685944b4ed8cf5f575ce2e59a32b59aee7b267d8baf57a0e"
+    }
+  ],
+  "mutation_checks": [
+    {
+      "mutation": "policy_tick",
+      "test": "tests/test_vlm_supervisor.py::test_remaining_budget_excludes_prior_decision_holds",
+      "caught": true,
+      "exit": 1,
+      "seconds": 2.35,
+      "timeout_seconds": 25
+    },
+    {
+      "mutation": "offered_options",
+      "test": "tests/test_supervisor_repairs.py::test_engine_rejects_unavailable_decision",
+      "caught": true,
+      "exit": 1,
+      "seconds": 2.04,
+      "timeout_seconds": 25
+    },
+    {
+      "mutation": "save_retry_used",
+      "test": "tests/test_supervisor_round3.py::test_snapshot_retains_and_restores_retry_used",
+      "caught": true,
+      "exit": 1,
+      "seconds": 5.59,
+      "timeout_seconds": 25
+    },
+    {
+      "mutation": "restore_retry_used",
+      "test": "tests/test_supervisor_round3.py::test_snapshot_retains_and_restores_retry_used",
+      "caught": true,
+      "exit": 1,
+      "seconds": 4.6,
+      "timeout_seconds": 25
+    }
+  ],
+  "prompt_scope": {
+    "base": "0d64b02",
+    "current": "92b8b6637453e638c55d50ce35959d097a7bd47e",
+    "supervisor_source_only_change": "one factual retry-budget sentence",
+    "old_sentence": "Recovery primitives spend them; decision holds do not.",
+    "new_sentence": "Recover spends these ticks and decision holds do not, while retry gets its own nominal attempt budget once per attempt.",
+    "skills_unchanged": true,
+    "source_sha256": "c57a2795028504baf8a8df5d120fe3a8cae2e0e01b2ef41789b0a9c9bb0ee008"
+  },
+  "toy_reference_cases": 240,
+  "new_tests": 29,
+  "deferred_command_validation": "bash -n; read-only preflight on frozen D2 cohort and stored full/dry nightly settings; synthetic reference comparison tests",
+  "not_run": [
+    "GPU measurements",
+    "subscription model calls",
+    "make smoke-world",
+    "full claim-4 harness",
+    "full reviewer mutation suite"
+  ],
+  "no_new_nightly_reference_values": true,
+  "no_new_D2_effectiveness_result": true
+}

@@ -1,0 +1,65 @@
+{
+ "format": "fleetlab.job-batch/1",
+ "host_screen": {
+  "label": "HOST-AUTHORED feasibility screen (robots-qzfk.44.3): host development evidence, never an input of an engineering agent",
+  "batch": "single-drawer",
+  "bead": "robots-qzfk.44.3"
+ },
+ "state": {
+  "request_text": "Host screen: the skill 'open the middle drawer of the cabinet' alone, delivered check.",
+  "requested_goals": [
+   {
+    "predicate": "Open",
+    "objects": [
+     "wooden_cabinet_1_middle_region"
+    ]
+   }
+  ],
+  "base_task": 6,
+  "order_rules": [],
+  "budget": {
+   "starts_per_request": 20,
+   "requests_per_session": 4,
+   "sessions": 6,
+   "starts_per_investigation": 400
+  },
+  "acceptance": null,
+  "message_log": []
+ },
+ "jobs": [
+  {
+   "job_id": "j0001",
+   "variant": "single",
+   "request": {
+    "program": {
+     "name": "host-single-drawer",
+     "purpose": "the skills chained, each switching on its own task's native success",
+     "steps": [
+      {
+       "kind": "policy",
+       "instruction": "open the middle drawer of the cabinet",
+       "until": {
+        "goal": 0,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      }
+     ],
+     "notes": "HOST-AUTHORED feasibility screen (robots-qzfk.44.3): host development evidence, never an input of an engineering agent"
+    },
+    "starts": [
+     {
+      "base_task": 6,
+      "init_state": 0,
+      "scene_seed": 3060898589,
+      "noise_seed": 6053786618818064158
+     }
+    ],
+    "record_video": false
+   }
+  }
+ ]
+}

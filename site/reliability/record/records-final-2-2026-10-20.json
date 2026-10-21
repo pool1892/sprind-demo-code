@@ -1,0 +1,75 @@
+{
+ "format": "fleetlab.film-records/1",
+ "notes": "The files that stand for the records of the reliability record page, final 2: the first reliable job (replacement-01), the second (plate-cabinet-01) and story B unchanged. Every path is an immutable recorded file; none is a truth table, a hidden fault record or a host screen. Final 1 and preview 1 are kept unchanged; final 2 adds the recount record. Fields and their meanings: site/reliability/record/fields.json.",
+ "records": {
+  "r1_run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/job_run.json",
+  "r1_receipt": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+  "r1_verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/coordinator-verification.json",
+  "r1_development": [
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet"
+  ],
+  "r1_session_two": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/agent-runs/20261020T152942-3ee6c3cb/stdout.jsonl",
+  "r1_job": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/jobs/station-bowl-and-open-drawer.json",
+  "r1_check": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/checks/handoff-retention-and-delivery.json",
+  "r1_skill": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/skills/quiet-handoff-versus-path-clearance/SKILL.md",
+  "r1_library": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/index.json",
+  "r1_inherited_job": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/library/jobs/cheese-loaded-bowl-to-cabinet.json",
+  "r1_rerenders": [
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000102.rerender.scene.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release-camera-fixed/e000202.rerender.wrist.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release-camera-fixed/e000102.rerender.wrist.720px.json"
+  ],
+  "r1_recordings": [
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.mp4",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000102.rerender.scene.720px.mp4",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release-camera-fixed/e000202.rerender.wrist.720px.mp4",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release-camera-fixed/e000102.rerender.wrist.720px.mp4"
+  ],
+  "r2_run": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/job_run.json",
+  "r2_receipt": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/release/run/run/receipt.json",
+  "r2_verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/coordinator-verification.json",
+  "r2_development": [
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-01/run/log/job_episodes.parquet",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-02/run/log/job_episodes.parquet",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-03/run/log/job_episodes.parquet",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-04/run/log/job_episodes.parquet",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-05/run/log/job_episodes.parquet",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/runs/session-06/run/log/job_episodes.parquet"
+  ],
+  "r2_job": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/library/jobs/station-plate-and-bowl-prepared.json",
+  "r2_check": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/library/checks/station-goal-and-handoff-audit.json",
+  "r2_skill": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/library/skills/scene-preparation-can-move-the-bottleneck/SKILL.md",
+  "r2_library": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/library/index.json",
+  "r2_cheese": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/relocated-cheese-final-positions.json",
+  "r2_recount": "~/.cache/robots-probes/demo/2026-10-20/reliability/record-recounts/second-job-diagnostics.json",
+  "r2_rerenders": [
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000202.rerender.scene.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000102.rerender.scene.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000202.rerender.wrist.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000102.rerender.wrist.720px.json"
+  ],
+  "r2_recordings": [
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000202.rerender.scene.720px.mp4",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000102.rerender.scene.720px.mp4",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000202.rerender.wrist.720px.mp4",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000102.rerender.wrist.720px.mp4"
+  ],
+  "all_rerenders": [
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000202.rerender.scene.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release/e000102.rerender.scene.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release-camera-fixed/e000202.rerender.wrist.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/replays-release-camera-fixed/e000102.rerender.wrist.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000202.rerender.scene.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000102.rerender.scene.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000202.rerender.wrist.720px.json",
+   "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/replays-release/e000102.rerender.wrist.720px.json"
+  ],
+  "story_b_operation": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r1/exports/start-01/log/episodes.parquet",
+  "story_b_engagement": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/engagement/engagement.json",
+  "story_b_recipe_check": "~/.cache/robots-probes/demo/2026-10-20/instrument/second-use/check-2/recipe-check.json"
+ }
+}

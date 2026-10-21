@@ -1,0 +1,107 @@
+{
+  "source_commit": "5029b5053820de1d49236e025cde57af89d59e92",
+  "main_merge": "2c5813e",
+  "predeclaration_commit": "c4748f8",
+  "lint": {
+    "commands": [
+      "uv run --locked ruff check",
+      "uv run --locked ruff format --check"
+    ],
+    "exit_code": 0,
+    "formatted_files": 383
+  },
+  "types": {
+    "command": "uv run --locked mypy",
+    "exit_code": 0,
+    "files": 383
+  },
+  "own_tests": {
+    "exit_code": 0,
+    "passed": 127,
+    "skipped": 1,
+    "seconds": 15.45,
+    "log": {
+      "path": "/home/cs/.cache/robots-supervisor/followup-5029b50-own-tests.log",
+      "sha256": "97fba6faca1beb1463281f8ecf24c228b066ed180c42c2912513f4e3ee172cc2"
+    }
+  },
+  "make_check_sim": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 make check-sim",
+    "exit_code": 0,
+    "passed": 61,
+    "skipped": 1,
+    "deselected": 2403,
+    "seconds": 489.28,
+    "log": {
+      "path": "/home/cs/.cache/robots-supervisor/followup-5029b50-check-sim.log",
+      "sha256": "05d7c162139ce32b153c58a7fd2f2ca02ddf7a53ebb000522c7b7c3675b77fd6"
+    }
+  },
+  "scratch_harness": {
+    "source_commit": "b78f67e",
+    "test_commit": "c8f10bc",
+    "exit_code": 0,
+    "passed": 3,
+    "seconds": 16.72,
+    "record": "harness_20261010.json"
+  },
+  "dry_start": {
+    "exit_code": 0,
+    "checkout": "/home/cs/.cache/robots-supervisor/revision-checkout",
+    "output": "/home/cs/.cache/robots-supervisor/dry-start-revision-v1",
+    "identities_identical_in_both_arms": 80,
+    "profile": {
+      "backend": "codex",
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "first_step": 120,
+      "max_calls": 1
+    },
+    "profile_artifact": {
+      "path": "src/fleetlab/live/vlm/profiles/one_early_look.json",
+      "sha256": "975ed146ab26490bff6ee99a69fd35780b43649ee02f262c90a44f28acad70ba"
+    },
+    "runtime_root": "/var/tmp/robots-supervisor-repeat-1000",
+    "miopen_hash": "7751323820effb28",
+    "log": {
+      "path": "/home/cs/.cache/robots-supervisor/dry-start-revision-v1.log",
+      "sha256": "a984b44610ded6e4ded3323f496f01a4635a52955d2120ec047158b76a30f87f"
+    },
+    "receipts": {
+      "timeout": {
+        "path": "/home/cs/.cache/robots-supervisor/dry-start-revision-v1/timeout/dry-start.json",
+        "sha256": "eda27d7c126b566c4422e4773b0b9053f9537c1400b188e7828225f75bc34707"
+      },
+      "vlm": {
+        "path": "/home/cs/.cache/robots-supervisor/dry-start-revision-v1/vlm/dry-start.json",
+        "sha256": "c3b9e0c124e50e49d8387363dfdf4474940e3407ef41e212e0916e1e9878b695"
+      }
+    }
+  },
+  "prepared_command": "env OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 bash src/fleetlab/live/vlm/repeat_d2.sh 5029b50 /home/cs/.cache/robots-supervisor/d2-sample-v1 /home/cs/.cache/robots-supervisor/d2-one-early-look-v1 src/fleetlab/live/vlm/profiles/one_early_look.json",
+  "gpu_measurement": {
+    "jobs": 1,
+    "timeout_seconds": 1490,
+    "kill_grace_seconds": 5,
+    "exit_code": 0,
+    "record": "retry_ceiling_20261010.json",
+    "original_attempts": 180,
+    "scripted_proofs": 60,
+    "identical_proofs": 60
+  },
+  "live_model_calls": {
+    "calls": 276,
+    "valid": 276,
+    "record": "offline_efforts_20261010.json"
+  },
+  "not_run": [
+    "whole make check",
+    "make smoke-world",
+    "revised D2 measurement",
+    "claim-4 pass"
+  ],
+  "harness_blockers": [
+    "terminal and failed-call harness repair",
+    "live queue feedback to the proposal model"
+  ]
+}

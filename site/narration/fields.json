@@ -1,0 +1,354 @@
+{
+  "format": "fleetlab.film-fields/1",
+  "notes": "Every number the narration speaks (script.md), with the record field that holds it. A cut's records file (fleetlab.film-records/1) names the file that stands for each record.",
+  "records": {
+    "job_one": "the first investigation's record: <investigation dir>/job_run.json (acceptance, costs, message_log)",
+    "job_two": "the second investigation's record, the same request with the first's library mounted: <investigation dir>/job_run.json",
+    "story_b_evaluation": "story B's evaluation on the reserved panel: <engagement>/loop/evaluation/summary.json (states with successes and attempts; pairs with rescued and broken)",
+    "story_b_panel": "story B's reserved attempts, one row per attempt and state: <engagement>/loop/evaluation/attempts.parquet",
+    "story_b_second_use": "the probe recipe run on the later fleet: <second use>/recipe-check.json (episodes with each step's rows to the first movement and to half-way)",
+    "naive_batch": "the first investigation's first batch: <run dir>/log/job_episodes.parquet",
+    "tuned_batch": "the batch with the tuned program on the same development starts: <run dir>/log/job_episodes.parquet",
+    "fresh_batch": "the tuned program, unchanged, on fresh development starts: <run dir>/log/job_episodes.parquet",
+    "second_batch": "the second investigation's longer continuation: <run dir>/log/job_episodes.parquet",
+    "library": "the installation's library after the release: <library>/index.json (a LibraryIndex)",
+    "job_three": "the third investigation's record, the second's library mounted: <investigation dir>/job_run.json",
+    "third_batch": "the third investigation's batch with the saved program on development starts: <run dir>/log/job_episodes.parquet",
+    "release_receipt": "the release run's receipt: <release dir>/receipt.json (a ReleaseReceipt)",
+    "job_one_episodes": "the first investigation's development batches: every <run dir>/log/job_episodes.parquet of job_run.json's run_dirs.development",
+    "job_two_episodes": "the second investigation's development batches: every <run dir>/log/job_episodes.parquet of job_run.json's run_dirs.development",
+    "job_three_episodes": "the third investigation's development batches: every <run dir>/log/job_episodes.parquet of job_run.json's run_dirs.development",
+    "second_job": "job two's second investigation (the bowl onto the plate), job one's released library mounted: <investigation dir>/job_run.json",
+    "second_job_first": "job two's first investigation (the bowl onto the plate), job one's run-5 library mounted: <investigation dir>/job_run.json",
+    "second_job_third": "job two's third investigation, run-2's library mounted: <investigation dir>/job_run.json",
+    "second_job_third_receipt": "job two's release run's receipt (the third investigation's saved job): <release dir>/receipt.json (a ReleaseReceipt)",
+    "second_job_third_batch": "job two's third investigation's batch with the saved program (j0009) on development starts: <run dir>/log/job_episodes.parquet",
+    "second_job_third_library": "the installation's library after job two's release run: <library>/index.json (a LibraryIndex)"
+  },
+  "fields": {
+    "acceptance_n": {
+      "record": "job_three",
+      "field": "acceptance.N",
+      "meaning": "release starts in the agent's acceptance proposal"
+    },
+    "acceptance_k": {
+      "record": "job_three",
+      "field": "acceptance.K",
+      "meaning": "deliveries the agent proposed to be judged on, on those starts (the third investigation's acceptance proposal)"
+    },
+    "job_one_sessions": {
+      "record": "job_one",
+      "field": "costs.sessions",
+      "meaning": "agent sessions job one's investigation took"
+    },
+    "job_one_starts": {
+      "record": "job_one",
+      "field": "costs.starts_charged",
+      "meaning": "development executions (a program run on a start) in the first investigation"
+    },
+    "job_one_model_minutes": {
+      "record": "job_one",
+      "field": "costs.model_seconds",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}",
+      "meaning": "minutes of the agent's model time in job one's investigation, rounded"
+    },
+    "job_two_sessions": {
+      "record": "job_two",
+      "field": "costs.sessions",
+      "meaning": "agent sessions the second investigation took"
+    },
+    "job_two_starts": {
+      "record": "job_two",
+      "field": "costs.starts_charged",
+      "meaning": "development executions (a program run on a start) in the second investigation"
+    },
+    "job_two_model_minutes": {
+      "record": "job_two",
+      "field": "costs.model_seconds",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}",
+      "meaning": "minutes of the agent's model time in the second investigation, rounded"
+    },
+    "b_original_success": {
+      "record": "story_b_evaluation",
+      "field": "states.name=original.successes",
+      "meaning": "reserved attempts that succeeded under the fleet's original state"
+    },
+    "b_attempts": {
+      "record": "story_b_evaluation",
+      "field": "states.name=original.attempts",
+      "meaning": "reserved attempts on the panel, the same under every state"
+    },
+    "b_final_success": {
+      "record": "story_b_evaluation",
+      "field": "states.name=round-2.successes",
+      "meaning": "reserved attempts that succeeded after the agent's changes"
+    },
+    "b_rescued": {
+      "record": "story_b_evaluation",
+      "field": "pairs.0.rescued",
+      "meaning": "reserved attempts that failed before the changes and succeeded after"
+    },
+    "b_broken": {
+      "record": "story_b_evaluation",
+      "field": "pairs.0.broken",
+      "meaning": "reserved attempts that succeeded before the changes and failed after"
+    },
+    "b_lagging_original": {
+      "record": "story_b_panel",
+      "count_rows": true,
+      "where": {
+        "state": "original",
+        "robot_id": "r06",
+        "success": true
+      },
+      "meaning": "the lagging robot's reserved attempts that succeeded under the original state"
+    },
+    "b_lagging_final": {
+      "record": "story_b_panel",
+      "count_rows": true,
+      "where": {
+        "state": "round-2",
+        "robot_id": "r06",
+        "success": true
+      },
+      "meaning": "the lagging robot's reserved attempts that succeeded after the changes"
+    },
+    "b_lagging_attempts": {
+      "record": "story_b_panel",
+      "count_rows": true,
+      "where": {
+        "state": "original",
+        "robot_id": "r06"
+      },
+      "meaning": "the lagging robot's reserved attempts under one state"
+    },
+    "b_later_delay_first": {
+      "record": "story_b_second_use",
+      "field": "episodes.robot_id=r11.edges.0.first_movement_rows",
+      "meaning": "rows from a commanded step to the first movement on the later fleet's third-site robot r11"
+    },
+    "b_later_delay_half": {
+      "record": "story_b_second_use",
+      "field": "episodes.robot_id=r11.edges.0.half_way_rows",
+      "meaning": "rows from a commanded step to half-way on r11"
+    },
+    "b_later_isolated_first": {
+      "record": "story_b_second_use",
+      "field": "episodes.robot_id=r06.edges.0.first_movement_rows",
+      "meaning": "rows to the first movement on the later fleet's isolated failing robot r06"
+    },
+    "b_later_reference_first": {
+      "record": "story_b_second_use",
+      "field": "episodes.robot_id=r05.edges.0.first_movement_rows",
+      "meaning": "rows to the first movement on the healthy reference r05"
+    },
+    "naive_delivered": {
+      "record": "naive_batch",
+      "count_true": "delivered",
+      "where": {
+        "job_id": "j0001"
+      },
+      "meaning": "starts the naive program (j0001) delivered on"
+    },
+    "naive_starts": {
+      "record": "naive_batch",
+      "count_rows": true,
+      "where": {
+        "job_id": "j0001"
+      },
+      "meaning": "starts the naive program (j0001) ran on"
+    },
+    "tuned_delivered": {
+      "record": "tuned_batch",
+      "count_true": "delivered",
+      "where": {
+        "job_id": "j0004"
+      },
+      "meaning": "starts the tuned program (j0004) delivered on"
+    },
+    "tuned_starts": {
+      "record": "tuned_batch",
+      "count_rows": true,
+      "where": {
+        "job_id": "j0004"
+      },
+      "meaning": "starts the tuned program (j0004) ran on"
+    },
+    "fresh_delivered": {
+      "record": "fresh_batch",
+      "count_true": "delivered",
+      "where": {
+        "job_id": "j0006"
+      },
+      "meaning": "starts the fresh program (j0006) delivered on"
+    },
+    "fresh_starts": {
+      "record": "fresh_batch",
+      "count_rows": true,
+      "where": {
+        "job_id": "j0006"
+      },
+      "meaning": "starts the fresh program (j0006) ran on"
+    },
+    "second_delivered": {
+      "record": "second_batch",
+      "count_true": "delivered",
+      "where": {
+        "job_id": "j0008"
+      },
+      "meaning": "starts the second program (j0008) delivered on"
+    },
+    "second_starts": {
+      "record": "second_batch",
+      "count_rows": true,
+      "where": {
+        "job_id": "j0008"
+      },
+      "meaning": "starts the second program (j0008) ran on"
+    },
+    "library_checks": {
+      "record": "library",
+      "field": "entries",
+      "count_rows": true,
+      "where": {
+        "kind": "check"
+      },
+      "meaning": "checks in the installation's library after the release"
+    },
+    "third_delivered": {
+      "record": "third_batch",
+      "count_true": "delivered",
+      "where": {
+        "job_id": "j0004"
+      },
+      "meaning": "development starts the saved program (j0004) delivered on"
+    },
+    "third_starts": {
+      "record": "third_batch",
+      "count_rows": true,
+      "where": {
+        "job_id": "j0004"
+      },
+      "meaning": "development starts the saved program (j0004) ran on"
+    },
+    "job_three_sessions": {
+      "record": "job_three",
+      "field": "costs.sessions",
+      "meaning": "agent sessions the third investigation took"
+    },
+    "job_three_starts": {
+      "record": "job_three",
+      "field": "costs.starts_charged",
+      "meaning": "development executions (a program run on a start) in the third investigation"
+    },
+    "job_three_model_minutes": {
+      "record": "job_three",
+      "field": "costs.model_seconds",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}",
+      "meaning": "minutes of the agent's model time in the third investigation, rounded"
+    },
+    "release_n": {
+      "record": "release_receipt",
+      "field": "N",
+      "meaning": "reserved release starts the saved job and the naive chain ran on"
+    },
+    "release_k": {
+      "record": "release_receipt",
+      "field": "K",
+      "meaning": "the approved K the release was judged against"
+    },
+    "release_delivered": {
+      "record": "release_receipt",
+      "field": "delivered",
+      "meaning": "release starts the saved job delivered on"
+    },
+    "release_naive_delivered": {
+      "record": "release_receipt",
+      "field": "naive_delivered",
+      "meaning": "the same release starts the naive chain delivered on"
+    },
+    "release_rescued": {
+      "record": "release_receipt",
+      "field": "rescued",
+      "meaning": "release starts delivered by the job and not by the naive chain"
+    },
+    "release_broken": {
+      "record": "release_receipt",
+      "field": "broken",
+      "meaning": "release starts delivered by the naive chain and not by the job"
+    },
+    "release_order_violations": {
+      "record": "release_receipt",
+      "field": "order_violations",
+      "meaning": "the job's release runs that broke the order rule"
+    },
+    "job_one_distinct": {
+      "record": "job_one_episodes",
+      "count_distinct": "init_state",
+      "meaning": "distinct development starts the first investigation's executions ran on"
+    },
+    "job_two_distinct": {
+      "record": "job_two_episodes",
+      "count_distinct": "init_state",
+      "meaning": "distinct development starts the second investigation's executions ran on"
+    },
+    "job_three_distinct": {
+      "record": "job_three_episodes",
+      "count_distinct": "init_state",
+      "meaning": "distinct development starts the third investigation's executions ran on"
+    },
+    "lead_deliveries": {
+      "record": "release_receipt",
+      "field": "lead_fraction.0",
+      "meaning": "deliveries in the shift lead's bar: the numerator of the lead's fraction the receipt was judged against"
+    },
+    "lead_starts": {
+      "record": "release_receipt",
+      "field": "lead_fraction.1",
+      "meaning": "reserved starts in the shift lead's bar: the denominator of the lead's fraction"
+    },
+    "plate_dev_delivered": {
+      "record": "second_job_third_batch",
+      "count_true": "delivered",
+      "where": {
+        "job_id": "j0009"
+      },
+      "meaning": "development starts job two's saved program (j0009) delivered on"
+    },
+    "plate_dev_starts": {
+      "record": "second_job_third_batch",
+      "count_rows": true,
+      "where": {
+        "job_id": "j0009"
+      },
+      "meaning": "development starts job two's saved program (j0009) ran on"
+    },
+    "plate_release_n": {
+      "record": "second_job_third_receipt",
+      "field": "N",
+      "meaning": "reserved starts job two's release ran on"
+    },
+    "plate_release_delivered": {
+      "record": "second_job_third_receipt",
+      "field": "delivered",
+      "meaning": "reserved starts job two's saved program delivered on"
+    },
+    "plate_release_naive_delivered": {
+      "record": "second_job_third_receipt",
+      "field": "naive_delivered",
+      "meaning": "reserved starts the naive chain delivered on, job two"
+    },
+    "plate_library_checks": {
+      "record": "second_job_third_library",
+      "field": "entries",
+      "count_rows": true,
+      "where": {
+        "kind": "check"
+      },
+      "meaning": "checks in the installation's library after job two's release run"
+    }
+  }
+}

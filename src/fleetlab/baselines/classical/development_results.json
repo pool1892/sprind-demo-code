@@ -1,0 +1,256 @@
+{
+  "source_commit": "aa838dc99b6ae71877e72658016598182e1cfba7",
+  "date": "2026-10-09",
+  "answer_root": "/home/cs/.cache/robots-probes/classical-stat-v1/measured-aa838dc",
+  "condition": "logs alone",
+  "bootstrap_draws": 200,
+  "bootstrap_seed": 0,
+  "worlds": [
+    {
+      "world": "w41",
+      "scoring_episodes": 336,
+      "recall": 0.8333333333333334,
+      "precision": 1.0,
+      "detectable": 6,
+      "hits": 5,
+      "false_positives": 0,
+      "rank_correlation": 0.9538634047300503,
+      "ranked_actions": 10,
+      "interval_coverage": 0.8,
+      "k3_share": 1.0,
+      "k3_points": 19.94047619047619,
+      "k3_rescued": 67,
+      "k3_broken": 0,
+      "achievable_k3_points": 19.94047619047619,
+      "chance_mean_share": 0.015675391884797118,
+      "chance_p5_share": 0.0,
+      "chance_p95_share": 0.0,
+      "chance_valued_draws": 199,
+      "chance_requested_draws": 200,
+      "chance_skipped_fresh_replay": 1,
+      "chance_skipped_error": 0,
+      "needs_fresh_replay": 0,
+      "world_hash": "006d54622e06e9f017e0cd7c19529b85d9c2c3cef4023f10068688b18f261fec",
+      "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). No simulations were run. Traceability has no MCP call log for this direct program.",
+      "observed_episodes": 1008,
+      "selected_link": "logistic",
+      "penalty_multiplier": 0.25,
+      "file_sha256": {
+        "outbox/diagnosis.json": "7dcb984b891ffc416c145d368295a81bcf5404d32f720087198d99c36b7628fe",
+        "outbox/fix_set.json": "728a4e0e7e3828e21d85873b0e061e9046fa881ca63d9723109486f576378971",
+        "evidence.json": "1773de7580471482d603f3cd2d0b15a06a75325f82ea0049aa04e2dd266a037f"
+      },
+      "score_sha256": "4e2b38b541bf9f515bbb1032f095501c20ec86e04f970159d1e735f6437b8f9c",
+      "budgets": [
+        {
+          "label": "k = 3",
+          "points": 19.94047619047619,
+          "share": 1.0,
+          "gain": {
+            "rescued": 67,
+            "broken": 0,
+            "net": 67
+          },
+          "hours": 0.30000000000000004
+        },
+        {
+          "label": "k = 6",
+          "points": 28.273809523809526,
+          "share": 0.7661290322580645,
+          "gain": {
+            "rescued": 96,
+            "broken": 1,
+            "net": 95
+          },
+          "hours": 1.8
+        },
+        {
+          "label": "4 h",
+          "points": 28.273809523809526,
+          "share": 1.0,
+          "gain": {
+            "rescued": 96,
+            "broken": 1,
+            "net": 95
+          },
+          "hours": 2.2
+        },
+        {
+          "label": "8 h",
+          "points": 28.273809523809526,
+          "share": 0.7661290322580645,
+          "gain": {
+            "rescued": 96,
+            "broken": 1,
+            "net": 95
+          },
+          "hours": 2.2
+        }
+      ]
+    },
+    {
+      "world": "w42",
+      "scoring_episodes": 336,
+      "recall": 0.42857142857142855,
+      "precision": 0.75,
+      "detectable": 7,
+      "hits": 3,
+      "false_positives": 1,
+      "rank_correlation": 0.262663049718703,
+      "ranked_actions": 10,
+      "interval_coverage": 0.8,
+      "k3_share": 0.3557692307692308,
+      "k3_points": 11.011904761904763,
+      "k3_rescued": 43,
+      "k3_broken": 6,
+      "achievable_k3_points": 30.952380952380953,
+      "chance_mean_share": 0.013701923076923075,
+      "chance_p5_share": 0.0,
+      "chance_p95_share": 0.07980769230769133,
+      "chance_valued_draws": 200,
+      "chance_requested_draws": 200,
+      "chance_skipped_fresh_replay": 0,
+      "chance_skipped_error": 0,
+      "needs_fresh_replay": 0,
+      "world_hash": "d89aa777958cd2608e0f4ef0702325f8163c297740fdf93aa54670863902802a",
+      "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). No simulations were run. Traceability has no MCP call log for this direct program.",
+      "observed_episodes": 1008,
+      "selected_link": "logistic",
+      "penalty_multiplier": 0.25,
+      "file_sha256": {
+        "outbox/diagnosis.json": "9f72e95ed8f33954c86db3e995c40218b54ae852c1d7ffc112b1bf3525086879",
+        "outbox/fix_set.json": "a8694ba635e493b5702c72fda96fc33728064458bdd3e5ea568245dda81eafac",
+        "evidence.json": "e940f128137f4ab2243b43467d0af368831938f7726451db03ecfed0f46b31df"
+      },
+      "score_sha256": "a97405920ac501a36aa89ba8152232270d35ca500ba4205057bc3a58d4466fbb",
+      "budgets": [
+        {
+          "label": "k = 3",
+          "points": 11.011904761904763,
+          "share": 0.3557692307692308,
+          "gain": {
+            "rescued": 43,
+            "broken": 6,
+            "net": 37
+          },
+          "hours": 0.7
+        },
+        {
+          "label": "k = 6",
+          "points": 15.178571428571429,
+          "share": 0.3695652173913043,
+          "gain": {
+            "rescued": 57,
+            "broken": 6,
+            "net": 51
+          },
+          "hours": 3.9
+        },
+        {
+          "label": "4 h",
+          "points": 15.178571428571429,
+          "share": 0.7285714285714285,
+          "gain": {
+            "rescued": 57,
+            "broken": 6,
+            "net": 51
+          },
+          "hours": 4.0
+        },
+        {
+          "label": "8 h",
+          "points": 15.178571428571429,
+          "share": 0.38636363636363635,
+          "gain": {
+            "rescued": 57,
+            "broken": 6,
+            "net": 51
+          },
+          "hours": 7.2
+        }
+      ]
+    },
+    {
+      "world": "w43",
+      "scoring_episodes": 336,
+      "recall": 0.8571428571428571,
+      "precision": 0.8571428571428571,
+      "detectable": 7,
+      "hits": 6,
+      "false_positives": 1,
+      "rank_correlation": 0.6686960980480711,
+      "ranked_actions": 10,
+      "interval_coverage": 0.7,
+      "k3_share": 0.7538461538461538,
+      "k3_points": 14.583333333333334,
+      "k3_rescued": 51,
+      "k3_broken": 2,
+      "achievable_k3_points": 19.345238095238095,
+      "chance_mean_share": 0.014998067259373792,
+      "chance_p5_share": 0.0,
+      "chance_p95_share": 0.16923076923076924,
+      "chance_valued_draws": 199,
+      "chance_requested_draws": 200,
+      "chance_skipped_fresh_replay": 1,
+      "chance_skipped_error": 0,
+      "needs_fresh_replay": 0,
+      "world_hash": "ba674bda7bd1af7adf5059d99ffc4b2cca656da6397149f4b845515f3782a4c5",
+      "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). No simulations were run. Traceability has no MCP call log for this direct program.",
+      "observed_episodes": 1008,
+      "selected_link": "logistic",
+      "penalty_multiplier": 0.25,
+      "file_sha256": {
+        "outbox/diagnosis.json": "897de1cc4ecac557687e0646a9dc02d13a1239e49e63b741b44376a2cabce6c5",
+        "outbox/fix_set.json": "cdd41d3aacd692d09e0302b7b81d1d3af6825f10d6e630c643409a8705113a93",
+        "evidence.json": "fa2e65156dae98aadd6c16d9d593fa2389c2545548fb834e8d84feda4b01bcf1"
+      },
+      "score_sha256": "ef88897d1fd39e7cb62593cda7bc0a3ee2ada45824a6b929adf564da08a1c047",
+      "budgets": [
+        {
+          "label": "k = 3",
+          "points": 14.583333333333334,
+          "share": 0.7538461538461538,
+          "gain": {
+            "rescued": 51,
+            "broken": 2,
+            "net": 49
+          },
+          "hours": 0.30000000000000004
+        },
+        {
+          "label": "k = 6",
+          "points": 26.488095238095237,
+          "share": 0.8165137614678899,
+          "gain": {
+            "rescued": 91,
+            "broken": 2,
+            "net": 89
+          },
+          "hours": 0.6000000000000001
+        },
+        {
+          "label": "4 h",
+          "points": 31.845238095238095,
+          "share": 0.9727272727272728,
+          "gain": {
+            "rescued": 108,
+            "broken": 1,
+            "net": 107
+          },
+          "hours": 1.3
+        },
+        {
+          "label": "8 h",
+          "points": 31.845238095238095,
+          "share": 0.8991596638655462,
+          "gain": {
+            "rescued": 108,
+            "broken": 1,
+            "net": 107
+          },
+          "hours": 4.3
+        }
+      ]
+    }
+  ]
+}

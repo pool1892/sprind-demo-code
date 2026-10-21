@@ -1,0 +1,702 @@
+{
+  "source_commit": "1bc0d9418efaec399239ca5f8cdc9fb6abe873ba",
+  "scope": "Oracle only; CPU toy engine and saved w47 records. No GPU job, model session, source-world write, merge or push.",
+  "runtime_sha256": {
+    "src/fleetlab/oracle/verification.py": "7cefb850d0659a31517ccf757ef4fc38498d566293d4ccdbbfaef526945bdcbf",
+    "src/fleetlab/oracle/causes.py": "20e094df581e24538a77fe7e33d00acab13b2d826df299bb246c4b90724ac402",
+    "src/fleetlab/oracle/steps.py": "bc0d058a40baee75088cc2b508a19ca533fb91498f628dfcf379d30609294800",
+    "src/fleetlab/oracle/report.py": "e9447b5db3c5d83ac5d0d98b4d71713d06787240f5483e9d86ecb3c5313d6a3d"
+  },
+  "before_repair": {
+    "exit_code": 1,
+    "failed": 6,
+    "deselected": 47,
+    "tests": "missing second total, recorded residual, four ineligible decoy cases"
+  },
+  "kill_resume": {
+    "finished_before_kill": 10,
+    "killed_exit": -9,
+    "resumed_exit": 1,
+    "refusal": "fleetlab.oracle.run.RunRefused: missing policy call total for second execution /home/cs/.cache/robots-oracle8/killed-toy/oracle/verification/run/e000001.replay.033a43a283c26eee; the engine did not retain this attempt's request count; executed steps cannot supply a policy-call ceiling",
+    "planted_events": 3,
+    "classified_events_after_resume": 3
+  },
+  "oracle_suite": {
+    "exit_code": 0,
+    "passed": 203,
+    "seconds": 265.48,
+    "note": "Strict-tail test was added after this suite collected; checked separately."
+  },
+  "strict_tail": {
+    "exit_code": 0,
+    "passed": 1,
+    "deselected": 43,
+    "seconds": 2.99
+  },
+  "mutations": [
+    {
+      "id": "V1",
+      "mutation": "V1 any first difference is accepted, not only an executed action",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_changed_state_is_not_an_event",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_changed_state_is_not_an_event"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V1.log"
+    },
+    {
+      "id": "V2",
+      "mutation": "V2 two against two counts as a majority",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_one_systematic_run_replay_path_difference_is_a_defect",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_one_systematic_run_replay_path_difference_is_a_defect"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V2.log"
+    },
+    {
+      "id": "V3",
+      "mutation": "V3 ceiling always counted in steps at the per-call rate",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_two_events_exceed_a_one_event_call_ceiling",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_two_events_exceed_a_one_event_call_ceiling"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V3.log"
+    },
+    {
+      "id": "V4a",
+      "mutation": "V4a run refused already at the ceiling",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used[run]",
+        "FAILED tests/test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used[replay]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V4a.log"
+    },
+    {
+      "id": "V4b",
+      "mutation": "V4b one event above the ceiling tolerated",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_two_events_exceed_a_one_event_call_ceiling",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_two_events_exceed_a_one_event_call_ceiling"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V4b.log"
+    },
+    {
+      "id": "V5",
+      "mutation": "V5 the as-run outcome stays although the run was the odd side",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used[run]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V5.log"
+    },
+    {
+      "id": "V6",
+      "mutation": "V6 two replays count as an attempt executed twice",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_two_unmodified_replays_do_not_prove_the_as_run_baseline",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_two_unmodified_replays_do_not_prove_the_as_run_baseline"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V6.log"
+    },
+    {
+      "id": "V7",
+      "mutation": "V7 changed evidence of a compared execution not noticed on read",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_saved_compared_execution_evidence_is_rechecked",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_saved_compared_execution_evidence_is_rechecked[chain]",
+        "FAILED tests/test_oracle_verification.py::test_saved_compared_execution_evidence_is_rechecked[outcome]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V7.log"
+    },
+    {
+      "id": "V8",
+      "mutation": "V8 third and fourth calls counted into the ceiling's exposure",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used[run]",
+        "FAILED tests/test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used[replay]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V8.log"
+    },
+    {
+      "id": "V9",
+      "mutation": "V9 only events with the run as odd side count towards the ceiling",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_one_policy_answer_is_settled_and_the_majority_outcome_is_used[replay]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V9.log"
+    },
+    {
+      "id": "V10",
+      "mutation": "V10 identical chains with different outcomes accepted",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_identical_chains_with_different_outcomes_refuse",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_identical_chains_with_different_outcomes_refuse"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V10.log"
+    },
+    {
+      "id": "V11",
+      "mutation": "V11 agreement judged on executed actions only",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_majority_requires_states_and_images_as_well_as_actions",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_majority_requires_states_and_images_as_well_as_actions"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V11.log"
+    },
+    {
+      "id": "V12",
+      "mutation": "V12 ceiling enforced never (pending forever)",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_two_events_exceed_a_one_event_call_ceiling",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_two_events_exceed_a_one_event_call_ceiling"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V12.log"
+    },
+    {
+      "id": "V13",
+      "mutation": "V13 a kept third of another kind is accepted in any slot",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_legacy_replay_third_is_replaced_for_two_changed_replays",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_legacy_replay_third_is_replaced_for_two_changed_replays"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V13.log"
+    },
+    {
+      "id": "V14",
+      "mutation": "V14 further executions need not be of the asked kind",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_further_execution_of_the_wrong_kind_refuses",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_further_execution_of_the_wrong_kind_refuses"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V14.log"
+    },
+    {
+      "id": "V15",
+      "mutation": "V15 ceiling one count lower than the strict tail asks",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_ceiling_corrects_a_quantile_at_the_strict_tail_boundary",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_ceiling_corrects_a_quantile_at_the_strict_tail_boundary"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/V15.log"
+    },
+    {
+      "id": "T1",
+      "mutation": "T1 disagreeing rows of one fault list: the later row wins",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_changed_rows_use_the_same_third_execution_rule",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_changed_rows_use_the_same_third_execution_rule"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/T1.log"
+    },
+    {
+      "id": "S1",
+      "mutation": "S1 measured causes complete without checked baselines",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_measured_truth_is_incomplete_until_baselines_are_verified",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_measured_truth_is_incomplete_until_baselines_are_verified"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S1.log"
+    },
+    {
+      "id": "S2",
+      "mutation": "S2 report silent about attempts not executed twice",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_report_explains_incomplete_double_execution",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_report_explains_incomplete_double_execution"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S2.log"
+    },
+    {
+      "id": "S3",
+      "mutation": "S3 observed stage planned without verified scoring",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution[False]",
+        "FAILED tests/test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution[True]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S3.log"
+    },
+    {
+      "id": "S4",
+      "mutation": "S4 observed attempts of the cause plan not required twice",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution[False]",
+        "FAILED tests/test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution[True]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S4.log"
+    },
+    {
+      "id": "S5",
+      "mutation": "S5 verify returns done although attempts are missing",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_verify_does_not_return_done_with_a_missing_attempt",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_verify_does_not_return_done_with_a_missing_attempt"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S5.log"
+    },
+    {
+      "id": "S6",
+      "mutation": "S6 a changed replay may serve as the second execution",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_changed_replay_is_replaced_by_an_unmodified_second",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_changed_replay_is_replaced_by_an_unmodified_second"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S6.log"
+    },
+    {
+      "id": "S7",
+      "mutation": "S7 report does not re-read the saved evidence",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_report_reloads_saved_evidence_before_using_it",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_report_reloads_saved_evidence_before_using_it"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S7.log"
+    },
+    {
+      "id": "S8",
+      "mutation": "S8 a refused verification ledger is ignored without a note",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_verification.py::test_refused_ledger_is_named_in_the_report",
+      "failures": [
+        "FAILED tests/test_oracle_verification.py::test_refused_ledger_is_named_in_the_report"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S8.log"
+    },
+    {
+      "id": "S9",
+      "mutation": "S9 measured truth overwritten by an incomplete one",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_complete_truth_is_preserved_and_wrong_world_manifest_is_refused",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_complete_truth_is_preserved_and_wrong_world_manifest_is_refused"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S9.log"
+    },
+    {
+      "id": "S10",
+      "mutation": "S10 scorer builds its table without the reproducible outcomes",
+      "verdict": "out_of_scope",
+      "reason": "Scorer edit explicitly assigned to its builder; no scoring path modified or tested by this mutation run."
+    },
+    {
+      "id": "S11",
+      "mutation": "S11 seconds of the observed stage not checked as proofs",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution[True]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/S11.log"
+    },
+    {
+      "id": "C1",
+      "mutation": "C1 exactly two points is not a cause",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_sparse_carriers_two_points_and_twenty_carriers_qualify",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_sparse_carriers_two_points_and_twenty_carriers_qualify"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C1.log"
+    },
+    {
+      "id": "C2",
+      "mutation": "C2 exactly 20 carriers are not enough",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_sparse_carriers_two_points_and_twenty_carriers_qualify",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_sparse_carriers_two_points_and_twenty_carriers_qualify"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C2.log"
+    },
+    {
+      "id": "C3",
+      "mutation": "C3 points per carrying attempt instead of per window attempt",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_sparse_carriers_two_points_and_twenty_carriers_qualify",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_sparse_carriers_two_points_and_twenty_carriers_qualify"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C3.log"
+    },
+    {
+      "id": "C4",
+      "mutation": "C4 attempts broken by the removal ignored",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_removal_subtracts_a_broken_attempt_over_the_whole_window",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_removal_subtracts_a_broken_attempt_over_the_whole_window"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C4.log"
+    },
+    {
+      "id": "C5",
+      "mutation": "C5 observed window measured also when scoring qualifies",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution[False]",
+        "FAILED tests/test_oracle_causes.py::test_observed_cpu_run_adds_all_seconds_and_resumes_without_reexecution[True]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C5.log"
+    },
+    {
+      "id": "C6",
+      "mutation": "C6 pair measured jointly although a member is a cause",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_additive_pairs_and_standalone_causes_do_not_get_joint_treatment",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_additive_pairs_and_standalone_causes_do_not_get_joint_treatment"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C6.log"
+    },
+    {
+      "id": "C7",
+      "mutation": "C7 pair's observed window measured although scoring qualifies",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_interaction_only_after_both_members_and_each_adaptive_stage",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_interaction_only_after_both_members_and_each_adaptive_stage[False]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C7.log"
+    },
+    {
+      "id": "C8",
+      "mutation": "C8 data fault judged on the net change of logged success",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_data_fault_counts_misreports_in_both_directions_without_replays",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_data_fault_counts_misreports_in_both_directions_without_replays"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C8.log"
+    },
+    {
+      "id": "C9",
+      "mutation": "C9 reused observed removals need no checked baseline",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_coverage_includes_removals_already_found_in_other_runs",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_coverage_includes_removals_already_found_in_other_runs"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C9.log"
+    },
+    {
+      "id": "C10",
+      "mutation": "C10 a decoy may qualify by the observed window",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_data_decoy_cannot_qualify_by_observed_misreports",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_data_decoy_cannot_qualify_by_observed_misreports"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C10.log"
+    },
+    {
+      "id": "C11",
+      "mutation": "C11 a decoy is measured over the observed window too",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_interaction_only_after_both_members_and_each_adaptive_stage",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_interaction_only_after_both_members_and_each_adaptive_stage[False]",
+        "FAILED tests/test_oracle_causes.py::test_interaction_only_after_both_members_and_each_adaptive_stage[True]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C11.log"
+    },
+    {
+      "id": "C12",
+      "mutation": "C12 pair carriers counted when either member is present",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_pair_carriers_require_both_members",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_pair_carriers_require_both_members"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C12.log"
+    },
+    {
+      "id": "C13",
+      "mutation": "C13 the measured list also holds pending items",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_pending_items_never_enter_the_measured_list",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_pending_items_never_enter_the_measured_list"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C13.log"
+    },
+    {
+      "id": "C14",
+      "mutation": "C14 the pair joins the list although its members already do",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_additive_pairs_and_standalone_causes_do_not_get_joint_treatment",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_additive_pairs_and_standalone_causes_do_not_get_joint_treatment"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C14.log"
+    },
+    {
+      "id": "C15",
+      "mutation": "C15 data fault: outcomes of the scratch executions used",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_causes.py::test_logged_outcomes_use_the_actual_run_even_if_a_replay_is_listed_first",
+      "failures": [
+        "FAILED tests/test_oracle_causes.py::test_logged_outcomes_use_the_actual_run_even_if_a_replay_is_listed_first"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/C15.log"
+    },
+    {
+      "id": "H3",
+      "mutation": "H3 stored row that disagrees with the rule not refused",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_power.py::test_stored_outcome_contradicting_mechanism_equivalence_is_refused",
+      "failures": [
+        "FAILED tests/test_oracle_power.py::test_stored_outcome_contradicting_mechanism_equivalence_is_refused"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/H3.log"
+    },
+    {
+      "id": "H4",
+      "mutation": "H4 an original fault of this kind dropped as well",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_power.py::test_original_config_change_is_kept_even_with_a_known_empty_outcome",
+      "failures": [
+        "FAILED tests/test_oracle_power.py::test_original_config_change_is_kept_even_with_a_known_empty_outcome"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/H4.log"
+    },
+    {
+      "id": "F1",
+      "mutation": "F1 fault-free requested replay dropped from the manifest",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_power.py::test_fault_free_requests_outside_proof_sample_are_all_in_manifest",
+      "failures": [
+        "FAILED tests/test_oracle_power.py::test_fault_free_requests_outside_proof_sample_are_all_in_manifest"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/F1.log"
+    },
+    {
+      "id": "E1",
+      "mutation": "E1 unavailable exact floor counted as incomplete, not refused",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_power.py::test_unavailable_required_exact_floor_is_refused_not_incomplete",
+      "failures": [
+        "FAILED tests/test_oracle_power.py::test_unavailable_required_exact_floor_is_refused_not_incomplete[None]",
+        "FAILED tests/test_oracle_power.py::test_unavailable_required_exact_floor_is_refused_not_incomplete[cannot resolve catalogue action]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/E1.log"
+    },
+    {
+      "id": "P1",
+      "mutation": "P1 power bound without the bootstrap part",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_power.py::test_design_bound_satisfies_each_analytic_failure_budget",
+      "failures": [
+        "FAILED tests/test_oracle_power.py::test_design_bound_satisfies_each_analytic_failure_budget[336-28-1000]",
+        "FAILED tests/test_oracle_power.py::test_design_bound_satisfies_each_analytic_failure_budget[336-112-1000]",
+        "FAILED tests/test_oracle_power.py::test_design_bound_satisfies_each_analytic_failure_budget[28-28-100]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/P1.log"
+    },
+    {
+      "id": "P2",
+      "mutation": "P2 power bound at 50% sample error",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_power.py::test_design_bound_satisfies_each_analytic_failure_budget",
+      "failures": [
+        "FAILED tests/test_oracle_power.py::test_design_bound_satisfies_each_analytic_failure_budget[336-28-1000]",
+        "FAILED tests/test_oracle_power.py::test_design_bound_satisfies_each_analytic_failure_budget[336-112-1000]",
+        "FAILED tests/test_oracle_power.py::test_design_bound_satisfies_each_analytic_failure_budget[28-28-100]"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/P2.log"
+    },
+    {
+      "id": "P3",
+      "mutation": "P3 missing-only report exits 1",
+      "verdict": "caught",
+      "exit_code": 1,
+      "test": "test_oracle_power.py::test_detectability_missing_only_for_replays_makes_report_incomplete",
+      "failures": [
+        "FAILED tests/test_oracle_power.py::test_detectability_missing_only_for_replays_makes_report_incomplete"
+      ],
+      "log": "/home/cs/.cache/robots-oracle8/mutation-logs/P3.log"
+    }
+  ],
+  "w47": {
+    "report_exit_code": 0,
+    "oracle_copy": "/home/cs/.cache/robots-oracle8/w47-oracle",
+    "measured_causes_unchanged": 6,
+    "scoring_gains_unchanged": 13,
+    "observed_gains_unchanged": 6,
+    "comparisons": 910,
+    "second_policy_calls": 8926,
+    "scoring_residual": {
+      "changed_replays": 1904,
+      "recorded_policy_calls": 12866,
+      "recorded_expected_affected_replays_upper": 4.188938477246942,
+      "recorded_expected_wrong_outcome_points_upper_per_table": 1.2467078801330185,
+      "step_budget_fallback_replays": 20,
+      "step_budget_fallback_jobs": [
+        "e000379.replay.144bc95fda1b577c",
+        "e000379.replay.28fa04fc0a86f3b3",
+        "e000386.replay.144bc95fda1b577c",
+        "e000386.replay.28fa04fc0a86f3b3",
+        "e000386.replay.64913bd385199975",
+        "e000469.replay.144bc95fda1b577c",
+        "e000469.replay.28fa04fc0a86f3b3",
+        "e000469.replay.64913bd385199975",
+        "e000719.replay.144bc95fda1b577c",
+        "e000719.replay.28fa04fc0a86f3b3",
+        "e000893.replay.144bc95fda1b577c",
+        "e000893.replay.28fa04fc0a86f3b3",
+        "e000893.replay.64913bd385199975",
+        "e001081.replay.144bc95fda1b577c",
+        "e001081.replay.28fa04fc0a86f3b3",
+        "e001081.replay.64913bd385199975",
+        "e001266.replay.144bc95fda1b577c",
+        "e001266.replay.28fa04fc0a86f3b3",
+        "e001266.replay.64913bd385199975",
+        "e001357.replay.144bc95fda1b577c"
+      ],
+      "fallback_step_budget": 5600,
+      "expected_affected_replays_upper": 6.012197879748283,
+      "expected_wrong_outcome_points_upper_per_table": 1.7893446070679413,
+      "wrong_outcome_points_95_upper_per_table": 35.78689214135883,
+      "text": "Recorded policy calls supply 1884 changed replay exposures; 20 changed replay exposures use the maximum step budget because their call totals are missing. A replay that changes something is executed once, so a disturbance there is not detected. Bounds assume every disturbance changes an outcome; the 95% bound uses Markov's inequality. Interaction contrasts can use four outcomes: multiply these point bounds by four."
+    },
+    "observed_residual": {
+      "changed_replays": 644,
+      "recorded_policy_calls": 5511,
+      "recorded_expected_affected_replays_upper": 1.7942826012830355,
+      "recorded_expected_wrong_outcome_points_upper_per_table": 0.17800422631776144,
+      "step_budget_fallback_replays": 0,
+      "step_budget_fallback_jobs": [],
+      "fallback_step_budget": 0,
+      "expected_affected_replays_upper": 1.794282601283049,
+      "expected_wrong_outcome_points_upper_per_table": 0.1780042263177628,
+      "wrong_outcome_points_95_upper_per_table": 3.560084526355256,
+      "text": "Recorded policy calls supply 644 changed replay exposures; 0 changed replay exposures use the maximum step budget because their call totals are missing. A replay that changes something is executed once, so a disturbance there is not detected. Bounds assume every disturbance changes an outcome; the 95% bound uses Markov's inequality. Interaction contrasts can use four outcomes: multiply these point bounds by four."
+    }
+  },
+  "deliberately_unchanged": [
+    "camera-first/render-transient treatment (finding 2)",
+    "ceiling scope per source run/window (finding 8)",
+    "misreports in both directions (finding 9)",
+    "scorer (findings 3/S10 and 10)"
+  ],
+  "not_verified": [
+    "GPU policy behavior",
+    "LIBERO simulator",
+    "engine persistence repair",
+    "scorer mutation",
+    "cross-vendor review; orchestrating session arranges it",
+    "A successful make check invocation: the single capped invocation exited 2 before the corrected component checks."
+  ],
+  "log_sha256": {
+    "before.log": "e90ff73c70643290cd0fd89ce6c02fddd79ce5266f1796777180eff78bb5e6e3",
+    "focused2.log": "4e491357ca65e2bbcd74304835a4546b8d9fb233bfb2e3c4a0f04799f3c84e2f",
+    "kill-driver.log": "f2e74f292032b0615bd5f7126d186eda12de51acdbce3abea90f8766eabf6e66",
+    "oracle-suite.log": "5e13fb284de09d59cb85dd9c3ab4c9f4321d8b829659eb8e3a25f98098e24de0",
+    "strict-tail.log": "743054c8af8b1e2a3c55fdda2bbf86191216ac6a3e14c98cfc6afaa665843225",
+    "w47-report-final.log": "56f79b5395d33ed29ecef9dbacc82de98940c4647804da26fdc1a7cd38210368",
+    "mutations.log": "245bf1daf2cbf95d94dee75b189285389cd089cab45e0a5fd5a5c34279516209",
+    "mutation-rerun.log": "c79df0a5dd0f38dba2ad626cce81c743d7c932b2cab47e85172a9ea5c05a9539",
+    "make-check.log": "685cfe205b3062dc0523626493628d8bc646884dbaa348399360419fe0ee6b84",
+    "mypy-final.log": "135062164779c7f2cccf62445ae44077ceb24947940fc8388f0aba08b0bc1cf4",
+    "pytest-final.log": "5ee507764577a9a75a068cca9dddbf956d7794f99c97722d7e74430983b44549"
+  },
+  "full_test_commit": "dd7de56",
+  "make_check": {
+    "invocations": 1,
+    "exit_code": 2,
+    "stopped_at": "mypy, before pytest",
+    "type_errors": 8,
+    "repair_commit": "dd7de56",
+    "repeated": false,
+    "reason": "Explicit hand-over cap: make check once. Completed all post-repair components directly instead of relabelling the failed invocation."
+  },
+  "final_components": {
+    "ruff_check_exit_code": 0,
+    "ruff_format_exit_code": 0,
+    "ruff_format_files": 394,
+    "mypy_exit_code": 0,
+    "mypy_files": 394,
+    "pytest_exit_code": 0,
+    "pytest_passed": 2619,
+    "pytest_skipped": 2,
+    "pytest_deselected": 65,
+    "pytest_warnings": 1,
+    "pytest_seconds": 2895.01,
+    "warning": "Existing robosuite invalid-escape SyntaxWarning."
+  }
+}

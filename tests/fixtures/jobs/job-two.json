@@ -1,0 +1,34 @@
+{
+  "request_text": "One more job for the line: the cheese goes into the black bowl and the bowl goes onto the plate. The cheese goes in before the bowl moves. The next shift needs it to deliver on at least three of every five starts it is released on. When a program reaches that share on the development starts you tried it on, save it: the reserved starts decide, and a release that misses there is acceptable to me.",
+  "requested_goals": [
+    {
+      "predicate": "On",
+      "objects": [
+        "cream_cheese_1",
+        "akita_black_bowl_1"
+      ]
+    },
+    {
+      "predicate": "On",
+      "objects": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  ],
+  "base_task": 6,
+  "order_rules": [
+    {
+      "first": 0,
+      "then": 1
+    }
+  ],
+  "budget": {
+    "starts_per_request": 20,
+    "requests_per_session": 4,
+    "sessions": 6,
+    "starts_per_investigation": 400
+  },
+  "acceptance": null,
+  "message_log": []
+}

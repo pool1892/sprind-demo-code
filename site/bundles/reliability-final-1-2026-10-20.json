@@ -1,0 +1,17 @@
+{
+  "format": "fleetlab.film-site/1",
+  "title": "Two new jobs from a robot's existing skills",
+  "lede": "A simulated robot arm whose policy never changes was given two jobs it has no single skill for: leave the bowl on the cabinet with the drawer open, and leave the plate at the stove with the bowl on the cabinet. An AI engineering agent found why the plain chain of the robot's skills failed, tested one change at a time and built each job. On 20 fresh arrangements of the scene, held back until the end, both jobs delivered on all 20; the plain chains delivered on 1 and 5. The jobs, their checks and the agent's learned skills stay in the installation's library.",
+  "film": "~/.cache/robots-probes/demo/2026-10-20/reliability/film/final-2/cut",
+  "record": "~/.cache/robots-probes/demo/2026-10-20/reliability/site/record-final-2/page",
+  "base_url": "https://pool1892.github.io/sprind-demo-page/",
+  "public": {
+    "aliases": {
+      "w80": "w08",
+      "w81": "w09"
+    },
+    "forbid": [
+      "(?<![A-Za-z0-9])w8[0-9](?![0-9])"
+    ]
+  }
+}

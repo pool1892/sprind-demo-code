@@ -1,0 +1,779 @@
+{
+  "version": 1,
+  "date": "2026-10-11",
+  "review_source_sha256": "23211e982f332b63c18217456d8a1625d1bcdbff0afc61b73c60ef3e1eeb853e",
+  "scope": "Owned CPU protocol tests. No model or GPU pass; finite mutation list is not an exhaustive proof.",
+  "counts": {
+    "caught": 72,
+    "retired": 3
+  },
+  "source_hashes": {
+    "src/fleetlab/live/pass_run.py": "111dfb64b03b935eac8ea37e26c9a4431ff82165d25ef33c9963b2b090954c20",
+    "src/fleetlab/live/rules.py": "7bf6c78b9780acbf5a45bcb89ec8f09110b8228364f5478bb68b6bfa18bb7fa6",
+    "src/fleetlab/live/scoring.py": "62a223575491ed314eb149fe34cbce2050020deb4415033525982b8ae9d8cf86",
+    "src/fleetlab/live/counterfactual.py": "0415288420489d872b6dacb7afee92c9bb1552b301859b50ff6ea2b5a53e87e4"
+  },
+  "results": [
+    {
+      "id": 1,
+      "name": "cohort: window not applied",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "cohort",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.11,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/01.log"
+    },
+    {
+      "id": 2,
+      "name": "cohort: replays counted as as-run outcomes",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "cohort",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.85,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/02.log"
+    },
+    {
+      "id": 3,
+      "name": "cohort: source chain not required",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "cohort",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.46,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/03.log"
+    },
+    {
+      "id": 4,
+      "name": "cohort: a failure is dropped",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "cohort",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.61,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/04.log"
+    },
+    {
+      "id": 5,
+      "name": "cohort: successes not weighted",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "cohort",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.45,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/05.log"
+    },
+    {
+      "id": 6,
+      "name": "cohort: weight of successes inverted",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "cohort",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.95,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/06.log"
+    },
+    {
+      "id": 7,
+      "name": "random: count from requests, not accepted hand-overs",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.79,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/07.log"
+    },
+    {
+      "id": 8,
+      "name": "random: one hand-over more than the reference",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.81,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/08.log"
+    },
+    {
+      "id": 9,
+      "name": "random: one hand-over fewer than the reference",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.45,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/09.log"
+    },
+    {
+      "id": 10,
+      "name": "random: hands over the attempts not chosen",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.85,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/10.log"
+    },
+    {
+      "id": 11,
+      "name": "random: reference of another cohort or human model accepted",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.64,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/11.log"
+    },
+    {
+      "id": 12,
+      "name": "random: missing the reference count goes unnoticed",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.8,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/12.log"
+    },
+    {
+      "id": 13,
+      "name": "random: calls at step 101 instead of step 1",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.81,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/13.log"
+    },
+    {
+      "id": 14,
+      "name": "record: reserved slot charged as operator time",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.71,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/14.log"
+    },
+    {
+      "id": 15,
+      "name": "record: queue time added to operator time",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.3,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/15.log"
+    },
+    {
+      "id": 16,
+      "name": "record: queue time in ticks, not seconds",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.06,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/16.log"
+    },
+    {
+      "id": 17,
+      "name": "record: queue time dropped",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.37,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/17.log"
+    },
+    {
+      "id": 18,
+      "name": "record: model time reported as subscription time",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "delayed_or_failed or latency",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 18.2,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/18.log"
+    },
+    {
+      "id": 19,
+      "name": "record: denied request scored as the stopped proposal",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "queue_refusal",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.23,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/19.log",
+      "adaptation": "Refused nonterminal calls now continue in-place; the equivalent fault forces their physical outcome to failed."
+    },
+    {
+      "id": 20,
+      "name": "record: a request counts as a hand-over",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "queue_refusal",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.45,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/20.log",
+      "adaptation": "Refused calls no longer spawn stopped proposals; the equivalent fault counts a requested but refused call as an accepted handover."
+    },
+    {
+      "id": 21,
+      "name": "record: outcome of every attempt set to success",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "no_supervisor or random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.29,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/21.log"
+    },
+    {
+      "id": 22,
+      "name": "record: counterfactual of the last instead of the first intervention",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "record_chooses_first",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.1,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/22.log"
+    },
+    {
+      "id": 23,
+      "name": "record: as-run check of the no-supervisor pass removed",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "no_supervisor",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.05,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/23.log"
+    },
+    {
+      "id": 24,
+      "name": "record: decision hold not clipped at the attempt's end",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "completion_during_hold",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.7,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/24.log",
+      "adaptation": "Added a physical settling-check fixture that completes during a pending hold."
+    },
+    {
+      "id": 25,
+      "name": "resume: changed configuration accepted",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "pinned_resume",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 14.73,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/25.log"
+    },
+    {
+      "id": 26,
+      "name": "resume: requests rewritten on every start",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "record_chooses_first",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 16.37,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/26.log"
+    },
+    {
+      "id": 27,
+      "name": "resume: failed replay sample accepted",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "no_supervisor",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.96,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/27.log"
+    },
+    {
+      "id": 28,
+      "name": "rule: simple rules are priced by the cost gate too",
+      "file": "src/fleetlab/live/pass_run.py",
+      "status": "retired",
+      "reason": "Estimator gate removed; all rules use the same queue policy, covered by requests_reach_queue_at_all_ratios."
+    },
+    {
+      "id": 29,
+      "name": "rule: supervisor and decision rule not priced",
+      "file": "src/fleetlab/live/pass_run.py",
+      "status": "retired",
+      "reason": "Estimator gate removed by decision 19; removing it is required behavior, not a surviving defect."
+    },
+    {
+      "id": 30,
+      "name": "rule: ratio exactly at the threshold hands over",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "strict_inequality",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 7.44,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/30.log"
+    },
+    {
+      "id": 31,
+      "name": "rule: waiting not priced",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "declared_wait",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 8.06,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/31.log"
+    },
+    {
+      "id": 32,
+      "name": "rule: risk ignored",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "strict_inequality",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.06,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/32.log"
+    },
+    {
+      "id": 33,
+      "name": "rule: proposal at ratio exactly 1",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "economic_proposal",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.76,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/33.log"
+    },
+    {
+      "id": 34,
+      "name": "rule: proposal threshold not strict",
+      "file": "src/fleetlab/live/pass_run.py",
+      "test_selector": "economic_proposal or strict_inequality",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.61,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/34.log"
+    },
+    {
+      "id": 35,
+      "name": "queue: order by attempt name instead of time",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "cost_gate_prices or queue_orders",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.52,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/35.log",
+      "adaptation": "Same arrival-order fault, adapted to the formatted loop and neutral episode-id tie-break."
+    },
+    {
+      "id": 36,
+      "name": "queue: order as handed in",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "cost_gate_prices or queue_orders",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 13.0,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/36.log",
+      "adaptation": "Same input-order fault, adapted to the formatted loop."
+    },
+    {
+      "id": 37,
+      "name": "queue: always the first operator",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.32,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/37.log",
+      "adaptation": "Executed real matched-random passes with two operators, rather than only one-operator queue fixtures."
+    },
+    {
+      "id": 38,
+      "name": "queue: the operator who is free last",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 14.03,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/38.log",
+      "adaptation": "Executed real matched-random passes with two operators."
+    },
+    {
+      "id": 39,
+      "name": "queue: no waiting computed",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "cost_gate_prices or queue_orders",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.66,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/39.log"
+    },
+    {
+      "id": 40,
+      "name": "queue: a denied request reserves an operator",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "cost_gate_prices or queue_orders",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 8.96,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/40.log"
+    },
+    {
+      "id": 41,
+      "name": "queue: waiting count includes those being served",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "cost_gate_prices or queue_orders",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 15.3,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/41.log"
+    },
+    {
+      "id": 42,
+      "name": "queue: free operators off by the boundary",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "cost_gate_prices or queue_orders",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.51,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/42.log"
+    },
+    {
+      "id": 43,
+      "name": "queue: priced wait always zero",
+      "file": "src/fleetlab/live/rules.py",
+      "status": "retired",
+      "reason": "Queue no longer prices a request by another risk rule; common maximum wait is tested instead."
+    },
+    {
+      "id": 44,
+      "name": "queue: agreement with the human model's admission not checked",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "cost_gate_prices or queue_orders",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.46,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/44.log"
+    },
+    {
+      "id": 45,
+      "name": "calls: the abandoned calls of a restarted attempt are kept",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "resume_discards",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 16.28,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/45.log"
+    },
+    {
+      "id": 46,
+      "name": "latency: model route holds for the subscription time",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "latency",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 16.93,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/46.log",
+      "adaptation": "Same latency-route fault, adapted to the returned-answer expression after failed-call recording was added."
+    },
+    {
+      "id": 47,
+      "name": "calls: step recorded one early",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "latency or pinned_resume",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 15.39,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/47.log",
+      "adaptation": "Same one-step error, adapted to the shared call-step variable."
+    },
+    {
+      "id": 48,
+      "name": "score: rescues counted over all attempts",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.2,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/48.log"
+    },
+    {
+      "id": 49,
+      "name": "score: every rescue counted as without a person",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.64,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/49.log"
+    },
+    {
+      "id": 50,
+      "name": "score: without a person means not handed over",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.81,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/50.log"
+    },
+    {
+      "id": 51,
+      "name": "score: successes lost counted over all attempts",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.06,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/51.log",
+      "adaptation": "Added explicit zero broken-success assertion beside an unrescued failure."
+    },
+    {
+      "id": 52,
+      "name": "score: an autonomous action on a success is no false alarm",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.23,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/52.log"
+    },
+    {
+      "id": 53,
+      "name": "score: a continue assessment is a false alarm",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.45,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/53.log"
+    },
+    {
+      "id": 54,
+      "name": "score: snapshot reading swaps would-fail and would-succeed",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 8.21,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/54.log"
+    },
+    {
+      "id": 55,
+      "name": "score: window operator time not expanded",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.2,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/55.log"
+    },
+    {
+      "id": 56,
+      "name": "score: cohort operator time expanded",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.44,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/56.log"
+    },
+    {
+      "id": 57,
+      "name": "score: queue idle counts reserved time",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "random_real",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 15.19,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/57.log",
+      "adaptation": "Added aggregate queue seconds checked against the actual physical human metrics."
+    },
+    {
+      "id": 58,
+      "name": "score: net gain adds the losses",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.78,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/58.log"
+    },
+    {
+      "id": 59,
+      "name": "score: window success over the cohort size",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "scoring or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.33,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/59.log"
+    },
+    {
+      "id": 60,
+      "name": "compare: no-supervision point left out",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.02,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/60.log",
+      "adaptation": "Same fault applied to window net arithmetic / paired attempt resampling under reviewed design entry 19."
+    },
+    {
+      "id": 61,
+      "name": "compare: extrapolates beyond the measured time",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 8.59,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/61.log",
+      "adaptation": "Same fault applied to window net arithmetic / paired attempt resampling under reviewed design entry 19."
+    },
+    {
+      "id": 62,
+      "name": "compare: worst instead of best simple rule",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.2,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/62.log",
+      "adaptation": "Same fault applied to window net arithmetic / paired attempt resampling under reviewed design entry 19."
+    },
+    {
+      "id": 63,
+      "name": "compare: interpolation weights swapped",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 8.64,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/63.log",
+      "adaptation": "Same fault applied to window net arithmetic / paired attempt resampling under reviewed design entry 19."
+    },
+    {
+      "id": 64,
+      "name": "compare: equal time on cohort seconds, not window seconds",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.19,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/64.log"
+    },
+    {
+      "id": 65,
+      "name": "compare: ratio instead of relative gain",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 8.74,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/65.log",
+      "adaptation": "Same fault applied to window net arithmetic / paired attempt resampling under reviewed design entry 19."
+    },
+    {
+      "id": 66,
+      "name": "compare: pass mark at 0 instead of 20 percent",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 6.64,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/66.log",
+      "adaptation": "Same fault applied to window net arithmetic / paired attempt resampling under reviewed design entry 19."
+    },
+    {
+      "id": 67,
+      "name": "compare: interval without resampling",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 6.25,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/67.log",
+      "adaptation": "Same fault applied to window net arithmetic / paired attempt resampling under reviewed design entry 19."
+    },
+    {
+      "id": 68,
+      "name": "compare: baseline need not be a simple rule",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.21,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/68.log",
+      "adaptation": "Same fault applied to window net arithmetic / paired attempt resampling under reviewed design entry 19."
+    },
+    {
+      "id": 69,
+      "name": "compare: attempts need not be paired",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.32,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/69.log"
+    },
+    {
+      "id": 70,
+      "name": "compare: dirty measured code accepted",
+      "file": "src/fleetlab/live/scoring.py",
+      "test_selector": "equal_time or comparison_checks or pass_mark or net_mark",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 12.41,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/70.log"
+    },
+    {
+      "id": 71,
+      "name": "prefix: a continue assessment gets a counterfactual, a stop does not",
+      "file": "src/fleetlab/live/counterfactual.py",
+      "test_selector": "autonomous_stop",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 11.86,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/71.log"
+    },
+    {
+      "id": 72,
+      "name": "prefix: earlier decisions left out of the prefix",
+      "file": "src/fleetlab/live/counterfactual.py",
+      "test_selector": "autonomous_stop",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 16.43,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/72.log"
+    },
+    {
+      "id": 73,
+      "name": "prefix: chain not compared with the real run",
+      "file": "src/fleetlab/live/counterfactual.py",
+      "test_selector": "autonomous_stop",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 14.48,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/73.log"
+    },
+    {
+      "id": 74,
+      "name": "prefix: counterfactual outcome inverted",
+      "file": "src/fleetlab/live/counterfactual.py",
+      "test_selector": "autonomous_stop",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 10.44,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/74.log"
+    },
+    {
+      "id": 75,
+      "name": "prefix: snapshot after the primitive instead of before",
+      "file": "src/fleetlab/live/rules.py",
+      "test_selector": "autonomous_stop",
+      "status": "caught",
+      "exit_code": 1,
+      "seconds": 9.4,
+      "log": "/home/cs/.cache/codex-live-round2/mutations-final/75.log"
+    }
+  ],
+  "audited_commit": "d80a04b90f0fbe78b9b8383f0b938e6650806e49"
+}

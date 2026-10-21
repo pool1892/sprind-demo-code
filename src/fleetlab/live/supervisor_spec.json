@@ -1,0 +1,10 @@
+{
+  "name": "vlm",
+  "params": {
+    "backend": "codex",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "first_step": 120,
+    "max_calls": 1
+  }
+}

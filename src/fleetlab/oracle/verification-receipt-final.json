@@ -1,0 +1,104 @@
+{
+ "source_commit": "4092e6f9f3479a617dbc67aec9660d29a1f8d7f1",
+ "recorded_utc": "2026-10-10T00:52:20.690627+00:00",
+ "make_check": {
+  "exit_status": 0,
+  "passed": 1176,
+  "skipped": 2,
+  "deselected": 62,
+  "seconds": 331.57,
+  "log_sha256": "d8b431d088875dd95d8b87dff6d739467d4e85dbbf9ca1d9121c2beafe8595c3"
+ },
+ "prior_check": {
+  "exit_status": 2,
+  "reason": "Two miniature-world tests still compared to historical missing no-mechanism draws; replaced by independent all-draw contract valuation and complete CLI expectation."
+ },
+ "missing_baseline_regression": {
+  "before_commit": "b32a4dc",
+  "before_exit_status": 1,
+  "before_failure": "MissingReplays",
+  "after_commit": "4092e6f",
+  "after_verified_by": "make check"
+ },
+ "mutations": {
+  "runs": 6,
+  "families": 5,
+  "all_baseline_exits": 0,
+  "all_mutation_exits": 1,
+  "receipt": "mutation-receipt-final.json"
+ },
+ "current_source_report_check": {
+  "worlds": [
+   "w41",
+   "w42",
+   "w43"
+  ],
+  "without_runs": true,
+  "oracle_json_byte_identical": true,
+  "summary_byte_identical": true
+ },
+ "cli_check": {
+  "source_commit": "b32a4dc",
+  "records": [
+   {
+    "world": "w41",
+    "report_exit": 0,
+    "without_runs": true,
+    "identical_files": [
+     "oracle.json",
+     "summary.md",
+     "episodes.parquet"
+    ],
+    "downgrade_exit": 1,
+    "all_files_preserved": true
+   },
+   {
+    "world": "w42",
+    "report_exit": 0,
+    "without_runs": true,
+    "identical_files": [
+     "oracle.json",
+     "summary.md",
+     "episodes.parquet"
+    ],
+    "downgrade_exit": 1,
+    "all_files_preserved": true
+   },
+   {
+    "world": "w43",
+    "report_exit": 0,
+    "without_runs": true,
+    "identical_files": [
+     "oracle.json",
+     "summary.md",
+     "episodes.parquet"
+    ],
+    "downgrade_exit": 1,
+    "all_files_preserved": true
+   }
+  ]
+ },
+ "record_integrity": {
+  "original_files": 38408,
+  "size_or_mtime_changes": 0,
+  "comparison_report_hashes_unchanged": true
+ },
+ "new_replays_this_round": 0,
+ "native_checks_this_round": {
+  "check_sim": "not repeated; simulator paths unchanged",
+  "smoke_world": "not queued, per instruction; orchestrating session runs at merge"
+ },
+ "unopened_worlds": [
+  "w44",
+  "w45"
+ ],
+ "outside_owned_path": {
+  "path": "src/fleetlab/contracts/oracle.py",
+  "change": "Minimal resolution callback; default contract resolution is unchanged."
+ },
+ "limits": {
+  "exact_counting_states": 100000,
+  "forty_class_fixture": "Three fixes exact; six fixes bounded in 0.639s, with 79989630 uncomputed sets (0.853%); topology-specific timing, not a universal guarantee.",
+  "additive_power": "Normal approximation at observed paired full-window SE; not a discrete-bootstrap power guarantee."
+ }
+}

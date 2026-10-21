@@ -1,0 +1,17 @@
+{
+  "format": "fleetlab.film-site/1",
+  "title": "The installation takes on a new job",
+  "lede": "A simulated robot installation whose policy never changes, and AI agents that make the installation around it do more. Story A: a shift lead asks for a new job; three shifts of an agent build it from the robot's skills, each starting from the checks and skills the last one saved, and the released job delivers on reserved starts where the naive chain does not. A second job has had three shifts on the installation's library; they reuse job one's checks, hand over new checks and skills, and the third's saved program ran on reserved starts beside the naive chain and stays in the library for the next shift. Story B: an agent builds a measurement on a robot fleet, its changes lift the fleet on a held-back panel, and its saved probe recipe runs again on a later fleet. Every clip and number resolves to a recorded run.",
+  "film": "~/.cache/robots-probes/demo/2026-10-20/film/final-9/film",
+  "record_source": "../record/record.md",
+  "record": "~/.cache/robots-probes/demo/2026-10-20/site/final-9/record/page",
+  "public": {
+    "aliases": {
+      "w80": "w08",
+      "w81": "w09"
+    },
+    "forbid": [
+      "(?<![A-Za-z0-9])w8[0-9](?![0-9])"
+    ]
+  }
+}

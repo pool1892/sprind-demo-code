@@ -1,0 +1,16 @@
+{
+  "format": "fleetlab.film-records/1",
+  "notes": "Rehearsal 4 binds story A to job one's investigations run-3 (the first shift) and run-5 (the second shift, run-3's library mounted); neither released. Story B binds to the engagement's evaluation and the recipe check.",
+  "records": {
+    "job_one": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/job_run.json",
+    "story_b_evaluation": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/summary.json",
+    "story_b_panel": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+    "story_b_second_use": "~/.cache/robots-probes/demo/2026-10-20/instrument/second-use/check-2/recipe-check.json",
+    "job_two": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/job_run.json",
+    "library": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/library/index.json",
+    "naive_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-01/run/log/job_episodes.parquet",
+    "tuned_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-02/run/log/job_episodes.parquet",
+    "fresh_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-03/run/log/job_episodes.parquet",
+    "second_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-04/run/log/job_episodes.parquet"
+  }
+}

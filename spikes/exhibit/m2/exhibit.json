@@ -1,0 +1,25 @@
+{
+ "format": "fleetlab.exhibit-manifest/1",
+ "hub_id": null,
+ "label": "Two rounds on the lead development fleet (development evidence, draft)",
+ "rounds": [
+  {
+   "engagement": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/engagement/engagement.json",
+   "round": 1
+  },
+  {
+   "engagement": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/engagement/engagement.json",
+   "round": 2
+  }
+ ],
+ "comparators": [
+  {
+   "name": "plain-search",
+   "kind": "plain_search",
+   "label": "plain search (told the site and the one setting)",
+   "record": "/var/tmp/robots-loop/runs/plain-search-w70/plain_search.json",
+   "attempts": "/var/tmp/robots-loop/runs/plain-search-w70/loop/evaluation/attempts.parquet"
+  }
+ ],
+ "annotations": "annotations.json"
+}

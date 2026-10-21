@@ -1,0 +1,5284 @@
+{
+ "reports": [
+  {
+   "world": "w41",
+   "source_report": "/home/cs/.cache/robots-probes/worlds/w41/oracle-distributions-20261009/oracle.json",
+   "source_sha256": "d811d4071c938900a27f73c32ab245a9739466410bf7e2a9c7bc6e4cd6436886",
+   "report_dir": "/home/cs/.cache/robots-probes/worlds/w41/oracle-unified-20261009",
+   "report_sha256": "e2baf295a957dbf76d1673cd789c5d3eac61d41e4c4bbf7cafb27fecff20f593",
+   "seconds": 5.537,
+   "exit_status": 0,
+   "chance_before": [
+    {
+     "budget": "k = 3",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.353,
+     "p5_points": 0.0,
+     "p95_points": 0.0,
+     "above_zero": 0.045,
+     "achievable_net": 67,
+     "mean_share": 0.0177,
+     "p5_share": 0.0,
+     "p95_share": 0.0,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 22369536,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [
+       [
+        -1,
+        122249
+       ],
+       [
+        0,
+        20815486
+       ],
+       [
+        10,
+        248469
+       ],
+       [
+        11,
+        122744
+       ],
+       [
+        12,
+        991
+       ],
+       [
+        17,
+        989
+       ],
+       [
+        18,
+        248967
+       ],
+       [
+        19,
+        251912
+       ],
+       [
+        20,
+        246981
+       ],
+       [
+        23,
+        991
+       ],
+       [
+        27,
+        991
+       ],
+       [
+        28,
+        252923
+       ],
+       [
+        29,
+        2987
+       ],
+       [
+        30,
+        1990
+       ],
+       [
+        31,
+        1978
+       ],
+       [
+        32,
+        4
+       ],
+       [
+        33,
+        2
+       ],
+       [
+        36,
+        4
+       ],
+       [
+        37,
+        2006
+       ],
+       [
+        38,
+        4977
+       ],
+       [
+        39,
+        2985
+       ],
+       [
+        40,
+        4
+       ],
+       [
+        41,
+        4
+       ],
+       [
+        43,
+        4
+       ],
+       [
+        45,
+        4
+       ],
+       [
+        46,
+        2000
+       ],
+       [
+        47,
+        2020
+       ],
+       [
+        48,
+        2000
+       ],
+       [
+        49,
+        16
+       ],
+       [
+        51,
+        8
+       ],
+       [
+        56,
+        12
+       ],
+       [
+        57,
+        20
+       ],
+       [
+        58,
+        16
+       ],
+       [
+        59,
+        8
+       ],
+       [
+        65,
+        8
+       ],
+       [
+        66,
+        12
+       ],
+       [
+        67,
+        8
+       ]
+      ],
+      "unvalued_sets": 32766,
+      "net_low": -204,
+      "net_high": 132,
+      "bounds": {
+       "mean_points": [
+        0.256,
+        0.403
+       ],
+       "p5_points": [
+        0.0,
+        0.0
+       ],
+       "p95_points": [
+        3.273,
+        3.274
+       ]
+      },
+      "missing": null
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "k = 6",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.807,
+     "p5_points": 0.0,
+     "p95_points": 8.333,
+     "above_zero": 0.11,
+     "achievable_net": 124,
+     "mean_share": 0.0219,
+     "p5_share": 0.0,
+     "p95_share": 0.2258,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 24582576566016,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [
+       [
+        -1,
+        242371647767
+       ],
+       [
+        0,
+        21225042699231
+       ],
+       [
+        10,
+        504720774989
+       ],
+       [
+        11,
+        244841063590
+       ],
+       [
+        12,
+        4958916992
+       ],
+       [
+        17,
+        4919108145
+       ],
+       [
+        18,
+        507249834084
+       ],
+       [
+        19,
+        521591407743
+       ],
+       [
+        20,
+        497250454935
+       ],
+       [
+        23,
+        4958916001
+       ],
+       [
+        27,
+        4958916001
+       ],
+       [
+        28,
+        526952778798
+       ],
+       [
+        29,
+        15161727649
+       ],
+       [
+        30,
+        10080455988
+       ],
+       [
+        31,
+        9838940446
+       ],
+       [
+        32,
+        79373684
+       ],
+       [
+        33,
+        40290959
+       ],
+       [
+        36,
+        80826911
+       ],
+       [
+        37,
+        10402578015
+       ],
+       [
+        38,
+        25242183645
+       ],
+       [
+        39,
+        15119961777
+       ],
+       [
+        40,
+        80826915
+       ],
+       [
+        41,
+        80339874
+       ],
+       [
+        43,
+        79373680
+       ],
+       [
+        45,
+        80339874
+       ],
+       [
+        46,
+        10283885506
+       ],
+       [
+        47,
+        10683854148
+       ],
+       [
+        48,
+        10282913412
+       ],
+       [
+        49,
+        321880045
+       ],
+       [
+        50,
+        968170
+       ],
+       [
+        51,
+        160689592
+       ],
+       [
+        53,
+        485065
+       ],
+       [
+        54,
+        979982
+       ],
+       [
+        55,
+        489001
+       ],
+       [
+        56,
+        245925552
+       ],
+       [
+        57,
+        409563082
+       ],
+       [
+        58,
+        323830185
+       ],
+       [
+        59,
+        160685656
+       ],
+       [
+        60,
+        1463079
+       ],
+       [
+        61,
+        1459147
+       ],
+       [
+        64,
+        983938
+       ],
+       [
+        65,
+        167555586
+       ],
+       [
+        66,
+        243967484
+       ],
+       [
+        67,
+        166084611
+       ],
+       [
+        69,
+        1948152
+       ],
+       [
+        71,
+        976042
+       ],
+       [
+        74,
+        7888
+       ],
+       [
+        75,
+        1991740
+       ],
+       [
+        76,
+        3916100
+       ],
+       [
+        77,
+        3924020
+       ],
+       [
+        78,
+        983954
+       ],
+       [
+        79,
+        976066
+       ],
+       [
+        80,
+        3948
+       ],
+       [
+        81,
+        3948
+       ],
+       [
+        82,
+        7936
+       ],
+       [
+        83,
+        3964
+       ],
+       [
+        84,
+        987886
+       ],
+       [
+        85,
+        1983780
+       ],
+       [
+        86,
+        1956040
+       ],
+       [
+        88,
+        3972
+       ],
+       [
+        89,
+        7888
+       ],
+       [
+        95,
+        15888
+       ],
+       [
+        96,
+        7888
+       ],
+       [
+        97,
+        7888
+       ],
+       [
+        98,
+        16
+       ],
+       [
+        99,
+        16
+       ],
+       [
+        102,
+        32
+       ],
+       [
+        103,
+        16
+       ],
+       [
+        104,
+        15824
+       ],
+       [
+        106,
+        7920
+       ],
+       [
+        108,
+        16
+       ],
+       [
+        124,
+        32
+       ]
+      ],
+      "unvalued_sets": 172915426222,
+      "net_low": -204,
+      "net_high": 132,
+      "bounds": {
+       "mean_points": [
+        0.253,
+        0.958
+       ],
+       "p5_points": [
+        0.0,
+        0.0
+       ],
+       "p95_points": [
+        5.654,
+        5.953
+       ]
+      },
+      "missing": null
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "4 h",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 1.72,
+     "p5_points": 0.0,
+     "p95_points": 8.333,
+     "above_zero": 0.235,
+     "achievable_net": 95,
+     "mean_share": 0.0608,
+     "p5_share": 0.0,
+     "p95_share": 0.2947,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+     },
+     "p95_points_interval": [
+      8.333,
+      13.691
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    },
+    {
+     "budget": "8 h",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 2.335,
+     "p5_points": 0.0,
+     "p95_points": 8.943,
+     "above_zero": 0.31,
+     "achievable_net": 124,
+     "mean_share": 0.0633,
+     "p5_share": 0.0,
+     "p95_share": 0.2423,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+     },
+     "p95_points_interval": [
+      8.333,
+      13.989
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    }
+   ],
+   "chance_after": [
+    {
+     "budget": "k = 3",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.353,
+     "p5_points": 0.0,
+     "p95_points": 0.0,
+     "above_zero": 0.045,
+     "achievable_net": 67,
+     "mean_share": 0.0177,
+     "p5_share": 0.0,
+     "p95_share": 0.0,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 22369536,
+      "mean_points": 0.348,
+      "p5_points": 0.0,
+      "p95_points": 3.274,
+      "histogram": [
+       [
+        -1,
+        125250
+       ],
+       [
+        0,
+        20833250
+       ],
+       [
+        10,
+        251502
+       ],
+       [
+        11,
+        125250
+       ],
+       [
+        12,
+        1003
+       ],
+       [
+        17,
+        1003
+       ],
+       [
+        18,
+        251001
+       ],
+       [
+        19,
+        252004
+       ],
+       [
+        20,
+        251001
+       ],
+       [
+        23,
+        1003
+       ],
+       [
+        27,
+        1003
+       ],
+       [
+        28,
+        253011
+       ],
+       [
+        29,
+        3011
+       ],
+       [
+        30,
+        2014
+       ],
+       [
+        31,
+        2006
+       ],
+       [
+        32,
+        4
+       ],
+       [
+        33,
+        2
+       ],
+       [
+        36,
+        4
+       ],
+       [
+        37,
+        2014
+       ],
+       [
+        38,
+        5021
+       ],
+       [
+        39,
+        3011
+       ],
+       [
+        40,
+        4
+       ],
+       [
+        41,
+        4
+       ],
+       [
+        43,
+        4
+       ],
+       [
+        45,
+        4
+       ],
+       [
+        46,
+        2008
+       ],
+       [
+        47,
+        2020
+       ],
+       [
+        48,
+        2016
+       ],
+       [
+        49,
+        16
+       ],
+       [
+        51,
+        8
+       ],
+       [
+        56,
+        12
+       ],
+       [
+        57,
+        20
+       ],
+       [
+        58,
+        16
+       ],
+       [
+        59,
+        8
+       ],
+       [
+        65,
+        8
+       ],
+       [
+        66,
+        12
+       ],
+       [
+        67,
+        8
+       ]
+      ],
+      "unvalued_sets": 0,
+      "net_low": -204,
+      "net_high": 132,
+      "bounds": null,
+      "missing": null,
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "k = 6",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.807,
+     "p5_points": 0.0,
+     "p95_points": 8.333,
+     "above_zero": 0.11,
+     "achievable_net": 124,
+     "mean_share": 0.0219,
+     "p5_share": 0.0,
+     "p95_share": 0.2258,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 24582576566016,
+      "mean_points": 0.695,
+      "p5_points": 0.0,
+      "p95_points": 5.655,
+      "histogram": [
+       [
+        -1,
+        257817718725
+       ],
+       [
+        0,
+        21312931414600
+       ],
+       [
+        10,
+        520822916700
+       ],
+       [
+        11,
+        257817718725
+       ],
+       [
+        12,
+        5208312500
+       ],
+       [
+        17,
+        5208312500
+       ],
+       [
+        18,
+        518229177075
+       ],
+       [
+        19,
+        523437489575
+       ],
+       [
+        20,
+        518229177075
+       ],
+       [
+        23,
+        5208312500
+       ],
+       [
+        27,
+        5208312500
+       ],
+       [
+        28,
+        528729385575
+       ],
+       [
+        29,
+        15666729250
+       ],
+       [
+        30,
+        10584043001
+       ],
+       [
+        31,
+        10416625000
+       ],
+       [
+        32,
+        83834501
+       ],
+       [
+        33,
+        41791750
+       ],
+       [
+        36,
+        83834501
+       ],
+       [
+        37,
+        10584043001
+       ],
+       [
+        38,
+        26166937750
+       ],
+       [
+        39,
+        15666729250
+       ],
+       [
+        40,
+        83834501
+       ],
+       [
+        41,
+        83834501
+       ],
+       [
+        43,
+        83834501
+       ],
+       [
+        45,
+        83834501
+       ],
+       [
+        46,
+        10458416750
+       ],
+       [
+        47,
+        10710423258
+       ],
+       [
+        48,
+        10627091762
+       ],
+       [
+        49,
+        335841009
+       ],
+       [
+        50,
+        1008018
+       ],
+       [
+        51,
+        168172007
+       ],
+       [
+        53,
+        503005
+       ],
+       [
+        54,
+        1008018
+       ],
+       [
+        55,
+        503005
+       ],
+       [
+        56,
+        253517531
+       ],
+       [
+        57,
+        420681520
+       ],
+       [
+        58,
+        337352032
+       ],
+       [
+        59,
+        167669002
+       ],
+       [
+        60,
+        1511023
+       ],
+       [
+        61,
+        1511023
+       ],
+       [
+        64,
+        1008018
+       ],
+       [
+        65,
+        169683030
+       ],
+       [
+        66,
+        252006508
+       ],
+       [
+        67,
+        170192063
+       ],
+       [
+        69,
+        2016036
+       ],
+       [
+        71,
+        1012038
+       ],
+       [
+        74,
+        8048
+       ],
+       [
+        75,
+        2024076
+       ],
+       [
+        76,
+        4040112
+       ],
+       [
+        77,
+        4036092
+       ],
+       [
+        78,
+        1020086
+       ],
+       [
+        79,
+        1012038
+       ],
+       [
+        80,
+        4020
+       ],
+       [
+        81,
+        4020
+       ],
+       [
+        82,
+        8048
+       ],
+       [
+        83,
+        4020
+       ],
+       [
+        84,
+        1016066
+       ],
+       [
+        85,
+        2024076
+       ],
+       [
+        86,
+        2016036
+       ],
+       [
+        88,
+        4020
+       ],
+       [
+        89,
+        8048
+       ],
+       [
+        95,
+        16112
+       ],
+       [
+        96,
+        8048
+       ],
+       [
+        97,
+        8048
+       ],
+       [
+        98,
+        16
+       ],
+       [
+        99,
+        16
+       ],
+       [
+        102,
+        32
+       ],
+       [
+        103,
+        16
+       ],
+       [
+        104,
+        16096
+       ],
+       [
+        106,
+        8064
+       ],
+       [
+        108,
+        16
+       ],
+       [
+        124,
+        32
+       ]
+      ],
+      "unvalued_sets": 0,
+      "net_low": -204,
+      "net_high": 132,
+      "bounds": null,
+      "missing": null,
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "4 h",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 1.72,
+     "p5_points": 0.0,
+     "p95_points": 8.333,
+     "above_zero": 0.235,
+     "achievable_net": 95,
+     "mean_share": 0.0608,
+     "p5_share": 0.0,
+     "p95_share": 0.2947,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit",
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": [
+      8.333,
+      13.691
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    },
+    {
+     "budget": "8 h",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 2.335,
+     "p5_points": 0.0,
+     "p95_points": 8.943,
+     "above_zero": 0.31,
+     "achievable_net": 124,
+     "mean_share": 0.0633,
+     "p5_share": 0.0,
+     "p95_share": 0.2423,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit",
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": [
+      8.333,
+      13.989
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    }
+   ]
+  },
+  {
+   "world": "w42",
+   "source_report": "/home/cs/.cache/robots-probes/worlds/w42/oracle-distributions-20261009/oracle.json",
+   "source_sha256": "67c2e578f3547fb07cdcd2a1bdc83f8a43c08bc6fae4cb566352789ee3eae689",
+   "report_dir": "/home/cs/.cache/robots-probes/worlds/w42/oracle-unified-20261009",
+   "report_sha256": "60d7c3aaf0ad922a022c3ce6eaf86fe3e51c86eb4501f65642f62da3c06ef67a",
+   "seconds": 9.172,
+   "exit_status": 0,
+   "chance_before": [
+    {
+     "budget": "k = 3",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.424,
+     "p5_points": 0.0,
+     "p95_points": 2.47,
+     "above_zero": 0.09,
+     "achievable_net": 104,
+     "mean_share": 0.0137,
+     "p5_share": 0.0,
+     "p95_share": 0.0798,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 22369536,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [
+       [
+        -3,
+        120769
+       ],
+       [
+        -2,
+        245970
+       ],
+       [
+        -1,
+        244014
+       ],
+       [
+        0,
+        19604746
+       ],
+       [
+        1,
+        244003
+       ],
+       [
+        2,
+        359885
+       ],
+       [
+        3,
+        2949
+       ],
+       [
+        4,
+        979
+       ],
+       [
+        5,
+        988
+       ],
+       [
+        6,
+        1984
+       ],
+       [
+        7,
+        5894
+       ],
+       [
+        8,
+        480688
+       ],
+       [
+        9,
+        4947
+       ],
+       [
+        10,
+        5896
+       ],
+       [
+        11,
+        1510
+       ],
+       [
+        12,
+        4969
+       ],
+       [
+        13,
+        3955
+       ],
+       [
+        14,
+        363817
+       ],
+       [
+        15,
+        242078
+       ],
+       [
+        16,
+        6897
+       ],
+       [
+        17,
+        3944
+       ],
+       [
+        18,
+        28
+       ],
+       [
+        19,
+        12
+       ],
+       [
+        20,
+        16
+       ],
+       [
+        21,
+        34
+       ],
+       [
+        22,
+        5928
+       ],
+       [
+        23,
+        5912
+       ],
+       [
+        24,
+        2010
+       ],
+       [
+        25,
+        238170
+       ],
+       [
+        26,
+        1984
+       ],
+       [
+        27,
+        2937
+       ],
+       [
+        28,
+        1015
+       ],
+       [
+        29,
+        2947
+       ],
+       [
+        30,
+        20
+       ],
+       [
+        31,
+        32
+       ],
+       [
+        32,
+        28
+       ],
+       [
+        33,
+        3910
+       ],
+       [
+        34,
+        20
+       ],
+       [
+        35,
+        24
+       ],
+       [
+        36,
+        10
+       ],
+       [
+        37,
+        40
+       ],
+       [
+        38,
+        16
+       ],
+       [
+        39,
+        2945
+       ],
+       [
+        40,
+        1960
+       ],
+       [
+        41,
+        28
+       ],
+       [
+        42,
+        16
+       ],
+       [
+        43,
+        4
+       ],
+       [
+        47,
+        20
+       ],
+       [
+        48,
+        17
+       ],
+       [
+        49,
+        493
+       ],
+       [
+        50,
+        3
+       ],
+       [
+        51,
+        3
+       ],
+       [
+        52,
+        491
+       ],
+       [
+        53,
+        121272
+       ],
+       [
+        54,
+        1493
+       ],
+       [
+        55,
+        1479
+       ],
+       [
+        56,
+        9
+       ],
+       [
+        57,
+        4
+       ],
+       [
+        58,
+        2
+       ],
+       [
+        59,
+        981
+       ],
+       [
+        60,
+        18
+       ],
+       [
+        61,
+        988
+       ],
+       [
+        62,
+        6
+       ],
+       [
+        63,
+        7
+       ],
+       [
+        66,
+        5
+       ],
+       [
+        67,
+        1483
+       ],
+       [
+        68,
+        7
+       ],
+       [
+        69,
+        6
+       ],
+       [
+        70,
+        2
+       ],
+       [
+        73,
+        6
+       ],
+       [
+        74,
+        2
+       ],
+       [
+        75,
+        4
+       ],
+       [
+        77,
+        4
+       ],
+       [
+        78,
+        989
+       ],
+       [
+        79,
+        987
+       ],
+       [
+        80,
+        12
+       ],
+       [
+        81,
+        8
+       ],
+       [
+        84,
+        4
+       ],
+       [
+        85,
+        4
+       ],
+       [
+        86,
+        4
+       ],
+       [
+        87,
+        4
+       ],
+       [
+        92,
+        6
+       ],
+       [
+        93,
+        6
+       ],
+       [
+        104,
+        4
+       ]
+      ],
+      "unvalued_sets": 17775,
+      "net_low": -190,
+      "net_high": 146,
+      "bounds": {
+       "mean_points": [
+        0.311,
+        0.391
+       ],
+       "p5_points": [
+        0.0,
+        0.0
+       ],
+       "p95_points": [
+        2.38,
+        2.381
+       ]
+      },
+      "missing": null
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "k = 6",
+     "draws": 200,
+     "valued": 199,
+     "skipped_fresh_replay": 1,
+     "skipped_error": 0,
+     "mean_points": null,
+     "p5_points": null,
+     "p95_points": null,
+     "above_zero": null,
+     "achievable_net": 138,
+     "mean_share": null,
+     "p5_share": null,
+     "p95_share": null,
+     "missing": "unavailable: 1 of 200 draws lack values (1 need replays, 0 resolution errors)",
+     "bounds": {
+      "mean_points": [
+       0.369,
+       0.869
+      ],
+      "p5_points": [
+       0.0,
+       0.0
+      ],
+      "p95_points": [
+       4.182,
+       4.464
+      ],
+      "mean_share": [
+       0.009,
+       0.0212
+      ],
+      "p5_share": [
+       0.0,
+       0.0
+      ],
+      "p95_share": [
+       0.1018,
+       0.1087
+      ],
+      "above_zero": [
+       0.18,
+       0.185
+      ]
+     },
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 24582576566016,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [
+       [
+        -3,
+        235063794281
+       ],
+       [
+        -2,
+        491894675455
+       ],
+       [
+        -1,
+        482494619979
+       ],
+       [
+        0,
+        18858062351643
+       ],
+       [
+        1,
+        482283006720
+       ],
+       [
+        2,
+        693885254772
+       ],
+       [
+        3,
+        14403462156
+       ],
+       [
+        4,
+        4726579326
+       ],
+       [
+        5,
+        4900125538
+       ],
+       [
+        6,
+        9955020574
+       ],
+       [
+        7,
+        28733134858
+       ],
+       [
+        8,
+        929616859273
+       ],
+       [
+        9,
+        24634015865
+       ],
+       [
+        10,
+        28783405411
+       ],
+       [
+        11,
+        7902683612
+       ],
+       [
+        12,
+        25067520197
+       ],
+       [
+        13,
+        19666141757
+       ],
+       [
+        14,
+        713102163262
+       ],
+       [
+        15,
+        473486796922
+       ],
+       [
+        16,
+        33931319783
+       ],
+       [
+        17,
+        19450392993
+       ],
+       [
+        18,
+        548717615
+       ],
+       [
+        19,
+        240809234
+       ],
+       [
+        20,
+        324980558
+       ],
+       [
+        21,
+        676275562
+       ],
+       [
+        22,
+        29407933841
+       ],
+       [
+        23,
+        29100498817
+       ],
+       [
+        24,
+        10482908777
+       ],
+       [
+        25,
+        454746594230
+       ],
+       [
+        26,
+        9972425904
+       ],
+       [
+        27,
+        14187867730
+       ],
+       [
+        28,
+        5428061270
+       ],
+       [
+        29,
+        14369801532
+       ],
+       [
+        30,
+        405318956
+       ],
+       [
+        31,
+        632209198
+       ],
+       [
+        32,
+        550956425
+       ],
+       [
+        33,
+        18795458774
+       ],
+       [
+        34,
+        397892182
+       ],
+       [
+        35,
+        468337259
+       ],
+       [
+        36,
+        215883699
+       ],
+       [
+        37,
+        789929948
+       ],
+       [
+        38,
+        320801321
+       ],
+       [
+        39,
+        14339042504
+       ],
+       [
+        40,
+        9498758672
+       ],
+       [
+        41,
+        547593523
+       ],
+       [
+        42,
+        316141573
+       ],
+       [
+        43,
+        84623807
+       ],
+       [
+        44,
+        2957642
+       ],
+       [
+        45,
+        5842548
+       ],
+       [
+        46,
+        9173427
+       ],
+       [
+        47,
+        396955288
+       ],
+       [
+        48,
+        331507261
+       ],
+       [
+        49,
+        2440482028
+       ],
+       [
+        50,
+        66993467
+       ],
+       [
+        51,
+        64444279
+       ],
+       [
+        52,
+        2393253284
+       ],
+       [
+        53,
+        237694334433
+       ],
+       [
+        54,
+        7560268732
+       ],
+       [
+        55,
+        7295880238
+       ],
+       [
+        56,
+        183972398
+       ],
+       [
+        57,
+        80043365
+       ],
+       [
+        58,
+        40566827
+       ],
+       [
+        59,
+        4763297740
+       ],
+       [
+        60,
+        354543038
+       ],
+       [
+        61,
+        4904684224
+       ],
+       [
+        62,
+        128764125
+       ],
+       [
+        63,
+        138986532
+       ],
+       [
+        64,
+        2365734
+       ],
+       [
+        65,
+        1235986
+       ],
+       [
+        66,
+        99578703
+       ],
+       [
+        67,
+        7368998020
+       ],
+       [
+        68,
+        143698025
+       ],
+       [
+        69,
+        121136895
+       ],
+       [
+        70,
+        41800091
+       ],
+       [
+        71,
+        1221187
+       ],
+       [
+        72,
+        1211341
+       ],
+       [
+        73,
+        117517865
+       ],
+       [
+        74,
+        44648652
+       ],
+       [
+        75,
+        80862521
+       ],
+       [
+        76,
+        3672022
+       ],
+       [
+        77,
+        79170195
+       ],
+       [
+        78,
+        4922482144
+       ],
+       [
+        79,
+        4881753993
+       ],
+       [
+        80,
+        238636600
+       ],
+       [
+        81,
+        159970633
+       ],
+       [
+        82,
+        3394520
+       ],
+       [
+        83,
+        984008
+       ],
+       [
+        84,
+        78456574
+       ],
+       [
+        85,
+        83704223
+       ],
+       [
+        86,
+        83508184
+       ],
+       [
+        87,
+        80671373
+       ],
+       [
+        88,
+        3652514
+       ],
+       [
+        89,
+        983169
+       ],
+       [
+        90,
+        45230
+       ],
+       [
+        91,
+        1939429
+       ],
+       [
+        92,
+        121861818
+       ],
+       [
+        93,
+        119946241
+       ],
+       [
+        94,
+        3185007
+       ],
+       [
+        95,
+        1962168
+       ],
+       [
+        96,
+        510701
+       ],
+       [
+        97,
+        15760
+       ],
+       [
+        98,
+        1443663
+       ],
+       [
+        99,
+        1498475
+       ],
+       [
+        100,
+        1009634
+       ],
+       [
+        101,
+        990182
+       ],
+       [
+        102,
+        508889
+       ],
+       [
+        103,
+        1928620
+       ],
+       [
+        104,
+        77003379
+       ],
+       [
+        105,
+        1459231
+       ],
+       [
+        106,
+        1928704
+       ],
+       [
+        107,
+        506705
+       ],
+       [
+        108,
+        6012
+       ],
+       [
+        109,
+        11876
+       ],
+       [
+        110,
+        964402
+       ],
+       [
+        111,
+        35292
+       ],
+       [
+        112,
+        962506
+       ],
+       [
+        113,
+        19760
+       ],
+       [
+        114,
+        7856
+       ],
+       [
+        115,
+        144
+       ],
+       [
+        116,
+        5936
+       ],
+       [
+        117,
+        27508
+       ],
+       [
+        118,
+        1435687
+       ],
+       [
+        119,
+        13852
+       ],
+       [
+        120,
+        11812
+       ],
+       [
+        121,
+        3996
+       ],
+       [
+        122,
+        24
+       ],
+       [
+        123,
+        64
+       ],
+       [
+        124,
+        11772
+       ],
+       [
+        125,
+        160
+       ],
+       [
+        126,
+        7848
+       ],
+       [
+        127,
+        88
+       ],
+       [
+        128,
+        32
+       ],
+       [
+        130,
+        8
+       ],
+       [
+        131,
+        48
+       ],
+       [
+        132,
+        3940
+       ],
+       [
+        133,
+        8
+       ],
+       [
+        135,
+        16
+       ],
+       [
+        138,
+        16
+       ]
+      ],
+      "unvalued_sets": 95839878181,
+      "net_low": -190,
+      "net_high": 146,
+      "bounds": {
+       "mean_points": [
+        0.484,
+        0.875
+       ],
+       "p5_points": [
+        -0.298,
+        0.0
+       ],
+       "p95_points": [
+        4.464,
+        4.465
+       ]
+      },
+      "missing": null
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "4 h",
+     "draws": 200,
+     "valued": 196,
+     "skipped_fresh_replay": 4,
+     "skipped_error": 0,
+     "mean_points": null,
+     "p5_points": null,
+     "p95_points": null,
+     "above_zero": null,
+     "achievable_net": 70,
+     "mean_share": null,
+     "p5_share": null,
+     "p95_share": null,
+     "missing": "unavailable: 4 of 200 draws lack values (4 need replays, 0 resolution errors)",
+     "bounds": {
+      "mean_points": [
+       -0.357,
+       1.643
+      ],
+      "p5_points": [
+       -0.298,
+       -0.298
+      ],
+      "p95_points": [
+       4.464,
+       4.866
+      ],
+      "mean_share": [
+       -0.0171,
+       0.0789
+      ],
+      "p5_share": [
+       -0.0143,
+       -0.0143
+      ],
+      "p95_share": [
+       0.2143,
+       0.2336
+      ],
+      "above_zero": [
+       0.21,
+       0.23
+      ]
+     },
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+     },
+     "p95_points_interval": [
+      4.166,
+      43.453
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    },
+    {
+     "budget": "8 h",
+     "draws": 200,
+     "valued": 193,
+     "skipped_fresh_replay": 7,
+     "skipped_error": 0,
+     "mean_points": null,
+     "p5_points": null,
+     "p95_points": null,
+     "above_zero": null,
+     "achievable_net": 132,
+     "mean_share": null,
+     "p5_share": null,
+     "p95_share": null,
+     "missing": "unavailable: 7 of 200 draws lack values (7 need replays, 0 resolution errors)",
+     "bounds": {
+      "mean_points": [
+       -0.32,
+       3.18
+      ],
+      "p5_points": [
+       -0.595,
+       -0.312
+      ],
+      "p95_points": [
+       7.44,
+       15.774
+      ],
+      "mean_share": [
+       -0.0081,
+       0.0809
+      ],
+      "p5_share": [
+       -0.0152,
+       -0.008
+      ],
+      "p95_share": [
+       0.1894,
+       0.4015
+      ],
+      "above_zero": [
+       0.335,
+       0.37
+      ]
+     },
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+     },
+     "p95_points_interval": [
+      7.44,
+      43.453
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    }
+   ],
+   "chance_after": [
+    {
+     "budget": "k = 3",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.424,
+     "p5_points": 0.0,
+     "p95_points": 2.47,
+     "above_zero": 0.09,
+     "achievable_net": 104,
+     "mean_share": 0.0137,
+     "p5_share": 0.0,
+     "p95_share": 0.0798,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 22369536,
+      "mean_points": 0.358,
+      "p5_points": 0.0,
+      "p95_points": 2.381,
+      "histogram": [
+       [
+        -3,
+        120786
+       ],
+       [
+        -2,
+        246004
+       ],
+       [
+        -1,
+        244051
+       ],
+       [
+        0,
+        19613032
+       ],
+       [
+        1,
+        244043
+       ],
+       [
+        2,
+        361398
+       ],
+       [
+        3,
+        2955
+       ],
+       [
+        4,
+        985
+       ],
+       [
+        5,
+        994
+       ],
+       [
+        6,
+        1996
+       ],
+       [
+        7,
+        5912
+       ],
+       [
+        8,
+        483686
+       ],
+       [
+        9,
+        4959
+       ],
+       [
+        10,
+        5914
+       ],
+       [
+        11,
+        1513
+       ],
+       [
+        12,
+        4975
+       ],
+       [
+        13,
+        3967
+       ],
+       [
+        14,
+        365336
+       ],
+       [
+        15,
+        242112
+       ],
+       [
+        16,
+        6915
+       ],
+       [
+        17,
+        3956
+       ],
+       [
+        18,
+        28
+       ],
+       [
+        19,
+        12
+       ],
+       [
+        20,
+        16
+       ],
+       [
+        21,
+        34
+       ],
+       [
+        22,
+        5952
+       ],
+       [
+        23,
+        5936
+       ],
+       [
+        24,
+        2022
+       ],
+       [
+        25,
+        241131
+       ],
+       [
+        26,
+        1996
+       ],
+       [
+        27,
+        2959
+       ],
+       [
+        28,
+        1021
+       ],
+       [
+        29,
+        2953
+       ],
+       [
+        30,
+        20
+       ],
+       [
+        31,
+        32
+       ],
+       [
+        32,
+        28
+       ],
+       [
+        33,
+        3942
+       ],
+       [
+        34,
+        20
+       ],
+       [
+        35,
+        24
+       ],
+       [
+        36,
+        10
+       ],
+       [
+        37,
+        40
+       ],
+       [
+        38,
+        16
+       ],
+       [
+        39,
+        2967
+       ],
+       [
+        40,
+        1972
+       ],
+       [
+        41,
+        28
+       ],
+       [
+        42,
+        16
+       ],
+       [
+        43,
+        4
+       ],
+       [
+        47,
+        20
+       ],
+       [
+        48,
+        17
+       ],
+       [
+        49,
+        493
+       ],
+       [
+        50,
+        3
+       ],
+       [
+        51,
+        3
+       ],
+       [
+        52,
+        491
+       ],
+       [
+        53,
+        121289
+       ],
+       [
+        54,
+        1493
+       ],
+       [
+        55,
+        1482
+       ],
+       [
+        56,
+        9
+       ],
+       [
+        57,
+        4
+       ],
+       [
+        58,
+        2
+       ],
+       [
+        59,
+        981
+       ],
+       [
+        60,
+        18
+       ],
+       [
+        61,
+        994
+       ],
+       [
+        62,
+        6
+       ],
+       [
+        63,
+        7
+       ],
+       [
+        66,
+        5
+       ],
+       [
+        67,
+        1486
+       ],
+       [
+        68,
+        7
+       ],
+       [
+        69,
+        6
+       ],
+       [
+        70,
+        2
+       ],
+       [
+        73,
+        6
+       ],
+       [
+        74,
+        2
+       ],
+       [
+        75,
+        4
+       ],
+       [
+        77,
+        4
+       ],
+       [
+        78,
+        995
+       ],
+       [
+        79,
+        987
+       ],
+       [
+        80,
+        12
+       ],
+       [
+        81,
+        8
+       ],
+       [
+        84,
+        4
+       ],
+       [
+        85,
+        4
+       ],
+       [
+        86,
+        4
+       ],
+       [
+        87,
+        4
+       ],
+       [
+        92,
+        6
+       ],
+       [
+        93,
+        6
+       ],
+       [
+        104,
+        4
+       ]
+      ],
+      "unvalued_sets": 0,
+      "net_low": -190,
+      "net_high": 146,
+      "bounds": null,
+      "missing": null,
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "k = 6",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.664,
+     "p5_points": 0.0,
+     "p95_points": 4.182,
+     "above_zero": 0.185,
+     "achievable_net": 138,
+     "mean_share": 0.0162,
+     "p5_share": 0.0,
+     "p95_share": 0.1018,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 24582576566016,
+      "mean_points": 0.715,
+      "p5_points": 0.0,
+      "p95_points": 4.464,
+      "histogram": [
+       [
+        -3,
+        235391138808
+       ],
+       [
+        -2,
+        492567582312
+       ],
+       [
+        -1,
+        483217422183
+       ],
+       [
+        0,
+        18897568540303
+       ],
+       [
+        1,
+        483065051708
+       ],
+       [
+        2,
+        701826342063
+       ],
+       [
+        3,
+        14532397171
+       ],
+       [
+        4,
+        4846715069
+       ],
+       [
+        5,
+        5023557153
+       ],
+       [
+        6,
+        10204085901
+       ],
+       [
+        7,
+        29108587151
+       ],
+       [
+        8,
+        944971631439
+       ],
+       [
+        9,
+        24893123413
+       ],
+       [
+        10,
+        29156033044
+       ],
+       [
+        11,
+        7974121418
+       ],
+       [
+        12,
+        25212149650
+       ],
+       [
+        13,
+        19916512403
+       ],
+       [
+        14,
+        721175560548
+       ],
+       [
+        15,
+        474152570210
+       ],
+       [
+        16,
+        34313893559
+       ],
+       [
+        17,
+        19703975102
+       ],
+       [
+        18,
+        556139635
+       ],
+       [
+        19,
+        243850867
+       ],
+       [
+        20,
+        330994193
+       ],
+       [
+        21,
+        684549287
+       ],
+       [
+        22,
+        29904078494
+       ],
+       [
+        23,
+        29597992147
+       ],
+       [
+        24,
+        10735654552
+       ],
+       [
+        25,
+        469391908411
+       ],
+       [
+        26,
+        10220424863
+       ],
+       [
+        27,
+        14626108139
+       ],
+       [
+        28,
+        5558040835
+       ],
+       [
+        29,
+        14500452221
+       ],
+       [
+        30,
+        410906564
+       ],
+       [
+        31,
+        643138624
+       ],
+       [
+        32,
+        564170406
+       ],
+       [
+        33,
+        19430368722
+       ],
+       [
+        34,
+        407288177
+       ],
+       [
+        35,
+        480033403
+       ],
+       [
+        36,
+        220271979
+       ],
+       [
+        37,
+        802861898
+       ],
+       [
+        38,
+        328690818
+       ],
+       [
+        39,
+        14781138341
+       ],
+       [
+        40,
+        9739928274
+       ],
+       [
+        41,
+        560805282
+       ],
+       [
+        42,
+        324015733
+       ],
+       [
+        43,
+        86213118
+       ],
+       [
+        44,
+        3009714
+       ],
+       [
+        45,
+        5946240
+       ],
+       [
+        46,
+        9330243
+       ],
+       [
+        47,
+        407306097
+       ],
+       [
+        48,
+        339321049
+       ],
+       [
+        49,
+        2442679697
+       ],
+       [
+        50,
+        67144745
+       ],
+       [
+        51,
+        64903868
+       ],
+       [
+        52,
+        2395310225
+       ],
+       [
+        53,
+        238026272758
+       ],
+       [
+        54,
+        7572061459
+       ],
+       [
+        55,
+        7360275984
+       ],
+       [
+        56,
+        185232686
+       ],
+       [
+        57,
+        81538109
+       ],
+       [
+        58,
+        40601637
+       ],
+       [
+        59,
+        4767323270
+       ],
+       [
+        60,
+        356127875
+       ],
+       [
+        61,
+        5026707584
+       ],
+       [
+        62,
+        131090794
+       ],
+       [
+        63,
+        140858031
+       ],
+       [
+        64,
+        2385765
+       ],
+       [
+        65,
+        1245199
+       ],
+       [
+        66,
+        100717757
+       ],
+       [
+        67,
+        7435506412
+       ],
+       [
+        68,
+        144179014
+       ],
+       [
+        69,
+        121926173
+       ],
+       [
+        70,
+        42550485
+       ],
+       [
+        71,
+        1236186
+       ],
+       [
+        72,
+        1220388
+       ],
+       [
+        73,
+        118286024
+       ],
+       [
+        74,
+        45410876
+       ],
+       [
+        75,
+        82353466
+       ],
+       [
+        76,
+        3707081
+       ],
+       [
+        77,
+        79930838
+       ],
+       [
+        78,
+        5043413290
+       ],
+       [
+        79,
+        4887986278
+       ],
+       [
+        80,
+        241397480
+       ],
+       [
+        81,
+        161515373
+       ],
+       [
+        82,
+        3426566
+       ],
+       [
+        83,
+        996056
+       ],
+       [
+        84,
+        79917953
+       ],
+       [
+        85,
+        83804679
+       ],
+       [
+        86,
+        85992420
+       ],
+       [
+        87,
+        82171583
+       ],
+       [
+        88,
+        3701315
+       ],
+       [
+        89,
+        995227
+       ],
+       [
+        90,
+        45458
+       ],
+       [
+        91,
+        1963389
+       ],
+       [
+        92,
+        124593658
+       ],
+       [
+        93,
+        120746324
+       ],
+       [
+        94,
+        3210278
+       ],
+       [
+        95,
+        1978376
+       ],
+       [
+        96,
+        516801
+       ],
+       [
+        97,
+        15880
+       ],
+       [
+        98,
+        1465399
+       ],
+       [
+        99,
+        1504935
+       ],
+       [
+        100,
+        1029634
+       ],
+       [
+        101,
+        1002270
+       ],
+       [
+        102,
+        515025
+       ],
+       [
+        103,
+        1952452
+       ],
+       [
+        104,
+        78458570
+       ],
+       [
+        105,
+        1477239
+       ],
+       [
+        106,
+        1960432
+       ],
+       [
+        107,
+        512845
+       ],
+       [
+        108,
+        6064
+       ],
+       [
+        109,
+        11964
+       ],
+       [
+        110,
+        976334
+       ],
+       [
+        111,
+        35588
+       ],
+       [
+        112,
+        982282
+       ],
+       [
+        113,
+        19928
+       ],
+       [
+        114,
+        7936
+       ],
+       [
+        115,
+        144
+       ],
+       [
+        116,
+        5980
+       ],
+       [
+        117,
+        27724
+       ],
+       [
+        118,
+        1457455
+       ],
+       [
+        119,
+        13944
+       ],
+       [
+        120,
+        11900
+       ],
+       [
+        121,
+        4036
+       ],
+       [
+        122,
+        24
+       ],
+       [
+        123,
+        64
+       ],
+       [
+        124,
+        11860
+       ],
+       [
+        125,
+        160
+       ],
+       [
+        126,
+        7928
+       ],
+       [
+        127,
+        88
+       ],
+       [
+        128,
+        32
+       ],
+       [
+        130,
+        8
+       ],
+       [
+        131,
+        48
+       ],
+       [
+        132,
+        3980
+       ],
+       [
+        133,
+        8
+       ],
+       [
+        135,
+        16
+       ],
+       [
+        138,
+        16
+       ]
+      ],
+      "unvalued_sets": 0,
+      "net_low": -190,
+      "net_high": 146,
+      "bounds": null,
+      "missing": null,
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "4 h",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.798,
+     "p5_points": -0.298,
+     "p95_points": 4.464,
+     "above_zero": 0.22,
+     "achievable_net": 70,
+     "mean_share": 0.0383,
+     "p5_share": -0.0143,
+     "p95_share": 0.2143,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit",
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": [
+      4.166,
+      7.441
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    },
+    {
+     "budget": "8 h",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 1.75,
+     "p5_points": -0.312,
+     "p95_points": 7.44,
+     "above_zero": 0.36,
+     "achievable_net": 132,
+     "mean_share": 0.0445,
+     "p5_share": -0.008,
+     "p95_share": 0.1894,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit",
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": [
+      7.44,
+      15.774
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    }
+   ]
+  },
+  {
+   "world": "w43",
+   "source_report": "/home/cs/.cache/robots-probes/worlds/w43/oracle-distributions-20261009/oracle.json",
+   "source_sha256": "424146ba1086557e24c11a56c3ed2cacb968b82b1f0529c4a57df94451a9bfc9",
+   "report_dir": "/home/cs/.cache/robots-probes/worlds/w43/oracle-unified-20261009",
+   "report_sha256": "76084752f2f34e2384e152b25ecf15153ba6a4287fd8e0a5cdd0ee672045396c",
+   "seconds": 5.678,
+   "exit_status": 0,
+   "chance_before": [
+    {
+     "budget": "k = 3",
+     "draws": 200,
+     "valued": 199,
+     "skipped_fresh_replay": 1,
+     "skipped_error": 0,
+     "mean_points": null,
+     "p5_points": null,
+     "p95_points": null,
+     "above_zero": null,
+     "achievable_net": 65,
+     "mean_share": null,
+     "p5_share": null,
+     "p95_share": null,
+     "missing": "unavailable: 1 of 200 draws lack values (1 need replays, 0 resolution errors)",
+     "bounds": {
+      "mean_points": [
+       -0.021,
+       0.479
+      ],
+      "p5_points": [
+       0.0,
+       0.0
+      ],
+      "p95_points": [
+       3.274,
+       3.289
+      ],
+      "mean_share": [
+       -0.0011,
+       0.0248
+      ],
+      "p5_share": [
+       0.0,
+       0.0
+      ],
+      "p95_share": [
+       0.1692,
+       0.17
+      ],
+      "above_zero": [
+       0.1,
+       0.105
+      ]
+     },
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 22369536,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [
+       [
+        -5,
+        974
+       ],
+       [
+        -4,
+        488
+       ],
+       [
+        -3,
+        239118
+       ],
+       [
+        -2,
+        239618
+       ],
+       [
+        -1,
+        122231
+       ],
+       [
+        0,
+        19368013
+       ],
+       [
+        1,
+        476769
+       ],
+       [
+        2,
+        120301
+       ],
+       [
+        3,
+        1946
+       ],
+       [
+        4,
+        6
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1959
+       ],
+       [
+        7,
+        2447
+       ],
+       [
+        8,
+        1974
+       ],
+       [
+        9,
+        479248
+       ],
+       [
+        10,
+        12722
+       ],
+       [
+        11,
+        245528
+       ],
+       [
+        12,
+        245019
+       ],
+       [
+        13,
+        4918
+       ],
+       [
+        14,
+        241083
+       ],
+       [
+        15,
+        5876
+       ],
+       [
+        16,
+        3931
+       ],
+       [
+        17,
+        239136
+       ],
+       [
+        18,
+        7339
+       ],
+       [
+        19,
+        239157
+       ],
+       [
+        20,
+        5894
+       ],
+       [
+        21,
+        4919
+       ],
+       [
+        22,
+        62
+       ],
+       [
+        23,
+        5918
+       ],
+       [
+        24,
+        86
+       ],
+       [
+        25,
+        1996
+       ],
+       [
+        26,
+        6859
+       ],
+       [
+        27,
+        90
+       ],
+       [
+        28,
+        4915
+       ],
+       [
+        29,
+        3968
+       ],
+       [
+        30,
+        74
+       ],
+       [
+        31,
+        3920
+       ],
+       [
+        32,
+        54
+       ],
+       [
+        33,
+        1968
+       ],
+       [
+        34,
+        32
+       ],
+       [
+        35,
+        46
+       ],
+       [
+        36,
+        1960
+       ],
+       [
+        37,
+        2018
+       ],
+       [
+        38,
+        52
+       ],
+       [
+        39,
+        1960
+       ],
+       [
+        40,
+        56
+       ],
+       [
+        41,
+        8
+       ],
+       [
+        42,
+        20
+       ],
+       [
+        43,
+        20
+       ],
+       [
+        45,
+        24
+       ],
+       [
+        46,
+        4
+       ],
+       [
+        47,
+        4
+       ],
+       [
+        48,
+        12
+       ],
+       [
+        49,
+        8
+       ],
+       [
+        50,
+        8
+       ],
+       [
+        51,
+        16
+       ],
+       [
+        53,
+        8
+       ],
+       [
+        55,
+        8
+       ],
+       [
+        57,
+        8
+       ],
+       [
+        65,
+        8
+       ]
+      ],
+      "unvalued_sets": 22731,
+      "net_low": -208,
+      "net_high": 128,
+      "bounds": {
+       "mean_points": [
+        0.244,
+        0.347
+       ],
+       "p5_points": [
+        0.0,
+        0.0
+       ],
+       "p95_points": [
+        3.273,
+        3.274
+       ]
+      },
+      "missing": null
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "k = 6",
+     "draws": 200,
+     "valued": 198,
+     "skipped_fresh_replay": 2,
+     "skipped_error": 0,
+     "mean_points": null,
+     "p5_points": null,
+     "p95_points": null,
+     "above_zero": null,
+     "achievable_net": 109,
+     "mean_share": null,
+     "p5_share": null,
+     "p95_share": null,
+     "missing": "unavailable: 2 of 200 draws lack values (2 need replays, 0 resolution errors)",
+     "bounds": {
+      "mean_points": [
+       0.06,
+       1.06
+      ],
+      "p5_points": [
+       -0.298,
+       -0.298
+      ],
+      "p95_points": [
+       5.357,
+       5.655
+      ],
+      "mean_share": [
+       0.0018,
+       0.0327
+      ],
+      "p5_share": [
+       -0.0092,
+       -0.0092
+      ],
+      "p95_share": [
+       0.1651,
+       0.1743
+      ],
+      "above_zero": [
+       0.175,
+       0.185
+      ]
+     },
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 24582576566016,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [
+       [
+        -5,
+        4629425396
+       ],
+       [
+        -4,
+        2333960168
+       ],
+       [
+        -3,
+        458840850542
+       ],
+       [
+        -2,
+        461404852050
+       ],
+       [
+        -1,
+        242033031441
+       ],
+       [
+        0,
+        18409820116000
+       ],
+       [
+        1,
+        910626398861
+       ],
+       [
+        2,
+        233113277126
+       ],
+       [
+        3,
+        9223180020
+       ],
+       [
+        4,
+        114315960
+       ],
+       [
+        5,
+        19249648
+       ],
+       [
+        6,
+        9469528989
+       ],
+       [
+        7,
+        11808439540
+       ],
+       [
+        8,
+        9755955413
+       ],
+       [
+        9,
+        923045288064
+       ],
+       [
+        10,
+        61350854107
+       ],
+       [
+        11,
+        490459430757
+       ],
+       [
+        12,
+        487725278537
+       ],
+       [
+        13,
+        24071745613
+       ],
+       [
+        14,
+        468434136091
+       ],
+       [
+        15,
+        28395606968
+       ],
+       [
+        16,
+        19190929658
+       ],
+       [
+        17,
+        459197659046
+       ],
+       [
+        18,
+        35380455074
+       ],
+       [
+        19,
+        459602860778
+       ],
+       [
+        20,
+        28748810007
+       ],
+       [
+        21,
+        24107832971
+       ],
+       [
+        22,
+        1208564633
+       ],
+       [
+        23,
+        29223232454
+       ],
+       [
+        24,
+        1680729797
+       ],
+       [
+        25,
+        10209858998
+       ],
+       [
+        26,
+        33213147944
+       ],
+       [
+        27,
+        1739155756
+       ],
+       [
+        28,
+        24040813472
+       ],
+       [
+        29,
+        19914588831
+       ],
+       [
+        30,
+        1440331481
+       ],
+       [
+        31,
+        18999551949
+       ],
+       [
+        32,
+        1058709937
+       ],
+       [
+        33,
+        9661296918
+       ],
+       [
+        34,
+        630661936
+       ],
+       [
+        35,
+        901487075
+       ],
+       [
+        36,
+        9527462403
+       ],
+       [
+        37,
+        10629853843
+       ],
+       [
+        38,
+        1030946769
+       ],
+       [
+        39,
+        9521768225
+       ],
+       [
+        40,
+        1088736199
+       ],
+       [
+        41,
+        186464580
+       ],
+       [
+        42,
+        404759859
+       ],
+       [
+        43,
+        402313498
+       ],
+       [
+        44,
+        20394836
+       ],
+       [
+        45,
+        463721519
+       ],
+       [
+        46,
+        98248001
+       ],
+       [
+        47,
+        88146502
+       ],
+       [
+        48,
+        239790037
+       ],
+       [
+        49,
+        176084384
+       ],
+       [
+        50,
+        164867954
+       ],
+       [
+        51,
+        324917159
+       ],
+       [
+        52,
+        18318794
+       ],
+       [
+        53,
+        159563281
+       ],
+       [
+        54,
+        15414572
+       ],
+       [
+        55,
+        159533881
+       ],
+       [
+        56,
+        9655828
+       ],
+       [
+        57,
+        159363961
+       ],
+       [
+        58,
+        4917630
+       ],
+       [
+        59,
+        4795254
+       ],
+       [
+        60,
+        2067380
+       ],
+       [
+        61,
+        1056934
+       ],
+       [
+        62,
+        2933042
+       ],
+       [
+        63,
+        4951406
+       ],
+       [
+        64,
+        2992034
+       ],
+       [
+        65,
+        157447473
+       ],
+       [
+        66,
+        4877010
+       ],
+       [
+        67,
+        1976588
+       ],
+       [
+        68,
+        137292
+       ],
+       [
+        69,
+        3842792
+       ],
+       [
+        70,
+        109664
+       ],
+       [
+        71,
+        1940832
+       ],
+       [
+        72,
+        47484
+       ],
+       [
+        73,
+        15920
+       ],
+       [
+        74,
+        964582
+       ],
+       [
+        75,
+        31672
+       ],
+       [
+        76,
+        27676
+       ],
+       [
+        77,
+        1940896
+       ],
+       [
+        78,
+        62944
+       ],
+       [
+        79,
+        1917376
+       ],
+       [
+        80,
+        55216
+       ],
+       [
+        81,
+        23808
+       ],
+       [
+        82,
+        23840
+       ],
+       [
+        83,
+        1924920
+       ],
+       [
+        84,
+        31424
+       ],
+       [
+        85,
+        96
+       ],
+       [
+        86,
+        7872
+       ],
+       [
+        87,
+        64
+       ],
+       [
+        88,
+        7856
+       ],
+       [
+        89,
+        160
+       ],
+       [
+        90,
+        112
+       ],
+       [
+        91,
+        15744
+       ],
+       [
+        92,
+        8048
+       ],
+       [
+        93,
+        64
+       ],
+       [
+        94,
+        176
+       ],
+       [
+        95,
+        15696
+       ],
+       [
+        96,
+        224
+       ],
+       [
+        97,
+        15664
+       ],
+       [
+        98,
+        128
+       ],
+       [
+        100,
+        32
+       ],
+       [
+        104,
+        32
+       ],
+       [
+        106,
+        32
+       ],
+       [
+        109,
+        64
+       ]
+      ],
+      "unvalued_sets": 120659454772,
+      "net_low": -208,
+      "net_high": 128,
+      "bounds": {
+       "mean_points": [
+        0.309,
+        0.8
+       ],
+       "p5_points": [
+        -0.298,
+        0.0
+       ],
+       "p95_points": [
+        4.464,
+        5.06
+       ]
+      },
+      "missing": null
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "4 h",
+     "draws": 200,
+     "valued": 190,
+     "skipped_fresh_replay": 10,
+     "skipped_error": 0,
+     "mean_points": null,
+     "p5_points": null,
+     "p95_points": null,
+     "above_zero": null,
+     "achievable_net": 110,
+     "mean_share": null,
+     "p5_share": null,
+     "p95_share": null,
+     "missing": "unavailable: 10 of 200 draws lack values (10 need replays, 0 resolution errors)",
+     "bounds": {
+      "mean_points": [
+       -1.155,
+       3.845
+      ],
+      "p5_points": [
+       -3.943,
+       -0.595
+      ],
+      "p95_points": [
+       7.738,
+       16.324
+      ],
+      "mean_share": [
+       -0.0353,
+       0.1175
+      ],
+      "p5_share": [
+       -0.1205,
+       -0.0182
+      ],
+      "p95_share": [
+       0.2364,
+       0.4986
+      ],
+      "above_zero": [
+       0.425,
+       0.475
+      ]
+     },
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+     },
+     "p95_points_interval": [
+      5.952,
+      38.096
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    },
+    {
+     "budget": "8 h",
+     "draws": 200,
+     "valued": 176,
+     "skipped_fresh_replay": 24,
+     "skipped_error": 0,
+     "mean_points": null,
+     "p5_points": null,
+     "p95_points": null,
+     "above_zero": null,
+     "achievable_net": 119,
+     "mean_share": null,
+     "p5_share": null,
+     "p95_share": null,
+     "missing": "unavailable: 24 of 200 draws lack values (24 need replays, 0 resolution errors)",
+     "bounds": {
+      "mean_points": [
+       -5.21,
+       6.79
+      ],
+      "p5_points": [
+       -61.905,
+       -0.595
+      ],
+      "p95_points": [
+       8.929,
+       38.095
+      ],
+      "mean_share": [
+       -0.1471,
+       0.1917
+      ],
+      "p5_share": [
+       -1.7479,
+       -0.0168
+      ],
+      "p95_share": [
+       0.2521,
+       1.0756
+      ],
+      "above_zero": [
+       0.45,
+       0.57
+      ]
+     },
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit"
+     },
+     "p95_points_interval": [
+      7.738,
+      38.096
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    }
+   ],
+   "chance_after": [
+    {
+     "budget": "k = 3",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.286,
+     "p5_points": 0.0,
+     "p95_points": 3.274,
+     "above_zero": 0.1,
+     "achievable_net": 65,
+     "mean_share": 0.0148,
+     "p5_share": 0.0,
+     "p95_share": 0.1692,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 22369536,
+      "mean_points": 0.309,
+      "p5_points": 0.0,
+      "p95_points": 3.274,
+      "histogram": [
+       [
+        -5,
+        984
+       ],
+       [
+        -4,
+        493
+       ],
+       [
+        -3,
+        242065
+       ],
+       [
+        -2,
+        242576
+       ],
+       [
+        -1,
+        122266
+       ],
+       [
+        0,
+        19372395
+       ],
+       [
+        1,
+        479725
+       ],
+       [
+        2,
+        121779
+       ],
+       [
+        3,
+        1962
+       ],
+       [
+        4,
+        6
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1975
+       ],
+       [
+        7,
+        2468
+       ],
+       [
+        8,
+        1983
+       ],
+       [
+        9,
+        483689
+       ],
+       [
+        10,
+        12806
+       ],
+       [
+        11,
+        248510
+       ],
+       [
+        12,
+        245081
+       ],
+       [
+        13,
+        4930
+       ],
+       [
+        14,
+        241107
+       ],
+       [
+        15,
+        5900
+       ],
+       [
+        16,
+        3949
+       ],
+       [
+        17,
+        239166
+       ],
+       [
+        18,
+        7370
+       ],
+       [
+        19,
+        239181
+       ],
+       [
+        20,
+        5922
+       ],
+       [
+        21,
+        4943
+       ],
+       [
+        22,
+        62
+       ],
+       [
+        23,
+        5948
+       ],
+       [
+        24,
+        86
+       ],
+       [
+        25,
+        2008
+       ],
+       [
+        26,
+        6877
+       ],
+       [
+        27,
+        90
+       ],
+       [
+        28,
+        4933
+       ],
+       [
+        29,
+        3980
+       ],
+       [
+        30,
+        74
+       ],
+       [
+        31,
+        3920
+       ],
+       [
+        32,
+        54
+       ],
+       [
+        33,
+        1968
+       ],
+       [
+        34,
+        32
+       ],
+       [
+        35,
+        46
+       ],
+       [
+        36,
+        1960
+       ],
+       [
+        37,
+        2030
+       ],
+       [
+        38,
+        52
+       ],
+       [
+        39,
+        1972
+       ],
+       [
+        40,
+        56
+       ],
+       [
+        41,
+        8
+       ],
+       [
+        42,
+        20
+       ],
+       [
+        43,
+        20
+       ],
+       [
+        45,
+        24
+       ],
+       [
+        46,
+        4
+       ],
+       [
+        47,
+        4
+       ],
+       [
+        48,
+        12
+       ],
+       [
+        49,
+        8
+       ],
+       [
+        50,
+        8
+       ],
+       [
+        51,
+        16
+       ],
+       [
+        53,
+        8
+       ],
+       [
+        55,
+        8
+       ],
+       [
+        57,
+        8
+       ],
+       [
+        65,
+        8
+       ]
+      ],
+      "unvalued_sets": 0,
+      "net_low": -208,
+      "net_high": 128,
+      "bounds": null,
+      "missing": null,
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "k = 6",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 0.673,
+     "p5_points": -0.298,
+     "p95_points": 5.357,
+     "above_zero": 0.175,
+     "achievable_net": 109,
+     "mean_share": 0.0207,
+     "p5_share": -0.0092,
+     "p95_share": 0.1651,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "uniform count sets",
+      "sets": 24582576566016,
+      "mean_points": 0.619,
+      "p5_points": 0.0,
+      "p95_points": 4.464,
+      "histogram": [
+       [
+        -5,
+        4823349789
+       ],
+       [
+        -4,
+        2432482258
+       ],
+       [
+        -3,
+        473214759874
+       ],
+       [
+        -2,
+        475996845868
+       ],
+       [
+        -1,
+        242707958468
+       ],
+       [
+        0,
+        18430645903721
+       ],
+       [
+        1,
+        925170764883
+       ],
+       [
+        2,
+        240392289045
+       ],
+       [
+        3,
+        9531699540
+       ],
+       [
+        4,
+        117888611
+       ],
+       [
+        5,
+        19853088
+       ],
+       [
+        6,
+        9784802163
+       ],
+       [
+        7,
+        12223053247
+       ],
+       [
+        8,
+        9946269509
+       ],
+       [
+        9,
+        945017329083
+       ],
+       [
+        10,
+        63003331531
+       ],
+       [
+        11,
+        505545739696
+       ],
+       [
+        12,
+        488949940615
+       ],
+       [
+        13,
+        24325142692
+       ],
+       [
+        14,
+        468904608295
+       ],
+       [
+        15,
+        28871527811
+       ],
+       [
+        16,
+        19555828804
+       ],
+       [
+        17,
+        459782331517
+       ],
+       [
+        18,
+        36000562650
+       ],
+       [
+        19,
+        460084278905
+       ],
+       [
+        20,
+        29314325720
+       ],
+       [
+        21,
+        24595295280
+       ],
+       [
+        22,
+        1233265376
+       ],
+       [
+        23,
+        29831108810
+       ],
+       [
+        24,
+        1716810233
+       ],
+       [
+        25,
+        10458111550
+       ],
+       [
+        26,
+        33580808646
+       ],
+       [
+        27,
+        1768055142
+       ],
+       [
+        28,
+        24405789608
+       ],
+       [
+        29,
+        20175899870
+       ],
+       [
+        30,
+        1464847554
+       ],
+       [
+        31,
+        19012727994
+       ],
+       [
+        32,
+        1073210780
+       ],
+       [
+        33,
+        9668763997
+       ],
+       [
+        34,
+        640477520
+       ],
+       [
+        35,
+        916619941
+       ],
+       [
+        36,
+        9536557910
+       ],
+       [
+        37,
+        10885638189
+       ],
+       [
+        38,
+        1050150987
+       ],
+       [
+        39,
+        9758481044
+       ],
+       [
+        40,
+        1105214299
+       ],
+       [
+        41,
+        189750970
+       ],
+       [
+        42,
+        409339626
+       ],
+       [
+        43,
+        405466542
+       ],
+       [
+        44,
+        20628989
+       ],
+       [
+        45,
+        468089780
+       ],
+       [
+        46,
+        100920523
+       ],
+       [
+        47,
+        88321010
+       ],
+       [
+        48,
+        242336790
+       ],
+       [
+        49,
+        179228302
+       ],
+       [
+        50,
+        165068826
+       ],
+       [
+        51,
+        330854479
+       ],
+       [
+        52,
+        18554250
+       ],
+       [
+        53,
+        162509611
+       ],
+       [
+        54,
+        15598344
+       ],
+       [
+        55,
+        162468355
+       ],
+       [
+        56,
+        9784224
+       ],
+       [
+        57,
+        162277859
+       ],
+       [
+        58,
+        5001022
+       ],
+       [
+        59,
+        4831106
+       ],
+       [
+        60,
+        2107744
+       ],
+       [
+        61,
+        1057882
+       ],
+       [
+        62,
+        2953374
+       ],
+       [
+        63,
+        5019302
+       ],
+       [
+        64,
+        3036238
+       ],
+       [
+        65,
+        160361019
+       ],
+       [
+        66,
+        4960166
+       ],
+       [
+        67,
+        2000740
+       ],
+       [
+        68,
+        138196
+       ],
+       [
+        69,
+        3890024
+       ],
+       [
+        70,
+        110440
+       ],
+       [
+        71,
+        1964528
+       ],
+       [
+        72,
+        47900
+       ],
+       [
+        73,
+        16000
+       ],
+       [
+        74,
+        984330
+       ],
+       [
+        75,
+        31960
+       ],
+       [
+        76,
+        27892
+       ],
+       [
+        77,
+        1964672
+       ],
+       [
+        78,
+        63456
+       ],
+       [
+        79,
+        1940976
+       ],
+       [
+        80,
+        55648
+       ],
+       [
+        81,
+        23984
+       ],
+       [
+        82,
+        23984
+       ],
+       [
+        83,
+        1948568
+       ],
+       [
+        84,
+        31680
+       ],
+       [
+        85,
+        96
+       ],
+       [
+        86,
+        7952
+       ],
+       [
+        87,
+        64
+       ],
+       [
+        88,
+        7936
+       ],
+       [
+        89,
+        160
+       ],
+       [
+        90,
+        112
+       ],
+       [
+        91,
+        15840
+       ],
+       [
+        92,
+        8128
+       ],
+       [
+        93,
+        64
+       ],
+       [
+        94,
+        176
+       ],
+       [
+        95,
+        15792
+       ],
+       [
+        96,
+        224
+       ],
+       [
+        97,
+        15760
+       ],
+       [
+        98,
+        128
+       ],
+       [
+        100,
+        32
+       ],
+       [
+        104,
+        32
+       ],
+       [
+        106,
+        32
+       ],
+       [
+        109,
+        64
+       ]
+      ],
+      "unvalued_sets": 0,
+      "net_low": -208,
+      "net_high": 128,
+      "bounds": null,
+      "missing": null,
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": null,
+     "p95_interval_coverage": null,
+     "p95_interval_order_stats": null
+    },
+    {
+     "budget": "4 h",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 2.104,
+     "p5_points": -0.595,
+     "p95_points": 8.348,
+     "above_zero": 0.46,
+     "achievable_net": 110,
+     "mean_share": 0.0643,
+     "p5_share": -0.0182,
+     "p95_share": 0.255,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit",
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": [
+      6.845,
+      11.31
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    },
+    {
+     "budget": "8 h",
+     "draws": 200,
+     "valued": 200,
+     "skipped_fresh_replay": 0,
+     "skipped_error": 0,
+     "mean_points": 2.551,
+     "p5_points": -0.595,
+     "p95_points": 9.226,
+     "above_zero": 0.515,
+     "achievable_net": 119,
+     "mean_share": 0.072,
+     "p5_share": -0.0168,
+     "p95_share": 0.2605,
+     "missing": null,
+     "bounds": null,
+     "exact": {
+      "method": "greedy permutations",
+      "sets": null,
+      "mean_points": null,
+      "p5_points": null,
+      "p95_points": null,
+      "histogram": [],
+      "unvalued_sets": 0,
+      "net_low": null,
+      "net_high": null,
+      "bounds": null,
+      "missing": "greedy cost draws require order-dependent permutations; exceed 40320 enumeration limit",
+      "counting_limited": null,
+      "uncomputed_sets": 0
+     },
+     "p95_points_interval": [
+      8.333,
+      11.608
+     ],
+     "p95_interval_coverage": 0.9671521638567256,
+     "p95_interval_order_stats": [
+      184,
+      197
+     ]
+    }
+   ]
+  }
+ ],
+ "plans_before": [
+  {
+   "world": "w41",
+   "source": "stored",
+   "jobs": 0,
+   "proof": 0,
+   "errors": {},
+   "refused": []
+  },
+  {
+   "world": "w41",
+   "source": "without-chance",
+   "jobs": 924,
+   "proof": 23,
+   "errors": {},
+   "refused": []
+  },
+  {
+   "world": "w42",
+   "source": "stored",
+   "jobs": 196,
+   "proof": 23,
+   "errors": {},
+   "refused": []
+  },
+  {
+   "world": "w43",
+   "source": "stored",
+   "jobs": 476,
+   "proof": 21,
+   "errors": {},
+   "refused": []
+  }
+ ],
+ "plans_after": [
+  {
+   "world": "w41",
+   "source": "stored",
+   "jobs": 0,
+   "proof": 0,
+   "errors": {},
+   "refused": []
+  },
+  {
+   "world": "w41",
+   "source": "without-chance",
+   "jobs": 0,
+   "proof": 0,
+   "errors": {},
+   "refused": []
+  },
+  {
+   "world": "w42",
+   "source": "stored",
+   "jobs": 0,
+   "proof": 0,
+   "errors": {},
+   "refused": []
+  },
+  {
+   "world": "w43",
+   "source": "stored",
+   "jobs": 0,
+   "proof": 0,
+   "errors": {},
+   "refused": []
+  }
+ ]
+}

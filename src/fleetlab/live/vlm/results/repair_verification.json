@@ -1,0 +1,51 @@
+{
+  "checked_commit": "0f04acb2292591d2d2dae9e6ff9fe550b288657d",
+  "executable_commit": "e5a38f9",
+  "checks": [
+    {
+      "command": "make check",
+      "exit_code": 0,
+      "passed": 1131,
+      "skipped": 2,
+      "deselected": 65,
+      "seconds": 360.09,
+      "log": "/home/cs/.cache/robots-supervisor/round2/make-check-final.log"
+    },
+    {
+      "command": "make check-sim",
+      "exit_code": 0,
+      "passed": 61,
+      "skipped": 0,
+      "deselected": 1137,
+      "seconds": 484.29,
+      "log": "/home/cs/.cache/robots-supervisor/round2/make-check-sim-final.log"
+    }
+  ],
+  "toy_reference": {
+    "source_commit": "e5a38f9",
+    "attempts": 240,
+    "scripted_traces_identical": 200,
+    "ineligible_short_budget_cases": 40
+  },
+  "legacy_tables": {
+    "readable": 271,
+    "rows": 3428,
+    "writes_to_stored_runs": 0
+  },
+  "instructions_unchanged_from": "941caba",
+  "not_run": [
+    "new model sessions",
+    "GPU policy measurements",
+    "repaired D2 comparison",
+    "nightly GPU reference refresh",
+    "make smoke-world",
+    "combined stage5/live-rest integration",
+    "original mutation runner"
+  ],
+  "minimal_extra_paths": [
+    "src/fleetlab/contracts/rollout.py",
+    "src/fleetlab/contracts/log.py",
+    "src/fleetlab/log/_rows.py",
+    "src/fleetlab/log/runfiles.py"
+  ]
+}

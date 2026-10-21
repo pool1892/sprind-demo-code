@@ -1,0 +1,162 @@
+{
+  "base_commit": "4042967502bb959cf21e31c2b3e7dc28cb3f8253",
+  "previous_tag": "classical-frozen-3",
+  "previous_commit": "1e97eb524f6d67f6e893ce8a98e4ff5fc8170204",
+  "branch": "fix/classical-reply-contract",
+  "contract_source": "src/fleetlab/toolserver/public_results.py",
+  "contract_sha256": "fd86857e17ea2f3ce6e06693513b8a6a64ba10c1328164c2f08d1b911e97f224",
+  "runtime_changed_files": {
+    "src/fleetlab/baselines/classical/driver.py": "e86cf1fa72222852d087570c51d3bb06bceb5668af72d0df685b5bf1896adf39",
+    "src/fleetlab/baselines/classical/experiments.py": "2a2f62a23d56f251105d2082766bf0dc4b720bb445fd50fb7e0a036cc3422aac"
+  },
+  "method_change": "Only experiment reply validation/handling; no statistical or selection changes.",
+  "inputs": {
+    "original": "/home/cs/.cache/robots-probes/classical-stat-v3/ab-w42-9a39de8",
+    "original_hashes": {
+      "analysis.json": "ed93956bfb4852fecdb6f22cbbc7c9fc9d00098b0f60597886da2dc77120468a",
+      "memory/rule.json": "8cb10b41c2e799afc51704c9f5e7fd22c5e2697680c543e92ccf0ce5275f27ef",
+      "outbox/experiments.jsonl": "59372f48678d58d3a861e7aedb52e23ffe15a3f1f7c2f0da935ea10d96b32e24",
+      "queues/session-01.json": "8efc8dedbb8a217806de995596dc777f024b30df88447158291f172b4b3f6aa4",
+      "results/experiments.jsonl": "4d2e48503e8645fceaf82fefd654c2f06a7fae3b4c09e5c45203079e47d8c1dc",
+      "tool_calls.jsonl": "4fba1b9b946b0baf86b047884efd44d7fb393aad99c39aab96ec34cf19227613"
+    },
+    "public_copy": "/tmp/classical-reply-contract/public-analysis",
+    "public_hashes": {
+      "analysis.json": "ed93956bfb4852fecdb6f22cbbc7c9fc9d00098b0f60597886da2dc77120468a",
+      "memory/rule.json": "8cb10b41c2e799afc51704c9f5e7fd22c5e2697680c543e92ccf0ce5275f27ef",
+      "outbox/experiments.jsonl": "59372f48678d58d3a861e7aedb52e23ffe15a3f1f7c2f0da935ea10d96b32e24",
+      "queues/session-01.json": "8efc8dedbb8a217806de995596dc777f024b30df88447158291f172b4b3f6aa4",
+      "results/experiments.jsonl": "40db72d100395862b6fff062129d39c4af1ad8055395b9af410c811ada92fdc9",
+      "tool_calls.jsonl": "4fba1b9b946b0baf86b047884efd44d7fb393aad99c39aab96ec34cf19227613"
+    },
+    "changes": [
+      {
+        "id": "x0001",
+        "old": "2 arms of 60 episodes on r01, r02, r03, r04, r05, r06, r07, r08, r09, r10, r11, r12, days 6 to 7, paired starts",
+        "new": "done"
+      },
+      {
+        "id": "x0002",
+        "old": "2 arms of 60 episodes on r09, r10, r11, r12, days 6 to 7, paired starts",
+        "new": "done"
+      },
+      {
+        "id": "x0003",
+        "old": "2 arms of 60 episodes on r09, r10, r11, r12, days 6 to 7, paired starts",
+        "new": "done"
+      },
+      {
+        "id": "x0004",
+        "old": "2 arms of 60 episodes on r09, r10, r11, r12, days 6 to 7, paired starts",
+        "new": "done"
+      },
+      {
+        "id": "x0005",
+        "old": "2 arms of 60 episodes on r09, r10, r11, r12, days 6 to 7, paired starts",
+        "new": "done"
+      },
+      {
+        "id": "x0006",
+        "old": "2 arms of 60 episodes on r09, r10, r11, r12, days 6 to 7, paired starts",
+        "new": "done"
+      },
+      {
+        "id": "x0007",
+        "old": "2 arms of 60 episodes on r11, days 6 to 7, paired starts",
+        "new": "done"
+      },
+      {
+        "id": "x0008",
+        "old": "2 arms of 60 episodes on r03, days 6 to 7, paired starts",
+        "new": "done"
+      }
+    ]
+  },
+  "arm_export": "/home/cs/.cache/robots-probes/classical-stat-v3/engine-w42-9a39de8/exports/ab-w42-9a39de8/session-01",
+  "logs_answer": "/home/cs/.cache/robots-probes/classical-stat-v4/measured-2acc093/w42/logs",
+  "original_frozen3_replay_sha256": {
+    "evidence.json": "4607ccfb8c0bfbdf77acc0d5e9ee782c76e074d03f4db093879c8a02b48927dc",
+    "fix_sets/cost-4.json": "feb48b17b4d3d83591c33b6c4d06206445bd0d03d7cba893add35b3165296ef3",
+    "fix_sets/cost-8.json": "9427874915b85730a5d706c5a4baa0fd8b40da42dfb11485fc7d0a02d21b903b",
+    "fix_sets/count-3.json": "9b2daf309115ed05d3af64a356bf5d9bbbc4b800fe1c8187538c4be1fcd44f39",
+    "fix_sets/count-6.json": "91989744b7cb1e708729e3604e16f6bce6d2ff4c298f6fafe97b715831c8da2b",
+    "outbox/diagnosis.json": "229fd5726b9ccfc6ed3d9619a684e6d102870691c2369b3e5ff714d7c479414c",
+    "outbox/fix_set.json": "4a879151704edee276ce0ee422d9dcd2ed3c5705052b622eaa6b203b809d2db6"
+  },
+  "both_tags_public_reply_replay_sha256": {
+    "evidence.json": "5c3f811aa2fb5af6f3e95c70a83461592210b470aeb5e8ce6cc6417abcda4202",
+    "fix_sets/cost-4.json": "feb48b17b4d3d83591c33b6c4d06206445bd0d03d7cba893add35b3165296ef3",
+    "fix_sets/cost-8.json": "9427874915b85730a5d706c5a4baa0fd8b40da42dfb11485fc7d0a02d21b903b",
+    "fix_sets/count-3.json": "9b2daf309115ed05d3af64a356bf5d9bbbc4b800fe1c8187538c4be1fcd44f39",
+    "fix_sets/count-6.json": "91989744b7cb1e708729e3604e16f6bce6d2ff4c298f6fafe97b715831c8da2b",
+    "outbox/diagnosis.json": "229fd5726b9ccfc6ed3d9619a684e6d102870691c2369b3e5ff714d7c479414c",
+    "outbox/fix_set.json": "4a879151704edee276ce0ee422d9dcd2ed3c5705052b622eaa6b203b809d2db6"
+  },
+  "replay_helper_sha256": "45843c8ba0bd623d2e2310317456cfdfc295bd6be4329de3ed748b22e2d89680",
+  "equivalence": {
+    "frozen3_original_vs_stored_json_files": 7,
+    "frozen3_vs_repair_same_reply_json_files": 7,
+    "submitted_files_equal_original": 6,
+    "only_original_evidence_difference": "result_sha256",
+    "arm_attempts_reused": 960,
+    "stored_originals_unchanged": true
+  },
+  "commands": [
+    "git archive classical-frozen-3 src | tar -x -C /tmp/classical-reply-contract/frozen-3-source",
+    "For each tree: env OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=TREE/src uv run --locked python tests/classical_reply_replay.py ARM_EXPORT LOGS_ANSWER ANALYSIS_COPY NEW_OUTPUT",
+    "env OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run --locked pytest -q tests/test_classical*.py",
+    "env OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run --locked pytest -q tests/test_classical_capacity_engine.py",
+    "uv run --locked mypy"
+  ],
+  "not_run": [
+    "oracle scoring",
+    "new simulations",
+    "GPU jobs",
+    "model calls",
+    "make check",
+    "make smoke-world",
+    "new-world access"
+  ],
+  "limits": {
+    "max_concurrent_test_processes": 2,
+    "with_type_check_at_most": 3
+  },
+  "artifacts": "/tmp/classical-reply-contract",
+  "checks": {
+    "classical_tests": {
+      "exit_code": 0,
+      "log": "/tmp/classical-reply-contract/classical-tests.log",
+      "log_sha256": "8e366c1c50b1856798d6968e60434ba417044b967c1c332fcd4b0b09bc9b6078",
+      "passed": 209,
+      "seconds": 105.6,
+      "includes_all_fifteen_reported_failures": true
+    },
+    "capacity_host_reason": {
+      "exit_code": 0,
+      "log": "/tmp/classical-reply-contract/capacity-test.log",
+      "log_sha256": "a447b0ef6625e5f28651aff634c1379f233d8e6c96a9490bcd361bc624dc0b5f",
+      "passed": 1,
+      "seconds": 1.52,
+      "note": "Rechecked after adding the original host-exception assertion."
+    },
+    "mypy": {
+      "exit_code": 0,
+      "log": "/tmp/classical-reply-contract/mypy-final.log",
+      "log_sha256": "f3eae03b5d08ff9e522bf62f15991a536feec9b6c2c7e55d23f11b1a8a241de0",
+      "source_files": 377
+    },
+    "ruff": {
+      "check_exit_code": 0,
+      "format_exit_code": 0,
+      "formatted_python_files": 28
+    },
+    "initial_targeted_run": {
+      "exit_code": 1,
+      "passed": 65,
+      "failed": 2,
+      "reason": "Two new negative fixtures tried assigning to frozen result fields; corrected to model_copy and included in the passing full run."
+    }
+  },
+  "integration_branch_at_receipt": "ac61e2d0b97abcef0d66b21229346e81171a8d88",
+  "record_correction": "The original receipt sampled the moving merge/batch-4 ref. Corrected base_commit to the actual parent of classical-frozen-4; tag and tested source are unchanged."
+}

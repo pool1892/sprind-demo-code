@@ -1,0 +1,35 @@
+{
+  "requested_goals": [
+    {
+      "objects": [
+        "cream_cheese_1",
+        "akita_black_bowl_1"
+      ],
+      "predicate": "On"
+    },
+    {
+      "objects": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ],
+      "predicate": "On"
+    }
+  ],
+  "order_rules": [
+    {
+      "first": 0,
+      "then": 1
+    }
+  ],
+  "request_text": "Make the complete job work reliably: put the cream cheese into the black bowl, then deliver the loaded bowl on the plate. The loading goal must hold before the destination goal first holds. The next shift needs at least 18 deliveries in a 20-start evaluation; propose that condition before testing and aim for 19 or 20. Use the previous investigations and their failed traces to understand what remains. Keep iterating, try materially different interventions when an approach stalls, and confirm a promising candidate on development starts beyond those used to tune it. Do not save merely because one development batch crosses a threshold. Save when you judge the candidate ready to pass its evaluation and explain the evidence. The host will retain any unsuccessful evaluation for the next investigation.",
+  "base_task": 1,
+  "allocation_profile": "pool-v1",
+  "budget": {
+    "starts_per_request": 20,
+    "requests_per_session": 4,
+    "sessions": 12,
+    "starts_per_investigation": 400
+  },
+  "acceptance": null,
+  "message_log": []
+}

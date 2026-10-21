@@ -1,0 +1,42 @@
+{
+  "format": "fleetlab.film-records/1",
+  "notes": "The final cut binds story A to job one's three investigations (run-3, run-5, run-6) and run-6's release receipt and library; story B to the engagement's evaluation and the recipe check; job two's first shift (job-two/run-1, job one's run-5 library mounted) and second shift (job-two/run-2, job one's released library mounted); neither saved a job; third shift (job-two/run-3, run-2's library mounted) saved a job, whose release receipt reads released false.",
+  "records": {
+    "job_one": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/job_run.json",
+    "story_b_evaluation": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/summary.json",
+    "story_b_panel": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+    "story_b_second_use": "~/.cache/robots-probes/demo/2026-10-20/instrument/second-use/check-2/recipe-check.json",
+    "job_two": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/job_run.json",
+    "library": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/library/index.json",
+    "naive_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-01/run/log/job_episodes.parquet",
+    "tuned_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-02/run/log/job_episodes.parquet",
+    "fresh_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-03/run/log/job_episodes.parquet",
+    "second_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-04/run/log/job_episodes.parquet",
+    "job_three": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/job_run.json",
+    "third_batch": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-03/run/log/job_episodes.parquet",
+    "release_receipt": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/run/run/receipt.json",
+    "job_one_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-01/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-02/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-03/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-04/run/log/job_episodes.parquet"
+    ],
+    "job_two_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-01/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-02/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-03/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-04/run/log/job_episodes.parquet"
+    ],
+    "job_three_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-01/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-02/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-03/run/log/job_episodes.parquet"
+    ],
+    "second_job": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-2/job_run.json",
+    "second_job_first": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-1/job_run.json",
+    "second_job_third": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/job_run.json",
+    "second_job_third_receipt": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/release/run/run/receipt.json",
+    "second_job_third_batch": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/runs/session-04/run/log/job_episodes.parquet",
+    "second_job_third_library": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/release/library/index.json"
+  }
+}

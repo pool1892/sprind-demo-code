@@ -1,0 +1,36 @@
+diff --git a/libero/libero/envs/bddl_base_domain.py b/libero/libero/envs/bddl_base_domain.py
+index 2eb16ce..9e6c0aa 100644
+--- a/libero/libero/envs/bddl_base_domain.py
++++ b/libero/libero/envs/bddl_base_domain.py
+@@ -415,6 +415,12 @@ class BDDLBaseDomain(_ManipulationBase):
+         self.conditional_placement_on_objects_initializer = SequentialCompositeSampler(
+             name="ConditionalObjectSampler"
+         )
++        # fleetlab: _add_placement_initializer() appends the open/close and on/off samplers
++        # again at every model load, i.e. at every hard reset, and each of them draws a
++        # number at reset before the fixtures are placed. The scene then depended on how
++        # many resets the environment had seen. Start from an empty list every time.
++        # (Nothing in this package passes its own list to the constructor.)
++        self.object_property_initializers = list()
+         self._add_placement_initializer()
+ 
+     def _setup_references(self):
+diff --git a/libero/libero/envs/env_wrapper.py b/libero/libero/envs/env_wrapper.py
+index 52bfcc3..58aeecc 100644
+--- a/libero/libero/envs/env_wrapper.py
++++ b/libero/libero/envs/env_wrapper.py
+@@ -169,6 +169,14 @@ class ControlEnv:
+             seed_fn(seed)
+         elif getattr(self.env, "rng", None) is not None:
+             self.env.rng.bit_generator.state = np.random.default_rng(seed).bit_generator.state
++            # fleetlab: on robosuite >= 1.5 the attribute `seed` hides BDDLBaseDomain.seed(),
++            # which seeded numpy's global generator. LIBERO's own samplers (fixture placement,
++            # open/close and on/off ranges) draw from that generator, not from env.rng.
++            # Without a seed the generator is left to run on, not restarted from the clock:
++            # Gymnasium resets a finished environment that way in mid-evaluation, and a
++            # whole run started from one seed should still repeat.
++            if seed is not None:
++                np.random.seed(seed)
+ 
+     def set_init_state(self, init_state):
+         return self.regenerate_obs_from_state(init_state)

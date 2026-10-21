@@ -1,0 +1,221 @@
+{
+  "removals": [
+    {
+      "name": "later-break",
+      "test": "test_classical_freeze3.py::test_later_distinct_break_does_not_support_an_earlier_edit",
+      "file": "analysis.py",
+      "old": "        if z > -1.0:",
+      "replacement": "        if False:",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "panel-envelope",
+      "test": "test_classical_retained_rules.py::test_noise_free_parameter_draws_still_have_future_panel_noise",
+      "file": "analysis.py",
+      "old": "        low -= prediction_radius\n        high += prediction_radius",
+      "replacement": "        pass",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "naming-floor",
+      "test": "test_classical_retained_rules.py::test_one_naming_floor_and_multiplicity_screen",
+      "file": "analysis.py",
+      "old": "        and r[\"gain_points\"] >= 0.5",
+      "replacement": "        and r[\"gain_points\"] >= -100",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "warning-support",
+      "test": "test_classical_warning_lead.py::test_a_forecast_crossing_needs_support_for_the_health_effect",
+      "file": "analysis.py",
+      "old": " or effect_confidence < 0.9",
+      "replacement": "",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "inheritance",
+      "test": "test_classical_retained_rules.py::test_inherited_initial_value_and_day_five_persist_in_forecast",
+      "file": "features.py",
+      "old": "                if token(self.initial[scope][key]) == token(parent.get(key)):",
+      "replacement": "                if False:",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "constant-exposure",
+      "test": "test_classical_retained_rules.py::test_inherited_initial_value_and_day_five_persist_in_forecast",
+      "file": "features.py",
+      "old": "self.unsupported = np.ptp(self.x, axis=0) < 1e-12",
+      "replacement": "self.unsupported = np.ptp(self.x, axis=0) < -1",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "day-five",
+      "test": "test_classical_retained_rules.py::test_inherited_initial_value_and_day_five_persist_in_forecast",
+      "file": "features.py",
+      "old": "float(min(day, 5) == d)",
+      "replacement": "float(day == d)",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "health-deadband",
+      "test": "test_classical_retained_rules.py::test_health_noise_deadband_suppresses_healthy_measurement_variation",
+      "file": "health.py",
+      "old": "max(z - 1.0, 0.0)",
+      "replacement": "max(z, 0.0)",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "health-search",
+      "test": "test_classical_retained_rules.py::test_searching_for_a_short_health_break_pays_a_noise_penalty",
+      "file": "health.py",
+      "old": "2 * np.log(max(1, len(rows) - 2)) if kind in {\"step\", \"hinge\"} else 0.0",
+      "replacement": "0.0",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "second-cut",
+      "test": "test_classical_retained_rules.py::test_second_cut_is_exact_conditional_on_first_three",
+      "file": "selection.py",
+      "old": "for size in (3, 3):",
+      "replacement": "for size in (3,):",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "label-probability",
+      "test": "test_classical_retained_rules.py::test_suspect_short_failures_keep_peer_error_probability",
+      "file": "signals.py",
+      "old": "            y[i] = probability",
+      "replacement": "            y[i] = 1.0",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "budget",
+      "test": "test_classical_retained_rules.py::test_public_budget_rejected_before_io",
+      "file": "experiments.py",
+      "old": "    if not 1 <= requests <= 8 or not 1 <= episodes_per_arm <= 60:",
+      "replacement": "    if False:",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "name-every-test",
+      "test": "test_classical_freeze3.py::test_current_evidence_names_causes_in_both_conditions",
+      "file": "experiments.py",
+      "old": "    accepted = named_actions(records)",
+      "replacement": "    accepted = set(range(len(records)))",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "alarm-direction",
+      "test": "test_classical_freeze3.py::test_improvement_alarm_does_not_replace_deficit_site_in_plan",
+      "file": "experiments.py",
+      "old": " and r[\"direction\"] == \"decline\"",
+      "replacement": "",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "hidden-traits",
+      "test": "test_classical_retained_rules.py::test_hidden_robot_traits_are_rejected_even_in_an_otherwise_valid_export",
+      "file": "data.py",
+      "old": "    if any(r.traits for r in fleet.robots()):",
+      "replacement": "    if False:",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "physical-bound",
+      "test": "test_classical_retained_rules.py::test_noisy_near_complete_repair_cannot_exceed_affected_population",
+      "file": "analysis.py",
+      "old": "        low, high = max(low, -population), min(high, population)",
+      "replacement": "        pass",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "multiplicity",
+      "test": "test_classical_retained_rules.py::test_one_naming_floor_and_multiplicity_screen",
+      "file": "analysis.py",
+      "old": "eligible[i] for i in _bh([1 - records[i][\"diagnosis_confidence\"] for i in eligible])",
+      "replacement": "i for i in eligible",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "full-levels",
+      "test": "test_classical_retained_rules.py::test_beneficial_release_is_not_forced_to_be_harmful_by_reference_coding",
+      "file": "features.py",
+      "old": "for v in sorted(counts))",
+      "replacement": "for v in sorted(counts)[1:])",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "remote-prehistory",
+      "test": "test_classical_freeze3.py::test_release_estimate_is_invariant_to_remote_declines",
+      "file": "onset.py",
+      "old": "if onset - 2 <= row[\"day\"] < onset + 2:",
+      "replacement": "if 0 <= row[\"day\"] < onset + 2:",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "joint-release",
+      "test": "test_classical_freeze3.py::test_release_effect_is_carried_into_joint_selection_and_experiment_transport",
+      "file": "selection.py",
+      "old": "if np.any(self.offsets):",
+      "replacement": "if False:",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "paired-covariance",
+      "test": "test_classical_freeze3.py::test_pair_covariance_controls_uncertainty_and_keeps_nonzero_null_noise",
+      "file": "experiments.py",
+      "old": "draws += scale * (posterior[:, 1] - posterior[:, 2])",
+      "replacement": "draws += scale * (rng.beta(30.5, 30.5, len(draws)) - rng.beta(30.5, 30.5, len(draws)))",
+      "exit_code": 1,
+      "caught": true
+    },
+    {
+      "name": "outward-rounding",
+      "test": "test_classical_freeze3.py::test_population_interval_bound_is_outward_for_equivalent_fractions",
+      "file": "protocol.py",
+      "old": "value + 8 * float(np.spacing(value))",
+      "replacement": "value - 8 * float(np.spacing(value))",
+      "exit_code": 1,
+      "caught": true
+    }
+  ],
+  "max_child_rss_kib": 326772,
+  "reviewer_cases": {
+    "E": "E 0 {'gain': 0.6, 'low': -12.6, 'high': 12.7, 'rank': 5, 'diagnosed': False, 'het_p': 0.867, 'top3': ['r10:control.action_delay_steps', 'r06:control.action_delay_steps', 'r03:control.action_delay_steps']}\nE 1 {'gain': -1.49, 'low': -15.3, 'high': 10.6, 'rank': None, 'diagnosed': False, 'het_p': 0.56, 'top3': ['r02:control.action_delay_steps', 'r06:control.action_delay_steps', 'r10:control.action_delay_steps']}\nE 2 {'gain': -5.95, 'low': -18.7, 'high': 6.3, 'rank': None, 'diagnosed': False, 'het_p': 0.341, 'top3': ['r06:control.action_delay_steps', 'r03:control.action_delay_steps', 'r10:control.action_delay_steps']}\nE 3 {'gain': -2.68, 'low': -14.6, 'high': 11.0, 'rank': None, 'diagnosed': False, 'het_p': 0.009, 'top3': ['r10:control.action_delay_steps', 'r02:control.action_delay_steps', 'r06:control.action_delay_steps']}\nE 4 {'gain': -2.68, 'low': -15.8, 'high': 11.0, 'rank': None, 'diagnosed': False, 'het_p': 0.076, 'top3': ['r06:control.action_delay_steps', 'r03:control.action_delay_steps', 'r10:control.action_delay_steps']}\nE 5 {'gain': -1.19, 'low': -13.8, 'high': 11.6, 'rank': None, 'diagnosed': False, 'het_p': 0.544, 'top3': ['r06:control.action_delay_steps', 'r10:control.action_delay_steps', 'r02:control.action_delay_steps']}\nE 6 {'gain': -2.08, 'low': -16.3, 'high': 11.5, 'rank': None, 'diagnosed': False, 'het_p': 0.182, 'top3': ['r06:control.action_delay_steps', 'r03:control.action_delay_steps', 'r02:control.action_delay_steps']}\nE 7 {'gain': 1.49, 'low': -12.4, 'high': 14.6, 'rank': 5, 'diagnosed': False, 'het_p': 0.347, 'top3': ['r02:control.action_delay_steps', 'r10:control.action_delay_steps', 'r03:control.action_delay_steps']}\nE 8 {'gain': -0.0, 'low': -14.8, 'high': 13.2, 'rank': None, 'diagnosed': False, 'het_p': 0.474, 'top3': ['r10:control.action_delay_steps', 'r06:control.action_delay_steps', 'r03:control.action_delay_steps']}\nE 9 {'gain': 3.87, 'low': -10.4, 'high': 17.0, 'rank': 1, 'diagnosed': False, 'het_p': 0.005, 'top3': ['fleet:software.version', 'r06:control.action_delay_steps', 'r03:control.action_delay_steps']}\nE 10 {'gain': -4.46, 'low': -18.3, 'high': 11.1, 'rank': None, 'diagnosed': False, 'het_p': 0.002, 'top3': ['r03:control.action_delay_steps', 'r02:control.action_delay_steps', 'r06:control.action_delay_steps']}\nE 11 {'gain': -4.76, 'low': -17.8, 'high': 9.7, 'rank': None, 'diagnosed': False, 'het_p': 0.442, 'top3': ['r03:control.action_delay_steps', 'r10:control.action_delay_steps', 'r02:control.action_delay_steps']}\nSUMMARY E n 12 fleet gain median -1.79 range -5.95 3.87 | in top three 1 | first 1 | diagnosed 0 | heterogeneity p<0.05 3\n",
+    "C": "C 0 {'gain': 2.98, 'low': -7.8, 'high': 13.5, 'rank': 4, 'diagnosed': False, 'het_p': 0.174, 'top3': ['r09:control.action_delay_steps', 'r01:control.action_delay_steps', 'r05:control.action_delay_steps']}\nC 1 {'gain': 6.85, 'low': -6.1, 'high': 17.4, 'rank': 1, 'diagnosed': True, 'het_p': 0.373, 'top3': ['fleet:software.version', 'r09:control.action_delay_steps', 'r01:control.action_delay_steps']}\nC 2 {'gain': 2.38, 'low': -9.6, 'high': 14.8, 'rank': 4, 'diagnosed': False, 'het_p': 0.492, 'top3': ['r09:control.action_delay_steps', 'r01:control.action_delay_steps', 'r05:control.action_delay_steps']}\nC 3 {'gain': 5.65, 'low': -7.0, 'high': 16.7, 'rank': 1, 'diagnosed': True, 'het_p': 0.003, 'top3': ['fleet:software.version', 'r05:control.action_delay_steps', 'r01:control.action_delay_steps']}\nC 4 {'gain': 5.95, 'low': -7.9, 'high': 17.9, 'rank': 1, 'diagnosed': False, 'het_p': 0.264, 'top3': ['fleet:software.version', 'r05:control.action_delay_steps', 'r09:control.action_delay_steps']}\nC 5 {'gain': 2.98, 'low': -8.8, 'high': 14.9, 'rank': 1, 'diagnosed': False, 'het_p': 0.846, 'top3': ['fleet:software.version', 'r05:control.action_delay_steps', 'r09:control.action_delay_steps']}\nC 6 {'gain': 4.76, 'low': -7.2, 'high': 14.6, 'rank': 1, 'diagnosed': True, 'het_p': 0.142, 'top3': ['fleet:software.version', 'r09:control.action_delay_steps', 'r05:control.action_delay_steps']}\nC 7 {'gain': 5.65, 'low': -6.3, 'high': 16.6, 'rank': 1, 'diagnosed': True, 'het_p': 0.284, 'top3': ['fleet:software.version', 'r05:control.action_delay_steps', 'r01:control.action_delay_steps']}\nC 8 {'gain': 3.27, 'low': -8.8, 'high': 15.0, 'rank': 1, 'diagnosed': False, 'het_p': 0.735, 'top3': ['fleet:software.version', 'r09:control.action_delay_steps', 'r05:control.action_delay_steps']}\nC 9 {'gain': -1.79, 'low': -13.9, 'high': 11.1, 'rank': None, 'diagnosed': False, 'het_p': 0.856, 'top3': ['r01:control.action_delay_steps', 'r05:control.action_delay_steps', 'r09:control.action_delay_steps']}\nC 10 {'gain': 1.19, 'low': -11.7, 'high': 12.0, 'rank': 4, 'diagnosed': False, 'het_p': 0.108, 'top3': ['r09:control.action_delay_steps', 'r05:control.action_delay_steps', 'r01:control.action_delay_steps']}\nC 11 {'gain': 4.46, 'low': -8.2, 'high': 17.8, 'rank': 1, 'diagnosed': True, 'het_p': 0.552, 'top3': ['fleet:software.version', 'r09:control.action_delay_steps', 'r01:control.action_delay_steps']}\nSUMMARY C n 12 fleet gain median 3.87 range -1.79 6.85 | in top three 8 | first 8 | diagnosed 5 | heterogeneity p<0.05 1\n"
+  },
+  "reviewer_script_sha256": "0a65f1bb0137321bfa2448c7d89f23f7cb7acfa928228281ca843d1a59cce96e",
+  "protocol": "Synthetic only, before any scoring: no old or new world inputs. Removal tests use private source copies. No simulation or GPU.",
+  "control_checks": {
+    "focused_core": "173 passed plus two test assertions repaired; no additional method changes selected",
+    "focused_recheck": "49 passed, including all planted ranks and corrected assertions",
+    "memory_max_rss_kib": 331864
+  },
+  "outward_rounding_exact_removal": {
+    "replacement": "value",
+    "exit_code": 1,
+    "caught": true,
+    "failure": "100 / 12 > 8.333333333333332 without outward rounding",
+    "test_output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n______ test_population_interval_bound_is_outward_for_equivalent_fractions ______\ntests/test_classical_freeze3.py:145: in test_population_interval_bound_is_outward_for_equivalent_fractions\n    assert 100 / 12 <= population_bound(weight, covered.astype(float)) < 100 / 12 + 1e-12\nE   assert (100 / 12) <= 8.333333333333332\nE    +  where 8.333333333333332 = population_bound(array([0.04166667, 0.04166667, 0.04166667, 0.04166667, 0.04166667,\\n       0.04166667, 0.04166667, 0.04166667, 0.041666...    0.04166667, 0.04166667, 0.04166667, 0.04166667, 0.04166667,\\n       0.04166667, 0.04166667, 0.04166667, 0.04166667]), array([1., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,\\n       0., 0., 0., 0., 0., 0., 0.]))\nE    +    where array([1., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,\\n       0., 0., 0., 0., 0., 0., 0.]) = <built-in method astype of numpy.ndarray object at 0x71c7aec74750>(float)\nE    +      where <built-in method astype of numpy.ndarray object at 0x71c7aec74750> = array([ True,  True, False, False, False, False, False, False, False,\\n       False, False, False, False, False, False, False, False, False,\\n       False, False, False, False, False, False]).astype\n=========================== short test summary info ============================\nFAILED tests/test_classical_freeze3.py::test_population_interval_bound_is_outward_for_equivalent_fractions\n1 failed in 1.62s\n"
+  }
+}

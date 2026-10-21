@@ -1,0 +1,837 @@
+{
+  "format": "fleetlab.classical-revision-results/1",
+  "development_worlds": [
+    "w41",
+    "w42",
+    "w43"
+  ],
+  "sampling_label": "in-sample",
+  "measurement_commit": "b022bbf45e3f1af87d7ce86e122e789a027bf08f",
+  "tests_commit": "b022bbf45e3f1af87d7ce86e122e789a027bf08f",
+  "source_note": "Final physical-gain behavior and tests measured at this revision",
+  "freeze_tag": "classical-frozen-1",
+  "replacement_worlds_accessed": false,
+  "measurement_root": "/home/cs/.cache/robots-probes/classical-stat-v2/measured-b022bbf",
+  "worlds": [
+    {
+      "source_commit": "b022bbf",
+      "world": "w41",
+      "development_worlds": [
+        "w41",
+        "w42",
+        "w43"
+      ],
+      "condition": "in-sample",
+      "seconds": 72.59238558198558,
+      "visible_hashes": {
+        "data_dictionary.md": "ddc7f8f793b076960cf486e6ece4c1728014e194e0e543d2fd732433f6cd5700",
+        "log/description.json": "bcad9cbc6f3c7bfeca9b2dddfb137d581274c12497ae6d9b2ed4100ac07d415f",
+        "log/episodes.parquet": "870668d8bca48ca6bd4373c9788c576624e774450776213807c892ceaa42a55b",
+        "log/health.parquet": "6f9a4b3cd135b64883bd26dbe84e7c91cd89a7531f8133c53f7dd1bf53449e12",
+        "log/change_log.parquet": "cc4261aa886d5bef546a40f8e6d2cb83a9611f881bfe32d3450341260c5954ec",
+        "log/maintenance.parquet": "df215a267d9cdfa70af620f91aceac2c2f43b15fd7d5a2c5554b91b64e13924f",
+        "log/events.parquet": "f0f2294e07a59671f79cc12b75e1e3ebcab59086ed0c6a2bbd654d76a45f5823",
+        "log/catalogue.parquet": "df1791950bdd56c31191bbaa7202d73b5a4611002a5afd02b1d0b7d96a2b26b2",
+        "log/costs.parquet": "ec32ed91d67df39a6f63c69205c9d106cc90d0955d0fa35afdc8741d33bdf52b"
+      },
+      "logs": {
+        "world": "w41",
+        "scoring_episodes": 336,
+        "condition": "logs",
+        "completed_experiments": 0,
+        "oracle_proxy_lookups": 0,
+        "mae_points": 0.3754128974039458,
+        "calibration_slope": 1.056549872007568,
+        "decoy_rejection": 1.0,
+        "confounders_resolved": 0,
+        "confounders_total": 0,
+        "informative_actions": 8,
+        "informative_intervals_covered": 8,
+        "informative_interval_coverage": 1.0,
+        "informative_rank_correlation": 0.9759000729485332,
+        "warnings": 1,
+        "warning_scoring": "Not implemented in this stage-2 scorer; emitted warnings are retained in the diagnosis.",
+        "budgets": [
+          {
+            "kind": "count",
+            "amount": 3.0,
+            "share": 1.0,
+            "points": 19.94047619047619,
+            "rescued": 67,
+            "broken": 0
+          },
+          {
+            "kind": "count",
+            "amount": 6.0,
+            "share": 1.0,
+            "points": 36.904761904761905,
+            "rescued": 125,
+            "broken": 1
+          },
+          {
+            "kind": "cost",
+            "amount": 4.0,
+            "share": 1.0,
+            "points": 28.273809523809526,
+            "rescued": 96,
+            "broken": 1
+          },
+          {
+            "kind": "cost",
+            "amount": 8.0,
+            "share": 1.0,
+            "points": 36.904761904761905,
+            "rescued": 125,
+            "broken": 1
+          }
+        ],
+        "recall": 1.0,
+        "precision": 1.0,
+        "detectable": 6,
+        "hits": 6,
+        "false_positives": 0,
+        "rank_correlation": 0.9567172612055053,
+        "ranked_actions": 10,
+        "interval_coverage": 1.0,
+        "k3_share": 1.0,
+        "k3_points": 19.94047619047619,
+        "k3_rescued": 67,
+        "k3_broken": 0,
+        "achievable_k3_points": 19.94047619047619,
+        "chance_mean_share": 0.015675391884797118,
+        "chance_p5_share": 0.0,
+        "chance_p95_share": 0.0,
+        "chance_valued_draws": 199,
+        "chance_requested_draws": 200,
+        "chance_skipped_fresh_replay": 1,
+        "chance_skipped_error": 0,
+        "needs_fresh_replay": 0,
+        "world_hash": "006d54622e06e9f017e0cd7c19529b85d9c2c3cef4023f10068688b18f261fec",
+        "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). This evaluation ran no simulations; experiment provenance is in answer evidence. Traceability has no MCP call log for direct computation."
+      },
+      "oracle_proxy": {
+        "world": "w41",
+        "scoring_episodes": 336,
+        "condition": "oracle-proxy",
+        "completed_experiments": 0,
+        "oracle_proxy_lookups": 8,
+        "mae_points": 0.17119347750219763,
+        "calibration_slope": 1.0014829432839922,
+        "decoy_rejection": 1.0,
+        "confounders_resolved": 0,
+        "confounders_total": 0,
+        "informative_actions": 10,
+        "informative_intervals_covered": 10,
+        "informative_interval_coverage": 1.0,
+        "informative_rank_correlation": 0.9567172612055053,
+        "warnings": 1,
+        "warning_scoring": "Not implemented in this stage-2 scorer; emitted warnings are retained in the diagnosis.",
+        "budgets": [
+          {
+            "kind": "count",
+            "amount": 3.0,
+            "share": 1.0,
+            "points": 19.94047619047619,
+            "rescued": 67,
+            "broken": 0
+          },
+          {
+            "kind": "count",
+            "amount": 6.0,
+            "share": 1.0,
+            "points": 36.904761904761905,
+            "rescued": 125,
+            "broken": 1
+          },
+          {
+            "kind": "cost",
+            "amount": 4.0,
+            "share": 1.0,
+            "points": 28.273809523809526,
+            "rescued": 96,
+            "broken": 1
+          },
+          {
+            "kind": "cost",
+            "amount": 8.0,
+            "share": 1.0,
+            "points": 36.904761904761905,
+            "rescued": 125,
+            "broken": 1
+          }
+        ],
+        "recall": 1.0,
+        "precision": 1.0,
+        "detectable": 6,
+        "hits": 6,
+        "false_positives": 0,
+        "rank_correlation": 0.9567172612055053,
+        "ranked_actions": 10,
+        "interval_coverage": 1.0,
+        "k3_share": 1.0,
+        "k3_points": 19.94047619047619,
+        "k3_rescued": 67,
+        "k3_broken": 0,
+        "achievable_k3_points": 19.94047619047619,
+        "chance_mean_share": 0.015675391884797118,
+        "chance_p5_share": 0.0,
+        "chance_p95_share": 0.0,
+        "chance_valued_draws": 199,
+        "chance_requested_draws": 200,
+        "chance_skipped_fresh_replay": 1,
+        "chance_skipped_error": 0,
+        "needs_fresh_replay": 0,
+        "world_hash": "006d54622e06e9f017e0cd7c19529b85d9c2c3cef4023f10068688b18f261fec",
+        "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). This evaluation ran no simulations; experiment provenance is in answer evidence. Traceability has no MCP call log for direct computation."
+      }
+    },
+    {
+      "source_commit": "b022bbf",
+      "world": "w42",
+      "development_worlds": [
+        "w41",
+        "w42",
+        "w43"
+      ],
+      "condition": "in-sample",
+      "seconds": 76.59115353800007,
+      "visible_hashes": {
+        "data_dictionary.md": "ddc7f8f793b076960cf486e6ece4c1728014e194e0e543d2fd732433f6cd5700",
+        "log/description.json": "a59beedcd8abd2cfde730282a05bdcde67104fdf44054d450edab83a129a4a61",
+        "log/episodes.parquet": "dad48f80d8c4fb28554ff6d8ca81d31670a48022a989d3a444b724ea4e45f678",
+        "log/health.parquet": "8ceefafcca6cff21b3a8726857ff194aa65ca72a61b5d2629df0c0c7c21a3dda",
+        "log/change_log.parquet": "c49770f221ec9c217e73068344abe362b197959acd7350629aed0e0003dc2fca",
+        "log/maintenance.parquet": "48160108dfba128fe1e9b5d431da3b5aa0031b55cbbafbd2fabe8d7dfe28d77b",
+        "log/events.parquet": "d2b060a6d14987d9227c6e0f10589cd9d2c66219e30779c4dc39c62cd169b6b7",
+        "log/catalogue.parquet": "df1791950bdd56c31191bbaa7202d73b5a4611002a5afd02b1d0b7d96a2b26b2",
+        "log/costs.parquet": "ec32ed91d67df39a6f63c69205c9d106cc90d0955d0fa35afdc8741d33bdf52b"
+      },
+      "logs": {
+        "world": "w42",
+        "scoring_episodes": 336,
+        "condition": "logs",
+        "completed_experiments": 0,
+        "oracle_proxy_lookups": 0,
+        "mae_points": 1.7929548436042633,
+        "calibration_slope": 0.2871465935488351,
+        "decoy_rejection": 1.0,
+        "confounders_resolved": 0,
+        "confounders_total": 1,
+        "informative_actions": 7,
+        "informative_intervals_covered": 6,
+        "informative_interval_coverage": 0.8571428571428571,
+        "informative_rank_correlation": 0.1853123291652753,
+        "warnings": 0,
+        "warning_scoring": "Not implemented in this stage-2 scorer; emitted warnings are retained in the diagnosis.",
+        "budgets": [
+          {
+            "kind": "count",
+            "amount": 3.0,
+            "share": 0.3557692307692308,
+            "points": 11.011904761904763,
+            "rescued": 43,
+            "broken": 6
+          },
+          {
+            "kind": "count",
+            "amount": 6.0,
+            "share": 0.3695652173913043,
+            "points": 15.178571428571429,
+            "rescued": 57,
+            "broken": 6
+          },
+          {
+            "kind": "cost",
+            "amount": 4.0,
+            "share": 0.7285714285714285,
+            "points": 15.178571428571429,
+            "rescued": 57,
+            "broken": 6
+          },
+          {
+            "kind": "cost",
+            "amount": 8.0,
+            "share": 0.38636363636363635,
+            "points": 15.178571428571429,
+            "rescued": 57,
+            "broken": 6
+          }
+        ],
+        "recall": 0.5714285714285714,
+        "precision": 0.8,
+        "detectable": 7,
+        "hits": 4,
+        "false_positives": 1,
+        "rank_correlation": 0.3685096647860845,
+        "ranked_actions": 10,
+        "interval_coverage": 0.9,
+        "k3_share": 0.3557692307692308,
+        "k3_points": 11.011904761904763,
+        "k3_rescued": 43,
+        "k3_broken": 6,
+        "achievable_k3_points": 30.952380952380953,
+        "chance_mean_share": 0.013701923076923075,
+        "chance_p5_share": 0.0,
+        "chance_p95_share": 0.07980769230769133,
+        "chance_valued_draws": 200,
+        "chance_requested_draws": 200,
+        "chance_skipped_fresh_replay": 0,
+        "chance_skipped_error": 0,
+        "needs_fresh_replay": 0,
+        "world_hash": "d89aa777958cd2608e0f4ef0702325f8163c297740fdf93aa54670863902802a",
+        "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). This evaluation ran no simulations; experiment provenance is in answer evidence. Traceability has no MCP call log for direct computation."
+      },
+      "oracle_proxy": {
+        "world": "w42",
+        "scoring_episodes": 336,
+        "condition": "oracle-proxy",
+        "completed_experiments": 0,
+        "oracle_proxy_lookups": 8,
+        "mae_points": 0.5606959625160717,
+        "calibration_slope": 0.9626005688135506,
+        "decoy_rejection": 1.0,
+        "confounders_resolved": 1,
+        "confounders_total": 1,
+        "informative_actions": 6,
+        "informative_intervals_covered": 6,
+        "informative_interval_coverage": 1.0,
+        "informative_rank_correlation": 0.9856107606091623,
+        "warnings": 0,
+        "warning_scoring": "Not implemented in this stage-2 scorer; emitted warnings are retained in the diagnosis.",
+        "budgets": [
+          {
+            "kind": "count",
+            "amount": 3.0,
+            "share": 1.0,
+            "points": 30.952380952380953,
+            "rescued": 104,
+            "broken": 0
+          },
+          {
+            "kind": "count",
+            "amount": 6.0,
+            "share": 0.855072463768116,
+            "points": 35.11904761904762,
+            "rescued": 118,
+            "broken": 0
+          },
+          {
+            "kind": "cost",
+            "amount": 4.0,
+            "share": 0.7571428571428571,
+            "points": 15.773809523809524,
+            "rescued": 53,
+            "broken": 0
+          },
+          {
+            "kind": "cost",
+            "amount": 8.0,
+            "share": 0.8939393939393939,
+            "points": 35.11904761904762,
+            "rescued": 118,
+            "broken": 0
+          }
+        ],
+        "recall": 0.7142857142857143,
+        "precision": 1.0,
+        "detectable": 7,
+        "hits": 5,
+        "false_positives": 0,
+        "rank_correlation": 0.7346316787298114,
+        "ranked_actions": 10,
+        "interval_coverage": 1.0,
+        "k3_share": 1.0,
+        "k3_points": 30.952380952380953,
+        "k3_rescued": 104,
+        "k3_broken": 0,
+        "achievable_k3_points": 30.952380952380953,
+        "chance_mean_share": 0.013701923076923075,
+        "chance_p5_share": 0.0,
+        "chance_p95_share": 0.07980769230769133,
+        "chance_valued_draws": 200,
+        "chance_requested_draws": 200,
+        "chance_skipped_fresh_replay": 0,
+        "chance_skipped_error": 0,
+        "needs_fresh_replay": 0,
+        "world_hash": "d89aa777958cd2608e0f4ef0702325f8163c297740fdf93aa54670863902802a",
+        "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). This evaluation ran no simulations; experiment provenance is in answer evidence. Traceability has no MCP call log for direct computation."
+      }
+    },
+    {
+      "source_commit": "b022bbf",
+      "world": "w43",
+      "development_worlds": [
+        "w41",
+        "w42",
+        "w43"
+      ],
+      "condition": "in-sample",
+      "seconds": 91.56707806800841,
+      "visible_hashes": {
+        "data_dictionary.md": "ddc7f8f793b076960cf486e6ece4c1728014e194e0e543d2fd732433f6cd5700",
+        "log/description.json": "dc228f0820d1613e44c5282ac7345d1f84b0472ed9c30fc42951c475d7589901",
+        "log/episodes.parquet": "f1a8de9a810490f3d4d95aad1a4819e7e7ed42cda9be49cddcbc667c35dde21b",
+        "log/health.parquet": "b79fa077a4e3d526713f2827a3cf846713df8fb03b05bbd46859478a5a688267",
+        "log/change_log.parquet": "27e52577e2d1faa1abccf7cd30d4a026992625ecc42ab42c88aed7cf67367d5c",
+        "log/maintenance.parquet": "f425f069e071aa42ad4eb4603608fc31e55a2dd62493ac6759c8137373aee7bc",
+        "log/events.parquet": "dc35004f3d281bf5c205c3672b0bf6f60c8be313e2e869ad2eefa645b517d187",
+        "log/catalogue.parquet": "df1791950bdd56c31191bbaa7202d73b5a4611002a5afd02b1d0b7d96a2b26b2",
+        "log/costs.parquet": "ec32ed91d67df39a6f63c69205c9d106cc90d0955d0fa35afdc8741d33bdf52b"
+      },
+      "logs": {
+        "world": "w43",
+        "scoring_episodes": 336,
+        "condition": "logs",
+        "completed_experiments": 0,
+        "oracle_proxy_lookups": 0,
+        "mae_points": 1.3109244266048148,
+        "calibration_slope": 0.9641639358450856,
+        "decoy_rejection": 1.0,
+        "confounders_resolved": 0,
+        "confounders_total": 1,
+        "informative_actions": 9,
+        "informative_intervals_covered": 9,
+        "informative_interval_coverage": 1.0,
+        "informative_rank_correlation": 0.5666666666666667,
+        "warnings": 1,
+        "warning_scoring": "Not implemented in this stage-2 scorer; emitted warnings are retained in the diagnosis.",
+        "budgets": [
+          {
+            "kind": "count",
+            "amount": 3.0,
+            "share": 1.0,
+            "points": 19.345238095238095,
+            "rescued": 67,
+            "broken": 2
+          },
+          {
+            "kind": "count",
+            "amount": 6.0,
+            "share": 0.8165137614678899,
+            "points": 26.488095238095237,
+            "rescued": 91,
+            "broken": 2
+          },
+          {
+            "kind": "cost",
+            "amount": 4.0,
+            "share": 0.9727272727272728,
+            "points": 31.845238095238095,
+            "rescued": 108,
+            "broken": 1
+          },
+          {
+            "kind": "cost",
+            "amount": 8.0,
+            "share": 0.8991596638655462,
+            "points": 31.845238095238095,
+            "rescued": 108,
+            "broken": 1
+          }
+        ],
+        "recall": 0.8571428571428571,
+        "precision": 0.6666666666666666,
+        "detectable": 7,
+        "hits": 6,
+        "false_positives": 3,
+        "rank_correlation": 0.6261427099904665,
+        "ranked_actions": 10,
+        "interval_coverage": 1.0,
+        "k3_share": 1.0,
+        "k3_points": 19.345238095238095,
+        "k3_rescued": 67,
+        "k3_broken": 2,
+        "achievable_k3_points": 19.345238095238095,
+        "chance_mean_share": 0.014998067259373792,
+        "chance_p5_share": 0.0,
+        "chance_p95_share": 0.16923076923076924,
+        "chance_valued_draws": 199,
+        "chance_requested_draws": 200,
+        "chance_skipped_fresh_replay": 1,
+        "chance_skipped_error": 0,
+        "needs_fresh_replay": 0,
+        "world_hash": "ba674bda7bd1af7adf5059d99ffc4b2cca656da6397149f4b845515f3782a4c5",
+        "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). This evaluation ran no simulations; experiment provenance is in answer evidence. Traceability has no MCP call log for direct computation."
+      },
+      "oracle_proxy": {
+        "world": "w43",
+        "scoring_episodes": 336,
+        "condition": "oracle-proxy",
+        "completed_experiments": 0,
+        "oracle_proxy_lookups": 8,
+        "mae_points": 0.4350730134963186,
+        "calibration_slope": 1.061787343916265,
+        "decoy_rejection": 1.0,
+        "confounders_resolved": 1,
+        "confounders_total": 1,
+        "informative_actions": 9,
+        "informative_intervals_covered": 9,
+        "informative_interval_coverage": 1.0,
+        "informative_rank_correlation": 0.9539832459815243,
+        "warnings": 1,
+        "warning_scoring": "Not implemented in this stage-2 scorer; emitted warnings are retained in the diagnosis.",
+        "budgets": [
+          {
+            "kind": "count",
+            "amount": 3.0,
+            "share": 1.0,
+            "points": 19.345238095238095,
+            "rescued": 67,
+            "broken": 2
+          },
+          {
+            "kind": "count",
+            "amount": 6.0,
+            "share": 1.0,
+            "points": 32.44047619047619,
+            "rescued": 109,
+            "broken": 0
+          },
+          {
+            "kind": "cost",
+            "amount": 4.0,
+            "share": 0.990909090909091,
+            "points": 32.44047619047619,
+            "rescued": 109,
+            "broken": 0
+          },
+          {
+            "kind": "cost",
+            "amount": 8.0,
+            "share": 0.9243697478991597,
+            "points": 32.73809523809524,
+            "rescued": 110,
+            "broken": 0
+          }
+        ],
+        "recall": 0.8571428571428571,
+        "precision": 0.75,
+        "detectable": 7,
+        "hits": 6,
+        "false_positives": 2,
+        "rank_correlation": 0.9509918346667657,
+        "ranked_actions": 10,
+        "interval_coverage": 1.0,
+        "k3_share": 1.0,
+        "k3_points": 19.345238095238095,
+        "k3_rescued": 67,
+        "k3_broken": 2,
+        "achievable_k3_points": 19.345238095238095,
+        "chance_mean_share": 0.014998067259373792,
+        "chance_p5_share": 0.0,
+        "chance_p95_share": 0.16923076923076924,
+        "chance_valued_draws": 199,
+        "chance_requested_draws": 200,
+        "chance_skipped_fresh_replay": 1,
+        "chance_skipped_error": 0,
+        "needs_fresh_replay": 0,
+        "world_hash": "ba674bda7bd1af7adf5059d99ffc4b2cca656da6397149f4b845515f3782a4c5",
+        "note": "Stage-2 scorer, including its detectable-cause denominator and conditional random baseline (draws needing fresh replays are omitted and counted). This evaluation ran no simulations; experiment provenance is in answer evidence. Traceability has no MCP call log for direct computation."
+      }
+    }
+  ],
+  "mutations": [
+    {
+      "mutation": "no_task",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.69s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_site",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.70s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_robot",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.69s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_day",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.58s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_repair",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.56s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "day_five",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.59s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "wrong_grip_sign",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.55s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "admit_usage",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.55s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "unknown_high_only",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.51s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_bootstrap",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.63s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "worst_cv",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.73s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_multiplicity",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.54s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_label_check",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.53s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_drop_evidence",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.87s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "zero_fleet",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.70s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_warning",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.89s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "singletons",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.53s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "ignore_costs",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.55s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_persistent_support",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.57s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_health_step",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.57s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "unpooled_noise",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.54s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_latent_candidates",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.90s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "residual_only_experiments",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.78s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "ignore_label_correction",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.92s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "count_nonfailures",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.54s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_site_weights",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.75s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_robot_weights",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.69s"
+      ],
+      "assertion_failure": true
+    },
+    {
+      "mutation": "no_task_strata",
+      "exit": 1,
+      "summary": [
+        "1 failed, 17 deselected in 0.60s"
+      ],
+      "assertion_failure": true
+    }
+  ],
+  "mutation_receipts": [
+    "/tmp/classical-stat-v2/mutation-receipt-physical"
+  ],
+  "real_ab": {
+    "status": "waiting_for_heavy_lock",
+    "planned_requests": 1,
+    "attempts_per_arm": 60,
+    "completed_requests": 0,
+    "world": "w42",
+    "queue": "/home/cs/.cache/robots-probes/classical-stat-v2/pilot-ab-w42/queues/session-01.json",
+    "run_checkout": "/home/cs/.cache/robots-probes/classical-stat-v2/run-pilot",
+    "engine_root": "/home/cs/.cache/robots-probes/classical-stat-v2/pilot-engine-w42",
+    "planned_at": "32bd3e3",
+    "action_matches_final_first_rank": true,
+    "real_noise_scores": null
+  },
+  "isolation": {
+    "analysis_seconds": 26.40854056700482,
+    "language_model_tokens": 0,
+    "api_cost": 0,
+    "source_commit": "b022bbf",
+    "world": "w42",
+    "isolated_input_files": [
+      "data_dictionary.md",
+      "log/catalogue.parquet",
+      "log/change_log.parquet",
+      "log/costs.parquet",
+      "log/description.json",
+      "log/episodes.parquet",
+      "log/events.parquet",
+      "log/health.parquet",
+      "log/maintenance.parquet"
+    ],
+    "byte_identical_files": [
+      "evidence.json",
+      "fix_sets/cost-4.json",
+      "fix_sets/cost-8.json",
+      "fix_sets/count-3.json",
+      "fix_sets/count-6.json",
+      "outbox/diagnosis.json",
+      "outbox/fix_set.json"
+    ],
+    "forbidden_imports": []
+  },
+  "source_sha256": {
+    "__init__.py": "509d5ee8e362a80b357de45980bbace4e9b51ef9b4727c97c4cee1e898f61ac4",
+    "__main__.py": "17d0cb2918682096911b30eb507a25f2be4cad057d10be850a3f93480d5364c8",
+    "analysis.py": "3e61458200c9eed5d48b5e1811afca09a32baa264d3ca97bf1b0fcaed74dc462",
+    "data.py": "8d7897cd7045618922ece1f401f8109713f7cc5fa2123d2d11a6e22a82cb71a1",
+    "evaluate.py": "fc0271a09a93b262f65fd7bf71f8e62bf738c8a81777924891c58acbf97445a5",
+    "experiments.py": "40d0cf6220e50c38f888efc135987f9e318fc532118fa0adbbbad0593cae5587",
+    "features.py": "472f5532bf5afc81c61f320199795b239c924406d4f0fa90664c68129c4722d6",
+    "health.py": "9d893d38c9ecd6364f57fa74d832aba15aa85867fc6dfcaae0c2e74d7c2d40a5",
+    "regression.py": "c8f01aa70dce60785e716983e2b2f55e9eb25a0418077251e9d57123f655efb4",
+    "selection.py": "47b50a9441523505669764cc4d271b01b860674dffcb11efe0ec8e263afb5124",
+    "signals.py": "0fb1c6decf9eea0adff19e85291d2202e93158a89a5e957e0aa51f5c2ad73fcf"
+  },
+  "cost_note": "No model tokens or API charges in baseline execution. Isolated w42 analysis timing is one loaded-host sample; experiment simulation cost excluded.",
+  "verification": {
+    "commit": "b022bbf45e3f1af87d7ce86e122e789a027bf08f",
+    "command": "env OPENBLAS_NUM_THREADS=1 make check",
+    "exit_code": 0,
+    "ruff_check": true,
+    "ruff_format_check": true,
+    "mypy": true,
+    "pytest_passed": 1112,
+    "pytest_skipped": 2,
+    "pytest_deselected": 62,
+    "pytest_seconds": 208.02,
+    "classical_tests_passed": 29,
+    "mutations_caught": 28,
+    "mutations_tried": 28,
+    "check_sim_run": false,
+    "smoke_world_run": false,
+    "reason_sim_checks_not_run": "No simulator, generator or engine source changed",
+    "real_ab_completed": false,
+    "first_out_of_sample_run": false
+  }
+}

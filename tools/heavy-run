@@ -1,0 +1,66 @@
+#!/bin/sh
+# Run a job under a memory ceiling, and heavy jobs one at a time.
+#
+#   tools/heavy-run [-m SIZE] [-g GIB] COMMAND...   heavy: waits for the lock
+#   tools/heavy-run --light [-m SIZE] COMMAND...    light: no lock
+#
+# Heavy means: loads a model onto the GPU, or starts more than four simulation
+# processes. The GPU shares memory with the system and this machine hangs when
+# that fills, so heavy jobs run one at a time.
+#
+# Two limits apply. RAM: a job that exceeds its ceiling (-m, default 24G heavy
+# and 8G light, no swap) is killed on its own. GPU memory is not counted
+# against that ceiling (measured: 6 GiB held on the GPU under a 3 GiB ceiling),
+# so a heavy job is also killed when the GPU memory in use on the whole machine
+# passes -g GiB (default 24 of 31). A process that loads a model should cap
+# itself as well, with torch.cuda.set_per_process_memory_fraction.
+set -eu
+
+light=0
+mem=
+gpu=24
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --light) light=1; shift ;;
+        -m) mem="$2"; shift 2 ;;
+        -g) gpu="$2"; shift 2 ;;
+        --) shift; break ;;
+        *) break ;;
+    esac
+done
+[ $# -gt 0 ] || { echo "usage: $0 [--light] [-m SIZE] [-g GIB] COMMAND..." >&2; exit 2; }
+[ -n "$mem" ] || { [ "$light" -eq 1 ] && mem=8G || mem=24G; }
+
+if [ "$light" -eq 1 ]; then
+    exec systemd-run --user --scope --quiet --collect \
+        -p MemoryMax="$mem" -p MemorySwapMax=0 -- "$@"
+fi
+
+lock="${XDG_RUNTIME_DIR:?}/robots-heavy.lock"
+exec 9>"$lock"
+if ! flock -n 9; then
+    echo "heavy-run: another heavy job holds the lock, waiting" >&2
+    flock 9
+fi
+
+# The job runs in the background so that this shell can watch GPU memory.
+# A background job would get an empty stdin, so hand it the real one.
+unit="robots-heavy-$$"
+exec 8<&0
+systemd-run --user --scope --quiet --collect --unit "$unit" \
+    -p MemoryMax="$mem" -p MemorySwapMax=0 -- "$@" <&8 &
+job=$!
+exec 8<&-
+trap 'systemctl --user kill "$unit.scope" 2>/dev/null || true' INT TERM HUP
+
+used=$(ls /sys/class/drm/card*/device/mem_info_gtt_used 2>/dev/null | head -n 1)
+limit=$((gpu * 1024 * 1024 * 1024))
+while kill -0 "$job" 2>/dev/null; do
+    if [ -n "$used" ] && [ "$(cat "$used")" -gt "$limit" ]; then
+        echo "heavy-run: GPU memory in use passed ${gpu} GiB, stopping the job" >&2
+        systemctl --user kill --signal=KILL "$unit.scope" 2>/dev/null || true
+        break
+    fi
+    sleep 1
+done
+wait "$job"

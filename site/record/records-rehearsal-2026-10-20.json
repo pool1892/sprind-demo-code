@@ -1,0 +1,12 @@
+{
+  "format": "fleetlab.film-records/1",
+  "notes": "The record page's draft of 20 October, bound to what exists on the evening of 19 October: lane T's development dry run of job one (one session, two development starts, no release), lane F's rehearsal film and its two verified re-renders. Job one's release, job two, the operator run, the library and story B are not recorded yet, so their numbers stay unbound and the draft says so.",
+  "records": {
+    "job_one": "~/.cache/robots-probes/demo/2026-10-20/tools/dry-run-job-one-1846/job_run.json",
+    "film": "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal/film/provenance.json",
+    "rerenders": [
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal/rerenders/e000101.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal/rerenders/e000102.rerender.scene.720px.json"
+    ]
+  }
+}

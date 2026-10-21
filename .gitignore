@@ -1,0 +1,26 @@
+# Secrets and machine-local settings
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+# Git worktrees of parallel agents
+.claude/worktrees/
+
+# Generated data: videos, logs, downloaded datasets, LIBERO's config file
+/data/
+# Where lerobot-eval writes when it gets no --output_dir
+/outputs/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local database and lock files
+.dolt/
+*.db
+*.gate.lock*

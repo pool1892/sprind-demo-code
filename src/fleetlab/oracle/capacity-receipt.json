@@ -1,0 +1,175 @@
+[
+ {
+  "classes": 21,
+  "budget": 3,
+  "episodes": 21,
+  "noop_entries": 100,
+  "seconds": 0.015,
+  "method": "uniform count sets",
+  "sets": 287980,
+  "mean_points": 2.479,
+  "p5_points": 0.0,
+  "p95_points": 9.524,
+  "histogram": [
+   [
+    0,
+    161700
+   ],
+   [
+    1,
+    103950
+   ],
+   [
+    2,
+    21000
+   ],
+   [
+    3,
+    1330
+   ]
+  ],
+  "unvalued_sets": 0,
+  "net_low": 0,
+  "net_high": 21,
+  "bounds": null,
+  "missing": null,
+  "counting_limited": null,
+  "uncomputed_sets": 0
+ },
+ {
+  "classes": 21,
+  "budget": 6,
+  "episodes": 21,
+  "noop_entries": 100,
+  "seconds": 0.499,
+  "method": "uniform count sets",
+  "sets": 3843323484,
+  "mean_points": 4.959,
+  "p5_points": 0.0,
+  "p95_points": 14.286,
+  "histogram": [
+   [
+    0,
+    1192052400
+   ],
+   [
+    1,
+    1581037920
+   ],
+   [
+    2,
+    823457250
+   ],
+   [
+    3,
+    215061000
+   ],
+   [
+    4,
+    29625750
+   ],
+   [
+    5,
+    2034900
+   ],
+   [
+    6,
+    54264
+   ]
+  ],
+  "unvalued_sets": 0,
+  "net_low": 0,
+  "net_high": 21,
+  "bounds": null,
+  "missing": null,
+  "counting_limited": null,
+  "uncomputed_sets": 0
+ },
+ {
+  "classes": 40,
+  "budget": 3,
+  "episodes": 40,
+  "noop_entries": 100,
+  "seconds": 0.086,
+  "method": "uniform count sets",
+  "sets": 447580,
+  "mean_points": 2.143,
+  "p5_points": 0.0,
+  "p95_points": 5.0,
+  "histogram": [
+   [
+    0,
+    161700
+   ],
+   [
+    1,
+    198000
+   ],
+   [
+    2,
+    78000
+   ],
+   [
+    3,
+    9880
+   ]
+  ],
+  "unvalued_sets": 0,
+  "net_low": 0,
+  "net_high": 40,
+  "bounds": null,
+  "missing": null,
+  "counting_limited": null,
+  "uncomputed_sets": 0
+ },
+ {
+  "classes": 40,
+  "budget": 6,
+  "episodes": 40,
+  "noop_entries": 100,
+  "seconds": 0.639,
+  "method": "uniform count sets",
+  "sets": 9381724380,
+  "mean_points": null,
+  "p5_points": 0.0,
+  "p95_points": null,
+  "histogram": [
+   [
+    0,
+    1192052400
+   ],
+   [
+    1,
+    3011500800
+   ],
+   [
+    2,
+    3058555500
+   ],
+   [
+    3,
+    1597596000
+   ],
+   [
+    4,
+    442030050
+   ]
+  ],
+  "unvalued_sets": 79989630,
+  "net_low": 0,
+  "net_high": 40,
+  "bounds": {
+   "mean_points": [
+    4.18,
+    5.034
+   ],
+   "p95_points": [
+    7.5,
+    10.0
+   ]
+  },
+  "missing": null,
+  "counting_limited": "resolution classes exceed 100000 counting states",
+  "uncomputed_sets": 79989630
+ }
+]

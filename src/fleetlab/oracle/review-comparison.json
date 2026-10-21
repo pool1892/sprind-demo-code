@@ -1,0 +1,1766 @@
+{
+ "source_commit": "0fae966",
+ "replay_commit": "2beb1ea",
+ "worlds": [
+  {
+   "world_id": "w41",
+   "old_report": "/home/cs/.cache/robots-probes/worlds/w41/oracle/oracle.json",
+   "new_report": "/home/cs/.cache/robots-probes/worlds/w41/oracle-review-20261009/oracle.json",
+   "old_sha256": "4e2648ca75f41adce2853b38220cb67d37c2612c89d18b5917220506071ed3ec",
+   "new_sha256": "07714f7a7830d62d45b8b7980f0dc185616981b36c96c8219dc305ab4a1505de",
+   "changed_numbers": [
+    {
+     "field": "chance.4 h.above_zero",
+     "old": 0.204,
+     "new": 0.235,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.mean_points",
+     "old": 1.47,
+     "new": 1.72,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.mean_share",
+     "old": 0.052,
+     "new": 0.0608,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.skipped_fresh_replay",
+     "old": 14,
+     "new": 0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.valued",
+     "old": 186,
+     "new": 200,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.above_zero",
+     "old": 0.279,
+     "new": 0.31,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.mean_points",
+     "old": 2.059,
+     "new": 2.335,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.mean_share",
+     "old": 0.0558,
+     "new": 0.0633,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p95_points",
+     "old": 8.467,
+     "new": 8.943,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p95_share",
+     "old": 0.2294,
+     "new": 0.2423,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.skipped_fresh_replay",
+     "old": 28,
+     "new": 0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.valued",
+     "old": 172,
+     "new": 200,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.above_zero",
+     "old": 0.04,
+     "new": 0.045,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.mean_points",
+     "old": 0.313,
+     "new": 0.353,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.mean_share",
+     "old": 0.0157,
+     "new": 0.0177,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.skipped_fresh_replay",
+     "old": 1,
+     "new": 0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.valued",
+     "old": 199,
+     "new": 200,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.above_zero",
+     "old": 0.101,
+     "new": 0.11,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.mean_points",
+     "old": 0.744,
+     "new": 0.807,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.mean_share",
+     "old": 0.0202,
+     "new": 0.0219,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p95_points",
+     "old": 6.31,
+     "new": 8.333,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p95_share",
+     "old": 0.171,
+     "new": 0.2258,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.skipped_fresh_replay",
+     "old": 2,
+     "new": 0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.valued",
+     "old": 198,
+     "new": 200,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "rows",
+     "old": 2156,
+     "new": 3080,
+     "repair": "missing-draw repair (new D1 joint replays)"
+    }
+   ],
+   "added_numbers": [
+    {
+     "field": "all_removed_known_failures",
+     "old": "<absent>",
+     "new": 6,
+     "repair": "fault-free-outcome guard"
+    },
+    {
+     "field": "all_removed_missing",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "fault-free-outcome guard"
+    },
+    {
+     "field": "interactions.f01+f05.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": -1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f05.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 11,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f05.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 10,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f06.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f06.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 13,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f06.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 14,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f07.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 5,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f07.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 24,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f07.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 29,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f06.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 11,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f06.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 20,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f06.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 31,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f07.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 8,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f07.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 27,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f07.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 35,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "policy_failures_on_healthy_robot",
+     "old": "<absent>",
+     "new": 6,
+     "repair": "healthy-robot wording"
+    },
+    {
+     "field": "runs./home/cs/.cache/robots-probes/worlds/w41/oracle-review-20261009/fresh/chance/run.as_run",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "missing-draw repair (new D1 joint replays)"
+    },
+    {
+     "field": "runs./home/cs/.cache/robots-probes/worlds/w41/oracle-review-20261009/fresh/chance/run.replays",
+     "old": "<absent>",
+     "new": 924,
+     "repair": "missing-draw repair (new D1 joint replays)"
+    },
+    {
+     "field": "runs./home/cs/.cache/robots-probes/worlds/w41/oracle-review-20261009/fresh/chance/run.rows",
+     "old": "<absent>",
+     "new": 947,
+     "repair": "missing-draw repair (new D1 joint replays)"
+    },
+    {
+     "field": "runs./home/cs/.cache/robots-probes/worlds/w41/oracle-review-20261009/fresh/chance/run.unmodified",
+     "old": "<absent>",
+     "new": 23,
+     "repair": "missing-draw repair (new D1 joint replays)"
+    }
+   ],
+   "changed_verdicts": []
+  },
+  {
+   "world_id": "w42",
+   "old_report": "/home/cs/.cache/robots-probes/worlds/w42/oracle/oracle.json",
+   "new_report": "/home/cs/.cache/robots-probes/worlds/w42/oracle-review-20261009/oracle.json",
+   "old_sha256": "5204dc508a54331ce3b82060430b75fb3af7a59ab1c33d7bbf4f340e32fc2c04",
+   "new_sha256": "8706863f2d32a7cb0edc1321d1625a162b2bfbcc463629273fb335de93c2acd9",
+   "changed_numbers": [
+    {
+     "field": "chance.4 h.above_zero",
+     "old": 0.214,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.mean_points",
+     "old": 0.79,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.mean_share",
+     "old": 0.0379,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.p5_points",
+     "old": -0.298,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.p5_share",
+     "old": -0.0143,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.p95_points",
+     "old": 4.464,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.p95_share",
+     "old": 0.2143,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.above_zero",
+     "old": 0.347,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.mean_points",
+     "old": 1.719,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.mean_share",
+     "old": 0.0438,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p5_points",
+     "old": -0.417,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p5_share",
+     "old": -0.0106,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p95_points",
+     "old": 7.44,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p95_share",
+     "old": 0.1894,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.above_zero",
+     "old": 0.181,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.mean_points",
+     "old": 0.655,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.mean_share",
+     "old": 0.0159,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p5_points",
+     "old": 0.0,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p5_share",
+     "old": 0.0,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p95_points",
+     "old": 4.196,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p95_share",
+     "old": 0.1022,
+     "new": null,
+     "repair": "missing-draw repair"
+    }
+   ],
+   "added_numbers": [
+    {
+     "field": "all_removed_known_failures",
+     "old": "<absent>",
+     "new": 8,
+     "repair": "fault-free-outcome guard"
+    },
+    {
+     "field": "all_removed_missing",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "fault-free-outcome guard"
+    },
+    {
+     "field": "chance.4 h.bounds.above_zero.0",
+     "old": "<absent>",
+     "new": 0.21,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.above_zero.1",
+     "old": "<absent>",
+     "new": 0.23,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.mean_points.0",
+     "old": "<absent>",
+     "new": -0.357,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.mean_points.1",
+     "old": "<absent>",
+     "new": 1.643,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.mean_share.0",
+     "old": "<absent>",
+     "new": -0.0171,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.mean_share.1",
+     "old": "<absent>",
+     "new": 0.0789,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p5_points.0",
+     "old": "<absent>",
+     "new": -0.298,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p5_points.1",
+     "old": "<absent>",
+     "new": -0.298,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p5_share.0",
+     "old": "<absent>",
+     "new": -0.0143,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p5_share.1",
+     "old": "<absent>",
+     "new": -0.0143,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p95_points.0",
+     "old": "<absent>",
+     "new": 4.464,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p95_points.1",
+     "old": "<absent>",
+     "new": 4.866,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p95_share.0",
+     "old": "<absent>",
+     "new": 0.2143,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p95_share.1",
+     "old": "<absent>",
+     "new": 0.2336,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.above_zero.0",
+     "old": "<absent>",
+     "new": 0.335,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.above_zero.1",
+     "old": "<absent>",
+     "new": 0.37,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.mean_points.0",
+     "old": "<absent>",
+     "new": -0.32,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.mean_points.1",
+     "old": "<absent>",
+     "new": 3.18,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.mean_share.0",
+     "old": "<absent>",
+     "new": -0.0081,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.mean_share.1",
+     "old": "<absent>",
+     "new": 0.0809,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p5_points.0",
+     "old": "<absent>",
+     "new": -0.595,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p5_points.1",
+     "old": "<absent>",
+     "new": -0.312,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p5_share.0",
+     "old": "<absent>",
+     "new": -0.0152,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p5_share.1",
+     "old": "<absent>",
+     "new": -0.008,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p95_points.0",
+     "old": "<absent>",
+     "new": 7.44,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p95_points.1",
+     "old": "<absent>",
+     "new": 15.774,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p95_share.0",
+     "old": "<absent>",
+     "new": 0.1894,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p95_share.1",
+     "old": "<absent>",
+     "new": 0.4015,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.above_zero.0",
+     "old": "<absent>",
+     "new": 0.18,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.above_zero.1",
+     "old": "<absent>",
+     "new": 0.185,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.mean_points.0",
+     "old": "<absent>",
+     "new": 0.369,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.mean_points.1",
+     "old": "<absent>",
+     "new": 0.869,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.mean_share.0",
+     "old": "<absent>",
+     "new": 0.009,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.mean_share.1",
+     "old": "<absent>",
+     "new": 0.0212,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p5_points.0",
+     "old": "<absent>",
+     "new": 0.0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p5_points.1",
+     "old": "<absent>",
+     "new": 0.0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p5_share.0",
+     "old": "<absent>",
+     "new": 0.0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p5_share.1",
+     "old": "<absent>",
+     "new": 0.0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p95_points.0",
+     "old": "<absent>",
+     "new": 4.182,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p95_points.1",
+     "old": "<absent>",
+     "new": 4.464,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p95_share.0",
+     "old": "<absent>",
+     "new": 0.1018,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p95_share.1",
+     "old": "<absent>",
+     "new": 0.1087,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "interactions.f01+f02.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": -1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f02.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": -1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f02.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": -2,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f03.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f03.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f03.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f07.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 6,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f07.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": -6,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f07.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f12.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f12.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 3,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f12.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 3,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f13.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 5,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f13.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f13.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 5,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f02+f07.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f02+f07.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f02+f07.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f07.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 2,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f07.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f07.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 2,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f06.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 55,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f06.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f06.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 55,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f08.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 52,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f08.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": -4,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f08.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 48,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f09.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 17,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f09.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 6,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f09.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 23,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f10.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 11,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f10.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 26,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f10.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 37,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f08.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f08.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f08.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f09.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 2,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f09.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 10,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f09.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 12,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f10.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": -1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f10.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 14,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f06+f10.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 13,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f07+f12.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": -2,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f07+f12.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 5,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f07+f12.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 3,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f07+f13.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f07+f13.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f07+f13.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f08+f09.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f08+f09.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 10,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f08+f09.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 10,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f08+f10.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": -3,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f08+f10.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 12,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f08+f10.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 9,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "policy_failures_on_healthy_robot",
+     "old": "<absent>",
+     "new": 8,
+     "repair": "healthy-robot wording"
+    }
+   ],
+   "changed_verdicts": [
+    {
+     "field": "patterns.interaction:f02,f01.verdict",
+     "old": "not confirmed",
+     "new": "weak",
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "patterns.interaction:f03,f01.verdict",
+     "old": "not confirmed",
+     "new": "weak",
+     "repair": "interaction-verdict repair"
+    }
+   ]
+  },
+  {
+   "world_id": "w43",
+   "old_report": "/home/cs/.cache/robots-probes/worlds/w43/oracle/oracle.json",
+   "new_report": "/home/cs/.cache/robots-probes/worlds/w43/oracle-review-20261009/oracle.json",
+   "old_sha256": "bc2297afce3ffebbe4a4b019178564b51d76182355be95cf836ebe7b57752ab3",
+   "new_sha256": "d664c8613d880f82b5814cd251a202e7d88e067115fdf91adf9dfbc8c607c81d",
+   "changed_numbers": [
+    {
+     "field": "chance.4 h.above_zero",
+     "old": 0.447,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.mean_points",
+     "old": 2.043,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.mean_share",
+     "old": 0.0624,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.p5_points",
+     "old": -0.595,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.p5_share",
+     "old": -0.0182,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.p95_points",
+     "old": 7.738,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.p95_share",
+     "old": 0.2364,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.above_zero",
+     "old": 0.511,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.mean_points",
+     "old": 2.521,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.mean_share",
+     "old": 0.0712,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p5_points",
+     "old": -0.595,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p5_share",
+     "old": -0.0168,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p95_points",
+     "old": 9.003,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.p95_share",
+     "old": 0.2542,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.above_zero",
+     "old": 0.101,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.mean_points",
+     "old": 0.29,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.mean_share",
+     "old": 0.015,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.p5_points",
+     "old": 0.0,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.p5_share",
+     "old": 0.0,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.p95_points",
+     "old": 3.274,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.p95_share",
+     "old": 0.1692,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.above_zero",
+     "old": 0.177,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.mean_points",
+     "old": 0.685,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.mean_share",
+     "old": 0.0211,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p5_points",
+     "old": -0.298,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p5_share",
+     "old": -0.0092,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p95_points",
+     "old": 5.357,
+     "new": null,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.p95_share",
+     "old": 0.1651,
+     "new": null,
+     "repair": "missing-draw repair"
+    }
+   ],
+   "added_numbers": [
+    {
+     "field": "all_removed_known_failures",
+     "old": "<absent>",
+     "new": 11,
+     "repair": "fault-free-outcome guard"
+    },
+    {
+     "field": "all_removed_missing",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "fault-free-outcome guard"
+    },
+    {
+     "field": "chance.4 h.bounds.above_zero.0",
+     "old": "<absent>",
+     "new": 0.425,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.above_zero.1",
+     "old": "<absent>",
+     "new": 0.475,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.mean_points.0",
+     "old": "<absent>",
+     "new": -1.155,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.mean_points.1",
+     "old": "<absent>",
+     "new": 3.845,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.mean_share.0",
+     "old": "<absent>",
+     "new": -0.0353,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.mean_share.1",
+     "old": "<absent>",
+     "new": 0.1175,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p5_points.0",
+     "old": "<absent>",
+     "new": -3.943,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p5_points.1",
+     "old": "<absent>",
+     "new": -0.595,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p5_share.0",
+     "old": "<absent>",
+     "new": -0.1205,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p5_share.1",
+     "old": "<absent>",
+     "new": -0.0182,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p95_points.0",
+     "old": "<absent>",
+     "new": 7.738,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p95_points.1",
+     "old": "<absent>",
+     "new": 16.324,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p95_share.0",
+     "old": "<absent>",
+     "new": 0.2364,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.4 h.bounds.p95_share.1",
+     "old": "<absent>",
+     "new": 0.4986,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.above_zero.0",
+     "old": "<absent>",
+     "new": 0.45,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.above_zero.1",
+     "old": "<absent>",
+     "new": 0.57,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.mean_points.0",
+     "old": "<absent>",
+     "new": -5.21,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.mean_points.1",
+     "old": "<absent>",
+     "new": 6.79,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.mean_share.0",
+     "old": "<absent>",
+     "new": -0.1471,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.mean_share.1",
+     "old": "<absent>",
+     "new": 0.1917,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p5_points.0",
+     "old": "<absent>",
+     "new": -61.905,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p5_points.1",
+     "old": "<absent>",
+     "new": -0.595,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p5_share.0",
+     "old": "<absent>",
+     "new": -1.7479,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p5_share.1",
+     "old": "<absent>",
+     "new": -0.0168,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p95_points.0",
+     "old": "<absent>",
+     "new": 8.929,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p95_points.1",
+     "old": "<absent>",
+     "new": 38.095,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p95_share.0",
+     "old": "<absent>",
+     "new": 0.2521,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.8 h.bounds.p95_share.1",
+     "old": "<absent>",
+     "new": 1.0756,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.above_zero.0",
+     "old": "<absent>",
+     "new": 0.1,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.above_zero.1",
+     "old": "<absent>",
+     "new": 0.105,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.mean_points.0",
+     "old": "<absent>",
+     "new": -0.021,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.mean_points.1",
+     "old": "<absent>",
+     "new": 0.479,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.mean_share.0",
+     "old": "<absent>",
+     "new": -0.0011,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.mean_share.1",
+     "old": "<absent>",
+     "new": 0.0248,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.p5_points.0",
+     "old": "<absent>",
+     "new": 0.0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.p5_points.1",
+     "old": "<absent>",
+     "new": 0.0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.p5_share.0",
+     "old": "<absent>",
+     "new": 0.0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.p5_share.1",
+     "old": "<absent>",
+     "new": 0.0,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.p95_points.0",
+     "old": "<absent>",
+     "new": 3.274,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.p95_points.1",
+     "old": "<absent>",
+     "new": 3.289,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.p95_share.0",
+     "old": "<absent>",
+     "new": 0.1692,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 3.bounds.p95_share.1",
+     "old": "<absent>",
+     "new": 0.17,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.above_zero.0",
+     "old": "<absent>",
+     "new": 0.175,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.above_zero.1",
+     "old": "<absent>",
+     "new": 0.185,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.mean_points.0",
+     "old": "<absent>",
+     "new": 0.06,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.mean_points.1",
+     "old": "<absent>",
+     "new": 1.06,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.mean_share.0",
+     "old": "<absent>",
+     "new": 0.0018,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.mean_share.1",
+     "old": "<absent>",
+     "new": 0.0327,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p5_points.0",
+     "old": "<absent>",
+     "new": -0.298,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p5_points.1",
+     "old": "<absent>",
+     "new": -0.298,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p5_share.0",
+     "old": "<absent>",
+     "new": -0.0092,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p5_share.1",
+     "old": "<absent>",
+     "new": -0.0092,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p95_points.0",
+     "old": "<absent>",
+     "new": 5.357,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p95_points.1",
+     "old": "<absent>",
+     "new": 5.655,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p95_share.0",
+     "old": "<absent>",
+     "new": 0.1651,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "chance.k = 6.bounds.p95_share.1",
+     "old": "<absent>",
+     "new": 0.1743,
+     "repair": "missing-draw repair"
+    },
+    {
+     "field": "interactions.f01+f02.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f02.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f02.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f06.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 13,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f06.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 2,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f01+f06.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 15,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f02+f06.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 2,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f02+f06.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f02+f06.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 2,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f04.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 18,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f04.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 11,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f04.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 29,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f05.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 12,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f05.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f03+f05.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 13,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f05.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 13,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f05.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": -1,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f05.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 12,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f08.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 11,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f08.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 28,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f08.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 39,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f10.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 7,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f10.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 26,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f04+f10.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 33,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f08.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": -3,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f08.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 14,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f08.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 11,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f10.detail.standalone_harm_net.0",
+     "old": "<absent>",
+     "new": 0,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f10.detail.standalone_harm_net.1",
+     "old": "<absent>",
+     "new": 19,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "interactions.f05+f10.detail.summed_harm_net",
+     "old": "<absent>",
+     "new": 19,
+     "repair": "interaction-verdict repair"
+    },
+    {
+     "field": "policy_failures_on_healthy_robot",
+     "old": "<absent>",
+     "new": 11,
+     "repair": "healthy-robot wording"
+    }
+   ],
+   "changed_verdicts": [
+    {
+     "field": "patterns.interaction:f02,f01.verdict",
+     "old": "not confirmed",
+     "new": "weak",
+     "repair": "interaction-verdict repair"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "model": "haiku",
+ "turns": [
+  {
+   "turn": 0,
+   "seconds": 2.32,
+   "since_process_start": 2.32,
+   "api_ms": 1895,
+   "correct": true,
+   "input_tokens": 1166,
+   "cached_input_tokens": 0,
+   "output_tokens": 163
+  },
+  {
+   "turn": 1,
+   "seconds": 1.61,
+   "since_process_start": 3.93,
+   "api_ms": 3484,
+   "correct": true,
+   "input_tokens": 1460,
+   "cached_input_tokens": 0,
+   "output_tokens": 168
+  },
+  {
+   "turn": 2,
+   "seconds": 1.27,
+   "since_process_start": 5.19,
+   "api_ms": 4736,
+   "correct": true,
+   "input_tokens": 1759,
+   "cached_input_tokens": 0,
+   "output_tokens": 162
+  },
+  {
+   "turn": 3,
+   "seconds": 1.28,
+   "since_process_start": 6.47,
+   "api_ms": 6003,
+   "correct": true,
+   "input_tokens": 2052,
+   "cached_input_tokens": 0,
+   "output_tokens": 166
+  }
+ ]
+}

@@ -1,0 +1,1087 @@
+{
+  "format": "fleetlab.film-provenance/1",
+  "built": "2026-10-20T00:49:09+00:00",
+  "command": "python -m fleetlab.film build",
+  "code": {
+    "checkout": "/home/cs/code/robots-wt-film",
+    "commit": "d7c3964dcbfe50a7678273c70db2f0eeac7bd164",
+    "film_code_modified": false
+  },
+  "ffmpeg": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+  "manifest": {
+    "path": "/home/cs/code/robots-wt-film/site/manifests/rough-2026-10-19.json",
+    "sha256": "d50a96f2aad921b84971194643d3e18146d2fb67d74d3e65a12bbe6ae2124a80"
+  },
+  "script": {
+    "path": "/home/cs/code/robots-wt-film/site/manifests/../narration/script.md",
+    "sha256": "d70aebfe0f2263b77c51fc3da099f5495aafd51b7f849efa1cc6150e56d38a1b"
+  },
+  "narration": "none: captions timed at a reading pace of 150 words a minute, silent sound track",
+  "final": false,
+  "options": {
+    "draft": true,
+    "repeatable": false,
+    "beats": null,
+    "story": null
+  },
+  "outputs": [
+    {
+      "role": "draft",
+      "file": "film.mp4",
+      "sha256": "4bb459d8b4396226752ea8f4adfb5d9d468e0e304fec812b7c3796fe7d4c0cbc",
+      "bytes": 1721567,
+      "width": 640,
+      "height": 360,
+      "fps": 20,
+      "seconds": 244.7,
+      "video": "H.264 high, crf 28, preset veryfast, at most 800 kb/s",
+      "audio": "AAC 96 kb/s, 48000 Hz mono",
+      "streams": {
+        "line0": "Duration: 00:04:04.70, start: 0.000000, bitrate: 56 kb/s",
+        "line1": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 640x360, 48 kb/s, 20 fps, 20 tbr, 10240 tbn (default)",
+        "line2": "Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 1 kb/s (default)"
+      }
+    }
+  ],
+  "seconds": 244.7,
+  "beats": [
+    {
+      "id": "open",
+      "story": null,
+      "title": "Opening",
+      "start_s": 0.0,
+      "end_s": 11.4,
+      "status": "card",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": null,
+      "narration": {
+        "words": 23,
+        "seconds": 10.1,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "This is a simulated robot installation. The robot's policy is fixed. Agents observe it, run experiments, and change how the installation uses it."
+      },
+      "shots": [
+        {
+          "kind": "card",
+          "start_s": 0.0,
+          "end_s": 11.4,
+          "title": "The installation takes on a new job"
+        }
+      ]
+    },
+    {
+      "id": "a0-title",
+      "story": "A",
+      "title": "Story A",
+      "start_s": 11.4,
+      "end_s": 15.4,
+      "status": "card",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": null,
+      "narration": {
+        "words": 6,
+        "seconds": 2.7,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "First story: make this one job."
+      },
+      "shots": [
+        {
+          "kind": "card",
+          "start_s": 11.4,
+          "end_s": 15.4,
+          "title": "Make this one job"
+        }
+      ]
+    },
+    {
+      "id": "a1-skills",
+      "story": "A",
+      "title": "The skills",
+      "start_s": 15.4,
+      "end_s": 29.6,
+      "status": "placeholder",
+      "placeholder": "lane S spike, single skills on start 0, development runs",
+      "needs": "two single-skill runs from story A's record, each delivered",
+      "subtitle": "the robot is capable; the policy never changes",
+      "narration": {
+        "words": 30,
+        "seconds": 12.9,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The robot already has skills. Each is one task on this kitchen table, and the policy does each one well on its own. The policy never changes in this film."
+      },
+      "shots": [
+        {
+          "kind": "clip",
+          "start_s": 15.4,
+          "end_s": 19.1,
+          "clips": [
+            {
+              "label": "skill: cream cheese into the bowl",
+              "layout": "episode-dir",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10",
+              "episode": "S6/naive/s00",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/S6/naive/s00/scene.mp4",
+              "video_sha256": "3e3025bd030eae9683b6f07af56632fb753834d0ae828ad84b88ec6d72f2d062",
+              "video_frames": 96,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                0,
+                95
+              ],
+              "speed": 1.5,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/S6/naive/s00/summary.json": "f776acc0260f62424559cf669ef69fd382d9e8305a4dfb1fd8692084276475c8"
+              },
+              "record": {
+                "job": "S6",
+                "variant": "naive",
+                "start": 0,
+                "base_task": 6,
+                "base_stem": "put_the_cream_cheese_in_the_bowl",
+                "init_state": 0,
+                "scene_seed": 3060898589,
+                "noise_seed": 6053786618818064158,
+                "control_steps": 95,
+                "delivered": true,
+                "tag": "delivered",
+                "reason": "every goal holds, robot clear, objects at rest, gripper open",
+                "end_hash": "a4705686a5faf010"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "clip",
+          "start_s": 19.1,
+          "end_s": 29.6,
+          "clips": [
+            {
+              "label": "skill: bowl onto the plate",
+              "layout": "episode-dir",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10",
+              "episode": "S4/naive/s00",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/S4/naive/s00/scene.mp4",
+              "video_sha256": "adc23b395eae686c25d1b17e243b4ffd3616374036008cbf116b7db97c47d5ab",
+              "video_frames": 94,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                0,
+                93
+              ],
+              "speed": 1.5,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/S4/naive/s00/summary.json": "1e511b696975241fe8d34e961173614340129d90962696961f10e365565ed78a"
+              },
+              "record": {
+                "job": "S4",
+                "variant": "naive",
+                "start": 0,
+                "base_task": 4,
+                "base_stem": "put_the_bowl_on_the_plate",
+                "init_state": 0,
+                "scene_seed": 3060898589,
+                "noise_seed": 6053786618818064158,
+                "control_steps": 93,
+                "delivered": true,
+                "tag": "delivered",
+                "reason": "every goal holds, robot clear, objects at rest, gripper open",
+                "end_hash": "7e67907eeaf0d3ad"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2-request",
+      "story": "A",
+      "title": "The request",
+      "start_s": 29.6,
+      "end_s": 49.0,
+      "status": "no footage",
+      "placeholder": "the panel shows the spike's chain J1 as an example; gate 1 chooses job one",
+      "needs": "the shift lead's request, the order rule, the agent's acceptance proposal (N starts, K deliveries) and the lead's approval, from story A's session record",
+      "subtitle": "intent enters; the bar is set outside the agent",
+      "narration": {
+        "words": 43,
+        "seconds": 18.1,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "A shift lead asks for one job: a chain of skills, ending in a stated arrangement, with a rule about the order. The agent proposes how many fresh starts the job must deliver on. The lead approves that bar before anything is tested."
+      },
+      "shots": [
+        {
+          "kind": "slate",
+          "start_s": 29.6,
+          "end_s": 49.0
+        }
+      ]
+    },
+    {
+      "id": "a3-naive",
+      "story": "A",
+      "title": "The naive attempt",
+      "start_s": 49.0,
+      "end_s": 69.1,
+      "status": "placeholder",
+      "placeholder": "lane S spike, naive chain J3 on development starts",
+      "needs": "the naive chain on story A's release starts, with its count",
+      "subtitle": "a success signal is not a delivery",
+      "narration": {
+        "words": 44,
+        "seconds": 18.8,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The obvious chain switches to the next skill the moment the first reports success. That signal is what published scores count. But it can fire while the hand still holds the item, and the job ends wrong. A success signal is not a delivery."
+      },
+      "shots": [
+        {
+          "kind": "clip",
+          "start_s": 49.0,
+          "end_s": 69.1,
+          "clips": [
+            {
+              "label": "naive chain, start 6",
+              "layout": "episode-dir",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10",
+              "episode": "J3/naive/s06",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/J3/naive/s06/scene.mp4",
+              "video_sha256": "2e5d5956fad9400c0fff5fe6dae09feed7b64317eba09c0b1d3d1dfafe7f413e",
+              "video_frames": 377,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                0,
+                376
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "held_at_switch",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/J3/naive/s06/summary.json": "4265c2195800c88ca9a870d5dd96758894944dcca04a63a571e0520f665d15b8"
+              },
+              "record": {
+                "job": "J3",
+                "variant": "naive",
+                "start": 6,
+                "base_task": 4,
+                "base_stem": "put_the_bowl_on_the_plate",
+                "init_state": 6,
+                "scene_seed": 4257492356,
+                "noise_seed": 4647426516006207446,
+                "control_steps": 376,
+                "delivered": false,
+                "tag": "held_at_switch",
+                "reason": "akita_black_bowl_1 was still in the hand when step 1 switched and was carried out of its goal at control step 376",
+                "end_hash": "e07d5a8a09732338"
+              },
+              "note": "The bowl is still in the hand when the instruction switches."
+            }
+          ],
+          "counts": [
+            {
+              "text": "0 of 10 delivered",
+              "detail": "naive chain J3, development starts 0 to 9 (spike)",
+              "kind": "computed",
+              "k": 0,
+              "n": 10,
+              "tables": [
+                {
+                  "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/results.jsonl",
+                  "sha256": "140a975fc7cc9fc91d9cde4e1acf1e7ade0700dd29bf791c6e2cbf1e61f11734"
+                }
+              ],
+              "where": {
+                "job": "J3",
+                "variant": "naive"
+              },
+              "key": [],
+              "success": "delivered is true",
+              "source": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a4-investigation",
+      "story": "A",
+      "title": "The investigation",
+      "start_s": 69.1,
+      "end_s": 86.9,
+      "status": "no footage",
+      "placeholder": null,
+      "needs": "the agent's session: the object traces it reads, its saved check (the SQL on screen), the failing moment it finds, and the transitions it tests",
+      "subtitle": "agent-built measurement; experiments on the installation",
+      "narration": {
+        "words": 39,
+        "seconds": 16.5,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The agent reads the object traces and writes its own check: did a later step undo an earlier one, and is everything released and at rest? It finds the failing moment. Then it tests transitions on the installation itself."
+      },
+      "shots": [
+        {
+          "kind": "slate",
+          "start_s": 69.1,
+          "end_s": 86.9
+        }
+      ]
+    },
+    {
+      "id": "a5-release",
+      "story": "A",
+      "title": "The release",
+      "start_s": 86.9,
+      "end_s": 105.0,
+      "status": "placeholder",
+      "placeholder": "lane S spike: the host's release transition on development starts, not the agent's program on reserved starts",
+      "needs": "the agent's frozen program against the naive chain on the same reserved start, side by side; the release receipt's counts, rescued and broken; the agent's account to the shift lead",
+      "subtitle": "a qualified job",
+      "narration": {
+        "words": 39,
+        "seconds": 16.8,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The agent freezes its program and runs it on starts it has never seen. The obvious chain runs on the same starts. The counts are on screen. The agent explains the change to the shift lead in plain words."
+      },
+      "shots": [
+        {
+          "kind": "pair",
+          "start_s": 86.9,
+          "end_s": 105.0,
+          "clips": [
+            {
+              "label": "naive chain, start 1",
+              "layout": "episode-dir",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10",
+              "episode": "J1/naive/s01",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/J1/naive/s01/scene.mp4",
+              "video_sha256": "542699da8f2e9080743a51da48d8a9ebcab7fb91c58425926a8c7b0b06216929",
+              "video_frames": 395,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                0,
+                394
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "second_skill_failed",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/J1/naive/s01/summary.json": "7dcbeed6929251f6ad3d8d717877da471d13c255ba34be128411f023517fe0c5"
+              },
+              "record": {
+                "job": "J1",
+                "variant": "naive",
+                "start": 1,
+                "base_task": 6,
+                "base_stem": "put_the_cream_cheese_in_the_bowl",
+                "init_state": 1,
+                "scene_seed": 3765277368,
+                "noise_seed": 5526383691105553425,
+                "control_steps": 394,
+                "delivered": false,
+                "tag": "second_skill_failed",
+                "reason": "step 2 (put_the_bowl_on_the_plate) timed out from the new state",
+                "end_hash": "bf0334732a99a6cc"
+              }
+            },
+            {
+              "label": "release transition, start 1",
+              "layout": "episode-dir",
+              "run": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/confirm20",
+              "episode": "J1/release/s01",
+              "video": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/confirm20/J1/release/s01/scene.mp4",
+              "video_sha256": "acde91362b6f89e649cf0095587ae4a5437920b7c66e44c0ccf03772f69fb113",
+              "video_frames": 446,
+              "video_fps": 20.0,
+              "control_steps_shown": [
+                0,
+                445
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "delivered",
+              "files_read": {
+                "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/confirm20/J1/release/s01/summary.json": "6b1032879f7767f9d012c236ebaf74c509dc5f20b8e010c756f17095ace18d8f"
+              },
+              "record": {
+                "job": "J1",
+                "variant": "release",
+                "start": 1,
+                "base_task": 6,
+                "base_stem": "put_the_cream_cheese_in_the_bowl",
+                "init_state": 1,
+                "scene_seed": 3765277368,
+                "noise_seed": 5526383691105553425,
+                "control_steps": 445,
+                "delivered": true,
+                "tag": "delivered",
+                "reason": "every goal holds, robot clear, objects at rest, gripper open",
+                "end_hash": "b90a00a33382a053"
+              }
+            }
+          ],
+          "counts": [
+            {
+              "text": "naive: 5 of 20 delivered",
+              "detail": "chain J1, development starts 0 to 19 (spike)",
+              "kind": "computed",
+              "k": 5,
+              "n": 20,
+              "tables": [
+                {
+                  "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/naive10/results.jsonl",
+                  "sha256": "140a975fc7cc9fc91d9cde4e1acf1e7ade0700dd29bf791c6e2cbf1e61f11734"
+                },
+                {
+                  "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/confirm20/results.jsonl",
+                  "sha256": "6437c7f6b39f498b71b0dab37cfaef8082836a2dd0fa1946dbc420e416b72232"
+                }
+              ],
+              "where": {
+                "job": "J1",
+                "variant": "naive"
+              },
+              "key": [
+                "start"
+              ],
+              "success": "delivered is true",
+              "source": null
+            },
+            {
+              "text": "release: 8 of 20 delivered",
+              "detail": "the same chain and starts with a release transition (spike)",
+              "kind": "computed",
+              "k": 8,
+              "n": 20,
+              "tables": [
+                {
+                  "path": "/home/cs/.cache/robots-probes/demo/2026-10-20/spike/confirm20/results.jsonl",
+                  "sha256": "6437c7f6b39f498b71b0dab37cfaef8082836a2dd0fa1946dbc420e416b72232"
+                }
+              ],
+              "where": {
+                "job": "J1",
+                "variant": "release"
+              },
+              "key": [
+                "start"
+              ],
+              "success": "delivered is true",
+              "source": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a6-next-shift",
+      "story": "A",
+      "title": "The next shift",
+      "start_s": 105.0,
+      "end_s": 120.4,
+      "status": "no footage",
+      "placeholder": null,
+      "needs": "the job list with job one and its check; an operator's command running job one from a fresh start; the second request; job two's session invoking the saved check; the two cost accounts side by side",
+      "subtitle": "the next request starts from a more capable system",
+      "narration": {
+        "words": 33,
+        "seconds": 14.1,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The job and the check join the installation's job list, and an operator runs the job with one command. A second request arrives. The agent calls the saved check and reuses its method."
+      },
+      "shots": [
+        {
+          "kind": "slate",
+          "start_s": 105.0,
+          "end_s": 120.4
+        }
+      ]
+    },
+    {
+      "id": "a7-close",
+      "story": "A",
+      "title": "What changed",
+      "start_s": 120.4,
+      "end_s": 129.9,
+      "status": "placeholder",
+      "placeholder": "the claim waits for both jobs' release receipts",
+      "needs": null,
+      "subtitle": null,
+      "narration": {
+        "words": 19,
+        "seconds": 8.2,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The robot policy stayed the same. The installation gained two jobs and a check it did not have before."
+      },
+      "shots": [
+        {
+          "kind": "card",
+          "start_s": 120.4,
+          "end_s": 129.9,
+          "title": "The robot policy stayed the same."
+        }
+      ]
+    },
+    {
+      "id": "b0-title",
+      "story": "B",
+      "title": "Story B",
+      "start_s": 129.9,
+      "end_s": 135.9,
+      "status": "card",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": null,
+      "narration": {
+        "words": 11,
+        "seconds": 4.7,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "Second story: make that a check the next shift can run."
+      },
+      "shots": [
+        {
+          "kind": "card",
+          "start_s": 129.9,
+          "end_s": 135.9,
+          "title": "Make that a check the next shift can run"
+        }
+      ]
+    },
+    {
+      "id": "b1-constraint",
+      "story": "B",
+      "title": "The constraint and the failure",
+      "start_s": 135.9,
+      "end_s": 152.4,
+      "status": "placeholder",
+      "placeholder": "feasibility campaign m2 (world w70), its delayed site s1",
+      "needs": "story B's fleet: the site's note and success by site and day",
+      "subtitle": "a real operating constraint",
+      "narration": {
+        "words": 35,
+        "seconds": 15.2,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "A fleet of robot arms works at several sites. At one site, inference stays in the customer's data centre, so commands arrive late. Nobody on site can undo that. The site's success rate shows it."
+      },
+      "shots": [
+        {
+          "kind": "image",
+          "start_s": 135.9,
+          "end_s": 140.9,
+          "files": {
+            "/var/tmp/robots-loop/exhibit/bundles/m2/figures/r1-fleet-sites.png": "b4fc49fc1c9d18ba10be8792ec252fff90cc9d8b0f2cb4f5bc2bad151efb6e6f"
+          }
+        },
+        {
+          "kind": "clip",
+          "start_s": 140.9,
+          "end_s": 152.4,
+          "clips": [
+            {
+              "label": "site s1, robot r02, day 6",
+              "layout": "fleet-log",
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001853",
+              "video": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/video/e001853.scene.mp4",
+              "video_sha256": "d6d6d9994f10e86f7847efb253b530de6620a6666a5833b35760e1da85ce82fa",
+              "video_frames": 71,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                0,
+                280
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "failure",
+              "files_read": {
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/episodes.parquet": "f6e70541fd8dd26f8e776e6ef5956410bc7ca05e2182c0e8d8429519658888ca",
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/steps/e001853.parquet": "0d78bfc1403bed36e3ce3ae5deaca41bebaaef42b5b3e94849b03b81ebb6b9f7"
+              },
+              "record": {
+                "episode_id": "e001853",
+                "robot_id": "r02",
+                "site_id": "s1",
+                "day": 6,
+                "task_text": "pick up the black bowl on the wooden cabinet and place it on the plate",
+                "steps": 280,
+                "outcome": "failure",
+                "experiment_id": "x0002",
+                "duration_s": 14.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2-instrument",
+      "story": "B",
+      "title": "The instrument",
+      "start_s": 152.4,
+      "end_s": 169.8,
+      "status": "placeholder",
+      "placeholder": "lane P's spike figure, run by the host, not the agent's probe",
+      "needs": "the agent's composed step-response probe on a suspect and a healthy robot, and its overlay figure",
+      "subtitle": "the harness lets an agent build a measurement",
+      "narration": {
+        "words": 38,
+        "seconds": 16.1,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The agent builds a measurement. It composes a step-response probe from a bounded set of motions, runs it on a suspect robot and on a healthy one, and writes the analysis itself. Commanded against measured, side by side."
+      },
+      "shots": [
+        {
+          "kind": "image",
+          "start_s": 152.4,
+          "end_s": 169.8,
+          "files": {
+            "/home/cs/code/robots-wt-instrument/spikes/instrument/figures/probe-shapes.png": "8bcb92a5871043cbf0a34d55bfa39def99f3f347ed51268ee4b3c295480f62f2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b3-change",
+      "story": "B",
+      "title": "The change",
+      "start_s": 169.8,
+      "end_s": 198.1,
+      "status": "placeholder",
+      "placeholder": "feasibility campaign m2 (world w70), experiments x0002 and x0001; the counts are lane P's spike, not the engagement",
+      "needs": "story B's recorded task experiments: the compensation at the delayed site, the decision between service and the half compensation for the robot with the backlog, and the rollback against the camera change at the third site",
+      "subtitle": "the probe selects candidates; experiments decide",
+      "narration": {
+        "words": 63,
+        "seconds": 27.0,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The probe selects candidates; task experiments decide. At the delayed site, the measured response points to a compensation, and an experiment confirms it. On the other lagging robot, the lag number misleads: the probe shows a backlog that grows. Service restores that robot, at three operator hours. A half compensation is a cheap partial fix. The record says which one the agent chose."
+      },
+      "shots": [
+        {
+          "kind": "pair",
+          "start_s": 169.8,
+          "end_s": 176.85,
+          "clips": [
+            {
+              "label": "before (control)",
+              "layout": "fleet-log",
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001853",
+              "video": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/video/e001853.scene.mp4",
+              "video_sha256": "d6d6d9994f10e86f7847efb253b530de6620a6666a5833b35760e1da85ce82fa",
+              "video_frames": 71,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                0,
+                280
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "failure",
+              "files_read": {
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/episodes.parquet": "f6e70541fd8dd26f8e776e6ef5956410bc7ca05e2182c0e8d8429519658888ca",
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/steps/e001853.parquet": "0d78bfc1403bed36e3ce3ae5deaca41bebaaef42b5b3e94849b03b81ebb6b9f7"
+              },
+              "record": {
+                "episode_id": "e001853",
+                "robot_id": "r02",
+                "site_id": "s1",
+                "day": 6,
+                "task_text": "pick up the black bowl on the wooden cabinet and place it on the plate",
+                "steps": 280,
+                "outcome": "failure",
+                "experiment_id": "x0002",
+                "duration_s": 14.0
+              }
+            },
+            {
+              "label": "after (latency compensation 18)",
+              "layout": "fleet-log",
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001854",
+              "video": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/video/e001854.scene.mp4",
+              "video_sha256": "6f32343d9da33de4dc397d6b88f6b9c53c8c6009eadfb119e1c963b6fd8c0a10",
+              "video_frames": 36,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                0,
+                140
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "success",
+              "files_read": {
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/episodes.parquet": "f6e70541fd8dd26f8e776e6ef5956410bc7ca05e2182c0e8d8429519658888ca",
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/steps/e001854.parquet": "d8ffa9bbb6943ddaa974532b6dc10a7b921c6487373e93a371219c2e7f8df5a6"
+              },
+              "record": {
+                "episode_id": "e001854",
+                "robot_id": "r02",
+                "site_id": "s1",
+                "day": 6,
+                "task_text": "pick up the black bowl on the wooden cabinet and place it on the plate",
+                "steps": 140,
+                "outcome": "success",
+                "experiment_id": "x0002",
+                "duration_s": 7.0
+              }
+            }
+          ],
+          "counts": [
+            {
+              "text": "lag-number compensation: 30 of 60",
+              "detail": "33 of 60 without it (a controller falling behind, spike)",
+              "kind": "literal",
+              "source": "lane P spike, spikes/instrument/README.md at 58f28e4"
+            },
+            {
+              "text": "half compensation: 53 of 60",
+              "detail": "0.1 operator hours",
+              "kind": "literal",
+              "source": "lane P spike README at 58f28e4; action costs, set a config key"
+            },
+            {
+              "text": "service: 3 operator hours",
+              "detail": "removes the fault",
+              "kind": "literal",
+              "source": "action costs, service (fleetlab.contracts.actions)"
+            }
+          ]
+        },
+        {
+          "kind": "pair",
+          "start_s": 176.85,
+          "end_s": 198.1,
+          "clips": [
+            {
+              "label": "before (control)",
+              "layout": "fleet-log",
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001738",
+              "video": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/video/e001738.scene.mp4",
+              "video_sha256": "9cf13a4160fd3a8689264bbc7a4bcbd2eeabb492617ed186657720215b06179f",
+              "video_frames": 71,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                0,
+                280
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "failure",
+              "files_read": {
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/episodes.parquet": "f6e70541fd8dd26f8e776e6ef5956410bc7ca05e2182c0e8d8429519658888ca",
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/steps/e001738.parquet": "d8dfb36079b4cfe97b0aa34dea0accfb9b61abb61c97989fa6ce9aee5103d8f1"
+              },
+              "record": {
+                "episode_id": "e001738",
+                "robot_id": "r08",
+                "site_id": "s2",
+                "day": 6,
+                "task_text": "pick up the salad dressing and place it in the basket",
+                "steps": 280,
+                "outcome": "failure",
+                "experiment_id": "x0001",
+                "duration_s": 14.0
+              }
+            },
+            {
+              "label": "after (software rolled back)",
+              "layout": "fleet-log",
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e001739",
+              "video": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/video/e001739.scene.mp4",
+              "video_sha256": "aa292a8cbb964ebce2832c1dfc051bb2e6566070d84948b5595805f86f9ad840",
+              "video_frames": 32,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                0,
+                121
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "success",
+              "files_read": {
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/episodes.parquet": "f6e70541fd8dd26f8e776e6ef5956410bc7ca05e2182c0e8d8429519658888ca",
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/steps/e001739.parquet": "23582e6b42d7fc5adf8b60f3515de055914292725f5836e2f57fab7531c57974"
+              },
+              "record": {
+                "episode_id": "e001739",
+                "robot_id": "r08",
+                "site_id": "s2",
+                "day": 6,
+                "task_text": "pick up the salad dressing and place it in the basket",
+                "steps": 121,
+                "outcome": "success",
+                "experiment_id": "x0001",
+                "duration_s": 6.05
+              }
+            }
+          ],
+          "counts": [
+            {
+              "text": "lag-number compensation: 30 of 60",
+              "detail": "33 of 60 without it (a controller falling behind, spike)",
+              "kind": "literal",
+              "source": "lane P spike, spikes/instrument/README.md at 58f28e4"
+            },
+            {
+              "text": "half compensation: 53 of 60",
+              "detail": "0.1 operator hours",
+              "kind": "literal",
+              "source": "lane P spike README at 58f28e4; action costs, set a config key"
+            },
+            {
+              "text": "service: 3 operator hours",
+              "detail": "removes the fault",
+              "kind": "literal",
+              "source": "action costs, service (fleetlab.contracts.actions)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b4-handover",
+      "story": "B",
+      "title": "The handover",
+      "start_s": 198.1,
+      "end_s": 215.1,
+      "status": "placeholder",
+      "placeholder": "the campaign's learned skill (m2), not a probe recipe",
+      "needs": "the validated probe recipe in the library and the command that runs it on named robots",
+      "subtitle": "a callable artifact, not a memo",
+      "narration": {
+        "words": 37,
+        "seconds": 15.7,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "The shift lead asks: make that a check the next shift can run. The probe and its analysis become a validated recipe in the library, runnable with one command on named robots. A tool, not a memo."
+      },
+      "shots": [
+        {
+          "kind": "text",
+          "start_s": 198.1,
+          "end_s": 215.1,
+          "files": {
+            "/var/tmp/robots-loop/driver/m2-w70-astra-2342/engagement/learned/learned-103c67736decc417/skills/separate-fixed-command-lag-from-component-health/SKILL.md": "5cc9bbf949905019e9ab300401ffe0ba776c42197bbc650485d226eada4d8982"
+          },
+          "lines": [
+            20,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b5-second-use",
+      "story": "B",
+      "title": "The second use",
+      "start_s": 215.1,
+      "end_s": 237.2,
+      "status": "placeholder",
+      "placeholder": "feasibility campaign m2, round 2, experiment x0005",
+      "needs": "the recipe run on the later fleet where a robot lags for the other reason, and the recorded decision against a blind repair",
+      "subtitle": "useful even when the previous answer is wrong",
+      "narration": {
+        "words": 49,
+        "seconds": 20.8,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "Later, on another fleet, a robot lags for the other reason. The saved recipe runs on it and shows a backlog, not a fixed delay. So the recorded decision is service, not the compensation a blind repair would copy. The method helps even when the old answer is wrong."
+      },
+      "shots": [
+        {
+          "kind": "pair",
+          "start_s": 215.1,
+          "end_s": 237.2,
+          "clips": [
+            {
+              "label": "before (control)",
+              "layout": "fleet-log",
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e002217",
+              "video": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/video/e002217.scene.mp4",
+              "video_sha256": "d2d70aa08976bc0008d83e681de30145d879c7112e620f178c08c3ceb4616da7",
+              "video_frames": 71,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                0,
+                280
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "failure",
+              "files_read": {
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/episodes.parquet": "f6e70541fd8dd26f8e776e6ef5956410bc7ca05e2182c0e8d8429519658888ca",
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/steps/e002217.parquet": "035694fb1e2a0e9524fb51e58d691265fe6c54dfa4ab747f2bc4eb1f6247805f"
+              },
+              "record": {
+                "episode_id": "e002217",
+                "robot_id": "r06",
+                "site_id": "s2",
+                "day": 12,
+                "task_text": "pick up the alphabet soup and place it in the basket",
+                "steps": 280,
+                "outcome": "failure",
+                "experiment_id": "x0005",
+                "duration_s": 14.0
+              }
+            },
+            {
+              "label": "after (action delay reverted at r06)",
+              "layout": "fleet-log",
+              "run": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04",
+              "episode": "e002218",
+              "video": "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/video/e002218.scene.mp4",
+              "video_sha256": "ab8f202fa4c6d4e0e40503dcb03ba767770f85f42b7b96bc0c116b9c3ce407ce",
+              "video_frames": 39,
+              "video_fps": 5.0,
+              "control_steps_shown": [
+                0,
+                151
+              ],
+              "speed": 2.0,
+              "crop": [
+                0,
+                0,
+                360,
+                360
+              ],
+              "outcome": "success",
+              "files_read": {
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/episodes.parquet": "f6e70541fd8dd26f8e776e6ef5956410bc7ca05e2182c0e8d8429519658888ca",
+                "/var/tmp/robots-loop/driver/m2-w70-astra-2342/loop/rounds/r2/exports/w70-20261013T234204-90338a-session-04/log/steps/e002218.parquet": "6926d1d2d309bf94fdc0b43b8ef1c4c06f32df6b980cc65b23d8f419c6fba2d2"
+              },
+              "record": {
+                "episode_id": "e002218",
+                "robot_id": "r06",
+                "site_id": "s2",
+                "day": 12,
+                "task_text": "pick up the alphabet soup and place it in the basket",
+                "steps": 151,
+                "outcome": "success",
+                "experiment_id": "x0005",
+                "duration_s": 7.55
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "story": null,
+      "title": "The record",
+      "start_s": 237.2,
+      "end_s": 244.7,
+      "status": "card",
+      "placeholder": null,
+      "needs": null,
+      "subtitle": null,
+      "narration": {
+        "words": 14,
+        "seconds": 6.2,
+        "voice": null,
+        "voice_sha256": null,
+        "timing": "estimated reading pace",
+        "text": "Every clip in this film is a recorded run. The record lists each one."
+      },
+      "shots": [
+        {
+          "kind": "card",
+          "start_s": 237.2,
+          "end_s": 244.7,
+          "title": "Every clip in this film is a recorded run."
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

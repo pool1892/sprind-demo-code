@@ -1,0 +1,16 @@
+{
+ "format": "fleetlab.exhibit-manifest/1",
+ "hub_id": null,
+ "label": "Two rounds on the miniature development fleet (readiness evidence)",
+ "rounds": [
+  {
+   "engagement": "/var/tmp/robots-loop/driver/m1-astra-2300/engagement/engagement.json",
+   "round": 1
+  },
+  {
+   "engagement": "/var/tmp/robots-loop/driver/m1-astra-2300/engagement/engagement.json",
+   "round": 2
+  }
+ ],
+ "annotations": "annotations.json"
+}

@@ -1,0 +1,7 @@
+{
+  "format": "fleetlab.film-site/1",
+  "title": "An agent turns two robot skills into a job that delivers 20 of 20",
+  "lede": "A simulated robot arm at a kitchen table was asked for a job it has no single skill for: leave the bowl on top of the cabinet and the cabinet's middle drawer open, both at once. An AI engineering agent built the job from the robot's two skills. On 20 fresh arrangements of the scene, held back until the end, the job delivered on all 20; the plain chain of the same two skills delivered on 1 of the same 20. The robot policy's weights never changed.",
+  "film": "~/.cache/robots-probes/demo/2026-10-20/reliability/film/first-case-draft-2/cut",
+  "record": "~/.cache/robots-probes/demo/2026-10-20/reliability/site/record-preview-1/page"
+}

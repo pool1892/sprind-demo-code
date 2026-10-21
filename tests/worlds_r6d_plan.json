@@ -1,0 +1,155 @@
+{
+ "about": "The third calibration plan of round 6c as sealed before admission (2026-10-10): stage order, sizes and manifest digests. fleetlab.worlds.calibration.third_plan wrote it.",
+ "root": "~/.cache/robots-probes/worlds-v4/20261010-task-cells-r6d",
+ "budget_seconds": 10800,
+ "order": [
+  "decoys-blur-d17",
+  "decoys-blur-d17-refine",
+  "object-pair",
+  "object-pair-refine",
+  "object-members",
+  "object-members-refine",
+  "object-wear",
+  "object-wear-refine",
+  "spatial-d17-batch",
+  "spatial-d17-batch-refine",
+  "object-wear-low",
+  "object-wear-low-refine",
+  "object-batch",
+  "object-batch-refine",
+  "spatial-wear-low",
+  "spatial-wear-low-refine",
+  "object-d17",
+  "object-d17-refine",
+  "spatial-d14",
+  "spatial-d14-refine",
+  "object-d14",
+  "object-d14-refine"
+ ],
+ "stages": {
+  "decoys-blur-d17": {
+   "jobs": 400,
+   "sha256": "575f053d885261df7e991ce503a7776c793009214e1fb593bd1bd395f76444cd"
+  },
+  "decoys-blur-d17-refine": {
+   "jobs": 600,
+   "sha256": "42d5ff351c089f229642e9adc4d566662cf876e4b62653670cda6cbb61ec10f8",
+   "parent": "decoys-blur-d17"
+  },
+  "object-pair": {
+   "jobs": 100,
+   "sha256": "09b4fd9938216c8398d4d0a426f15a3177f837715746eb08d0a3aaa9a1c16aff"
+  },
+  "object-pair-refine": {
+   "jobs": 400,
+   "sha256": "cdfc26e766c29f50e0663da2dba69f6f48cbb63c69265acb48f163e8fd3c34e5",
+   "parent": "object-pair"
+  },
+  "object-members": {
+   "jobs": 200,
+   "sha256": "88648cf067c85a2336d6ceb8eccf9cfed2720f0a4aba63e7bb65cab392c1e569"
+  },
+  "object-members-refine": {
+   "jobs": 800,
+   "sha256": "bdbcda6e37f032eca5d3633b3bf9794256a966faa8b2fb8b666b804b248ebafc",
+   "parent": "object-members"
+  },
+  "object-wear": {
+   "jobs": 200,
+   "sha256": "0931b211e59bc8dd2b1d647acb5393329664d482af6194cbe66e124eefd4fd63"
+  },
+  "object-wear-refine": {
+   "jobs": 800,
+   "sha256": "e3471a9651910b0251f62950eb6e2917ba888549487c75856df15b3d37001045",
+   "parent": "object-wear"
+  },
+  "spatial-d17-batch": {
+   "jobs": 100,
+   "sha256": "1f7a412d11c5bbf9df2ac44c5e3dc9908cd718b497258b8d1c7f64a93e8c9907"
+  },
+  "spatial-d17-batch-refine": {
+   "jobs": 400,
+   "sha256": "bbe23c60e4fd072f2fb9381b3120ae7c4d3d13ffb469c1d0a573d7ba740b624a",
+   "parent": "spatial-d17-batch"
+  },
+  "object-wear-low": {
+   "jobs": 200,
+   "sha256": "5362914a790113d9d52737a5aca19c2315f83652d8d1ff37880199ce6a957197"
+  },
+  "object-wear-low-refine": {
+   "jobs": 800,
+   "sha256": "b6ca77912740df40a7c0dac27275819d62dda753e1647837edede3a1b50705ca",
+   "parent": "object-wear-low"
+  },
+  "object-batch": {
+   "jobs": 200,
+   "sha256": "1a3554effc7f8b4716bd4ce2779f06d438be6954581fecbe132199cf0af3a65b"
+  },
+  "object-batch-refine": {
+   "jobs": 800,
+   "sha256": "09593155f33ee3a33f77fe781ce6c27100ac502c320910f5a93be020f1a76be1",
+   "parent": "object-batch"
+  },
+  "spatial-wear-low": {
+   "jobs": 100,
+   "sha256": "4822bfab84bdd67800d2ed6a7931a561c3ca1b51cbb642521e3fc5f84c4bd2bd"
+  },
+  "spatial-wear-low-refine": {
+   "jobs": 400,
+   "sha256": "bff2439f9734de09a42a3f8bbe403d81fc0accfd568c1aa35c9ca63b879a7619",
+   "parent": "spatial-wear-low"
+  },
+  "object-d17": {
+   "jobs": 100,
+   "sha256": "c161fd7c559bb905cdf94a53f6bd15de0f84b93cdc26605ce543fd82b338cd2b"
+  },
+  "object-d17-refine": {
+   "jobs": 400,
+   "sha256": "6684702c49d1817992935d33e007058e0e112b296fbbab21001454f54a5cf9c3",
+   "parent": "object-d17"
+  },
+  "spatial-d14": {
+   "jobs": 100,
+   "sha256": "fd685b6887646d5989822f23beba17d96e3df668feedf660c8496299ba70db04"
+  },
+  "spatial-d14-refine": {
+   "jobs": 400,
+   "sha256": "c06c6bd7ddf2aa8420a521b78e5626ed45175f1700fe83cd576348925ee61367",
+   "parent": "spatial-d14"
+  },
+  "object-d14": {
+   "jobs": 100,
+   "sha256": "1fb301b7ba4711bc0b6cd40930606fd0f94b499742c0a585439136f61f16e579"
+  },
+  "object-d14-refine": {
+   "jobs": 400,
+   "sha256": "abc96630f71c58c85f18049058d17cd9f4c5c1c6f5f1109e824f8318320bcbde",
+   "parent": "object-d14"
+  }
+ },
+ "assays": [
+  {
+   "suite": "libero_spatial",
+   "control": [
+    [
+     "camera_degradation",
+     "3 px blur"
+    ],
+    [
+     "action_latency",
+     "17 steps"
+    ]
+   ],
+   "decoys": [
+    [
+     "backdrop_change",
+     "1 walls and floor"
+    ]
+   ],
+   "stages": [
+    "decoys-blur-d17",
+    "decoys-blur-d17-refine"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+  "format": "fleetlab.film-records/1",
+  "notes": "The record page at the shift lead's bar of three in five (final-9), bound to the re-told narrated cut final-9 (film/final-9/film, as rebuilt in place from demo/film at f7673a4; its provenance.json has SHA-256 beginning 770ce4ff09e8) and its 11 verified re-render reports; story A from job one's three shifts (run-3, run-5, run-6 with its release receipt re-issued at the lead's bar, the re-issue record and the release exposure log), the attempts not shown (run-1, run-2), job two's three shifts (job-two/run-1, run-2 and run-3, with run-3's release receipt); story B from the engagement on the first fleet and the recipe's second use. Two records lie in folders whose names carry a hidden world id; the page shows them by a digest of that part.",
+  "records": {
+    "job_one": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/job_run.json",
+    "shift_one_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-01/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-02/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-03/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/runs/session-04/run/episodes.jsonl"
+    ],
+    "shift_one_account": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/analyses/w90-20261019T225523-5d81af/outbox/job_account.json",
+    "job_one_library": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-3/library/index.json",
+    "shift_two": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/job_run.json",
+    "shift_two_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-01/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-02/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-03/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/runs/session-04/run/episodes.jsonl"
+    ],
+    "shift_two_account": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-5/analyses/w90-20261020T002932-70409e/outbox/job_account.json",
+    "library": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/release/library/index.json",
+    "run_one": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-1/job_run.json",
+    "run_two": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-2/job_run.json",
+    "job_one_release": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/run/run/receipt.json",
+    "film": "~/.cache/robots-probes/demo/2026-10-20/film/final-9/film/provenance.json",
+    "rerenders": [
+      "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-release/e000102.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-release/e000202.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/final-5/rerenders/run-6-s03/e000401.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-2/rerenders/cabinet/e000101.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-2/rerenders/cheese/e000101.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s01/e000102.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s02/e000402.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s03/e000602.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-3-s04/e000702.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-5-s03/e000602.rerender.scene.720px.json",
+      "~/.cache/robots-probes/demo/2026-10-20/film/rehearsal-4/rerenders/run-5-s04/e000802.rerender.scene.720px.json"
+    ],
+    "story_b_description": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB/files/description.json",
+    "story_b_operation": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r1/exports/start-01/log/episodes.parquet",
+    "story_b_engagement": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/engagement/engagement.json",
+    "story_b_ledger": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/ledgers/ledger-r1.json",
+    "story_b_probe_episodes": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_episodes.parquet",
+    "story_b_probe_steps": [
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001729.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001730.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001731.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001732.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001733.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001734.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001735.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001736.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001737.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001738.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001739.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/probe_steps/e001740.parquet"
+    ],
+    "story_b_attempts": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/evaluation/attempts.parquet",
+    "story_b_learned_library": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/engagement/learned/learned-81c70b2a7a9e3b60/library.json",
+    "story_b_recipe_skill": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/engagement/learned/learned-81c70b2a7a9e3b60/skills/separate-fixed-transport-delay-from-controller-backlog/SKILL.md",
+    "story_b_second_description": "~/.cache/robots-probes/demo/2026-10-20/instrument/worlds/STORYB-LATER/files/description.json",
+    "story_b_second_operation": "~/.cache/robots-probes/demo/2026-10-20/instrument/second-use/check-2/export/log/episodes.parquet",
+    "story_b_recipe_check": "~/.cache/robots-probes/demo/2026-10-20/instrument/second-use/check-2/recipe-check.json",
+    "story_b_decision": "~/.cache/robots-probes/demo/2026-10-20/instrument/second-use/check-2/decision.md",
+    "story_b_requests": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/engagement/w80-20261019T224617-a1f33d/outbox/experiments.jsonl",
+    "story_b_results": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/engagement/w80-20261019T224617-a1f33d/results/experiments.jsonl",
+    "story_b_round2_episodes": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/episodes.parquet",
+    "story_b_costs": "~/.cache/robots-probes/demo/2026-10-20/instrument/engagement-1/loop/rounds/r2/exports/start-02/log/costs.parquet",
+    "shift_three": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/job_run.json",
+    "shift_three_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-01/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-02/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/runs/session-03/run/episodes.jsonl"
+    ],
+    "shift_three_account": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/analyses/w90-20261020T023454-f0672b/outbox/job_account.json",
+    "s3_saved_job": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/library/jobs/cheese-loaded-bowl-to-cabinet.json",
+    "job_one_reissue": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/host/reissue.json",
+    "job_one_exposure": "~/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/library/release_exposure.jsonl",
+    "job_two_s2": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-2/job_run.json",
+    "job_two_s2_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-2/runs/session-01/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-2/runs/session-02/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-2/runs/session-03/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-2/runs/session-04/run/episodes.jsonl"
+    ],
+    "job_two_s2_account": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-2/analyses/w90-20261020T082642-8a45de/outbox/job_account.json",
+    "job_two_s1": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-1/job_run.json",
+    "job_two_s1_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-1/runs/session-01/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-1/runs/session-02/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-1/runs/session-03/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-1/runs/session-04/run/episodes.jsonl"
+    ],
+    "job_two_s1_account": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-1/analyses/w90-20261020T023720-1bc834/outbox/job_account.json",
+    "job_two_s3": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/job_run.json",
+    "job_two_s3_episodes": [
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/runs/session-01/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/runs/session-02/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/runs/session-03/run/episodes.jsonl",
+      "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/runs/session-04/run/episodes.jsonl"
+    ],
+    "job_two_s3_account": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/analyses/w90-20261020T092512-108203/outbox/job_account.json",
+    "job_two_release": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/release/run/run/receipt.json",
+    "job_two_saved_job": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/release/library/jobs/loaded-bowl-plate-placement-retry.json",
+    "job_two_exposure": "~/.cache/robots-probes/demo/2026-10-21/job-two/run-3/release/library/release_exposure.jsonl"
+  }
+}

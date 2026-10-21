@@ -1,0 +1,56 @@
+{
+  "world": "w41",
+  "episode_id": "e001540",
+  "window": "observed",
+  "scoring_episodes": 336,
+  "original_success": false,
+  "healthy_success": true,
+  "requested_faults": [],
+  "run": "/home/cs/.cache/robots-probes/worlds/w41/oracle-distributions-20261009/fresh/cited-example/run",
+  "proof": {
+    "rule": "unmodified replays against the as-run chains (fleetlab.oracle.proof)",
+    "compared": 1,
+    "identical": 1,
+    "details": [
+      {
+        "episode_id": "e001540",
+        "identical": true,
+        "what": "",
+        "against": "/home/cs/.cache/robots-probes/worlds/w41/runs/w41-observed/truth/chain/e001540.npz"
+      }
+    ]
+  },
+  "manifest_sha256": "29a99fe6a01fbb905a0ccc1911bf864807c4518eaf9dbb509735661940cf1b32",
+  "head_lookup_matches": true,
+  "default_table_excludes_example": true,
+  "report_statistics_unchanged": true,
+  "replay_commit": "670775b",
+  "lookup_commit": "17965f1",
+  "fresh_exit_status": 0,
+  "checks": {
+    "make_check": {
+      "commit": "17965f1",
+      "exit_status": 0,
+      "passed": 1158,
+      "skipped": 2,
+      "deselected": 62
+    },
+    "make_check_sim": {
+      "commit": "670775b",
+      "exit_status": 0,
+      "passed": 58
+    },
+    "make_smoke_world": {
+      "commit": "670775b",
+      "exit_status": 0,
+      "identical": 16,
+      "compared": 16,
+      "differ": [],
+      "missing": []
+    },
+    "original_inventory": {
+      "files": 38408,
+      "changed": 0
+    }
+  }
+}

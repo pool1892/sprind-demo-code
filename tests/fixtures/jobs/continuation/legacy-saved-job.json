@@ -1,0 +1,486 @@
+{
+ "acceptance": {
+  "K": 14,
+  "N": 20
+ },
+ "base_task": 6,
+ "check": "transfer-and-finish-audit",
+ "check_digest": "e98163fa7080b562906de9ab2d0f6a7a87c015274e6a8b6cfa12b8c7484ffe2a",
+ "lead_fraction": [
+  2,
+  3
+ ],
+ "name": "cheese-loaded-bowl-to-cabinet",
+ "order_rules": [
+  {
+   "first": 0,
+   "then": 1
+  }
+ ],
+ "program": {
+  "name": "cheese-bowl-complete30",
+  "notes": "Parent cheese-bowl-complete60 (j0002). Only change: shorten loading-policy continuation from 60 to 30 control steps (until and matching maximum are one duration change). At offset30 all10 loaded, untouched and fingers open; one still moving. Later continuation recontacts in6 starts, including successes, so avoiding it is a hypothesis not a proven fix. Same development starts; transport instruction, goal guard, budget and automatic final policy tail unchanged. Loading guard stops on timeout.",
+  "purpose": "Test whether switching after the observed withdrawn/open loading phase avoids renewed handling while preserving loaded-bowl transport.",
+  "steps": [
+   {
+    "instruction": "put the cream cheese in the bowl",
+    "kind": "policy",
+    "max_steps": 300,
+    "on_timeout": "stop",
+    "segment": null,
+    "steps": null,
+    "until": {
+     "goal": 0,
+     "steps": null
+    }
+   },
+   {
+    "instruction": "put the cream cheese in the bowl",
+    "kind": "policy",
+    "max_steps": 30,
+    "on_timeout": "stop",
+    "segment": null,
+    "steps": null,
+    "until": {
+     "goal": null,
+     "steps": 30
+    }
+   },
+   {
+    "instruction": "put the bowl on top of the cabinet",
+    "kind": "policy",
+    "max_steps": 300,
+    "on_timeout": "stop",
+    "segment": null,
+    "steps": null,
+    "until": {
+     "goal": 1,
+     "steps": null
+    }
+   }
+  ]
+ },
+ "receipt": {
+  "K": 14,
+  "N": 20,
+  "broken": 1,
+  "delivered": 13,
+  "job_name": "cheese-loaded-bowl-to-cabinet",
+  "lead_fraction": [
+   2,
+   3
+  ],
+  "naive_delivered": 1,
+  "naive_digest": "f673cd888b87aab548adeea578a1b4601c0b82dc2997af00bab207fb1a696471",
+  "order_violations": 0,
+  "pairs": [
+   {
+    "delivered": false,
+    "episode_id": "e000101",
+    "naive_delivered": false,
+    "naive_episode_id": "e000201",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 30,
+     "noise_seed": 6727415541460284477,
+     "scene_seed": 3153851937
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000102",
+    "naive_delivered": false,
+    "naive_episode_id": "e000202",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 31,
+     "noise_seed": 446991395037269107,
+     "scene_seed": 1283819767
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000103",
+    "naive_delivered": false,
+    "naive_episode_id": "e000203",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 32,
+     "noise_seed": 552807304672145678,
+     "scene_seed": 1729059664
+    }
+   },
+   {
+    "delivered": false,
+    "episode_id": "e000104",
+    "naive_delivered": false,
+    "naive_episode_id": "e000204",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 33,
+     "noise_seed": 5052911407699284737,
+     "scene_seed": 2260192676
+    }
+   },
+   {
+    "delivered": false,
+    "episode_id": "e000105",
+    "naive_delivered": false,
+    "naive_episode_id": "e000205",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 34,
+     "noise_seed": 3899012984176280933,
+     "scene_seed": 3381368003
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000106",
+    "naive_delivered": false,
+    "naive_episode_id": "e000206",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 35,
+     "noise_seed": 6895896884286224356,
+     "scene_seed": 4215886892
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000107",
+    "naive_delivered": false,
+    "naive_episode_id": "e000207",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 36,
+     "noise_seed": 8989070247074670750,
+     "scene_seed": 2367118212
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000108",
+    "naive_delivered": false,
+    "naive_episode_id": "e000208",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 37,
+     "noise_seed": 7606074743767465107,
+     "scene_seed": 3315781589
+    }
+   },
+   {
+    "delivered": false,
+    "episode_id": "e000109",
+    "naive_delivered": false,
+    "naive_episode_id": "e000209",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 38,
+     "noise_seed": 1656433315228325160,
+     "scene_seed": 3236696035
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000110",
+    "naive_delivered": false,
+    "naive_episode_id": "e000210",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 39,
+     "noise_seed": 869112946792008273,
+     "scene_seed": 904954914
+    }
+   },
+   {
+    "delivered": false,
+    "episode_id": "e000111",
+    "naive_delivered": true,
+    "naive_episode_id": "e000211",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 40,
+     "noise_seed": 8104470768658484107,
+     "scene_seed": 2601634313
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000112",
+    "naive_delivered": false,
+    "naive_episode_id": "e000212",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 41,
+     "noise_seed": 4599167294992181029,
+     "scene_seed": 3512669645
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000113",
+    "naive_delivered": false,
+    "naive_episode_id": "e000213",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 42,
+     "noise_seed": 8446632996256102005,
+     "scene_seed": 2304280741
+    }
+   },
+   {
+    "delivered": false,
+    "episode_id": "e000114",
+    "naive_delivered": false,
+    "naive_episode_id": "e000214",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 43,
+     "noise_seed": 5498614769285619381,
+     "scene_seed": 2461590915
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000115",
+    "naive_delivered": false,
+    "naive_episode_id": "e000215",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 44,
+     "noise_seed": 1050274148889087824,
+     "scene_seed": 2062616933
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000116",
+    "naive_delivered": false,
+    "naive_episode_id": "e000216",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 45,
+     "noise_seed": 2827466765111381440,
+     "scene_seed": 688260555
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000117",
+    "naive_delivered": false,
+    "naive_episode_id": "e000217",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 46,
+     "noise_seed": 2519729127640069656,
+     "scene_seed": 618036290
+    }
+   },
+   {
+    "delivered": false,
+    "episode_id": "e000118",
+    "naive_delivered": false,
+    "naive_episode_id": "e000218",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 47,
+     "noise_seed": 3899006046823206011,
+     "scene_seed": 3773200838
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000119",
+    "naive_delivered": false,
+    "naive_episode_id": "e000219",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 48,
+     "noise_seed": 1051933580083034455,
+     "scene_seed": 2463352493
+    }
+   },
+   {
+    "delivered": true,
+    "episode_id": "e000120",
+    "naive_delivered": false,
+    "naive_episode_id": "e000220",
+    "order_kept": true,
+    "start": {
+     "base_task": 6,
+     "init_state": 49,
+     "noise_seed": 8996901395825258625,
+     "scene_seed": 2231947267
+    }
+   }
+  ],
+  "passed": false,
+  "program_digest": "4c2e8caa80cbd03932066283f71d10517b7bc0f01ab6943ef730d26b7ffcd6d7",
+  "release_starts": [
+   {
+    "base_task": 6,
+    "init_state": 30,
+    "noise_seed": 6727415541460284477,
+    "scene_seed": 3153851937
+   },
+   {
+    "base_task": 6,
+    "init_state": 31,
+    "noise_seed": 446991395037269107,
+    "scene_seed": 1283819767
+   },
+   {
+    "base_task": 6,
+    "init_state": 32,
+    "noise_seed": 552807304672145678,
+    "scene_seed": 1729059664
+   },
+   {
+    "base_task": 6,
+    "init_state": 33,
+    "noise_seed": 5052911407699284737,
+    "scene_seed": 2260192676
+   },
+   {
+    "base_task": 6,
+    "init_state": 34,
+    "noise_seed": 3899012984176280933,
+    "scene_seed": 3381368003
+   },
+   {
+    "base_task": 6,
+    "init_state": 35,
+    "noise_seed": 6895896884286224356,
+    "scene_seed": 4215886892
+   },
+   {
+    "base_task": 6,
+    "init_state": 36,
+    "noise_seed": 8989070247074670750,
+    "scene_seed": 2367118212
+   },
+   {
+    "base_task": 6,
+    "init_state": 37,
+    "noise_seed": 7606074743767465107,
+    "scene_seed": 3315781589
+   },
+   {
+    "base_task": 6,
+    "init_state": 38,
+    "noise_seed": 1656433315228325160,
+    "scene_seed": 3236696035
+   },
+   {
+    "base_task": 6,
+    "init_state": 39,
+    "noise_seed": 869112946792008273,
+    "scene_seed": 904954914
+   },
+   {
+    "base_task": 6,
+    "init_state": 40,
+    "noise_seed": 8104470768658484107,
+    "scene_seed": 2601634313
+   },
+   {
+    "base_task": 6,
+    "init_state": 41,
+    "noise_seed": 4599167294992181029,
+    "scene_seed": 3512669645
+   },
+   {
+    "base_task": 6,
+    "init_state": 42,
+    "noise_seed": 8446632996256102005,
+    "scene_seed": 2304280741
+   },
+   {
+    "base_task": 6,
+    "init_state": 43,
+    "noise_seed": 5498614769285619381,
+    "scene_seed": 2461590915
+   },
+   {
+    "base_task": 6,
+    "init_state": 44,
+    "noise_seed": 1050274148889087824,
+    "scene_seed": 2062616933
+   },
+   {
+    "base_task": 6,
+    "init_state": 45,
+    "noise_seed": 2827466765111381440,
+    "scene_seed": 688260555
+   },
+   {
+    "base_task": 6,
+    "init_state": 46,
+    "noise_seed": 2519729127640069656,
+    "scene_seed": 618036290
+   },
+   {
+    "base_task": 6,
+    "init_state": 47,
+    "noise_seed": 3899006046823206011,
+    "scene_seed": 3773200838
+   },
+   {
+    "base_task": 6,
+    "init_state": 48,
+    "noise_seed": 1051933580083034455,
+    "scene_seed": 2463352493
+   },
+   {
+    "base_task": 6,
+    "init_state": 49,
+    "noise_seed": 8996901395825258625,
+    "scene_seed": 2231947267
+   }
+  ],
+  "released": false,
+  "rescued": 13,
+  "run_dir": "/home/cs/.cache/robots-probes/demo/2026-10-21/job-one/run-6/release/run/run",
+  "starts_fresh": true
+ },
+ "requested_goals": [
+  {
+   "objects": [
+    "cream_cheese_1",
+    "akita_black_bowl_1"
+   ],
+   "predicate": "On"
+  },
+  {
+   "objects": [
+    "akita_black_bowl_1",
+    "wooden_cabinet_1_top_side"
+   ],
+   "predicate": "On"
+  }
+ ],
+ "saved_from": [
+  "j0004"
+ ]
+}

@@ -1,0 +1,1529 @@
+{
+  "checks": {
+    "forced_fumble_physics": {
+      "fumble_probability": 1.0,
+      "passed": 1,
+      "placed": true,
+      "queue_steps": 320,
+      "repeat_exact": true,
+      "wall_s": 34.97
+    },
+    "make check": {
+      "deselected": 44,
+      "exit_code": 0,
+      "lint_and_typechecked_files": 195,
+      "passed": 780,
+      "skipped": 2,
+      "wall_s": 193.66
+    },
+    "make check-sim": {
+      "deselected": 786,
+      "exit_code": 0,
+      "passed": 40,
+      "wall_s": 259.2
+    },
+    "make smoke-world": {
+      "reason": "Reserved for the orchestrator merge after independent review.",
+      "verified": false
+    }
+  },
+  "checks_scope": "Original delivery checks, 2026-10-08, before merging main; merged-branch verification is recorded separately.",
+  "cpu_pace_proof": {
+    "cadence": {
+      "1": {
+        "e000001": {
+          "active_steps": 141,
+          "placed": true
+        },
+        "e000002": {
+          "active_steps": 194,
+          "placed": true
+        },
+        "e000003": {
+          "active_steps": 153,
+          "placed": true
+        },
+        "e000004": {
+          "active_steps": 158,
+          "placed": true
+        }
+      },
+      "2": {
+        "e000001": {
+          "active_steps": 152,
+          "placed": true
+        },
+        "e000002": {
+          "active_steps": 206,
+          "placed": true
+        },
+        "e000003": {
+          "active_steps": 169,
+          "placed": true
+        },
+        "e000004": {
+          "active_steps": 177,
+          "placed": true
+        }
+      }
+    },
+    "episodes": 4,
+    "ratios": {
+      "e000001": 1.0780141843971631,
+      "e000002": 1.0618556701030928,
+      "e000003": 1.1045751633986929,
+      "e000004": 1.120253164556962
+    }
+  },
+  "cpu_proof": {
+    "replay": {
+      "comparisons": {
+        "e000001.continue.95de7ef9fce1d9b7": {
+          "compared_steps": 237,
+          "first_difference": null,
+          "identical": true,
+          "what": ""
+        },
+        "e000002.continue.e4225ea6badd09c0": {
+          "compared_steps": 263,
+          "first_difference": null,
+          "identical": true,
+          "what": ""
+        },
+        "e000003.continue.a515d6e705079f48": {
+          "compared_steps": 2046,
+          "first_difference": null,
+          "identical": true,
+          "what": ""
+        },
+        "e000004.continue.dcd759c3d22c4624": {
+          "compared_steps": 2044,
+          "first_difference": null,
+          "identical": true,
+          "what": ""
+        }
+      },
+      "episodes": 4,
+      "identical": 4
+    },
+    "settings": {
+      "expert_steps": 600,
+      "fumble_probability": 0.1,
+      "operators": 2,
+      "pace": 2,
+      "reaction_max_s": 4.0,
+      "reaction_min_s": 2.0,
+      "service_s": 90.0
+    },
+    "supervised_chain_ok": true,
+    "wall_s": 174.5097084500012
+  },
+  "cpu_run_root": "/home/cs/.cache/robots-probes/teleop-loop/cpu-v2",
+  "expert_only": {
+    "human_disabled": [
+      "queue",
+      "reaction",
+      "pace",
+      "fumble"
+    ],
+    "phases": {
+      "random": {
+        "calls": 0,
+        "chain_ok": null,
+        "code": {
+          "commit": "be5facb5e3443ba52595966f62e4e57e0ad5a67d",
+          "dirty": false
+        },
+        "config": {
+          "allow_manifest_day_length": false,
+          "batch_size": 4,
+          "chain_sample": false,
+          "check_factory": "fleetlab.sim.libero_success:FleetCheck",
+          "continuation_steps": 1202,
+          "defer_continuations": true,
+          "device": "cuda",
+          "env_factory": "fleetlab.sim.libero_sim:LiberoSimEnv",
+          "episodes_per_robot_day": 14,
+          "fault_registry": "fleetlab.faults:REGISTRY",
+          "gtt_abort_gib": 21.0,
+          "gtt_start_limit_gib": 17.0,
+          "life": 8,
+          "max_workers": 12,
+          "mem_floor_gib": 8.0,
+          "memory_sample_s": 30.0,
+          "miopen": "pinned",
+          "out": "/home/cs/.cache/robots-probes/teleop-loop/w42-scoring-6ops/expert-only/random",
+          "policy_factory": "fleetlab.policies.xvla:XVLAPolicy",
+          "precision": "fp16_res32",
+          "rerender_light": true,
+          "server_gib": 4.0,
+          "server_threads": 4,
+          "stagger": true,
+          "supervisors": "fleetlab.engine.supervisors:make",
+          "teleoperator": "fleetlab.policies.teleoperator:Teleoperator",
+          "video": false,
+          "watchdog_s": 900.0,
+          "worker_gib": 2.1,
+          "workers": 4
+        },
+        "incidents": [],
+        "jobs_run_now": 153,
+        "peaks": {
+          "gtt_gib": 9.809654235839844,
+          "mem_available_min_gib": 25.281917572021484,
+          "pss_server_mib": 2187.826171875,
+          "pss_total_mib": 9994.2451171875,
+          "pss_worker_max_mib": 2223.2744140625
+        },
+        "policy_load_s": 5.215698589978274,
+        "software": {
+          "contracts_version": "1.0",
+          "libero_patch_set": "cd1acebf8d9c749c",
+          "lock_hash": "a302a3256e62bf73",
+          "miopen_db_hash": "7751323820effb28",
+          "mujoco_version": "3.3.7"
+        },
+        "total_s": 111.71584743197309,
+        "when": "2026-10-09 08:37:19"
+      },
+      "timeout": {
+        "calls": 0,
+        "chain_ok": null,
+        "code": {
+          "commit": "be5facb5e3443ba52595966f62e4e57e0ad5a67d",
+          "dirty": false
+        },
+        "config": {
+          "allow_manifest_day_length": false,
+          "batch_size": 4,
+          "chain_sample": false,
+          "check_factory": "fleetlab.sim.libero_success:FleetCheck",
+          "continuation_steps": 1202,
+          "defer_continuations": true,
+          "device": "cuda",
+          "env_factory": "fleetlab.sim.libero_sim:LiberoSimEnv",
+          "episodes_per_robot_day": 14,
+          "fault_registry": "fleetlab.faults:REGISTRY",
+          "gtt_abort_gib": 21.0,
+          "gtt_start_limit_gib": 17.0,
+          "life": 8,
+          "max_workers": 12,
+          "mem_floor_gib": 8.0,
+          "memory_sample_s": 30.0,
+          "miopen": "pinned",
+          "out": "/home/cs/.cache/robots-probes/teleop-loop/w42-scoring-6ops/expert-only/timeout",
+          "policy_factory": "fleetlab.policies.xvla:XVLAPolicy",
+          "precision": "fp16_res32",
+          "rerender_light": true,
+          "server_gib": 4.0,
+          "server_threads": 4,
+          "stagger": true,
+          "supervisors": "fleetlab.engine.supervisors:make",
+          "teleoperator": "fleetlab.policies.teleoperator:Teleoperator",
+          "video": false,
+          "watchdog_s": 900.0,
+          "worker_gib": 2.1,
+          "workers": 4
+        },
+        "incidents": [],
+        "jobs_run_now": 153,
+        "peaks": {
+          "gtt_gib": 9.719612121582031,
+          "mem_available_min_gib": 24.97174835205078,
+          "pss_server_mib": 2269.3310546875,
+          "pss_total_mib": 10903.232421875,
+          "pss_worker_max_mib": 2372.2998046875
+        },
+        "policy_load_s": 7.933935448003467,
+        "software": {
+          "contracts_version": "1.0",
+          "libero_patch_set": "cd1acebf8d9c749c",
+          "lock_hash": "a302a3256e62bf73",
+          "miopen_db_hash": "7751323820effb28",
+          "mujoco_version": "3.3.7"
+        },
+        "total_s": 145.0746485730051,
+        "when": "2026-10-09 08:35:27"
+      }
+    },
+    "source_measurement": {
+      "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+      "dirty": false
+    },
+    "wall_s": 257.803668818
+  },
+  "review_corrections": {
+    "counts": {
+      "random": {
+        "as_run_rescue_fraction": [
+          30,
+          65
+        ],
+        "combination_attempts_exhausted": 36,
+        "failed_while_expert_running": 0,
+        "operator_placements": 107,
+        "placed_while_waiting": [],
+        "same_snapshot_rescue_fraction": [
+          27,
+          63
+        ]
+      },
+      "timeout": {
+        "as_run_rescue_fraction": [
+          67,
+          146
+        ],
+        "combination_attempts_exhausted": 63,
+        "failed_while_expert_running": 8,
+        "operator_placements": 69,
+        "placed_while_waiting": [
+          {
+            "episode_id": "e000126",
+            "idle_steps": 3
+          },
+          {
+            "episode_id": "e000835",
+            "idle_steps": 17
+          }
+        ],
+        "same_snapshot_rescue_fraction": [
+          64,
+          144
+        ]
+      }
+    },
+    "defect": "deferred command-frame defect",
+    "diagnostics": {
+      "geometry-audit": {
+        "ended_by": "policy done",
+        "episode_id": "e000148",
+        "executed_minus_commanded_xyz_max": [
+          0.0,
+          -0.03999999165534973,
+          0.0
+        ],
+        "executed_minus_commanded_xyz_min": [
+          0.0,
+          -0.040000006556510925,
+          0.0
+        ],
+        "expert_events": [
+          [
+            0,
+            "gripper tilted 9 deg: rising, then levelling"
+          ],
+          [
+            31,
+            "move stalled: pos err 27 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            31,
+            "grasp attempt 1 (380 candidates): pos [-0.17  -0.239  0.012] yaw 90 deg width 57 mm overlap 14 mm lean 0 deg"
+          ],
+          [
+            63,
+            "move stalled: pos err 27 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            108,
+            "move stalled: pos err 26 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            108,
+            "could not reach the point above the grasp"
+          ],
+          [
+            108,
+            "grasp attempt 2 (380 candidates): pos [-0.152 -0.239  0.012] yaw 90 deg width 57 mm overlap 14 mm lean 0 deg"
+          ],
+          [
+            141,
+            "move stalled: pos err 27 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            141,
+            "could not reach the point above the grasp"
+          ],
+          [
+            141,
+            "grasp attempt 3 (380 candidates): pos [-0.188 -0.238  0.012] yaw 90 deg width 57 mm overlap 14 mm lean 0 deg"
+          ],
+          [
+            174,
+            "move stalled: pos err 27 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            212,
+            "move stalled: pos err 27 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            212,
+            "could not reach the point above the grasp"
+          ],
+          [
+            212,
+            "grasp attempt 4 (380 candidates): pos [-0.207 -0.24   0.018] yaw 105 deg width 59 mm overlap 16 mm lean 0 deg"
+          ],
+          [
+            248,
+            "move stalled: pos err 27 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            248,
+            "could not reach the point above the grasp"
+          ],
+          [
+            248,
+            "grasp attempt 5 (380 candidates): pos [-0.208 -0.235  0.012] yaw 75 deg width 57 mm overlap 15 mm lean 0 deg"
+          ],
+          [
+            289,
+            "move stalled: pos err 27 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            346,
+            "move stalled: pos err 26 mm, rot err 0 deg; robot touches nothing; joints at limit none"
+          ],
+          [
+            346,
+            "could not reach the point above the grasp"
+          ],
+          [
+            346,
+            "fail:attempts_exhausted"
+          ]
+        ],
+        "expert_status": "fail:attempts_exhausted",
+        "faults": [
+          {
+            "fault_id": "f05",
+            "kind": "furniture_shift",
+            "level": 4.0,
+            "nominal": [
+              0.0,
+              0.0
+            ],
+            "params": {},
+            "schedule": {
+              "drift": null,
+              "duration_days": null,
+              "onset_day": 3
+            },
+            "target": {
+              "component": null,
+              "condition_key": "placement",
+              "config_key": null,
+              "scope": "s3"
+            }
+          },
+          {
+            "fault_id": "f06",
+            "kind": "policy_knob",
+            "level": 1.0,
+            "nominal": 10,
+            "params": {
+              "value": 5
+            },
+            "schedule": {
+              "drift": null,
+              "duration_days": null,
+              "onset_day": 3
+            },
+            "target": {
+              "component": null,
+              "condition_key": null,
+              "config_key": "policy.sampling_steps",
+              "scope": "s3"
+            }
+          },
+          {
+            "fault_id": "f08",
+            "kind": "backdrop_change",
+            "level": 1.0,
+            "nominal": 0.0,
+            "params": {},
+            "schedule": {
+              "drift": null,
+              "duration_days": null,
+              "onset_day": 1
+            },
+            "target": {
+              "component": null,
+              "condition_key": "clutter",
+              "config_key": null,
+              "scope": "s3"
+            }
+          }
+        ],
+        "first_active_sample": {
+          "active_tick": 1,
+          "commanded": [
+            -0.13862304389476776,
+            -0.2604079842567444,
+            0.12425516545772552,
+            -1.8643267154693604,
+            -2.5286142826080322,
+            1.1216074121340504e-16,
+            -1.0
+          ],
+          "native_eef": [
+            -0.13862304459366484,
+            -0.26040798481222377,
+            0.11148966333716917
+          ],
+          "object_pos": [
+            -0.21192347546695775,
+            -0.23738410101064267,
+            0.017676923356991323
+          ],
+          "observed_eef": [
+            -0.1386230600416946,
+            -0.22040800015588827,
+            0.11148966187438146
+          ],
+          "planned_move_target": [
+            -0.13862304459366484,
+            -0.26040798481222377,
+            0.12
+          ]
+        },
+        "job_key": "e000148.continue.6591797f8e12b878",
+        "last_active_sample": {
+          "active_tick": 693,
+          "commanded": [
+            -0.20818041265010834,
+            -0.2613663971424103,
+            0.1702505201101303,
+            2.491732358932495,
+            1.9112768173217773,
+            0.00036964676110073924,
+            -1.0
+          ],
+          "native_eef": [
+            -0.2081804129531655,
+            -0.26136640544739104,
+            0.170250521623714
+          ],
+          "object_pos": [
+            -0.21192347546695775,
+            -0.23738410101064267,
+            0.017676923356991323
+          ],
+          "observed_eef": [
+            -0.20818041351247615,
+            -0.2213663957380674,
+            0.17025052043048217
+          ],
+          "planned_move_target": null
+        },
+        "original_repeat": {
+          "compared_steps": 762,
+          "identical": true,
+          "what": ""
+        },
+        "placed": false,
+        "scope": "One representative episode; compensation is diagnostic only, not included in recovery measurements or implemented in the expert."
+      },
+      "geometry-compensation": {
+        "ended_by": "check",
+        "episode_id": "e000148",
+        "executed_minus_commanded_xyz_max": [
+          0.0,
+          -0.03999999165534973,
+          0.0
+        ],
+        "executed_minus_commanded_xyz_min": [
+          0.0,
+          -0.040000006556510925,
+          0.0
+        ],
+        "expert_events": [
+          [
+            0,
+            "gripper tilted 9 deg: rising, then levelling"
+          ],
+          [
+            2,
+            "grasp attempt 1 (380 candidates): pos [-0.17  -0.239  0.012] yaw 90 deg width 57 mm overlap 14 mm lean 0 deg"
+          ],
+          [
+            33,
+            "object lifted"
+          ],
+          [
+            38,
+            "object is 15 cm long: turning it 46 deg to lie along the opening's diagonal"
+          ],
+          [
+            67,
+            "releasing at height 0.157 (object bottom +0.128 m above the target surface, in the air)"
+          ],
+          [
+            77,
+            "released but the task is not satisfied"
+          ],
+          [
+            77,
+            "grasp attempt 2 (23 candidates): pos [-0.046  0.194  0.155] yaw 15 deg width 17 mm overlap 14 mm lean 0 deg"
+          ],
+          [
+            107,
+            "object lifted"
+          ],
+          [
+            107,
+            "object is 15 cm long: turning it -93 deg to lie along the opening's diagonal"
+          ],
+          [
+            125,
+            "releasing at height 0.176 (object bottom +0.124 m above the target surface, resting on it)"
+          ]
+        ],
+        "expert_status": "running",
+        "faults": [
+          {
+            "fault_id": "f05",
+            "kind": "furniture_shift",
+            "level": 4.0,
+            "nominal": [
+              0.0,
+              0.0
+            ],
+            "params": {},
+            "schedule": {
+              "drift": null,
+              "duration_days": null,
+              "onset_day": 3
+            },
+            "target": {
+              "component": null,
+              "condition_key": "placement",
+              "config_key": null,
+              "scope": "s3"
+            }
+          },
+          {
+            "fault_id": "f06",
+            "kind": "policy_knob",
+            "level": 1.0,
+            "nominal": 10,
+            "params": {
+              "value": 5
+            },
+            "schedule": {
+              "drift": null,
+              "duration_days": null,
+              "onset_day": 3
+            },
+            "target": {
+              "component": null,
+              "condition_key": null,
+              "config_key": "policy.sampling_steps",
+              "scope": "s3"
+            }
+          },
+          {
+            "fault_id": "f08",
+            "kind": "backdrop_change",
+            "level": 1.0,
+            "nominal": 0.0,
+            "params": {},
+            "schedule": {
+              "drift": null,
+              "duration_days": null,
+              "onset_day": 1
+            },
+            "target": {
+              "component": null,
+              "condition_key": "clutter",
+              "config_key": null,
+              "scope": "s3"
+            }
+          }
+        ],
+        "first_active_sample": {
+          "active_tick": 1,
+          "commanded": [
+            -0.13862304389476776,
+            -0.2604079842567444,
+            0.12425516545772552,
+            -1.8643267154693604,
+            -2.5286142826080322,
+            1.1216074121340504e-16,
+            -1.0
+          ],
+          "native_eef": [
+            -0.13862304459366484,
+            -0.26040798481222377,
+            0.11148966333716917
+          ],
+          "object_pos": [
+            -0.21192347546695775,
+            -0.23738410101064267,
+            0.017676923356991323
+          ],
+          "observed_eef": [
+            -0.1386230600416946,
+            -0.22040800015588827,
+            0.11148966187438146
+          ],
+          "planned_move_target": [
+            -0.13862304459366484,
+            -0.26040798481222377,
+            0.12
+          ]
+        },
+        "intervention": "Diagnostic only: add +0.04 m to active absolute expert command y before the unchanged furniture-shift hook; preserve reaction holds and all faults.",
+        "job_key": "e000148.continue.6591797f8e12b878",
+        "last_active_sample": {
+          "active_tick": 258,
+          "commanded": [
+            -0.06998881697654724,
+            0.2940819263458252,
+            0.17628252506256104,
+            1.9651497602462769,
+            2.446256637573242,
+            -0.002026749076321721,
+            -1.0
+          ],
+          "native_eef": [
+            -0.07002755070370373,
+            0.2945304136423,
+            0.1764450830642195
+          ],
+          "object_pos": [
+            -0.003759363918617646,
+            0.255620946871264,
+            0.08077966640248319
+          ],
+          "observed_eef": [
+            -0.07002517295681042,
+            0.3345357484335371,
+            0.17644709425442986
+          ],
+          "planned_move_target": null
+        },
+        "original_repeat": {
+          "compared_steps": 69,
+          "identical": false,
+          "what": "state_hash"
+        },
+        "placed": true,
+        "scope": "One representative episode; compensation is diagnostic only, not included in recovery measurements or implemented in the expert."
+      }
+    },
+    "main_merge_commit": "7b2e35f",
+    "main_merged": "2c83a27",
+    "reviewed_commit": "93493ec"
+  },
+  "scope": "Aggregate delivery evidence for the human teleoperator; full snapshots, chains and per-episode outcomes remain under the local run roots.",
+  "world_phases": {
+    "random-collect-run.json": {
+      "calls": 1168,
+      "chain_ok": true,
+      "chain_sample_count": 34,
+      "code": {
+        "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+        "dirty": false
+      },
+      "incidents": [],
+      "inference_s_total": 508.65200030199776,
+      "jobs_run_now": 336,
+      "peaks": {
+        "gtt_gib": 10.035743713378906,
+        "mem_available_min_gib": 24.884231567382812,
+        "pss_server_mib": 2466.158203125,
+        "pss_total_mib": 11010.8212890625,
+        "pss_worker_max_mib": 2367.2138671875
+      },
+      "policy_load_s": 5.30043474699778,
+      "total_s": 566.6099158699944,
+      "when": "2026-10-08 17:35:15",
+      "workers": 4
+    },
+    "random/counterfactual-run.json": {
+      "calls": 554,
+      "chain_ok": null,
+      "chain_sample_count": 0,
+      "code": {
+        "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+        "dirty": false
+      },
+      "incidents": [],
+      "inference_s_total": 237.2576705080137,
+      "jobs_run_now": 153,
+      "peaks": {
+        "gtt_gib": 10.035957336425781,
+        "mem_available_min_gib": 25.21628189086914,
+        "pss_server_mib": 2477.2509765625,
+        "pss_total_mib": 11004.6533203125,
+        "pss_worker_max_mib": 2260.9609375
+      },
+      "policy_load_s": 5.405535513011273,
+      "total_s": 265.55405737699766,
+      "when": "2026-10-08 17:44:47",
+      "workers": 4
+    },
+    "random/human-run.json": {
+      "calls": 0,
+      "chain_ok": null,
+      "chain_sample_count": 0,
+      "code": {
+        "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+        "dirty": false
+      },
+      "incidents": [],
+      "inference_s_total": 0.0,
+      "jobs_run_now": 153,
+      "peaks": {
+        "gtt_gib": 9.972305297851562,
+        "mem_available_min_gib": 24.605857849121094,
+        "pss_server_mib": 2764.9736328125,
+        "pss_total_mib": 10962.9140625,
+        "pss_worker_max_mib": 2325.3388671875
+      },
+      "policy_load_s": 5.372524847000022,
+      "total_s": 189.98598322100588,
+      "when": "2026-10-08 17:38:25",
+      "workers": 4
+    },
+    "timeout-collect-run.json": {
+      "calls": 1662,
+      "chain_ok": true,
+      "chain_sample_count": 34,
+      "code": {
+        "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+        "dirty": false
+      },
+      "incidents": [],
+      "inference_s_total": 738.0464766854711,
+      "jobs_run_now": 336,
+      "peaks": {
+        "gtt_gib": 9.778266906738281,
+        "mem_available_min_gib": 23.61272430419922,
+        "pss_server_mib": 2514.5068359375,
+        "pss_total_mib": 11033.9384765625,
+        "pss_worker_max_mib": 2379.875
+      },
+      "policy_load_s": 14.162102281989064,
+      "total_s": 818.1261189799989,
+      "when": "2026-10-08 17:22:20",
+      "workers": 4
+    },
+    "timeout/counterfactual-run.json": {
+      "calls": 218,
+      "chain_ok": null,
+      "chain_sample_count": 0,
+      "code": {
+        "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+        "dirty": false
+      },
+      "incidents": [],
+      "inference_s_total": 86.674512831014,
+      "jobs_run_now": 153,
+      "peaks": {
+        "gtt_gib": 9.92413330078125,
+        "mem_available_min_gib": 25.692726135253906,
+        "pss_server_mib": 2568.2490234375,
+        "pss_total_mib": 10124.009765625,
+        "pss_worker_max_mib": 2245.369140625
+      },
+      "policy_load_s": 5.357502583996393,
+      "total_s": 115.34885908900469,
+      "when": "2026-10-08 17:40:21",
+      "workers": 4
+    },
+    "timeout/human-run.json": {
+      "calls": 0,
+      "chain_ok": null,
+      "chain_sample_count": 0,
+      "code": {
+        "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+        "dirty": false
+      },
+      "incidents": [],
+      "inference_s_total": 0.0,
+      "jobs_run_now": 153,
+      "peaks": {
+        "gtt_gib": 10.0482177734375,
+        "mem_available_min_gib": 26.114734649658203,
+        "pss_server_mib": 2540.810546875,
+        "pss_total_mib": 10368.9189453125,
+        "pss_worker_max_mib": 2341.384765625
+      },
+      "policy_load_s": 5.351602284004912,
+      "total_s": 207.43495232600253,
+      "when": "2026-10-08 17:25:48",
+      "workers": 4
+    },
+    "xvla-repeat/run.json": {
+      "calls": 0,
+      "chain_ok": null,
+      "chain_sample_count": 0,
+      "code": {
+        "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+        "dirty": false
+      },
+      "incidents": [],
+      "inference_s_total": 0.0,
+      "jobs_run_now": 4,
+      "peaks": {
+        "gtt_gib": 9.21771240234375,
+        "mem_available_min_gib": 28.111377716064453,
+        "pss_server_mib": 2556.521484375,
+        "pss_total_mib": 7944.572265625,
+        "pss_worker_max_mib": 2107.98046875
+      },
+      "policy_load_s": 5.406456632001209,
+      "total_s": 19.747801385994535,
+      "when": "2026-10-08 17:45:07",
+      "workers": 3
+    }
+  },
+  "world_report": {
+    "measurement": {
+      "code": {
+        "commit": "a00a8dacd7ad74e7d2ccc9b375a44db053c66061",
+        "dirty": false
+      },
+      "random_after": 20,
+      "random_chain_ok": true,
+      "random_handovers": 153,
+      "sample": 336,
+      "settings": {
+        "expert_steps": 600,
+        "fumble_probability": 0.1,
+        "operators": 6,
+        "pace": 2,
+        "reaction_max_s": 4.0,
+        "reaction_min_s": 2.0,
+        "service_s": 90.0
+      },
+      "timeout_after": 200,
+      "timeout_chain_ok": true,
+      "timeout_handovers": 153,
+      "wall_s": 2185.7410792779992,
+      "window": "scoring",
+      "world": "/home/cs/.cache/robots-probes/worlds/w42",
+      "xvla_continuation_replay": {
+        "comparisons": {
+          "e000148.continue.6591797f8e12b878": {
+            "compared_steps": 762,
+            "first_difference": null,
+            "identical": true,
+            "what": ""
+          },
+          "e000363.continue.9501c75b30e33635": {
+            "compared_steps": 636,
+            "first_difference": null,
+            "identical": true,
+            "what": ""
+          },
+          "e000661.continue.94b53f23651078d1": {
+            "compared_steps": 575,
+            "first_difference": null,
+            "identical": true,
+            "what": ""
+          },
+          "e001674.continue.824d81e9a707ed7a": {
+            "compared_steps": 1250,
+            "first_difference": null,
+            "identical": true,
+            "what": ""
+          }
+        },
+        "episodes": 4,
+        "identical": 4
+      }
+    },
+    "methods": {
+      "random": {
+        "all_placed": 209,
+        "as_run_would_fail": 65,
+        "as_run_would_succeed": 88,
+        "broken_snapshot": 10,
+        "by_fault_type": {
+          "backdrop_change": {
+            "as_run_would_fail": 40,
+            "as_run_would_succeed": 10,
+            "broken_snapshot": 8,
+            "handovers": 50,
+            "placed": 14,
+            "rescued_as_run": 14,
+            "rescued_snapshot": 14,
+            "snapshot_would_fail": 42,
+            "snapshot_would_succeed": 8
+          },
+          "camera_degradation": {
+            "as_run_would_fail": 10,
+            "as_run_would_succeed": 1,
+            "broken_snapshot": 1,
+            "handovers": 11,
+            "placed": 0,
+            "rescued_as_run": 0,
+            "rescued_snapshot": 0,
+            "snapshot_would_fail": 10,
+            "snapshot_would_succeed": 1
+          },
+          "camera_pose_offset": {
+            "as_run_would_fail": 9,
+            "as_run_would_succeed": 8,
+            "broken_snapshot": 0,
+            "handovers": 17,
+            "placed": 17,
+            "rescued_as_run": 9,
+            "rescued_snapshot": 8,
+            "snapshot_would_fail": 8,
+            "snapshot_would_succeed": 9
+          },
+          "control_mode_change": {
+            "as_run_would_fail": 14,
+            "as_run_would_succeed": 0,
+            "broken_snapshot": 0,
+            "handovers": 14,
+            "placed": 14,
+            "rescued_as_run": 14,
+            "rescued_snapshot": 14,
+            "snapshot_would_fail": 14,
+            "snapshot_would_succeed": 0
+          },
+          "furniture_shift": {
+            "as_run_would_fail": 40,
+            "as_run_would_succeed": 10,
+            "broken_snapshot": 8,
+            "handovers": 50,
+            "placed": 14,
+            "rescued_as_run": 14,
+            "rescued_snapshot": 14,
+            "snapshot_would_fail": 42,
+            "snapshot_would_succeed": 8
+          },
+          "gripper_wear": {
+            "as_run_would_fail": 6,
+            "as_run_would_succeed": 44,
+            "broken_snapshot": 0,
+            "handovers": 50,
+            "placed": 50,
+            "rescued_as_run": 6,
+            "rescued_snapshot": 4,
+            "snapshot_would_fail": 4,
+            "snapshot_would_succeed": 46
+          },
+          "healthy": {
+            "as_run_would_fail": 0,
+            "as_run_would_succeed": 11,
+            "broken_snapshot": 0,
+            "handovers": 11,
+            "placed": 11,
+            "rescued_as_run": 0,
+            "rescued_snapshot": 0,
+            "snapshot_would_fail": 0,
+            "snapshot_would_succeed": 11
+          },
+          "illumination_change": {
+            "as_run_would_fail": 7,
+            "as_run_would_succeed": 43,
+            "broken_snapshot": 0,
+            "handovers": 50,
+            "placed": 50,
+            "rescued_as_run": 7,
+            "rescued_snapshot": 5,
+            "snapshot_would_fail": 5,
+            "snapshot_would_succeed": 45
+          },
+          "object_batch_variant": {
+            "as_run_would_fail": 7,
+            "as_run_would_succeed": 43,
+            "broken_snapshot": 0,
+            "handovers": 50,
+            "placed": 50,
+            "rescued_as_run": 7,
+            "rescued_snapshot": 5,
+            "snapshot_would_fail": 5,
+            "snapshot_would_succeed": 45
+          },
+          "policy_knob": {
+            "as_run_would_fail": 40,
+            "as_run_would_succeed": 10,
+            "broken_snapshot": 8,
+            "handovers": 50,
+            "placed": 14,
+            "rescued_as_run": 14,
+            "rescued_snapshot": 14,
+            "snapshot_would_fail": 42,
+            "snapshot_would_succeed": 8
+          },
+          "software_release": {
+            "as_run_would_fail": 9,
+            "as_run_would_succeed": 3,
+            "broken_snapshot": 2,
+            "handovers": 12,
+            "placed": 2,
+            "rescued_as_run": 0,
+            "rescued_snapshot": 0,
+            "snapshot_would_fail": 8,
+            "snapshot_would_succeed": 4
+          },
+          "success_detector_error": {
+            "as_run_would_fail": 1,
+            "as_run_would_succeed": 12,
+            "broken_snapshot": 0,
+            "handovers": 13,
+            "placed": 13,
+            "rescued_as_run": 1,
+            "rescued_snapshot": 1,
+            "snapshot_would_fail": 1,
+            "snapshot_would_succeed": 12
+          }
+        },
+        "expert_alone": {
+          "as_run_would_fail": 65,
+          "as_run_would_succeed": 88,
+          "broken_snapshot": 12,
+          "by_fault_type": {
+            "backdrop_change": {
+              "as_run_would_fail": 40,
+              "as_run_would_succeed": 10,
+              "broken_snapshot": 8,
+              "handovers": 50,
+              "placed": 14,
+              "rescued_as_run": 14,
+              "rescued_snapshot": 14,
+              "snapshot_would_fail": 42,
+              "snapshot_would_succeed": 8
+            },
+            "camera_degradation": {
+              "as_run_would_fail": 10,
+              "as_run_would_succeed": 1,
+              "broken_snapshot": 1,
+              "handovers": 11,
+              "placed": 0,
+              "rescued_as_run": 0,
+              "rescued_snapshot": 0,
+              "snapshot_would_fail": 10,
+              "snapshot_would_succeed": 1
+            },
+            "camera_pose_offset": {
+              "as_run_would_fail": 9,
+              "as_run_would_succeed": 8,
+              "broken_snapshot": 0,
+              "handovers": 17,
+              "placed": 17,
+              "rescued_as_run": 9,
+              "rescued_snapshot": 8,
+              "snapshot_would_fail": 8,
+              "snapshot_would_succeed": 9
+            },
+            "control_mode_change": {
+              "as_run_would_fail": 14,
+              "as_run_would_succeed": 0,
+              "broken_snapshot": 0,
+              "handovers": 14,
+              "placed": 14,
+              "rescued_as_run": 14,
+              "rescued_snapshot": 14,
+              "snapshot_would_fail": 14,
+              "snapshot_would_succeed": 0
+            },
+            "furniture_shift": {
+              "as_run_would_fail": 40,
+              "as_run_would_succeed": 10,
+              "broken_snapshot": 8,
+              "handovers": 50,
+              "placed": 14,
+              "rescued_as_run": 14,
+              "rescued_snapshot": 14,
+              "snapshot_would_fail": 42,
+              "snapshot_would_succeed": 8
+            },
+            "gripper_wear": {
+              "as_run_would_fail": 6,
+              "as_run_would_succeed": 44,
+              "broken_snapshot": 0,
+              "handovers": 50,
+              "placed": 50,
+              "rescued_as_run": 6,
+              "rescued_snapshot": 4,
+              "snapshot_would_fail": 4,
+              "snapshot_would_succeed": 46
+            },
+            "healthy": {
+              "as_run_would_fail": 0,
+              "as_run_would_succeed": 11,
+              "broken_snapshot": 0,
+              "handovers": 11,
+              "placed": 11,
+              "rescued_as_run": 0,
+              "rescued_snapshot": 0,
+              "snapshot_would_fail": 0,
+              "snapshot_would_succeed": 11
+            },
+            "illumination_change": {
+              "as_run_would_fail": 7,
+              "as_run_would_succeed": 43,
+              "broken_snapshot": 0,
+              "handovers": 50,
+              "placed": 50,
+              "rescued_as_run": 7,
+              "rescued_snapshot": 5,
+              "snapshot_would_fail": 5,
+              "snapshot_would_succeed": 45
+            },
+            "object_batch_variant": {
+              "as_run_would_fail": 7,
+              "as_run_would_succeed": 43,
+              "broken_snapshot": 0,
+              "handovers": 50,
+              "placed": 50,
+              "rescued_as_run": 7,
+              "rescued_snapshot": 5,
+              "snapshot_would_fail": 5,
+              "snapshot_would_succeed": 45
+            },
+            "policy_knob": {
+              "as_run_would_fail": 40,
+              "as_run_would_succeed": 10,
+              "broken_snapshot": 8,
+              "handovers": 50,
+              "placed": 14,
+              "rescued_as_run": 14,
+              "rescued_snapshot": 14,
+              "snapshot_would_fail": 42,
+              "snapshot_would_succeed": 8
+            },
+            "software_release": {
+              "as_run_would_fail": 9,
+              "as_run_would_succeed": 3,
+              "broken_snapshot": 4,
+              "handovers": 12,
+              "placed": 0,
+              "rescued_as_run": 0,
+              "rescued_snapshot": 0,
+              "snapshot_would_fail": 8,
+              "snapshot_would_succeed": 4
+            },
+            "success_detector_error": {
+              "as_run_would_fail": 1,
+              "as_run_would_succeed": 12,
+              "broken_snapshot": 0,
+              "handovers": 13,
+              "placed": 13,
+              "rescued_as_run": 1,
+              "rescued_snapshot": 1,
+              "snapshot_would_fail": 1,
+              "snapshot_would_succeed": 12
+            }
+          },
+          "handovers": 153,
+          "placed": 105,
+          "rescued_as_run": 30,
+          "rescued_snapshot": 27,
+          "snapshot_would_fail": 63,
+          "snapshot_would_succeed": 90
+        },
+        "fumble_draws": 24,
+        "fumbles_applied": 16,
+        "handovers": 153,
+        "operator_reserved_s": 13770.0,
+        "operator_used_s": 2896.85,
+        "placed": 107,
+        "placed_while_waiting": 0,
+        "queue_s": 1170.0,
+        "reaction_s": 460.4,
+        "rescued_as_run": 30,
+        "rescued_snapshot": 27,
+        "scheduled_queue_s": 1170.0,
+        "snapshot_would_fail": 63,
+        "snapshot_would_succeed": 90,
+        "supervisor_calls": 153,
+        "supervisor_decision_s": 76.5,
+        "supervisor_hold_s": 76.5
+      },
+      "timeout": {
+        "all_placed": 254,
+        "as_run_would_fail": 146,
+        "as_run_would_succeed": 7,
+        "broken_snapshot": 2,
+        "by_fault_type": {
+          "backdrop_change": {
+            "as_run_would_fail": 89,
+            "as_run_would_succeed": 4,
+            "broken_snapshot": 2,
+            "handovers": 93,
+            "placed": 24,
+            "rescued_as_run": 23,
+            "rescued_snapshot": 23,
+            "snapshot_would_fail": 90,
+            "snapshot_would_succeed": 3
+          },
+          "camera_degradation": {
+            "as_run_would_fail": 26,
+            "as_run_would_succeed": 0,
+            "broken_snapshot": 0,
+            "handovers": 26,
+            "placed": 0,
+            "rescued_as_run": 0,
+            "rescued_snapshot": 0,
+            "snapshot_would_fail": 26,
+            "snapshot_would_succeed": 0
+          },
+          "camera_pose_offset": {
+            "as_run_would_fail": 14,
+            "as_run_would_succeed": 1,
+            "broken_snapshot": 0,
+            "handovers": 15,
+            "placed": 15,
+            "rescued_as_run": 14,
+            "rescued_snapshot": 14,
+            "snapshot_would_fail": 14,
+            "snapshot_would_succeed": 1
+          },
+          "control_mode_change": {
+            "as_run_would_fail": 28,
+            "as_run_would_succeed": 0,
+            "broken_snapshot": 0,
+            "handovers": 28,
+            "placed": 23,
+            "rescued_as_run": 23,
+            "rescued_snapshot": 23,
+            "snapshot_would_fail": 28,
+            "snapshot_would_succeed": 0
+          },
+          "furniture_shift": {
+            "as_run_would_fail": 89,
+            "as_run_would_succeed": 4,
+            "broken_snapshot": 2,
+            "handovers": 93,
+            "placed": 24,
+            "rescued_as_run": 23,
+            "rescued_snapshot": 23,
+            "snapshot_would_fail": 90,
+            "snapshot_would_succeed": 3
+          },
+          "gripper_wear": {
+            "as_run_would_fail": 13,
+            "as_run_would_succeed": 0,
+            "broken_snapshot": 0,
+            "handovers": 13,
+            "placed": 11,
+            "rescued_as_run": 11,
+            "rescued_snapshot": 11,
+            "snapshot_would_fail": 13,
+            "snapshot_would_succeed": 0
+          },
+          "illumination_change": {
+            "as_run_would_fail": 17,
+            "as_run_would_succeed": 0,
+            "broken_snapshot": 0,
+            "handovers": 17,
+            "placed": 13,
+            "rescued_as_run": 13,
+            "rescued_snapshot": 13,
+            "snapshot_would_fail": 17,
+            "snapshot_would_succeed": 0
+          },
+          "object_batch_variant": {
+            "as_run_would_fail": 17,
+            "as_run_would_succeed": 0,
+            "broken_snapshot": 0,
+            "handovers": 17,
+            "placed": 13,
+            "rescued_as_run": 13,
+            "rescued_snapshot": 13,
+            "snapshot_would_fail": 17,
+            "snapshot_would_succeed": 0
+          },
+          "policy_knob": {
+            "as_run_would_fail": 89,
+            "as_run_would_succeed": 4,
+            "broken_snapshot": 2,
+            "handovers": 93,
+            "placed": 24,
+            "rescued_as_run": 23,
+            "rescued_snapshot": 23,
+            "snapshot_would_fail": 90,
+            "snapshot_would_succeed": 3
+          },
+          "software_release": {
+            "as_run_would_fail": 25,
+            "as_run_would_succeed": 2,
+            "broken_snapshot": 0,
+            "handovers": 27,
+            "placed": 18,
+            "rescued_as_run": 16,
+            "rescued_snapshot": 13,
+            "snapshot_would_fail": 22,
+            "snapshot_would_succeed": 5
+          },
+          "success_detector_error": {
+            "as_run_would_fail": 5,
+            "as_run_would_succeed": 0,
+            "broken_snapshot": 0,
+            "handovers": 5,
+            "placed": 3,
+            "rescued_as_run": 3,
+            "rescued_snapshot": 3,
+            "snapshot_would_fail": 5,
+            "snapshot_would_succeed": 0
+          }
+        },
+        "expert_alone": {
+          "as_run_would_fail": 146,
+          "as_run_would_succeed": 7,
+          "broken_snapshot": 3,
+          "by_fault_type": {
+            "backdrop_change": {
+              "as_run_would_fail": 89,
+              "as_run_would_succeed": 4,
+              "broken_snapshot": 3,
+              "handovers": 93,
+              "placed": 18,
+              "rescued_as_run": 18,
+              "rescued_snapshot": 18,
+              "snapshot_would_fail": 90,
+              "snapshot_would_succeed": 3
+            },
+            "camera_degradation": {
+              "as_run_would_fail": 26,
+              "as_run_would_succeed": 0,
+              "broken_snapshot": 0,
+              "handovers": 26,
+              "placed": 0,
+              "rescued_as_run": 0,
+              "rescued_snapshot": 0,
+              "snapshot_would_fail": 26,
+              "snapshot_would_succeed": 0
+            },
+            "camera_pose_offset": {
+              "as_run_would_fail": 14,
+              "as_run_would_succeed": 1,
+              "broken_snapshot": 0,
+              "handovers": 15,
+              "placed": 15,
+              "rescued_as_run": 14,
+              "rescued_snapshot": 14,
+              "snapshot_would_fail": 14,
+              "snapshot_would_succeed": 1
+            },
+            "control_mode_change": {
+              "as_run_would_fail": 28,
+              "as_run_would_succeed": 0,
+              "broken_snapshot": 0,
+              "handovers": 28,
+              "placed": 17,
+              "rescued_as_run": 17,
+              "rescued_snapshot": 17,
+              "snapshot_would_fail": 28,
+              "snapshot_would_succeed": 0
+            },
+            "furniture_shift": {
+              "as_run_would_fail": 89,
+              "as_run_would_succeed": 4,
+              "broken_snapshot": 3,
+              "handovers": 93,
+              "placed": 18,
+              "rescued_as_run": 18,
+              "rescued_snapshot": 18,
+              "snapshot_would_fail": 90,
+              "snapshot_would_succeed": 3
+            },
+            "gripper_wear": {
+              "as_run_would_fail": 13,
+              "as_run_would_succeed": 0,
+              "broken_snapshot": 0,
+              "handovers": 13,
+              "placed": 10,
+              "rescued_as_run": 10,
+              "rescued_snapshot": 10,
+              "snapshot_would_fail": 13,
+              "snapshot_would_succeed": 0
+            },
+            "illumination_change": {
+              "as_run_would_fail": 17,
+              "as_run_would_succeed": 0,
+              "broken_snapshot": 0,
+              "handovers": 17,
+              "placed": 12,
+              "rescued_as_run": 12,
+              "rescued_snapshot": 12,
+              "snapshot_would_fail": 17,
+              "snapshot_would_succeed": 0
+            },
+            "object_batch_variant": {
+              "as_run_would_fail": 17,
+              "as_run_would_succeed": 0,
+              "broken_snapshot": 0,
+              "handovers": 17,
+              "placed": 12,
+              "rescued_as_run": 12,
+              "rescued_snapshot": 12,
+              "snapshot_would_fail": 17,
+              "snapshot_would_succeed": 0
+            },
+            "policy_knob": {
+              "as_run_would_fail": 89,
+              "as_run_would_succeed": 4,
+              "broken_snapshot": 3,
+              "handovers": 93,
+              "placed": 18,
+              "rescued_as_run": 18,
+              "rescued_snapshot": 18,
+              "snapshot_would_fail": 90,
+              "snapshot_would_succeed": 3
+            },
+            "software_release": {
+              "as_run_would_fail": 25,
+              "as_run_would_succeed": 2,
+              "broken_snapshot": 0,
+              "handovers": 27,
+              "placed": 24,
+              "rescued_as_run": 22,
+              "rescued_snapshot": 19,
+              "snapshot_would_fail": 22,
+              "snapshot_would_succeed": 5
+            },
+            "success_detector_error": {
+              "as_run_would_fail": 5,
+              "as_run_would_succeed": 0,
+              "broken_snapshot": 0,
+              "handovers": 5,
+              "placed": 3,
+              "rescued_as_run": 3,
+              "rescued_snapshot": 3,
+              "snapshot_would_fail": 5,
+              "snapshot_would_succeed": 0
+            }
+          },
+          "handovers": 153,
+          "placed": 70,
+          "rescued_as_run": 67,
+          "rescued_snapshot": 64,
+          "snapshot_would_fail": 144,
+          "snapshot_would_succeed": 9
+        },
+        "fumble_draws": 10,
+        "fumbles_applied": 4,
+        "handovers": 153,
+        "operator_reserved_s": 13770.0,
+        "operator_used_s": 3901.85,
+        "placed": 71,
+        "placed_while_waiting": 2,
+        "queue_s": 630.0,
+        "reaction_s": 470.6,
+        "rescued_as_run": 67,
+        "rescued_snapshot": 64,
+        "scheduled_queue_s": 630.0,
+        "snapshot_would_fail": 144,
+        "snapshot_would_succeed": 9,
+        "supervisor_calls": 155,
+        "supervisor_decision_s": 77.5,
+        "supervisor_hold_s": 76.95
+      }
+    },
+    "no_handover": {
+      "episodes": 336,
+      "placed": 190
+    }
+  },
+  "world_run_root": "/home/cs/.cache/robots-probes/teleop-loop/w42-scoring-6ops"
+}

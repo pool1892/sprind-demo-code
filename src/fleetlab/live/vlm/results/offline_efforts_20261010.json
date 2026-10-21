@@ -1,0 +1,121 @@
+{
+  "source_commit": "f53cd8f8e6e1ae5a5214f79ef6488ce751d70a0d",
+  "measurement": "/home/cs/.cache/robots-supervisor/d2-merged-v4/vlm",
+  "gate": "unchanged fleetlab.live.vlm.measure.gate, require_verified before each call",
+  "runtime_root": "/var/tmp/robots-supervisor-offline-20261010",
+  "exit_code": 0,
+  "requests": 276,
+  "valid": 276,
+  "concurrency": 2,
+  "xhigh_stored_reference": {
+    "calls": 92,
+    "decision_s_median": 21.38289562999853,
+    "decision_s_p95": 40.07866137044912,
+    "decision_s_total": 2173.8372441498504
+  },
+  "table": [
+    {
+      "model": "gpt-6-astra",
+      "effort": "medium",
+      "calls": 92,
+      "valid": 92,
+      "agreement": 83,
+      "decision_s_median": 9.029812159991707,
+      "decision_s_p95": 11.218672244129994,
+      "decision_s_total": 835.308913757879,
+      "transitions": {
+        "retry->retry": 6,
+        "continue->degrade": 1,
+        "hand_over->hand_over": 41,
+        "continue->continue": 34,
+        "hand_over->continue": 1,
+        "degrade->continue": 1,
+        "degrade->degrade": 2,
+        "hand_over->degrade": 2,
+        "degrade->hand_over": 2,
+        "hand_over->retry": 1,
+        "continue->hand_over": 1
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "calls": 92,
+      "valid": 92,
+      "agreement": 86,
+      "decision_s_median": 9.151640065494576,
+      "decision_s_p95": 11.497648737144482,
+      "decision_s_total": 848.5029201369034,
+      "transitions": {
+        "retry->retry": 6,
+        "continue->degrade": 2,
+        "hand_over->hand_over": 43,
+        "continue->continue": 34,
+        "degrade->continue": 1,
+        "hand_over->continue": 1,
+        "degrade->degrade": 3,
+        "hand_over->degrade": 1,
+        "degrade->hand_over": 1
+      }
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "medium",
+      "calls": 92,
+      "valid": 92,
+      "agreement": 82,
+      "decision_s_median": 10.27381958749902,
+      "decision_s_p95": 12.732992699647731,
+      "decision_s_total": 947.3505635600886,
+      "transitions": {
+        "retry->retry": 6,
+        "continue->hand_over": 2,
+        "hand_over->hand_over": 42,
+        "continue->continue": 33,
+        "hand_over->degrade": 2,
+        "degrade->continue": 2,
+        "continue->degrade": 1,
+        "degrade->hand_over": 2,
+        "degrade->degrade": 1,
+        "hand_over->retry": 1
+      }
+    }
+  ],
+  "byte_proof": {
+    "counts": {
+      "identical_text_requests": 276,
+      "identical_pngs": 1656,
+      "matching_argv": 276
+    },
+    "models": {
+      "('gpt-6-astra', 'gpt-6-astra')": 184,
+      "('gpt-6.1-sol', 'gpt-6.1-sol')": 92
+    },
+    "source_sha256": "b820927360efae3c87ea71ec033b0275421ee283426b7766f026d1c64df655cd"
+  },
+  "artifacts": {
+    "inputs.json": {
+      "path": "/home/cs/.cache/robots-supervisor/offline-efforts-v2/inputs.json",
+      "sha256": "b820927360efae3c87ea71ec033b0275421ee283426b7766f026d1c64df655cd"
+    },
+    "protocol.json": {
+      "path": "/home/cs/.cache/robots-supervisor/offline-efforts-v2/protocol.json",
+      "sha256": "f4a0aa9333babfe409ac6494c8758f5cfba4effc39ab66b098fe46c87b9ba8a4"
+    },
+    "summary.json": {
+      "path": "/home/cs/.cache/robots-supervisor/offline-efforts-v2/summary.json",
+      "sha256": "78e867b93c206f91ac98eaf34b5f41a2da0ac79655de5cc61944dd752f4d3172"
+    },
+    "request-proof.json": {
+      "path": "/home/cs/.cache/robots-supervisor/offline-efforts-v2/request-proof.json",
+      "sha256": "3d2ac7aad3c2afb0fb51f74dca6b3fee0ce72f09e4b8fb0c51bf625d2c936751"
+    }
+  },
+  "limits": [
+    "Agreement with stored decisions is not accuracy or rescue effectiveness.",
+    "Stored xhigh ran in the simulation; the new calls replay those inputs offline.",
+    "Warm runtime, service load and cache effects are uncontrolled.",
+    "Decision wall time includes gate recheck, image encoding, CLI and answer validation.",
+    "No simulator or GPU was used in this comparison."
+  ]
+}

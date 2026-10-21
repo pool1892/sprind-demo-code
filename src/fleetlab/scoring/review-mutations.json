@@ -1,0 +1,144 @@
+{
+  "source_commit": "9df441c",
+  "review_survivors_claimed": 21,
+  "review_survivor_rows_observed": 22,
+  "original_mutations_caught": 13,
+  "equivalent_mutations_caught": 9,
+  "remaining_survivors": [],
+  "basis": "Independent review mutate.py on a new scratch copy; equivalent mutations preserve the original erroneous rule after removal/refactoring of old sites. No review code copied into repository.",
+  "results": [
+    {
+      "name": "confidence strictly above 0.5",
+      "variant": "original",
+      "file": "diagnosis.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_cause_dedup_targetless_scopes_confidence_and_inert"
+    },
+    {
+      "name": "inert change is no false positive",
+      "variant": "original",
+      "file": "diagnosis.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_cause_dedup_targetless_scopes_confidence_and_inert"
+    },
+    {
+      "name": "confounder resolved although inert named",
+      "variant": "original",
+      "file": "diagnosis.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_cause_dedup_targetless_scopes_confidence_and_inert"
+    },
+    {
+      "name": "share is 1 when nothing is achievable",
+      "variant": "original",
+      "file": "decisions.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_zero_achievable_share_is_undefined_even_for_zero_or_positive_net"
+    },
+    {
+      "name": "share is 0 when nothing is achievable",
+      "variant": "original",
+      "file": "decisions.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_zero_achievable_share_is_undefined_even_for_zero_or_positive_net"
+    },
+    {
+      "name": "chance share percentile 90",
+      "variant": "equivalent after refactor",
+      "file": "comparisons.py",
+      "result": "killed: FAILED tests/test_scoring.py::test_the_headline_gives_a_ratio_only_above_chance"
+    },
+    {
+      "name": "headline ratio although a baseline is unvalued",
+      "variant": "equivalent after refactor",
+      "file": "decisions.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_headline_unvalued_share_and_pooled_unvalued_required_baseline"
+    },
+    {
+      "name": "headline best baseline is the worst",
+      "variant": "equivalent after refactor",
+      "file": "decisions.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_all_required_baselines_and_first_model_repeats_are_mandatory"
+    },
+    {
+      "name": "margin against the worst baseline",
+      "variant": "equivalent after refactor",
+      "file": "thresholds.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_all_required_baselines_and_first_model_repeats_are_mandatory"
+    },
+    {
+      "name": "margin although a baseline is unvalued",
+      "variant": "equivalent after refactor",
+      "file": "thresholds.py",
+      "result": "killed: ERROR tests/test_scoring.py::test_claim_1_counts_hits_wrong_directions_vague_small_and_decoys"
+    },
+    {
+      "name": "above chance against the mean, not the 95th percentile",
+      "variant": "equivalent after refactor",
+      "file": "comparisons.py",
+      "result": "killed: FAILED tests/test_scoring.py::test_the_headline_gives_a_ratio_only_above_chance"
+    },
+    {
+      "name": "above chance not strict",
+      "variant": "original",
+      "file": "thresholds.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_marks_use_exact_upper_chance_strictly_and_k3_inclusively"
+    },
+    {
+      "name": "marks use > instead of >=",
+      "variant": "original",
+      "file": "thresholds.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_marks_use_exact_upper_chance_strictly_and_k3_inclusively"
+    },
+    {
+      "name": "share mark read at k = 6",
+      "variant": "original",
+      "file": "thresholds.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_all_required_baselines_and_first_model_repeats_are_mandatory"
+    },
+    {
+      "name": "crossing before onset allowed",
+      "variant": "original",
+      "file": "foresight.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_old_wording_does_not_infer_a_drift_before_onset"
+    },
+    {
+      "name": "any warning matches any scope",
+      "variant": "original",
+      "file": "foresight.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_warning_states_use_drift_truth_and_expose_false_alarms"
+    },
+    {
+      "name": "missing example counts as a healthy failure",
+      "variant": "original",
+      "file": "foresight.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_retraining_requires_all_indicators_and_counts_only_healthy_failures"
+    },
+    {
+      "name": "precision is share that succeed healthy",
+      "variant": "original",
+      "file": "foresight.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_retraining_requires_all_indicators_and_counts_only_healthy_failures"
+    },
+    {
+      "name": "missing ledger rows tolerated",
+      "variant": "original",
+      "file": "accounting.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_missing_session_ledger_entry_with_matching_other_call_is_unavailable"
+    },
+    {
+      "name": "pooled ratio although baseline within chance",
+      "variant": "equivalent after refactor",
+      "file": "pooling.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_pooled_ratio_best_per_world_and_exact_convolution_floor"
+    },
+    {
+      "name": "pooled ratio against the worst baseline",
+      "variant": "equivalent after refactor",
+      "file": "pooling.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_pooled_ratio_best_per_world_and_exact_convolution_floor"
+    },
+    {
+      "name": "pooled ratio inverted",
+      "variant": "equivalent after refactor",
+      "file": "pooling.py",
+      "result": "killed: FAILED tests/test_scoring_stage4.py::test_pooled_ratio_best_per_world_and_exact_convolution_floor"
+    }
+  ],
+  "unmutated_scratch_tests_passed": 57
+}

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title</title>
+<meta name="description" content="$lede">
+<meta name="generator" content="fleetlab.film-site/1">
+$preview
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body class="home">
+<header class="top">
+  <div class="wrap">
+    <h1>$title</h1>
+    <p class="lede">$lede</p>
+  </div>
+</header>
+<main>
+  <section class="film" aria-label="The film">
+    <div class="wrap">
+      <video id="film" controls preload="metadata" playsinline $poster>
+        <source src="film/film.mp4" type="video/mp4">
+        <track kind="captions" src="film/captions.vtt" srclang="en" label="English">
+        <track kind="chapters" src="film/chapters.vtt" srclang="en" label="Chapters">
+        Your browser does not play this video here; <a href="film/film.mp4">download the MP4</a>.
+      </video>
+      <p class="meta">$film_seconds &middot; captions in the picture &middot;
+        <a href="film/film.mp4" download>download the film</a> ($film_size)</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="record" aria-labelledby="record-heading">
+      <h2 id="record-heading">The record</h2>
+      $record
+    </section>
+
+    <div class="guide">
+      <section class="chapters" aria-labelledby="chapters-heading">
+        <h2 id="chapters-heading">Chapters</h2>
+        <p class="hint">Select a time to play the film from there.</p>
+        <table class="beats">
+          <thead><tr><th>At</th><th>Story</th><th>Chapter</th><th>Footage</th></tr></thead>
+          <tbody>
+$beats
+          </tbody>
+        </table>
+      </section>
+
+      <section class="transcript-section" aria-label="Transcript">
+        <h2>Transcript</h2>
+        <div class="transcript">
+$transcript
+        </div>
+      </section>
+    </div>
+
+    <details class="technical" id="technical">
+      <summary>
+        <span class="summary-title">Sources, downloads and provenance</span>
+        <span class="summary-note">every clip, file and digest behind the film</span>
+      </summary>
+
+      <section aria-labelledby="film-file-heading">
+        <h3 id="film-file-heading">The film file</h3>
+        <p><a href="film/film.mp4" download>film.mp4</a>: $film_seconds, H.264 and AAC,
+        $film_size. The captions are part of the picture and also come as
+        <a href="film/captions.vtt">captions.vtt</a>, the chapters as
+        <a href="film/chapters.vtt">chapters.vtt</a>.<br>
+        SHA-256 <code class="hash">$film_sha</code></p>
+      </section>
+
+      <section aria-labelledby="clips-heading">
+        <h3 id="clips-heading">The clips</h3>
+        <p>Every scene in the film is a recorded run of the simulator, shown as it was
+        recorded. Each row names the run, the episode and the control steps shown (one
+        control step is 50 milliseconds), and links the original video. Where the film
+        shows a re-render, it is one that re-executed the recorded actions and matched every
+        recorded state; the original is kept beside it.</p>
+        <div class="scroll" tabindex="0" role="region" aria-labelledby="clips-heading">
+        <table class="clips">
+          <thead><tr><th>Chapter</th><th>Clip</th><th>Run</th><th>Episode</th><th>Steps</th><th>Outcome</th><th>SHA-256</th><th>Video</th></tr></thead>
+          <tbody>
+$clips
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="artifacts-heading">
+        <h3 id="artifacts-heading">Saved artifacts</h3>
+        <p>Files the installation keeps after the work, as it runs them.</p>
+        <div class="scroll" tabindex="0" role="region" aria-labelledby="artifacts-heading">
+        <table class="artifacts">
+          <thead><tr><th>Kind</th><th>File</th><th>Purpose</th><th>Size</th><th>SHA-256</th></tr></thead>
+          <tbody>
+$artifacts
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="provenance-heading">
+        <h3 id="provenance-heading">Provenance</h3>
+        <ul>
+          <li><a href="film/film.json">film.json</a>: every clip's run and episode by a
+          stable identifier, the control steps shown and the SHA-256 of its video and of
+          every record read to find it; every count with the tables it was computed from;
+          the film files with their hashes. The full provenance, with where each file lies
+          on the machine that ran the simulations, is kept with the run records; film.json
+          carries its SHA-256.</li>
+          <li><a href="film/timeline.png">timeline.png</a> and
+          <a href="film/timeline.md">timeline.md</a>: one picture and one line per
+          chapter.</li>
+          <li><a href="site-files.json">site-files.json</a>: every file of this site with
+          its size and SHA-256.</li>
+        </ul>
+        <p class="build">Built $built from commit <code>$commit</code>.</p>
+      </section>
+    </details>
+  </div>
+</main>
+<footer class="wrap">
+  <a href="#film">Film</a> &middot; <a href="#record-heading">Record</a> &middot;
+  <a href="#technical">Sources and provenance</a> &middot;
+  <a href="site-files.json">site-files.json</a>
+</footer>
+<script>
+  var film = document.getElementById('film');
+  document.querySelectorAll('a[data-t]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      var video = document.getElementById('film');
+      if (!video) { return; }
+      event.preventDefault();
+      video.currentTime = parseFloat(link.getAttribute('data-t'));
+      video.play();
+      video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+  // the chapter and transcript line now playing
+  if (film) {
+    var marks = Array.prototype.slice.call(document.querySelectorAll('a[data-t]'));
+    film.addEventListener('timeupdate', function () {
+      var now = film.currentTime, current = -1;
+      marks.forEach(function (link) {
+        var t = parseFloat(link.getAttribute('data-t'));
+        if (t <= now + 0.05 && t > current) { current = t; }
+      });
+      marks.forEach(function (link) {
+        var row = link.closest('tr, p');
+        if (row) {
+          row.classList.toggle('now', parseFloat(link.getAttribute('data-t')) === current);
+        }
+      });
+    });
+  }
+  // a link to the sources opens them
+  function openTechnical() {
+    var target = location.hash && document.getElementById(location.hash.slice(1));
+    var box = document.getElementById('technical');
+    if (box && target && (target === box || box.contains(target))) { box.open = true; }
+  }
+  window.addEventListener('hashchange', openTechnical);
+  openTechnical();
+</script>
+</body>
+</html>

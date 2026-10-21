@@ -1,0 +1,6 @@
+# Railway sets PORT; Caddy serves the built site from /srv, with byte ranges for the video.
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+	file_server
+}

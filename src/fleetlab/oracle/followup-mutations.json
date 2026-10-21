@@ -1,0 +1,65 @@
+[
+  {
+    "mutation": "interval boundary",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_interaction_interval_ending_at_zero_is_not_confirmed"
+    ]
+  },
+  {
+    "mutation": "joint tolerance",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_additive_requires_equivalence_and_positive_standalone_harm[-1.01-1-10-2-indeterminate]"
+    ]
+  },
+  {
+    "mutation": "negative sum absolute",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_additive_requires_equivalence_and_positive_standalone_harm[-1-1--10--12-indeterminate]"
+    ]
+  },
+  {
+    "mutation": "standalone order",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_standalone_harms_keep_fault_order_and_bootstrap_sum"
+    ]
+  },
+  {
+    "mutation": "unknown baseline",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_unknown_baseline_allows_both_sides_of_chance_bounds"
+    ]
+  },
+  {
+    "mutation": "healthy alias",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_missing_fault_free_row_keeps_zero_gain_but_nulls_both_policy_counts"
+    ]
+  },
+  {
+    "mutation": "fault-free fresh need",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_missing_fault_free_row_keeps_zero_gain_but_nulls_both_policy_counts"
+    ]
+  },
+  {
+    "mutation": "cache without manifest",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_cached_files_without_manifest_cannot_acquire_origin"
+    ]
+  },
+  {
+    "mutation": "marked absent pair",
+    "exit": 1,
+    "killed_by": [
+      "FAILED tests/test_oracle_followup.py::test_marked_pairs_without_carriers_have_estimate_rows"
+    ]
+  }
+]

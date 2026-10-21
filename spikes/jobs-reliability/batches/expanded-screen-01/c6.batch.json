@@ -1,0 +1,370 @@
+{
+ "format": "fleetlab.job-batch/1",
+ "host_screen": {
+  "label": "HOST-AUTHORED task-selection evidence, expanded feasibility screen (robots-qzfk.44.7): host development evidence withheld from engineering agents, never an input of an engineering agent",
+  "batch": "c6",
+  "bead": "robots-qzfk.44.7"
+ },
+ "state": {
+  "request_text": "Host screen: leave On wine_bottle_1 wooden_cabinet_1_top_side and Open wooden_cabinet_1_middle_region true at the end.",
+  "requested_goals": [
+   {
+    "predicate": "On",
+    "objects": [
+     "wine_bottle_1",
+     "wooden_cabinet_1_top_side"
+    ]
+   },
+   {
+    "predicate": "Open",
+    "objects": [
+     "wooden_cabinet_1_middle_region"
+    ]
+   }
+  ],
+  "base_task": 6,
+  "order_rules": [],
+  "budget": {
+   "starts_per_request": 20,
+   "requests_per_session": 4,
+   "sessions": 6,
+   "starts_per_investigation": 400
+  },
+  "acceptance": null,
+  "message_log": []
+ },
+ "jobs": [
+  {
+   "job_id": "j0001",
+   "variant": "naive",
+   "request": {
+    "program": {
+     "name": "naive-chain",
+     "purpose": "the skills chained, each switching on its own task's native success",
+     "steps": [
+      {
+       "kind": "policy",
+       "instruction": "put the wine bottle on top of the cabinet",
+       "until": {
+        "goal": 0,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      },
+      {
+       "kind": "policy",
+       "instruction": "open the middle drawer of the cabinet",
+       "until": {
+        "goal": 1,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      }
+     ],
+     "notes": "host-built naive chain (demo plan, section 3)"
+    },
+    "starts": [
+     {
+      "base_task": 6,
+      "init_state": 0,
+      "scene_seed": 3060898589,
+      "noise_seed": 6053786618818064158
+     },
+     {
+      "base_task": 6,
+      "init_state": 1,
+      "scene_seed": 3765277368,
+      "noise_seed": 5526383691105553425
+     },
+     {
+      "base_task": 6,
+      "init_state": 2,
+      "scene_seed": 3841156270,
+      "noise_seed": 2640250800942948243
+     },
+     {
+      "base_task": 6,
+      "init_state": 3,
+      "scene_seed": 208136056,
+      "noise_seed": 2127830951757317177
+     },
+     {
+      "base_task": 6,
+      "init_state": 4,
+      "scene_seed": 3393029021,
+      "noise_seed": 2454844502399545515
+     },
+     {
+      "base_task": 6,
+      "init_state": 5,
+      "scene_seed": 1377854292,
+      "noise_seed": 6043358305617668431
+     },
+     {
+      "base_task": 6,
+      "init_state": 6,
+      "scene_seed": 4257492356,
+      "noise_seed": 4647426516006207446
+     },
+     {
+      "base_task": 6,
+      "init_state": 7,
+      "scene_seed": 193954116,
+      "noise_seed": 6586689552191167802
+     },
+     {
+      "base_task": 6,
+      "init_state": 8,
+      "scene_seed": 4183796692,
+      "noise_seed": 5451786874406243710
+     },
+     {
+      "base_task": 6,
+      "init_state": 9,
+      "scene_seed": 4267857496,
+      "noise_seed": 8014808958181036522
+     }
+    ],
+    "record_video": false
+   }
+  },
+  {
+   "job_id": "j0002",
+   "variant": "home",
+   "request": {
+    "program": {
+     "name": "host-c6-home",
+     "purpose": "Host screen: the two skills with the generic 'home' transition.",
+     "steps": [
+      {
+       "kind": "policy",
+       "instruction": "put the wine bottle on top of the cabinet",
+       "until": {
+        "goal": 0,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      },
+      {
+       "kind": "home",
+       "instruction": null,
+       "until": null,
+       "max_steps": null,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "continue",
+       "duration_steps": 200
+      },
+      {
+       "kind": "policy",
+       "instruction": "open the middle drawer of the cabinet",
+       "until": {
+        "goal": 1,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      }
+     ],
+     "notes": "HOST-AUTHORED task-selection evidence, expanded feasibility screen (robots-qzfk.44.7): host development evidence withheld from engineering agents, never an input of an engineering agent"
+    },
+    "starts": [
+     {
+      "base_task": 6,
+      "init_state": 0,
+      "scene_seed": 3060898589,
+      "noise_seed": 6053786618818064158
+     },
+     {
+      "base_task": 6,
+      "init_state": 1,
+      "scene_seed": 3765277368,
+      "noise_seed": 5526383691105553425
+     },
+     {
+      "base_task": 6,
+      "init_state": 2,
+      "scene_seed": 3841156270,
+      "noise_seed": 2640250800942948243
+     },
+     {
+      "base_task": 6,
+      "init_state": 3,
+      "scene_seed": 208136056,
+      "noise_seed": 2127830951757317177
+     },
+     {
+      "base_task": 6,
+      "init_state": 4,
+      "scene_seed": 3393029021,
+      "noise_seed": 2454844502399545515
+     },
+     {
+      "base_task": 6,
+      "init_state": 5,
+      "scene_seed": 1377854292,
+      "noise_seed": 6043358305617668431
+     },
+     {
+      "base_task": 6,
+      "init_state": 6,
+      "scene_seed": 4257492356,
+      "noise_seed": 4647426516006207446
+     },
+     {
+      "base_task": 6,
+      "init_state": 7,
+      "scene_seed": 193954116,
+      "noise_seed": 6586689552191167802
+     },
+     {
+      "base_task": 6,
+      "init_state": 8,
+      "scene_seed": 4183796692,
+      "noise_seed": 5451786874406243710
+     },
+     {
+      "base_task": 6,
+      "init_state": 9,
+      "scene_seed": 4267857496,
+      "noise_seed": 8014808958181036522
+     }
+    ],
+    "record_video": false
+   }
+  },
+  {
+   "job_id": "j0003",
+   "variant": "finish-home",
+   "request": {
+    "program": {
+     "name": "host-c6-finish-home",
+     "purpose": "Host screen: the two skills with the generic 'finish-home' transition.",
+     "steps": [
+      {
+       "kind": "policy",
+       "instruction": "put the wine bottle on top of the cabinet",
+       "until": {
+        "goal": 0,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      },
+      {
+       "kind": "policy",
+       "instruction": "put the wine bottle on top of the cabinet",
+       "until": {
+        "goal": null,
+        "steps": 30
+       },
+       "max_steps": 30,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      },
+      {
+       "kind": "home",
+       "instruction": null,
+       "until": null,
+       "max_steps": null,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "continue",
+       "duration_steps": 200
+      },
+      {
+       "kind": "policy",
+       "instruction": "open the middle drawer of the cabinet",
+       "until": {
+        "goal": 1,
+        "steps": null
+       },
+       "max_steps": 300,
+       "segment": null,
+       "steps": null,
+       "on_timeout": "stop"
+      }
+     ],
+     "notes": "HOST-AUTHORED task-selection evidence, expanded feasibility screen (robots-qzfk.44.7): host development evidence withheld from engineering agents, never an input of an engineering agent"
+    },
+    "starts": [
+     {
+      "base_task": 6,
+      "init_state": 0,
+      "scene_seed": 3060898589,
+      "noise_seed": 6053786618818064158
+     },
+     {
+      "base_task": 6,
+      "init_state": 1,
+      "scene_seed": 3765277368,
+      "noise_seed": 5526383691105553425
+     },
+     {
+      "base_task": 6,
+      "init_state": 2,
+      "scene_seed": 3841156270,
+      "noise_seed": 2640250800942948243
+     },
+     {
+      "base_task": 6,
+      "init_state": 3,
+      "scene_seed": 208136056,
+      "noise_seed": 2127830951757317177
+     },
+     {
+      "base_task": 6,
+      "init_state": 4,
+      "scene_seed": 3393029021,
+      "noise_seed": 2454844502399545515
+     },
+     {
+      "base_task": 6,
+      "init_state": 5,
+      "scene_seed": 1377854292,
+      "noise_seed": 6043358305617668431
+     },
+     {
+      "base_task": 6,
+      "init_state": 6,
+      "scene_seed": 4257492356,
+      "noise_seed": 4647426516006207446
+     },
+     {
+      "base_task": 6,
+      "init_state": 7,
+      "scene_seed": 193954116,
+      "noise_seed": 6586689552191167802
+     },
+     {
+      "base_task": 6,
+      "init_state": 8,
+      "scene_seed": 4183796692,
+      "noise_seed": 5451786874406243710
+     },
+     {
+      "base_task": 6,
+      "init_state": 9,
+      "scene_seed": 4267857496,
+      "noise_seed": 8014808958181036522
+     }
+    ],
+    "record_video": false
+   }
+  }
+ ]
+}

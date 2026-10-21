@@ -1,0 +1,14 @@
+#!/bin/sh
+# The nightly worlds (src/fleetlab/engine/ladder.py), started every night by the user
+# timer robots-nightly.timer (since 2026-10-08). Runs `make nightly` from a checkout of its own, set to main's head
+# first, so that a merge during the run cannot change the files under it. One heavy job
+# of about half an hour; it waits its turn in the queue of tools/heavy-run.
+set -eu
+PATH="$HOME/.local/share/mise/installs/uv/latest/.mise-bins:$HOME/.local/share/mise/shims:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/opt/rocm/bin"
+export PATH
+main="$(cd "$(dirname "$0")/.." && pwd)"
+run="${NIGHTLY_CHECKOUT:-$main-nightly}"
+[ -d "$run" ] || git -C "$main" worktree add --detach "$run" main
+git -C "$run" checkout --quiet --detach main
+cd "$run"
+exec make nightly

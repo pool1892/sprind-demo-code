@@ -1,0 +1,9 @@
+{
+  "episodes": 32,
+  "updates": 5440,
+  "microseconds_median": 38.492,
+  "microseconds_p95": 44.034000000000006,
+  "microseconds_mean": 40.18219963235294,
+  "max_absolute_offline_live_probability_difference": 3.3306690738754696e-16,
+  "includes": "feature validation, input copies, window and all three calibrated heads"
+}

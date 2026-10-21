@@ -1,0 +1,17 @@
+{
+  "format": "fleetlab.film-records/1",
+  "notes": "The reliability cut's first case binds to replacement-01 (bowl on the cabinet top and middle drawer open, no order rule, base task 2 pool, allocation profile pool-v1, runtime b46e8f4): its investigation record, release receipt, the coordinator's reconciliation of the 40 raw release episodes, the four development tables and the saved job. The r2_* records of site/reliability/fields.json are deliberately absent: the second job is pending, and a name bound to them stays visible as {name} and is refused by --final.",
+  "records": {
+    "r1_run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/job_run.json",
+    "r1_receipt": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/receipt.json",
+    "r1_verification": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/coordinator-verification.json",
+    "r1_development": [
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-01/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-02/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-03/run/log/job_episodes.parquet",
+      "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/runs/session-04/run/log/job_episodes.parquet"
+    ],
+    "r1_release_episodes": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run/log/job_episodes.parquet",
+    "r1_job": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/library/jobs/station-bowl-and-open-drawer.json"
+  }
+}

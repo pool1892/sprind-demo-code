@@ -1,0 +1,113 @@
+{
+  "source_commit": "8dead7d612e06d650fe9c514ca98801ca544e2b7",
+  "batch_merge": "6f4104e",
+  "merged_batch_tip": "e4fd448",
+  "fault_parent": "8c3e6e2",
+  "make_check": {
+    "command": "make check",
+    "exit_code": 0,
+    "invocations": 1,
+    "passed": 1810,
+    "skipped": 2,
+    "deselected": 65,
+    "pytest_seconds": 2850.45,
+    "log": {
+      "path": "/home/cs/.cache/robots-supervisor/merged-engine/make-check.log",
+      "sha256": "75555dc5d5825152262f0fec5a9c28d877f67c9e7c79bdc7f0da1e7091b332f6"
+    }
+  },
+  "make_check_sim": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 make check-sim",
+    "exit_code": 0,
+    "invocations": 1,
+    "passed": 61,
+    "deselected": 1816,
+    "pytest_seconds": 341.78,
+    "log": {
+      "path": "/home/cs/.cache/robots-supervisor/merged-engine/make-check-sim.log",
+      "sha256": "631860e58a218414b3849d646bfe93ceab2466f839e5514c6cf08db78e7595aa"
+    }
+  },
+  "focused_tests": {
+    "exit_code": 0,
+    "passed": 115,
+    "new_integration_cases": 36,
+    "pytest_seconds": 14.94
+  },
+  "unsupervised_toy": {
+    "before_commit": "b34d7adb0731b162a68f7e31a2635cc3a9e174b7",
+    "after_commit": "8dead7d612e06d650fe9c514ca98801ca544e2b7",
+    "compared": 975,
+    "identical": 975,
+    "changed": [],
+    "cohort": "25 episode identities x 13 budgets x healthy/camera/delay; all complete chain arrays, outcomes and lengths compared",
+    "before": {
+      "path": "/home/cs/.cache/robots-supervisor/merged-engine/unsupervised-before.json",
+      "sha256": "eb1f5d5cb7c79942212e4f1cfa9f7350bb9ee7d9994665da15bd19b61c0f263f"
+    },
+    "after": {
+      "path": "/home/cs/.cache/robots-supervisor/merged-engine/unsupervised-after.json",
+      "sha256": "2faaefdff6266df254aa9c8533658832b2ff7e7b4be9c29f6d245843ddb6bcfa"
+    },
+    "probe": {
+      "path": "/home/cs/.cache/robots-supervisor/merged-engine/unsupervised_probe.py",
+      "sha256": "1e40e1331cbbfb4420f1190f4bae9103fd9c2f88e7e59cec4bb6fac627837461"
+    }
+  },
+  "supervised_toy_reference": {
+    "compared": 240,
+    "identical": 240,
+    "scripted_proofs": 200,
+    "changed": [],
+    "reference": {
+      "path": "tests/data/supervisor_rule_reference.json",
+      "sha256": "83b92e6246454c589914efad844489335629d4d5745a6868585f7d3f88f18696"
+    },
+    "candidate": {
+      "path": "/home/cs/.cache/robots-supervisor/merged-engine/supervised-reference-candidate.json",
+      "sha256": "642ef92398313a32e16b57e11e4f92ff37081bc28c287966ba2ef6de52d00722"
+    }
+  },
+  "fault_engine_mutations": {
+    "nominal_instead_of_effective_mode": {
+      "exit_code": 1,
+      "seconds": 4.68998468699283,
+      "test": "test_engine_uses_effective_mode_and_preserves_policy_command_bits",
+      "log": "/home/cs/.cache/robots-supervisor/merged-engine/mutation-nominal_instead_of_effective_mode.log"
+    },
+    "missing_world_normalization": {
+      "exit_code": 1,
+      "seconds": 4.3288307469920255,
+      "test": "test_engine_executes_scripted_world_targets_at_their_world_position",
+      "log": "/home/cs/.cache/robots-supervisor/merged-engine/mutation-missing_world_normalization.log"
+    },
+    "missing_frame_guard": {
+      "exit_code": 1,
+      "seconds": 4.573071003978839,
+      "test": "test_engine_requires_an_explicit_in_worker_frame",
+      "log": "/home/cs/.cache/robots-supervisor/merged-engine/mutation-missing_frame_guard.log"
+    },
+    "frame_before_command": {
+      "exit_code": 1,
+      "seconds": 4.419368294999003,
+      "test": "test_engine_reads_the_frame_of_the_command_just_produced",
+      "log": "/home/cs/.cache/robots-supervisor/merged-engine/mutation-frame_before_command.log"
+    }
+  },
+  "fault_library_authored_lines": [],
+  "fault_test_authored_lines": [],
+  "fault_tree": "a694542540bfc427881e4abf9528cbf8d4d2f329",
+  "deferred": {
+    "nightly": "bash src/fleetlab/live/vlm/refresh_nightly.sh 8dead7d /home/cs/.cache/robots-probes/nightly/2026-10-08 /home/cs/.cache/robots-supervisor/nightly-reference-merged-v1",
+    "paired_d2": "bash src/fleetlab/live/vlm/repeat_d2.sh 8dead7d /home/cs/.cache/robots-supervisor/d2-sample-v1 /home/cs/.cache/robots-supervisor/d2-merged-v1",
+    "same_source_commit_for_both_arms": true,
+    "sample_sha256": "79eb69b78f122f0850dadc050e8cc6280f3a72801e0eec6f7ea3d6668d9544dc"
+  },
+  "not_run": [
+    "GPU measurements",
+    "model calls or sessions",
+    "make smoke-world",
+    "nightly reference refresh",
+    "D2 rerun"
+  ]
+}
