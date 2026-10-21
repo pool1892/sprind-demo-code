@@ -1,0 +1,153 @@
+{
+ "format": "mayfly.explainer-beat-clips/1",
+ "notes": "The recorded clips each beat shows (clip ids of film-data.json's clips), for the cut's provenance; from the scene builders' handoffs for cut 3. Beats without an entry show no recorded clip (diagrams and data only). The rules beat's vault tiles show the first frames of the reserved layouts' plain-chain runs; the cold-open's count dots read only the delivered flags of the same runs.",
+ "beats": {
+  "cold-open": [
+   "single-cabinet-hero",
+   "single-drawer-hero",
+   "r1-chain-31-hero"
+  ],
+  "station": [
+   "r1-job-31-establishing",
+   "r1-chain-31-scene",
+   "r1-chain-31-wrist"
+  ],
+  "agent": [
+   "r1-chain-practice2",
+   "r1-chain-practice2-wrist"
+  ],
+  "rules": [
+   "r2-chain-dev1-hero",
+   "r2-chain-dev5-hero",
+   "r2-chain-dev7-hero",
+   "r2-relocate-0-hero",
+   "r1-chain-30-tile",
+   "r1-chain-31-tile",
+   "r1-chain-32-tile",
+   "r1-chain-33-tile",
+   "r1-chain-34-tile",
+   "r1-chain-35-tile",
+   "r1-chain-36-tile",
+   "r1-chain-37-tile",
+   "r1-chain-38-tile",
+   "r1-chain-39-tile",
+   "r1-chain-40-tile",
+   "r1-chain-41-tile",
+   "r1-chain-42-tile",
+   "r1-chain-43-tile",
+   "r1-chain-44-tile",
+   "r1-chain-45-tile",
+   "r1-chain-46-tile",
+   "r1-chain-47-tile",
+   "r1-chain-48-tile",
+   "r1-chain-49-tile"
+  ],
+  "r1-fail": [
+   "r1-chain-practice2-hero"
+  ],
+  "r1-measure": [
+   "r1-chain-practice2-hero"
+  ],
+  "r1-experiment": [
+   "r1-openhome-2-hero",
+   "r1-finishhome-2-hero"
+  ],
+  "r1-prove": [
+   "r1-chain-30-tile",
+   "r1-chain-31-tile",
+   "r1-chain-32-tile",
+   "r1-chain-33-tile",
+   "r1-chain-34-tile",
+   "r1-chain-35-tile",
+   "r1-chain-36-tile",
+   "r1-chain-37-tile",
+   "r1-chain-38-tile",
+   "r1-chain-39-tile",
+   "r1-chain-40-tile",
+   "r1-chain-41-tile",
+   "r1-chain-42-tile",
+   "r1-chain-43-tile",
+   "r1-chain-44-tile",
+   "r1-chain-45-tile",
+   "r1-chain-46-tile",
+   "r1-chain-47-tile",
+   "r1-chain-48-tile",
+   "r1-chain-49-tile",
+   "r1-job-30-tile",
+   "r1-job-31-tile",
+   "r1-job-32-tile",
+   "r1-job-33-tile",
+   "r1-job-34-tile",
+   "r1-job-35-tile",
+   "r1-job-36-tile",
+   "r1-job-37-tile",
+   "r1-job-38-tile",
+   "r1-job-39-tile",
+   "r1-job-40-tile",
+   "r1-job-41-tile",
+   "r1-job-42-tile",
+   "r1-job-43-tile",
+   "r1-job-44-tile",
+   "r1-job-45-tile",
+   "r1-job-46-tile",
+   "r1-job-47-tile",
+   "r1-job-48-tile",
+   "r1-job-49-tile"
+  ],
+  "r2-fail": [
+   "r2-chain-dev1-hero",
+   "r2-chain-dev1-top-tilt",
+   "r2-chain-dev5-top-tilt"
+  ],
+  "r2-bottleneck": [
+   "r2-loaded-0-hero"
+  ],
+  "r2-fix": [
+   "r2-relocate-0-hero",
+   "r2-aside-0-top-tilt",
+   "r2-job-30-tile",
+   "r2-job-31-tile",
+   "r2-job-32-tile",
+   "r2-job-33-tile",
+   "r2-job-34-tile",
+   "r2-job-35-tile",
+   "r2-job-36-tile",
+   "r2-job-37-tile",
+   "r2-job-38-tile",
+   "r2-job-39-tile",
+   "r2-job-40-tile",
+   "r2-job-41-tile",
+   "r2-job-42-tile",
+   "r2-job-43-tile",
+   "r2-job-44-tile",
+   "r2-job-45-tile",
+   "r2-job-46-tile",
+   "r2-job-47-tile",
+   "r2-job-48-tile",
+   "r2-job-49-tile",
+   "r2-chain-30-tile",
+   "r2-chain-31-tile",
+   "r2-chain-32-tile",
+   "r2-chain-33-tile",
+   "r2-chain-34-tile",
+   "r2-chain-35-tile",
+   "r2-chain-36-tile",
+   "r2-chain-37-tile",
+   "r2-chain-38-tile",
+   "r2-chain-39-tile",
+   "r2-chain-40-tile",
+   "r2-chain-41-tile",
+   "r2-chain-42-tile",
+   "r2-chain-43-tile",
+   "r2-chain-44-tile",
+   "r2-chain-45-tile",
+   "r2-chain-46-tile",
+   "r2-chain-47-tile",
+   "r2-chain-48-tile",
+   "r2-chain-49-tile"
+  ],
+  "lessons": [
+   "r1-chain-practice2-hero"
+  ]
+ }
+}

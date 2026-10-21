@@ -44,7 +44,7 @@ $film check $cut.json
 # 3. the silent proof (captions at reading pace)
 $film build $cut.json --out "$out/silent"
 
-# 4. the voice (root, key from Infisical, model given explicitly): Brian reads the BOUND
+# 4. the voice (key from the environment, model given explicitly): Brian reads the BOUND
 #    script. Do not pass --records: film-narrate would bind with
 #    site/narration/fields.json, which lacks these names. Without a key it runs dry.
 tools/film-narrate render --script "$out/narration/script.md" --model <model> \

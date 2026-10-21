@@ -1,0 +1,18 @@
+{
+  "format": "fleetlab.film-site/1",
+  "title": "Can an AI agent engineer a robot? Two experiments in simulation",
+  "lede": "Mayfly is building robot installations whose engineering is done by AI agents. We tested the core question in simulation, with the robot's AI model kept fixed and an engineering agent working alone in a sandbox, never given the answers. Experiment one: two new jobs built from skills the robot already has. On 20 table layouts held back until the end, both jobs delivered on all 20, against 1 and 5 for the plain chains of the same skills. Experiment two: problems we planted in a fleet of twelve simulated arms. The agent built its own test instrument, told look-alike symptoms apart, and its three tested repairs raised success on 576 attempts it never saw from 451 to 558. Every clip is a recorded run; the record below gives every number with its source.",
+  "film": "~/.cache/robots-probes/demo/explainer/film/cut-3",
+  "record": "~/.cache/robots-probes/demo/2026-10-20/reliability/site/record-final-2/page",
+  "base_url": "https://pool1892.github.io/sprind-demo-page/",
+  "public": {
+    "aliases": {
+      "w80": "w08",
+      "w81": "w09"
+    },
+    "forbid": [
+      "(?<![A-Za-z0-9])w8[0-9](?![0-9])"
+    ]
+  },
+  "captions_note": "English captions (CC)"
+}

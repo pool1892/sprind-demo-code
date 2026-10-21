@@ -24,12 +24,19 @@ beside them at the same size.
 
     tools/heavy-run --light uv run --locked python -m fleetlab.jobs replay --run RUN_DIR \\
         --episode e000101 --out DIR [--size 720] [--camera scene] [--frame-every 1]
+
+The verification itself is `load_record` (the record, refused when it does not stand for its
+episode) and `replay` (the re-execution, every hash and the verdict compared), which call
+back after the reset and after every step; `rerender` and `fleetlab.film.framing` (framed
+re-renders for the film) both build on them, so they verify alike.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Callable
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -42,7 +49,16 @@ from fleetlab.contracts.jobs import DeliveryVerdict, JobEpisode, RequestState
 from fleetlab.jobs import tables
 from fleetlab.jobs.check import DeliveryState, SceneGoals, delivery_verdict
 
-__all__ = ["REPORT_FORMAT", "ReplayMismatch", "record_problems", "rerender"]
+__all__ = [
+    "REPORT_FORMAT",
+    "ReplayMismatch",
+    "ReplayRecord",
+    "Verification",
+    "load_record",
+    "record_problems",
+    "replay",
+    "rerender",
+]
 
 REPORT_FORMAT = "fleetlab.job-rerender/1"
 CONTROL_HZ = 20
@@ -109,6 +125,121 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+@dataclass(frozen=True)
+class ReplayRecord:
+    """A recorded episode as a replay needs it, and what keeps it from standing for it."""
+
+    run_dir: Path
+    episode_id: str
+    executed: npt.NDArray[np.float32]
+    hashes: list[str]
+    identity: EpisodeIdentity
+    recorded: JobEpisode | None
+    problems: list[str]
+
+
+def load_record(run_dir: Path, episode_id: str) -> ReplayRecord:
+    """The episode's replay record, identity and recorded episode, with `record_problems`
+    and the check that the record's scene is the episode's base task."""
+    from fleetlab.jobs.runner import GoalSuite
+
+    run_dir = Path(run_dir)
+    executed, hashes, identity_json = tables.load_replay_record(run_dir, episode_id)
+    identity = EpisodeIdentity.model_validate_json(identity_json)
+    recorded = {e.episode_id: e for e in tables.read_episodes(run_dir)}.get(episode_id)
+    problems = record_problems(episode_id, executed, hashes, identity, recorded)
+    if not problems:
+        assert recorded is not None
+        if GoalSuite().bench[recorded.start.base_task] != identity.task_index:
+            problems.append("the record's scene is not the episode's base task")
+    return ReplayRecord(run_dir, episode_id, executed, hashes, identity, recorded, problems)
+
+
+@dataclass
+class Verification:
+    """What a re-execution of a record found: the hashes it compared, where they differed,
+    the delivery verdict it reached."""
+
+    record: ReplayRecord
+    compared: int = 0
+    mismatches: list[int] = field(default_factory=list)
+    verdict: DeliveryVerdict | None = None
+    replayed_end: str | None = None
+
+    @property
+    def verdict_matches(self) -> bool:
+        recorded = self.record.recorded
+        if self.verdict is None or recorded is None:
+            return False
+        return self.verdict == recorded.delivery
+
+    @property
+    def accepted(self) -> bool:
+        """Every recorded hash compared and equal, and the verdict the recorded one."""
+        return (
+            not self.record.problems
+            and self.compared == len(self.record.hashes)
+            and not self.mismatches
+            and self.verdict_matches
+        )
+
+
+def replay(
+    record: ReplayRecord,
+    *,
+    image_size: int,
+    prepare: Callable[[Any], None] | None = None,
+    observe: Callable[[Any, Any, int], None] | None = None,
+) -> Verification:
+    """Re-execute a record in a scene built at `image_size` and compare it, step by step.
+
+    Nothing is simulated for a record with problems. Otherwise `prepare(env)` runs once the
+    scene is built, before the reset (it refuses by raising), and `observe(env, observation,
+    step)` after the reset (step 0, before its hash is taken) and after every action (step
+    k, after the hash). Whatever these do must leave the physics alone; the hashes show it.
+    """
+    from fleetlab.jobs.runner import make_env
+
+    check = Verification(record)
+    if record.problems:
+        return check
+    assert record.recorded is not None
+    state = _state_of(record.run_dir)
+    executed, hashes = record.executed, record.hashes
+    env = make_env(record.identity.task_index, image_size)
+    try:
+        if prepare is not None:
+            prepare(env)
+        observation = env.reset(record.identity.model_copy(update={"image_size": image_size}), [])
+        goals = SceneGoals(env._rs, state.requested_goals)
+        if observe is not None:
+            observe(env, observation, 0)
+        check.replayed_end = env.state_hash().hex()
+        check.compared += 1
+        if check.replayed_end != hashes[0]:
+            check.mismatches.append(0)
+        for k, action in enumerate(executed):
+            observation = env.step(np.asarray(action, np.float32)).observation
+            check.replayed_end = env.state_hash().hex()
+            check.compared += 1
+            if check.replayed_end != hashes[k + 1]:
+                check.mismatches.append(k + 1)
+            if observe is not None:
+                observe(env, observation, k + 1)
+        priv = env.privileged_state()
+        scene = DeliveryState(
+            goals_hold=goals.holds(),
+            contacts=tuple(priv.contacts),
+            velocities=priv.object_velocities,
+            gripper_opening=priv.gripper_opening,
+            gripper_command=float(executed[-1][6]) if len(executed) else None,
+        )
+        check.verdict = delivery_verdict(scene, state.requested_goals, goals.named)
+    finally:
+        env.close()
+    return check
+
+
 def rerender(
     run_dir: Path,
     episode_id: str,
@@ -127,64 +258,33 @@ def rerender(
     accepted report carries `video_sha256`, the hash of the MP4's bytes, so that whoever uses
     the video can check it is the one this verification produced.
     """
-    from fleetlab.jobs.runner import GoalSuite, make_env
     from fleetlab.video import write_mp4
 
     if frame_every < 1 or CONTROL_HZ % frame_every:
         raise ValueError(f"frame_every divides {CONTROL_HZ}, not {frame_every}")
     run_dir, out_dir = Path(run_dir), Path(out_dir)
-    executed, hashes, identity_json = tables.load_replay_record(run_dir, episode_id)
-    identity = EpisodeIdentity.model_validate_json(identity_json)
-    recorded = {e.episode_id: e for e in tables.read_episodes(run_dir)}.get(episode_id)
-    problems = record_problems(episode_id, executed, hashes, identity, recorded)
-    if not problems:
-        assert recorded is not None
-        if GoalSuite().bench[recorded.start.base_task] != identity.task_index:
-            problems.append("the record's scene is not the episode's base task")
+    record = load_record(run_dir, episode_id)
+    executed, hashes, identity = record.executed, record.hashes, record.identity
+    recorded, problems = record.recorded, record.problems
     size = int(image_size or identity.image_size)
-    compared = 0
-    mismatches: list[int] = []
     frames: list[npt.NDArray[np.uint8]] = []
-    verdict: DeliveryVerdict | None = None
-    replayed_end: str | None = None
-    if not problems:
-        assert recorded is not None
-        state = _state_of(run_dir)
-        env = make_env(identity.task_index, size)
-        try:
-            if camera not in (Camera.scene.value, Camera.wrist.value):
-                model = env._sim.model
-                names = [model.camera_id2name(i) for i in range(model.ncam)]
-                if camera not in names:
-                    raise ValueError(f"the scene has no camera {camera!r}; it has {names}")
-            observation = env.reset(identity.model_copy(update={"image_size": size}), [])
-            goals = SceneGoals(env._rs, state.requested_goals)
+
+    def prepare(env: Any) -> None:
+        if camera not in (Camera.scene.value, Camera.wrist.value):
+            model = env._sim.model
+            names = [model.camera_id2name(i) for i in range(model.ncam)]
+            if camera not in names:
+                raise ValueError(f"the scene has no camera {camera!r}; it has {names}")
+
+    def observe(env: Any, observation: Any, step: int) -> None:
+        if step % frame_every == 0 or step == len(executed):
             frames.append(_frame(env, observation, camera, size))
-            replayed_end = env.state_hash().hex()
-            compared += 1
-            if replayed_end != hashes[0]:
-                mismatches.append(0)
-            for k, action in enumerate(executed):
-                observation = env.step(np.asarray(action, np.float32)).observation
-                replayed_end = env.state_hash().hex()
-                compared += 1
-                if replayed_end != hashes[k + 1]:
-                    mismatches.append(k + 1)
-                if (k + 1) % frame_every == 0 or k + 1 == len(executed):
-                    frames.append(_frame(env, observation, camera, size))
-            priv = env.privileged_state()
-            scene = DeliveryState(
-                goals_hold=goals.holds(),
-                contacts=tuple(priv.contacts),
-                velocities=priv.object_velocities,
-                gripper_opening=priv.gripper_opening,
-                gripper_command=float(executed[-1][6]) if len(executed) else None,
-            )
-            verdict = delivery_verdict(scene, state.requested_goals, goals.named)
-        finally:
-            env.close()
-    verdict_matches = verdict is not None and recorded is not None and verdict == recorded.delivery
-    accepted = not problems and compared == len(hashes) and not mismatches and verdict_matches
+
+    check = replay(record, image_size=size, prepare=prepare, observe=observe)
+    compared, mismatches = check.compared, check.mismatches
+    verdict, replayed_end = check.verdict, check.replayed_end
+    verdict_matches = check.verdict_matches
+    accepted = check.accepted
     stem = f"{episode_id}.rerender.{camera}.{size}px"
     if not accepted:
         stem = f"{episode_id}.rejected-rerender.{camera}.{size}px"

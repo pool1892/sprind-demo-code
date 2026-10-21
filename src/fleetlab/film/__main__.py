@@ -12,6 +12,13 @@ probe-figure EXPORT_LOG --probe ID --robot LABEL=ROBOT ... --out PNG
                                            a recorded probe drawn, commanded against measured
 pairs --before RUN --after RUN [--before-where k=v] [--after-where k=v]
                                            rescued and broken starts; the first of each
+frame --clips CLIPS --out DIR [--only ID,ID] [--force]
+frame --run RUN --episode E --camera C --out DIR [--width W --height H --frame-every N
+      --from-step A --to-step B --id ID --body NAME --poses CLIPS]
+                                           framed, verified re-renders with overlay tracks
+stills --run RUN --episode E --steps 0,82 --camera C [--camera C] --out DIR
+       [--width W --height H --poses CLIPS]
+                                           stills of placed or named cameras, verified
 """
 
 from __future__ import annotations
@@ -239,6 +246,81 @@ def _cmd_pairs(args: argparse.Namespace) -> int:
     return 0
 
 
+def _camera_arg(value: str) -> Any:
+    """A camera on the command line: a name, or a pose as JSON."""
+    return json.loads(value) if value.lstrip().startswith("{") else value
+
+
+def _cmd_frame(args: argparse.Namespace) -> int:
+    from fleetlab.film import framing
+
+    single = (args.run_dir, args.episode, args.camera)
+    if (args.clips is None) == all(v is None for v in single):
+        print("give --clips, or --run, --episode and --camera", file=sys.stderr)
+        return 2
+    if args.clips is not None:
+        manifest = framing.load_clips(args.clips.expanduser())
+    else:
+        if any(v is None for v in single):
+            print("--run, --episode and --camera go together", file=sys.stderr)
+            return 2
+        camera = _camera_arg(args.camera)
+        label = camera if isinstance(camera, str) else camera.get("label", "custom")
+        clip: dict[str, Any] = {
+            "id": args.id or f"{args.episode}-{label}",
+            "run": str(args.run_dir.expanduser().resolve()),
+            "episode": args.episode,
+            "camera": camera,
+            "width": args.width,
+            "height": args.height,
+            "frame_every": args.frame_every,
+            "from_step": args.from_step,
+            "to_step": args.to_step,
+            "bodies": args.body or [],
+        }
+        data: dict[str, Any] = {"format": framing.CLIPS_FORMAT, "clips": [clip]}
+        if args.poses is not None:
+            poses = framing.load_poses(args.poses.expanduser())
+            data["poses"] = {name: pose.as_json() for name, pose in poses.items()}
+        manifest = framing.parse_clips(data, Path.cwd())
+    only = {v.strip() for v in args.only.split(",") if v.strip()} if args.only else None
+    out: Path = args.out.expanduser()
+    index = framing.frame_clips(manifest, out, only=only, force=args.force)
+    chosen = [e for e in index["entries"] if only is None or e["id"] in only]
+    accepted = sum(1 for e in chosen if e["accepted"])
+    print(
+        f"{accepted} of {len(chosen)} clips accepted; {index['hashes_compared']} state hashes "
+        f"compared, {index['hash_mismatches']} mismatches; wrote {out / 'index.json'}"
+    )
+    for entry in chosen:
+        if not entry["accepted"]:
+            print(f"  {entry['id']}: {entry['status']}: {entry.get('reason')}", file=sys.stderr)
+    return 0 if accepted == len(chosen) else 1
+
+
+def _cmd_stills(args: argparse.Namespace) -> int:
+    from fleetlab.film import framing
+
+    poses = framing.load_poses(args.poses.expanduser()) if args.poses else {}
+    cameras = [framing.resolve_camera(_camera_arg(c), poses) for c in args.camera]
+    steps = [int(s) for s in args.steps.split(",") if s.strip()]
+    report = framing.render_stills(
+        args.run_dir.expanduser(),
+        args.episode,
+        cameras,
+        steps,
+        args.out.expanduser(),
+        width=args.width,
+        height=args.height,
+    )
+    print(
+        f"{'accepted' if report['accepted'] else 'REJECTED'}: {report['hashes_compared']} of "
+        f"{report['recorded_hashes']} hashes compared, {report['hash_mismatches']} mismatches; "
+        f"{len(report['stills'])} stills in {args.out}"
+    )
+    return 0 if report["accepted"] else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="python -m fleetlab.film", description=__doc__.splitlines()[0]
@@ -311,6 +393,33 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--before-where", action="append", default=[], help="column=value")
     p.add_argument("--after-where", action="append", default=[], help="column=value")
     p.set_defaults(run=_cmd_pairs)
+    p = sub.add_parser("frame", help="framed, verified re-renders of job episodes, with tracks")
+    p.add_argument("--clips", type=Path, help="a fleetlab.film-clips/1 manifest")
+    p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--only", help="only these clip ids, comma-separated")
+    p.add_argument("--force", action="store_true", help="draw again what is already accepted")
+    p.add_argument("--run", dest="run_dir", type=Path, help="one clip: the job run directory")
+    p.add_argument("--episode", help="one clip: the episode id")
+    p.add_argument("--camera", help="one clip: a pose or camera name, or a pose as JSON")
+    p.add_argument("--width", type=int, default=1920)
+    p.add_argument("--height", type=int, default=1080)
+    p.add_argument("--frame-every", type=int, default=1)
+    p.add_argument("--from-step", type=int)
+    p.add_argument("--to-step", type=int)
+    p.add_argument("--id", help="one clip: its id (default EPISODE-CAMERA)")
+    p.add_argument("--body", action="append", help="one clip: also track this body (repeat)")
+    p.add_argument("--poses", type=Path, help="one clip: named poses from this clips manifest")
+    p.set_defaults(run=_cmd_frame)
+    p = sub.add_parser("stills", help="stills of cameras at chosen steps, from a verified replay")
+    p.add_argument("--run", dest="run_dir", type=Path, required=True)
+    p.add_argument("--episode", required=True)
+    p.add_argument("--steps", required=True, help="control steps, comma-separated")
+    p.add_argument("--camera", action="append", required=True, help="a pose or camera (repeat)")
+    p.add_argument("--poses", type=Path, help="named poses from this clips manifest")
+    p.add_argument("--width", type=int, default=1280)
+    p.add_argument("--height", type=int, default=720)
+    p.add_argument("--out", type=Path, required=True)
+    p.set_defaults(run=_cmd_stills)
     args = parser.parse_args(argv)
     return int(args.run(args))
 

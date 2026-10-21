@@ -1,0 +1,250 @@
+{
+ "made_by": "site/explainer/hero_wall.py",
+ "shows": "the saved jobs on the locked exam layouts, one tile per recorded run, at 45% of the run; the green light is the run's verdict",
+ "files": {
+  "hero-wall.jpg": "416-pixel tiles, 8 across",
+  "hero-wall-small.jpg": "208-pixel tiles, 8 across"
+ },
+ "tiles": [
+  {
+   "clip": "r1-job-30-tile",
+   "layout": 30,
+   "completed": true,
+   "rerender_sha256": "42a37df94d13bda5d9641c46322b7dfc7049e69aba0793b9d4e4e6eaa6997ebd"
+  },
+  {
+   "clip": "r1-job-31-tile",
+   "layout": 31,
+   "completed": true,
+   "rerender_sha256": "661aa8e67c3998753a3b3eb99521183c99ab08a3de4ed6942c8dc66e3a949a4b"
+  },
+  {
+   "clip": "r1-job-32-tile",
+   "layout": 32,
+   "completed": true,
+   "rerender_sha256": "1be970a1fccc14cf9fcb3a533d49e7e1324b8ee5b5faa542bf30017168068a06"
+  },
+  {
+   "clip": "r1-job-33-tile",
+   "layout": 33,
+   "completed": true,
+   "rerender_sha256": "2127bc58baa60a7805e43291a6883d459c9a6e5b27e618a67615592fb45c7c6e"
+  },
+  {
+   "clip": "r1-job-34-tile",
+   "layout": 34,
+   "completed": true,
+   "rerender_sha256": "4aafb3f8676c4b52140b34365d7594d7c42085750364c47c35d52e2fcca37d2b"
+  },
+  {
+   "clip": "r1-job-35-tile",
+   "layout": 35,
+   "completed": true,
+   "rerender_sha256": "75bc8f5e973bcb04e9377ae9a03f2587ca02c795b9317b321dd5ffb6412ac17e"
+  },
+  {
+   "clip": "r1-job-36-tile",
+   "layout": 36,
+   "completed": true,
+   "rerender_sha256": "d30efb681a3c6d1e041d05a6d39b7d32cb5c5581a6c1bd4aa95d9c775b5924e5"
+  },
+  {
+   "clip": "r1-job-37-tile",
+   "layout": 37,
+   "completed": true,
+   "rerender_sha256": "c15166fb0f821e493bee6904d25796b09818e1597feb1a96d9e4ddf8a445c6e3"
+  },
+  {
+   "clip": "r1-job-38-tile",
+   "layout": 38,
+   "completed": true,
+   "rerender_sha256": "01951f037272890b55d7269bca8bba2fd637d09fb910275fa2465ef2bd59082d"
+  },
+  {
+   "clip": "r1-job-39-tile",
+   "layout": 39,
+   "completed": true,
+   "rerender_sha256": "69bb7c22dc9425c7fc2293b4c0ff35062efa6e7c8d2dbf6a643039b354844133"
+  },
+  {
+   "clip": "r1-job-40-tile",
+   "layout": 40,
+   "completed": true,
+   "rerender_sha256": "ea7120c229c4c7f6e0ac0a3ea353b6f03a32dcaed648386e2a984b644ac83475"
+  },
+  {
+   "clip": "r1-job-41-tile",
+   "layout": 41,
+   "completed": true,
+   "rerender_sha256": "a0ae0548a8b6f9c0bd9970de409fb15ea5e48a6c17ebc4217fd60915f8cbcc9a"
+  },
+  {
+   "clip": "r1-job-42-tile",
+   "layout": 42,
+   "completed": true,
+   "rerender_sha256": "3f08b2baa5445ff8d51343722fbad919ed92d65b53cc3dcd699a8e1bb599268f"
+  },
+  {
+   "clip": "r1-job-43-tile",
+   "layout": 43,
+   "completed": true,
+   "rerender_sha256": "639b0e7b4a08f1e059fae54644dc8c8b4dd4ba45d15dceb6229dcb57291b0bc7"
+  },
+  {
+   "clip": "r1-job-44-tile",
+   "layout": 44,
+   "completed": true,
+   "rerender_sha256": "aeb70c865ebdcc798432b338713eb235850fd592addf3e9bebd7951b7d582897"
+  },
+  {
+   "clip": "r1-job-45-tile",
+   "layout": 45,
+   "completed": true,
+   "rerender_sha256": "77756ffbbf34f806a99e67f6724ecb32fa26edd57d0deabbbd0c68dd6a71ef9d"
+  },
+  {
+   "clip": "r1-job-46-tile",
+   "layout": 46,
+   "completed": true,
+   "rerender_sha256": "c7e68de1ae56245ae36f4c527d1a18b76d537c612d5a6546b1f3b5f6feef0b52"
+  },
+  {
+   "clip": "r1-job-47-tile",
+   "layout": 47,
+   "completed": true,
+   "rerender_sha256": "9b8555a71d67b604c97888af8a84ecd8fea0da2b9df4e1c52622715258307f4f"
+  },
+  {
+   "clip": "r1-job-48-tile",
+   "layout": 48,
+   "completed": true,
+   "rerender_sha256": "fda2c89473d4437e34ae06c27b93d8f62b2b131e5c0ac66c4901f4a4d4bb2700"
+  },
+  {
+   "clip": "r1-job-49-tile",
+   "layout": 49,
+   "completed": true,
+   "rerender_sha256": "91e7b3caad9f305ca4f15ceb00aa20e90f2d41af54b252b97d40c33cf84bcff3"
+  },
+  {
+   "clip": "r2-job-30-tile",
+   "layout": 30,
+   "completed": true,
+   "rerender_sha256": "6ad9ee639bcfc00c63acba1b1c335f7537ba615538ffe4d84bee98677645a89f"
+  },
+  {
+   "clip": "r2-job-31-tile",
+   "layout": 31,
+   "completed": true,
+   "rerender_sha256": "b22e146676fd3a0c1d9bed245a5bbd5b605feed1924cb4f0944243ec32cc1cc9"
+  },
+  {
+   "clip": "r2-job-32-tile",
+   "layout": 32,
+   "completed": true,
+   "rerender_sha256": "0cb26d4d6a29114240d7148a51ab4c69136d806763d0341e05376db72b0b9f02"
+  },
+  {
+   "clip": "r2-job-33-tile",
+   "layout": 33,
+   "completed": true,
+   "rerender_sha256": "37d9e8c8eae57ea123c953ba29b336f2e3d470dcee339c771507a4a85fbd5a1b"
+  },
+  {
+   "clip": "r2-job-34-tile",
+   "layout": 34,
+   "completed": true,
+   "rerender_sha256": "aa13885a328ebb5d59e826fd2191f230f33e1f78f65de50266ee9bf73de1e74d"
+  },
+  {
+   "clip": "r2-job-35-tile",
+   "layout": 35,
+   "completed": true,
+   "rerender_sha256": "5b64cd986dc491c5cab040d2d390ff4453fdbc02c26bca0f98ebdc8103527a5e"
+  },
+  {
+   "clip": "r2-job-36-tile",
+   "layout": 36,
+   "completed": true,
+   "rerender_sha256": "542fbeece3fed4db1ef29aa9c6556508cf301225c6e5e8f73da3980e8cc6715f"
+  },
+  {
+   "clip": "r2-job-37-tile",
+   "layout": 37,
+   "completed": true,
+   "rerender_sha256": "423cec3da3380e4168fd4a567469873bc07d85ea769eaa518ca8b391fc7bee3d"
+  },
+  {
+   "clip": "r2-job-38-tile",
+   "layout": 38,
+   "completed": true,
+   "rerender_sha256": "3ee8078da8119d7ff8b66d88711d1abea8a4d6f0eefd69d0339a825a06e22e8c"
+  },
+  {
+   "clip": "r2-job-39-tile",
+   "layout": 39,
+   "completed": true,
+   "rerender_sha256": "30762ee55f0437d256162d422d20f204cd3d687232b55f4edfeb5017491463b6"
+  },
+  {
+   "clip": "r2-job-40-tile",
+   "layout": 40,
+   "completed": true,
+   "rerender_sha256": "69ec89430fce43b45fb6829898400e5f65b07178562ae0d89acb195d36b798a4"
+  },
+  {
+   "clip": "r2-job-41-tile",
+   "layout": 41,
+   "completed": true,
+   "rerender_sha256": "e52d3433c1858e9356e2246c8c60eee9cf3a1f193ae914145d9734d22d3939c7"
+  },
+  {
+   "clip": "r2-job-42-tile",
+   "layout": 42,
+   "completed": true,
+   "rerender_sha256": "ed4c27b1770378a836965f5c930b2178b7e625a8855b59ec46d71800f9532520"
+  },
+  {
+   "clip": "r2-job-43-tile",
+   "layout": 43,
+   "completed": true,
+   "rerender_sha256": "d0d4ba6a1aaafa9e439754e73cf31bea31af27a947cc35293f81edf48dd9f80d"
+  },
+  {
+   "clip": "r2-job-44-tile",
+   "layout": 44,
+   "completed": true,
+   "rerender_sha256": "4666c87400a0b26e2d7f87e1a0f72fbdc6428d83f357764a9c979ae60bc19ec8"
+  },
+  {
+   "clip": "r2-job-45-tile",
+   "layout": 45,
+   "completed": true,
+   "rerender_sha256": "29b6987b43d0e135233b7cd65c365c561ced0e47aaca3772f95c3255810d1c94"
+  },
+  {
+   "clip": "r2-job-46-tile",
+   "layout": 46,
+   "completed": true,
+   "rerender_sha256": "1254e192c94844aeb8b84b9a7d4a0bb079c880163c46eaf8ff1a53baf956ffcb"
+  },
+  {
+   "clip": "r2-job-47-tile",
+   "layout": 47,
+   "completed": true,
+   "rerender_sha256": "ac188c64c59d2c9d9c0f30915cb943fc7c24618c79913bf3b5c903e5a7402f69"
+  },
+  {
+   "clip": "r2-job-48-tile",
+   "layout": 48,
+   "completed": true,
+   "rerender_sha256": "8423f46d96e1ce9d65492752531589f54c3ab07c130f5ddab1df60040c10580e"
+  },
+  {
+   "clip": "r2-job-49-tile",
+   "layout": 49,
+   "completed": true,
+   "rerender_sha256": "94edc2c310a640a939bc87dc675652f430b162928330e4edeee0fb42f003af30"
+  }
+ ]
+}

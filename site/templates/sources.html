@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clips, files and provenance &middot; $title</title>
+<meta name="generator" content="fleetlab.film-site/1">
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body class="page sources">
+<header class="top small">
+  <div class="wrap bar">
+    <a class="back" href="index.html">&larr; $title</a>
+    <a class="watch" href="index.html#film">Watch the film</a>
+  </div>
+</header>
+<main class="wrap">
+  <h1 class="page-title">Clips, files and provenance</h1>
+  <p class="page-lede">Everything behind the film and the page: the chapters and their
+  narration, every clip by its recorded run, the files the installation keeps, and the
+  digests that tie them together. The <a href="record/index.html">jobs record</a> and the
+  <a href="fleet-record.html">fleet record</a> give every count with its source;
+  <a href="story-values.json">story-values.json</a> lists every number on the main page, its
+  charts included, with where it came from.</p>
+
+  <div class="guide">
+    <section class="chapters" aria-labelledby="chapters-heading">
+      <h2 id="chapters-heading">Chapters</h2>
+      <table class="beats">
+        <thead><tr><th>At</th><th>Story</th><th>Chapter</th><th>Footage</th></tr></thead>
+        <tbody>
+$beats
+        </tbody>
+      </table>
+    </section>
+
+    <section class="transcript-section" aria-labelledby="transcript-heading">
+      <h2 id="transcript-heading">Transcript</h2>
+      <div class="transcript">
+$transcript
+      </div>
+    </section>
+  </div>
+
+  <div class="technical" id="technical">
+    <section aria-labelledby="film-file-heading">
+      <h2 id="film-file-heading">The film file</h2>
+      <p><a href="film/film.mp4" download>film.mp4</a>: $film_seconds, H.264 and AAC,
+      $film_size; $captions_note as <a href="film/captions.vtt">captions.vtt</a>, the chapters
+      as <a href="film/chapters.vtt">chapters.vtt</a>.<br>
+      SHA-256 <code class="hash">$film_sha</code></p>
+    </section>
+
+    <section aria-labelledby="clips-heading">
+      <h2 id="clips-heading">The clips</h2>
+      <p>Every scene in the film is a recorded run of the simulator, shown as it was
+      recorded. Each row names the run, the episode and the control steps shown (one
+      control step is $step_ms milliseconds), and links the original video. Where the film
+      shows a re-render, it is one that re-executed the recorded actions and matched every
+      recorded state; the original is kept beside it.</p>
+      <div class="scroll" tabindex="0" role="region" aria-labelledby="clips-heading">
+      <table class="clips">
+        <thead><tr><th>Chapter</th><th>Clip</th><th>Run</th><th>Episode</th><th>Steps</th><th>Outcome</th><th>SHA-256</th><th>Video</th></tr></thead>
+        <tbody>
+$clips
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="artifacts-heading">
+      <h2 id="artifacts-heading">Saved artifacts</h2>
+      <p>Files the installation keeps after the work, as it runs them.</p>
+      <div class="scroll" tabindex="0" role="region" aria-labelledby="artifacts-heading">
+      <table class="artifacts">
+        <thead><tr><th>Kind</th><th>File</th><th>Purpose</th><th>Size</th><th>SHA-256</th></tr></thead>
+        <tbody>
+$artifacts
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="provenance-heading">
+      <h2 id="provenance-heading">Provenance</h2>
+      <ul>
+        <li><a href="film/film.json">film.json</a>: every clip's run and episode by a
+        stable identifier, the control steps shown and the SHA-256 of its video and of
+        every record read to find it; every count with the tables it was computed from;
+        the film files with their hashes. The full provenance, with where each file lies
+        on the machine that ran the simulations, is kept with the run records; film.json
+        carries its SHA-256.</li>
+        <li><a href="story-values.json">story-values.json</a>: every number on the main
+        page, its charts' numbers and the fleet record's tables, each with where it came
+        from, and the SHA-256 of the film data and of the page's text.</li>
+        <li><a href="site-files.json">site-files.json</a>: every file of this site with
+        its size and SHA-256.</li>
+      </ul>
+      <p class="build">Built $built from commit <code>$commit</code>.</p>
+    </section>
+  </div>
+</main>
+<footer class="wrap">
+  <a href="index.html">The story</a> &middot; <a href="index.html#film">The film</a> &middot;
+  <a href="record/index.html">The jobs record</a> &middot;
+  <a href="fleet-record.html">The fleet record</a> &middot;
+  <a href="site-files.json">site-files.json</a>
+</footer>
+</body>
+</html>

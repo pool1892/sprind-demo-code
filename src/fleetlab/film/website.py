@@ -10,7 +10,8 @@ framework and no build step on the server:
      "record": "<a folder of Markdown pages with index.md, or one .md file>",
      "artifacts": [{"label": "Jobs", "path": "<a folder or a file>"}, ...],
      "base_url": "https://pool1892.github.io/<repo>/",   # optional: absolute link previews
-     "public": {"aliases": {"w80": "w08"}, "forbid": ["w8[0-9]"]}}  # optional, see public.py
+     "public": {"aliases": {"w80": "w08"}, "forbid": ["w8[0-9]"]},  # optional, see public.py
+     "story": {"text": "<story.md>", "data": "<film-data.json>"}}  # optional, see story.py
 
 Paths are relative to the description's folder. The output:
 
@@ -22,6 +23,11 @@ Paths are relative to the description's folder. The output:
   or a small converter of this module where it is missing), with their figures and files;
 - `film/`, `clips/`, `artifacts/`, `static/style.css`, `.nojekyll` (GitHub Pages serves
   the folder as it is) and `site-files.json`, every file with its size and SHA-256.
+
+With a `story`, `index.html` is the story page instead: the narrative with its numbers filled
+from the records and its charts drawn from them (`fleetlab.film.story`, `fleetlab.film.charts`),
+the film at its centre; the chapters, transcript, clips, artifacts and provenance move to
+`sources.html`, and `story-values.json` lists every number the page used with its source.
 
 A file over 100 MB fails the build (GitHub Pages refuses it); over 50 MB warns.
 """
@@ -282,6 +288,16 @@ def _resolve(base: Path, value: str) -> Path:
 
 def build_site(bundle: Path, out: Path) -> SiteResult:
     spec, base = _load(bundle)
+    # the story page, when the description names one: rendered first, so a missing record or
+    # an unknown placeholder fails before the previous build is replaced
+    told = None
+    if spec.get("story"):
+        from fleetlab.film import story
+
+        entry = spec["story"]
+        if not isinstance(entry, dict) or not entry.get("text") or not entry.get("data"):
+            raise ValueError("story: an object with text (Markdown) and data (film-data.json)")
+        told = story.render(_resolve(base, str(entry["text"])), _resolve(base, str(entry["data"])))
     if (out / ".git").exists():
         raise ValueError(f"{out} is a git checkout; build the site elsewhere and copy it in")
     if out.exists() and any(out.iterdir()):
@@ -303,7 +319,13 @@ def build_site(bundle: Path, out: Path) -> SiteResult:
     )
     site_rules = public.public_rules(spec.get("public"))
     public.configure({**film_rules[0], **site_rules[0]}, film_rules[1] + site_rules[1])
-    title = str(spec.get("title") or provenance.get("manifest", {}).get("title") or "The film")
+    title = str(
+        spec.get("title")
+        or (told.title if told else "")
+        or provenance.get("manifest", {}).get("title")
+        or "The film"
+    )
+    sources_href = "sources.html" if told else "index.html#technical"
 
     # the film and the files beside it
     # the full provenance and the manifest name local paths: they stay with the records,
@@ -354,6 +376,7 @@ def build_site(bundle: Path, out: Path) -> SiteResult:
                     up="../" * depth,
                     body=body,
                     converter=html.escape(converter),
+                    sources=sources_href,
                 ),
                 encoding="utf-8",
             )
@@ -473,7 +496,7 @@ def build_site(bundle: Path, out: Path) -> SiteResult:
             "</tr>"
         )
     code = provenance.get("code", {})
-    lede = str(spec.get("lede") or "")
+    lede = str(spec.get("lede") or (told.lede_text if told else ""))
     transcript = []
     for beat in provenance.get("beats", []):
         spoken = (beat.get("narration") or {}).get("text")
@@ -500,10 +523,13 @@ def build_site(bundle: Path, out: Path) -> SiteResult:
     preview.append('<meta property="og:video:type" content="video/mp4">')
     if base_url:
         preview.append(f'<meta property="og:url" content="{html.escape(base_url)}">')
-    index = _template("index.html").safe_substitute(
+    parts = dict(
         title=html.escape(title),
         lede=html.escape(lede),
         film_seconds=_clock(float(provenance.get("seconds", 0))),
+        # how the film carries its captions: burned into the picture (the default, as the
+        # earlier cuts did) or a selectable track, as the site description says
+        captions_note=html.escape(str(spec.get("captions_note") or "captions in the picture")),
         film_size=_human(int(web.get("bytes", 0))) if web else "",
         film_sha=html.escape(str(web.get("sha256", ""))),
         poster='poster="film/poster.jpg"' if (out / "film" / "poster.jpg").is_file() else "",
@@ -523,7 +549,12 @@ def build_site(bundle: Path, out: Path) -> SiteResult:
         preview="\n".join(preview),
         built=html.escape(str(provenance.get("built", ""))),
     )
-    (out / "index.html").write_text(index, encoding="utf-8")
+    if told is None:
+        (out / "index.html").write_text(
+            _template("index.html").safe_substitute(parts), encoding="utf-8"
+        )
+    else:
+        _write_story(out, told, parts, chapters)
     (out / "film" / "film.json").write_text(
         json.dumps(
             _public_film(provenance, copied, sha256(film_dir / "provenance.json")),
@@ -533,7 +564,9 @@ def build_site(bundle: Path, out: Path) -> SiteResult:
         + "\n",
         encoding="utf-8",
     )
-    _copy(SITE_ROOT / "static" / "style.css", out / "static" / "style.css")
+    # the stylesheet and the page's images (the opening's background frame among them)
+    for asset in sorted(p for p in (SITE_ROOT / "static").iterdir() if p.is_file()):
+        _copy(asset, out / "static" / asset.name)
     (out / ".nojekyll").write_text("", encoding="utf-8")
 
     # sizes and the file list
@@ -680,6 +713,84 @@ def _public_film(
         "private_provenance_sha256": private_sha,
         "beats": beats,
     }
+
+
+def _write_story(
+    out: Path, told: Any, parts: dict[str, str], chapters: list[dict[str, Any]]
+) -> None:
+    """The story page as index.html, the clips, files and provenance on sources.html, and
+    every number the page used, with where it came from, in story-values.json."""
+    acts: list[str] = []
+    seen: set[str] = set()
+    for ch in chapters:  # the film's acts: the first chapter of each
+        act = str(ch.get("story") or ch["title"])
+        if act in seen:
+            continue
+        seen.add(act)
+        acts.append(
+            f'          <li><a href="film/film.mp4#t={ch["start_s"]}" data-t="{ch["start_s"]}">'
+            f'<span class="t">{_clock(ch["start_s"])}</span> {html.escape(act)}</a></li>'
+        )
+    toc = [
+        f'      <li><a href="#{html.escape(ident)}">{html.escape(text)}</a></li>'
+        for ident, text in told.toc
+    ]
+    page = _template("story.html").safe_substitute(
+        parts,
+        title=html.escape(told.title or parts["title"]),
+        kicker=html.escape(told.kicker),
+        subtitle=html.escape(told.subtitle),
+        lede=told.lede,
+        description=html.escape(told.lede_text),
+        acts="\n".join(acts) or "<li>No chapters.</li>",
+        toc="\n".join(toc),
+        body=told.body,
+    )
+    from fleetlab.film import story
+
+    (out / "index.html").write_text(page, encoding="utf-8")
+    step_ms = told.values["b_step_ms"].value if "b_step_ms" in told.values else ""
+    (out / "sources.html").write_text(
+        _template("sources.html").safe_substitute(parts, step_ms=step_ms), encoding="utf-8"
+    )
+    # the fleet record: experiment two's counts with their intervals and records, written now
+    # that the site's public rules (aliases) are in force
+    record = story.fleet_record(told.data, told.meta.get("healthy", "").split())
+    (out / "fleet-record.html").write_text(
+        _template("fleet.html").safe_substitute(
+            title=html.escape(record.title),
+            site_title=html.escape(told.title or parts["title"]),
+            body=record.body,
+            step_ms=step_ms,
+        ),
+        encoding="utf-8",
+    )
+    charts = [
+        {**c, "sources": [{**i, "id": story.public_id(i["id"])} for i in c["sources"]]}
+        for c in told.charts
+    ]
+    (out / "story-values.json").write_text(
+        json.dumps(
+            {
+                "format": "fleetlab.film-story-values/2",
+                "note": "Every number on the story page: in 'values', each number of the text "
+                "with the value it was filled with and where it came from ('numbers' are the "
+                "film's bound numbers, bound from the run records; the others are derived "
+                "from the film data's recorded tables); in 'charts', every chart's numbers "
+                "with the records they were read from; in 'fleet_record', the tables of the "
+                "fleet record page.",
+                "text_sha256": told.text_sha256,
+                "data_sha256": told.data_sha256,
+                "values": {k: {"value": v.value, "source": v.source} for k, v in told.used.items()},
+                "charts": charts,
+                "fleet_record": record.tables,
+            },
+            indent=1,
+            ensure_ascii=False,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
 
 def _first_heading(body: str) -> str | None:

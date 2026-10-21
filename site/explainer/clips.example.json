@@ -1,0 +1,28 @@
+{
+ "format": "fleetlab.film-clips/1",
+ "about": "An example clips manifest for python -m fleetlab.film frame --clips FILE --out DIR (fleetlab.film.framing; site/explainer/README-footage.md). Every clip is a framed re-render of one recorded job episode, verified against its record. 'defaults' fill any field a clip leaves out (run, camera, width, height, frame_every, bodies). 'poses' adds named camera poses beside the proposed ones (hero-cabinet, hero-plate, establishing, top); a manifest's own pose wins over a proposed one of the same name. A clip's camera is the name of a pose, 'scene' or 'wrist' (the run's two observation cameras), any other camera of the LIBERO scene by its MuJoCo name (frontview, sideview, birdview, ...), or a pose written out. Positions are world metres: the table top is at z = 0.90, the robot stands at x = -0.66, the cabinet at y = -0.24 and the stove at y = +0.20. fovy is the vertical field of view in degrees; up is the world direction that is up in the picture; roll turns the picture counterclockwise in degrees. A relative 'run' is taken from this file's folder.",
+ "defaults": {"width": 1920, "height": 1080, "frame_every": 1},
+ "poses": {
+  "drawer-close": {"position": [0.32, 0.30, 1.22], "look_at": [0.02, -0.12, 1.03], "fovy": 30, "roll": 0, "up": [0, 0, 1]}
+ },
+ "clips": [
+  {"id": "example-hero",
+   "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+   "episode": "e000202", "camera": "hero-cabinet",
+   "bodies": ["wooden_cabinet_1_cabinet_middle"],
+   "note": "a proposed pose, every control step, the cabinet's middle drawer tracked besides the logged objects, the gripper and the goals' regions"},
+  {"id": "example-drawer-close",
+   "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/replacement-01/run/release/run/run",
+   "episode": "e000102", "camera": "drawer-close", "from_step": 146, "to_step": 266,
+   "note": "this manifest's own pose; only the frames of steps 146-266 are drawn, the whole episode is still replayed and checked"},
+  {"id": "example-draft-placed",
+   "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/release/run/run",
+   "episode": "e000102", "width": 1280, "height": 720, "frame_every": 2,
+   "camera": {"label": "low-front", "position": [0.75, 0.05, 1.12], "look_at": [-0.05, 0.05, 0.95], "fovy": 32},
+   "note": "a pose written out, a 1280 x 720 draft at 10 frames a second"},
+  {"id": "example-scene-square",
+   "run": "~/.cache/robots-probes/demo/2026-10-20/reliability/plate-cabinet-01/run/release/run/run",
+   "episode": "e000202", "camera": "scene", "width": 480, "height": 480,
+   "note": "the run's scene camera, square, as a mosaic tile; upright and not mirrored, so the mirror image of the recorded scene video"}
+ ]
+}

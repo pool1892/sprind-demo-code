@@ -76,7 +76,9 @@
   "\\.cache/",
   "\\.ts\\.net",
   "\\btail[0-9a-f]{6}\\b",
-  "\\brobots-[a-z0-9]{4}\\.[0-9]",
+  "\\brobots-[a-z0-9]{4}\\b(?![-/])",
+  "\\bPart [IVX]+\\b",
+  "\\bQ[0-9]{2}\\b",
   "plate-04|(?<!plate-)cabinet-01|screen-0[0-9]|confirm-0[0-9]|spikes/"
  ],
  "fields": {

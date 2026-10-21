@@ -139,3 +139,76 @@ def test_the_site_publishes_no_private_reference(film: Path, tmp_path: Path) -> 
     )
     with pytest.raises(website.SiteRefused, match="a local path"):
         website.build_site(spec, tmp_path / "refused")
+
+
+def test_the_captions_note_follows_the_site_description(film: Path, tmp_path: Path) -> None:
+    # burned-in captions, as the earlier cuts had, unless the description says otherwise
+    spec = tmp_path / "site.json"
+    spec.write_text(json.dumps({"format": website.FORMAT, "film": str(film)}))
+    website.build_site(spec, tmp_path / "default")
+    assert "captions in the picture" in (tmp_path / "default" / "index.html").read_text()
+    spec.write_text(
+        json.dumps(
+            {"format": website.FORMAT, "film": str(film), "captions_note": "English captions (CC)"}
+        )
+    )
+    website.build_site(spec, tmp_path / "track")
+    index = (tmp_path / "track" / "index.html").read_text()
+    assert "English captions (CC)" in index and "captions in the picture" not in index
+
+
+def test_a_story_bundle_builds_the_story_page_and_moves_the_sources(
+    film: Path, tmp_path: Path
+) -> None:
+    import re
+
+    from fleetlab.film.tests.test_story import STORY, film_data
+
+    (tmp_path / "story.md").write_text(STORY)
+    (tmp_path / "film-data.json").write_text(json.dumps(film_data()))
+    record = tmp_path / "record"
+    record.mkdir()
+    (record / "index.md").write_text("# The record\n\nCounts.\n")
+    spec = tmp_path / "site.json"
+    spec.write_text(
+        json.dumps(
+            {
+                "format": website.FORMAT,
+                "story": {"text": "story.md", "data": "film-data.json"},
+                "film": str(film),
+                "record": str(record),
+                "public": {
+                    "aliases": {"w80": "w08"},
+                    "forbid": ["controller_overload", "(?<![A-Za-z0-9])w8[0-9](?![0-9])"],
+                },
+            }
+        )
+    )
+    out = tmp_path / "site"
+    result = website.build_site(spec, out)
+    assert not result.errors
+    index = (out / "index.html").read_text()
+    assert "<h1>A test story</h1>" in index and '<main id="story"' in index
+    assert '<a href="#first">First</a>' in index  # the contents line uses the short name
+    assert 'content="The answer: 3 of 3, from 1."' in index  # the preview is the answer
+    assert '<source src="film/film.mp4" type="video/mp4">' in index
+    assert "{" not in re.sub(r"<script>.*?</script>", "", index, flags=re.S)
+    sources = (out / "sources.html").read_text()
+    assert "J1/naive/s00" in sources and '<h2 id="transcript-heading">' in sources
+    assert 'href="../sources.html"' in (out / "record" / "index.html").read_text()
+    values = json.loads((out / "story-values.json").read_text())
+    assert values["values"]["r1_delivered"]["value"] == "3"
+    assert values["charts"] and values["fleet_record"]["evaluation"]
+    # the fleet record, under the site's public aliases: the private world id is renamed
+    fleet = (out / "fleet-record.html").read_text()
+    assert "The fleet record" in fleet and "probes:fleet/w08-x/experiments.jsonl" in fleet
+    assert "w80" not in fleet + json.dumps(values)
+    assert 'href="fleet-record.html"' in sources
+    # every relative link of the two pages lands on a file of the site
+    for page in ("index.html", "sources.html", "fleet-record.html"):
+        for url in re.findall(r'(?:href|src)="(?![a-z]+:)([^"#]+)', (out / page).read_text()):
+            assert (out / url).exists(), f"{page}: {url}"
+    # a story that would publish a forbidden name is refused like any other page
+    (tmp_path / "story.md").write_text(STORY + "\nThe controller_overload fault.\n")
+    with pytest.raises(website.SiteRefused):
+        website.build_site(spec, tmp_path / "refused")

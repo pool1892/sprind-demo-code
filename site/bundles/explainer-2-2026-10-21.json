@@ -1,0 +1,22 @@
+{
+  "format": "fleetlab.film-site/1",
+  "story": {
+    "text": "../story/story.md",
+    "data": "../explainer/film/public/data/film-data.json"
+  },
+  "film": "~/.cache/robots-probes/demo/explainer/film/cut-5",
+  "record": "~/.cache/robots-probes/demo/2026-10-20/reliability/site/record-final-2/page",
+  "base_url": "https://pool1892.github.io/sprind-demo-page/",
+  "public": {
+    "aliases": {
+      "w80": "w08",
+      "w81": "w09"
+    },
+    "forbid": [
+      "(?<![A-Za-z0-9])w8[0-9](?![0-9])",
+      "remote_link_latency|controller_overload|arm_torque_loss|camera_latency|camera_pose_offset|image_pipeline_release|calibration_update",
+      "design\\.json|world_truth|/truth/"
+    ]
+  },
+  "captions_note": "English captions (CC)"
+}

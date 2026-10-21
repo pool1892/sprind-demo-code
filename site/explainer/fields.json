@@ -1,0 +1,3171 @@
+{
+ "format": "fleetlab.film-fields/1",
+ "notes": "Every number and quoted passage of the explainer film's narration (site/explainer/script.md), with the record that holds it. Copied from the reliability record page's fields (site/reliability/record/fields.json, r1_ job 1 replacement-01, r2_ job 2 plate-cabinet-01, b_ story B) with additions for the film: r2_programs. Bind with: python -m fleetlab.film.record bind site/explainer/script.md --fields site/explainer/fields.json --records site/explainer/records.json --out DIR --final",
+ "records": {
+  "r1_run": "the first job's investigation record: <investigation>/job_run.json (request, agent, sessions, costs, message_log, account, library_mounted)",
+  "r1_receipt": "the first job's release receipt: <investigation>/release/run/run/receipt.json (N, K, delivered, naive_delivered, rescued, broken, pairs, release_starts, starts_fresh)",
+  "r1_verification": "the coordinator's reconciliation of the 40 raw release episodes: <cohort>/coordinator-verification.json",
+  "r1_development": "the development tables the agent queried, sessions 1 to 4: <investigation>/runs/session-0N/run/log/job_episodes.parquet (job ids unique across them)",
+  "r1_session_two": "the agent's second session as its transcript records it: <investigation>/agent-runs/<session 2>/stdout.jsonl (its messages and tool calls)",
+  "r1_job": "the saved job as the library holds it: <investigation>/library/jobs/station-bowl-and-open-drawer.json",
+  "r1_check": "the agent's saved check: <investigation>/library/checks/handoff-retention-and-delivery.json",
+  "r1_skill": "the agent's learned skill: <investigation>/library/skills/quiet-handoff-versus-path-clearance/SKILL.md",
+  "r1_library": "the library's index after the investigation: <investigation>/library/index.json",
+  "r1_inherited_job": "the earlier saved job in the library the agent started from: job one's run-6 library, jobs/cheese-loaded-bowl-to-cabinet.json (saved, not released; its own receipt unchanged)",
+  "r1_rerenders": "the verification reports of the four re-renders of reserved start 31 (scene and wrist, plain chain and saved job); the wrist reports are the corrected ones naming the wrist original",
+  "r1_recordings": "the four re-rendered recordings those reports verify",
+  "story_b_operation": "story B's regular work before round one: <engagement>/loop/rounds/r1/exports/start-01/log/episodes.parquet",
+  "story_b_engagement": "story B's engagement record: <engagement>/engagement/engagement.json (rounds, decisions, evaluation.summary)",
+  "story_b_recipe_check": "the probe recipe run on the later fleet: second-use/check-2/recipe-check.json",
+  "r2_run": "the second job's investigation record: <second investigation>/job_run.json",
+  "r2_receipt": "the second job's release receipt: <second investigation>/release/run/run/receipt.json",
+  "r2_verification": "the coordinator's reconciliation of the second job's 40 raw release episodes: <second cohort>/coordinator-verification.json",
+  "r2_development": "the second job's development tables the agent queried, sessions 1 to 6: <second investigation>/runs/session-0N/run/log/job_episodes.parquet",
+  "r2_job": "the second saved job: <second investigation>/library/jobs/station-plate-and-bowl-prepared.json",
+  "r2_check": "the second job's saved check: <second investigation>/library/checks/station-goal-and-handoff-audit.json",
+  "r2_skill": "the second learned skill: <second investigation>/library/skills/scene-preparation-can-move-the-bottleneck/SKILL.md",
+  "r2_library": "the library's index after the second investigation: <second investigation>/library/index.json (three saved jobs: the earlier unreleased one and the two released jobs)",
+  "r2_cheese": "the coordinator's read of the cheese's final recorded state in the second job's 20 reserved runs: <second cohort>/relocated-cheese-final-positions.json (from the public object table)",
+  "r2_rerenders": "the verification reports of the four re-renders of the second job's reserved start 31",
+  "r2_recordings": "the four re-rendered recordings those reports verify",
+  "all_rerenders": "both pairs' re-render verification reports, the same files as r1_rerenders and r2_rerenders",
+  "r2_recount": "a recount of two second-job diagnostics, one row per episode: <reliability>/record-recounts/second-job-diagnostics.json, written by site/reliability/record/recount_second_job.py from the confirmation batch's public goal table and the coordinator's cheese record (both listed with their SHA-256 inside)"
+ },
+ "titles": {
+  "r1_run": "the first job's investigation record",
+  "r1_receipt": "its release receipt",
+  "r1_verification": "the coordinator's episode-by-episode reconciliation of the release",
+  "r1_development": "the development tables the agent queried",
+  "r1_session_two": "the agent's second session, its transcript",
+  "r1_job": "the saved job",
+  "r1_check": "the agent's saved check",
+  "r1_skill": "the agent's learned skill",
+  "r1_library": "the library's index after the investigation",
+  "r1_inherited_job": "the earlier saved job in the library the agent started from",
+  "r1_rerenders": "re-render verification reports, reserved start 31",
+  "r1_recordings": "re-rendered recordings, reserved start 31",
+  "story_b_operation": "story B: the fleet's regular work before round one",
+  "story_b_engagement": "story B: the engagement record",
+  "story_b_recipe_check": "story B: the probe recipe's run on the later fleet",
+  "r2_run": "the second job's investigation record",
+  "r2_receipt": "its release receipt",
+  "r2_verification": "the coordinator's episode-by-episode reconciliation of that release",
+  "r2_development": "the second job's development tables the agent queried",
+  "r2_job": "the second saved job",
+  "r2_check": "the second job's saved check",
+  "r2_skill": "the second learned skill",
+  "r2_library": "the library's index after the second investigation",
+  "r2_cheese": "the cheese's final recorded state in the second job's reserved runs",
+  "r2_rerenders": "re-render verification reports, second job, reserved start 31",
+  "r2_recordings": "re-rendered recordings, second job, reserved start 31",
+  "all_rerenders": "re-render verification reports of both pairs",
+  "r2_recount": "recount of the second job's bowl-goal recoveries and the cheese's final contacts",
+  "r2_tuning": "the second job's tuning sessions (practice starts 0 to 9), without the confirmation session"
+ },
+ "forbidden": [
+  "\\bw8[0-9]\\b",
+  "design\\.json",
+  "world_truth",
+  "/truth/",
+  "remote_link_latency|controller_overload|arm_torque_loss|camera_latency|camera_pose_offset|image_pipeline_release|calibration_update",
+  "(?i)\\bfilm\\b",
+  "(?i)\\bpending\\b",
+  "\\[gap:",
+  "\\[one of:",
+  "/home/",
+  "~/",
+  "\\.cache/",
+  "\\.ts\\.net",
+  "\\btail[0-9a-f]{6}\\b",
+  "\\brobots-[a-z0-9]{4}\\b(?![-/])",
+  "\\bPart [IVX]+\\b",
+  "\\bQ[0-9]{2}\\b",
+  "plate-04|(?<!plate-)cabinet-01|screen-0[0-9]|confirm-0[0-9]|spikes/"
+ ],
+ "fields": {
+  "r1_release_n": {
+   "record": "r1_receipt",
+   "field": "N",
+   "meaning": "reserved starts of the first job's release, fresh starts no development batch had used"
+  },
+  "r1_release_k": {
+   "record": "r1_receipt",
+   "field": "K",
+   "meaning": "deliveries the release had to reach on those starts: the agent's proposal, approved before any program ran"
+  },
+  "r1_delivered": {
+   "record": "r1_receipt",
+   "field": "delivered",
+   "meaning": "reserved starts the saved job delivered on"
+  },
+  "r1_naive_delivered": {
+   "record": "r1_receipt",
+   "field": "naive_delivered",
+   "meaning": "the same reserved starts the plain chain of the two skills delivered on"
+  },
+  "r1_release_pct": {
+   "record": "derived",
+   "field": "r1_release.pct",
+   "meaning": "the saved job's share of the reserved starts"
+  },
+  "r1_release_low_pct": {
+   "record": "derived",
+   "field": "r1_release.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r1_release_high_pct": {
+   "record": "derived",
+   "field": "r1_release.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r1_naive_pct": {
+   "record": "derived",
+   "field": "r1_naive.pct",
+   "meaning": "the plain chain's share of the same starts"
+  },
+  "r1_naive_low_pct": {
+   "record": "derived",
+   "field": "r1_naive.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r1_naive_high_pct": {
+   "record": "derived",
+   "field": "r1_naive.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r1_rescued": {
+   "record": "derived",
+   "field": "r1_pairs.rescued",
+   "meaning": "reserved starts the plain chain failed and the saved job delivered"
+  },
+  "r1_broken": {
+   "record": "derived",
+   "field": "r1_pairs.broken",
+   "meaning": "reserved starts the plain chain delivered and the saved job failed"
+  },
+  "r1_both": {
+   "record": "derived",
+   "field": "r1_pairs.both",
+   "meaning": "reserved starts both delivered"
+  },
+  "r1_neither": {
+   "record": "derived",
+   "field": "r1_pairs.neither",
+   "meaning": "reserved starts neither delivered"
+  },
+  "r1_release_range": {
+   "record": "derived",
+   "field": "r1_release_starts.value",
+   "meaning": "the stored starts the release ran on"
+  },
+  "r1_verdict": {
+   "record": "derived",
+   "field": "r1_verdict.value",
+   "meaning": "what the receipt records about the saved job and the agreed bar"
+  },
+  "r1_raw_verified": {
+   "record": "r1_verification",
+   "field": "raw_episodes_verified",
+   "meaning": "raw release episodes, saved job and plain chain, the coordinator reconciled one by one against the receipt"
+  },
+  "r1_plain_k": {
+   "record": "derived",
+   "field": "r1_plain.k",
+   "meaning": "practice starts delivered with the plain chain: straight to the drawer"
+  },
+  "r1_plain_n": {
+   "record": "derived",
+   "field": "r1_plain.n",
+   "meaning": "practice starts run with the plain chain: straight to the drawer"
+  },
+  "r1_plain_range": {
+   "record": "derived",
+   "field": "r1_plain_starts.value",
+   "meaning": "the practice starts run with the plain chain: straight to the drawer"
+  },
+  "r1_plain_program": {
+   "record": "derived",
+   "field": "r1_plain_program.value",
+   "meaning": "the agent's name for the program: the plain chain: straight to the drawer"
+  },
+  "r1_finish_only_k": {
+   "record": "derived",
+   "field": "r1_finish_only.k",
+   "meaning": "practice starts delivered with the bowl skill for 30 more control steps, then the drawer"
+  },
+  "r1_finish_only_n": {
+   "record": "derived",
+   "field": "r1_finish_only.n",
+   "meaning": "practice starts run with the bowl skill for 30 more control steps, then the drawer"
+  },
+  "r1_finish_only_range": {
+   "record": "derived",
+   "field": "r1_finish_only_starts.value",
+   "meaning": "the practice starts run with the bowl skill for 30 more control steps, then the drawer"
+  },
+  "r1_finish_only_program": {
+   "record": "derived",
+   "field": "r1_finish_only_program.value",
+   "meaning": "the agent's name for the program: the bowl skill for 30 more control steps, then the drawer"
+  },
+  "r1_open_only_k": {
+   "record": "derived",
+   "field": "r1_open_only.k",
+   "meaning": "practice starts delivered with the gripper opened in place, then the drawer"
+  },
+  "r1_open_only_n": {
+   "record": "derived",
+   "field": "r1_open_only.n",
+   "meaning": "practice starts run with the gripper opened in place, then the drawer"
+  },
+  "r1_open_only_range": {
+   "record": "derived",
+   "field": "r1_open_only_starts.value",
+   "meaning": "the practice starts run with the gripper opened in place, then the drawer"
+  },
+  "r1_open_only_program": {
+   "record": "derived",
+   "field": "r1_open_only_program.value",
+   "meaning": "the agent's name for the program: the gripper opened in place, then the drawer"
+  },
+  "r1_home_only_k": {
+   "record": "derived",
+   "field": "r1_home_only.k",
+   "meaning": "practice starts delivered with the hand returned home, then the drawer"
+  },
+  "r1_home_only_n": {
+   "record": "derived",
+   "field": "r1_home_only.n",
+   "meaning": "practice starts run with the hand returned home, then the drawer"
+  },
+  "r1_home_only_range": {
+   "record": "derived",
+   "field": "r1_home_only_starts.value",
+   "meaning": "the practice starts run with the hand returned home, then the drawer"
+  },
+  "r1_home_only_program": {
+   "record": "derived",
+   "field": "r1_home_only_program.value",
+   "meaning": "the agent's name for the program: the hand returned home, then the drawer"
+  },
+  "r1_open_home_k": {
+   "record": "derived",
+   "field": "r1_open_home.k",
+   "meaning": "practice starts delivered with the gripper opened, the hand returned home, then the drawer"
+  },
+  "r1_open_home_n": {
+   "record": "derived",
+   "field": "r1_open_home.n",
+   "meaning": "practice starts run with the gripper opened, the hand returned home, then the drawer"
+  },
+  "r1_open_home_range": {
+   "record": "derived",
+   "field": "r1_open_home_starts.value",
+   "meaning": "the practice starts run with the gripper opened, the hand returned home, then the drawer"
+  },
+  "r1_open_home_program": {
+   "record": "derived",
+   "field": "r1_open_home_program.value",
+   "meaning": "the agent's name for the program: the gripper opened, the hand returned home, then the drawer"
+  },
+  "r1_finish_home_k": {
+   "record": "derived",
+   "field": "r1_finish_home.k",
+   "meaning": "practice starts delivered with the bowl skill for 30 more control steps, the hand returned home, then the drawer"
+  },
+  "r1_finish_home_n": {
+   "record": "derived",
+   "field": "r1_finish_home.n",
+   "meaning": "practice starts run with the bowl skill for 30 more control steps, the hand returned home, then the drawer"
+  },
+  "r1_finish_home_range": {
+   "record": "derived",
+   "field": "r1_finish_home_starts.value",
+   "meaning": "the practice starts run with the bowl skill for 30 more control steps, the hand returned home, then the drawer"
+  },
+  "r1_finish_home_program": {
+   "record": "derived",
+   "field": "r1_finish_home_program.value",
+   "meaning": "the agent's name for the program: the bowl skill for 30 more control steps, the hand returned home, then the drawer"
+  },
+  "r1_drawer_first_k": {
+   "record": "derived",
+   "field": "r1_drawer_first.k",
+   "meaning": "practice starts delivered with the drawer first, then the bowl"
+  },
+  "r1_drawer_first_n": {
+   "record": "derived",
+   "field": "r1_drawer_first.n",
+   "meaning": "practice starts run with the drawer first, then the bowl"
+  },
+  "r1_drawer_first_range": {
+   "record": "derived",
+   "field": "r1_drawer_first_starts.value",
+   "meaning": "the practice starts run with the drawer first, then the bowl"
+  },
+  "r1_drawer_first_program": {
+   "record": "derived",
+   "field": "r1_drawer_first_program.value",
+   "meaning": "the agent's name for the program: the drawer first, then the bowl"
+  },
+  "r1_confirm_k": {
+   "record": "derived",
+   "field": "r1_confirm.k",
+   "meaning": "practice starts delivered with the unchanged procedure of the bowl skill for 30 more steps, home, then the drawer, on practice starts not used before"
+  },
+  "r1_confirm_n": {
+   "record": "derived",
+   "field": "r1_confirm.n",
+   "meaning": "practice starts run with the unchanged procedure of the bowl skill for 30 more steps, home, then the drawer, on practice starts not used before"
+  },
+  "r1_confirm_range": {
+   "record": "derived",
+   "field": "r1_confirm_starts.value",
+   "meaning": "the practice starts run with the unchanged procedure of the bowl skill for 30 more steps, home, then the drawer, on practice starts not used before"
+  },
+  "r1_confirm_program": {
+   "record": "derived",
+   "field": "r1_confirm_program.value",
+   "meaning": "the agent's name for the program: the unchanged procedure of the bowl skill for 30 more steps, home, then the drawer, on practice starts not used before"
+  },
+  "r1_confirm_pct": {
+   "record": "derived",
+   "field": "r1_confirm.pct",
+   "meaning": "the confirmation's share"
+  },
+  "r1_confirm_low_pct": {
+   "record": "derived",
+   "field": "r1_confirm.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r1_confirm_high_pct": {
+   "record": "derived",
+   "field": "r1_confirm.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r1_job_name": {
+   "record": "r1_job",
+   "field": "name",
+   "meaning": "the saved job's name in the library"
+  },
+  "r1_step0_instruction": {
+   "record": "r1_job",
+   "field": "program.steps.0.instruction",
+   "meaning": "the saved program's first step: the policy's instruction"
+  },
+  "r1_step0_max": {
+   "record": "r1_job",
+   "field": "program.steps.0.max_steps",
+   "meaning": "control steps the first step may take before the program stops"
+  },
+  "r1_finish_steps": {
+   "record": "r1_job",
+   "field": "program.steps.1.until.steps",
+   "meaning": "control steps the second step runs the same instruction after the bowl first holds on the cabinet"
+  },
+  "r1_home_max": {
+   "record": "r1_job",
+   "field": "program.steps.2.duration_steps",
+   "meaning": "control steps the move home may take"
+  },
+  "r1_step3_instruction": {
+   "record": "r1_job",
+   "field": "program.steps.3.instruction",
+   "meaning": "the saved program's last step: the policy's instruction"
+  },
+  "r1_step3_max": {
+   "record": "r1_job",
+   "field": "program.steps.3.max_steps",
+   "meaning": "control steps the last step may take before the program stops"
+  },
+  "r1_check_name": {
+   "record": "r1_check",
+   "field": "name",
+   "meaning": "the check the agent wrote and saved with the job"
+  },
+  "r1_check_purpose": {
+   "record": "r1_check",
+   "field": "purpose",
+   "meaning": "the check's purpose, as the agent wrote it"
+  },
+  "r1_check_params": {
+   "record": "derived",
+   "field": "r1_check_params.value",
+   "meaning": "parameters the check takes, so that it runs on another job"
+  },
+  "r1_skill_name": {
+   "record": "derived",
+   "field": "r1_skill_name.value",
+   "meaning": "the learned skill the agent wrote and kept"
+  },
+  "r1_skill_description": {
+   "record": "derived",
+   "field": "r1_skill_description.value",
+   "meaning": "the learned skill's description, verbatim"
+  },
+  "r1_skill_heights": {
+   "record": "derived",
+   "field": "r1_skill_heights.value",
+   "meaning": "the hand heights at the start of the move home, open-then-home against the winning procedure, as the agent's query read them"
+  },
+  "r1_library_jobs": {
+   "record": "derived",
+   "field": "r1_library_jobs.value",
+   "meaning": "saved jobs in the installation's library after this investigation"
+  },
+  "r1_library_checks": {
+   "record": "derived",
+   "field": "r1_library_checks.value",
+   "meaning": "checks in the installation's library after this investigation"
+  },
+  "r1_mounted_jobs": {
+   "record": "derived",
+   "field": "r1_mounted_jobs.value",
+   "meaning": "saved jobs in the library the agent started from"
+  },
+  "r1_mounted_checks": {
+   "record": "derived",
+   "field": "r1_mounted_checks.value",
+   "meaning": "checks in the library the agent started from"
+  },
+  "r1_inherited_name": {
+   "record": "r1_inherited_job",
+   "field": "name",
+   "meaning": "the earlier job saved in that library"
+  },
+  "r1_inherited_instruction": {
+   "record": "r1_inherited_job",
+   "field": "program.steps.1.instruction",
+   "meaning": "the instruction the earlier saved job runs on after its first goal holds"
+  },
+  "r1_inherited_steps": {
+   "record": "r1_inherited_job",
+   "field": "program.steps.1.until.steps",
+   "meaning": "control steps the earlier saved job runs that instruction on"
+  },
+  "r1_request": {
+   "record": "derived",
+   "field": "r1_request.value",
+   "meaning": "the request, in its own words"
+  },
+  "r1_proposal": {
+   "record": "derived",
+   "field": "r1_proposal.value",
+   "meaning": "the bar the agent proposed before testing"
+  },
+  "r1_approval": {
+   "record": "derived",
+   "field": "r1_approval.value",
+   "meaning": "the approval of that bar"
+  },
+  "r1_diagnosis": {
+   "record": "derived",
+   "field": "r1_diagnosis.value",
+   "meaning": "what the agent reported after its first run of the plain chain"
+  },
+  "r1_said_chain": {
+   "record": "derived",
+   "field": "r1_said_chain.value",
+   "meaning": "the agent's account of the plain chain's failures"
+  },
+  "r1_said_open": {
+   "record": "derived",
+   "field": "r1_said_open.value",
+   "meaning": "the agent's account of opening, then going home"
+  },
+  "r1_said_home": {
+   "record": "derived",
+   "field": "r1_said_home.value",
+   "meaning": "the agent's account of going home first"
+  },
+  "r1_said_finish": {
+   "record": "derived",
+   "field": "r1_said_finish.value",
+   "meaning": "the agent's account of the winning procedure"
+  },
+  "r1_said_ready": {
+   "record": "derived",
+   "field": "r1_said_ready.value",
+   "meaning": "why the agent judged the job ready"
+  },
+  "r1_said_unisolated": {
+   "record": "derived",
+   "field": "r1_said_unisolated.value",
+   "meaning": "what the agent says its evidence does not separate"
+  },
+  "r1_said_library": {
+   "record": "derived",
+   "field": "r1_said_library.value",
+   "meaning": "how the agent used the library it started from"
+  },
+  "r1_sessions": {
+   "record": "derived",
+   "field": "r1_sessions.value",
+   "meaning": "the agent's working sessions in the investigation"
+  },
+  "r1_model_minutes": {
+   "record": "r1_run",
+   "field": "costs.model_seconds",
+   "scale": 0.016666666666666666,
+   "format": "{:.1f}",
+   "meaning": "minutes of model time over all sessions"
+  },
+  "r1_wall_minutes": {
+   "record": "r1_run",
+   "field": "wall_seconds",
+   "scale": 0.016666666666666666,
+   "format": "{:.0f}",
+   "meaning": "minutes from the investigation's start to the agent's final account"
+  },
+  "r1_tool_calls": {
+   "record": "r1_run",
+   "field": "costs.tool_calls",
+   "meaning": "tool calls the agent made"
+  },
+  "r1_practice_runs": {
+   "record": "r1_run",
+   "field": "costs.starts_charged",
+   "meaning": "program runs on practice starts, all charged to the investigation"
+  },
+  "r1_reserved_runs": {
+   "record": "r1_run",
+   "field": "costs.release_starts",
+   "meaning": "runs on the reserved starts: the saved job and the plain chain on each"
+  },
+  "r1_agent_model": {
+   "record": "r1_run",
+   "field": "agent.model",
+   "meaning": "the engineering agent's model"
+  },
+  "r1_agent_effort": {
+   "record": "r1_run",
+   "field": "agent.effort",
+   "meaning": "its reasoning effort"
+  },
+  "r1_rerender_reports": {
+   "record": "derived",
+   "field": "r1_rerenders.reports",
+   "meaning": "re-renders of the two recorded runs on one reserved start, scene and wrist camera"
+  },
+  "r1_rerender_accepted": {
+   "record": "derived",
+   "field": "r1_rerenders.accepted",
+   "meaning": "re-renders accepted: every compared physics state and the final verdict matched the original run"
+  },
+  "r1_rerender_hashes": {
+   "record": "derived",
+   "field": "r1_rerenders.hashes_compared",
+   "meaning": "recorded physics-state hashes compared over the re-renders"
+  },
+  "r1_rerender_mismatches": {
+   "record": "derived",
+   "field": "r1_rerenders.mismatches",
+   "meaning": "hashes that did not match"
+  },
+  "r1_clip_start": {
+   "record": "r1_verification",
+   "field": "first_rescued_start",
+   "meaning": "the reserved start of the recorded pair: the first start the saved job rescued"
+  },
+  "b_robots": {
+   "record": "derived",
+   "field": "b_robots.value",
+   "meaning": "robots in story B's fleet"
+  },
+  "b_sites": {
+   "record": "derived",
+   "field": "b_sites.value",
+   "meaning": "sites of story B's fleet"
+  },
+  "b_round1_count": {
+   "record": "derived",
+   "field": "b_round1.count",
+   "meaning": "changes the agent adopted"
+  },
+  "b_round1_actions": {
+   "record": "derived",
+   "field": "b_round1.value",
+   "meaning": "the changes the agent adopted, in words"
+  },
+  "b_eval_final_k": {
+   "record": "derived",
+   "field": "b_eval_final.k",
+   "meaning": "reserved panel attempts the fleet with the agent's changes succeeded on"
+  },
+  "b_eval_final_n": {
+   "record": "derived",
+   "field": "b_eval_final.n",
+   "meaning": "reserved panel attempts of the fleet with the agent's changes"
+  },
+  "b_eval_final_pct": {
+   "record": "derived",
+   "field": "b_eval_final.pct",
+   "meaning": "the share of the fleet with the agent's changes"
+  },
+  "b_eval_final_low": {
+   "record": "derived",
+   "field": "b_eval_final.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "b_eval_final_high": {
+   "record": "derived",
+   "field": "b_eval_final.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "b_eval_original_k": {
+   "record": "derived",
+   "field": "b_eval_original.k",
+   "meaning": "reserved panel attempts the fleet as it was succeeded on"
+  },
+  "b_eval_original_n": {
+   "record": "derived",
+   "field": "b_eval_original.n",
+   "meaning": "reserved panel attempts of the fleet as it was"
+  },
+  "b_eval_original_pct": {
+   "record": "derived",
+   "field": "b_eval_original.pct",
+   "meaning": "the share of the fleet as it was"
+  },
+  "b_eval_original_low": {
+   "record": "derived",
+   "field": "b_eval_original.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "b_eval_original_high": {
+   "record": "derived",
+   "field": "b_eval_original.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "b_eval_rescued": {
+   "record": "derived",
+   "field": "b_eval_pair.rescued",
+   "meaning": "panel attempts the final state succeeded on and the original did not"
+  },
+  "b_eval_broken": {
+   "record": "derived",
+   "field": "b_eval_pair.broken",
+   "meaning": "panel attempts the original succeeded on and the final state did not"
+  },
+  "b2_recipe_skill": {
+   "record": "story_b_recipe_check",
+   "field": "skill",
+   "meaning": "the learned skill whose probe recipe ran on the later fleet"
+  },
+  "b2_outcome": {
+   "record": "story_b_recipe_check",
+   "field": "outcome.status",
+   "meaning": "the recipe run's recorded outcome on the later fleet"
+  },
+  "r1_switch": {
+   "record": "derived",
+   "field": "r1_switch.value",
+   "meaning": "what the agent found at the switch to the drawer in every run of the plain chain"
+  },
+  "r1_confirm_interval": {
+   "record": "derived",
+   "field": "r1_confirm.interval",
+   "meaning": "the confirmation's share and its 95% Wilson interval"
+  },
+  "r2_release_n": {
+   "record": "r2_receipt",
+   "field": "N",
+   "meaning": "reserved starts of the second job's release, fresh starts no development batch had used"
+  },
+  "r2_release_k": {
+   "record": "r2_receipt",
+   "field": "K",
+   "meaning": "deliveries the release had to reach: the agent's proposal, approved before any program ran"
+  },
+  "r2_delivered": {
+   "record": "r2_receipt",
+   "field": "delivered",
+   "meaning": "reserved starts the second saved job delivered on"
+  },
+  "r2_naive_delivered": {
+   "record": "r2_receipt",
+   "field": "naive_delivered",
+   "meaning": "the same reserved starts the plain chain, plate then bowl, delivered on"
+  },
+  "r2_release_pct": {
+   "record": "derived",
+   "field": "r2_release.pct",
+   "meaning": "share of the reserved starts"
+  },
+  "r2_release_low_pct": {
+   "record": "derived",
+   "field": "r2_release.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r2_release_high_pct": {
+   "record": "derived",
+   "field": "r2_release.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r2_naive_pct": {
+   "record": "derived",
+   "field": "r2_naive.pct",
+   "meaning": "share of the reserved starts"
+  },
+  "r2_naive_low_pct": {
+   "record": "derived",
+   "field": "r2_naive.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r2_naive_high_pct": {
+   "record": "derived",
+   "field": "r2_naive.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r2_rescued": {
+   "record": "derived",
+   "field": "r2_pairs.rescued",
+   "meaning": "reserved starts the plain chain failed and the second job delivered"
+  },
+  "r2_broken": {
+   "record": "derived",
+   "field": "r2_pairs.broken",
+   "meaning": "reserved starts the plain chain delivered and the second job failed"
+  },
+  "r2_both": {
+   "record": "derived",
+   "field": "r2_pairs.both",
+   "meaning": "reserved starts both delivered"
+  },
+  "r2_neither": {
+   "record": "derived",
+   "field": "r2_pairs.neither",
+   "meaning": "reserved starts neither delivered"
+  },
+  "r2_release_range": {
+   "record": "derived",
+   "field": "r2_release_starts.value",
+   "meaning": "the stored starts the second release ran on"
+  },
+  "r2_verdict": {
+   "record": "derived",
+   "field": "r2_verdict.value",
+   "meaning": "what the receipt records about the second saved job and the agreed bar"
+  },
+  "r2_raw_verified": {
+   "record": "r2_verification",
+   "field": "raw_episodes_checked",
+   "meaning": "raw release episodes, saved job and plain chain, the coordinator reconciled one by one against the receipt"
+  },
+  "r2_clip_start": {
+   "record": "r2_verification",
+   "field": "first_rescued.init_state",
+   "meaning": "the reserved start of the recorded pair: the first start the second job rescued"
+  },
+  "r2_plain_k": {
+   "record": "derived",
+   "field": "r2_plain.k",
+   "meaning": "practice starts delivered with plate, then bowl (the plain chain)"
+  },
+  "r2_plain_n": {
+   "record": "derived",
+   "field": "r2_plain.n",
+   "meaning": "practice starts run with plate, then bowl (the plain chain)"
+  },
+  "r2_plain_range": {
+   "record": "derived",
+   "field": "r2_plain_starts.value",
+   "meaning": "the practice starts run with plate, then bowl (the plain chain)"
+  },
+  "r2_plain_program": {
+   "record": "derived",
+   "field": "r2_plain_program.value",
+   "meaning": "the agent's name for the program: plate, then bowl (the plain chain)"
+  },
+  "r2_bowl_first_k": {
+   "record": "derived",
+   "field": "r2_bowl_first.k",
+   "meaning": "practice starts delivered with bowl, then plate"
+  },
+  "r2_bowl_first_n": {
+   "record": "derived",
+   "field": "r2_bowl_first.n",
+   "meaning": "practice starts run with bowl, then plate"
+  },
+  "r2_bowl_first_range": {
+   "record": "derived",
+   "field": "r2_bowl_first_starts.value",
+   "meaning": "the practice starts run with bowl, then plate"
+  },
+  "r2_bowl_first_program": {
+   "record": "derived",
+   "field": "r2_bowl_first_program.value",
+   "meaning": "the agent's name for the program: bowl, then plate"
+  },
+  "r2_replan_k": {
+   "record": "derived",
+   "field": "r2_replan.k",
+   "meaning": "practice starts delivered with plate, then bowl, the policy re-planning more often"
+  },
+  "r2_replan_n": {
+   "record": "derived",
+   "field": "r2_replan.n",
+   "meaning": "practice starts run with plate, then bowl, the policy re-planning more often"
+  },
+  "r2_replan_range": {
+   "record": "derived",
+   "field": "r2_replan_starts.value",
+   "meaning": "the practice starts run with plate, then bowl, the policy re-planning more often"
+  },
+  "r2_replan_program": {
+   "record": "derived",
+   "field": "r2_replan_program.value",
+   "meaning": "the agent's name for the program: plate, then bowl, the policy re-planning more often"
+  },
+  "r2_home_only_k": {
+   "record": "derived",
+   "field": "r2_home_only.k",
+   "meaning": "practice starts delivered with plate, hand home, bowl"
+  },
+  "r2_home_only_n": {
+   "record": "derived",
+   "field": "r2_home_only.n",
+   "meaning": "practice starts run with plate, hand home, bowl"
+  },
+  "r2_home_only_range": {
+   "record": "derived",
+   "field": "r2_home_only_starts.value",
+   "meaning": "the practice starts run with plate, hand home, bowl"
+  },
+  "r2_home_only_program": {
+   "record": "derived",
+   "field": "r2_home_only_program.value",
+   "meaning": "the agent's name for the program: plate, hand home, bowl"
+  },
+  "r2_bowl_home_k": {
+   "record": "derived",
+   "field": "r2_bowl_home.k",
+   "meaning": "practice starts delivered with bowl, hand home, plate"
+  },
+  "r2_bowl_home_n": {
+   "record": "derived",
+   "field": "r2_bowl_home.n",
+   "meaning": "practice starts run with bowl, hand home, plate"
+  },
+  "r2_bowl_home_range": {
+   "record": "derived",
+   "field": "r2_bowl_home_starts.value",
+   "meaning": "the practice starts run with bowl, hand home, plate"
+  },
+  "r2_bowl_home_program": {
+   "record": "derived",
+   "field": "r2_bowl_home_program.value",
+   "meaning": "the agent's name for the program: bowl, hand home, plate"
+  },
+  "r2_bowl_finish_home_k": {
+   "record": "derived",
+   "field": "r2_bowl_finish_home.k",
+   "meaning": "practice starts delivered with bowl, the first job's continuation of the bowl skill, home, plate"
+  },
+  "r2_bowl_finish_home_n": {
+   "record": "derived",
+   "field": "r2_bowl_finish_home.n",
+   "meaning": "practice starts run with bowl, the first job's continuation of the bowl skill, home, plate"
+  },
+  "r2_bowl_finish_home_range": {
+   "record": "derived",
+   "field": "r2_bowl_finish_home_starts.value",
+   "meaning": "the practice starts run with bowl, the first job's continuation of the bowl skill, home, plate"
+  },
+  "r2_bowl_finish_home_program": {
+   "record": "derived",
+   "field": "r2_bowl_finish_home_program.value",
+   "meaning": "the agent's name for the program: bowl, the first job's continuation of the bowl skill, home, plate"
+  },
+  "r2_plate_retry_k": {
+   "record": "derived",
+   "field": "r2_plate_retry.k",
+   "meaning": "practice starts delivered with plate with a second attempt, home, bowl"
+  },
+  "r2_plate_retry_n": {
+   "record": "derived",
+   "field": "r2_plate_retry.n",
+   "meaning": "practice starts run with plate with a second attempt, home, bowl"
+  },
+  "r2_plate_retry_range": {
+   "record": "derived",
+   "field": "r2_plate_retry_starts.value",
+   "meaning": "the practice starts run with plate with a second attempt, home, bowl"
+  },
+  "r2_plate_retry_program": {
+   "record": "derived",
+   "field": "r2_plate_retry_program.value",
+   "meaning": "the agent's name for the program: plate with a second attempt, home, bowl"
+  },
+  "r2_home_retry_k": {
+   "record": "derived",
+   "field": "r2_home_retry.k",
+   "meaning": "practice starts delivered with plate, home, a second plate attempt, home, bowl"
+  },
+  "r2_home_retry_n": {
+   "record": "derived",
+   "field": "r2_home_retry.n",
+   "meaning": "practice starts run with plate, home, a second plate attempt, home, bowl"
+  },
+  "r2_home_retry_range": {
+   "record": "derived",
+   "field": "r2_home_retry_starts.value",
+   "meaning": "the practice starts run with plate, home, a second plate attempt, home, bowl"
+  },
+  "r2_home_retry_program": {
+   "record": "derived",
+   "field": "r2_home_retry_program.value",
+   "meaning": "the agent's name for the program: plate, home, a second plate attempt, home, bowl"
+  },
+  "r2_home_replan_k": {
+   "record": "derived",
+   "field": "r2_home_replan.k",
+   "meaning": "practice starts delivered with plate, home, bowl, the policy re-planning more often"
+  },
+  "r2_home_replan_n": {
+   "record": "derived",
+   "field": "r2_home_replan.n",
+   "meaning": "practice starts run with plate, home, bowl, the policy re-planning more often"
+  },
+  "r2_home_replan_range": {
+   "record": "derived",
+   "field": "r2_home_replan_starts.value",
+   "meaning": "the practice starts run with plate, home, bowl, the policy re-planning more often"
+  },
+  "r2_home_replan_program": {
+   "record": "derived",
+   "field": "r2_home_replan_program.value",
+   "meaning": "the agent's name for the program: plate, home, bowl, the policy re-planning more often"
+  },
+  "r2_bowl_finish_home_end_k": {
+   "record": "derived",
+   "field": "r2_bowl_finish_home_end.k",
+   "meaning": "practice starts delivered with bowl with the continuation, home, plate, home at the end"
+  },
+  "r2_bowl_finish_home_end_n": {
+   "record": "derived",
+   "field": "r2_bowl_finish_home_end.n",
+   "meaning": "practice starts run with bowl with the continuation, home, plate, home at the end"
+  },
+  "r2_bowl_finish_home_end_range": {
+   "record": "derived",
+   "field": "r2_bowl_finish_home_end_starts.value",
+   "meaning": "the practice starts run with bowl with the continuation, home, plate, home at the end"
+  },
+  "r2_bowl_finish_home_end_program": {
+   "record": "derived",
+   "field": "r2_bowl_finish_home_end_program.value",
+   "meaning": "the agent's name for the program: bowl with the continuation, home, plate, home at the end"
+  },
+  "r2_push_cut_k": {
+   "record": "derived",
+   "field": "r2_push_cut.k",
+   "meaning": "practice starts delivered with plate push cut short, home, plate again, home, bowl"
+  },
+  "r2_push_cut_n": {
+   "record": "derived",
+   "field": "r2_push_cut.n",
+   "meaning": "practice starts run with plate push cut short, home, plate again, home, bowl"
+  },
+  "r2_push_cut_range": {
+   "record": "derived",
+   "field": "r2_push_cut_starts.value",
+   "meaning": "the practice starts run with plate push cut short, home, plate again, home, bowl"
+  },
+  "r2_push_cut_program": {
+   "record": "derived",
+   "field": "r2_push_cut_program.value",
+   "meaning": "the agent's name for the program: plate push cut short, home, plate again, home, bowl"
+  },
+  "r2_push_slide_k": {
+   "record": "derived",
+   "field": "r2_push_slide.k",
+   "meaning": "practice starts delivered with plate push cut short, a scripted sideways slide, plate again, home, bowl"
+  },
+  "r2_push_slide_n": {
+   "record": "derived",
+   "field": "r2_push_slide.n",
+   "meaning": "practice starts run with plate push cut short, a scripted sideways slide, plate again, home, bowl"
+  },
+  "r2_push_slide_range": {
+   "record": "derived",
+   "field": "r2_push_slide_starts.value",
+   "meaning": "the practice starts run with plate push cut short, a scripted sideways slide, plate again, home, bowl"
+  },
+  "r2_push_slide_program": {
+   "record": "derived",
+   "field": "r2_push_slide_program.value",
+   "meaning": "the agent's name for the program: plate push cut short, a scripted sideways slide, plate again, home, bowl"
+  },
+  "r2_loaded_k": {
+   "record": "derived",
+   "field": "r2_loaded.k",
+   "meaning": "practice starts delivered with cheese loaded into the bowl, home, plate, home, bowl"
+  },
+  "r2_loaded_n": {
+   "record": "derived",
+   "field": "r2_loaded.n",
+   "meaning": "practice starts run with cheese loaded into the bowl, home, plate, home, bowl"
+  },
+  "r2_loaded_range": {
+   "record": "derived",
+   "field": "r2_loaded_starts.value",
+   "meaning": "the practice starts run with cheese loaded into the bowl, home, plate, home, bowl"
+  },
+  "r2_loaded_program": {
+   "record": "derived",
+   "field": "r2_loaded_program.value",
+   "meaning": "the agent's name for the program: cheese loaded into the bowl, home, plate, home, bowl"
+  },
+  "r2_loaded_bowl_first_k": {
+   "record": "derived",
+   "field": "r2_loaded_bowl_first.k",
+   "meaning": "practice starts delivered with cheese loaded into the bowl, home, bowl with the continuation, home, plate, home"
+  },
+  "r2_loaded_bowl_first_n": {
+   "record": "derived",
+   "field": "r2_loaded_bowl_first.n",
+   "meaning": "practice starts run with cheese loaded into the bowl, home, bowl with the continuation, home, plate, home"
+  },
+  "r2_loaded_bowl_first_range": {
+   "record": "derived",
+   "field": "r2_loaded_bowl_first_starts.value",
+   "meaning": "the practice starts run with cheese loaded into the bowl, home, bowl with the continuation, home, plate, home"
+  },
+  "r2_loaded_bowl_first_program": {
+   "record": "derived",
+   "field": "r2_loaded_bowl_first_program.value",
+   "meaning": "the agent's name for the program: cheese loaded into the bowl, home, bowl with the continuation, home, plate, home"
+  },
+  "r2_relocate_k": {
+   "record": "derived",
+   "field": "r2_relocate.k",
+   "meaning": "practice starts delivered with cheese picked up, slid aside and set down on the table, home, plate, home, bowl"
+  },
+  "r2_relocate_n": {
+   "record": "derived",
+   "field": "r2_relocate.n",
+   "meaning": "practice starts run with cheese picked up, slid aside and set down on the table, home, plate, home, bowl"
+  },
+  "r2_relocate_range": {
+   "record": "derived",
+   "field": "r2_relocate_starts.value",
+   "meaning": "the practice starts run with cheese picked up, slid aside and set down on the table, home, plate, home, bowl"
+  },
+  "r2_relocate_program": {
+   "record": "derived",
+   "field": "r2_relocate_program.value",
+   "meaning": "the agent's name for the program: cheese picked up, slid aside and set down on the table, home, plate, home, bowl"
+  },
+  "r2_relocate_lift_k": {
+   "record": "derived",
+   "field": "r2_relocate_lift.k",
+   "meaning": "practice starts delivered with the same with a lift before the slide"
+  },
+  "r2_relocate_lift_n": {
+   "record": "derived",
+   "field": "r2_relocate_lift.n",
+   "meaning": "practice starts run with the same with a lift before the slide"
+  },
+  "r2_relocate_lift_range": {
+   "record": "derived",
+   "field": "r2_relocate_lift_starts.value",
+   "meaning": "the practice starts run with the same with a lift before the slide"
+  },
+  "r2_relocate_lift_program": {
+   "record": "derived",
+   "field": "r2_relocate_lift_program.value",
+   "meaning": "the agent's name for the program: the same with a lift before the slide"
+  },
+  "r2_loaded_named_k": {
+   "record": "derived",
+   "field": "r2_loaded_named.k",
+   "meaning": "practice starts delivered with cheese loaded, home, plate, home, the bowl instruction naming the loaded bowl"
+  },
+  "r2_loaded_named_n": {
+   "record": "derived",
+   "field": "r2_loaded_named.n",
+   "meaning": "practice starts run with cheese loaded, home, plate, home, the bowl instruction naming the loaded bowl"
+  },
+  "r2_loaded_named_range": {
+   "record": "derived",
+   "field": "r2_loaded_named_starts.value",
+   "meaning": "the practice starts run with cheese loaded, home, plate, home, the bowl instruction naming the loaded bowl"
+  },
+  "r2_loaded_named_program": {
+   "record": "derived",
+   "field": "r2_loaded_named_program.value",
+   "meaning": "the agent's name for the program: cheese loaded, home, plate, home, the bowl instruction naming the loaded bowl"
+  },
+  "r2_loaded_rim_k": {
+   "record": "derived",
+   "field": "r2_loaded_rim.k",
+   "meaning": "practice starts delivered with cheese loaded, home, plate, home, the bowl instruction asking for a rim grasp"
+  },
+  "r2_loaded_rim_n": {
+   "record": "derived",
+   "field": "r2_loaded_rim.n",
+   "meaning": "practice starts run with cheese loaded, home, plate, home, the bowl instruction asking for a rim grasp"
+  },
+  "r2_loaded_rim_range": {
+   "record": "derived",
+   "field": "r2_loaded_rim_starts.value",
+   "meaning": "the practice starts run with cheese loaded, home, plate, home, the bowl instruction asking for a rim grasp"
+  },
+  "r2_loaded_rim_program": {
+   "record": "derived",
+   "field": "r2_loaded_rim_program.value",
+   "meaning": "the agent's name for the program: cheese loaded, home, plate, home, the bowl instruction asking for a rim grasp"
+  },
+  "r2_confirm_k": {
+   "record": "derived",
+   "field": "r2_confirm.k",
+   "meaning": "practice starts delivered with the cheese-aside procedure, unchanged, on practice starts not used before"
+  },
+  "r2_confirm_n": {
+   "record": "derived",
+   "field": "r2_confirm.n",
+   "meaning": "practice starts run with the cheese-aside procedure, unchanged, on practice starts not used before"
+  },
+  "r2_confirm_range": {
+   "record": "derived",
+   "field": "r2_confirm_starts.value",
+   "meaning": "the practice starts run with the cheese-aside procedure, unchanged, on practice starts not used before"
+  },
+  "r2_confirm_program": {
+   "record": "derived",
+   "field": "r2_confirm_program.value",
+   "meaning": "the agent's name for the program: the cheese-aside procedure, unchanged, on practice starts not used before"
+  },
+  "r2_confirm_pct": {
+   "record": "derived",
+   "field": "r2_confirm.pct",
+   "meaning": "the confirmation's share"
+  },
+  "r2_confirm_low_pct": {
+   "record": "derived",
+   "field": "r2_confirm.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r2_confirm_high_pct": {
+   "record": "derived",
+   "field": "r2_confirm.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r2_confirm_interval": {
+   "record": "derived",
+   "field": "r2_confirm.interval",
+   "meaning": "the confirmation's share and its 95% Wilson interval"
+  },
+  "r2_job_name": {
+   "record": "r2_job",
+   "field": "name",
+   "meaning": "the second saved job's name in the library"
+  },
+  "r2_cheese_instruction": {
+   "record": "r2_job",
+   "field": "program.steps.0.instruction",
+   "meaning": "the saved program's first step: the instruction it runs only until the hand holds the cheese"
+  },
+  "r2_grasp_steps": {
+   "record": "r2_job",
+   "field": "program.steps.0.until.steps",
+   "meaning": "control steps the first step runs that instruction"
+  },
+  "r2_slide_cm": {
+   "record": "r2_job",
+   "field": "program.steps.1.segment.amplitude_m",
+   "scale": -100,
+   "format": "{:.0f}",
+   "meaning": "how far the scripted slide moves the hand along the table's x axis, in centimetres (negative direction)"
+  },
+  "r2_slide_steps": {
+   "record": "r2_job",
+   "field": "program.steps.1.segment.duration_steps",
+   "meaning": "control steps of the slide"
+  },
+  "r2_open_steps": {
+   "record": "r2_job",
+   "field": "program.steps.2.segment.duration_steps",
+   "meaning": "control steps the gripper opens to set the cheese down"
+  },
+  "r2_home_max": {
+   "record": "r2_job",
+   "field": "program.steps.3.duration_steps",
+   "meaning": "control steps each move home may take"
+  },
+  "r2_plate_instruction": {
+   "record": "r2_job",
+   "field": "program.steps.4.instruction",
+   "meaning": "the instruction of the plate step"
+  },
+  "r2_plate_max": {
+   "record": "r2_job",
+   "field": "program.steps.4.max_steps",
+   "meaning": "control steps the plate step may take before the program stops"
+  },
+  "r2_bowl_instruction": {
+   "record": "r2_job",
+   "field": "program.steps.6.instruction",
+   "meaning": "the instruction of the bowl step"
+  },
+  "r2_bowl_max": {
+   "record": "r2_job",
+   "field": "program.steps.6.max_steps",
+   "meaning": "control steps the bowl step may take before the program stops"
+  },
+  "r2_steps": {
+   "record": "derived",
+   "field": "r2_steps.value",
+   "meaning": "steps of the second saved program"
+  },
+  "r2_check_name": {
+   "record": "r2_check",
+   "field": "name",
+   "meaning": "the check the agent wrote and saved with the second job"
+  },
+  "r2_check_purpose": {
+   "record": "r2_check",
+   "field": "purpose",
+   "meaning": "the check's purpose, as the agent wrote it"
+  },
+  "r2_check_params": {
+   "record": "derived",
+   "field": "r2_check_params.value",
+   "meaning": "parameters the second check takes"
+  },
+  "r2_skill_name": {
+   "record": "derived",
+   "field": "r2_skill_name.value",
+   "meaning": "the learned skill the agent wrote in the second investigation"
+  },
+  "r2_skill_description": {
+   "record": "derived",
+   "field": "r2_skill_description.value",
+   "meaning": "the second learned skill's description, verbatim"
+  },
+  "r2_skill_evidence": {
+   "record": "derived",
+   "field": "r2_skill_evidence.value",
+   "meaning": "the agent's counts of obstacle contact, plate retention and delivery for the unprepared, loading and relocation programs"
+  },
+  "r2_library_jobs": {
+   "record": "derived",
+   "field": "r2_library_jobs.value",
+   "meaning": "saved jobs in the installation's library after the second investigation"
+  },
+  "r2_library_checks": {
+   "record": "derived",
+   "field": "r2_library_checks.value",
+   "meaning": "checks in the installation's library after the second investigation"
+  },
+  "r2_mounted_jobs": {
+   "record": "derived",
+   "field": "r2_mounted_jobs.value",
+   "meaning": "saved jobs in the library the second investigation started from"
+  },
+  "r2_mounted_checks": {
+   "record": "derived",
+   "field": "r2_mounted_checks.value",
+   "meaning": "checks in the library the second investigation started from"
+  },
+  "r2_cheese_runs": {
+   "record": "derived",
+   "field": "r2_cheese_runs.value",
+   "meaning": "reserved runs of the second job with the cheese's final state"
+  },
+  "r2_cheese_untouched": {
+   "record": "derived",
+   "field": "r2_cheese_untouched.value",
+   "meaning": "reserved runs in which the robot does not touch the cheese at the end"
+  },
+  "r2_cheese_table_only": {
+   "record": "derived",
+   "field": "r2_cheese_table_only.value",
+   "meaning": "reserved runs in which the cheese ends touching only the table"
+  },
+  "r2_cheese_table_plate": {
+   "record": "derived",
+   "field": "r2_cheese_table_plate.value",
+   "meaning": "reserved runs in which the cheese ends touching the table and the plate"
+  },
+  "r2_request": {
+   "record": "derived",
+   "field": "r2_request.value",
+   "meaning": "the second request, in its own words"
+  },
+  "r2_proposal": {
+   "record": "derived",
+   "field": "r2_proposal.value",
+   "meaning": "the bar the agent proposed before testing"
+  },
+  "r2_said_plain": {
+   "record": "derived",
+   "field": "r2_said_plain.value",
+   "meaning": "the agent's account of the plain chain's failures"
+  },
+  "r2_said_wrong_object": {
+   "record": "derived",
+   "field": "r2_said_wrong_object.value",
+   "meaning": "the agent's account of the plate failures"
+  },
+  "r2_said_home": {
+   "record": "derived",
+   "field": "r2_said_home.value",
+   "meaning": "the agent's account of going home between the tasks"
+  },
+  "r2_said_continuation": {
+   "record": "derived",
+   "field": "r2_said_continuation.value",
+   "meaning": "the agent's account of the first job's continuation, tested here"
+  },
+  "r2_said_loaded": {
+   "record": "derived",
+   "field": "r2_said_loaded.value",
+   "meaning": "the agent's account of loading the cheese into the bowl"
+  },
+  "r2_said_grasp": {
+   "record": "derived",
+   "field": "r2_said_grasp.value",
+   "meaning": "the agent's account of the saved procedure's first step"
+  },
+  "r2_said_flicker": {
+   "record": "derived",
+   "field": "r2_said_flicker.value",
+   "meaning": "the agent's account of the bowl goal during the confirmation runs"
+  },
+  "r2_flicker": {
+   "record": "derived",
+   "field": "r2_flicker.value",
+   "meaning": "confirmation runs in which the bowl's goal stopped holding and held again before the end, by the agent's account"
+  },
+  "r2_said_deliberate": {
+   "record": "derived",
+   "field": "r2_said_deliberate.value",
+   "meaning": "the agent's account of the cheese"
+  },
+  "r2_said_unisolated": {
+   "record": "derived",
+   "field": "r2_said_unisolated.value",
+   "meaning": "what the agent says its evidence does not separate"
+  },
+  "r2_said_library": {
+   "record": "derived",
+   "field": "r2_said_library.value",
+   "meaning": "how the agent used the library the first job left"
+  },
+  "r2_said_ready": {
+   "record": "derived",
+   "field": "r2_said_ready.value",
+   "meaning": "why the agent judged the job ready"
+  },
+  "r2_sessions": {
+   "record": "derived",
+   "field": "r2_sessions.value",
+   "meaning": "the agent's working sessions in the second investigation"
+  },
+  "r2_model_minutes": {
+   "record": "r2_run",
+   "field": "costs.model_seconds",
+   "scale": 0.016666666666666666,
+   "format": "{:.1f}",
+   "meaning": "minutes of model time over all sessions"
+  },
+  "r2_wall_minutes": {
+   "record": "r2_run",
+   "field": "wall_seconds",
+   "scale": 0.016666666666666666,
+   "format": "{:.0f}",
+   "meaning": "minutes from the investigation's start to the agent's final account"
+  },
+  "r2_tool_calls": {
+   "record": "r2_run",
+   "field": "costs.tool_calls",
+   "meaning": "tool calls the agent made"
+  },
+  "r2_practice_runs": {
+   "record": "r2_run",
+   "field": "costs.starts_charged",
+   "meaning": "program runs on practice starts, all charged to the investigation"
+  },
+  "r2_reserved_runs": {
+   "record": "r2_run",
+   "field": "costs.release_starts",
+   "meaning": "runs on the reserved starts: the saved job and the plain chain on each"
+  },
+  "r2_agent_model": {
+   "record": "r2_run",
+   "field": "agent.model",
+   "meaning": "the engineering agent's model"
+  },
+  "r2_agent_effort": {
+   "record": "r2_run",
+   "field": "agent.effort",
+   "meaning": "its reasoning effort"
+  },
+  "r2_rerender_reports": {
+   "record": "derived",
+   "field": "r2_rerenders.reports",
+   "meaning": "re-renders of the second job's recorded pair, scene and wrist camera"
+  },
+  "r2_rerender_accepted": {
+   "record": "derived",
+   "field": "r2_rerenders.accepted",
+   "meaning": "re-renders accepted: every compared physics state and the final verdict matched"
+  },
+  "r2_rerender_hashes": {
+   "record": "derived",
+   "field": "r2_rerenders.hashes_compared",
+   "meaning": "recorded physics-state hashes compared"
+  },
+  "r2_rerender_mismatches": {
+   "record": "derived",
+   "field": "r2_rerenders.mismatches",
+   "meaning": "hashes that did not match"
+  },
+  "both_rerender_reports": {
+   "record": "derived",
+   "field": "both_rerenders.reports",
+   "meaning": "re-renders of both recorded pairs"
+  },
+  "both_rerender_accepted": {
+   "record": "derived",
+   "field": "both_rerenders.accepted",
+   "meaning": "of them accepted"
+  },
+  "both_rerender_hashes": {
+   "record": "derived",
+   "field": "both_rerenders.hashes_compared",
+   "meaning": "physics-state hashes compared over both pairs"
+  },
+  "both_rerender_mismatches": {
+   "record": "derived",
+   "field": "both_rerenders.mismatches",
+   "meaning": "hashes that did not match"
+  },
+  "r2_recovered_k": {
+   "record": "derived",
+   "field": "r2_recovered.k",
+   "meaning": "confirmation runs whose bowl goal stopped holding after the bowl arrived and held again by the end"
+  },
+  "r2_recovered_n": {
+   "record": "derived",
+   "field": "r2_recovered.n",
+   "meaning": "confirmation runs counted"
+  },
+  "r2_recovered_pct": {
+   "record": "derived",
+   "field": "r2_recovered.pct",
+   "meaning": "their share"
+  },
+  "r2_recovered_low_pct": {
+   "record": "derived",
+   "field": "r2_recovered.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r2_recovered_high_pct": {
+   "record": "derived",
+   "field": "r2_recovered.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r2_cheese_robot_free_k": {
+   "record": "derived",
+   "field": "r2_cheese_robot_free.k",
+   "meaning": "reserved runs of the second job in which the robot does not touch the cheese at the end"
+  },
+  "r2_cheese_robot_free_n": {
+   "record": "derived",
+   "field": "r2_cheese_robot_free.n",
+   "meaning": "reserved runs counted"
+  },
+  "r2_cheese_robot_free_pct": {
+   "record": "derived",
+   "field": "r2_cheese_robot_free.pct",
+   "meaning": "their share"
+  },
+  "r2_cheese_robot_free_low_pct": {
+   "record": "derived",
+   "field": "r2_cheese_robot_free.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r2_cheese_robot_free_high_pct": {
+   "record": "derived",
+   "field": "r2_cheese_robot_free.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r2_cheese_on_table_k": {
+   "record": "derived",
+   "field": "r2_cheese_on_table.k",
+   "meaning": "reserved runs of the second job in which the cheese ends touching the table"
+  },
+  "r2_cheese_on_table_n": {
+   "record": "derived",
+   "field": "r2_cheese_on_table.n",
+   "meaning": "reserved runs counted"
+  },
+  "r2_cheese_on_table_pct": {
+   "record": "derived",
+   "field": "r2_cheese_on_table.pct",
+   "meaning": "their share"
+  },
+  "r2_cheese_on_table_low_pct": {
+   "record": "derived",
+   "field": "r2_cheese_on_table.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r2_cheese_on_table_high_pct": {
+   "record": "derived",
+   "field": "r2_cheese_on_table.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r2_cheese_only_table_k": {
+   "record": "derived",
+   "field": "r2_cheese_only_table.k",
+   "meaning": "reserved runs of the second job in which the cheese ends touching only the table"
+  },
+  "r2_cheese_only_table_n": {
+   "record": "derived",
+   "field": "r2_cheese_only_table.n",
+   "meaning": "reserved runs counted"
+  },
+  "r2_cheese_only_table_pct": {
+   "record": "derived",
+   "field": "r2_cheese_only_table.pct",
+   "meaning": "their share"
+  },
+  "r2_cheese_only_table_low_pct": {
+   "record": "derived",
+   "field": "r2_cheese_only_table.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r2_cheese_only_table_high_pct": {
+   "record": "derived",
+   "field": "r2_cheese_only_table.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r2_cheese_with_plate_k": {
+   "record": "derived",
+   "field": "r2_cheese_with_plate.k",
+   "meaning": "reserved runs of the second job in which the cheese ends touching the table and the plate"
+  },
+  "r2_cheese_with_plate_n": {
+   "record": "derived",
+   "field": "r2_cheese_with_plate.n",
+   "meaning": "reserved runs counted"
+  },
+  "r2_cheese_with_plate_pct": {
+   "record": "derived",
+   "field": "r2_cheese_with_plate.pct",
+   "meaning": "their share"
+  },
+  "r2_cheese_with_plate_low_pct": {
+   "record": "derived",
+   "field": "r2_cheese_with_plate.low_pct",
+   "meaning": "lower end of its 95% Wilson interval"
+  },
+  "r2_cheese_with_plate_high_pct": {
+   "record": "derived",
+   "field": "r2_cheese_with_plate.high_pct",
+   "meaning": "upper end of its 95% Wilson interval"
+  },
+  "r2_programs": {
+   "record": "derived",
+   "field": "r2_programs.value",
+   "meaning": "programs the second agent ran on its practice starts 0 to 9 before confirming one"
+  }
+ },
+ "derived": {
+  "r1_release": {
+   "kind": "proportion",
+   "k": {
+    "kind": "value",
+    "record": "r1_receipt",
+    "path": "delivered"
+   },
+   "n": {
+    "kind": "value",
+    "record": "r1_receipt",
+    "path": "N"
+   },
+   "how": "the saved job's deliveries over the reserved starts, with a Wilson 95% interval"
+  },
+  "r1_naive": {
+   "kind": "proportion",
+   "k": {
+    "kind": "value",
+    "record": "r1_receipt",
+    "path": "naive_delivered"
+   },
+   "n": {
+    "kind": "value",
+    "record": "r1_receipt",
+    "path": "N"
+   },
+   "how": "the plain chain's deliveries over the same reserved starts, with a Wilson 95% interval"
+  },
+  "r1_pairs": {
+   "kind": "pairs",
+   "record": "r1_receipt",
+   "how": "the receipt's pairs recounted start by start and checked against its rescued and broken"
+  },
+  "r1_release_starts": {
+   "kind": "start_range",
+   "record": "r1_receipt",
+   "rows_path": "release_starts",
+   "path": "init_state",
+   "how": "the stored starts of the release, first to last"
+  },
+  "r1_verdict": {
+   "kind": "verdict",
+   "record": "r1_receipt",
+   "how": "the receipt's judgement against the agreed bar, in words"
+  },
+  "r1_plain": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0001",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0001"
+    }
+   },
+   "how": "deliveries of program run j0001 over its practice starts"
+  },
+  "r1_plain_starts": {
+   "kind": "start_range",
+   "record": "r1_development",
+   "table": true,
+   "where": {
+    "job_id": "j0001"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0001, first to last"
+  },
+  "r1_plain_program": {
+   "kind": "text",
+   "record": "r1_run",
+   "path": "batches.*.jobs.*.job_id=j0001.program",
+   "how": "the agent's own name for program run j0001"
+  },
+  "r1_finish_only": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0002",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0002"
+    }
+   },
+   "how": "deliveries of program run j0002 over its practice starts"
+  },
+  "r1_finish_only_starts": {
+   "kind": "start_range",
+   "record": "r1_development",
+   "table": true,
+   "where": {
+    "job_id": "j0002"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0002, first to last"
+  },
+  "r1_finish_only_program": {
+   "kind": "text",
+   "record": "r1_run",
+   "path": "batches.*.jobs.*.job_id=j0002.program",
+   "how": "the agent's own name for program run j0002"
+  },
+  "r1_open_only": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0003",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0003"
+    }
+   },
+   "how": "deliveries of program run j0003 over its practice starts"
+  },
+  "r1_open_only_starts": {
+   "kind": "start_range",
+   "record": "r1_development",
+   "table": true,
+   "where": {
+    "job_id": "j0003"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0003, first to last"
+  },
+  "r1_open_only_program": {
+   "kind": "text",
+   "record": "r1_run",
+   "path": "batches.*.jobs.*.job_id=j0003.program",
+   "how": "the agent's own name for program run j0003"
+  },
+  "r1_home_only": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0004",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0004"
+    }
+   },
+   "how": "deliveries of program run j0004 over its practice starts"
+  },
+  "r1_home_only_starts": {
+   "kind": "start_range",
+   "record": "r1_development",
+   "table": true,
+   "where": {
+    "job_id": "j0004"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0004, first to last"
+  },
+  "r1_home_only_program": {
+   "kind": "text",
+   "record": "r1_run",
+   "path": "batches.*.jobs.*.job_id=j0004.program",
+   "how": "the agent's own name for program run j0004"
+  },
+  "r1_open_home": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0005",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0005"
+    }
+   },
+   "how": "deliveries of program run j0005 over its practice starts"
+  },
+  "r1_open_home_starts": {
+   "kind": "start_range",
+   "record": "r1_development",
+   "table": true,
+   "where": {
+    "job_id": "j0005"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0005, first to last"
+  },
+  "r1_open_home_program": {
+   "kind": "text",
+   "record": "r1_run",
+   "path": "batches.*.jobs.*.job_id=j0005.program",
+   "how": "the agent's own name for program run j0005"
+  },
+  "r1_finish_home": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0006",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0006"
+    }
+   },
+   "how": "deliveries of program run j0006 over its practice starts"
+  },
+  "r1_finish_home_starts": {
+   "kind": "start_range",
+   "record": "r1_development",
+   "table": true,
+   "where": {
+    "job_id": "j0006"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0006, first to last"
+  },
+  "r1_finish_home_program": {
+   "kind": "text",
+   "record": "r1_run",
+   "path": "batches.*.jobs.*.job_id=j0006.program",
+   "how": "the agent's own name for program run j0006"
+  },
+  "r1_drawer_first": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0007",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0007"
+    }
+   },
+   "how": "deliveries of program run j0007 over its practice starts"
+  },
+  "r1_drawer_first_starts": {
+   "kind": "start_range",
+   "record": "r1_development",
+   "table": true,
+   "where": {
+    "job_id": "j0007"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0007, first to last"
+  },
+  "r1_drawer_first_program": {
+   "kind": "text",
+   "record": "r1_run",
+   "path": "batches.*.jobs.*.job_id=j0007.program",
+   "how": "the agent's own name for program run j0007"
+  },
+  "r1_confirm": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0008",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r1_development",
+    "table": true,
+    "where": {
+     "job_id": "j0008"
+    }
+   },
+   "how": "deliveries of program run j0008 over its practice starts"
+  },
+  "r1_confirm_starts": {
+   "kind": "start_range",
+   "record": "r1_development",
+   "table": true,
+   "where": {
+    "job_id": "j0008"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0008, first to last"
+  },
+  "r1_confirm_program": {
+   "kind": "text",
+   "record": "r1_run",
+   "path": "batches.*.jobs.*.job_id=j0008.program",
+   "how": "the agent's own name for program run j0008"
+  },
+  "r1_check_params": {
+   "kind": "count",
+   "record": "r1_check",
+   "path": "parameters",
+   "how": "the check's parameters, counted"
+  },
+  "r1_skill_name": {
+   "kind": "quote",
+   "record": "r1_skill",
+   "regex": "name: ([a-z0-9-]+)",
+   "how": "the learned skill's name, verbatim"
+  },
+  "r1_skill_description": {
+   "kind": "quote",
+   "record": "r1_skill",
+   "regex": "description: \"([^\"]+)\"",
+   "how": "the learned skill's description, verbatim"
+  },
+  "r1_skill_heights": {
+   "kind": "quote",
+   "record": "r1_skill",
+   "regex": "(Entry hand-height ranges were .*? m for the candidate\\.)",
+   "how": "the learned skill's evidence on hand height, verbatim"
+  },
+  "r1_library_jobs": {
+   "kind": "count",
+   "record": "r1_library",
+   "path": "entries",
+   "where": {
+    "kind": "job"
+   },
+   "how": "saved jobs in the library after the investigation"
+  },
+  "r1_library_checks": {
+   "kind": "count",
+   "record": "r1_library",
+   "path": "entries",
+   "where": {
+    "kind": "check"
+   },
+   "how": "checks in the library after the investigation"
+  },
+  "r1_mounted_jobs": {
+   "kind": "count",
+   "record": "r1_run",
+   "path": "library_mounted.entries.jobs",
+   "how": "saved jobs in the library the agent started from"
+  },
+  "r1_mounted_checks": {
+   "kind": "count",
+   "record": "r1_run",
+   "path": "library_mounted.entries.checks",
+   "how": "checks in the library the agent started from"
+  },
+  "r1_request": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "request.request_text",
+   "regex": "^(Prepare the station[^.]*\\. Both conditions[^.]*\\.)",
+   "how": "the request's first two sentences, verbatim"
+  },
+  "r1_proposal": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "message_log.author=agent.text",
+   "regex": "(Require at least[^.]*\\.)",
+   "how": "the agent's acceptance proposal, verbatim"
+  },
+  "r1_approval": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "message_log.author=lead.text",
+   "regex": "(Approved: [^.]*\\.)",
+   "how": "the shift lead's reply, verbatim"
+  },
+  "r1_diagnosis": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "sessions.number=2.report.summary",
+   "regex": "(Traces show[^.]*\\.)",
+   "how": "the agent's report after its first results, verbatim"
+  },
+  "r1_said_chain": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "account.answer.account",
+   "regex": "(The drawer approach recontacted[^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r1_said_open": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "account.answer.account",
+   "regex": "(Traces and both cameras showed[^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r1_said_home": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "account.answer.account",
+   "regex": "(This avoided new bowl disturbance[^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r1_said_finish": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "account.answer.account",
+   "regex": "(The hand released and withdrew before home[^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r1_said_ready": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "account.answer.account",
+   "regex": "(I did not save merely because[^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r1_said_unisolated": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "account.answer.account",
+   "regex": "(Hand clearance, orientation and subsequent policy observations[^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r1_said_library": {
+   "kind": "quote",
+   "record": "r1_run",
+   "path": "account.answer.account",
+   "regex": "(The earlier library was reviewed[^.]*\\. All retained interventions were tested here\\.)",
+   "how": "two sentences of the agent's account, verbatim"
+  },
+  "r1_sessions": {
+   "kind": "count",
+   "record": "r1_run",
+   "path": "sessions",
+   "how": "the investigation's sessions, counted"
+  },
+  "r1_rerenders": {
+   "kind": "rerenders",
+   "record": "r1_rerenders",
+   "how": "the re-render verification reports: accepted, state hashes compared and mismatched"
+  },
+  "b_robots": {
+   "kind": "distinct",
+   "record": "story_b_operation",
+   "table": true,
+   "column": "robot_id",
+   "how": "distinct robots in the regular work's episodes"
+  },
+  "b_sites": {
+   "kind": "distinct",
+   "record": "story_b_operation",
+   "table": true,
+   "column": "site_id",
+   "how": "distinct sites in the regular work's episodes"
+  },
+  "b_round1": {
+   "kind": "actions",
+   "record": "story_b_engagement",
+   "path": "rounds.0.decision.adopt",
+   "how": "round one's adopted actions, in words"
+  },
+  "b_eval_original": {
+   "kind": "evaluation",
+   "record": "story_b_engagement",
+   "state": "original",
+   "how": "the reserved panel's successes of state original, its Wilson 95% interval checked against the record's"
+  },
+  "b_eval_final": {
+   "kind": "evaluation",
+   "record": "story_b_engagement",
+   "state": "round-2",
+   "how": "the reserved panel's successes of state round-2, its Wilson 95% interval checked against the record's"
+  },
+  "b_eval_pair": {
+   "kind": "evaluation_pair",
+   "record": "story_b_engagement",
+   "first": "original",
+   "second": "round-2",
+   "how": "the panel's attempts compared between the original and the final state"
+  },
+  "r1_switch": {
+   "kind": "quote",
+   "record": "r1_session_two",
+   "regex": "(All ten runs switched instructions while the bowl was still touched and moving\\.)",
+   "how": "the agent's message after reading its first results, verbatim"
+  },
+  "r2_release": {
+   "kind": "proportion",
+   "k": {
+    "kind": "value",
+    "record": "r2_receipt",
+    "path": "delivered"
+   },
+   "n": {
+    "kind": "value",
+    "record": "r2_receipt",
+    "path": "N"
+   },
+   "how": "the second saved job's deliveries over the reserved starts, with a Wilson 95% interval"
+  },
+  "r2_naive": {
+   "kind": "proportion",
+   "k": {
+    "kind": "value",
+    "record": "r2_receipt",
+    "path": "naive_delivered"
+   },
+   "n": {
+    "kind": "value",
+    "record": "r2_receipt",
+    "path": "N"
+   },
+   "how": "the plain chain's deliveries over the same reserved starts, with a Wilson 95% interval"
+  },
+  "r2_pairs": {
+   "kind": "pairs",
+   "record": "r2_receipt",
+   "how": "the receipt's pairs recounted start by start and checked against its rescued and broken"
+  },
+  "r2_release_starts": {
+   "kind": "start_range",
+   "record": "r2_receipt",
+   "rows_path": "release_starts",
+   "path": "init_state",
+   "how": "the stored starts of the release, first to last"
+  },
+  "r2_verdict": {
+   "kind": "verdict",
+   "record": "r2_receipt",
+   "how": "the receipt's judgement against the agreed bar, in words"
+  },
+  "r2_plain": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0001",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0001"
+    }
+   },
+   "how": "deliveries of program run j0001 over its practice starts"
+  },
+  "r2_plain_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0001"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0001, first to last"
+  },
+  "r2_plain_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0001.program",
+   "how": "the agent's own name for program run j0001"
+  },
+  "r2_bowl_first": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0002",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0002"
+    }
+   },
+   "how": "deliveries of program run j0002 over its practice starts"
+  },
+  "r2_bowl_first_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0002"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0002, first to last"
+  },
+  "r2_bowl_first_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0002.program",
+   "how": "the agent's own name for program run j0002"
+  },
+  "r2_replan": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0003",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0003"
+    }
+   },
+   "how": "deliveries of program run j0003 over its practice starts"
+  },
+  "r2_replan_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0003"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0003, first to last"
+  },
+  "r2_replan_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0003.program",
+   "how": "the agent's own name for program run j0003"
+  },
+  "r2_home_only": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0004",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0004"
+    }
+   },
+   "how": "deliveries of program run j0004 over its practice starts"
+  },
+  "r2_home_only_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0004"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0004, first to last"
+  },
+  "r2_home_only_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0004.program",
+   "how": "the agent's own name for program run j0004"
+  },
+  "r2_bowl_home": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0005",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0005"
+    }
+   },
+   "how": "deliveries of program run j0005 over its practice starts"
+  },
+  "r2_bowl_home_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0005"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0005, first to last"
+  },
+  "r2_bowl_home_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0005.program",
+   "how": "the agent's own name for program run j0005"
+  },
+  "r2_bowl_finish_home": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0006",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0006"
+    }
+   },
+   "how": "deliveries of program run j0006 over its practice starts"
+  },
+  "r2_bowl_finish_home_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0006"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0006, first to last"
+  },
+  "r2_bowl_finish_home_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0006.program",
+   "how": "the agent's own name for program run j0006"
+  },
+  "r2_plate_retry": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0007",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0007"
+    }
+   },
+   "how": "deliveries of program run j0007 over its practice starts"
+  },
+  "r2_plate_retry_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0007"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0007, first to last"
+  },
+  "r2_plate_retry_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0007.program",
+   "how": "the agent's own name for program run j0007"
+  },
+  "r2_home_retry": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0008",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0008"
+    }
+   },
+   "how": "deliveries of program run j0008 over its practice starts"
+  },
+  "r2_home_retry_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0008"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0008, first to last"
+  },
+  "r2_home_retry_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0008.program",
+   "how": "the agent's own name for program run j0008"
+  },
+  "r2_home_replan": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0009",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0009"
+    }
+   },
+   "how": "deliveries of program run j0009 over its practice starts"
+  },
+  "r2_home_replan_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0009"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0009, first to last"
+  },
+  "r2_home_replan_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0009.program",
+   "how": "the agent's own name for program run j0009"
+  },
+  "r2_bowl_finish_home_end": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0010",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0010"
+    }
+   },
+   "how": "deliveries of program run j0010 over its practice starts"
+  },
+  "r2_bowl_finish_home_end_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0010"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0010, first to last"
+  },
+  "r2_bowl_finish_home_end_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0010.program",
+   "how": "the agent's own name for program run j0010"
+  },
+  "r2_push_cut": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0011",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0011"
+    }
+   },
+   "how": "deliveries of program run j0011 over its practice starts"
+  },
+  "r2_push_cut_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0011"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0011, first to last"
+  },
+  "r2_push_cut_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0011.program",
+   "how": "the agent's own name for program run j0011"
+  },
+  "r2_push_slide": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0012",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0012"
+    }
+   },
+   "how": "deliveries of program run j0012 over its practice starts"
+  },
+  "r2_push_slide_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0012"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0012, first to last"
+  },
+  "r2_push_slide_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0012.program",
+   "how": "the agent's own name for program run j0012"
+  },
+  "r2_loaded": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0013",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0013"
+    }
+   },
+   "how": "deliveries of program run j0013 over its practice starts"
+  },
+  "r2_loaded_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0013"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0013, first to last"
+  },
+  "r2_loaded_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0013.program",
+   "how": "the agent's own name for program run j0013"
+  },
+  "r2_loaded_bowl_first": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0014",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0014"
+    }
+   },
+   "how": "deliveries of program run j0014 over its practice starts"
+  },
+  "r2_loaded_bowl_first_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0014"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0014, first to last"
+  },
+  "r2_loaded_bowl_first_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0014.program",
+   "how": "the agent's own name for program run j0014"
+  },
+  "r2_relocate": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0015",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0015"
+    }
+   },
+   "how": "deliveries of program run j0015 over its practice starts"
+  },
+  "r2_relocate_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0015"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0015, first to last"
+  },
+  "r2_relocate_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0015.program",
+   "how": "the agent's own name for program run j0015"
+  },
+  "r2_relocate_lift": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0016",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0016"
+    }
+   },
+   "how": "deliveries of program run j0016 over its practice starts"
+  },
+  "r2_relocate_lift_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0016"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0016, first to last"
+  },
+  "r2_relocate_lift_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0016.program",
+   "how": "the agent's own name for program run j0016"
+  },
+  "r2_loaded_named": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0017",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0017"
+    }
+   },
+   "how": "deliveries of program run j0017 over its practice starts"
+  },
+  "r2_loaded_named_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0017"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0017, first to last"
+  },
+  "r2_loaded_named_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0017.program",
+   "how": "the agent's own name for program run j0017"
+  },
+  "r2_loaded_rim": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0018",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0018"
+    }
+   },
+   "how": "deliveries of program run j0018 over its practice starts"
+  },
+  "r2_loaded_rim_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0018"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0018, first to last"
+  },
+  "r2_loaded_rim_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0018.program",
+   "how": "the agent's own name for program run j0018"
+  },
+  "r2_confirm": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0019",
+     "delivered": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_development",
+    "table": true,
+    "where": {
+     "job_id": "j0019"
+    }
+   },
+   "how": "deliveries of program run j0019 over its practice starts"
+  },
+  "r2_confirm_starts": {
+   "kind": "start_range",
+   "record": "r2_development",
+   "table": true,
+   "where": {
+    "job_id": "j0019"
+   },
+   "path": "init_state",
+   "how": "the stored practice starts of program run j0019, first to last"
+  },
+  "r2_confirm_program": {
+   "kind": "text",
+   "record": "r2_run",
+   "path": "batches.*.jobs.*.job_id=j0019.program",
+   "how": "the agent's own name for program run j0019"
+  },
+  "r2_steps": {
+   "kind": "count",
+   "record": "r2_job",
+   "path": "program.steps",
+   "how": "the saved program's steps, counted"
+  },
+  "r2_check_params": {
+   "kind": "count",
+   "record": "r2_check",
+   "path": "parameters",
+   "how": "the check's parameters, counted"
+  },
+  "r2_skill_name": {
+   "kind": "quote",
+   "record": "r2_skill",
+   "regex": "name: ([a-z0-9-]+)",
+   "how": "the learned skill's name, verbatim"
+  },
+  "r2_skill_description": {
+   "kind": "quote",
+   "record": "r2_skill",
+   "regex": "description: \"([^\"]+)\"",
+   "how": "the learned skill's description, verbatim"
+  },
+  "r2_skill_evidence": {
+   "kind": "quote",
+   "record": "r2_skill",
+   "regex": "(On matched tuning starts: unprepared had .*? and 10 deliveries\\.)",
+   "how": "the learned skill's first evidence, verbatim"
+  },
+  "r2_library_jobs": {
+   "kind": "count",
+   "record": "r2_library",
+   "path": "entries",
+   "where": {
+    "kind": "job"
+   },
+   "how": "saved jobs in the library after the second investigation"
+  },
+  "r2_library_checks": {
+   "kind": "count",
+   "record": "r2_library",
+   "path": "entries",
+   "where": {
+    "kind": "check"
+   },
+   "how": "checks in the library after the second investigation"
+  },
+  "r2_mounted_jobs": {
+   "kind": "count",
+   "record": "r2_run",
+   "path": "library_mounted.entries.jobs",
+   "how": "saved jobs in the library the second investigation started from"
+  },
+  "r2_mounted_checks": {
+   "kind": "count",
+   "record": "r2_run",
+   "path": "library_mounted.entries.checks",
+   "how": "checks in the library the second investigation started from"
+  },
+  "r2_cheese_runs": {
+   "kind": "count",
+   "record": "r2_cheese",
+   "path": "episodes",
+   "how": "the saved job's reserved runs whose final cheese state is recorded"
+  },
+  "r2_cheese_untouched": {
+   "kind": "count",
+   "record": "r2_cheese",
+   "path": "episodes",
+   "where": {
+    "in_contact_with_robot": false
+   },
+   "how": "reserved runs whose cheese is untouched by the robot at the end"
+  },
+  "r2_cheese_table_only": {
+   "kind": "count",
+   "record": "r2_cheese",
+   "path": "episodes",
+   "where": {
+    "in_contact_with": [
+     "table"
+    ]
+   },
+   "how": "reserved runs whose cheese touches only the table at the end"
+  },
+  "r2_cheese_table_plate": {
+   "kind": "count",
+   "record": "r2_cheese",
+   "path": "episodes",
+   "where": {
+    "in_contact_with": [
+     "plate_1",
+     "table"
+    ]
+   },
+   "how": "reserved runs whose cheese touches the table and the plate at the end"
+  },
+  "r2_request": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "request.request_text",
+   "regex": "^(Prepare the station[^.]*\\. Both conditions[^.]*\\.)",
+   "how": "the request's first two sentences, verbatim"
+  },
+  "r2_proposal": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "message_log.author=agent.text",
+   "regex": "(The requested minimum is[^.]*\\.)",
+   "how": "the agent's acceptance proposal, verbatim"
+  },
+  "r2_said_plain": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(Plate tipping/acquisition failures[^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_wrong_object": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(Plate acquisition and wrong-object handling persisted\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_home": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(Home after plate arrival improved bowl entry[^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_continuation": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(Tested the library's placement continuation\\. [^.]*\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_loaded": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(All plate goals acquired and retained, but loaded-bowl pickup/placement became the bottleneck\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_grasp": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(Run 'put the cream cheese in the bowl' for [0-9]+ steps to intercept its grasp, not finish loading\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_flicker": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(However, [0-9]+ confirmation runs temporarily lost and recovered the bowl goal during final continuation\\. Placement arrival is not finished release\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_flicker": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "However, ([0-9]+) confirmation runs temporarily lost and recovered the bowl goal",
+   "how": "the count in the agent's account, verbatim"
+  },
+  "r2_said_deliberate": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(Cheese is deliberately relocated\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_unisolated": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(Physical clearance versus changed visual/entry context is not fully isolated\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_library": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(The library's finishing/home idea was tested here[^.]*\\. Its handoff-retention-and-delivery check was tested on this request and extended\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_said_ready": {
+   "kind": "quote",
+   "record": "r2_run",
+   "path": "account.answer.account",
+   "regex": "(Readiness was not based only on [0-9]+/[0-9]+ tuning\\.)",
+   "how": "a sentence of the agent's account, verbatim"
+  },
+  "r2_sessions": {
+   "kind": "count",
+   "record": "r2_run",
+   "path": "sessions",
+   "how": "the second investigation's sessions, counted"
+  },
+  "r2_rerenders": {
+   "kind": "rerenders",
+   "record": "r2_rerenders",
+   "how": "the re-render verification reports: accepted, state hashes compared and mismatched"
+  },
+  "both_rerenders": {
+   "kind": "rerenders",
+   "record": "all_rerenders",
+   "how": "both pairs' re-render reports together"
+  },
+  "r2_recovered": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_recount",
+    "path": "confirmation_runs",
+    "where": {
+     "bowl_goal_lost_after_first_held": true,
+     "bowl_goal_held_at_end": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_recount",
+    "path": "confirmation_runs"
+   },
+   "how": "confirmation runs whose bowl goal stopped holding after the bowl first arrived and held again by the end, recounted from the public goal table, with a Wilson 95% interval"
+  },
+  "r2_cheese_robot_free": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_cheese",
+    "path": "episodes",
+    "where": {
+     "in_contact_with_robot": false
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_cheese",
+    "path": "episodes"
+   },
+   "how": "reserved runs whose cheese the robot does not touch at the end, with a Wilson 95% interval"
+  },
+  "r2_cheese_on_table": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_recount",
+    "path": "cheese_final",
+    "where": {
+     "touches_table": true
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_recount",
+    "path": "cheese_final"
+   },
+   "how": "reserved runs whose cheese touches the table at the end, from the coordinator's record, with a Wilson 95% interval"
+  },
+  "r2_cheese_only_table": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_cheese",
+    "path": "episodes",
+    "where": {
+     "in_contact_with": [
+      "table"
+     ]
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_cheese",
+    "path": "episodes"
+   },
+   "how": "reserved runs whose cheese touches only the table at the end, with a Wilson 95% interval"
+  },
+  "r2_cheese_with_plate": {
+   "kind": "proportion",
+   "k": {
+    "kind": "count",
+    "record": "r2_cheese",
+    "path": "episodes",
+    "where": {
+     "in_contact_with": [
+      "plate_1",
+      "table"
+     ]
+    }
+   },
+   "n": {
+    "kind": "count",
+    "record": "r2_cheese",
+    "path": "episodes"
+   },
+   "how": "reserved runs whose cheese touches the table and the plate at the end, with a Wilson 95% interval"
+  },
+  "r2_programs": {
+   "kind": "distinct",
+   "record": "r2_tuning",
+   "table": true,
+   "column": "job_id",
+   "how": "distinct program runs in the second job's tuning sessions 1 to 5, each on practice starts 0 to 9"
+  }
+ },
+ "action_words": {
+  "set:control.latency_compensation_steps": "a latency compensation of {value} control steps at site {scope}",
+  "revert:software.version": "a rollback of the software update at site {scope}",
+  "revert:camera.scene.calibration": "a rollback of the scene camera's calibration change at site {scope}",
+  "service:controller": "a service of robot {scope}'s controller"
+ }
+}
