@@ -496,7 +496,9 @@ def build_site(bundle: Path, out: Path) -> SiteResult:
             "</tr>"
         )
     code = provenance.get("code", {})
-    lede = str(spec.get("lede") or (told.lede_text if told else ""))
+    # the preview text: the description's own, else the story's teaser, else its summary
+    teaser = told.meta.get("teaser", "") if told else ""
+    lede = str(spec.get("lede") or teaser or (told.lede_text if told else ""))
     transcript = []
     for beat in provenance.get("beats", []):
         spoken = (beat.get("narration") or {}).get("text")
@@ -740,8 +742,9 @@ def _write_story(
         title=html.escape(told.title or parts["title"]),
         kicker=html.escape(told.kicker),
         subtitle=html.escape(told.subtitle),
+        teaser=html.escape(told.meta.get("teaser", "")),
         lede=told.lede,
-        description=html.escape(told.lede_text),
+        description=html.escape(told.meta.get("teaser") or told.lede_text),
         acts="\n".join(acts) or "<li>No chapters.</li>",
         toc="\n".join(toc),
         body=told.body,

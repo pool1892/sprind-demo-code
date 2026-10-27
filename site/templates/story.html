@@ -17,21 +17,15 @@ $preview
   <div class="wrap">
     <p class="brand"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="20" r="9" fill="#4B5CF0"/><circle cx="29" cy="13" r="6" fill="#12A26C"/><circle cx="29" cy="29" r="6" fill="#E08A1E"/></svg><span class="wordmark">Mayfly</span><span class="kicker">$kicker</span></p>
     <h1>$title</h1>
-    <p class="subtitle">$subtitle</p>
-    <div class="answer">$lede</div>
+    <p class="teaser">$teaser</p>
     <div class="hero-links">
       <div class="hero-buttons">
       <a class="code-button" href="https://github.com/pool1892/sprind-demo-code"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>The code on GitHub</span><span class="url">github.com/pool1892/sprind-demo-code</span></a>
       <a class="watch-button" href="#film"><span aria-hidden="true">&#9654;</span> Watch the film <span class="len">$film_seconds</span></a>
       </div>
-      <p class="hero-pages">Behind every number:
-        <a href="record/index.html">the jobs record</a> &middot;
-        <a href="fleet-record.html">the fleet record</a> &middot;
-        <a href="sources.html">clips and provenance</a> &middot;
-        <a href="story-values.json">every number on this page</a></p>
     </div>
-    <p class="photo-note">Behind this text: frames from the agent's two jobs on the locked exam layouts, each
-      from its recorded run. Every green light is a completed job.</p>
+    <p class="photo-note">Behind this text: frames from the final tests of the agent's two jobs, each from its
+      recorded run. Every green light is a passed test.</p>
   </div>
 </header>
 
@@ -61,6 +55,18 @@ $transcript
   </div>
 </section>
 
+<section class="overview" aria-labelledby="overview-title">
+  <div class="wrap">
+    <h2 class="overview-kicker" id="overview-title">In short</h2>
+    <div class="overview-text">$lede</div>
+    <p class="overview-links">The evidence:
+      <a href="record/index.html">the two jobs, program by program</a> &middot;
+      <a href="fleet-record.html">the fleet investigation</a> &middot;
+      <a href="sources.html">recorded clips and sources</a> &middot;
+      <a href="story-values.json">all numbers (JSON)</a></p>
+  </div>
+</section>
+
 <nav class="toc" aria-label="On this page">
   <div class="wrap">
     <ol>
@@ -77,10 +83,10 @@ $body
 <footer class="site-footer">
   <div class="wrap">
     <p><strong>Mayfly</strong> &middot; robot installations whose engineering is done by AI agents</p>
-    <p><a href="#film">The film</a> &middot; <a href="record/index.html">The jobs record</a> &middot;
-      <a href="fleet-record.html">The fleet record</a> &middot;
-      <a href="sources.html">Clips and provenance</a> &middot;
-      <a href="story-values.json">Every number on this page</a> &middot;
+    <p><a href="#film">The film</a> &middot; <a href="record/index.html">The two jobs</a> &middot;
+      <a href="fleet-record.html">The fleet investigation</a> &middot;
+      <a href="sources.html">Recorded clips and sources</a> &middot;
+      <a href="story-values.json">All numbers (JSON)</a> &middot;
       Code: <a href="https://github.com/pool1892/sprind-demo-code">github.com/pool1892/sprind-demo-code</a></p>
     <p class="build">The film was built $built from commit <code>$commit</code>.</p>
   </div>

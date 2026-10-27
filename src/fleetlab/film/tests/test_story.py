@@ -254,7 +254,7 @@ def test_the_story_fills_every_number_and_draws_its_charts(tmp_path: Path) -> No
     assert told.charts[0]["values"][0]["k"] == 1 and told.charts[0]["sources"]
     assert "{" not in body and ":::" not in body
     assert body.count('<figure class="chart') == 6 and told.figures == 7
-    assert "2 rescued, 0 broken" in body  # the exam's note, from the bound numbers
+    assert "2 improved, 0 worsened" in body  # the exam's note, from the bound numbers
     first_two = body.split("The short notebook", 1)[0]
     assert len(re.findall(r'<circle class="ok"[^>]*><title>', first_two)) == 1 + 3 + 1 + 3
     assert 'class="adopted"' in body and 'class="declined"' in body
@@ -280,7 +280,7 @@ def test_the_glance_draws_every_result_in_each_layout_from_the_records(tmp_path:
     assert [f"glance-{x}" in fig for x in ("rows", "stack")] == [True, True]
     # the job on its three locked layouts: the chain completes one, the job all three; both
     # layouts of the image draw the same marks
-    assert fig.count("plain chain, locked layout 31: failed") == 2
+    assert fig.count("plain chain, final test layout 31: failed") == 2
     assert fig.count(">1 of 3<") == 2 and fig.count(">3 of 3<") == 2
     # the fleet as shares, its counts by the bars; the key in the page's own legend
     assert fig.count(">60%<") == 2 and fig.count(">90%<") == 2 and fig.count(">9 of 10<") == 2
@@ -325,7 +325,7 @@ def test_the_fleet_record_counts_with_intervals_and_sources() -> None:
     assert '10 of 10<br><span class="ci">100%</span>' in body
     assert "Healthy reference" in body and "simulated controller service" in body
     assert "<td>3 and 5</td><td>4 and 6</td>" in body
-    assert "probes:fleet/engagement.json" in body and "4 rescued, 1 broken" in body
+    assert "probes:fleet/engagement.json" in body and "4 improved, 1 worsened" in body
     assert [r["robot"] for r in record.tables["regular_work"]][-1] == "r04"
     assert record.tables["repairs"][2]["decision"] == "adopted"
 

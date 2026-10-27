@@ -46,6 +46,19 @@ Rules for people and coding agents who build or run things here. The
   those chains on purpose writes a new reference with
   `python -m fleetlab.engine.ladder smoke --update-reference` in the same
   commit and says why.
+- The website is separate from the rest of the repository: everything under
+  `site/`, the page and film builder `src/fleetlab/film` with its tests,
+  `tests/test_film_framing*.py` and the `tools/film-*` scripts. Nothing else
+  imports or reads them. A change that touches only these needs only their
+  own checks, well under a minute, instead of the full check and the smoke
+  world:
+
+  ```sh
+  W="site src/fleetlab/film tests/test_film_framing.py tests/test_film_framing_sim.py"
+  uv run --locked ruff check $W && uv run --locked ruff format --check $W
+  uv run --locked mypy src/fleetlab/film tests/test_film_framing.py tests/test_film_framing_sim.py
+  tools/heavy-run --light -m 2G uv run --locked pytest src/fleetlab/film/tests tests/test_film_framing.py tests/test_film_framing_sim.py
+  ```
 
 ## Investigations
 

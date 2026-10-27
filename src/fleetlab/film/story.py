@@ -299,7 +299,10 @@ def _outcomes(bits: str) -> list[bool]:
 def _exam_rows(data: dict[str, Any], prefix: str) -> tuple[list[charts.DotRow], dict[str, int]]:
     clips, mosaics = data["clips"], data["mosaics"]
     rows = []
-    for kind, label, role in (("chain", "Plain chain", ""), ("job", "Agent's job", "win")):
+    for kind, label, role in (
+        ("chain", "Skills in sequence", ""),
+        ("job", "Agent's program", "win"),
+    ):
         ids = mosaics.get(f"{prefix}-{kind}")
         if not ids:
             raise StoryError(f"film data: no exam tiles {prefix}-{kind}")
@@ -350,8 +353,8 @@ def _chart(kind: str, args: list[str], data: dict[str, Any], values: dict[str, V
                         f"{prefix}_{name}: bound {bound.value}, the exam tiles say {value}"
                     )
             note = (
-                f"{num(prefix + '_rescued')} rescued, {num(prefix + '_broken')} broken · "
-                f"the bar: at least {num(prefix + '_release_k')} of {num(prefix + '_release_n')}"
+                f"{num(prefix + '_rescued')} improved, {num(prefix + '_broken')} worsened · "
+                f"pass mark: at least {num(prefix + '_release_k')} of {num(prefix + '_release_n')}"
             )
             jobs.append((meta.get(f"job_{prefix}", prefix), rows, note))
         return charts.exam(jobs)
@@ -486,7 +489,7 @@ def _chart(kind: str, args: list[str], data: dict[str, Any], values: dict[str, V
             ev["attempts"],
             ev["pairs"]["rescued"],
             ev["pairs"]["broken"],
-            ("As the fleet was", f"With the agent's {num('b_round1_count')} changes"),
+            ("Before the repairs", f"After the agent's {num('b_round1_count')} repairs"),
         )
     raise StoryError(f"no chart of kind {kind!r}")
 
@@ -544,7 +547,7 @@ def render(text_path: Path, data_path: Path) -> Story:
             }
         )
         numbers = (
-            f'<details class="numbers"><summary>The numbers</summary>'
+            f'<details class="numbers"><summary>The data behind this figure</summary>'
             f'<div class="scroll">{chart.table}</div></details>'
             if chart.table
             else ""
@@ -858,11 +861,12 @@ def fleet_record(data: dict[str, Any], meta_healthy: list[str]) -> FleetRecord:
     tables["repairs"] = vals
     out += [
         "<h2>The tested repairs</h2>",
-        "<p>Each change the agent tested, against the same attempts without it. Rescued: "
-        "failed without the change and succeeded with it; broken: the reverse. Adopted: the "
-        "changes the agent kept.</p>",
+        "<p>Each change the agent tested, against the same tasks and starting layouts without "
+        "it. Improved: failed without the change and succeeded with it; worsened: the reverse. "
+        "Adopted: the changes the agent kept.</p>",
         '<table class="record-table"><thead><tr><th>Experiment</th><th>Site</th>'
-        "<th>Change tested</th><th>Without</th><th>With</th><th>Rescued</th><th>Broken</th>"
+        "<th>Change tested</th><th>Without it</th><th>With it</th><th>Improved</th>"
+        "<th>Worsened</th>"
         "<th>Decision</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table>",
         _source_line(_inputs(fleet["b_experiments_table"]) + _inputs(fleet["b_round1"]),
                      "Sources"),
@@ -873,8 +877,8 @@ def fleet_record(data: dict[str, Any], meta_healthy: list[str]) -> FleetRecord:
     numbers = data.get("numbers", {})
     rows, vals = [], []
     for label, k, key in (
-        ("As the fleet was", ev["before"], "b_eval_original"),
-        (f"With the agent's {len(adopted)} changes", ev["after"], "b_eval_final"),
+        ("Before the repairs", ev["before"], "b_eval_original"),
+        (f"After the agent's {len(adopted)} repairs", ev["after"], "b_eval_final"),
     ):
         cell, v = _count(k, ev["attempts"])
         for bound, mine in (("low", "low_pct"), ("high", "high_pct")):
@@ -884,15 +888,15 @@ def fleet_record(data: dict[str, Any], meta_healthy: list[str]) -> FleetRecord:
         vals.append({"state": label, **v})
     pairs = ev["pairs"]
     rows.append(
-        f'<tr class="total"><td>The same attempts, compared</td><td>{pairs["rescued"]} rescued, '
-        f"{pairs['broken']} broken</td></tr>"
+        f'<tr class="total"><td>The same attempts, compared</td><td>{pairs["rescued"]} '
+        f"improved, {pairs['broken']} worsened</td></tr>"
     )
     vals.append({"state": "paired", "rescued": pairs["rescued"], "broken": pairs["broken"]})
     tables["evaluation"] = vals
     out += [
-        "<h2>The evaluation on attempts the agent never saw</h2>",
-        f"<p>The reserved panel of {ev['attempts']} attempts, run once with the fleet as it "
-        "was and once with the agent's adopted changes.</p>",
+        "<h2>The final fleet test, on attempts the agent never saw</h2>",
+        f"<p>The {ev['attempts']} attempts reserved for the final test, run once before the "
+        "repairs and once with the agent's adopted repairs: the same attempts both times.</p>",
         '<table class="record-table"><thead><tr><th>Fleet</th>'
         f"<th>Successes, share ({level} interval)</th></tr></thead><tbody>"
         + "".join(rows)

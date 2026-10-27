@@ -159,7 +159,7 @@ def exam(jobs: Sequence[tuple[str, list[DotRow], str]]) -> Chart:
                  "completed": row.outcomes}
             )  # fmt: skip
             titles = [
-                f"{row.label}, locked layout {s}: {'completed' if ok else 'failed'}"
+                f"{row.label}, final test layout {s}: {'completed' if ok else 'failed'}"
                 for s, ok in zip(row.starts, row.outcomes, strict=True)
             ]
             parts.append(
@@ -175,7 +175,7 @@ def exam(jobs: Sequence[tuple[str, list[DotRow], str]]) -> Chart:
             )
     parts.append("</div>")
     parts.append(_legend(("ok", "completed"), ("no", "failed")))
-    head = ["Job", "Locked layout"] + [r.label for r in jobs[0][1]]
+    head = ["Job", "Final test layout"] + [r.label for r in jobs[0][1]]
     return Chart("".join(parts), _table(head, rows_out), values)
 
 
@@ -372,7 +372,10 @@ def probe(
                 f"{_fmt(lag * step_s)} s</span>"
             )
         row: list[object] = [t.title, t.tag]
-        row += [f"{_fmt(lag * step_s)} s ({lag} control steps)" for _, lag in found[:2]]
+        row += [
+            f"{_fmt(lag * step_s)} s ({lag} control step{'' if lag == 1 else 's'})"
+            for _, lag in found[:2]
+        ]
         rows.append(row)
         values.append(
             {"robot": t.title, "shows": t.tag, "wait_steps": [lag for _, lag in found],
@@ -427,12 +430,14 @@ class Repair:
 
 
 def repairs(rows: Sequence[Repair]) -> Chart:
-    """The tested repairs: each change against the same attempts without it."""
+    """The tested repairs: each change against the same tasks and starting layouts without
+    it."""
     out = [
         '<table class="repairs"><thead><tr><th scope="col">Repair tested</th>'
-        '<th scope="col">Without</th><th scope="col" class="dumbbell-col">'
-        '<span class="sr">Change</span></th><th scope="col">With</th>'
-        '<th scope="col">Rescued · broken</th><th scope="col">Decision</th></tr></thead><tbody>'
+        '<th scope="col">Without it</th><th scope="col" class="dumbbell-col">'
+        '<span class="sr">Change</span></th><th scope="col">With it</th>'
+        '<th scope="col">Improved · worsened</th><th scope="col">Decision</th></tr></thead>'
+        "<tbody>"
     ]
     site = None
     for r in rows:
@@ -447,7 +452,7 @@ def repairs(rows: Sequence[Repair]) -> Chart:
         out.append(
             f'<tr class="{"adopted" if adopted else "declined"}">'
             f'<th scope="row">{_e(r.change)}</th>'
-            f'<td class="num" data-label="without">{r.without[0]} of {r.without[1]}</td>'
+            f'<td class="num" data-label="without it">{r.without[0]} of {r.without[1]}</td>'
             '<td class="dumbbell-col"><svg class="dumbbell" width="100%" height="16" '
             'aria-hidden="true" focusable="false">'
             '<line class="track" x1="0" x2="100%" y1="8" y2="8"/>'
@@ -455,8 +460,9 @@ def repairs(rows: Sequence[Repair]) -> Chart:
             f'<circle class="before" cx="{a:.2f}%" cy="8" r="4"/>'
             f'<circle class="after" cx="{b:.2f}%" cy="8" r="5"/>'
             "</svg></td>"
-            f'<td class="num" data-label="with"><strong>{r.with_[0]} of {r.with_[1]}</strong></td>'
-            f'<td class="num" data-label="rescued · broken">{r.rescued} · {r.broken}</td>'
+            f'<td class="num" data-label="with it"><strong>{r.with_[0]} of {r.with_[1]}</strong>'
+            "</td>"
+            f'<td class="num" data-label="improved · worsened">{r.rescued} · {r.broken}</td>'
             f'<td class="decision">{_e(r.decision)}</td>'
             "</tr>"
         )
@@ -520,13 +526,13 @@ def fleet_result(
         "</div>",
         _legend(
             ("cell-ok", "success"),
-            ("cell-new", f"rescued: failed before, succeeded after ({rescued})"),
+            ("cell-new", f"improved: failed before, succeeded after ({rescued})"),
             ("cell-no", "failure"),
-            ("cell-lost", f"broken: succeeded before, failed after ({broken})"),
+            ("cell-lost", f"worsened: succeeded before, failed after ({broken})"),
         ),
     ]
     table = _table(
-        ["Attempts", "Success both times", "Rescued", "Broken", "Failed both times"],
+        ["Attempts", "Success both times", "Improved", "Worsened", "Failed both times"],
         [[attempts, both, rescued, broken, neither]],
     )
     values: list[dict[str, Any]] = [
@@ -693,7 +699,7 @@ def _marks(r: Result, x: float, y: float, w: float, t: _Type) -> tuple[str, floa
             for i, ok in enumerate(m.outcomes):
                 cx = x + pitch * (i + 0.5)
                 verdict = "completed" if ok else "failed"
-                tip = f"<title>{_e(m.label)}, locked layout {m.starts[i]}: {verdict}</title>"
+                tip = f"<title>{_e(m.label)}, final test layout {m.starts[i]}: {verdict}</title>"
                 if ok:
                     out.append(
                         f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{radius:.1f}" fill="{_OK}">'
